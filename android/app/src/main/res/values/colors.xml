@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      与 App 的「墨夜世界」同一套颜色（见 src/styles/theme.css 里的
+      color-night-bg / color-night-bg-2）。
+      启动主题、窗口底色都用它们，避免启动时闪出白底。
+    -->
+    <color name="ink_night">#101A16</color>
+    <color name="ink_night_2">#16241D</color>
+</resources>

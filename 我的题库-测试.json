@@ -1,0 +1,46 @@
+[
+  {
+    "id": "unsplash-gugong-01",
+    "category": "写景",
+    "title": "故宫的太和殿",
+    "lead": "看看这座大宫殿：屋顶是什么颜色的？前面的大广场上有什么？先说远处，再说近处。",
+    "wordRange": [200, 400],
+    "minGrade": 4,
+    "maxGrade": 6,
+    "focus": ["observation", "vocabulary"],
+    "images": [
+      "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ]
+  },
+  {
+    "id": "unsplash-gugong-02",
+    "category": "scene",
+    "title": "广场上的人",
+    "lead": "这么大的广场上，人们都在做什么？挑一个你觉得最有趣的人，说说他在干什么。",
+    "wordRange": [150, 350],
+    "minGrade": 3,
+    "maxGrade": 6,
+    "focus": ["observation", "emotion"],
+    "images": [
+      {
+        "imageUrl": "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "sceneKey": "hometown-custom",
+        "caption": "太和殿前的大广场"
+      }
+    ]
+  },
+  {
+    "id": "unsplash-gugong-03",
+    "category": "event",
+    "title": "连环图测试（两张）",
+    "lead": "这里放了两张图，用来试试连环图能不能按顺序滑着看。",
+    "wordRange": [100, 300],
+    "minGrade": 3,
+    "maxGrade": 6,
+    "focus": ["observation"],
+    "images": [
+      "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?q=80&w=800&h=1000&auto=format&fit=crop"
+    ]
+  }
+]

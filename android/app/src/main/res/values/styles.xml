@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+      基础主题。
+
+      这里以前是 parent="Theme.AppCompat.Light.DarkActionBar"，那是一个
+      【自带标题栏】的主题。只要有任何一条路径用到它，启动那一瞬间就会
+      在页面顶上闪出一条写着「小笔苗」的系统标题栏。
+
+      现在一律走 NoActionBar，并且 windowActionBar / windowNoTitle
+      两条都显式关掉（不同 AppCompat 版本读的是不同的那一条，
+      只写一条有可能被别的主题覆盖回去）。
+    -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <!-- 运行期主题：底色直接用 App 的「墨夜」，切页时不会闪白 -->
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@color/ink_night</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <!--
+      启动主题（Android 12+ 的系统 Splash 也读它）。
+
+      以前它继承 @drawable/splash，也就是 Capacitor 默认那张
+      「白底 + 蓝色 logo」的图，所以每次打开先是白茫茫一片，
+      然后才切到 App 自己的墨夜开场。
+
+      现在：墨夜底 + 自己的圆形图标，系统 Splash 和 App 自己的开场画面
+      是同一套配色，看上去就是一次连贯的开场，而不是「先白一下」。
+
+      图标用 drawable-nodpi 里的圆形图，因为 Android 12+ 会把 splash 图标
+      放进一个圆形区域；本身就做成圆形，系统加不加遮罩结果都一样。
+      编码用 WebP：同一张 768px 的图，PNG 要 769 KB，WebP 只要 111 KB，
+      而 splash 只出现半秒，看不出差别（桌面图标仍是无损 PNG）。
+
+      ★ 关于「启动画面停太久」：
+      这一层（系统 Splash）**不受这里任何参数控制**，它停多久取决于
+      WebView 首帧什么时候画出来，也就是 boot() 的耗时。
+      真正的变量在那边（db.ts 的 readBootSnapshot()，已改成一次事务），
+      以及 App.tsx 里 Splash 组件的淡出时长。
+      这里保持 0 动画时长 —— 系统 splash 一动不动地定在那儿才像"卡住"，
+      交给 App 那张「同一张图 + 一句诗」的画面去收尾。
+    -->
+    <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/ink_night</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_icon</item>
+        <item name="windowSplashScreenAnimationDuration">0</item>
+        <item name="postSplashScreenTheme">@style/AppTheme.NoActionBar</item>
+        <item name="android:background">@color/ink_night</item>
+    </style>
+</resources>

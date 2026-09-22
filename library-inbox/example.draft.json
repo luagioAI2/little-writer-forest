@@ -1,0 +1,30 @@
+[
+  {
+    "id": "ai-2026-09-16-rain-campus",
+    "category": "scene",
+    "tagId": "weather",
+    "title": "雨后的校园",
+    "lead": "雨刚停，校园里有什么不一样了？先看远处，再看脚边。",
+    "wordRange": [150, 350],
+    "minGrade": 3,
+    "maxGrade": 6,
+    "focus": ["observation", "vocabulary"],
+    "images": [{ "sceneKey": "rain-window", "caption": "雨停了" }]
+  },
+  {
+    "id": "ai-2026-09-16-spring-outing",
+    "category": "event",
+    "tagId": "outing",
+    "title": "春游的三张照片",
+    "lead": "这里有三张照片，是一天里发生的三件事。按顺序看，把这一天讲出来。",
+    "wordRange": [200, 400],
+    "minGrade": 3,
+    "maxGrade": 5,
+    "focus": ["structure", "observation"],
+    "images": [
+      { "sceneKey": "spring-outing-bus", "caption": "第 1 幅" },
+      { "sceneKey": "spring-outing-picnic", "caption": "第 2 幅" },
+      { "sceneKey": "spring-outing-play", "caption": "第 3 幅" }
+    ]
+  }
+]

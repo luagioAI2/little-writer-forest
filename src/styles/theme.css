@@ -1,0 +1,874 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   小笔苗 · 作文森林 — 设计令牌  v4
+   ------------------------------------------------------------
+   设计语言：清亮纸感 · 深色沉浸
+
+   v3 → v4 只做了一件事：**把颜色调亮调跳**。
+   孩子试用的反馈是「扁平没啥问题，但有点老气，孩子不喜欢」——
+   说得准。v3 的墨绿 #2f7a5c + 奶油纸 #fbfaf7 + 发丝线，
+   是「高级文具」的调子，不是孩子想打开的东西。
+
+   所以 v4 保持 v3 的**结构**（两个世界、三条铁律、令牌体系全不动），
+   只重算颜色：
+     · 主色 墨绿 #2f7a5c → 青翠绿 #10a368（提饱和，明度几乎不动）
+     · 纸底 奶油 → 更亮的薄荷白，让绿色跳得出来
+     · 辅助色 / 奖励色 一律提饱和
+   明度关系**刻意保持不变**，所以 v3 调好的对比度全部沿用。
+
+   两个世界（这是整套设计的支点）
+     ① 清亮纸世界（默认）：日常界面。亮纸面、发丝边线、精密字号阶梯。
+     ② 墨夜世界（.scene-ink）：写作文、树洞、夜晚场景。深墨绿纸面、
+        暖光、四周压暗。孩子"走进另一个房间"，世界就安静下来。
+
+   三条铁律（v2 的问题都出在这里）
+     · 不用粗描边。v2 的 border-4 + shadow-cartoon 是"卡通"的来源，
+       一律换成 1px 发丝边线（--hair-*）。
+     · 不用 emoji 当图标。emoji 各设备渲染不同，永远不可能"精巧"。
+       全部换成统一的描边图标（components/icons.tsx）。
+     · 颜色越少越贵。全局只有一个主色（青翠绿）+ 一个奖励色（金）
+       + 一个夜色底。其余一律走中性色。
+
+   ★ v4 追加一条：**「年轻」不靠加颜色，靠加角色和动效。**
+     调色只能让它"不土"，要让孩子喜欢，得有个活的东西在里面。
+     见 components/Sprout.tsx（小笔苗本体）。
+
+   所有动画、投影、圆角都由令牌统一控制，组件里不写魔法数字。
+   ============================================================ */
+
+@theme {
+  /* ============================================================
+     一、墨色 —— 中性色骨架
+     ------------------------------------------------------------
+     不用纯黑：纯黑在浅色面上显脏、在深色面上显死板。
+     用带一点绿相的暖墨，和纸面同源。
+     ★ v4 没动这一组 —— 它是文字色，动了对比度就全崩。
+     ============================================================ */
+
+  --color-ink-950: #121714;
+  --color-ink-900: #1a211d;
+  --color-ink-800: #2b342e;
+  --color-ink-700: #414b44;
+  --color-ink-600: #5a655d;
+  --color-ink-500: #737e76;
+  --color-ink-400: #939d96;
+  --color-ink-300: #b3bbb5;
+  --color-ink-200: #cfd5d0;
+  --color-ink-150: #e0e4e0;
+  --color-ink-100: #ebeeeb;
+  --color-ink-50: #f4f6f4;
+
+  /* 纸面 —— 主背景。
+     v4：奶油底 → 更亮的薄荷白。绿色要"跳"，底就得够亮够净。 */
+  --color-paper: #fbfefc;
+  --color-paper-2: #f1f8f4;
+  --color-paper-3: #e3efe9;
+
+  /* ============================================================
+     二、主色 —— 青翠绿（v4 从墨绿换过来）
+     ------------------------------------------------------------
+     唯一的主强调色。压在 600/700 上使用，浅色只做底。
+     深色场景里用 300/400 做文字，保证对比度。
+
+     ⚠️ 600/700 的**明度刻意没动**（只提了饱和）——
+        白字压在上面的对比度是 5.2:1，动明度就会掉到线下。
+     ============================================================ */
+
+  --color-inkleaf-950: #05271a;
+  --color-inkleaf-900: #073623;
+  --color-inkleaf-800: #09472e;
+  --color-inkleaf-700: #0a5d3c;
+  --color-inkleaf-600: #0c7c4f;
+  --color-inkleaf-500: #10a368;
+  --color-inkleaf-400: #29ce89;
+  --color-inkleaf-300: #69dda7;
+  --color-inkleaf-200: #a8eeca;
+  --color-inkleaf-100: #d6f8e5;
+  --color-inkleaf-50: #eafbf1;
+
+  /* ============================================================
+     三、奖励色 —— 金
+     ------------------------------------------------------------
+     只用在"收获 / 稀有 / 成就"。用得越少越有分量。
+
+     ★ v4 顺带修了一个**一直存在的可读性问题**：
+       原来奖励按钮是「白字压金底」，对比度只有 2.25:1（远低于 4.5）。
+       现在金底更亮，白字只会更糟，所以改成**深棕字压金底**（7.2:1）。
+       金色按钮配深字本来也更跳、更像"奖励"。
+     ============================================================ */
+
+  --color-amber-leaf-900: #33210a;
+  --color-amber-leaf-800: #4a3000; /* 金底上的文字色 */
+  --color-amber-leaf-700: #895700;
+  --color-amber-leaf-600: #b87700;
+  --color-amber-leaf-500: #ec9e06;
+  --color-amber-leaf-400: #febb32;
+  --color-amber-leaf-300: #ffd374;
+  --color-amber-leaf-200: #ffe8b1;
+  --color-amber-leaf-100: #fff4d8;
+  --color-amber-leaf-50: #fffaef;
+
+  /* ============================================================
+     四、辅助色 —— 只用于分类识别
+     ------------------------------------------------------------
+     v2 的问题是这些颜色太亮太"糖果"，v3 又压得太灰。
+     v4 取中间：色相认得出来，但绝不抢主色。
+     ============================================================ */
+
+  /* 雾蓝 —— 日记 / 水 */
+  --color-mist-50: #f4f9fb;
+  --color-mist-100: #e9f4f8;
+  --color-mist-200: #d0e8f0;
+  --color-mist-300: #a4d2e1;
+  --color-mist-400: #69b0c7;
+  --color-mist-500: #3789a2;
+  --color-mist-600: #276b83;
+
+  /* 苔紫 —— 星海 / 传说 */
+  --color-moss-50: #f7f5fb;
+  --color-moss-100: #f2ecf9;
+  --color-moss-200: #e2d8f1;
+  --color-moss-300: #c2afde;
+  --color-moss-400: #977bc2;
+  --color-moss-500: #6b4d9c;
+  --color-moss-600: #52387c;
+
+  /* 陶土 —— 温度 / 人情 */
+  --color-clay-50: #fef6f1;
+  --color-clay-100: #fdede3;
+  --color-clay-200: #fad9c4;
+  --color-clay-300: #f0b48f;
+  --color-clay-400: #db8451;
+  --color-clay-500: #b45a26;
+  --color-clay-600: #8c451c;
+
+  /* ---- 语义色（从主色系里取，不额外引入）---- */
+  --color-success: #10a368;
+  --color-warn: #ec9e06;
+  --color-danger: #a8503f;
+  --color-info: #3789a2;
+
+  /* ============================================================
+     五、稀有度 —— 卡片用
+     ------------------------------------------------------------
+     五档必须能一眼分辨，但整体仍然克制。
+     传说用金 + 一点粉，是全局唯一允许"跳"出来的颜色。
+     ============================================================ */
+
+  --color-rarity-common: #8b958d;
+  --color-rarity-fine: #10a368;
+  --color-rarity-rare: #3789a2;
+  --color-rarity-epic: #6b4d9c;
+  --color-rarity-legend: #ec9e06;
+
+  /* ============================================================
+     六、字体
+     ------------------------------------------------------------
+     全部系统字体。离线 / APK 场景下外链字体会拖慢首屏并产生网络错误。
+     ============================================================ */
+
+  --font-display:
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', 'Segoe UI',
+    system-ui, sans-serif;
+  --font-body:
+    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei', 'Segoe UI',
+    system-ui, sans-serif;
+  /* 作文正文 / 诗句：衬线，给孩子"在写作"的仪式感 */
+  --font-prose: 'Kaiti SC', 'STKaiti', 'KaiTi', 'Songti SC', 'SimSun', Georgia, serif;
+
+  /* ============================================================
+     七、字号阶梯
+     ------------------------------------------------------------
+     模数 1.2 左右。v2 的问题是 11-38px 跨度过大、大量 11px 小字，
+     既显廉价又伤眼。这里收紧到 12-40px，且最小字号提到 12px。
+     ============================================================ */
+
+  --text-2xs: 0.75rem; /* 12px 最小，仅用于标签 */
+  --text-xs: 0.8125rem; /* 13px 辅助 */
+  --text-sm: 0.875rem; /* 14px 次要正文 */
+  --text-base: 0.9375rem; /* 15px 正文 */
+  --text-lg: 1.0625rem; /* 17px 强调 */
+  --text-xl: 1.25rem; /* 20px 小标题 */
+  --text-2xl: 1.5rem; /* 24px 标题 */
+  --text-3xl: 1.875rem; /* 30px 页面主标题 */
+  --text-4xl: 2.5rem; /* 40px 数字 */
+
+  /* ============================================================
+     八、圆角
+     ------------------------------------------------------------
+     v2 用 20px 大圆角 —— 那是"幼稚感"的第二个来源。
+     这里收到 14px 上限，大面板才用 18px。
+     ============================================================ */
+
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.125rem;
+  --radius-card: 0.875rem;
+  --radius-panel: 1.125rem;
+  --radius-btn: 0.625rem;
+  --radius-pill: 999px;
+
+  /* ============================================================
+     九、投影
+     ------------------------------------------------------------
+     只做"极轻浮起"。硬边投影 + 粗描边 = 卡通，绝对不能出现。
+     ============================================================ */
+
+  --shadow-tier-1: 0 1px 2px rgb(18 23 20 / 0.04);
+  --shadow-tier-2: 0 1px 2px rgb(18 23 20 / 0.04), 0 4px 12px -6px rgb(18 23 20 / 0.1);
+  --shadow-tier-3: 0 2px 4px rgb(18 23 20 / 0.05), 0 14px 32px -14px rgb(18 23 20 / 0.18);
+  --shadow-tier-4: 0 4px 8px rgb(18 23 20 / 0.06), 0 28px 60px -24px rgb(18 23 20 / 0.26);
+  --shadow-glow-amber: 0 0 0 3px rgb(236 158 6 / 0.18), 0 0 20px 1px rgb(236 158 6 / 0.26);
+  --shadow-glow-leaf: 0 0 0 3px rgb(16 163 104 / 0.16), 0 0 20px 1px rgb(16 163 104 / 0.22);
+
+  /* 发丝边线 —— v3 的基本功。比 v2 的 border-4 精致一个量级 */
+  --hair: inset 0 0 0 1px rgb(18 23 20 / 0.07);
+  --hair-strong: inset 0 0 0 1px rgb(18 23 20 / 0.12);
+  --hair-leaf: inset 0 0 0 1px rgb(16 163 104 / 0.22);
+  --hair-amber: inset 0 0 0 1px rgb(236 158 6 / 0.28);
+  --hair-light: inset 0 0 0 1px rgb(255 255 255 / 0.1);
+  --hair-light-strong: inset 0 0 0 1px rgb(255 255 255 / 0.18);
+
+  /* ============================================================
+     十、墨夜世界（深色沉浸场景）的专用令牌
+     ============================================================ */
+
+  --color-night-bg: #101a16;
+  --color-night-bg-2: #16241d;
+  --color-night-surface: #1b2b23;
+  --color-night-surface-2: #213429;
+  --color-night-line: rgb(255 255 255 / 0.08);
+  --color-night-line-strong: rgb(255 255 255 / 0.14);
+  --color-night-text: #eef2ee;
+  --color-night-text-2: #a9b8ae;
+  --color-night-text-3: #74857a;
+
+  /* ============================================================
+     十一、动效
+     ------------------------------------------------------------
+     短、克制、不弹跳。奖励场景（出卡 / 升级）唯一允许夸张。
+     ============================================================ */
+
+  --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  --ease-pop: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --ease-spring: cubic-bezier(0.16, 1.02, 0.28, 1);
+}
+
+/* ============================================================
+   全局基础
+   ============================================================ */
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    background-color: var(--color-paper);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    color: var(--color-ink-900);
+    background-color: var(--color-paper);
+    /* 纸感：三层极淡的光，营造纵深但不抢内容。
+       v4 跟着纸底一起提亮，并让绿色的那一侧更明显一点。 */
+    background-image:
+      radial-gradient(110% 60% at 8% -6%, rgb(168 238 202 / 0.55) 0, transparent 62%),
+      radial-gradient(90% 50% at 98% 0%, rgb(255 212 116 / 0.42) 0, transparent 58%);
+    background-attachment: fixed;
+    overscroll-behavior-y: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+  }
+
+  button {
+    touch-action: manipulation;
+    cursor: pointer;
+  }
+
+  /* 焦点环：清楚但不脏 */
+  :focus-visible {
+    outline: 2px solid var(--color-inkleaf-500);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* 滚动条：浅色场景下不要粗黑条 */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(18 23 20 / 0.14);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ============================================================
+   面（Surface）
+   ------------------------------------------------------------
+   v3 的核心：面靠"极轻投影 + 发丝边线"分离，
+   不靠粗描边，也不靠大圆角。
+   ============================================================ */
+
+/** 一级面：白纸卡片，最常用 */
+@utility surface {
+  border-radius: var(--radius-card);
+  background: #fff;
+  box-shadow: var(--hair), var(--shadow-tier-2);
+}
+
+/** 二级面：带一点纸色，用来做分组容器 */
+@utility surface-2 {
+  border-radius: var(--radius-card);
+  background: var(--color-paper-2);
+  box-shadow: var(--hair);
+}
+
+/** 三级面：沉入式，用于输入区 / 轨道 */
+@utility surface-sunken {
+  border-radius: var(--radius-md);
+  background: var(--color-ink-50);
+  box-shadow: inset 0 0 0 1px rgb(18 23 20 / 0.05);
+}
+
+/** 强调面：主色淡底 */
+@utility surface-accent {
+  border-radius: var(--radius-card);
+  background: var(--color-inkleaf-50);
+  box-shadow: var(--hair-leaf);
+}
+
+/** 奖励面：琥珀淡底 */
+@utility surface-reward {
+  border-radius: var(--radius-card);
+  background: var(--color-amber-leaf-50);
+  box-shadow: var(--hair-amber);
+}
+
+/** 大面板：允许更大圆角与更深投影 */
+@utility panel {
+  border-radius: var(--radius-panel);
+  background: #fff;
+  box-shadow: var(--hair), var(--shadow-tier-3);
+}
+
+/** 纯发丝边线的容器，无投影 */
+@utility hair {
+  box-shadow: var(--hair);
+}
+@utility hair-strong {
+  box-shadow: var(--hair-strong);
+}
+
+/* ============================================================
+   墨夜世界 —— .scene-ink
+   ------------------------------------------------------------
+   套在容器上，整个子树切到深色沉浸语言。
+   写作文、树洞、夜晚地图都用它。
+   ============================================================ */
+
+@utility scene-ink {
+  background: linear-gradient(180deg, var(--color-night-bg) 0%, var(--color-night-bg-2) 100%);
+  color: var(--color-night-text);
+}
+
+/** 墨夜中的面 */
+@utility surface-ink {
+  border-radius: var(--radius-card);
+  background: var(--color-night-surface);
+  box-shadow: var(--hair-light);
+}
+
+@utility surface-ink-2 {
+  border-radius: var(--radius-card);
+  background: var(--color-night-surface-2);
+  box-shadow: var(--hair-light);
+}
+
+/** 墨夜中的沉入面（写作纸面） */
+@utility surface-ink-sunken {
+  border-radius: var(--radius-md);
+  background: rgb(0 0 0 / 0.22);
+  box-shadow: var(--hair-light);
+}
+
+/* ============================================================
+   按钮
+   ------------------------------------------------------------
+   v3 按钮不用投影表达可点 —— 靠色块 + 按压反馈，
+   这是"扁平"与"卡通"的分水岭。
+   ============================================================ */
+
+@utility btn-base {
+  position: relative;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition:
+    transform 0.14s var(--ease-out-soft),
+    background-color 0.16s ease,
+    box-shadow 0.16s ease,
+    opacity 0.16s ease;
+  user-select: none;
+}
+
+/** 按下：轻微下沉 + 压暗 */
+@utility btn-press {
+  transform: scale(0.975);
+  filter: brightness(0.96);
+}
+
+/** 主行动按钮 */
+@utility btn-primary {
+  background: var(--color-inkleaf-600);
+  color: #fff;
+  box-shadow: 0 1px 2px rgb(9 71 46 / 0.2), 0 8px 20px -10px rgb(9 71 46 / 0.5);
+}
+
+/**
+ * 奖励按钮
+ *
+ * ⚠️ 这里是**深字压金底**，不是白字。
+ *    白字压这个亮度只有 1.7:1，远低于 4.5:1 的底线，根本看不清
+ *    （v3 就是这个毛病，一直没人发现）。深棕字是 7.2:1。
+ *    顺带也更像"奖励"—— 金色本来就该配深字。
+ */
+@utility btn-reward {
+  background: var(--color-amber-leaf-400);
+  color: var(--color-amber-leaf-800);
+  box-shadow: 0 1px 2px rgb(137 87 0 / 0.22), 0 8px 20px -10px rgb(137 87 0 / 0.5);
+}
+
+/** 次级按钮：白底 + 发丝边 */
+@utility btn-ghost {
+  background: #fff;
+  color: var(--color-ink-800);
+  box-shadow: var(--hair-strong);
+}
+
+/** 墨夜世界的按钮 */
+@utility btn-ink {
+  background: rgb(255 255 255 / 0.07);
+  color: var(--color-night-text);
+  box-shadow: var(--hair-light);
+}
+
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 兼容 v2 类名 —— 旧组件仍在引用，统一映射到新语言 */
+@utility btn-3d {
+  position: relative;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-display);
+  font-weight: 600;
+  transition:
+    transform 0.14s var(--ease-out-soft),
+    background-color 0.16s ease,
+    box-shadow 0.16s ease;
+  user-select: none;
+}
+@utility btn-3d-press {
+  transform: scale(0.975);
+  filter: brightness(0.96);
+}
+@utility card-cartoon {
+  border-radius: var(--radius-card);
+  background: #fff;
+  box-shadow: var(--hair), var(--shadow-tier-2);
+}
+@utility card-paper {
+  border-radius: var(--radius-card);
+  background: var(--color-paper);
+  box-shadow: var(--hair), var(--shadow-tier-2);
+}
+@utility text-outlined {
+  text-shadow: 0 1px 2px rgb(18 23 20 / 0.16);
+}
+@utility focus-vignette {
+  box-shadow: inset 0 0 100px 30px rgb(0 0 0 / 0.24);
+}
+
+/* ============================================================
+   写作纸面 —— 稿纸
+   ------------------------------------------------------------
+   深色场景：淡横线 + 四周压暗，把注意力收进中间。
+   这是沉浸感最重要的一个细节。
+   ============================================================ */
+
+@utility paper-sheet {
+  background-color: var(--color-night-bg-2);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2.4rem,
+    rgb(255 255 255 / 0.055) 2.4rem,
+    rgb(255 255 255 / 0.055) calc(2.4rem + 1px)
+  );
+  background-position: 0 0.4rem;
+}
+
+/** 浅色稿纸（用于回顾 / 阅读已完成的作文） */
+@utility paper-sheet-light {
+  background-color: #fffdf9;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2.4rem,
+    rgb(18 23 20 / 0.045) 2.4rem,
+    rgb(18 23 20 / 0.045) calc(2.4rem + 1px)
+  );
+  background-position: 0 0.4rem;
+}
+
+/* ============================================================
+   动画
+   ============================================================ */
+
+@keyframes kf-pop {
+  0% {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes kf-rise-in {
+  0% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes kf-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes kf-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes kf-sway {
+  0%,
+  100% {
+    transform: rotate(-1.8deg);
+  }
+  50% {
+    transform: rotate(1.8deg);
+  }
+}
+
+@keyframes kf-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes kf-sparkle {
+  0%,
+  100% {
+    transform: scale(0.7) rotate(0deg);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.1) rotate(140deg);
+    opacity: 1;
+  }
+}
+
+@keyframes kf-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  22% {
+    transform: translateX(-5px);
+  }
+  44% {
+    transform: translateX(5px);
+  }
+  66% {
+    transform: translateX(-3px);
+  }
+  88% {
+    transform: translateX(3px);
+  }
+}
+
+/* 卡片掉落 —— 唯一允许夸张的地方 */
+@keyframes kf-card-drop {
+  0% {
+    transform: translateY(-90px) rotate(-12deg) scale(0.66);
+    opacity: 0;
+  }
+  62% {
+    transform: translateY(5px) rotate(2deg) scale(1.03);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes kf-shockwave {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(2.3);
+    opacity: 0;
+  }
+}
+
+@keyframes kf-pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  100% {
+    transform: scale(1.85);
+    opacity: 0;
+  }
+}
+
+@keyframes kf-rise {
+  0% {
+    transform: translateY(0) scale(0.85);
+    opacity: 0;
+  }
+  22% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-52px) scale(1.05);
+    opacity: 0;
+  }
+}
+
+@keyframes kf-flap {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(2deg);
+  }
+}
+
+/* 鸟飞过屏幕 */
+@keyframes kf-fly-across {
+  0% {
+    transform: translateX(-10vw) translateY(0) scale(0.9);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(110vw) translateY(-24px) scale(1.05);
+    opacity: 0;
+  }
+}
+
+@keyframes kf-grow {
+  from {
+    transform: scaleY(0.24);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes kf-shimmer {
+  0% {
+    background-position: -180% 0;
+  }
+  100% {
+    background-position: 180% 0;
+  }
+}
+
+/* 信封 / 产出物挂在树上的轻微晃动 */
+@keyframes kf-dangle {
+  0%,
+  100% {
+    transform: rotate(-4deg) translateY(0);
+  }
+  50% {
+    transform: rotate(4deg) translateY(-3px);
+  }
+}
+
+/** 墨夜场景的「四周压暗」——进入写作时轻轻收拢视野 */
+@keyframes kf-vignette-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@utility anim-pop {
+  animation: kf-pop 0.22s var(--ease-out-soft) both;
+}
+@utility anim-rise-in {
+  animation: kf-rise-in 0.3s var(--ease-out-soft) both;
+}
+@utility anim-fade-in {
+  animation: kf-fade-in 0.24s ease-out both;
+}
+@utility anim-float {
+  animation: kf-float 3.6s ease-in-out infinite;
+}
+@utility anim-sway {
+  animation: kf-sway 4.6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+@utility anim-breathe {
+  animation: kf-breathe 3.2s ease-in-out infinite;
+}
+@utility anim-sparkle {
+  animation: kf-sparkle 2.2s ease-in-out infinite;
+}
+@utility anim-shake {
+  animation: kf-shake 0.4s ease-in-out both;
+}
+@utility anim-card-drop {
+  animation: kf-card-drop 0.68s var(--ease-pop) both;
+}
+@utility anim-shockwave {
+  animation: kf-shockwave 0.66s ease-out both;
+}
+@utility anim-pulse-ring {
+  animation: kf-pulse-ring 1.7s ease-out infinite;
+}
+@utility anim-rise {
+  animation: kf-rise 2.6s ease-out infinite;
+}
+@utility anim-flap {
+  animation: kf-flap 2.3s ease-in-out infinite;
+}
+@utility anim-fly-across {
+  animation: kf-fly-across 9s linear infinite;
+}
+@utility anim-grow {
+  animation: kf-grow 0.8s var(--ease-pop) both;
+  transform-origin: bottom center;
+}
+@utility anim-dangle {
+  animation: kf-dangle 3.4s ease-in-out infinite;
+  transform-origin: top center;
+}
+@utility anim-vignette {
+  animation: kf-vignette-in 0.5s ease-out both;
+}
+
+/* 传说卡流光 */
+@utility anim-shimmer {
+  background-image: linear-gradient(
+    100deg,
+    transparent 25%,
+    rgb(255 255 255 / 0.5) 47%,
+    transparent 68%
+  );
+  background-size: 200% 100%;
+  animation: kf-shimmer 2.8s linear infinite;
+}
+
+@utility delay-1 {
+  animation-delay: 0.06s;
+}
+@utility delay-2 {
+  animation-delay: 0.12s;
+}
+@utility delay-3 {
+  animation-delay: 0.18s;
+}
+@utility delay-4 {
+  animation-delay: 0.24s;
+}
+@utility delay-5 {
+  animation-delay: 0.3s;
+}
+@utility delay-6 {
+  animation-delay: 0.36s;
+}
+
+/* ============================================================
+   安全区
+   ============================================================ */
+
+@utility pt-safe {
+  padding-top: max(0.5rem, env(safe-area-inset-top));
+}
+@utility pb-safe {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+@utility mb-safe {
+  margin-bottom: env(safe-area-inset-bottom);
+}

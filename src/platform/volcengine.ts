@@ -1,0 +1,606 @@
+/* ============================================================
+   火山引擎 · 流式语音识别（WebSocket v3 二进制协议）
+   ============================================================
+
+   和 platform/transcribe.ts 那条路的关系：
+
+     transcribe.ts   **整包上传** —— 录完 → 传整段 → 等结果。
+                     松手之后音频才开始往服务端走。
+     本文件          **边说边传** —— 孩子还在说，音频已经一段段过去了。
+                     松手时服务端手里已经有全部音频，只剩收尾。
+
+   实测（同一段 5.44 秒人声，scripts/_probe-volcengine-stream.mjs）：
+     整包上传（硅基流动）        松手→出字  419ms
+     整包上传（火山录音文件识别） 松手→出字 2078ms   ← 更慢，别用
+     火山单向流式 nostream      松手→出字  348ms
+     火山双向流式 duplex        松手→出字 −4371ms  ← 首字在开口 1.1 秒时就上屏
+   所以这里默认用 **duplex**：只有它是质变，其余只是把上传挪走而已。
+
+   ------------------------------------------------------------
+   帧格式（v3，整数一律**大端**）
+   ------------------------------------------------------------
+     [4字节 header] [4字节 payload 长度] [payload]
+       （带 sequence 标志时，长度字段前面还插 4 字节序号 —— 这里不用序号）
+
+     header[0] = (版本 1 << 4) | 1        → 0x11
+     header[1] = (消息类型 << 4) | 类型标志
+     header[2] = (序列化 << 4) | 压缩      → JSON 请求用 0x10
+     header[3] = 0
+
+     ★ 会话结束靠**类型标志位**（0b0010），不是某个 finish 事件。
+       忘了设，服务端会一直等你发音频 —— 表现成
+       「连上了、也发了、就是没结果」，很容易误判成服务不可用。
+
+   ★ 鉴权走 HTTP 握手头，浏览器设不了 → socket 交给原生插件
+     （见 ws-transport.ts 顶部说明）。
+   ============================================================ */
+
+import { connectWs, type WsTransport } from './ws-transport'
+import { voiceDiag, clip } from './voice-log'
+
+/* ---------------- 端点 ---------------- */
+
+export type VolcEndpoint = 'duplex' | 'nostream' | 'async'
+
+export const VOLC_ENDPOINTS: Record<VolcEndpoint, { url: string; label: string; note: string }> = {
+  duplex: {
+    url: 'wss://openspeech.bytedance.com/api/v3/sauc/bigmodel',
+    label: '双向流式（边说边出字）',
+    note: '推荐：文字在孩子说话时就上屏，松手几乎不用等',
+  },
+  nostream: {
+    url: 'wss://openspeech.bytedance.com/api/v3/sauc/bigmodel_nostream',
+    label: '单向流式（整句返回）',
+    note: '准确率略高，但说完才出字，快得有限',
+  },
+  async: {
+    url: 'wss://openspeech.bytedance.com/api/v3/sauc/bigmodel_async',
+    label: '双向流式·优化版',
+    note: '仅在结果变化时下发，包更少',
+  },
+}
+
+/** 流式识别和录音文件识别是**两套资源**，ID 不能混用 */
+export const VOLC_DEFAULT_RESOURCE = 'volc.seedasr.sauc.duration'
+
+/**
+ * 生成一个随机 UUID（给 X-Api-Request-Id / X-Api-Connect-Id 用）。
+ *
+ * ⚠️ 不能直接用 `crypto.randomUUID()`：它要 Chrome 92+，
+ *    而且只在**安全上下文**里才有。国行机（尤其没装 Google 服务的华为）
+ *    WebView 版本可能很旧 —— 那时候 randomUUID 是 undefined，
+ *    直接调用会在按下麦克风的瞬间抛异常，表现成"按住没反应"。
+ *    服务端只要求这个值随机且唯一，不校验 UUID 版本，所以退回手工拼一个就行。
+ */
+function uuid(): string {
+  const c = globalThis.crypto as Crypto | undefined
+  if (c && typeof c.randomUUID === 'function') {
+    try {
+      return c.randomUUID()
+    } catch {
+      /* 非安全上下文会抛，落到下面的手工实现 */
+    }
+  }
+  const bytes = new Uint8Array(16)
+  if (c && typeof c.getRandomValues === 'function') c.getRandomValues(bytes)
+  else for (let i = 0; i < 16; i++) bytes[i] = Math.floor(Math.random() * 256)
+  bytes[6] = (bytes[6] & 0x0f) | 0x40 // 版本 4
+  bytes[8] = (bytes[8] & 0x3f) | 0x80 // variant
+  const hex = Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('')
+  return `${hex.slice(0, 8)}-${hex.slice(8, 12)}-${hex.slice(12, 16)}-${hex.slice(16, 20)}-${hex.slice(20)}`
+}
+
+/**
+ * 配置里的 model 字段在流式这条路上被复用成「选哪个端点」。
+ *
+ * 为什么复用：设置页已经有一个 model 输入框，再单独加一个"端点"下拉
+ * 对家长是纯粹的认知负担 —— 而这三个值本来也就是三种模型形态。
+ * 认不出来就回落到 duplex（唯一一个真正省时间的）。
+ */
+export function resolveEndpoint(model: string | undefined): VolcEndpoint {
+  return model === 'nostream' || model === 'async' || model === 'duplex' ? model : 'duplex'
+}
+
+/* ---------------- 帧常量 ---------------- */
+
+const MSG_FULL_REQUEST = 1
+const MSG_AUDIO_ONLY = 2
+// 9 = full server response（识别结果）、15 = error。响应侧只按 payload 处理，
+// 所以只有 error 需要单独认 —— 它的帧布局和普通帧不一样。
+const MSG_ERROR = 15
+
+const FLAG_NONE = 0b0000
+const FLAG_POS_SEQ = 0b0001
+/** 最后一包 —— 会话的结束信号 */
+const FLAG_LAST = 0b0010
+
+export interface ParsedFrame {
+  messageType: number
+  flags: number
+  sequence: number | null
+  payload: Uint8Array
+  /** 仅 error 帧有 */
+  errorCode?: number
+  errorText?: string
+}
+
+/**
+ * 组装一帧。
+ *
+ * 只在需要序号时才插那 4 个字节 —— 无条件插会**整体错位**，
+ * 服务端读到的是错位的长度字段，报的错完全指不到这里。
+ */
+export function buildFrame(opts: {
+  messageType: number
+  flags?: number
+  serialization?: number
+  payload?: Uint8Array
+  sequence?: number | null
+}): Uint8Array {
+  const { messageType, flags = FLAG_NONE, serialization = 0, payload = new Uint8Array(0), sequence = null } = opts
+  const hasSeq = (flags & FLAG_POS_SEQ) !== 0
+  const head = 4 + (hasSeq ? 4 : 0) + 4
+  const out = new Uint8Array(head + payload.length)
+  const view = new DataView(out.buffer)
+
+  out[0] = (1 << 4) | 1 // 版本 1，header 长度 1×4 = 4 字节
+  out[1] = ((messageType << 4) | flags) & 0xff
+  out[2] = ((serialization << 4) | 0) & 0xff
+  out[3] = 0
+
+  let pos = 4
+  if (hasSeq) {
+    view.setInt32(pos, sequence ?? 0)
+    pos += 4
+  }
+  view.setUint32(pos, payload.length)
+  pos += 4
+  out.set(payload, pos)
+  return out
+}
+
+/** 解析一帧。error 帧的布局和普通帧**不一样**，要分开处理 */
+export function parseFrame(buf: Uint8Array): ParsedFrame | null {
+  if (buf.length < 4) return null
+  const view = new DataView(buf.buffer, buf.byteOffset, buf.byteLength)
+  const headerSize = (buf[0] & 0x0f) * 4
+  const messageType = buf[1] >> 4
+  const flags = buf[1] & 0x0f
+  let pos = headerSize
+
+  if (messageType === MSG_ERROR) {
+    if (buf.length < pos + 8) return null
+    const errorCode = view.getUint32(pos)
+    const size = view.getUint32(pos + 4)
+    const text = buf.subarray(pos + 8, Math.min(pos + 8 + size, buf.length))
+    return {
+      messageType,
+      flags,
+      sequence: null,
+      payload: new Uint8Array(0),
+      errorCode,
+      errorText: new TextDecoder().decode(text),
+    }
+  }
+
+  let sequence: number | null = null
+  if (flags & FLAG_POS_SEQ) {
+    if (buf.length < pos + 4) return null
+    sequence = view.getInt32(pos)
+    pos += 4
+  }
+  if (buf.length < pos + 4) return null
+  const size = view.getUint32(pos)
+  pos += 4
+  return { messageType, flags, sequence, payload: buf.subarray(pos, Math.min(pos + size, buf.length)) }
+}
+
+/**
+ * 从响应体里取识别文本。
+ *
+ * ★ 文档和线上报文**不一致**，所以两种都认。
+ *   官方示例写的是 `{ payload_msg: { result: { text } } }`，
+ *   但线上真实报文**没有 payload_msg 这层信封**：
+ *     { audio_info: {...}, result: { additions: {...}, text: "..." } }
+ *   只按文档写，会静默拿到空字符串 —— 表现是"帧都收到了、就是没文本"，
+ *   特别容易误判成服务不可用。（第一次跑探针就踩了，见探针注释。）
+ *   另外 result 在不同端点上可能是 object 也可能是 list，一并兼容。
+ */
+export function extractText(body: unknown): string {
+  const outer = body as { payload_msg?: unknown; result?: unknown } | null
+  if (!outer) return ''
+  // 线上报文没有这层信封，但文档里有 —— 两种都认
+  const inner = (outer.payload_msg ?? outer) as { result?: unknown } | null
+  const r = inner?.result
+  if (r && typeof r === 'object') {
+    const one = r as { text?: unknown }
+    if (typeof one.text === 'string') return one.text
+    if (Array.isArray(r) && r.length > 0) {
+      const first = r[0] as { text?: unknown } | undefined
+      if (typeof first?.text === 'string') return first.text
+    }
+  }
+  return ''
+}
+
+/** 这一帧是不是终稿 */
+export function isFinalFrame(frame: ParsedFrame, msg: { is_last_package?: unknown } | null): boolean {
+  if (msg?.is_last_package === true) return true
+  return (frame.flags & FLAG_LAST) !== 0
+}
+
+/* ---------------- 会话 ---------------- */
+
+export interface VolcStreamConfig {
+  apiKey: string
+  resourceId?: string
+  endpoint?: VolcEndpoint
+  /** 采样率，默认 16000 */
+  rate?: number
+}
+
+export interface VolcHandlers {
+  /** 中间结果（边说边出字）。单向流式不会有 */
+  onInterim?: (text: string) => void
+  /** 已经连上、可以开始喂音频 */
+  onOpen?: () => void
+}
+
+export interface VolcStream {
+  /** 喂一段 PCM（16-bit 小端单声道）。socket 还没开就先攒着 */
+  pushAudio: (bytes: Uint8Array) => void
+  /** 结束：发最后一包，等终稿 */
+  finish: () => Promise<VolcStreamResult>
+  /** 主动放弃，不要结果 */
+  cancel: () => void
+}
+
+export type VolcStreamResult =
+  | { ok: true; text: string; ms: number }
+  | { ok: false; reason: 'auth' | 'network' | 'empty' | 'server' | 'not-configured'; message: string }
+
+/** 终稿最多等多久。音频已经发完了，这里只等收尾，给足 20 秒就够 */
+const FINISH_TIMEOUT_MS = 20_000
+
+/**
+ * 设置页的「测试连接」—— 流式版。
+ *
+ * 只做**握手**，不发音频，因为：
+ *   · 密钥对不对，在 HTTP 升级那一步就决定了（错的密钥直接 403，实测过）；
+ *   · 发音频需要真实的麦克风流，设置页拿不到，也没必要。
+ *
+ * 所以这个测试回答的正是家长唯一关心的那个问题：
+ * 「地址 / 密钥 / 资源开通了没有」。而不是识别准不准。
+ */
+export async function testVolcConnection(
+  cfg: VolcStreamConfig,
+): Promise<{ ok: boolean; message: string; ms?: number }> {
+  if (!cfg.apiKey?.trim()) {
+    return { ok: false, message: '请先填入密钥' }
+  }
+  const endpoint = cfg.endpoint ?? 'duplex'
+  const resourceId = cfg.resourceId?.trim() || VOLC_DEFAULT_RESOURCE
+  const t0 = Date.now()
+
+  try {
+    const transport = await connectWs(
+      VOLC_ENDPOINTS[endpoint].url,
+      {
+        'X-Api-Key': cfg.apiKey.trim(),
+        'X-Api-Resource-Id': resourceId,
+        'X-Api-Request-Id': uuid(),
+        'X-Api-Connect-Id': uuid(),
+      },
+      { onOpen: () => {}, onMessage: () => {}, onError: () => {}, onClose: () => {} },
+    )
+    const ms = Date.now() - t0
+    transport.close()
+    voiceDiag('流式测试连接成功', { endpoint, resourceId, ms })
+    return { ok: true, message: '连接成功，语音服务可用', ms }
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err)
+    voiceDiag('流式测试连接失败', { message })
+    if (/40[13]|unauthor|forbidden|denied/i.test(message)) {
+      return {
+        ok: false,
+        message: '密钥不对，或者这个账号没开通「流式语音识别」服务',
+      }
+    }
+    return { ok: false, message: `连不上：${message.slice(0, 120)}` }
+  }
+}
+
+export async function openVolcStream(
+  cfg: VolcStreamConfig,
+  handlers: VolcHandlers = {},
+): Promise<VolcStream> {
+  const endpoint = cfg.endpoint ?? 'duplex'
+  const url = VOLC_ENDPOINTS[endpoint].url
+  const resourceId = cfg.resourceId?.trim() || VOLC_DEFAULT_RESOURCE
+  const rate = cfg.rate ?? 16_000
+  const t0 = Date.now()
+
+  let transport: WsTransport | null = null
+  let opened = false
+  let finished = false
+  let cancelled = false
+  let lastText = ''
+  let firstTextAt: number | null = null
+  /**
+   * 松手时 socket 还没 open 的情况。
+   *
+   * ★ 这是个**真实的窄窗口**，不是理论问题：原生插件是在 onOpen 里才
+   *   resolve connect 的，而 `open` 事件是紧接着**另外发**的一条消息。
+   *   两条消息到 JS 侧的先后顺序没有保证 —— 所以存在"连接已算成功、
+   *   但 opened 还是 false"的一小段。
+   *   这段里松手的话，finish() 当时没东西可发，只能记下这个意图，
+   *   等 onOpen 时补发最后一包。不补的话服务端会一直等音频，
+   *   表现成**用户白等满 20 秒然后报超时**（音频其实早就到了）。
+   */
+  let finishRequested = false
+  /** 最后一包只能发一次 —— finish() 可能被调两遍（松手 + 卸载） */
+  let lastPacketSent = false
+
+  /** socket 还没开时先攒着 —— 孩子可能按下的瞬间就说话，比连接还早 */
+  const pending: Uint8Array[] = []
+
+  /**
+   * 出站缓冲 —— transport 还没赋值时先接住。
+   *
+   * ★ 为什么需要：`onOpen` 事件**有可能比 connect 的 resolve 更早**
+   *   到达 JS 侧（插件里是先 `c.resolve()`、再 `emit("open")`，
+   *   两条是各自独立的桥消息，先后没有保证）。
+   *   那一刻 `transport` 还是 null，sendConfig 就会发了个寂寞 ——
+   *   而配置帧里写着音频格式（pcm/16k/单声道），丢了服务端根本
+   *   不知道我们发的是什么，报的错也指不到这里。
+   *   有了这个缓冲，两种时序都对。
+   */
+  const outbox: Uint8Array[] = []
+
+  let settle: ((r: VolcStreamResult) => void) | null = null
+  const result = new Promise<VolcStreamResult>((resolve) => {
+    settle = resolve
+  })
+  let timer: ReturnType<typeof setTimeout> | null = null
+
+  const done = (r: VolcStreamResult) => {
+    if (finished) return
+    finished = true
+    if (timer) clearTimeout(timer)
+    timer = null
+    try {
+      transport?.close()
+    } catch {
+      /* 已经断了 */
+    }
+    settle?.(r)
+  }
+
+  const sendFrame = (bytes: Uint8Array) => {
+    // transport 还没赋值就先攒着 —— 见下面「出站缓冲」那段说明
+    if (!transport) {
+      outbox.push(bytes)
+      return
+    }
+    transport.send(bytes)
+  }
+
+  let configSent = false
+
+  const sendConfig = () => {
+    if (configSent) return
+    configSent = true
+    const config = {
+      user: { uid: 'little-writer-forest' },
+      audio: { format: 'pcm', codec: 'raw', rate, bits: 16, channel: 1 },
+      request: {
+        model_name: 'bigmodel',
+        enable_itn: true,
+        enable_punc: true,
+        enable_ddc: false,
+        show_utterances: false,
+      },
+    }
+    sendFrame(
+      buildFrame({
+        messageType: MSG_FULL_REQUEST,
+        serialization: 1, // JSON
+        payload: new TextEncoder().encode(JSON.stringify(config)),
+      }),
+    )
+  }
+
+  const flushPending = () => {
+    while (pending.length > 0) {
+      const chunk = pending.shift()
+      if (chunk) sendFrame(buildFrame({ messageType: MSG_AUDIO_ONLY, payload: chunk }))
+    }
+  }
+
+  /**
+   * 收尾：把攒下的音频发完，再发最后一包。
+   *
+   * ★ 最后一包：flags 置 0b0010。忘了设服务端会一直等音频，
+   *   表现成"连上了、也发了、就是没结果"。
+   *
+   * 用 lastPacketSent 兜住重复调用：finish() 有可能被调两次
+   * （松手 + 组件卸载），发两包结束信号服务端会当成协议错。
+   */
+  const sendLastPacket = () => {
+    if (lastPacketSent) return
+    lastPacketSent = true
+    flushPending()
+    sendFrame(buildFrame({ messageType: MSG_AUDIO_ONLY, flags: FLAG_LAST, payload: new Uint8Array(0) }))
+    voiceDiag('流式已发最后一包', { ms: Date.now() - t0 })
+  }
+
+  try {
+    const t = await connectWs(
+      url,
+      {
+        'X-Api-Key': cfg.apiKey.trim(),
+        'X-Api-Resource-Id': resourceId,
+        'X-Api-Request-Id': uuid(),
+        'X-Api-Connect-Id': uuid(),
+      },
+      {
+        onOpen: () => {
+          opened = true
+          voiceDiag('流式已连上', { endpoint, resourceId, ms: Date.now() - t0 })
+          sendConfig()
+          flushPending()
+          // 松手比这个事件还早的窄窗口 —— 见 finishRequested 的说明。
+          // 不补这一下，服务端会一直等音频，用户白等满 20 秒超时。
+          if (finishRequested) sendLastPacket()
+          handlers.onOpen?.()
+        },
+        onMessage: (bytes) => {
+          const frame = parseFrame(bytes)
+          if (!frame) return
+
+          if (frame.messageType === MSG_ERROR) {
+            voiceDiag('流式服务端错误帧', { code: frame.errorCode, text: frame.errorText?.slice(0, 160) })
+            done({
+              ok: false,
+              reason: 'server',
+              message: `语音服务拒绝了这次连接（${frame.errorCode ?? '?'}）${frame.errorText ? `：${frame.errorText.slice(0, 80)}` : ''}`,
+            })
+            return
+          }
+
+          let msg: { code?: number; message?: string; is_last_package?: unknown } | null = null
+          try {
+            msg = JSON.parse(new TextDecoder().decode(frame.payload))
+          } catch {
+            return // 空包 / 非 JSON，正常
+          }
+          if (!msg) return
+
+          if (msg.code && msg.code !== 0) {
+            voiceDiag('流式服务端返回错误码', { code: msg.code, message: msg.message })
+            done({ ok: false, reason: 'server', message: msg.message || `语音服务出错了（${msg.code}）` })
+            return
+          }
+
+          // 文档与线上不一致，两种信封 extractText 都认 —— 见它的说明
+          const text = extractText(msg)
+          if (text.length > 0 && text !== lastText) {
+            if (firstTextAt === null) firstTextAt = Date.now()
+            lastText = text
+            handlers.onInterim?.(text)
+          }
+
+          if (isFinalFrame(frame, msg)) {
+            const ms = Date.now() - t0
+            voiceDiag('流式终稿', {
+              ms,
+              首字ms: firstTextAt === null ? undefined : firstTextAt - t0,
+              字数: text.length,
+              文本: clip(text || lastText),
+            })
+            const finalText = text || lastText
+            if (!finalText) {
+              done({ ok: false, reason: 'empty', message: '没听清，再说一遍试试' })
+              return
+            }
+            done({ ok: true, text: finalText, ms })
+          }
+        },
+        onError: (message) => {
+          voiceDiag('流式连接出错', { message })
+          const auth = /40[13]|unauthor|forbidden|denied/i.test(message)
+          done({
+            ok: false,
+            reason: auth ? 'auth' : 'network',
+            message: auth
+              ? '语音服务的密钥不对或没开通，去家长管理里检查一下'
+              : '网络不太顺，检查下网络再试',
+          })
+        },
+        onClose: () => {
+          // 正常收尾是我们自己 close 的；没拿到终稿就被关掉才算异常
+          if (!finished) {
+            voiceDiag('流式被关闭但没拿到终稿', { ms: Date.now() - t0, 最后文本: clip(lastText) })
+            done(
+              lastText
+                ? { ok: true, text: lastText, ms: Date.now() - t0 }
+                : { ok: false, reason: 'network', message: '语音服务断开连接了，再试一次' },
+            )
+          }
+        },
+      },
+    )
+
+    /* transport 到位了：把 onOpen 抢跑时攒下的帧按**原顺序**补发。
+       （onOpen 有可能比这里更早到，那一刻 sendConfig 无 transport 可用 ——
+         见 outbox 的说明。不补就丢配置帧，而配置帧里写着音频格式。） */
+    transport = t
+    for (const f of outbox) t.send(f)
+    outbox.length = 0
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err)
+    voiceDiag('流式连不上', { message })
+    const auth = /40[13]|unauthor|forbidden|denied/i.test(message)
+    return {
+      pushAudio: () => {},
+      cancel: () => {},
+      finish: async () => ({
+        ok: false,
+        reason: auth ? 'auth' : 'network',
+        message: auth
+          ? '语音服务的密钥不对或没开通，去家长管理里检查一下'
+          : '连不上语音服务，检查下网络再试',
+      }),
+    }
+  }
+
+  return {
+    pushAudio: (bytes) => {
+      if (finished || cancelled) return
+      if (!opened) {
+        pending.push(bytes)
+        return
+      }
+      sendFrame(buildFrame({ messageType: MSG_AUDIO_ONLY, payload: bytes }))
+    },
+
+    finish: () => {
+      if (cancelled) {
+        return Promise.resolve<VolcStreamResult>({
+          ok: false,
+          reason: 'empty',
+          message: '这次不算，再说一次吧',
+        })
+      }
+      if (finished) return result
+      finishRequested = true
+
+      // ★ 最后一包：flags 置 0b0010。忘了设服务端会一直等音频，
+      //   表现成"连上了、也发了、就是没结果"。
+      //   还没 open 就先不发 —— onOpen 里会补上（见 finishRequested）。
+      if (opened) sendLastPacket()
+
+      timer = setTimeout(() => {
+        voiceDiag('流式终稿超时', { timeoutMs: FINISH_TIMEOUT_MS, 最后文本: clip(lastText) })
+        done(
+          lastText
+            ? { ok: true, text: lastText, ms: Date.now() - t0 }
+            : { ok: false, reason: 'network', message: '转写超时了，检查下网络' },
+        )
+      }, FINISH_TIMEOUT_MS)
+
+      return result
+    },
+
+    cancel: () => {
+      cancelled = true
+      if (timer) clearTimeout(timer)
+      timer = null
+      try {
+        transport?.close()
+      } catch {
+        /* 已经断了 */
+      }
+    },
+  }
+}

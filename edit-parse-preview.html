@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>改作文「理解不行」· 前后对照</title>
+<style>
+  :root{
+    --bg:#f7f8f7; --panel:#fff; --ink:#1c2320; --ink2:#4a554f; --ink3:#7b877f;
+    --line:#e3e7e4; --green:#0f6b45; --green-bg:#eaf5ef; --green-line:#bfe0cf;
+    --red:#a8402f; --red-bg:#fdf0ed; --red-line:#f0cec6;
+    --amber:#8a6412; --amber-bg:#fdf6e6; --amber-line:#eddcb4;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:15px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;}
+  .wrap{max-width:1000px;margin:0 auto;padding:40px 22px 80px}
+  h1{font-size:26px;line-height:1.35;margin:0 0 6px;letter-spacing:-.01em}
+  .sub{color:var(--ink3);font-size:13.5px;margin:0 0 30px}
+  h2{font-size:17px;margin:38px 0 12px;padding-top:22px;border-top:1px solid var(--line)}
+  h2:first-of-type{border-top:0;padding-top:0}
+  p{margin:10px 0}
+  code{font-family:var(--mono);font-size:12.5px;background:#eef1ef;padding:1px 5px;border-radius:4px}
+  .quote{background:var(--panel);border-left:3px solid var(--green);
+    border-radius:0 8px 8px 0;padding:14px 18px;margin:16px 0;color:var(--ink2);font-size:14px}
+  .quote b{color:var(--ink)}
+  table{width:100%;border-collapse:collapse;background:var(--panel);
+    border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:13.5px;margin:14px 0}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#f0f3f1;font-weight:650;font-size:12.5px;color:var(--ink2);white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+  td.say{font-weight:600;white-space:nowrap}
+  .bad{color:var(--red)}
+  .good{color:var(--green);font-weight:600}
+  .tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;
+    border:1px solid;font-weight:650;white-space:nowrap}
+  .tag.bad{background:var(--red-bg);border-color:var(--red-line)}
+  .tag.good{background:var(--green-bg);border-color:var(--green-line)}
+  .tag.warn{background:var(--amber-bg);border-color:var(--amber-line);color:var(--amber)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    padding:16px 18px;margin:14px 0}
+  .card h3{margin:0 0 8px;font-size:14.5px}
+  .card p{margin:6px 0;font-size:13.5px;color:var(--ink2)}
+  .why{background:var(--amber-bg);border:1px solid var(--amber-line);border-radius:10px;
+    padding:14px 18px;margin:14px 0;font-size:13.5px;color:#5d4711}
+  .why b{color:#3f3009}
+  .file{font-family:var(--mono);font-size:12px;color:var(--ink3)}
+  pre{background:#1e2622;color:#e6ece8;border-radius:8px;padding:13px 15px;overflow-x:auto;
+    font-family:var(--mono);font-size:12.5px;line-height:1.6;margin:10px 0}
+  pre .del{color:#f0a99a}
+  pre .add{color:#9fd8b8}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:720px){.grid{grid-template-columns:1fr}}
+  footer{margin-top:46px;padding-top:18px;border-top:1px solid var(--line);
+    color:var(--ink3);font-size:12.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>改作文「理解不行」—— 前后对照</h1>
+  <p class="sub">2026-09-20 · 小笔苗 · 两条报障都复现、都修好，下面每格都是**跑出来的**，不是推的</p>
+
+  <div class="quote">
+    <b>家长原话：</b>「我写了 <b>半大的小学生在操场上玩篮球。</b><br>
+    　我说 <b>把 操场后 加上快乐的 玩篮球</b>。<b>他搞了半天。</b><br>
+    　另外 我说 <b>把玩篮球后面的句号 改成叹号</b>。<b>始终不行。 理解不行。</b>」
+  </div>
+
+  <h2>一、修前 / 修后（同一篇正文，逐句实测）</h2>
+  <p>正文固定为 <code>半大的小学生在操场上玩篮球。</code>。
+     「修前」是把 5 处改动临时回退后跑出来的真实结果。</p>
+
+  <table>
+    <thead><tr><th>孩子这么说</th><th>修前</th><th>修后</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="say">把操场后加上快乐的</td>
+        <td class="bad">✗ 文中没有找到「<b>把</b>操场」，是不是记错了？</td>
+        <td class="good">半大的小学生在操场上<b>快乐的</b>玩篮球。</td>
+      </tr>
+      <tr>
+        <td class="say">操场后加上快乐的</td>
+        <td class="bad">半大的小学生在操场<b>快乐的</b>上玩篮球。</td>
+        <td class="good">半大的小学生在操场上<b>快乐的</b>玩篮球。</td>
+      </tr>
+      <tr>
+        <td class="say">把操场后加上快乐的玩篮球</td>
+        <td class="bad">✗ 文中没有找到「把操场」</td>
+        <td class="good">半大的小学生在操场上<b>快乐的</b>玩篮球。</td>
+      </tr>
+      <tr>
+        <td class="say">把操场上加上快乐的</td>
+        <td class="bad">✗ 没太听懂～</td>
+        <td class="good">半大的小学生在操场上<b>快乐的</b>玩篮球。</td>
+      </tr>
+      <tr>
+        <td class="say">在操场上加上快乐的</td>
+        <td class="bad">✗ 没太听懂～</td>
+        <td class="good">半大的小学生在操场上<b>快乐的</b>玩篮球。</td>
+      </tr>
+      <tr>
+        <td class="say">把玩篮球后面的句号改成叹号</td>
+        <td class="bad">✗ 文中没有找到「玩篮球后面的句号」</td>
+        <td class="good">半大的小学生在操场上玩篮球<b>！</b></td>
+      </tr>
+      <tr>
+        <td class="say">把玩篮球后面的句号改成感叹号</td>
+        <td class="bad">✗ 文中没有找到「玩篮球后面的句号」</td>
+        <td class="good">半大的小学生在操场上玩篮球<b>！</b></td>
+      </tr>
+      <tr>
+        <td class="say">把句号改成叹号</td>
+        <td class="bad">✗ 文中没有找到「句号」</td>
+        <td class="good">半大的小学生在操场上玩篮球<b>！</b></td>
+      </tr>
+      <tr>
+        <td class="say">把最后的句号改成叹号</td>
+        <td class="bad">✗ 文中没有找到「最后的句号」</td>
+        <td class="good">半大的小学生在操场上玩篮球<b>！</b></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="why">
+    <b>★ 为什么体感是「理解不行」，而不是「报错了」：</b><br>
+    带「把」是孩子最自然的说法，而它 <b>100% 失败</b>。孩子不会来报 bug，
+    他只会换个说法再试一次 —— 试三五次都失败，旁边看着的家长就得出
+    「这东西听不懂人话」。<b>一条 100% 失败的口子，比十个小 bug 更能毁掉信任。</b>
+  </div>
+
+  <h2>二、真因（四层，缺一层都不算修好）</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>① 正则的前缀枚举漏了一个字</h3>
+      <p class="file">src/domain/voiceEdit.ts · INSERT_PATTERNS</p>
+      <pre><span class="del">- `^(?:在)?\s*(.+?)\s*(后|前)\s*(?:加|添|插)…`</span>
+<span class="add">+ `^(?:在|把)?\s*(.+?)\s*(后|前)\s*(?:加|添|插)…`</span></pre>
+      <p>只吃掉了「在」，没吃「把」。于是 <code>(.+?)</code> 把「把」一起吞进
+        anchor，变成 <code>anchor = "把操场"</code> → 正文里当然找不到。</p>
+    </div>
+
+    <div class="card">
+      <h3>② 插在「字」后面，不是插在「词」后面</h3>
+      <p class="file">src/domain/voiceEdit.ts · applyEdit / insert</p>
+      <p>中文没有空格，anchor 是<b>子串</b>匹配，而孩子的心理单位是<b>词</b>。
+        匹配到「操场」就插，得到 <code>在操场|快乐的|上玩篮球</code>。</p>
+      <p>修法：后插时往后吸附一个<b>方位后缀</b>
+        <code>[上中里下内外边面间旁]</code>。
+        ⚠️「前 / 后」<b>故意不收</b> —— 它们既当方位后缀（门前）又当连接词（然后），
+        收了会把「小明<b>后来</b>走了」误伤成「小明后」。</p>
+    </div>
+
+    <div class="card">
+      <h3>③ 孩子会把「落脚点」也念进来说</h3>
+      <p class="file">src/domain/voiceEdit.ts · 重合守卫</p>
+      <p>「操场后加上快乐的，<b>玩篮球</b>那儿」—— 落点那个词本来就在正文里，
+        照着字面插就得到「…快乐的玩篮球<b>玩篮球</b>」。</p>
+      <p>修法：插入内容与紧接着的正文<b>尾部重合就削掉</b>。
+        ⚠️ <b>重合至少 2 个字</b>才算 —— 只重合 1 字是巧合，
+        会把「加上<b>快乐的</b>」削成「快乐」（正文紧接着正好是「<b>的</b>玩篮球」）。
+        这条守卫就是为这个反例设的，有专门的用例钉住。</p>
+    </div>
+
+    <div class="card">
+      <h3>④ 标点是<b>整类缺失</b>，而且是两层</h3>
+      <p class="file">src/domain/voiceEdit.ts · 新增 kind: 'replace-punct'</p>
+      <p>① 孩子说的是标点的<b>名字</b>（句号 / 叹号），正文里存的是<b>符号</b>（。 / ！）——
+        旧代码把「玩篮球后面的句号」整串当字面量去找，必然找不到。</p>
+      <p>② 「X <b>后面的</b>那个标点」是一种<b>相对指位</b>，旧代码只有字面量查找。</p>
+      <p>修法：加一层「名字 → 符号」的翻译（叹号 = 感叹号），
+        并且<b>记录里存的也是真符号</b> —— 存名字会让撤销和 diff 对不上正文。</p>
+    </div>
+  </div>
+
+  <h2>三、几个不肯将就的地方</h2>
+
+  <div class="card">
+    <h3>「有多个」时停下来问，但孩子自己指好了就别问</h3>
+    <table>
+      <thead><tr><th>说法</th><th>行为</th><th>为什么</th></tr></thead>
+      <tbody>
+        <tr><td class="say">把句号改成叹号</td>
+            <td><span class="tag warn">停下来问</span> 弹候选让孩子自己指</td>
+            <td>改错地方比不改更糟；「是哪一处」本来就是他该判断的事</td></tr>
+        <tr><td class="say">把最后的句号改成叹号</td>
+            <td><span class="tag good">直接改</span> 取最后一个</td>
+            <td>他已经指定了哪一处，<b>再反问一遍就是在为难他</b></td></tr>
+        <tr><td class="say">把玩篮球后面的句号改成叹号</td>
+            <td><span class="tag good">直接改</span> 找「玩篮球」后面第一个</td>
+            <td>给了参照物，位置是明确的</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>记录里存真符号，回执说人话</h3>
+    <p>操作记录（撤销 / diff 靠它）里存的是 <code>。</code> <code>！</code>；
+      给孩子看的回执说的是「好！<b>句号</b>换成<b>叹号</b>啦 🌱」。
+      <b>内部值给代码看，名字给人看，两个方向都要有映射。</b></p>
+  </div>
+
+  <div class="card">
+    <h3>「要加的东西正文里已经有了」→ 明说，不要插出个重复</h3>
+    <p>说「在操场后加上玩篮球」而「玩篮球」本来就在那儿 → 回一句
+      「「操场」后面就是这几个字了，不用再加啦」，
+      <b>而不是静默地什么也不做</b>（孩子会以为没听见，一直重说）。</p>
+  </div>
+
+  <h2>四、验证</h2>
+
+  <table>
+    <thead><tr><th>项</th><th>结果</th></tr></thead>
+    <tbody>
+      <tr><td>类型检查 + lint</td><td><code>npm run lint</code> → <b>0 error / 8 warning</b>（8 条是既有基线）</td></tr>
+      <tr><td>全量测试</td><td><b>31 files / 645</b>（635 passed + 10 skipped）</td></tr>
+      <tr><td>新增用例</td><td><code>voiceEdit.test.ts</code> +18（插入词边界 / 落脚点 / 标点各一组）<br>
+          <code>ai.test.ts</code> +3（AI 那条路也能表达标点指令，且拦住「名字当 from」）</td></tr>
+      <tr><td>变异验证</td><td><b>9 个守卫逐个打补丁，全部能红</b>；并手工抽 2 条确认红的是<b>该红的那几条</b>
+          （M1 只红 1 条、M6 红 12 条），排除了「语法错造成的假红」</td></tr>
+      <tr><td>打包产物</td><td>包内前端产物与 <code>dist</code> 一致：<code>index-BV427JPV.js</code>；
+          <code>_verify-apk.mjs</code> 的 14 项特征串全过</td></tr>
+    </tbody>
+  </table>
+
+  <div class="why">
+    <b>⚠️ 已知未做（不装作做到了）：</b><br>
+    统称「<b>标点</b>」「符号」（不指定是哪一个）仍然不支持 ——
+    要支持得让 <code>from</code> 变成字符类，替换的跨度就得按<b>实际匹配到的长度</b>算
+    （省略号是 2 个字符），容易埋跨度 bug，先不做。
+    <b>孩子说「句号」「逗号」「叹号」「问号」「顿号」「分号」「冒号」「省略号」都可以。</b>
+  </div>
+
+  <footer>
+    小笔苗 · 2026-09-20 · 本页所有「修前 / 修后」都是跑出来的真实输出，
+    不是按代码推的（修前那列是把 5 处改动临时回退后实测）。
+  </footer>
+</div>
+</body>
+</html>

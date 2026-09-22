@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+    <!--
+      theme-color 决定浏览器地址栏 / Android 状态栏的底色，必须跟着纸面色走。
+      v3 的奶油色 #fffdf7 在 v4 里已经换成薄荷白，忘了改就会
+      「状态栏偏黄、页面偏绿」地错开一条 —— 这类"网页改了色、原生没跟"的
+      漏网只有真机/浏览器上看得到，单测和类型检查都抓不到。
+      v4 纸面令牌：--color-paper = #fbfefc
+    -->
+    <meta name="theme-color" content="#fbfefc" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="description" content="小笔苗 · 作文森林 —— 看图作文 + 语音录入 + 段位成长" />
+    <link rel="icon" type="image/png" sizes="64x64" href="./favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <title>小笔苗 · 作文森林</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

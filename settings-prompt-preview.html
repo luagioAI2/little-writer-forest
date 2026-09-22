@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>「更好的写法」× 家长设置里的提示词 —— 修复前后</title>
+<style>
+  :root { --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --bad:#fee2e2; --good:#dcfce7; }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:32px 20px 64px; background:#f8fafc; color:var(--ink);
+         font: 15px/1.75 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  .wrap { max-width: 1120px; margin: 0 auto; }
+  h1 { font-size: 24px; margin:0 0 6px; }
+  .sub { color:var(--muted); margin-bottom: 28px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px 22px; margin-bottom:20px; }
+  .card h2 { font-size: 16px; margin:0 0 14px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .tag { font-size:12px; font-weight:600; padding:2px 8px; border-radius:999px; background:#eef2ff; color:#4338ca; }
+  .tag.red { background:#fee2e2; color:#991b1b; }
+  .tag.green { background:#dcfce7; color:#166534; }
+  .cols { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media (max-width: 860px) { .cols { grid-template-columns:1fr; } }
+  .pane { border:1px solid var(--line); border-radius:10px; padding:16px; background:#fff; }
+  .pane h3 { margin:0 0 10px; font-size:14px; color:var(--muted); font-weight:600; }
+  .pane.old { background:#fffbfb; border-color:#fecaca; }
+  .pane.new { background:#fafffb; border-color:#bbf7d0; }
+  .text p { margin:0 0 10px; }
+  mark.bad { background:var(--bad); color:#991b1b; padding:1px 2px; border-radius:3px; }
+  mark.good { background:var(--good); color:#166534; padding:1px 2px; border-radius:3px; }
+  table { width:100%; border-collapse: collapse; font-size:14px; }
+  th, td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); vertical-align: top; }
+  th { color:var(--muted); font-weight:600; font-size:13px; }
+  code { background:#f1f5f9; padding:1px 5px; border-radius:4px; font-size:13px; }
+  .note { color:var(--muted); font-size:13px; margin-top:10px; }
+  .kid { background:#fff7ed; border:1px solid #fed7aa; border-radius:10px; padding:14px 16px; }
+  .kid b { color:#9a3412; }
+  pre { background:#0f172a; color:#e2e8f0; padding:14px 16px; border-radius:10px; overflow:auto;
+        font-size:12.5px; line-height:1.65; margin:0; }
+  pre .c { color:#64748b; }
+  pre .k { color:#fca5a5; }
+  .toast { border:1px solid #fcd34d; background:#fffbeb; border-radius:10px; padding:12px 14px; font-size:14px; }
+  .toast b { color:#92400e; }
+  .pills { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+  .pill { font-size:12px; padding:2px 9px; border-radius:999px; background:#f1f5f9; color:#475569; }
+  .pill.on { background:#dcfce7; color:#166534; font-weight:600; }
+  .pill.off { background:#fee2e2; color:#991b1b; }
+  .steps { counter-reset:s; margin:0; padding:0; list-style:none; }
+  .steps li { counter-increment:s; padding-left:34px; position:relative; margin-bottom:12px; }
+  .steps li::before { content:counter(s); position:absolute; left:0; top:2px; width:22px; height:22px;
+      border-radius:50%; background:#eef2ff; color:#4338ca; font-size:12px; font-weight:700;
+      display:flex; align-items:center; justify-content:center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>「更好的写法」× 家长设置里的提示词</h1>
+  <div class="sub">家长第三次报的：「更好的写法，还要结合下 家长设置里的 提示词。类似于点比喻之类的。」</div>
+
+  <div class="card">
+    <h2>真因<span class="tag red">一个字都没读</span></h2>
+    <p style="margin:0 0 10px">
+      <code>extraPrompt</code> 全项目只有两个消费者，都是 <b>AI 提示词</b>的拼装函数
+      （<code>buildEssayUserMessage</code> / <code>buildScoreAndRewriteUserMessage</code>）。
+      <b>本地引擎一个字都没读它。</b>
+    </p>
+    <p style="margin:0 0 10px">
+      而设置页上写着「AI 点评和改范文时会参考这些要求」——
+      于是只要 AI 没配好、或者调用失败降级到本地，家长写的「多用比喻」
+      就被<b>静默丢弃</b>：正文里没有比喻，亮点里也不提，
+      界面上看不出任何异样。家长只会得出「设置了没用」。
+    </p>
+    <div class="kid">
+      <b>这次修的原则：</b>做得到的就落实，做不到的就<b>说出来</b>。<br />
+      引擎是模板拼的 —— 比喻 / 拟人 / 通感 / 叠词这四样能补；
+      排比 / 对话 / 成语 / 首尾呼应 / 细节描写要按内容现写，补不了。
+      <b>装作做到了比做不到更坏</b>：家长会一直以为设置生效了、只是孩子写得不够好，
+      于是反复改设置、反复重算，永远找不到原因。
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>修的时候挖出两个更深的坑<span class="tag">都不是「忘了读」，是「读了没落地」</span></h2>
+    <p style="margin:0 0 14px;color:var(--muted);font-size:14px">
+      第一版代码写完、类型也过了，但<b>跑起来要求还是落不了地</b>。实测打出真实现象才找到原因：
+    </p>
+    <ol class="steps">
+      <li>
+        <b>坑一 · 判早了。</b><br />
+        <code>usedRhetoric</code> 原来算在<b>裁剪之前</b>的全量候选上。
+        写景分支的候选里本来就带通感和拟人句（<code>我伸手碰了一下…</code> /
+        <code>…，我连呼吸都放轻了</code>），可它们排在通用套话里、会被句数上限砍掉。<br />
+        于是：引擎说「已经有通感了」→ 不补 → 裁剪又把那句砍了 →
+        <b>家长点了通感，正文里一个通感都没有。</b><br />
+        <span class="note">➜ 修辞判定必须做在<b>真的留下来的那几句</b>上。</span>
+      </li>
+      <li>
+        <b>坑二 · 名额不够。</b><br />
+        <code>keepCap</code> 确实加了 <code>+ demanded.length</code> 给家长让位，
+        但<b>画面句不受 keepCap 约束地排在最前面</b>（一年级 keepCap=3，画面句正好 3 句），
+        家长那句永远排在画面句后面，一次都进不去。<br />
+        <span class="note">➜ 家长点名的句子<b>不许参与裁剪</b>，直接插在画面句之后。</span>
+      </li>
+    </ol>
+    <p class="note">
+      两个坑是同一个病：<b>同一个上限声明了两遍，只补了一处</b> ——
+      句数上限补了、字数预算没补；候选判定补了、裁剪之后的正文没补。
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>案例 A · 写景作文，家长点「通感」<span class="tag">坑一</span></h2>
+    <div class="cols">
+      <div class="pane old">
+        <h3>修复前 —— 和「家长没填」<b>一模一样</b></h3>
+        <div class="text">
+          <p>推开门的瞬间，公园整片扑了过来。</p>
+          <p>我最先注意到的是树叶。它在那儿待了没多久，可我一直记得。风一过，树叶就跟着轻轻晃起来。还有叶子。我到现在还记得它当时的样子。<mark class="bad">（通感句本来在这里，被句数上限砍掉了）</mark>远远望去，公园铺开去，像是被谁用画笔轻轻涂过。走近了才看清，每一处都不一样：有的高些，有的矮些，风一过，就一起往下弯一弯腰。</p>
+          <p>我觉得秋天的公园真好看。这句话，我以后还会一遍遍想起来。</p>
+        </div>
+        <div class="pills">
+          <span class="pill off">通感 ✗</span>
+          <span class="pill off">亮点里也不提</span>
+        </div>
+      </div>
+      <div class="pane new">
+        <h3>修复后 —— 家长点的通感落地了</h3>
+        <div class="text">
+          <p>推开门的瞬间，公园整片扑了过来。</p>
+          <p>我最先注意到的是树叶。它在那儿待了没多久，可我一直记得。风一过，树叶就跟着轻轻晃起来。还有叶子。我到现在还记得它当时的样子。<mark class="good">那颜色浓得像是能尝出甜味来。</mark>远远望去，公园铺开去，像是被谁用画笔轻轻涂过。走近了才看清，每一处都不一样：有的高些，有的矮些，风一过，就一起往下弯一弯腰。</p>
+          <p>我觉得秋天的公园真好看。这句话，我以后还会一遍遍想起来。</p>
+        </div>
+        <div class="pills">
+          <span class="pill on">通感 ✓</span>
+          <span class="pill on">家长点名的通感，都加进去了</span>
+        </div>
+      </div>
+    </div>
+    <p class="note">
+      注意：家长点的那句是<b>插在画面句之后、通用套话之前</b>的 ——
+      画面句是「不跑偏」的硬标准，优先级仍然在家长要求之上，
+      否则就会退回上一轮那个「跟孩子写的和图都无关」的老毛病。
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>案例 B · 一年级看图写话，家长点「比喻」<span class="tag">坑二</span></h2>
+    <div class="cols">
+      <div class="pane old">
+        <h3>修复前 —— 名额被画面句占满，比喻进不来</h3>
+        <div class="text">
+          <p>推开门的瞬间，校园整片扑了过来。</p>
+          <p>我最先注意到的是雪地。我看了好久，舍不得挪开眼睛。还有雪人。就是它，把那天变得和别的日子不一样了。<mark class="bad">（比喻句排在这里，一次都没进来）</mark></p>
+          <p>我和小明在雪地里打雪仗，还堆了一个雪人。这句话，我以后还会一遍遍想起来。</p>
+        </div>
+        <div class="pills">
+          <span class="pill off">比喻 ✗</span>
+          <span class="pill off">亮点里也不提</span>
+        </div>
+      </div>
+      <div class="pane new">
+        <h3>修复后 —— 一年级也塞得进去</h3>
+        <div class="text">
+          <p>推开门的瞬间，校园整片扑了过来。</p>
+          <p>我最先注意到的是雪地。我看了好久，舍不得挪开眼睛。还有雪人。就是它，把那天变得和别的日子不一样了。<mark class="good">那天的一切，都像老朋友一样，安安静静地等在原地。</mark></p>
+          <p>我和小明在雪地里打雪仗，还堆了一个雪人。这句话，我以后还会一遍遍想起来。</p>
+        </div>
+        <div class="pills">
+          <span class="pill on">比喻 ✓</span>
+          <span class="pill on">叠词 ✓（顺带带出来的）</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>案例 C · 四样一起点<span class="tag green">修复后</span></h2>
+    <p style="margin:0 0 12px;color:var(--muted);font-size:14px">
+      家长写「多用比喻、拟人、通感、叠词」。修复前这四样<b>一样都没进去</b>；现在四样全在。
+    </p>
+    <div class="pane new">
+      <div class="text">
+        <p>推开门的瞬间，校园整片扑了过来。</p>
+        <p>我最先注意到的是雪地。我看了好久，舍不得挪开眼睛。还有雪人。就是它，把那天变得和别的日子不一样了。<mark class="good">那天的一切，都像老朋友一样，安安静静地等在原地。</mark><mark class="good">校园像在跟我招手，又像在等我先开口。</mark><mark class="good">亮得让我忍不住眯起眼睛，心里也跟着亮了一下。</mark><mark class="good">那天的事，我静静地记着。到现在想起来，心里还是沉甸甸的。</mark></p>
+        <p>我和小明在雪地里打雪仗，还堆了一个雪人。这句话，我以后还会一遍遍想起来。</p>
+      </div>
+    </div>
+    <p class="note">
+      家长明确要求的句子不参与裁剪，所以四样会全部落地。代价是低年级范文会变长几句 ——
+      这是<b>刻意的取舍</b>：家长点名要的东西，宁可长一点，也不能悄悄丢掉。
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>亮点不再说假话<span class="tag">以前的亮点是编的</span></h2>
+    <p style="margin:0 0 12px;color:var(--muted);font-size:14px">
+      旧版 <code>buildHighlights</code> 是<b>无条件</b>写「加了比喻和拟人，让句子活起来」的，
+      而写景 / 写事分支根本没有比喻 —— 家长看到的是假话。更要命的是：
+      他在设置里点了「多用比喻」，想知道的正是「有没有落实」，
+      而这条假话让他<b>永远看不出没落实</b>。
+    </p>
+    <table>
+      <thead>
+        <tr><th>场景</th><th>正文里实际有的修辞</th><th>亮点现在写的</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>看图写话（没填要求）</td>
+          <td><span class="pill off">一个都没有</span></td>
+          <td>不写修辞那条（以前写「加了比喻和拟人」）</td>
+        </tr>
+        <tr>
+          <td>看图写话 + 点「比喻」</td>
+          <td><span class="pill on">比喻、叠词</span></td>
+          <td>加了比喻、叠词，句子活起来了<br />家长点名的比喻，都加进去了</td>
+        </tr>
+        <tr>
+          <td>写景 + 点「通感」</td>
+          <td><span class="pill on">通感</span></td>
+          <td>加了通感，句子活起来了<br />家长点名的通感，都加进去了</td>
+        </tr>
+        <tr>
+          <td>写人（本来就有比喻）+ 点「比喻」</td>
+          <td><span class="pill on">比喻、叠词</span></td>
+          <td>正文一字不改（不重复补）<br />家长点名的比喻，都加进去了</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">
+      做法是「生成」和「宣称」<b>共用同一份词库</b>：四类修辞的模板数组提到模块级，
+      生成句子的和判定「这篇到底用了哪些」的读的是同一个数组。改词库两边一起改，不会走散。
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>做不到的，如实说<span class="tag green">诚实降级</span></h2>
+    <p style="margin:0 0 12px;color:var(--muted);font-size:14px">
+      家长填「多用排比，语言要生动」，而这次降级走了本地引擎 —— 实际弹出的提示（原样抄的）：
+    </p>
+    <div class="toast">
+      <b>⚠️ 这次用了本地引擎</b><br />
+      AI 设置里还缺密钥，先用了本地引擎。去设置页补全试试。<b>本地引擎做不到你在设置里要求的排比（那得按内容现写，模板拼不出来）。配好 AI 就会落实。</b>
+    </div>
+    <p style="margin:12px 0 0;color:var(--muted);font-size:13px">
+      只填了要求、AI 压根没开时，前半句不出现，只剩后半句：
+    </p>
+    <div class="toast" style="margin-top:8px">
+      <b>本地引擎做不到你在设置里要求的排比（那得按内容现写，模板拼不出来）。配好 AI 就会落实。</b>
+    </div>
+    <p class="note">
+      两条纪律：① 本地引擎<b>真的做到了</b>的（比喻/拟人/通感/叠词）不在这里说 —— 再警告一遍就是撒谎；
+      ② 一条要求都没填时，不许平白多出一条警告。<br />
+      两条路（评分改写 / 补生成）口径一致，不许一条说一条不说。
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>设置页文案也改准了</h2>
+    <table>
+      <thead><tr><th></th><th>文案</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>改前</td>
+          <td>AI 点评和改范文时会参考这些要求。不填就按默认标准来。</td>
+        </tr>
+        <tr>
+          <td>改后</td>
+          <td>AI 点评和改范文时会参考这些要求。<b>其中比喻、拟人、通感、叠词，本地引擎也会尽量落实；
+              排比、对话、成语这类要按内容现写，得配好 AI 才做得到。</b>不填就按默认标准来。</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">原来那句只说了「会参考」，没说哪几样在没配 AI 时也能落地 —— 家长没法据此判断该不该配。</p>
+  </div>
+
+  <div class="card">
+    <h2>验证</h2>
+    <table>
+      <thead><tr><th>项</th><th>结果</th></tr></thead>
+      <tbody>
+        <tr><td><code>npm run lint</code>（<code>tsc -b --noEmit &amp;&amp; eslint .</code>）</td><td>0 error（8 条 warning 全是既有的 fast-refresh / exhaustive-deps，不在改动文件里）</td></tr>
+        <tr><td><code>npx vitest run</code></td><td>29 个文件 / <b>592</b> 通过（改动前 577）</td></tr>
+        <tr><td>新增用例</td><td>modelEssay +11、ai +5</td></tr>
+        <tr><td><code>npm run build</code></td><td>✓ built</td></tr>
+        <tr><td>打包产物抽查</td><td><code>家长点名的</code> / <code>本地引擎做不到你在设置里要求的</code> / <code>配好 AI 就会落实</code> / <code>都加进去了</code> 各 1 处</td></tr>
+        <tr>
+          <td>变异验证（6 个守卫逐个破坏）</td>
+          <td>
+            ① <code>parseExtraPrompt</code> 不解析 → 6 条红<br />
+            ② 判定改回「裁剪之前」 → 坑一那条红<br />
+            ③ 家长句重新参与裁剪 → 5 条红<br />
+            ④ 亮点改回无条件宣称 → 假话那条红<br />
+            ⑤ 降级时静默 → 3 条红<br />
+            ⑥ 本地引擎收不到提示词 → 1 条红
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">
+      没有一处是「看代码觉得对」——每条守卫都先确认它<b>能红</b>，再确认它是绿的。
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>已知遗留</h2>
+    <ul style="margin:0;padding-left:20px">
+      <li>
+        <b>AI 那条路没有做「要求落实了没有」的校验。</b>
+        AI 是自由行文，我们的修辞指纹只认自己模板库里的句子 ——
+        它写「像一根小鞭子」我们认不出来。硬加校验会<b>误报</b>，
+        所以只把要求写进提示词（「逐条落实，判据是改写后的正文里真的找得到」），不做硬门。
+      </li>
+      <li>
+        本地引擎补的修辞句是<b>通用句</b>（锚在「那天」「我」上），
+        不锚具体名物 —— 因为补哪一句由「家长说了什么」决定，那里拿不到文体。
+      </li>
+      <li>真机 + 真 DeepSeek 复验：家长的要求是否真的进了模型提示词并落到正文里。</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

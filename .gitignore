@@ -1,0 +1,81 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist/
+dist-ssr/
+*.local
+
+# ★ 环境变量 / 密钥 —— 绝不入库（模板见 .env.example）
+# 内置密钥（火山 App Key 等）写在 .env.local 里，构建时注入，
+# 仓库里不留明文：一旦入库，`strings` 一下就能从包里抠出来。
+# ⚠️ .env.example 是**要入库**的，别把下面两条写成 `.env*`，那会连模板一起忽略。
+.env
+.env.local
+.env.*.local
+
+# 编辑器
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 日志
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Android 构建产物与本地配置
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/keystore.properties
+android/app/release/
+android/app/debug/
+*.keystore
+*.jks
+android/capacitor-cordova-android-plugins/
+android/app/src/main/assets/public/
+android/app/src/main/assets/capacitor.config.json
+android/app/src/main/assets/capacitor.plugins.json
+
+# 端到端截图
+screenshots/
+# 走查/取景用的截图目录（同上，体积大，不入库）
+shots/
+shots-empty/
+
+# 打包出来的 APK 副本（供直接分发，体积大不入库）
+dist-apk/
+# 打包脚本把成品直接写在**项目根目录**（见 scripts/build-apk.sh 第 4 步）
+/*.apk
+
+# ---- 根目录的探针 / 调试产物（用完即弃，不入库）----
+# ⚠️ 这些只清"产物"。scripts/ 下的 _probe-*.mjs / _verify-*.mjs 是**要入库的**：
+#    _verify-apk.mjs 是打包脚本第 4 步的校验器，_probe-volcengine*.mjs 挂在 npm run 上。
+/_probe.txt
+/_disk*.txt
+/models.json
+# 根目录那 9 张参考截图（01-landmark / 05-landing …，约 3MB）—— 只在本地看
+/*.png
+# 语音探针的产物（★ speech_probe.wav 不在此列 —— 它是 scripts/*.test.ts 的夹具，必须入库）
+/mix_*.wav
+/probe.wav
+/sil_*.wav
+/tone_d.wav
+# 由 speech_probe.wav 派生（npm run fixture:webm 可随时重建）
+/*.webm
+# 临时调试脚本（_debug-*.mjs 与其截图）
+/scripts/_debug*
+
+# 测试
+coverage/
