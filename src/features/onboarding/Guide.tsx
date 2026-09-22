@@ -5,38 +5,43 @@
    为什么要有它：
      `Onboarding` 只**收集设置**（昵称 / 年级 / 目标），一个字都没教。
      于是孩子种完树、拿到一个空白首页，得自己猜「这个 App 是干嘛的、
-     我该按哪儿」。而这 App 的核心手势只有一个 —— **按住说话** ——
-     偏偏它是最不容易被发现的：孩子会去点那个麦克风，点一下没反应，
-     就以为坏了。（配好转写时点一下确实什么都不会发生，得按住。）
-
-   ⚠️ 但"按住"**不是唯一的手势**：转写没配好 / 在网页上跑时，
-     `VoiceComposer` 那个按钮是「点一下开始、再点一下停」。
-     所以第二屏的手势是**跟着 `canHoldToTalk()` 走**的，不是写死的 ——
-     教错手势等于把孩子送回"以为坏了"的老路，而这一屏存在的理由就是救他出来。
-     判定函数只有一份，在 platform/transcribe.ts。
-
-   所以这一节的**第一目标不是"介绍功能"，是"让他把手势做一遍"**。
-   四屏，每屏只讲一件事：
+     我该按哪儿」。所以种完树之后补三屏，每屏只讲一件事：
 
      ① 我是你的树 —— 你写一篇，我长高一点（讲清核心循环）
-     ② 你不用会打字 —— **可以真的试一次**（唯一需要学的手势）
-     ③ 写完了会看到什么 —— 点评 / 更好的写法，以及那条铁律
-     ④ 森林里还有这些 —— 底部五个入口各一句话
+     ② 写完了会看到什么 —— 点评 / 更好的写法，以及那条铁律
+     ③ 森林里还有这些 —— 底部五个入口各一句话
 
-   几条设计约束（都是踩过的）：
-     · **不调麦克风。** 这一屏的语音演示是**纯脚本**的，不碰 getUserMedia。
-       引导里弹权限框是最糟的时机 —— 孩子还不知道这 App 是干嘛的，
-       拒绝一次就再也不给了。而且 WebView 里没有权限时录音会静默失败。
-     · **状态槽高度写死。** 和 VoiceComposer 一样（见那里的注释）：
-       按住时里面会换成波形，如果高度由内容决定，按钮会被顶走 ——
-       而按钮正在手指底下。这是真机上最难查的一类问题。
+   ★★ 2026-09-22 家长要求**删掉原来的第二屏「你不用会打字」**：
+     「新手引导那 录音的指引 可以去掉。因为那时候用户还没有设置 火山模型。」
+
+     那一屏原来有个**可以真的按一遍**的录音演示，而且被写成这一节的
+     "第一目标"（孩子会去**点**那个麦克风，配好转写时点一下什么都不会发生，
+      于是以为坏了）。删它是有代价的，所以把理由留在下面：
+
+     · 那一屏教哪个手势（按住 / 点一下）是**跟着 `canHoldToTalk()` 走的**，
+       而这个判定取决于**转写配没配好** —— 可引导跑在家长配好之前。
+       于是引导教的那一套，和孩子之后在写作页遇到的**可能是两套**；
+       而"教错手势"恰恰是那一屏本来要解决的问题（教错了 = 把孩子送回老路）。
+     · 与其教一个"到时候不一定对"的手势，不如不教。
+
+     ⚠️ 所以那类反馈（孩子点麦克风没反应 → 以为坏了）**可能回来**。
+       要重新处理它，得先想清楚"在配好之前该教什么"，
+       而**不是把那一屏原样加回来** —— 原样加回来 = 又教一个会错的手势。
+     ⚠️ `canHoldToTalk()` 本身**没删**：写作页那个真按钮（`VoiceComposer`）
+       仍然用它。那份判定只有一处，在 platform/transcribe.ts。
+
+   几条设计约束：
+     · **引导里绝不申请麦克风权限。** 那是最糟的时机 —— 孩子还不知道
+       这 App 是干嘛的，拒绝一次就再也不给了；而 WebView 里没有权限时
+       录音会**静默失败**。（原来那个演示是纯脚本、不碰 `getUserMedia`；
+       现在连演示都没了，这条只剩"别把它加回来"这一层意思。）
      · **跳过永远可用。** 不靠"必须走完"来保证阅读率。
        想再看一遍：设置 → 新手引导。
      · 文案不许和别处打架。AI 的边界统一说成
        「我帮你看，但不替你写」（与设置页、点评页同一口径）。
    ============================================================ */
 
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { Card, IconButton } from '../../components/ui'
 import {
   IconArrowRight,
@@ -45,53 +50,30 @@ import {
   IconCheck,
   IconCompass,
   IconLeaf,
-  IconMic,
   IconPen,
   IconSparkle,
-  IconStop,
 } from '../../components/icons'
 import { Sprout } from '../../components/Sprout'
 import { MiniTree } from '../../components/TreeArt'
 import { playSound } from '../../platform/sound'
 
 /** 一共几屏 —— 进度点和「跳过」的判据都用它，别在别处再写一遍数字 */
-export const GUIDE_SCREENS = 4
+export const GUIDE_SCREENS = 3
 
-/**
- * 按多久才算「说了一句」。
- *
- * 和真实录音那条路的判据**同源**：按住太短 → 提示「按住多说几个字试试」。
- * 引导里用同一个数字、同一句文案，孩子到了真的写作页才不会觉得两套规矩。
- */
-export const HOLD_OK_MS = 800
-
-/**
- * 演示用的那句话。
- *
- * 刻意是**有画面的短句**，而且带一个具体名物（伞）和一个拟声（咚咚咚）——
- * 孩子能立刻看出"这是作文"，而不是一段占位文字。
- */
-export const DEMO_SENTENCE =
-  '下雨了。我和小明在操场上跑，雨点打在伞上，咚咚咚的，像有人在敲小鼓。'
+/* ★ 2026-09-22：这里原来还导出 `HOLD_OK_MS`（按多久算"说了一句"）和
+   `DEMO_SENTENCE`（演示用的那句话），两者都只服务于被删掉的录音演示那一屏，
+   跟着一起删了。
+   ⚠️ 写作页那条路有**它自己的一份**时长门槛（在 `VoiceComposer` 里），
+     没有 import 这两个常量，所以删它们**不影响**真实录音。 */
 
 /* ============================================================
    主组件
    ============================================================ */
 
-export default function Guide({
-  onDone,
-  /**
-   * 这台设备上能不能「按住说话」。
-   *
-   * ★ 由外面算好传进来（App 里 `canHoldToTalk(settings.transcribe)`），
-   *   不在这里各判一次 —— 见 platform/transcribe.ts 那段说明。
-   *   默认 true：APK 的默认配置就是流式，按住说话开箱即用。
-   */
-  canHold = true,
-}: {
-  onDone: () => void
-  canHold?: boolean
-}) {
+/* ★ 2026-09-22：原来这里还有一个 `canHold` 属性（`canHoldToTalk(settings.transcribe)`），
+   只传给被删掉的录音演示那一屏用，所以一起删了 —— 引导现在不碰转写配置，
+   也就没有"引导和写作页各判一次、判出两个结果"的可能了。 */
+export default function Guide({ onDone }: { onDone: () => void }) {
   const [screen, setScreen] = useState(0)
 
   const isLast = screen === GUIDE_SCREENS - 1
@@ -160,15 +142,14 @@ export default function Guide({
           `key={screen}` 的唯一作用是**换屏时重新挂载**，让进场动画重播一次
           （jsdom 里看不出动画，所以用例只能断言"节点换了新的"）。
 
-          ⚠️ 别把它当成"演示状态不会串到下一屏"的保证 —— 那是下面
-             `{screen === 1 && <ScreenVoice />}` 这个条件渲染在做的事：
-             `screen` 一变，组件就被卸载了，`key` 有没有都一样。
-             曾经在这里写过反了，变异验证时才发现（去掉 key 那条用例照样绿）。 */}
+          ⚠️ 别把它当成"上一屏的状态不会串到下一屏"的保证 —— 那是下面这些
+             条件渲染在做的事：`screen` 一变，上一个组件就被卸载了，
+             `key` 有没有都一样。曾经在这里写过反了，变异验证时才发现
+             （去掉 key 那条用例照样绿）。 */}
       <div key={screen} className="relative flex flex-1 flex-col px-7 pb-8 anim-rise-in">
         {screen === 0 && <ScreenTree />}
-        {screen === 1 && <ScreenVoice canHold={canHold} />}
-        {screen === 2 && <ScreenAfter />}
-        {screen === 3 && <ScreenTabs />}
+        {screen === 1 && <ScreenAfter />}
+        {screen === 2 && <ScreenTabs />}
       </div>
 
       {/* ---------------- 底部动作 ---------------- */}
@@ -249,202 +230,22 @@ function ScreenTree() {
 }
 
 /* ============================================================
-   ② 你不用会打字 —— ★ 这一屏要能真的按住
+   ★★ 原来的「② 你不用会打字」整屏（含可交互的录音演示）已于 2026-09-22 删除
+   ------------------------------------------------------------
+   家长原话：「新手引导那 录音的指引 可以去掉。因为那时候用户还没有设置 火山模型。」
+
+   删掉的东西：`ScreenVoice`、`HoldToTalkDemo`（可以真的按一遍的演示）、
+   `Waveform`（演示波形），以及 `HOLD_OK_MS` / `DEMO_SENTENCE` 两个常量
+   和主组件上的 `canHold` 属性。
+
+   为什么删（完整理由见文件头）：那一屏教哪个手势是跟着 `canHoldToTalk()` 走的，
+   而它取决于转写配没配好 —— 引导却跑在家长配好之前，教的和之后遇到的可能是两套。
+   与其教一个"到时候不一定对"的手势，不如不教。
+
+   ⚠️ 别把这一屏"顺手加回来"。要处理"孩子点麦克风没反应 → 以为坏了"，
+     得先想清楚**在配好之前该教什么**（见文件头），而不是原样恢复。
+   ⚠️ `canHoldToTalk()` 没删 —— 写作页的 `VoiceComposer` 还在用它。
    ============================================================ */
-
-function ScreenVoice({ canHold }: { canHold: boolean }) {
-  return (
-    <>
-      <Sprout size={80} ink mood="curious" />
-
-      <h1 className="mt-7 font-display text-2xl font-bold leading-snug tracking-tight text-[var(--color-night-text)]">
-        你不用会打字。
-      </h1>
-      <p className="mt-3 text-sm leading-relaxed text-[var(--color-night-text-2)]">
-        {canHold
-          ? '按住下面的按钮，把看到的、想到的说出来 —— 就像发微信语音那样。'
-          : '点一下下面的按钮开始说，说完了再点一下。把看到的、想到的说出来。'}
-      </p>
-
-      <div className="mt-7">
-        <HoldToTalkDemo canHold={canHold} />
-      </div>
-    </>
-  )
-}
-
-/**
- * 试一次的演示。★ 纯脚本，不碰麦克风（见文件头）。
- *
- * 手势跟着 `canHold` 走，两套都要真的能做出来：
- *   · canHold  —— 按住开始、松手结束（和真实录音按钮同一套 pointer 事件）
- *   · 否则     —— 点一下开始、再点一下结束
- * 只做按住那套的话，转写没配好的设备上孩子照着按，界面毫无反应。
- */
-function HoldToTalkDemo({ canHold }: { canHold: boolean }) {
-  const [holding, setHolding] = useState(false)
-  const [typed, setTyped] = useState(0)
-  const [tooShort, setTooShort] = useState(false)
-
-  /** 用 ref 而不是 state 判"正在按住" —— pointerup 里读到的是闭包里的旧值 */
-  const holdRef = useRef(false)
-  const startRef = useRef(0)
-  const timerRef = useRef<number | null>(null)
-
-  const stopTyping = useCallback(() => {
-    if (timerRef.current !== null) {
-      window.clearInterval(timerRef.current)
-      timerRef.current = null
-    }
-  }, [])
-
-  // 翻页 / 卸载时把定时器收掉，别让它在别的屏上继续改 state
-  useEffect(() => stopTyping, [stopTyping])
-
-  function begin() {
-    stopTyping()
-    holdRef.current = true
-    startRef.current = Date.now()
-    setTooShort(false)
-    setTyped(0)
-    setHolding(true)
-    playSound('tap-soft')
-  }
-
-  function end() {
-    if (!holdRef.current) return
-    holdRef.current = false
-    setHolding(false)
-
-    // 太短 = 没听到 —— 和真实录音那条路同一句文案。
-    // ⚠️ 只有「按住」那套才有"太短"这回事：点击那套是明确的两下，
-    //    不存在误触，所以那里不该拿时长去挡孩子。
-    if (canHold && Date.now() - startRef.current < HOLD_OK_MS) {
-      setTooShort(true)
-      return
-    }
-
-    playSound('success')
-    // 逐字落进正文：让"我说的字变成了字"这件事看得见
-    let i = 0
-    timerRef.current = window.setInterval(() => {
-      i += 1
-      setTyped(i)
-      if (i >= DEMO_SENTENCE.length) stopTyping()
-    }, 45)
-  }
-
-  const shown = DEMO_SENTENCE.slice(0, typed)
-  const finished = typed >= DEMO_SENTENCE.length
-
-  return (
-    <div className="flex flex-col gap-3">
-      {/* 正文框 —— 高度固定，字一个个长出来时不会把下面的按钮顶走 */}
-      <div className="flex h-28 items-start rounded-md bg-black/25 p-4 shadow-[var(--hair-light)]">
-        {shown ? (
-          <p className="font-prose text-sm leading-loose text-[var(--color-night-text)]">
-            {shown}
-            {!finished && <span className="anim-breathe">▍</span>}
-          </p>
-        ) : (
-          <p className="text-xs leading-relaxed text-[var(--color-night-text-3)]">
-            你说的字，会一个一个出现在这里。
-          </p>
-        )}
-      </div>
-
-      {/* ★ 状态槽：高度写死（h-12）。按住时这里换成波形 ——
-          如果高度跟着内容变，按钮就会被顶走，而手指正按在上面。
-          这是 VoiceComposer 里踩过的同一个坑，这里照抄那份约束。 */}
-      <div className="flex h-12 w-full items-center justify-center">
-        {holding ? (
-          <div className="flex h-full w-full items-center gap-3.5 rounded-md bg-white/[0.06] px-4 shadow-[var(--hair-light)]">
-            <Waveform />
-            <span className="min-w-0 flex-1 truncate text-sm font-medium text-[var(--color-night-text-2)]">
-              我在听……
-            </span>
-            <span className="h-2 w-2 shrink-0 rounded-full bg-[#e8b3a6] anim-breathe" />
-          </div>
-        ) : tooShort ? (
-          <span className="text-xs font-semibold text-[#e8b3a6]">
-            按住多说几个字试试
-          </span>
-        ) : finished ? (
-          <span className="text-xs font-semibold text-inkleaf-200">
-            {canHold ? '松手，字就落进正文了' : '说完了，字就落进正文了'}
-          </span>
-        ) : (
-          <span className="text-xs font-semibold text-[var(--color-night-text-3)]">
-            {canHold ? '按住说话吧' : '点一下，开始说'}
-          </span>
-        )}
-      </div>
-
-      {/* 大圆按钮 —— 尺寸和真实那个（VoiceComposer 的 84px）对齐，
-          孩子到写作页看到的是同一个东西 */}
-      <div className="flex justify-center">
-        <button
-          type="button"
-          aria-label={canHold ? '按住说话（试一下）' : '点一下开始说（试一下）'}
-          onPointerDown={
-            canHold
-              ? (e) => {
-                  // 抓住指针：手指滑出按钮外再松开，也能收到 pointerup
-                  e.currentTarget.setPointerCapture?.(e.pointerId)
-                  begin()
-                }
-              : undefined
-          }
-          onPointerUp={canHold ? end : undefined}
-          onPointerCancel={canHold ? end : undefined}
-          /* 点击那套：一下开始、再一下结束。这里读 `holding` 是安全的 ——
-             两次点击是两个独立的事件轮次，第二次渲染时它已经更新了。 */
-          onClick={canHold ? undefined : () => (holding ? end() : begin())}
-          className={`select-none touch-none grid h-[84px] w-[84px] place-items-center rounded-full transition-transform duration-150 ${
-            holding
-              ? 'scale-95 bg-inkleaf-300 text-inkleaf-900'
-              : 'bg-inkleaf-600 text-white shadow-[0_10px_26px_-10px_rgb(9_71_46/0.8)]'
-          }`}
-        >
-          {holding ? <IconStop size={28} /> : <IconMic size={30} strokeWidth={1.8} />}
-        </button>
-      </div>
-
-      {/* 落完字之后的"下一步" —— 顺带把语音改作文也教了 */}
-      {finished && (
-        <p className="text-center text-2xs leading-relaxed text-[var(--color-night-text-3)] anim-fade-in">
-          说错了也不用删 —— 再说一句「把下雨改成下雪」，
-          <br />
-          我就只改那两个字，别的一个都不动。
-        </p>
-      )}
-    </div>
-  )
-}
-
-/** 演示用波形 —— 不接真实音量，只是让"在听"看得见 */
-function Waveform() {
-  const bars = 7
-  return (
-    <span className="flex h-7 shrink-0 items-center gap-[3px]" aria-hidden>
-      {Array.from({ length: bars }, (_, i) => {
-        // 中间的条更高，形成对称的波形观感（和 VoiceComposer 一致）
-        const center = Math.abs(i - (bars - 1) / 2)
-        const factor = 1 - center / bars
-        return (
-          <span
-            key={i}
-            className="w-[3px] rounded-pill bg-inkleaf-300 anim-breathe"
-            style={{
-              height: `${Math.round(8 + 18 * factor)}px`,
-              animationDelay: `${i * 0.09}s`,
-            }}
-          />
-        )
-      })}
-    </span>
-  )
-}
 
 /* ============================================================
    ③ 写完了会看到什么 —— 点评 / 更好的写法 / 那条铁律

@@ -4,7 +4,7 @@
 
    职责：
      · 首次进入的「种下你的树」引导（年级在这里选一次，之后进设置）
-     · 紧接着的「新手引导」四屏（怎么用 —— 见 features/onboarding/Guide.tsx）
+     · 紧接着的「新手引导」三屏（怎么用 —— 见 features/onboarding/Guide.tsx）
      · 入场 Splash（每次打开换一句格言）
      · 顶部状态条（昵称 / 段位 / 产出提示 / 设置）
      · 底部四个主入口 + 小鸟旅行 + 地图
@@ -38,7 +38,6 @@ import { CountUp, IconButton } from './components/ui'
 import { IconBook, IconCards, IconCompass, IconLeaf, IconPen, IconSettings } from './components/icons'
 import { isNativePlatform } from './platform/native'
 import { playSound, setSoundEnabled, unlockAudio } from './platform/sound'
-import { canHoldToTalk } from './platform/transcribe'
 import { setHapticsEnabled } from './platform/haptics'
 import { onImmersiveChange, onNavigate, type ShellTabKey } from './shell/events'
 import splashMark from './assets/splash-mark.webp'
@@ -289,9 +288,6 @@ export default function App() {
     return (
       <Guide
         onDone={() => void updateSettings({ guideDone: true })}
-        /* 第二屏教「按住」还是「点一下」，必须和写作页那个麦克风一致 ——
-           两边各判一次就会漂移。判定只有一份，见 platform/transcribe.ts。 */
-        canHold={canHoldToTalk(settings.transcribe)}
       />
     )
   }
