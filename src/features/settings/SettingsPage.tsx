@@ -1150,6 +1150,14 @@ export default function SettingsPage({ onBack }: { onBack: () => void }): ReactE
             还有卡牌和连续签到，让"坚持写"这件事变得好玩。
           </p>
           <p>核心原则只有一条：AI 帮你看，但不替你写。</p>
+          {/* ★★ ODbL 署名 —— 法律要求，不许删。
+              广东那批旅游点（`src/data/landmarks-gd.json`）是从
+              OpenStreetMap 生成的衍生数据库，ODbL 要求署名。
+              为什么要单独一段、而且写"贡献者"：ODbL 的规范署名格式就是
+              「© OpenStreetMap contributors」，写成「来自某地图公司」不合规。 */}
+          <p className="pt-1 text-[11px] leading-relaxed text-ink-500">
+            旅游点数据来自 © OpenStreetMap 贡献者（ODbL 授权）。
+          </p>
         </div>
       </Card>
 

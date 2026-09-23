@@ -645,7 +645,21 @@ function LandmarkSheet({
             className="h-36 w-full rounded-card"
           />
           <div className="absolute left-3 top-3 flex gap-1.5">
-            <Badge tone="neutral">Tier {landmark.tier}</Badge>
+            {/*
+              ★ 「评级」= 国家 A 级旅游景区等级（5A / 4A），来自官方名录
+                （`scripts/gd-a-level.json`，生成侧写在 `landmark.rating`）。
+
+              ⚠️ 只有**景区**才有评级 —— 山峰、海滩、步行街、古村本来就不是景区，
+                 所以没评级时**不要**显示「暂无评级」：那会让孩子以为
+                 "这个地方不好"，而它可能只是**不是景区**而已。
+              ⚠️ 兜底显示 `Tier`：那是旧玩法的稀有度，生成侧一律缺省 1。
+                 等 `tier` 彻底退役了，这个兜底也应该一起删（见 MEMORY §十五）。
+            */}
+            {landmark.rating ? (
+              <Badge tone="amber">{landmark.rating} 景区</Badge>
+            ) : (
+              <Badge tone="neutral">Tier {landmark.tier}</Badge>
+            )}
             {stage > 0 && <Badge tone="leaf">已点亮 · {stage} 级</Badge>}
           </div>
         </div>

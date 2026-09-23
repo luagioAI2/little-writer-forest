@@ -98,6 +98,11 @@ const FEATURES = [
     why: '跑偏守卫的清单标题 —— 同一份清单既进提示词、又回来照单核对',
   },
   {
+    name: 'ODbL 署名（`OpenStreetMap`）',
+    test: (s) => s.includes('OpenStreetMap'),
+    why: '法律要求：广东那批旅游点是从 OSM 生成的衍生数据库，署名不许在打包时被丢掉',
+  },
+  {
     name: '跑偏守卫的补问文案在包里（`跑偏了`）',
     test: (s) => s.includes('跑偏了'),
     why: '缺了说明改写那条路没做「必须留住」的校验，AI 可以整段编',
