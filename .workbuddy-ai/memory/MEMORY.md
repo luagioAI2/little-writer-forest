@@ -60,6 +60,7 @@
 - `vite build` 清不动满的 `dist` → **先 `find dist -mindepth 1 -delete` 再 build**。
 - 临时探针 / 变异脚本**用完删掉**；补丁**断言命中 1 处**；★ **光看 exit code 不够**，至少手工确认红的是**该红那几条**。老用例被新守卫弄红时，**先查夹具合不合法、再查那条断言是不是"替身"**，最后才动守卫。
 - ★★ **vitest 下取路径用 `join(process.cwd(), …)`**，别用 `import.meta.url`（虚拟 URL → `The URL must be of scheme file`）。
+- ⚠️⚠️ **这台机器上别用 `git checkout --detach <sha>` 做逐提交复验** —— 实测切过去之后**工作区丢了 46 个文件**（整个 `src/domain/`），而 `git status` 只报 ` D`（可恢复，`git checkout -f master` 找回）。改用**静态 import 检查**或**临时挪走一两个文件**（都不动 HEAD）。⚠️ `git worktree` 在这儿也不可用（路径被解析成 `E:/e/…`）。⚠️ `mv`/`rm` **会报 `cannot stat` 但其实成功了** —— 报错不可信，**回头 `ls` 确认**。
 
 ## 九、本地「编辑指令识别」已冻结（09-20）→ LESSONS §十一
 
