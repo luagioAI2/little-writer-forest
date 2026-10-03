@@ -98,3 +98,11 @@
   本项目实测藏着 422 MB 的工作目录（`scripts/_photo-*` 等）。
   ⚠️ 别用 `git status | grep '^??' | du` —— 目录里只有**部分**文件被忽略时，
   git 仍会列出该目录，而 `du` 会把整个目录算进去（实测虚高到 419M）。
+- ★★ **写忽略规则时，别整目录忽略** —— 写完先 `git grep` 一遍被忽略的路径，
+  看**已入库的文档**有没有引用它们。
+  2026-10-03 踩过：把 `scripts/_photo-*/` / `_site/` / `_new50/` 整目录忽略了，
+  提交推上去才发现 `MEMORY-ENV §七` 的**标题**就点着 `scripts/_new50/app-probe4.mjs`，
+  `MEMORY-TOOLS` 引用 `_site/photo-url-overrides.json` 等，**几十处引用全悬空**。
+  ➜ 正确做法：**只按扩展名挡体积大的那类**（图片），脚本 / 数据 / README 照常入库
+  （那 7 个工作目录里非图片文件只有 348 个、4.3 MB，而图片 400+ MB）。
+  查引用：`git grep -oh 'scripts/_被忽略的目录/[A-Za-z0-9_.-]*' -- . ':!node_modules' | sort -u`
