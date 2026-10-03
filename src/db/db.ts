@@ -18,6 +18,7 @@ import type {
   Bird,
   DiaryEntry,
   LevelState,
+  LegacyTranscribeConfig,
   OwnedCard,
   Settings,
   Sprout,
@@ -30,6 +31,7 @@ import type {
 } from '../domain/types'
 import { DEFAULT_CHILD_NAME } from '../domain/types'
 import type { LibraryItem } from '../domain/library'
+import { migrateStoredItem } from '../domain/library'
 import { initialLevelState } from '../domain/levels'
 import { initialStreak } from '../domain/diary'
 import { initialTreeState } from '../domain/tree'
@@ -204,9 +206,14 @@ export function migrateRetiredDeepSeekModel(ai: Settings['ai']): Settings['ai'] 
  *
  * ★★ 这个函数是为了修一个**真实发生过的故障**，别把它简化掉。
  *
- * 背景：转写有两条完全不同的路，靠 `engine` 区分 ——
+ * 背景：转写原来有两条完全不同的路，靠 `engine` 区分 ——
  *   `'volcengine'` 火山流式（边说边传），配置里 **baseUrl 是空的**，密钥是火山家的（UUID）；
  *   `'openai'`     整包上传（硅基流动那类），配置里 **baseUrl 非空**，密钥是 `sk-` 家的。
+ *
+ * ⛔ 2026-10-02 家长定：「去掉硅基流动的东西，只使用火山。」
+ *    整包上传那条路**连代码一起删了**，所以 `engine` / `baseUrl` 现在都不该再存在。
+ *    但**这个函数必须留着** —— 盘上还有老存档，而它们的形状正是下面这个故障的现场。
+ *    ⚠️ 删字段只改类型是不够的：老存档里那两个键还在，读出来照样会拼出自相矛盾的配置。
  *
  * 问题出在：`engine` 是**后加的字段**，而 `defaultTranscribeConfig()` 后来
  * 从 openai 那套换成了火山那套。老存档里没有 `engine`，于是
@@ -216,9 +223,8 @@ export function migrateRetiredDeepSeekModel(ai: Settings['ai']): Settings['ai'] 
  *     apiKey : 'sk-…'（硅基流动的）                  ← 来自老存档
  *     baseUrl: 'https://api.siliconflow.cn/v1'      ← 来自老存档
  *
- * 两个判定会**同时**说"能用"：`usesStreamingEngine()` 看 engine（真）、
- * `isTranscribeConfigured()` 看 apiKey 非空（真）→ 于是界面切成「按住说话」，
- * 然后拿**硅基流动的密钥去连火山的 WebSocket** → 握手被拒 HTTP 401 → 一个字都出不来。
+ * 于是界面切成「按住说话」，然后拿**硅基流动的密钥去连火山的 WebSocket**
+ * → 握手被拒 HTTP 401 → 一个字都出不来。
  * （401 是实测的，见 `scripts/_probe-volcengine-stream.mjs` 换个密钥跑一次。）
  *
  * 家长看到的就是「**录音突然不好使了，之前明明是好的**」——
@@ -226,16 +232,20 @@ export function migrateRetiredDeepSeekModel(ai: Settings['ai']): Settings['ai'] 
  * 这类"改了默认值、老存档没跟上"本项目已经踩过好几次（见 MEMORY §七），
  * 所以这里按同一个规矩办：**能一次说清就别留**。
  *
- * ★ 判据只有一条：**配置必须自洽** —— `engine` 和其余字段不许打架。
- *   自洽的配置是家长的**明确选择**，一律不碰；
- *   **不自洽（含"没有 engine"的老存档）→ 整份回到当前默认值**（火山，密钥内置）。
+ * ★ 判据只有一条：**配置必须自洽** —— 只认 `engine === 'volcengine'`
+ *   且不带 baseUrl、不带 `sk-` 密钥的那一份。
+ *   自洽的配置是家长的**明确选择**，保留；
+ *   **其余（含"没有 engine"的老存档、以及已经删掉的 `'openai'`）→ 整份回到
+ *   当前默认值**（火山，密钥内置）。
  *
  *   为什么老存档算"不自洽"而不是"猜成 openai"：
  *   那时 `engine` 还不存在，家长**没选过路由** —— 他填的只是当时唯一可填的那一格。
- *   猜成 openai 会把他钉在一个我们正准备淘汰的默认值上；而火山那条路
+ *   猜成 openai 会把他钉在一个**已经删掉**的路由上；而火山那条路
  *   密钥内置、不用配、还更快。所以"跟着当前默认走"才是他真正想要的结果。
  */
-export function migrateTranscribeConfig(saved: TranscribeConfig | undefined): TranscribeConfig {
+export function migrateTranscribeConfig(
+  saved: LegacyTranscribeConfig | undefined,
+): TranscribeConfig {
   const d = defaultTranscribeConfig()
   if (!saved) return d
 
@@ -248,12 +258,21 @@ export function migrateTranscribeConfig(saved: TranscribeConfig | undefined): Tr
   const coherent =
     saved.engine === 'volcengine'
       ? !hasBase && !foreignKey // 火山不需要地址，也不该带着别家的密钥
-      : saved.engine === 'openai'
-        ? hasBase // 整包上传必须有地址
-        : false // 没有 engine = 加这个字段之前的老存档，判不了 → 不自洽
+      : false // 没有 engine（或已经删掉的 'openai'）→ 判不了 → 不自洽
 
-  // 家长自己配的、自洽的配置：一律不碰
-  if (coherent) return { ...d, ...saved }
+  // 家长自己配的、自洽的配置：保留他的选择
+  //
+  // ★ 这里是**逐字段挑**，不是 `{ ...d, ...saved }`。
+  //   为什么：整包上传那条路删掉之后，老存档里还留着 `engine` / `baseUrl`
+  //   两个**已经没有意义的键**。原样 spread 会把它们继续写回存档 ——
+  //   于是"删掉了"只体现在类型上，盘上永远清不干净。
+  if (coherent) {
+    return {
+      apiKey: key,
+      model: saved.model?.trim() || d.model,
+      resourceId: saved.resourceId?.trim() || d.resourceId,
+    }
+  }
 
   // 不自洽 → 整份回到当前默认（火山 + 内置密钥），绝不做字段级拼接
   return d
@@ -424,8 +443,28 @@ export async function deleteLibraryItem(id: string): Promise<void> {
   await db.library.delete(id)
 }
 
+/**
+ * ★★ 读出题库，并做**老存档迁移**（`genre` → `requiredGenre`）。
+ *
+ * 2026-10-01 改名之后，老用户库里那批题带的还是旧 key —— 直接读会
+ * **全部变成记叙文题**（包括那 8 道应用文题）。而且这个失败是**静默**的：
+ * 不报错、不崩、题一道不少、界面照常，只是格式要求悄悄退回缺省了。
+ *
+ * ⚠️ 所以「从库里读题」的路**必须全部走这里**，别再直接
+ *    `db.library.toArray()` —— 抄第二条路就漏一条。
+ */
+async function readLibraryRows(): Promise<LibraryItem[]> {
+  const rows = (await db.library.toArray()) as LibraryItem[]
+  return rows.map(migrateStoredItem)
+}
+
 export async function listLibrary(): Promise<LibraryItem[]> {
-  return db.library.orderBy('addedAt').reverse().toArray()
+  // ⚠️ 这里原来走 `orderBy('addedAt').reverse()`。改成整表拿回来内存排序，
+  //    和 `readBootSnapshot()` 同一个理由（见那边文件头）：`orderBy` 走索引，
+  //    `addedAt` 缺值的行**不会出现在索引里**，会被静默漏掉。
+  //    本 App 的量级（几百道题）内存排序更快也更稳。
+  const rows = await readLibraryRows()
+  return rows.sort((a, b) => b.addedAt - a.addedAt)
 }
 
 export async function clearLibrary(): Promise<void> {
@@ -494,10 +533,11 @@ export async function readBootSnapshot(): Promise<BootSnapshot> {
     const m = new Map(metaRows.map((r) => [r.key, r.value]))
 
     // 同一个事务里发的请求会被 Dexie 并行铺开，一起等
+    // ★ 题库走 `readLibraryRows()`（它做老存档迁移：`genre` → `requiredGenre`）
     const [workRows, diaryRows, libraryRows, cardRows] = await Promise.all([
       db.works.toArray(),
       db.diary.toArray(),
-      db.library.toArray(),
+      readLibraryRows(),
       db.cards.toArray(),
     ])
 

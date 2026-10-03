@@ -11,17 +11,20 @@
    然后用这里的断言把帧格式钉死。格式一旦对不上，这里先红。
    ============================================================ */
 
-import { describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   VOLC_ENDPOINTS,
   buildFrame,
+  dropWarmVolcStream,
   extractText,
   isFinalFrame,
   openVolcStream,
   parseFrame,
   resolveEndpoint,
+  warmVolcStream,
+  type VolcStreamResult,
 } from './volcengine'
-import { downsampleTo, floatToInt16Bytes } from './pcm-capture'
+import { createPcmCapture, downsampleTo, floatToInt16Bytes } from './pcm-capture'
 import { connectWs, type WsHandlers } from './ws-transport'
 
 /* 把诊断日志静音：跑起会话之后 voiceDiag 会往 console 打一堆，
@@ -40,6 +43,17 @@ vi.mock('./ws-transport', () => ({ connectWs: vi.fn() }))
 
 const FLAG_NONE = 0b0000
 const FLAG_LAST = 0b0010
+
+/* 预热槽（warmSlot）是**模块级状态** —— 每个用例前后都清干净，免得互相串。
+   （漏了它会出现"单独跑绿、一起跑红"那种最难查的假红。） */
+beforeEach(() => {
+  dropWarmVolcStream()
+})
+afterEach(() => {
+  dropWarmVolcStream()
+  vi.unstubAllGlobals()
+  vi.useRealTimers()
+})
 
 describe('帧格式（大端，和服务端约定死了）', () => {
   it('full client request：0x11 / 0x10 / 0x10 / 0x00 + 长度 + JSON', () => {
@@ -316,5 +330,280 @@ describe('松手早于 open 事件（真实存在的窄窗口）', () => {
     expect(lastPackets(sock.sent)).toBe(1)
 
     stream.cancel()
+  })
+})
+
+/* ============================================================
+   收尾：**已经识别出来的字，一个字都不许丢**
+   ============================================================
+
+   家长 2026-10-02 报的原话：
+     「写作文 录音时候，录音文字已经识别，但是如果松开过快，就不会处理。」
+
+   症状是**上槽已经长出字了，正文却一个字没变**。
+   成因：中间结果（`onInterim`）到了，终稿那一条消息却可能压根不来
+   —— 服务端只给中间结果、或者收尾时连接被关掉 / 报错。
+   修复前这一轮直接回一句"没听清"，孩子刚说的话就白说了。
+
+   ★ 唯一**不许**兜底的情况：`cancelled` —— 那是孩子自己放弃的
+     （手指滑出按钮 / 离开页面）。把他不要的东西写进作文更糟。
+     这就是 `'cancelled'` 必须从 `'empty'` 里分出来的原因。
+   ============================================================ */
+
+interface FakeConn {
+  sent: Uint8Array[]
+  closed: boolean
+  fireOpen: () => void
+  fireMessage: (bytes: Uint8Array) => void
+  fireError: (message: string) => void
+  fireClose: () => void
+}
+
+/**
+ * 记下**每一条**连接。
+ *
+ * ⚠️ 不能用上面那个 `fakeConnect`：它只留最后一份 handlers，
+ *    而"预热 + 现连"会各建一条，两条要能分别操作。
+ */
+function fakeConnectAll(): { conns: FakeConn[] } {
+  const conns: FakeConn[] = []
+  vi.mocked(connectWs).mockImplementation(async (_url, _headers, h) => {
+    const conn: FakeConn = {
+      sent: [],
+      closed: false,
+      fireOpen: () => h.onOpen(),
+      fireMessage: (b) => h.onMessage(b),
+      fireError: (m) => h.onError(m),
+      fireClose: () => h.onClose(),
+    }
+    conns.push(conn)
+    return {
+      send: (b) => conn.sent.push(b),
+      close: () => {
+        conn.closed = true
+      },
+    }
+  })
+  return { conns }
+}
+
+/** 服务端下发的一帧（messageType 9 = 识别结果） */
+function serverFrame(text: string, final = false): Uint8Array {
+  return buildFrame({
+    messageType: 9,
+    serialization: 1,
+    flags: final ? FLAG_LAST : FLAG_NONE,
+    payload: new TextEncoder().encode(JSON.stringify({ result: { text } })),
+  })
+}
+
+describe('收尾 · 已经有中间结果就不许丢', () => {
+  it('中间结果先到、终稿后到 → 用终稿（终稿只要来了就一定赢）', async () => {
+    const { conns } = fakeConnectAll()
+    const stream = await openVolcStream({ apiKey: 'k' }, {})
+    conns[0].fireOpen()
+    conns[0].fireMessage(serverFrame('我家有一只小猫'))
+    conns[0].fireMessage(serverFrame('我家有一只小猫，它很喜欢晒太阳。', true))
+
+    const r = await stream.finish()
+    expect(r.ok).toBe(true)
+    if (r.ok) expect(r.text).toBe('我家有一只小猫，它很喜欢晒太阳。')
+  })
+
+  it('★ 只有中间结果、终稿一直不来 → 2.5 秒就收手用中间结果（不是等满 20 秒）', async () => {
+    /* ⚠️ 必须能区分「2.5 秒兜底」和「20 秒超时」——
+       两条分支最后都拿 `lastText` 返回，光断言 `r.text` 的话
+       把 `FINAL_GRACE_MS` 整段删掉测试**照样绿**（只是让孩子多等 17.5 秒）。
+       所以这里断言的是**什么时候结算的**，不是结算出什么。 */
+    vi.useFakeTimers({ toFake: ['Date', 'setTimeout', 'clearTimeout'] })
+    const { conns } = fakeConnectAll()
+    const stream = await openVolcStream({ apiKey: 'k' }, {})
+    conns[0].fireOpen()
+    conns[0].fireMessage(serverFrame('小河边的柳树发芽了'))
+
+    let settled: VolcStreamResult | null = null
+    const p = stream.finish()
+    void p.then((r) => {
+      settled = r
+    })
+
+    // 还没到 2.5 秒：不该提前收手（终稿可能马上就来）
+    await vi.advanceTimersByTimeAsync(2_000)
+    expect(settled, '2 秒就收手属于误伤 —— 终稿可能还在路上').toBeNull()
+
+    // 越过 2.5 秒 → 立刻用中间结果兜底
+    await vi.advanceTimersByTimeAsync(600)
+    expect(settled, '2.5 秒就该收手了，不许让孩子盯到 20 秒').not.toBeNull()
+
+    const r = await p
+    expect(r.ok).toBe(true)
+    if (r.ok) expect(r.text).toBe('小河边的柳树发芽了')
+  })
+
+  it('★ 收尾时连接被关掉、但已经有中间结果 → 用中间结果，不许报"没听清"', async () => {
+    const { conns } = fakeConnectAll()
+    const stream = await openVolcStream({ apiKey: 'k' }, {})
+    conns[0].fireOpen()
+    conns[0].fireMessage(serverFrame('小河边的柳树发芽了'))
+
+    const p = stream.finish()
+    conns[0].fireClose()
+
+    const r = await p
+    expect(r.ok).toBe(true)
+    if (r.ok) expect(r.text).toBe('小河边的柳树发芽了')
+  })
+
+  it('★ 孩子自己放弃（cancel）→ reason 是 `cancelled`，不是 `empty`', async () => {
+    /* 这一条是上面那条兜底的**前提**：两种失败必须长得不一样，
+       否则"给没听清加兜底"就必然误伤"孩子主动放弃"。 */
+    const { conns } = fakeConnectAll()
+    const stream = await openVolcStream({ apiKey: 'k' }, {})
+    conns[0].fireOpen()
+    conns[0].fireMessage(serverFrame('这句话孩子不要了'))
+    stream.cancel()
+
+    const r = await stream.finish()
+    expect(r.ok).toBe(false)
+    if (!r.ok) expect(r.reason).toBe('cancelled')
+  })
+
+  it('一句都没听清（服务端回话了但文本是空的）→ `empty`，不是 `cancelled`', async () => {
+    const { conns } = fakeConnectAll()
+    const stream = await openVolcStream({ apiKey: 'k' }, {})
+    conns[0].fireOpen()
+    const p = stream.finish()
+    conns[0].fireMessage(serverFrame('', true))
+
+    const r = await p
+    expect(r.ok).toBe(false)
+    if (!r.ok) expect(r.reason).toBe('empty')
+  })
+})
+
+/* ============================================================
+   预热连接 —— 进写作页就握好，按下时复用
+   ============================================================
+
+   家长 2026-10-02 要的：「能否进入写作页面就是有录音的，就建立好链接
+   （因为现在 开始的时候录音反应有些慢，猜测预链接可能会好一些）。」
+
+   ★ 预热**只负责更快，不负责能用** —— 取不到就现连，也就是今天的行为。
+     所以下面每一条失败路径都必须"退回现连"，而不是"这一轮废了"。
+   ============================================================ */
+
+describe('预热连接 · 复用与失效', () => {
+  it('★ 预热过就直接复用 —— 按下时不再建第二条连接', async () => {
+    const { conns } = fakeConnectAll()
+    warmVolcStream({ apiKey: 'k' })
+    expect(conns, '预热会先建一条').toHaveLength(1)
+
+    const stream = await openVolcStream({ apiKey: 'k' }, {})
+    expect(conns, '按下时不该再建第二条').toHaveLength(1)
+
+    // 复用的那条照样要发配置帧（音频格式全靠它）
+    conns[0].fireOpen()
+    expect(parseFrame(conns[0].sent[0])?.messageType).toBe(1)
+    stream.cancel()
+  })
+
+  it('★ 预热复用时，open 事件在会话出生之前就到过 → 配置帧也不许丢', async () => {
+    /* 预热那条连接是**进页面**时握的，open 事件早就打完了，
+       而"会话"要到按下那一刻才出生。事件比会话早是常态，不是边界。 */
+    const { conns } = fakeConnectAll()
+    warmVolcStream({ apiKey: 'k' })
+    conns[0].fireOpen() // 会话还不存在 → 事件被攒住
+    expect(conns[0].sent).toHaveLength(0)
+
+    const stream = await openVolcStream({ apiKey: 'k' }, {})
+    // 会话接管后把"已经 open 过"补上 → 配置帧这才发出去
+    expect(conns[0].sent).toHaveLength(1)
+    expect(parseFrame(conns[0].sent[0])?.messageType).toBe(1)
+    stream.cancel()
+  })
+
+  it('换密钥 → 不复用（旧连接是拿旧密钥握的）', async () => {
+    const { conns } = fakeConnectAll()
+    warmVolcStream({ apiKey: 'k1' })
+    await openVolcStream({ apiKey: 'k2' }, {})
+    expect(conns).toHaveLength(2)
+  })
+
+  it('★ 预热的连接已经死了（error / close）→ 不复用，退回现连', async () => {
+    const { conns } = fakeConnectAll()
+    warmVolcStream({ apiKey: 'k' })
+    conns[0].fireError('boom')
+    await openVolcStream({ apiKey: 'k' }, {})
+    expect(conns, '死掉的连接不能用 —— 用它孩子会白说一遍').toHaveLength(2)
+  })
+
+  it('预热超过 60 秒就作废（拿不准宁可现连）', async () => {
+    vi.useFakeTimers({ toFake: ['Date', 'setTimeout', 'clearTimeout'] })
+    const { conns } = fakeConnectAll()
+    warmVolcStream({ apiKey: 'k' })
+    vi.advanceTimersByTime(61_000)
+    await openVolcStream({ apiKey: 'k' }, {})
+    expect(conns).toHaveLength(2)
+  })
+
+  it('没密钥就完全不预热（别在没密钥时打无谓的连接）', () => {
+    const { conns } = fakeConnectAll()
+    warmVolcStream({ apiKey: '   ' })
+    expect(conns).toHaveLength(0)
+  })
+
+  it('★ 预热本身失败（连不上）不许影响按下 —— 现连照常', async () => {
+    let calls = 0
+    vi.mocked(connectWs).mockImplementation(async () => {
+      calls += 1
+      if (calls === 1) throw new Error('预热时网络正好不通')
+      return { send: () => {}, close: () => {} }
+    })
+    warmVolcStream({ apiKey: 'k' })
+    const stream = await openVolcStream({ apiKey: 'k' }, {})
+    expect(calls, '第一次是预热（失败），第二次是现连').toBe(2)
+    // 拿到的是一条能用的会话，不是空壳
+    stream.cancel()
+  })
+})
+
+/* ============================================================
+   PCM 采集：开麦前就被收掉 → 不许再把音频图建起来
+   ============================================================
+
+   这一条原来守在**整包上传**那条路上（MediaRecorder 迟到的 resolve
+   会把录音器建起来，而再没人停它 → 麦克风指示灯一直亮到退出页面）。
+   那条路已删，但守卫本身必须留着 —— 采集换成了 PCM，问题一模一样：
+   `stop()` 是同步的，而 `getUserMedia` 要等几十到几百毫秒，
+   所以"松手抢在开麦前面"是常态。
+   ============================================================ */
+
+describe('PCM 采集 · 开麦前被收掉就不许建音频图', () => {
+  it('★ stop() 抢在 getUserMedia 前面 → 迟到的 resolve 只把轨道关掉', async () => {
+    const stoppedTracks: string[] = []
+    /** 由测试决定"麦克风什么时候才打开" —— 复刻 getUserMedia 的耗时 */
+    let release!: (stream: unknown) => void
+    const micOpening = new Promise<unknown>((res) => {
+      release = res
+    })
+
+    vi.stubGlobal('navigator', {
+      mediaDevices: { getUserMedia: () => micOpening },
+    })
+    // 建音频图就会走到这里 —— 走到了说明守卫没了
+    vi.stubGlobal(
+      'AudioContext',
+      function AudioContextStub() {
+        throw new Error('开麦前就被收掉了，不该再建 AudioContext')
+      },
+    )
+
+    const cap = createPcmCapture({ onChunk: () => {} })
+    const p = cap.start()
+    cap.stop() // 松手是同步的，抢在开麦前面
+    release({ getTracks: () => [{ stop: () => stoppedTracks.push('t') }] })
+
+    await p // 不许抛
+    expect(stoppedTracks, '麦克风必须被关掉，不许留着').toHaveLength(1)
   })
 })

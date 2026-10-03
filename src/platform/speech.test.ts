@@ -16,6 +16,9 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 
 /** 假的原生识别对象：只要被 new 出来，计数器就会动 */
 let webSpeechInstances = 0
+/** 最近一次建出来的替身的"打错"入口 —— 测试用它把 onerror 喂进去。
+    ⚠️ 写成**闭包**而不是直接存 `this`：存 `this` 会触发 no-this-alias。 */
+let fireWebSpeechError: (err: string) => void = () => {}
 
 class FakeWebSpeechRecognition {
   lang = ''
@@ -29,7 +32,12 @@ class FakeWebSpeechRecognition {
   constructor() {
     webSpeechInstances += 1
   }
-  start() {}
+  start() {
+    fireWebSpeechError = (err) => {
+      const handler = this.onerror as ((e: { error: string }) => void) | null
+      handler?.({ error: err })
+    }
+  }
   stop() {}
   abort() {}
 }
@@ -81,6 +89,7 @@ async function loadSpeech(opts: {
 }) {
   vi.resetModules()
   webSpeechInstances = 0
+  fireWebSpeechError = () => {}
 
   // @capacitor/core 的插件注册表是模块级的，跨 resetModules 保留，
   // 所以第二轮注册会打一行 "already registered" —— 预期之内，静音掉。
@@ -484,5 +493,35 @@ describe('浏览器环境', () => {
 
     expect(errors.length).toBe(1)
     expect(errors[0]).toContain('不支持语音识别')
+  })
+
+  /* ★ 下面两条守的是 onerror 那个映射表（2026-10-03 改过 network 那条文案）。
+     它们是**故意不报错**的那一类故障：文案说错了照样跑，只是把家长引偏。 */
+
+  it('报 network 时不许甩锅给"你的网络不好"', async () => {
+    const { speech } = await loadSpeech({ native: false, withWebSpeech: true })
+
+    const errors: string[] = []
+    speech.createRecognizer({ onFinal: () => {}, onError: (m) => errors.push(m) }).start()
+
+    fireWebSpeechError('network')
+
+    expect(errors.length).toBe(1)
+    /* 国内网络下 Chrome 自带的识别连不上 Google，报的就是 `network`。
+       只说"请检查网络"会让家长去查路由器 —— 必须把"服务用不了"这层说出来。 */
+    expect(errors[0]).toContain('浏览器自带的识别服务')
+    expect(errors[0]).toContain('断网')
+  })
+
+  it('no-speech / aborted 是常态：一个字都不报，不打扰孩子', async () => {
+    const { speech } = await loadSpeech({ native: false, withWebSpeech: true })
+
+    const errors: string[] = []
+    speech.createRecognizer({ onFinal: () => {}, onError: (m) => errors.push(m) }).start()
+
+    fireWebSpeechError('no-speech')
+    fireWebSpeechError('aborted')
+
+    expect(errors).toEqual([])
   })
 })

@@ -33,7 +33,12 @@ import type { Settings } from '../domain/types'
 import { initialLevelState } from '../domain/levels'
 import { initialTreeState } from '../domain/tree'
 import { DEFAULT_DEEPSEEK_MODEL, defaultAiConfig } from '../domain/ai'
-import { defaultTranscribeConfig, isTranscribeConfigured, VOLC_TEST_API_KEY } from '../platform/transcribe'
+import {
+  defaultTranscribeConfig,
+  isTranscribeConfigured,
+  VOLC_TEST_API_KEY,
+  type TranscribeConfig,
+} from '../platform/transcribe'
 
 describe('mergeSettings —— 空存档 / 缺字段', () => {
   it('undefined 时返回完整默认设置', () => {
@@ -96,24 +101,24 @@ describe('mergeSettings —— 空存档 / 缺字段', () => {
     // 反向把关：合并顺序写反（default 在后）就会把家长的 Key 冲掉，
     // 而且家长不会发现 —— 只会觉得"怎么又不好使了"
     //
-    // ⚠️ 必须带 `engine`：不带的话它是"加 engine 之前的老存档"，
-    //    会被 migrateTranscribeConfig 整份重置成火山默认值（见本文件后面那组用例）。
+    // ⚠️ 必须带 `engine: 'volcengine'` 且 baseUrl 为空：不带 engine、或者
+    //    带着地址，都会被 migrateTranscribeConfig 判成"不自洽"而整份重置成
+    //    火山默认值（见本文件后面那组用例）。
     //    也就是说 —— **只有自洽的配置才算"家长的明确选择"**。
     const mine = {
       ...defaultSettings(),
       transcribe: {
-        engine: 'openai' as const,
-        baseUrl: 'https://my-own.example/v1',
-        apiKey: 'sk-mine',
-        model: 'my-model',
+        engine: 'volcengine' as const,
+        baseUrl: '',
+        apiKey: 'my-own-uuid-key',
+        model: 'nostream',
+        resourceId: 'volc.seedasr.sauc.duration',
       },
     }
     const s = mergeSettings(mine)
 
-    expect(s.transcribe?.apiKey).toBe('sk-mine')
-    expect(s.transcribe?.baseUrl).toBe('https://my-own.example/v1')
-    expect(s.transcribe?.model).toBe('my-model')
-    expect(s.transcribe?.engine).toBe('openai')
+    expect(s.transcribe?.apiKey).toBe('my-own-uuid-key')
+    expect(s.transcribe?.model).toBe('nostream')
   })
 
   it('老的 ai 配置同样不能被默认值盖掉', () => {
@@ -319,12 +324,19 @@ describe('几个直接返回型 merge —— 只保证不返回 undefined', () =
    （实测过）→ 一个字都出不来。
 
    修法只有一条判据：**配置必须自洽** —— engine 与其余字段不许打架。
-   · 自洽 = 家长的**明确选择** → 一律不碰；
+   · 自洽 = 家长的**明确选择** → 保留（逐字段挑，不 spread）；
    · 不自洽（含"没有 engine"的老存档）→ 整份回到当前默认（火山，密钥内置）。
 
    为什么老存档算"不自洽"、而不是猜成 openai：那时 engine 还不存在，
-   家长没选过路由，他填的只是当时唯一可填的那一格。猜成 openai 会把他
-   钉在一个我们正准备淘汰的默认值上；火山那条路密钥内置、不用配、还更快。
+   家长没选过路由，他填的只是当时唯一可填的那一格。
+
+   ⛔ 2026-10-02 家长定「去掉硅基流动的东西，只使用火山」之后，
+      `'openai'` 那条路连代码一起删了 —— 于是这个函数只剩**一个**目的：
+      把盘上那些形状已经作废的老存档（带 `engine` / `baseUrl` / `sk-` 密钥）
+      清成当前唯一的那份配置。
+      ★ 所以下面每组用例都多了一条断言：**迁移结果里不许再留下
+        `engine` / `baseUrl` 这两个键** —— 只删类型是不够的，
+        键还在盘上就还会被读出来拼成自相矛盾的配置。
    ============================================================ */
 
 const SF_KEY = 'sk-fscrrhohiidqoakwrfegzgqmakzpkseamllbdshsmpzdrqel'
@@ -339,14 +351,19 @@ function legacySaveWith(transcribe: Record<string, unknown>) {
 }
 
 /**
- * 自洽的判据（和 `migrateTranscribeConfig` 里的定义保持一致）：
- * 火山 ⇒ baseUrl 必须空、且不许带别家的 `sk-` 密钥；
- * 整包上传 ⇒ baseUrl 必须非空。
+ * 迁移结果必须是**当前这一份配置**，一个字的多余字段都不许有。
+ *
+ * 判据三条（和 `migrateTranscribeConfig` 的约定一致）：
+ *   ① 只剩活着的三个键 —— `engine` / `baseUrl` 必须被清掉；
+ *   ② 不许带着别家的 `sk-` 密钥（火山是 UUID，串味的密钥就是 401 的成因）；
+ *   ③ 能直接用（`isTranscribeConfigured`）。
  */
-function isCoherent(t: ReturnType<typeof defaultTranscribeConfig>) {
-  const hasBase = Boolean(t.baseUrl?.trim())
+function isClean(t: TranscribeConfig) {
+  const raw = t as unknown as Record<string, unknown>
+  const keys = Object.keys(raw).sort()
+  const onlyLiveKeys = keys.every((k) => ['apiKey', 'model', 'resourceId'].includes(k))
   const foreign = (t.apiKey ?? '').trim().startsWith('sk-')
-  return t.engine === 'volcengine' ? !hasBase && !foreign : hasBase
+  return onlyLiveKeys && !foreign
 }
 
 describe('mergeSettings —— 语音转写配置必须自洽（★ 真实故障回归）', () => {
@@ -359,11 +376,12 @@ describe('mergeSettings —— 语音转写配置必须自洽（★ 真实故障
       }),
     )
 
-    // 这就是那个 bug 的形态：engine 说火山，密钥却是硅基流动的
-    expect(s.transcribe?.engine).toBe('volcengine')
+    // 这就是那个 bug 的形态：配置说火山，密钥却是硅基流动的
     expect((s.transcribe?.apiKey ?? '').startsWith('sk-')).toBe(false)
-    expect(s.transcribe?.baseUrl).toBe('')
-    expect(isCoherent(s.transcribe!)).toBe(true)
+    expect(isClean(s.transcribe!)).toBe(true)
+    // ★ 老的两个键不许留在盘上（只删类型 = 没删）
+    expect((s.transcribe as unknown as Record<string, unknown>).baseUrl).toBeUndefined()
+    expect((s.transcribe as unknown as Record<string, unknown>).engine).toBeUndefined()
     // 而且必须是"能直接用"的（密钥内置），否则家长还是按不动麦克风
     expect(isTranscribeConfigured(s.transcribe)).toBe(true)
   })
@@ -377,9 +395,9 @@ describe('mergeSettings —— 语音转写配置必须自洽（★ 真实故障
         model: 'Qwen/Qwen3-ASR-1.7B',
       }),
     )
-    expect(isCoherent(s.transcribe!)).toBe(true)
+    expect(isClean(s.transcribe!)).toBe(true)
     expect((s.transcribe?.apiKey ?? '').startsWith('sk-')).toBe(false)
-    expect(s.transcribe?.baseUrl).toBe('')
+    expect((s.transcribe as unknown as Record<string, unknown>).baseUrl).toBeUndefined()
   })
 
   it('★ 另一种写坏：engine=火山 + 内置火山密钥，但 baseUrl 有残留 → 也要清干净', () => {
@@ -391,33 +409,37 @@ describe('mergeSettings —— 语音转写配置必须自洽（★ 真实故障
         model: 'bigmodel',
       }),
     )
-    expect(s.transcribe?.engine).toBe('volcengine')
-    expect(s.transcribe?.baseUrl).toBe('')
-    expect(isCoherent(s.transcribe!)).toBe(true)
+    expect((s.transcribe as unknown as Record<string, unknown>).baseUrl).toBeUndefined()
+    expect(isClean(s.transcribe!)).toBe(true)
   })
 
-  it('全新用户（没有 transcribe）→ 用火山默认值，且自洽可用', () => {
-    const s = mergeSettings(legacySaveWith({}))
-    expect(isTranscribeConfigured(s.transcribe)).toBe(true)
-    expect(isCoherent(s.transcribe!)).toBe(true)
-  })
-
-  it('家长自己填的、自洽的配置一律不碰', () => {
+  it('★ 自洽的火山配置 → 保留家长的选择，但两个废弃键仍要清掉', () => {
+    /* 这一条是"不碰家长的明确选择"和"清掉废弃键"两件事的**交汇点**：
+       保留 ≠ 原样 spread。家长填的 apiKey / model / resourceId 留下，
+       而 `engine` / `baseUrl` 这两个已经没有意义的键必须消失 ——
+       否则"删掉了"只体现在类型上，盘上永远清不干净。 */
     const s = mergeSettings(
       legacySaveWith({
-        engine: 'openai',
-        baseUrl: 'https://my-own.example/v1',
-        apiKey: 'sk-mine',
-        model: 'my-model',
+        engine: 'volcengine',
+        baseUrl: '',
+        apiKey: 'my-own-uuid-key',
+        model: 'nostream',
+        resourceId: 'volc.seedasr.sauc.duration',
       }),
     )
-    expect(s.transcribe?.engine).toBe('openai')
-    expect(s.transcribe?.baseUrl).toBe('https://my-own.example/v1')
-    expect(s.transcribe?.apiKey).toBe('sk-mine')
-    expect(s.transcribe?.model).toBe('my-model')
+    expect(s.transcribe?.apiKey).toBe('my-own-uuid-key')
+    expect(s.transcribe?.model).toBe('nostream')
+    expect((s.transcribe as unknown as Record<string, unknown>).engine).toBeUndefined()
+    expect((s.transcribe as unknown as Record<string, unknown>).baseUrl).toBeUndefined()
   })
 
-  it('★ 任何来源的存档，合并后都必须自洽（横扫）', () => {
+  it('全新用户（没有 transcribe）→ 用火山默认值，且干净可用', () => {
+    const s = mergeSettings(legacySaveWith({}))
+    expect(isTranscribeConfigured(s.transcribe)).toBe(true)
+    expect(isClean(s.transcribe!)).toBe(true)
+  })
+
+  it('★ 任何来源的存档，合并后都必须干净且可用（横扫）', () => {
     const cases: Record<string, unknown>[] = [
       { baseUrl: 'https://api.siliconflow.cn/v1', apiKey: SF_KEY, model: 'Qwen/Qwen3-ASR-1.7B' },
       { engine: 'volcengine', baseUrl: 'https://api.siliconflow.cn/v1', apiKey: SF_KEY, model: 'x' },
@@ -430,8 +452,8 @@ describe('mergeSettings —— 语音转写配置必须自洽（★ 真实故障
     ]
     for (const c of cases) {
       const s = mergeSettings(legacySaveWith(c))
-      expect(isCoherent(s.transcribe!), '不自洽: ' + JSON.stringify(c)).toBe(true)
-      // 自洽还不够 —— 还得是"能直接用"的，否则孩子按不动麦克风
+      expect(isClean(s.transcribe!), '不干净: ' + JSON.stringify(c)).toBe(true)
+      // 干净还不够 —— 还得是"能直接用"的，否则孩子按不动麦克风
       expect(isTranscribeConfigured(s.transcribe), '不可用: ' + JSON.stringify(c)).toBe(true)
     }
   })

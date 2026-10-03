@@ -221,6 +221,19 @@ start: () => {
 
 #### ④ 华为手机上系统识别服务整个不可用 —— 于是加了云端转写
 
+> ⛔ **2026-10-02 起，这一节描述的世界只剩一半了 —— 读之前先看这段。**
+>
+> 家长定「去掉硅基流动的东西，只使用火山」，于是**整包上传**那条路
+> （`POST {baseUrl}/audio/transcriptions`，以及 `transcribe.ts` 里的
+> `transcribeAudio` / `transcribeWithRetry` / `warmUpTranscribe`）
+> **连代码带设置页一起删了**。现在**只有火山流式**（边说边传）这一条路。
+>
+> ➜ 下面凡出现「两条路」「整包上传」「硅基流动」「家长填 BaseURL / Key / 模型」
+>    「`npm run transcribe:e2e` / `transcribe:bench`」的地方，都是**历史记录**，
+>    不是今天的实现（那两个 npm script 也一并删了）。
+>    保留它们是为了留住**决策依据**（为什么最后选流式），**没有逐句重写**。
+>    今天的实现看 `src/platform/transcribe.ts` 的文件头。
+
 上面①②③全修完、诊断行也确认了：华为 Mate40 Pro 上提示的是
 **"这一轮没有收到任何识别结果"** —— 也就是识别服务**一条结果都没送回来**。
 
@@ -388,14 +401,27 @@ SenseVoice 那一条直接标了「不太稳」。
 ```
 
 **握手占了四成多，而且它跟识别毫无关系。** 这就是下面第 1 条的由来。
+（⚠️ 量的当时走的是**整包上传**那条路，已删；这两个数字留作
+「握手值不值得提前做掉」的判据 —— 结论对今天同样成立。）
 
-**① 预热连接 —— 已实现（`warmUpTranscribe()`）。** 按下「按住说话」时顺手发一个
-`GET {baseUrl}/models`，把 DNS/TCP/TLS 提前做掉。孩子从按下到松手通常有 2~10 秒，
-这段时间足够握手完成，**所以这 160ms 是纯赚的**（它是和说话并行跑的，
-不占等待时间）。`/models` 不消耗转写配额，也不留识别记录；失败静默忽略。
+**① 预热连接 —— 已实现，但换了时机和对象。** 最早那版叫
+`warmUpTranscribe()`：按下「按住说话」时顺手发一个 `GET {baseUrl}/models`，
+把 DNS/TCP/TLS 提前做掉（那条路是整包上传，已删）。现在只剩火山流式，
+预热变成**进写作页就做两件事**（`VoiceComposer` 的 `prewarm()`）：
 
-> 只对**本次会话的第一次**有效 —— 浏览器会 keep-alive（实测 HTTP/1.1 +
-> 连接复用），后续本来就是热连接。但第一次恰恰是最容易让人失望的那次。
+- `warmVolcStream()` —— 先把火山的 WebSocket 握好，按下时直接复用；
+- `warmUpMicrophone()` —— 先 `getUserMedia` 开一次再立刻关掉，
+  把权限询问 + 打开设备的开销摊到进页面那一刻。
+
+> 家长 2026-10-02 的原话：「能否进入写作页面就是有录音的，就建立好链接
+> （因为现在 开始的时候录音反应有些慢，猜测预链接可能会好一些）。」
+>
+> ⚠️ 预热**只负责更快，不负责能用**：任何一步失败都不报错、不阻断，
+> 按下时照常现连、照常开麦。
+>
+> ⚠️ 预热的连接有 **60 秒 TTL**、并且会被"死掉"检测（error/close 都置 dead）——
+> 拿不准就宁可现连：现连只是慢一点，而用一条已经死掉的连接会让孩子白说一遍。
+> 用完即弃（`endRound` 里立刻再备一条），离开写作页时收掉（`dropWarmVolcStream()`）。
 
 **② 让孩子一次只说一句话。** 服务端耗时跟音频长度成正比
 （约 100–190 ms / 音频秒，见上表）。说 30 秒就要 3~5 秒，这是**唯一**能靠产品
@@ -521,21 +547,20 @@ Groq 的 `whisper-large-v3-turbo` 就是这种即插即用的选项，速度口�
 > 「地址 / 密钥 / 模型名认不认」，不是识别准确度。只要服务端**回话了**
 > 就说明配置是对的。
 
-**怎么自己验一遍**（不需要装任何东西，用项目已有的 vitest）：
+> ⛔ **2026-10-02：下面这段里的 `npm run transcribe:e2e` / `transcribe:bench`
+> 已经不存在了** —— 它们基准测试的是**整包上传**那条路，那条路连同这两个
+> npm script 一起删了（见本节开头的说明）。
+> 现在还能跑的只剩：
 
 ```bash
-TRANSCRIBE_API_KEY=sk-xxxx npm run transcribe:e2e
-# 想换模型对比：
-TRANSCRIBE_API_KEY=sk-xxxx TRANSCRIBE_MODEL=FunAudioLLM/SenseVoiceSmall npm run transcribe:e2e
-# 速度基准（模型横评 + 时长阶梯 + 格式对比），约 4 分钟：
-TRANSCRIBE_API_KEY=sk-xxxx npm run transcribe:bench
-# 延迟拆解（冷/热连接、预热值不值得做），约 1 分钟：
-TRANSCRIBE_API_KEY=sk-xxxx node scripts/_probe-latency.mjs
-# 造一份「和 App 发出去的一模一样」的 webm/opus 素材（上面两条要用）：
+# 火山流式：真实协议 + 真密钥，分帧 / 端到端 / 三个端点横评
+VOLC_API_KEY=<火山 UUID 密钥> npm run probe:volc:stream
+# 造一份「和 App 发出去的一模一样」的 webm/opus 素材
 npm run fixture:webm
 ```
 
-它打真接口，验四件事：测试按钮连打 3 次都通；真实人声连打 5 次都能转出
+**以下是历史记录（整包上传那条路，已删）**：它打真接口，验四件事 ——
+测试按钮连打 3 次都通；真实人声连打 5 次都能转出
 「我家有一只小猫…」；本地守卫（太短 / 空音频 / 没配置）根本不发请求；
 错误密钥归为 `auth` 且不重试。
 
@@ -1179,6 +1204,11 @@ $PY scripts/icon/generate_icons.py     # 产出 mipmap 各密度 + splash + favi
 ---
 
 ## 验收状态
+
+> ⚠️ **这张表是历次验收的留档，不是"当前值"** —— 数字停在记录当时，
+> 之后又加了很多用例（今天 `npx vitest run` 是 **47 个文件 / 915 通过 + 10 跳过**）。
+> ⛔ 表里 `npm run transcribe:e2e` / `transcribe:bench` 两条命令
+> **2026-10-02 已删**（它们测的是整包上传那条路，见「④ 华为手机…」开头的说明）。
 
 | 项目 | 结果 |
 | --- | --- |

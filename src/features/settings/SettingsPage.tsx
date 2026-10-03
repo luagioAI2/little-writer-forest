@@ -33,18 +33,11 @@ import {
 import LibraryPage from '../library/LibraryPage'
 import { SubHeader } from '../../App'
 import { AI_PRESETS, DEFAULT_DEEPSEEK_MODEL, testAiConnection } from '../../domain/ai'
-import {
-  TRANSCRIBE_PRESETS,
-  VOLC_TEST_API_KEY,
-  defaultTranscribeConfig,
-  openAiTranscribeConfig,
-  testTranscribeConnection,
-  usesStreamingEngine,
-} from '../../platform/transcribe'
+import { defaultTranscribeConfig } from '../../platform/transcribe'
 import { VOLC_ENDPOINTS, resolveEndpoint, testVolcConnection, type VolcEndpoint } from '../../platform/volcengine'
 import { isStreamingSupported } from '../../platform/ws-transport'
 import { DAILY_GOAL_MAX } from '../../domain/economy'
-import { isDefaultHome, resolveHomePoint } from '../../domain/travelStories'
+import { isDefaultHome, resolveHomePoint } from '../../domain/geo'
 import { DEFAULT_CHILD_NAME, GRADE_GROUPS } from '../../domain/types'
 import { exportText, pickTextFile, timestampedName } from '../../platform/files'
 import { playSound, setSoundEnabled } from '../../platform/sound'
@@ -321,14 +314,15 @@ export default function SettingsPage({ onBack }: { onBack: () => void }): ReactE
 
   /** 老存档可能没有这个字段，所以兜一层默认值再改 */
   const tr = settings.transcribe ?? defaultTranscribeConfig()
-  /** 这条配置走的是「边说边传」的流式 */
-  const trStreaming = usesStreamingEngine(tr)
   /**
    * 这台设备能不能真的走流式。
    *
    * ⚠️ 桌面上一定是 false —— 浏览器的 WebSocket 设不了请求头，连不上火山
    *    （见 platform/ws-transport.ts）。所以要老实说出来，
    *    否则家长会在电脑上测出一个"配好了但用不了"的结论。
+   *
+   * ⛔ 2026-10-02 起**只有流式这一条路**（整包上传已删），所以这里的 false
+   *    就等于"这台设备上完全没有云端转写"，不再有备选可退。
    */
   const trCanStream = isStreamingSupported()
 
@@ -339,16 +333,14 @@ export default function SettingsPage({ onBack }: { onBack: () => void }): ReactE
   const runTrTest = async () => {
     setTrTesting(true)
     setTrMsg(null)
-    // 两条路的"测什么"不一样：
-    //   流式   —— 只握手，验证密钥/资源开通（发音频要真麦克风，设置页没有）
-    //   整包上传 —— 发一小段提示音，验证地址+密钥+模型名
-    const r = trStreaming
-      ? await testVolcConnection({
-          apiKey: tr.apiKey,
-          resourceId: tr.resourceId,
-          endpoint: resolveEndpoint(tr.model),
-        })
-      : await testTranscribeConnection(tr)
+    // 只测**握手**：密钥对不对、资源开没开通，在 HTTP 升级那一步就决定了。
+    // （发音频要真麦克风，设置页拿不到，也没必要 —— 这个按钮回答的是
+    //   「地址 / 密钥 / 资源开通了没有」，不是"识别准不准"。）
+    const r = await testVolcConnection({
+      apiKey: tr.apiKey,
+      resourceId: tr.resourceId,
+      endpoint: resolveEndpoint(tr.model),
+    })
     setTrTesting(false)
     setTrMsg({
       ok: r.ok,
@@ -764,7 +756,7 @@ export default function SettingsPage({ onBack }: { onBack: () => void }): ReactE
         <SectionTitle
           icon={<IconMic size={17} />}
           title="语音转文字"
-          sub={trStreaming ? '密钥已内置，不用填' : '要不要自己填，看下面的说明'}
+          sub="密钥已内置，不用填"
         />
 
         <div className="space-y-3">
@@ -772,192 +764,92 @@ export default function SettingsPage({ onBack }: { onBack: () => void }): ReactE
              但出题评分用的是对话大模型，DeepSeek 那类**没有语音识别接口**，
              是另一个服务。不说清楚家长会一直在那边找原因。 */}
           <div className="space-y-1.5 rounded-md bg-mist-50 shadow-[var(--hair)] px-3.5 py-3 text-xs leading-relaxed text-ink-700">
-            {trStreaming ? (
-              <>
-                <p>
-                  🎙️ 孩子按住麦克风说话，<strong>字会边说边长出来</strong>，松手几乎不用等。
-                </p>
-                <p>
-                  🚀 因为声音是<strong>边说边传</strong>的 —— 孩子还在说的时候，音频已经
-                  一段段到服务端了，所以松手之后只剩收尾（实测 150 毫秒）。
-                </p>
-                <p>✅ 密钥已经内置，这里不用填任何东西，装好就能用。</p>
-                <p>
-                  💰 这条路<strong>按说话时长计费</strong>（约 ¥2.2 / 小时）。
-                  想省钱可以切到下面的「硅基流动」，那条免费。
-                </p>
-                <p>
-                  🆚 和上面的「AI 设置」<strong>不是一回事</strong>：那边填的 DeepSeek
-                  是评作文的，它没有语音识别功能，填了也不能转文字。
-                </p>
-              </>
-            ) : (
-              <>
-                <p>
-                  🔊 孩子按住麦克风说话，先<strong>录下来</strong>再传到网上转成文字。
-                </p>
-                <p>
-                  🆚 这条路和上面的「AI 设置」<strong>不是一回事</strong>：上面填的
-                  DeepSeek 是用来评作文的，它没有语音识别功能，<strong>填了也不能转文字</strong>，
-                  所以这里要单独配一次。
-                </p>
-                <p>🆓 「硅基流动」注册免费，语音识别模型本身也是免费的。</p>
-                <p>⚠️ 模型别选 SenseVoice —— 实测它会时不时不理人，默认的 Qwen3-ASR 稳得多。</p>
-                <p>📴 不填也能用：手机自带的识别服务还能试，不行还有键盘输入。</p>
-              </>
-            )}
+            <p>
+              🎙️ 孩子按住麦克风说话，<strong>字会边说边长出来</strong>，松手几乎不用等。
+            </p>
+            <p>
+              🚀 因为声音是<strong>边说边传</strong>的 —— 孩子还在说的时候，音频已经
+              一段段到服务端了，所以松手之后只剩收尾（实测 150 毫秒）。
+            </p>
+            <p>✅ 密钥已经内置，这里不用填任何东西，装好就能用。</p>
+            <p>
+              💰 这条路<strong>按说话时长计费</strong>（约 ¥2.2 / 小时）。
+            </p>
+            <p>
+              🆚 和上面的「AI 设置」<strong>不是一回事</strong>：那边填的 DeepSeek
+              是评作文的，它没有语音识别功能，填了也不能转文字。
+            </p>
+            <p>
+              ⛔ 以前还有一条「整包上传」的免费备选（硅基流动）。2026-10-02 已按要求
+              去掉，现在<strong>只走火山这一条</strong>。
+            </p>
           </div>
 
-          {/* 走哪一条路 */}
-          <div>
-            <div className="mb-1.5 text-xs font-extrabold text-ink-500">用哪一条路</div>
-            <div className="flex flex-wrap gap-2">
-              <button
-                type="button"
-                onClick={() => {
-                  playSound('tap')
-                  patchTr({
-                    ...defaultTranscribeConfig(),
-                    /* ⚠️ 只有**已经在这条路上**时才保留家长填的密钥。
-                       从硅基流动切过来时必须换成内置的火山密钥 ——
-                       那个 `sk-` 密钥是另一家服务的，带着它去连火山只会握手被拒，
-                       表现就是"录音突然不出字了"，而且报错很难懂。
-                       （这正是 MEMORY §七 那类"两条路共用同一个字段"的病。） */
-                    apiKey: trStreaming && tr.apiKey.trim() ? tr.apiKey : VOLC_TEST_API_KEY,
-                  })
-                }}
-                className={`btn-base active:btn-press rounded-pill border-0 px-3 py-2 text-xs font-extrabold shadow-[var(--hair-strong)] ${
-                  trStreaming ? 'bg-amber-leaf-400 text-ink-900' : 'bg-white text-ink-800'
-                }`}
-              >
-                火山 · 边说边传（推荐）
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  playSound('tap')
-                  patchTr(openAiTranscribeConfig())
-                }}
-                className={`btn-base active:btn-press rounded-pill border-0 px-3 py-2 text-xs font-extrabold shadow-[var(--hair-strong)] ${
-                  trStreaming ? 'bg-white text-ink-800' : 'bg-amber-leaf-400 text-ink-900'
-                }`}
-              >
-                硅基流动 · 免费
-              </button>
-            </div>
-          </div>
+          {/* ⛔ 这里原来是「用哪一条路」选择器（火山 / 硅基流动）。
+              2026-10-02 只剩火山一条路，没有可选的，整个块删掉。
+              ⚠️ 它顺带删掉了一个**真实故障源**：从硅基流动切到火山时
+                 会把 `sk-` 密钥留在同一个字段里，拿去连火山必然握手被拒。 */}
 
           {/* ⚠️ 流式只在手机 App 里能用 —— 必须说出来。
               否则家长会在电脑上测出一个"配好了但用不了"的结论，
               然后去反复检查一个根本没问题的配置（这个坑在"测试按钮发静音"
               那次已经吃过一回，见 platform/transcribe.ts 的说明）。 */}
-          {trStreaming && !trCanStream && (
+          {!trCanStream && (
             <div className="rounded-md bg-clay-50 px-3.5 py-3 text-xs leading-relaxed text-ink-700 shadow-[inset_0_0_0_1px_rgb(168_80_63/0.18)]">
               这条路<strong>只在手机 App 里能用</strong>。电脑浏览器里连不上 ——
               浏览器的 WebSocket 不允许带自定义请求头，而火山的密钥必须放在请求头里
               （查询串和子协议两条绕行路都被服务端拒了，实测 HTTP 403 / 400）。
               在手机上装好 App 就能用。
+              <br />
+              ⛔ 以前这里还有一条能在电脑上用的免费备选（硅基流动 · 整包上传），
+              2026-10-02 已按要求去掉 —— 所以<strong>现在电脑上完全没有云端转写</strong>，
+              会退回系统识别或键盘输入。这是取舍，不是坏掉。
             </div>
           )}
 
-          {trStreaming ? (
-            <>
-              <div>
-                <div className="mb-1.5 text-xs font-extrabold text-ink-500">识别方式</div>
-                <div className="flex flex-wrap gap-2">
-                  {(['duplex', 'nostream', 'async'] as VolcEndpoint[]).map((k) => (
-                    <button
-                      key={k}
-                      type="button"
-                      onClick={() => {
-                        playSound('tap')
-                        patchTr({ model: k })
-                      }}
-                      title={VOLC_ENDPOINTS[k].note}
-                      className={`btn-base active:btn-press rounded-pill border-0 px-3 py-2 text-xs font-extrabold shadow-[var(--hair-strong)] ${
-                        resolveEndpoint(tr.model) === k
-                          ? 'bg-amber-leaf-400 text-ink-900'
-                          : 'bg-white text-ink-800'
-                      }`}
-                    >
-                      {VOLC_ENDPOINTS[k].label}
-                    </button>
-                  ))}
-                </div>
-                <p className="mt-1.5 text-[11px] leading-relaxed text-ink-500">
-                  {VOLC_ENDPOINTS[resolveEndpoint(tr.model)].note}
-                </p>
-              </div>
+          {/* 识别方式 + 密钥。
+              ⛔ 原来这里是一个 `trStreaming ? ... : ...` 的两分支 ——
+                 整包上传那一支（一键填入 baseUrl / 识别模型 model）已删。 */}
+          <div>
+            <div className="mb-1.5 text-xs font-extrabold text-ink-500">识别方式</div>
+            <div className="flex flex-wrap gap-2">
+              {(['duplex', 'nostream', 'async'] as VolcEndpoint[]).map((k) => (
+                <button
+                  key={k}
+                  type="button"
+                  onClick={() => {
+                    playSound('tap')
+                    patchTr({ model: k })
+                  }}
+                  title={VOLC_ENDPOINTS[k].note}
+                  className={`btn-base active:btn-press rounded-pill border-0 px-3 py-2 text-xs font-extrabold shadow-[var(--hair-strong)] ${
+                    resolveEndpoint(tr.model) === k
+                      ? 'bg-amber-leaf-400 text-ink-900'
+                      : 'bg-white text-ink-800'
+                  }`}
+                >
+                  {VOLC_ENDPOINTS[k].label}
+                </button>
+              ))}
+            </div>
+            <p className="mt-1.5 text-[11px] leading-relaxed text-ink-500">
+              {VOLC_ENDPOINTS[resolveEndpoint(tr.model)].note}
+            </p>
+          </div>
 
-              <div>
-                <div className="mb-1.5 text-xs font-extrabold text-ink-500">密钥 API Key</div>
-                <input
-                  value={tr.apiKey}
-                  type="password"
-                  onChange={(e) => patchTr({ apiKey: e.target.value })}
-                  placeholder="已内置"
-                  className={INPUT_CLASS}
-                />
-                <p className="mt-1.5 text-[11px] leading-relaxed text-ink-500">
-                  已经内置了一个可用的密钥。想换成自己的，直接覆盖这里就行。
-                </p>
-              </div>
-            </>
-          ) : (
-            <>
-              {/* 一键填入 */}
-              <div>
-                <div className="mb-1.5 text-xs font-extrabold text-ink-500">一键填入常用服务</div>
-                <div className="flex flex-wrap gap-2">
-                  {TRANSCRIBE_PRESETS.map((p) => (
-                    <button
-                      key={p.label}
-                      type="button"
-                      onClick={() => {
-                        playSound('tap')
-                        patchTr({ baseUrl: p.baseUrl, model: p.model })
-                      }}
-                      className="btn-base active:btn-press rounded-pill border-0 bg-white shadow-[var(--hair-strong)] bg-white px-3 py-2 text-xs font-extrabold text-ink-800"
-                      title={p.note}
-                    >
-                      {p.label}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <div className="mb-1.5 text-xs font-extrabold text-ink-500">接口地址 baseUrl</div>
-                <input
-                  value={tr.baseUrl}
-                  onChange={(e) => patchTr({ baseUrl: e.target.value })}
-                  placeholder="https://api.siliconflow.cn/v1"
-                  className={INPUT_CLASS}
-                />
-              </div>
-
-              <div>
-                <div className="mb-1.5 text-xs font-extrabold text-ink-500">密钥 API Key</div>
-                <input
-                  value={tr.apiKey}
-                  type="password"
-                  onChange={(e) => patchTr({ apiKey: e.target.value })}
-                  placeholder="sk-..."
-                  className={INPUT_CLASS}
-                />
-              </div>
-
-              <div>
-                <div className="mb-1.5 text-xs font-extrabold text-ink-500">识别模型 model</div>
-                <input
-                  value={tr.model}
-                  onChange={(e) => patchTr({ model: e.target.value })}
-                  placeholder="FunAudioLLM/SenseVoiceSmall"
-                  className={INPUT_CLASS}
-                />
-              </div>
-            </>
-          )}
+          <div>
+            <div className="mb-1.5 text-xs font-extrabold text-ink-500">密钥 API Key</div>
+            <input
+              value={tr.apiKey}
+              type="password"
+              onChange={(e) => patchTr({ apiKey: e.target.value })}
+              placeholder="已内置"
+              className={INPUT_CLASS}
+            />
+            <p className="mt-1.5 text-[11px] leading-relaxed text-ink-500">
+              已经内置了一个可用的密钥。想换成自己的，直接覆盖这里就行。
+            </p>
+          </div>
 
           {/* 测试连接 */}
           <div className="space-y-2">
@@ -977,9 +869,7 @@ export default function SettingsPage({ onBack }: { onBack: () => void }): ReactE
               </div>
             )}
             <p className="text-[11px] leading-relaxed text-ink-500">
-              {trStreaming
-                ? '测试只做一次握手，用来确认密钥、以及「流式语音识别」服务开通了没有（不发音频）。'
-                : '测试会发一小段提示音过去：服务端只要能收下并回话，就说明地址和密钥是对的（它当然听不懂提示音，所以回"没听清"也算通过）。'}
+              测试只做一次握手，用来确认密钥、以及「流式语音识别」服务开通了没有（不发音频）。
             </p>
           </div>
         </div>
@@ -1150,13 +1040,20 @@ export default function SettingsPage({ onBack }: { onBack: () => void }): ReactE
             还有卡牌和连续签到，让"坚持写"这件事变得好玩。
           </p>
           <p>核心原则只有一条：AI 帮你看，但不替你写。</p>
-          {/* ★★ ODbL 署名 —— 法律要求，不许删。
-              广东那批旅游点（`src/data/landmarks-gd.json`）是从
-              OpenStreetMap 生成的衍生数据库，ODbL 要求署名。
-              为什么要单独一段、而且写"贡献者"：ODbL 的规范署名格式就是
-              「© OpenStreetMap contributors」，写成「来自某地图公司」不合规。 */}
+          {/* ★★ ODbL / CC BY-SA 署名 —— 法律要求，不许删。
+              ① 广东那批旅游点（`src/data/landmarks-gd.json`）是从
+                 OpenStreetMap 生成的衍生数据库，ODbL 要求署名。
+              ② 世界景点那批（`src/data/landmarks-world.json`）来自 DBpedia
+                 （**CC BY-SA 3.0**），图片来自 Wikimedia Commons，而且其中
+                 **有一部分坐标也是从 OSM 补的**（DBpedia 缺坐标时）。
+                 ⚠️ 所以它同时欠三个署名 —— 少写一个就是少署一个名。
+              为什么要写"贡献者"、而且用原样格式：ODbL 的规范署名格式就是
+              「© OpenStreetMap contributors」，写成「来自某地图公司」不合规。
+              ⚠️ 这两条有单元测试守着（`landmarks.test.ts` 的「许可抬头必须还在」），
+                 删了会红。 */}
           <p className="pt-1 text-[11px] leading-relaxed text-ink-500">
-            旅游点数据来自 © OpenStreetMap 贡献者（ODbL 授权）。
+            旅游点数据来自 © OpenStreetMap 贡献者（ODbL 授权），
+            世界景点另来自 DBpedia 贡献者（CC BY-SA 3.0）与 Wikimedia Commons。
           </p>
         </div>
       </Card>

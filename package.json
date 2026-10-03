@@ -12,8 +12,6 @@
     "test": "vitest run --config vitest.config.ts",
     "inbox:check": "vitest run --config vitest.config.ts scripts/inbox-verify.test.ts",
     "inbox:photo": "node scripts/inbox-photo.mjs",
-    "transcribe:e2e": "vitest run --config vitest.config.ts scripts/transcribe-e2e.test.ts",
-    "transcribe:bench": "vitest run --config vitest.config.ts scripts/transcribe-bench.test.ts",
     "fixture:webm": "node scripts/mk-speech-fixture.mjs",
     "probe:volc": "node scripts/_probe-volcengine.mjs",
     "probe:volc:stream": "node scripts/_probe-volcengine-stream.mjs",

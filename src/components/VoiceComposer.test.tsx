@@ -24,12 +24,13 @@
 import 'fake-indexeddb/auto'
 import { useState } from 'react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { act, cleanup, render, screen } from '@testing-library/react'
+import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import type { EditOperation } from '../domain/types'
 import type { Recognizer, RecognizerCallbacks } from '../platform/speech'
 import { VoiceComposer } from './VoiceComposer'
 
-/* ---------------- 假识别器：把回调攒下来，由测试决定什么时候喂 ---------------- */
+/* ---------------- 假识别器：把回调攒下来，由测试决定什么时候喂 ----------------
+   ⚠️ 这一条走的是**系统识别**（"点一下开始"那套）。「按住说话」不走它。 */
 
 let lastCb: RecognizerCallbacks | null = null
 
@@ -52,84 +53,79 @@ vi.mock('../platform/speech', async () => {
         settled: () => Promise.resolve(),
       }
     },
-  }
-})
-
-/* ---------------- 假录音器 + 假转写（守住"按住说话"这条路） ---------------- */
-
-/** 录音器 start 过几次 —— 用来验证"按下才开始录" */
-let recorderStarts = 0
-/** 录音器 stop 时报告的时长，用来造"太短=误触"的场景 */
-let recorderDurationMs = 2000
-/** 录音器是否被 cancel 过 —— 验证"中途放弃"不会留下一个还在录的麦克风 */
-let recorderCancels = 0
-/** 录音器 stop 过几次 —— 验证"被打断时至少把录音收掉" */
-let recorderStops = 0
-
-vi.mock('../platform/speech', async () => {
-  const actual = await vi.importActual<typeof import('../platform/speech')>('../platform/speech')
-  return {
-    ...actual,
-    isSpeechRecognitionSupported: () => true,
-    probeSpeechSupport: async () => true,
-    usesNativeSpeech: () => true,
-    isRecordingSupported: () => true,
-    createRecognizer: (cb: RecognizerCallbacks): Recognizer => {
-      lastCb = cb
-      return {
-        start: () => cb.onStart?.(),
-        stop: () => cb.onEnd?.(),
-        abort: () => {},
-        isListening: () => true,
-        settled: () => Promise.resolve(),
-      }
-    },
-    // 录音器：录到"一段音频"，stop 时按 recorderDurationMs 报告时长
+    /* 录音器：只给"点一下开始"那条路画波形用（`recordOk` 为真时）。
+       ⚠️ 它**不再**承担"把录下来的音频传上去"的职责 ——
+          那条路（整包上传 / 硅基流动）2026-10-02 已删。
+          这里用的是原生识别（usesNativeSpeech → true），所以 recordOk 是 false，
+          这个替身其实一次都不会被调到，留着只是让模块导入成功。 */
     createRecorder: () => ({
-      start: async () => {
-        recorderStarts += 1
-      },
-      stop: async () => {
-        recorderStops += 1
-        return {
-          dataUrl: 'data:audio/webm;base64,AAAA',
-          durationMs: recorderDurationMs,
-          mime: 'audio/webm',
-        }
-      },
-      cancel: () => {
-        recorderCancels += 1
-      },
-      isRecording: () => true,
-      getLevel: () => 0.5,
+      start: async () => {},
+      stop: async () => null,
+      cancel: () => {},
+      isRecording: () => false,
+      getLevel: () => 0,
     }),
   }
 })
 
-/** 转写替身：默认成功；测试可改 */
-let transcribeImpl: (
-  blob: Blob,
-) => Promise<
-  { ok: true; text: string; ms: number } | { ok: false; reason: string; message: string }
-> = async () => ({ ok: true, text: '按住说出来的话', ms: 10 })
-/** 转写调用次数 —— 验证"太短的录音不该上传" */
-let transcribeCalls = 0
+/* ---------------- 「按住说话」那条路：只剩火山流式 ----------------
+   ★ 组件现在**只有这一条**云端转写路（整包上传已删），所以替身的是
+     `ws-transport` + `pcm-capture` + `volcengine` 三个模块，
+     而不是以前那个 `transcribe` 模块。 */
 
-vi.mock('../platform/transcribe', async () => {
-  const actual = await vi.importActual<typeof import('../platform/transcribe')>('../platform/transcribe')
-  /* 组件走的是 transcribeWithRetry（带重试的那个入口）。
-     两个都要替换 —— 只换 transcribeAudio 的话组件调的是真实现，
-     测试会静默地变成"真的去发网络请求"，然后断言一个根本没被替换的计数器。 */
-  const spy = (blob: Blob) => {
-    transcribeCalls += 1
-    return transcribeImpl(blob)
-  }
-  return {
-    ...actual,
-    transcribeAudio: spy,
-    transcribeWithRetry: spy,
-  }
-})
+/** 这台设备能不能走流式。
+ *  默认 true（= 手机 App），否则按钮会退回"点一下"那套。
+ *  想测**网页 / 桌面**那一侧时，在用例里置 false（见文件末尾那组）。 */
+let streamingSupported = true
+
+vi.mock('../platform/ws-transport', () => ({
+  isStreamingSupported: () => streamingSupported,
+}))
+
+/** PCM 采集替身：start 立刻结算，stop 报告"采到了音频" */
+vi.mock('../platform/pcm-capture', () => ({
+  // 进写作页时会预热麦克风（prewarm）—— 给个空实现
+  warmUpMicrophone: async () => {},
+  createPcmCapture: () => ({
+    start: async () => {},
+    stop: () => true,
+    cancel: () => {},
+    getLevel: () => 0,
+    getDurationMs: () => 120,
+  }),
+}))
+
+/** 这一轮"识别出来"的终稿 */
+let volcFinalText = '按住说出来的话'
+/** 建连次数 —— 验证"按下才建连"，不是挂载就连 */
+let volcOpenCalls = 0
+/** 被放弃（cancel）的次数 —— 验证 pointercancel / 失焦走的是哪一支 */
+let volcCancelCalls = 0
+/** 非空时 finish() 按它返回 —— 用来造失败分支 */
+let volcFinishResult:
+  | { ok: true; text: string; ms: number }
+  | { ok: false; reason: string; message: string }
+  | null = null
+/** 这一轮的 onInterim —— 测试用它模拟"上槽已经出字了" */
+let volcEmitInterim: ((text: string) => void) | null = null
+
+vi.mock('../platform/volcengine', () => ({
+  resolveEndpoint: () => 'duplex',
+  openVolcStream: async (_cfg: unknown, handlers?: { onInterim?: (t: string) => void }) => {
+    volcOpenCalls += 1
+    volcEmitInterim = handlers?.onInterim ?? null
+    return {
+      pushAudio: () => {},
+      cancel: () => {
+        volcCancelCalls += 1
+      },
+      finish: async () => volcFinishResult ?? { ok: true, text: volcFinalText, ms: 150 },
+    }
+  },
+  // 预热那两下：进写作页就会调，这里只要不炸就行
+  warmVolcStream: () => {},
+  dropWarmVolcStream: () => {},
+}))
 
 /* ---------------- 改作文走大模型那条路 ---------------- */
 
@@ -176,11 +172,16 @@ const AI_CFG = {
   fallbackToLocal: true,
 }
 
-/** 一份"配好了"的转写设置 —— 传了它才会走「按住说话」 */
+/**
+ * 一份"配好了"的转写设置 —— 传了它才会走「按住说话」。
+ *
+ * ⚠️ 只有火山这一条路了（2026-10-02 起），所以这里**没有** `engine` / `baseUrl`：
+ *    那两个字段已经被删掉，留着只会让人以为还有第二条路可退。
+ */
 const TRANS_CFG = {
-  baseUrl: 'https://api.siliconflow.cn/v1',
-  apiKey: 'sk-test',
-  model: 'Qwen/Qwen3-ASR-1.7B',
+  apiKey: 'uuid-key',
+  model: 'bigmodel',
+  resourceId: 'volc.seedasr.sauc.duration',
 }
 
 /** 点麦克风 → 说一句 → 再点一下停止。注意：**不自己 render**，由调用方先 render */
@@ -220,7 +221,7 @@ async function recordRound(
  */
 function mount(
   initialText = '',
-  opts: { echo?: boolean; transcribe?: boolean; ai?: boolean } = {},
+  opts: { echo?: boolean; transcribe?: boolean; ai?: boolean; voiceOnly?: boolean } = {},
 ) {
   const echo = opts.echo !== false
   const holder: {
@@ -241,6 +242,7 @@ function mount(
         edits={echo ? edits : []}
         transcribe={opts.transcribe ? TRANS_CFG : undefined}
         ai={opts.ai ? AI_CFG : undefined}
+        voiceOnly={opts.voiceOnly}
         onChange={(next) => {
           holder.text = next.text
           holder.edits = next.edits
@@ -261,12 +263,12 @@ function mount(
 afterEach(() => {
   cleanup()
   lastCb = null
-  recorderStarts = 0
-  recorderCancels = 0
-  recorderStops = 0
-  recorderDurationMs = 2000
-  transcribeCalls = 0
-  transcribeImpl = async () => ({ ok: true, text: '按住说出来的话', ms: 10 })
+  streamingSupported = true
+  volcFinalText = '按住说出来的话'
+  volcOpenCalls = 0
+  volcCancelCalls = 0
+  volcFinishResult = null
+  volcEmitInterim = null
   parseCalls = 0
   parseImpl = async () => ({
     ok: true,
@@ -284,26 +286,30 @@ afterEach(() => {
  * 而按钮的交互已经绑在 pointerdown/pointerup 上（这样才能用
  * setPointerCapture 处理"手指滑出按钮"）。用 click 测等于没测。
  */
-async function holdAndRelease(ms = 1500, opts: { release?: boolean } = {}) {
+async function holdAndRelease() {
   const mic = screen.getByLabelText(/按住说话|开始说话/)
   await act(async () => {
     mic.dispatchEvent(
       new PointerEvent('pointerdown', { bubbles: true, pointerId: 1, cancelable: true }),
     )
   })
-  if (opts.release === false) return
+  // 让 beginHold 里那两个 await（开麦、建连）都结算
+  await flushMicro()
 
-  // 让 beginHold 里的 await recorder.start() 结算
-  await act(async () => {
-    await Promise.resolve()
-  })
   await act(async () => {
     mic.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, pointerId: 1, cancelable: true }))
   })
-  void ms
+  await flushMicro()
 }
 
-describe('语音写作台 · 按住说话（云端转写）', () => {
+/** 把挂起的微任务都放一遍（收尾是串了好几层的 async） */
+async function flushMicro() {
+  await act(async () => {
+    for (let i = 0; i < 6; i++) await Promise.resolve()
+  })
+}
+
+describe('语音写作台 · 按住说话（云端转写 · 只剩火山流式）', () => {
   it('配了转写就不再用"点一下"的文案，改成告诉孩子按住', () => {
     mount('', { transcribe: true })
     expect(screen.getByLabelText('按住说话')).toBeTruthy()
@@ -319,18 +325,21 @@ describe('语音写作台 · 按住说话（云端转写）', () => {
   it('★ 按住→松开 → 转写结果写进正文', async () => {
     mount('', { transcribe: true })
     await holdAndRelease()
-    expect(transcribeCalls).toBe(1)
+    expect(volcOpenCalls, '按下就该去建连').toBe(1)
     expect(screen.getByText(/按住说出来的话/)).toBeTruthy()
   })
 
-  it('按下才开始录（不是挂载就录）', async () => {
+  it('按下才建连（不是挂载就连）', async () => {
+    /* ⚠️ 挂载时确实会**预热**（warmVolcStream），那是另一条通道、不走
+       `openVolcStream`。这里守的是"这一轮的建连发生在按下那一刻" ——
+       否则孩子还没按，服务端就多出一条会话。 */
     mount('', { transcribe: true })
-    expect(recorderStarts).toBe(0)
+    expect(volcOpenCalls).toBe(0)
     await holdAndRelease()
-    expect(recorderStarts).toBe(1)
+    expect(volcOpenCalls).toBe(1)
   })
 
-  it('★ 被打断（pointercancel）→ 录音必须收掉，而且**不能把孩子说的话丢掉**', async () => {
+  it('★ 被打断（pointercancel）→ **不能把孩子说的话丢掉**', async () => {
     /* ⚠️ 先纠正一个流传已久的误解：pointercancel **不是**"手指滑出按钮"。
        按钮绑了 setPointerCapture，滑出去再松开收到的是 pointerup
        （组件里的注释写得很清楚），所以那条路走的是正常收尾。
@@ -338,36 +347,48 @@ describe('语音写作台 · 按住说话（云端转写）', () => {
        真正会发 pointercancel 的是**浏览器层面的打断**：
        系统手势、通知栏下拉、来电、以及**布局抖动**。
        这些都不是孩子的错 —— 所以正确做法是**收尾**（把已经说的留下），
-       而不是把他刚说的话整段丢掉。
-
-       底线没变：录音必须停掉，不能留一个开着的麦克风。 */
+       而不是把他刚说的话整段丢掉。 */
     mount('', { transcribe: true })
     const mic = screen.getByLabelText('按住说话')
 
     await act(async () => {
       mic.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, pointerId: 1 }))
     })
-    await act(async () => {
-      await Promise.resolve()
-    })
-    expect(recorderStarts).toBe(1)
+    await flushMicro()
+    expect(volcOpenCalls).toBe(1)
 
     await act(async () => {
       mic.dispatchEvent(new PointerEvent('pointercancel', { bubbles: true, pointerId: 1 }))
     })
-    await act(async () => {
-      await Promise.resolve()
-    })
+    await flushMicro()
 
-    // ① 录音收掉了（麦克风不会一直开着）
-    expect(recorderStops).toBe(1)
-    // ② ★ 走的是**收尾**不是放弃 —— pointercancel 不是「手指滑出按钮」
-    //    （有 setPointerCapture，滑出去再松手是 pointerup），
-    //    它是来电 / 通知栏 / 系统手势 / 布局抖动。
-    //    孩子确实说了话，丢掉是错的。
-    expect(recorderCancels).toBe(0)
-    // ③ 已经说的那句被保留 —— 不是凭空消失
+    // ★ 走的是**收尾**不是放弃
+    expect(volcCancelCalls, 'pointercancel 不是放弃').toBe(0)
+    // 已经说的那句被保留 —— 不是凭空消失
     expect(screen.getByText(/按住说出来的话/)).toBeTruthy()
+  })
+
+  it('★ 真·放弃（失焦）→ 必须 cancel，不能顺手把它收尾了', async () => {
+    /* 守住三个 ref 的分支没搞错：
+         holdActive=false + released=true  → 收尾
+         holdActive=false + released=false → 放弃（cancel）
+       这一条盯的就是后面那一支。 */
+    mount('', { transcribe: true })
+    // ⚠️ 先抓住按钮 —— 在听的时候 aria-label 会变成「松手结束说话」
+    const mic = screen.getByLabelText('按住说话')
+
+    await act(async () => {
+      mic.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, pointerId: 1 }))
+    })
+    await flushMicro()
+    // 焦点真的离开了 → cancelHold（真·放弃）
+    await act(async () => {
+      fireEvent.blur(mic)
+    })
+    await flushMicro()
+
+    expect(volcCancelCalls, '主动放弃就该 cancel').toBe(1)
+    expect(screen.queryByText(/按住说出来的话/)).toBeNull()
   })
 
   it('★ 按下麦克风不许改变布局 —— 按钮一移动就会"刚按下去就松开"', async () => {
@@ -399,9 +420,7 @@ describe('语音写作台 · 按住说话（云端转写）', () => {
     await act(async () => {
       mic.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, pointerId: 1 }))
     })
-    await act(async () => {
-      await Promise.resolve()
-    })
+    await flushMicro()
 
     // 在听的时候还是**同一对节点**（谁都没被重建，也没有第三个槽长出来）
     const during = findSlots()
@@ -456,7 +475,7 @@ describe('语音写作台 · 按住说话（云端转写）', () => {
   })
 
   it('★ 转写失败 → 给出原因，且不往正文里塞东西', async () => {
-    transcribeImpl = async () => ({ ok: false, reason: 'network', message: '网络不太顺，检查下网络再试' })
+    volcFinishResult = { ok: false, reason: 'network', message: '网络不太顺，检查下网络再试' }
     mount('', { transcribe: true })
     await holdAndRelease()
 
@@ -465,8 +484,64 @@ describe('语音写作台 · 按住说话（云端转写）', () => {
     expect(screen.queryByText(/按住说出来的话/)).toBeNull()
   })
 
+  it('★★ 上槽已经出字、收尾却没拿到终稿 → 已经识别出来的字必须落进正文', async () => {
+    /* ★★ 这一条就是家长 2026-10-02 报的那个 bug 本身：
+         「写作文 录音时候，录音文字已经识别，但是如果松开过快，就不会处理。」
+       症状：**上槽已经长出字了，正文一个字没变**。
+
+       成因：中间结果到了，终稿那条消息却没来（服务端只给中间结果 /
+       收尾时连接被关掉）。修复前这一轮只回一句"没听清"，孩子说的话白说了。 */
+    volcFinishResult = { ok: false, reason: 'empty', message: '没听清，再说一遍试试' }
+    mount('', { transcribe: true })
+    const mic = screen.getByLabelText('按住说话')
+
+    await act(async () => {
+      mic.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, pointerId: 1 }))
+    })
+    await flushMicro()
+    // 孩子还在说的时候，中间结果已经上屏了
+    await act(async () => {
+      volcEmitInterim?.('我家有一只小猫')
+    })
+    expect(screen.getByText(/我家有一只小猫/), '上槽应该已经出字了').toBeTruthy()
+
+    await act(async () => {
+      mic.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, pointerId: 1 }))
+    })
+    await flushMicro()
+
+    // ★ 收尾虽然没拿到终稿，但已经识别出来的那句必须落进正文（回执是"记下了"）
+    expect(screen.getByText(/记下了/)).toBeTruthy()
+    // 而且不许再回一句"没听清"——字都在手上，说没听清就是甩锅
+    expect(screen.queryByText(/没听清/)).toBeNull()
+  })
+
+  it('★ 反过来：这一轮是被**放弃**的（cancelled）→ 一个字都不许落进正文', async () => {
+    /* 把"孩子自己不要的东西"写进他的作文，比"什么都没出来"更糟。
+       这就是 `'cancelled'` 必须从 `'empty'` 里分出来的原因 ——
+       两者共用一个 reason 的话，给后者加兜底就必然误伤前者。 */
+    volcFinishResult = { ok: false, reason: 'cancelled', message: '这次不算，再说一次吧' }
+    mount('', { transcribe: true })
+    const mic = screen.getByLabelText('按住说话')
+
+    await act(async () => {
+      mic.dispatchEvent(new PointerEvent('pointerdown', { bubbles: true, pointerId: 1 }))
+    })
+    await flushMicro()
+    await act(async () => {
+      volcEmitInterim?.('这句话孩子不要了')
+    })
+    await act(async () => {
+      mic.dispatchEvent(new PointerEvent('pointerup', { bubbles: true, pointerId: 1 }))
+    })
+    await flushMicro()
+
+    expect(screen.queryByText(/记下了/), '放弃的轮次不许兜底').toBeNull()
+    expect(screen.queryByText(/这句话孩子不要了/)).toBeNull()
+  })
+
   it('★ 转写失败后，"没收到结果"的诊断行要出现（能分清是哪一半坏）', async () => {
-    transcribeImpl = async () => ({ ok: false, reason: 'auth', message: '语音服务的密钥不对' })
+    volcFinishResult = { ok: false, reason: 'auth', message: '语音服务的密钥不对' }
     mount('', { transcribe: true })
     await holdAndRelease()
 
@@ -476,7 +551,7 @@ describe('语音写作台 · 按住说话（云端转写）', () => {
   })
 
   it('★ 改作文模式：转写回来的文字要**当指令解析**，不是直接追加', async () => {
-    /* 这条是两条路径共用 handleFinal 的意义所在。
+    /* 这条是"收尾只有一条路"的意义所在。
        如果这里错了（比如直接把文字追加进正文），
        孩子说「把 A 改成 B」就会把这句话本身写进作文里。
 
@@ -489,7 +564,7 @@ describe('语音写作台 · 按住说话（云端转写）', () => {
        现在改作文只剩大模型一条路（家长：「改作文 必须是 AI 模型 处理。」），
        不传 ai 测到的就变成"没配 AI 时的提示"，而不是"指令有没有被解析"。
        所以要传 ai，并让桩返回这次替换真正需要的那条指令。 */
-    transcribeImpl = async () => ({ ok: true, text: '把小狗改成小猫', ms: 10 })
+    volcFinalText = '把小狗改成小猫'
     parseImpl = async () => ({
       ok: true,
       intent: { kind: 'replace', from: '小狗', to: '小猫' },
@@ -670,7 +745,8 @@ describe('改作文 · 大模型那条路（只让模型听懂，不让它动笔
    *    这里断言的是：**回执**、**修改记录**、以及**走没走大模型**。
    */
   async function sayToEdit(instruction: string) {
-    transcribeImpl = async () => ({ ok: true, text: instruction, ms: 10 })
+    // 这一轮"识别出来"的就是这句指令 —— 由 volcengine 替身交回来
+    volcFinalText = instruction
     await act(async () => {
       screen.getByText('改作文').click()
     })
@@ -875,10 +951,58 @@ describe('改作文 · 大模型那条路（只让模型听懂，不让它动笔
 
   it('说作文模式不受影响：配了 AI 也还是追加，不是改写', async () => {
     mount('我家有一只小猫。', { transcribe: true, ai: true })
-    transcribeImpl = async () => ({ ok: true, text: '它很可爱', ms: 10 })
+    volcFinalText = '它很可爱'
     await holdAndRelease()
 
     expect(parseCalls, '说作文不该碰大模型').toBe(0)
     expect(screen.getByText(/它很可爱/)).toBeTruthy()
+  })
+})
+
+/* ---------------- 网页 / 桌面：没有云端转写 ----------------
+   场景：桌面 Chrome **有** `SpeechRecognition` 对象，所以那句
+   「这台设备不支持语音识别」不会出现；而浏览器自带的识别在国内又连不上。
+   结果是按下去一个字都不回来、也没有解释。
+   所以没有云端转写时必须主动说明，并把键盘 / 输入法语音指出来。 */
+
+describe('没有云端转写（网页 / 桌面）', () => {
+  it('键盘入口旁边给一句说明，把人引到键盘或输入法语音上', () => {
+    streamingSupported = false
+    mount('', { transcribe: true })
+
+    expect(screen.getByText(/这台设备没有云端语音转写/)).toBeTruthy()
+    expect(screen.getByText(/输入法自带的语音输入/)).toBeTruthy()
+    // 按钮退回"点一下"那套
+    expect(screen.getByLabelText('开始说话')).toBeTruthy()
+  })
+
+  it('★ 判据是"这台设备有没有流式"，不是"配没配密钥"', () => {
+    /* 这一条是判据的分水岭。写成 `!canTranscribe` 时，
+       上半格仍然绿（两边都为假），下半格才会红 —— 所以**下半格才是守卫**。 */
+    streamingSupported = false
+    mount('', { transcribe: true })
+    expect(screen.getByText(/这台设备没有云端语音转写/)).toBeTruthy()
+
+    cleanup()
+    /* 手机 App，但**忘了打密钥**（`.env.local` 没配）→ 也是 `canTranscribe` 为假。
+       可它在手机上，说一句"请在手机 App 里用"是错的 → 提示必须不出现。 */
+    streamingSupported = true
+    mount('', {})
+    expect(screen.queryByText(/这台设备没有云端语音转写/)).toBeNull()
+  })
+
+  it('手机 App 上不出现这句说明（密钥配了、设备也支持流式）', () => {
+    mount('', { transcribe: true })
+
+    expect(screen.queryByText(/这台设备没有云端语音转写/)).toBeNull()
+    expect(screen.getByLabelText('按住说话')).toBeTruthy()
+  })
+
+  it('日记（voiceOnly）不给键盘入口，也就不给这句说明', () => {
+    streamingSupported = false
+    mount('', { transcribe: true, voiceOnly: true })
+
+    expect(screen.queryByText(/这台设备没有云端语音转写/)).toBeNull()
+    expect(screen.getByText(/日记只用声音写/)).toBeTruthy()
   })
 })

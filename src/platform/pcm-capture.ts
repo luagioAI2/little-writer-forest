@@ -67,6 +67,50 @@ export function floatToInt16Bytes(input: Float32Array): Uint8Array {
   return out
 }
 
+/**
+ * 采集用的约束。
+ *
+ * ★ 预热和真采集**必须用同一份** —— 约束不一样的话，浏览器可能
+ *   重新协商一遍设备，预热就白做了。
+ */
+export const MIC_CONSTRAINTS: MediaStreamConstraints = {
+  audio: {
+    channelCount: 1,
+    echoCancellation: true,
+    noiseSuppression: true,
+    autoGainControl: true,
+  },
+}
+
+/**
+ * 提前把麦克风"开一次再立刻关掉"。
+ *
+ * ★ 为什么有用：`getUserMedia` 的耗时几乎全在**第一次** ——
+ *   要弹权限（首次）、要打开音频设备、要初始化采集链路。实测首次可以
+ *   到几百毫秒甚至更久，之后同一页面内就快得多。
+ *   而孩子按下麦克风的那一刻才去开麦，这段就**全算在他的等待里**；
+ *   更糟的是：**松手比开麦快**的时候，采集还没来得及建图就被停掉了，
+ *   这一轮**一个字节都没采到** —— 表现成"说了话，什么都没出来"。
+ *
+ * ★ 所以进写作页就开一次、立刻关掉：
+ *     · 权限框（如果需要）在这一刻弹出来，而不是在孩子按下麦克风的时候；
+ *     · 设备 / 链路被打开过一次，按下时那一次快得多。
+ *
+ * ⚠️ 会把麦克风**真的打开一瞬间**（系统状态栏的麦克风图标会闪一下）。
+ *    这是刻意的取舍：不真开一次，预热就没有意义。
+ * ⚠️ 失败**不报错**：没权限 / 没麦克风的设备，按下时会自己说原因 ——
+ *    预热只负责"更快"，不负责"能用"。
+ */
+export async function warmUpMicrophone(): Promise<void> {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia(MIC_CONSTRAINTS)
+    stream.getTracks().forEach((t) => t.stop())
+    voiceDiag('麦克风已预热', {})
+  } catch {
+    voiceDiag('麦克风预热失败（按下时会再试一次并说明原因）', {})
+  }
+}
+
 export function createPcmCapture(opts: {
   onChunk: (bytes: Uint8Array) => void
   targetRate?: number
@@ -132,14 +176,21 @@ export function createPcmCapture(opts: {
       filled = 0
       samples = 0
 
-      stream = await navigator.mediaDevices.getUserMedia({
-        audio: {
-          channelCount: 1,
-          echoCancellation: true,
-          noiseSuppression: true,
-          autoGainControl: true,
-        },
-      })
+      stream = await navigator.mediaDevices.getUserMedia(MIC_CONSTRAINTS)
+
+      /* ★ 开麦之前就被 stop()/cancel() 收掉了 —— 那就**别再把音频图建起来**。
+         为什么这是常态而不是异常：松手是同步的，而 `getUserMedia` 要等
+         几十到几百毫秒。孩子按一下立刻松手，stop() 就抢在这前面了。
+         ⚠️ 不挡这一下的话：下面的 graph 照样建好并接到 destination，
+         而这之后**再没有人持有它** —— `stream.getTracks()` 没人 stop，
+         麦克风指示灯会一直亮到页面卸载。
+         （表现是"按一下之后，手机状态栏的麦克风图标再也不灭了"。） */
+      if (stopped) {
+        stream.getTracks().forEach((t) => t.stop())
+        stream = null
+        voiceDiag('PCM 采集：开麦前就已被停掉，不再建音频图', {})
+        return
+      }
 
       const Ctor =
         window.AudioContext ??

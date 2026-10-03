@@ -68,19 +68,19 @@ const src = readFileSync(join(jsDir, bundleFile), 'utf8')
  */
 const FEATURES = [
   {
-    name: '连接预热（按下按钮时 GET /models）',
-    test: (s) => s.includes('`/models`') && s.includes('method:`GET`'),
-    why: 'warmUpTranscribe：省掉约 160ms 握手',
+    /* ⛔ 2026-10-02：这条原来查的是「按下按钮时 GET /models」——
+       那是**整包上传**（硅基流动）那条路的预热，那条路已删。
+       现在预热换了时机和对象：**进写作页**就开麦 + 握火山 WebSocket。
+       ⚠️ 没有用户可见文案可匹配，但 `warmUpMicrophone` / `warmVolcStream`
+          里各有一句 voiceDiag，是字符串字面量、压缩后仍在。 */
+    name: '连接 + 麦克风预热（进写作页就做）',
+    test: (s) => s.includes('流式连接已预热') && s.includes('麦克风已预热'),
+    why: 'warmVolcStream + warmUpMicrophone：家长 2026-10-02 要的「进写作页面就建立好链接」',
   },
   {
-    name: '自适应首次超时（10s + 0.5s×音频秒）',
-    test: (s) => /1e4\+Math\.max\(0,e\)\*\.5/.test(s),
-    why: 'firstTimeoutMs：最坏情况从 60s 降到 12.5s',
-  },
-  {
-    name: '旧逻辑已移除（写死的 [60s,12s,12s]）',
-    test: (s) => !/\[6e4,12e3,12e3\]/.test(s),
-    why: '确认不是「新代码加进去了但旧的还在」',
+    name: '旧逻辑已移除（整包上传 / 硅基流动那条路）',
+    test: (s) => !s.includes('audio/transcriptions') && !s.includes('Qwen3-ASR'),
+    why: '家长 2026-10-02「去掉硅基流动的东西，只使用火山」—— 光加新的不够，还要确认旧的路没留下',
   },
   {
     name: '语音链路诊断日志（`[语音转写]` 标签）',
@@ -88,9 +88,17 @@ const FEATURES = [
     why: 'voiceDiag：真机只能靠 adb logcat 定位断点，没有它就只能靠猜',
   },
   {
-    name: '空录音检测（「录音结束但没有音频」）',
-    test: (s) => s.includes('录音结束但没有音频'),
-    why: '真机上最值得看的一行：区分「没录到」和「没传出去」',
+    /* ⛔ 原来是「空录音检测（录音结束但没有音频）」—— 那句文案属于
+       MediaRecorder 那条路（已删）。现在对应的行为是：
+       一个字节都没采到时不许说"没听清"，要说清是**没录上**。 */
+    name: '松手比开麦快时的回执（`松手太快啦，还没开始录呢`）',
+    test: (s) => s.includes('松手太快啦，还没开始录呢'),
+    why: 'finishVolcRound：说"没听清"是甩锅 —— 根本没录上',
+  },
+  {
+    name: '上一轮还在收尾时的回执（`上一句还在转成文字，等一下再按`）',
+    test: (s) => s.includes('上一句还在转成文字，等一下再按'),
+    why: 'beginHold：以前这里静悄悄挡掉，孩子按了没反应，看起来就像"松开太快所以不处理"',
   },
   {
     name: '改写必须留住孩子写的和图上有的（`改写必须留住`）',
@@ -101,6 +109,12 @@ const FEATURES = [
     name: 'ODbL 署名（`OpenStreetMap`）',
     test: (s) => s.includes('OpenStreetMap'),
     why: '法律要求：广东那批旅游点是从 OSM 生成的衍生数据库，署名不许在打包时被丢掉',
+  },
+  {
+    name: '世界景点署名（`DBpedia` / `Wikimedia`）',
+    test: (s) => s.includes('DBpedia') && s.includes('Wikimedia'),
+    why: '法律要求：世界景点那批是 CC BY-SA 3.0（DBpedia）+ Wikimedia Commons 图片，' +
+      '而且有一部分坐标也是从 OSM 补的 —— 三个署名少一个都不合规',
   },
   {
     name: '跑偏守卫的补问文案在包里（`跑偏了`）',

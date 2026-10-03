@@ -268,11 +268,16 @@ export function createRecognizer(cb: RecognizerCallbacks, lang = 'zh-CN'): Recog
   rec.onerror = (e) => {
     // no-speech / aborted 是常态，不算错误，不打扰孩子
     if (e.error === 'no-speech' || e.error === 'aborted') return
+    /* ★ `network` 这一条**不许**只说"请检查网络"。
+       国内网络下 Chrome 自带的识别要连 Google 的服务器，连不上时报的就是
+       `network` —— 家长于是去查路由器，而问题根本不在这儿。
+       所以两种可能都要说出来。（火山流式不走这条：它只在原生侧连，
+       见 ws-transport.ts。） */
     const msg =
       e.error === 'not-allowed' || e.error === 'service-not-allowed'
         ? '没有麦克风权限，请在浏览器设置里允许使用麦克风'
         : e.error === 'network'
-          ? '语音识别需要联网，请检查网络'
+          ? '语音识别连不上：可能是断网，也可能是浏览器自带的识别服务在当前网络下用不了'
           : `语音识别出错了（${e.error}）`
     cb.onError?.(msg)
   }
@@ -608,11 +613,25 @@ export function createRecorder(): Recorder {
   let chunks: Blob[] = []
   let startedAt = 0
   let cancelled = false
+  /**
+   * 这一轮**还没 start 完就被收掉了**（stop / cancel 抢在 getUserMedia 前面）。
+   *
+   * 为什么需要它：松手是同步的，而 `getUserMedia` 要等几十到几百毫秒 ——
+   * 孩子按一下立刻松手，`stop()` 就抢在 start 结算之前了。
+   * 那一刻 `mediaRecorder` 还是 null，`stop()` 只能返回 null；
+   * 但如果就这么算了，`start()` 之后照样会把 `MediaRecorder` 建起来并开始录，
+   * 而**再没有人会停它** —— 麦克风一直开着，指示灯亮到页面卸载。
+   *
+   * 所以 start 在 await 之后要回头看这个标志：被收掉了就不再建。
+   * （`cleanup()` 里置位，`start()` 开头复位。）
+   */
+  let abandoned = false
   let analyser: AnalyserNode | null = null
   let audioCtx: AudioContext | null = null
   let levelData: Uint8Array | null = null
 
   const cleanup = () => {
+    abandoned = true
     stream?.getTracks().forEach((t) => t.stop())
     stream = null
     if (audioCtx) {
@@ -643,6 +662,7 @@ export function createRecorder(): Recorder {
         throw new Error('这台设备不支持录音')
       }
       cancelled = false
+      abandoned = false
       chunks = []
       stream = await navigator.mediaDevices.getUserMedia({
         audio: {
@@ -651,6 +671,16 @@ export function createRecorder(): Recorder {
           autoGainControl: true,
         },
       })
+
+      /* ★ 开麦之前就被收掉了 —— 别再把录音器建起来。
+         建了也没人停它：`stop()` 早就跑过了（那时它只能返回 null），
+         于是麦克风会一直开着（状态栏图标不灭）。见 `abandoned` 的说明。 */
+      if (abandoned) {
+        stream.getTracks().forEach((t) => t.stop())
+        stream = null
+        voiceDiag('录音器：开麦前就已被收掉，不再建录音器', {})
+        return
+      }
 
       /* 走到这里说明麦克风权限已经拿到、轨道也建起来了。
          真机上"按住没反应"如果连这一行都没有，那就不是录音的问题，

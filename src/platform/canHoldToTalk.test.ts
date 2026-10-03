@@ -24,11 +24,7 @@ vi.mock('./ws-transport', () => ({
   isStreamingSupported: () => env.streamingOk,
 }))
 
-import {
-  canHoldToTalk,
-  defaultTranscribeConfig,
-  openAiTranscribeConfig,
-} from './transcribe'
+import { canHoldToTalk, defaultTranscribeConfig } from './transcribe'
 
 beforeEach(() => {
   env.streamingOk = false
@@ -48,31 +44,25 @@ describe('canHoldToTalk · 判定只有一份', () => {
     expect(canHoldToTalk(defaultTranscribeConfig())).toBe(false)
   })
 
-  it('★ 流式不可用时**不**偷偷退回整包上传 —— 直接判否', () => {
+  it('★ 流式不可用时**没有备选可退** —— 直接判否（那条备选已经删了）', () => {
     /*
-     * 默认配置只填了火山那一份密钥，硅基流动那边是空的。
-     * 盲目退过去，只会让孩子按住等一个注定失败的请求 ——
-     * 比老实显示"用不了"更坏（家长会以为是网络问题，反复重试）。
+     * 2026-10-02 之前这里还有一条「流式不可用 → 退回整包上传（硅基流动）」。
+     * 家长定「去掉硅基流动的东西，只使用火山」之后那条路连代码一起删了，
+     * 所以现在**没有第二条路** —— 流式不可用就是"这台设备上用不了"。
+     *
+     * ★ 为什么必须还是 false（而不是"尽力而为"）：
+     *   假装能用会让孩子按住等一个注定失败的请求，比老实显示"用不了"更坏
+     *   （家长会以为是网络问题，反复重试）。
      */
     env.streamingOk = false
     const cfg = defaultTranscribeConfig()
-    expect(cfg.engine).toBe('volcengine')
     expect(canHoldToTalk(cfg)).toBe(false)
   })
 
-  it('整包上传（硅基流动）配好了 → 能按住，和流式能力无关', () => {
-    // 这条路走普通 HTTP，网页上也能用，所以不看 streamingOk
-    env.streamingOk = false
-    const cfg = { ...openAiTranscribeConfig(), apiKey: 'sk-test' }
-    expect(canHoldToTalk(cfg)).toBe(true)
-  })
-
-  it('密钥是空的 → 不能按住（两条路都一样）', () => {
+  it('密钥是空的 → 不能按住（地址和资源 ID 是内置的，只有密钥可能是空的）', () => {
     env.streamingOk = true
     expect(canHoldToTalk({ ...defaultTranscribeConfig(), apiKey: '   ' })).toBe(false)
-
-    env.streamingOk = false
-    expect(canHoldToTalk({ ...openAiTranscribeConfig(), apiKey: '' })).toBe(false)
+    expect(canHoldToTalk({ ...defaultTranscribeConfig(), apiKey: '' })).toBe(false)
   })
 
   it('配置整个缺省（老存档 / 没读过设置）→ 不能按住，且不许抛', () => {

@@ -56,7 +56,6 @@ import {
 } from '../domain/voiceEdit'
 import { parseEditInstruction, remoteMissingFields, shouldUseRemote } from '../domain/ai'
 import { countWords } from '../domain/scoring'
-import { dataUrlToBlob } from '../platform/audio'
 import {
   createRecorder,
   createRecognizer,
@@ -66,16 +65,16 @@ import {
   usesNativeSpeech,
   type Recognizer,
 } from '../platform/speech'
-import {
-  canHoldToTalk,
-  isTranscribeConfigured,
-  transcribeWithRetry,
-  usesStreamingEngine,
-  warmUpTranscribe,
-} from '../platform/transcribe'
-import { openVolcStream, resolveEndpoint, type VolcStream } from '../platform/volcengine'
-import { createPcmCapture, type PcmCapture } from '../platform/pcm-capture'
+import { canHoldToTalk } from '../platform/transcribe'
 import { isStreamingSupported } from '../platform/ws-transport'
+import {
+  dropWarmVolcStream,
+  openVolcStream,
+  resolveEndpoint,
+  warmVolcStream,
+  type VolcStream,
+} from '../platform/volcengine'
+import { createPcmCapture, warmUpMicrophone, type PcmCapture } from '../platform/pcm-capture'
 import { voiceDiag } from '../platform/voice-log'
 import type { TranscribeConfig } from '../domain/types'
 import { playSound } from '../platform/sound'
@@ -189,6 +188,18 @@ export function VoiceComposer({
    * 而且越短的句子越明显。所以先开麦、先攒着，连上后一次性补发。
    */
   const earlyChunksRef = useRef<Uint8Array[]>([])
+
+  /**
+   * 这一轮**已经识别出来的最后一段文字**（就是上槽里显示的那个）。
+   *
+   * ★ 为什么要单独记一份：终稿不一定来（服务端可能只下发中间结果，
+   *   也可能收尾时连接就断了），而中间结果**我们早就拿到了**。
+   *   不记的话，收尾失败时只能回一句"没听清" —— 孩子刚才说的话全白说。
+   *   ➜ 收尾失败时拿它兜底落进正文（见 finishVolcRound）。
+   *
+   * ⚠️ 每一轮开始必须清空（见 beginHold）—— 否则上一轮的字会补进这一轮。
+   */
+  const lastInterimRef = useRef('')
   /** 用 ref 拿最新的 text，避免闭包里拿到旧值 */
   const stateRef = useRef({ text, utterances, edits, mode })
   stateRef.current = { text, utterances, edits, mode }
@@ -230,6 +241,54 @@ export function VoiceComposer({
     },
     [onChange],
   )
+
+  /* ---------------- 预热（进写作页就把该做的做掉） ---------------- */
+
+  /** 用 ref 拿最新的 transcribe，免得 prewarm 因为依赖变化被反复重建 */
+  const warmCfgRef = useRef(transcribe)
+  warmCfgRef.current = transcribe
+
+  /**
+   * 把"按下去才做的事"提前做掉：**开麦 + 握手**。
+   *
+   * ★ 为什么值得：按下到出字之间有两段固定开销 ——
+   *   `getUserMedia`（首次可能要弹权限、开设备，几百毫秒）
+   *   和 WebSocket 握手（实测约 160ms，占冷连接总耗时的四成多）。
+   *   孩子对"按下去多久有反应"极其敏感，而这两段**本来就可以
+   *   挪到进页面的时候**去做。
+   *
+   *   更关键的是：松手比开麦快的时候，采集还没建好图就被停掉了，
+   *   这一轮**一个字节都没采到** —— 表现成"说了话，什么都没出来"。
+   *   开麦提前之后，这个窗口基本消失。
+   *
+   * ⚠️ 只负责"更快"，不负责"能用"：任何一步失败都不报错、不阻断 ——
+   *   按下时会照常现连、照常开麦（也就是今天的行为）。
+   */
+  const prewarm = useCallback(() => {
+    const cfg = warmCfgRef.current
+    if (!canHoldToTalk(cfg)) return
+    // ① 麦克风：把权限询问 + 设备打开的开销提前摊掉
+    void warmUpMicrophone()
+    // ② WebSocket：把握手做完，按下时直接复用
+    warmVolcStream({
+      apiKey: cfg?.apiKey ?? '',
+      resourceId: cfg?.resourceId,
+      endpoint: resolveEndpoint(cfg?.model),
+    })
+  }, [])
+
+  /**
+   * ★ 进写作页就预热（家长 2026-10-02 要的：「能否进入写作页面就是有录音的，
+   *   就建立好链接」）。
+   *
+   * 放在挂载时而不是按下时，理由见上面 prewarm 的说明。
+   * ⚠️ 这里的 `warmUpMicrophone()` 会**真的把麦克风打开一瞬间**再立刻关掉
+   *    （系统状态栏的麦克风图标会闪一下）。这是刻意的取舍：
+   *    不真开一次，预热就没有意义。
+   */
+  useEffect(() => {
+    prewarm()
+  }, [prewarm])
 
   /* ---------------- 处理一句识别结果 ---------------- */
 
@@ -433,7 +492,10 @@ export function VoiceComposer({
    */
   const endRound = useCallback(() => {
     if (gotCountRef.current === 0) setRoundEndedEmpty(true)
-  }, [])
+    /* 一轮用完，预热槽就空了 —— 立刻备好下一条，
+       让"连着说两句"的第二次也走热连接。 */
+    prewarm()
+  }, [prewarm])
 
   /* ---------------- 开始 / 停止 ---------------- */
 
@@ -535,26 +597,150 @@ export function VoiceComposer({
   const holdActiveRef = useRef(false)
 
   /**
-   * 走「边说边传」的流式。
+   * 孩子**已经松手**了 —— 和"还在按住""中途放弃"是**三件事**。
    *
-   * 三个条件都要满足：配置选了流式、密钥有、**而且这台设备上有原生 socket 插件**。
-   * 第三条在桌面上必然不成立 —— 浏览器的 WebSocket 设不了请求头，
-   * 连不上火山（见 ws-transport.ts 顶部说明）。
+   * ★ 为什么必须单独一个 ref，而不是复用 holdActiveRef：
+   *   按下要等两件异步的事（`getUserMedia` 拿到麦克风、流式还要等 WebSocket
+   *   握手），而**松手是同步的**。所以"松手跑在就绪前面"是常态，不是异常。
+   *
+   *   那一刻 endHold 手里什么都没有可收尾 —— 但音频已经在采、连接还在路上，
+   *   这一轮**不是废的**（探针日志里那句 `有音频: true` 就是证据）。
+   *   所以要留一个"我松手了，请收尾"的意图，给 beginHold 的尾巴看见：
+   *
+   *     holdActive=true                    → 还在按住
+   *     holdActive=false, released=true    → 松手比就绪快，等就绪后**收尾**
+   *     holdActive=false, released=false   → 中途放弃（手指滑出 / 卸载），收掉
    */
-  const useVolc =
-    usesStreamingEngine(transcribe) && isTranscribeConfigured(transcribe) && isStreamingSupported()
+  const holdReleasedRef = useRef(false)
 
   /**
-   * 有没有可用的「按住说话」。
+   * 这一轮流式建连的 promise。
    *
-   * ★ 判定搬到了 `canHoldToTalk`（platform/transcribe.ts）—— 因为新手引导
-   *   第二屏要教孩子**哪个手势**，用的必须是同一个答案。
-   *   以前这里是内联表达式，引导那边只能各判一次，就会漂移。
+   * 松手比握手快时，endHold 没有 session 可收 —— 它靠这条 promise 知道
+   * "连接还在路上"，而不是当场判死刑（见 endHold 里那段说明）。
+   */
+  const volcConnectRef = useRef<Promise<VolcStream> | null>(null)
+
+  /**
+   * 第几轮"按住" —— 用来认出"我这条尾巴已经过期了"。
+   *
+   * ★ 为什么需要：`beginHold` 要 await（开麦、握手），而孩子完全可能在这段
+   *   窗口里**又按一次**（"松手太快"的孩子本来就在反复点）。那就会出现
+   *   上一轮的尾巴和新一轮的尾巴同时在跑，而它们共用
+   *   `earlyChunksRef` / `volcRef` / `volcConnectRef` 这几个 ref ——
+   *   上一轮的尾巴一旦接着往下写，就会把新一轮攒下的音频和会话搅乱
+   *   （表现为"连着按两次，第二次的文字是第一次的、或者干脆没有"）。
+   *   所以每条尾巴都记住自己属于第几轮，过期了就**只收拾自己**。
+   */
+  const roundSeqRef = useRef(0)
+
+  /**
+   * 有没有可用的「按住说话」—— 也就是"能不能走火山流式"。
+   *
+   * ★ 判定**只有这一份**：`canHoldToTalk`（platform/transcribe.ts）。
+   *   它同时决定两件事，两处必须是同一个答案：
+   *     · 这个麦克风按钮是「按住说话」还是「点一下开始」；
+   *     · 新手引导第二屏教孩子**哪个手势**。
+   *   两处各写一遍，就会出现"引导教按住、按钮却是点击"——
+   *   孩子按住不动，界面毫无反应，于是认定麦克风坏了。
+   *
+   * ⚠️ 桌面 / 网页上它一定是 false：浏览器的 WebSocket 设不了请求头，
+   *   连不上火山（见 ws-transport.ts 顶部说明）。
+   *
+   * ⛔ 2026-10-02 起**没有"流式不可用就退回整包上传"这一支了** ——
+   *   那条路连代码一起删了（家长：「去掉硅基流动的东西，只使用火山」）。
+   *   所以这里不再是"选哪条路"，而是"这条路能不能用"。
    */
   const canTranscribe = canHoldToTalk(transcribe)
 
+  /**
+   * 流式那一轮的**收尾**：发最后一包 → 等终稿 → 把文字交给 handleFinal。
+   *
+   * ★ 只有这一个收尾入口，两个调用点：
+   *     · `endHold` —— 松手时连接**已经就绪**（常见情形）；
+   *     · `beginHold` 的尾巴 —— 松手比握手快，连接就绪后由它补收尾。
+   *
+   *   两处各写一遍，就会出现"一条路把文字交出去、另一条忘了"的漂移，
+   *   而漂移的表现恰好是"有时候有字、有时候没有"——最难查的那种。
+   */
+  const finishVolcRound = useCallback(
+    async (session: VolcStream, pcm: PcmCapture | null, hadAudio: boolean) => {
+      setTranscribing(true)
+      try {
+        voiceDiag('流式开始收尾', {
+          按住ms: Date.now() - holdStartRef.current,
+          音频ms: pcm?.getDurationMs(),
+        })
+        const r = await session.finish()
+        if (r.ok) {
+          voiceDiag('流式成功', { ms: r.ms, 字数: r.text.length })
+          // ★ 走和系统识别**完全相同**的处理函数
+          handleFinal(r.text)
+          endRound()
+          return
+        }
+
+        /* ★★ 兜底：**已经识别出来的字，一个字都不许丢**。
+         *
+         * 家长 2026-10-02 报的就是这一条：「录音文字已经识别，但是如果
+         * 松开过快，就不会处理」—— 上槽明明已经长出字了，正文却一个字没变。
+         *
+         * 为什么会有这种状态：终稿那一条消息可能压根不来（服务端只给了
+         * 中间结果），也可能收尾时连接被关掉 / 报错 —— 而**中间结果我们
+         * 早就拿到了**（它就在上槽里显示着）。这时候把它扔掉、只回一句
+         * "没听清"，孩子刚才说的话就白说了。
+         *
+         * ⚠️ 只有一种情况**不许**兜底：`'cancelled'` —— 那是孩子自己放弃的
+         *    （手指滑出按钮 / 离开页面）。把他不要的东西写进作文更糟。
+         *    这就是 `'cancelled'` 必须和 `'empty'` 分开的原因。 */
+        const salvaged = lastInterimRef.current.trim()
+        if (r.reason !== 'cancelled' && salvaged) {
+          voiceDiag('没拿到终稿，用已经识别出来的中间结果兜底', {
+            reason: r.reason,
+            字数: salvaged.length,
+          })
+          handleFinal(salvaged)
+          endRound()
+          return
+        }
+
+        /* 松手比开麦还快 → 一个字节都没采到。
+         * 这时候说"没听清"是**甩锅**：根本不是听不清，是压根没录上。
+         * 说清原因，孩子才知道该按住多说一会儿。 */
+        if (!hadAudio && r.reason !== 'cancelled') {
+          voiceDiag('这一轮没采到音频（松手比开麦快）', {
+            按住ms: Date.now() - holdStartRef.current,
+          })
+          setFeedback({ text: '松手太快啦，还没开始录呢 —— 按住说完再松手', ok: false })
+          endRound()
+          return
+        }
+
+        setFeedback({ text: r.message, ok: false })
+        endRound()
+      } catch (err) {
+        voiceDiag('流式收尾抛了异常', {
+          err: err instanceof Error ? `${err.name}: ${err.message}` : String(err),
+        })
+        setFeedback({ text: '转文字失败了，再试一次', ok: false })
+        endRound()
+      } finally {
+        setTranscribing(false)
+      }
+    },
+    [handleFinal, endRound],
+  )
+
   const beginHold = useCallback(async () => {
-    if (transcribing) return
+    /* ⚠️ 上一轮还在收尾（`transcribing`）时按下，会被这里挡掉。
+       以前是**静悄悄**挡掉 —— 孩子按了、说了，界面什么反应都没有，
+       看起来就像"松开太快所以不处理"。
+       现在至少给一句回执：让他知道不是坏了，是上一句还在转。 */
+    if (transcribing) {
+      voiceDiag('上一轮还在收尾，这一次按下被忽略', {})
+      setFeedback({ text: '上一句还在转成文字，等一下再按', ok: false })
+      return
+    }
     setFeedback(null)
     setCandidates(null)
     setInterim('')
@@ -562,15 +748,20 @@ export function VoiceComposer({
     setLastRaw('')
     setRoundEndedEmpty(false)
     gotCountRef.current = 0
+    /* ⚠️ 每一轮都要清 —— 否则上一轮的中间结果会补进这一轮（见 lastInterimRef） */
+    lastInterimRef.current = ''
 
     holdActiveRef.current = true
+    holdReleasedRef.current = false
     holdStartRef.current = Date.now()
+    /* 这一轮的编号 —— 尾巴靠它认出"我过期了"（见 roundSeqRef 的说明） */
+    const seq = ++roundSeqRef.current
 
-    /* 顺手预热连接：孩子从按下到松手通常有 2~10 秒，
-       这段时间足够把 DNS/TCP/TLS 握手做完（实测握手约 160ms，
-       占冷连接总耗时的四成多）。松手时请求就能走热连接。
-       刻意不 await —— 预热是锦上添花，不该挡着录音开始。 */
-    warmUpTranscribe(transcribe)
+    /* ⚠️ 这里**不再**预热了。原来那行 `warmUpTranscribe()` 是给「整包上传」
+       那条 HTTP 路用的（发一个 GET /models 把 DNS/TCP/TLS 摊开）——
+       那条路已经删了（2026-10-02）。
+       流式这条路的预热换了个时机：**进写作页就做**（见上面 prewarm 的说明），
+       按下的时候连接早就在手里了。 */
 
     playSound('record-start')
     tapFeedback()
@@ -588,7 +779,7 @@ export function VoiceComposer({
          反过来的话，孩子按下的瞬间就开口，开头那半个字会丢在建连的
          200ms 里 —— 越短的句子越明显（"第一个字总是听不见"）。
          所以采集立刻开始，音频先攒在 earlyChunksRef，连上后补发。 */
-      if (useVolc) {
+      if (canTranscribe) {
         earlyChunksRef.current = []
         volcRef.current = null
 
@@ -608,42 +799,81 @@ export function VoiceComposer({
             resourceId: transcribe?.resourceId,
             endpoint: resolveEndpoint(transcribe?.model),
           },
-          { onInterim: (t) => setInterim(t) },
+          {
+            onInterim: (t) => {
+              // ★ 记一份 —— 收尾拿不到终稿时靠它兜底（见 finishVolcRound）
+              lastInterimRef.current = t
+              setInterim(t)
+            },
+          },
         )
         connecting = connectPromise
+        volcConnectRef.current = connectPromise
 
         await capture.start()
 
         const session = await connectPromise
-        if (!holdActiveRef.current) {
-          // 松手比建连还快（手滑点一下）—— 收掉，不要结果
+
+        /* ★ 过期检查必须排在**动任何共享 ref 之前**。
+           孩子在这段窗口里又按了一次的话，`earlyChunksRef` / `volcRef` /
+           `volcConnectRef` 现在都属于**新一轮**了 —— 这里只要碰一下，
+           就会把新一轮的音频和会话搅乱（见 roundSeqRef 的说明）。
+           过期的尾巴只收拾自己那条连接，别的什么都不许动。 */
+        if (roundSeqRef.current !== seq) {
+          voiceDiag('这一轮已过期（孩子又按了一次），只收掉自己的连接', {
+            过期轮: seq,
+            当前轮: roundSeqRef.current,
+          })
           session.cancel()
           return
         }
+
+        volcConnectRef.current = null
+
+        /* ★ 先补发"建连期间攒下的音频"，再决定这一轮归谁收尾。
+           孩子按下的**瞬间**就可能开口，而那些包全在 earlyChunksRef 里 ——
+           先判断归谁收尾、再补发的话，一旦走了收尾分支就会把它们漏掉。 */
         for (const c of earlyChunksRef.current) session.pushAudio(c)
         earlyChunksRef.current = []
         volcRef.current = session
 
-        const tickVolc = () => {
-          const p = pcmRef.current
-          if (p) setLevel(p.getLevel())
+        if (holdActiveRef.current) {
+          // 还在按住：正常，开始画波形
+          const tickVolc = () => {
+            const p = pcmRef.current
+            if (p) setLevel(p.getLevel())
+            rafRef.current = requestAnimationFrame(tickVolc)
+          }
           rafRef.current = requestAnimationFrame(tickVolc)
+          return
         }
-        rafRef.current = requestAnimationFrame(tickVolc)
+
+        if (holdReleasedRef.current) {
+          /* ★ 松手比握手快 —— 这一轮由**这里**收尾。
+             ⚠️ 这里以前是 `session.cancel(); return`：把已经握上手的连接、
+             连同已经采到的音频（探针日志那句 `有音频: true`）整段扔掉；
+             而 endHold 那边因为手里没有 session，只能报一句「网络有点慢」。
+             两句提示都在甩锅，孩子说的字全丢。
+             现在正常收尾：音频早就发出去了，只差一次收尾往返（实测中位 150ms）。 */
+          voiceDiag('松手比握手快，连接就绪后补收尾', {
+            按住ms: Date.now() - holdStartRef.current,
+            音频ms: capture.getDurationMs(),
+          })
+          await finishVolcRound(session, capture, capture.getDurationMs() > 0)
+          return
+        }
+
+        // 中途放弃（手指滑出按钮 / 组件卸载）—— 收掉，不要结果
+        session.cancel()
         return
       }
 
-      // ---------------- 整包上传：录完再传 ----------------
-      const recorder = createRecorder()
-      recorderRef.current = recorder
-      await recorder.start()
-      // 录音期间画波形，让"在录"这件事看得见
-      const tick = () => {
-        const r = recorderRef.current
-        if (r) setLevel(r.getLevel())
-        rafRef.current = requestAnimationFrame(tick)
-      }
-      rafRef.current = requestAnimationFrame(tick)
+      /* ⛔ 这里原来是「整包上传：录完再传」那一支（MediaRecorder → 上传）。
+         2026-10-02 家长定「只使用火山」，那条路连代码一起删了。
+         ⚠️ `canTranscribe` 为假时按钮走的是"点一下开始"那套，
+            压根不会进 beginHold —— 所以这里**不该**有第二条路。
+            真走到这里就是 bug，留一条日志让人看得见。 */
+      voiceDiag('按下了"按住说话"，但流式这条路不可用（不该发生）', {})
     } catch (err) {
       holdActiveRef.current = false
       setListening(false)
@@ -674,7 +904,7 @@ export function VoiceComposer({
       })
       setManualOpen(true)
     }
-  }, [transcribing, transcribe, useVolc])
+  }, [transcribing, transcribe, canTranscribe, finishVolcRound])
 
   const endHold = useCallback(async () => {
     // 不是"按住"这一路（比如按键被别的路径触发），不做处理
@@ -682,7 +912,6 @@ export function VoiceComposer({
     holdActiveRef.current = false
 
     const durationMs = Date.now() - holdStartRef.current
-    const recorder = recorderRef.current
 
     if (rafRef.current !== null) {
       cancelAnimationFrame(rafRef.current)
@@ -697,7 +926,7 @@ export function VoiceComposer({
        这里是整条链路最大的区别所在：音频**早就已经发过去了**，
        所以松手之后只剩一次收尾往返（实测中位 150ms）。
        而且文字在孩子说话时就已经在屏幕上长了（onInterim）。 */
-    if (useVolc) {
+    if (canTranscribe) {
       const pcm = pcmRef.current
       const session = volcRef.current
 
@@ -711,103 +940,58 @@ export function VoiceComposer({
          实测过：这条顺序写反过，每次松手都丢尾巴。 */
       const captureHadAudio = pcm?.stop() ?? false
       pcmRef.current = null
+      holdReleasedRef.current = true
       volcRef.current = null
-      earlyChunksRef.current = []
+      /* ⚠️ 这里**刻意不再清 earlyChunksRef**。
+         松手比握手快时，那些包还要靠 beginHold 的尾巴补发出去 ——
+         以前在这里清掉，等于把已经采到的音频直接扔了。 */
 
-      // 还没连上就松手了
+      /* ★ 松手比握手快：连接还在路上，而音频已经在 earlyChunksRef 里。
+         不在这里判死刑 —— beginHold 的尾巴会等连接就绪，然后由它补收尾。
+         （以前这一支报的是「网络有点慢，再试一次」：明明跟网络无关，
+           而且那一轮**本来救得回来**，只是被这里丢掉了。）
+
+         ⚠️ 所以这里**不需要**再加一个"等多久就算了"的上限：
+            握手本身有 8 秒上限（ws-transport 的 CONNECT_TIMEOUT_MS），
+            超了会走失败分支，由尾巴把真实原因说出来。
+            等待期间界面显示的是「正在转成文字…」，而这一轮真的还有救 ——
+            比当场丢掉、还甩锅给网络诚实。 */
       if (!session) {
-        voiceDiag('流式没连上就松手了', { 按住ms: durationMs, 有音频: captureHadAudio })
-        setFeedback({ text: '网络有点慢，再试一次', ok: false })
-        endRound()
-        return
-      }
-
-      setTranscribing(true)
-      try {
-        voiceDiag('流式开始收尾', { 按住ms: durationMs, 音频ms: pcm?.getDurationMs() })
-        const r = await session.finish()
-        if (r.ok) {
-          voiceDiag('流式成功', { ms: r.ms, 字数: r.text.length })
-          // ★ 走和系统识别**完全相同**的处理函数
-          handleFinal(r.text)
-          endRound()
+        if (volcConnectRef.current) {
+          voiceDiag('松手比握手快，等连接就绪再收尾', {
+            按住ms: durationMs,
+            有音频: captureHadAudio,
+          })
           return
         }
-        setFeedback({ text: r.message, ok: false })
-        endRound()
-      } catch (err) {
-        voiceDiag('流式收尾抛了异常', {
-          err: err instanceof Error ? `${err.name}: ${err.message}` : String(err),
+        // 连接已经不在了（beginHold 的 catch 收掉了，或压根没建起来）：
+        // 麦克风那条真实原因已经由 beginHold 说过，这里不重复打扰
+        voiceDiag('松手时既没有会话、也没有在途连接', {
+          按住ms: durationMs,
+          有音频: captureHadAudio,
         })
-        setFeedback({ text: '转文字失败了，再试一次', ok: false })
-        endRound()
-      } finally {
-        setTranscribing(false)
-      }
-      return
-    }
-
-    if (!recorder) {
-      // 按下时录音器就没建起来（上面那条"麦克风打开失败"会说明原因）
-      voiceDiag('松手时没有录音器', { 按住ms: durationMs })
-      return
-    }
-
-    setTranscribing(true)
-    try {
-      const rec = await recorder.stop()
-      recorderRef.current = null
-
-      if (!rec) {
-        // 太短/没有音频：当成误触，不打扰
-        voiceDiag('按得太短，没拿到音频', { 按住ms: durationMs })
-        setFeedback({ text: '按住多说几个字试试', ok: false })
-        return
-      }
-
-      // 按住时长 vs 录到的音频时长：差得多说明录音启动有延迟，
-      // 开头那半个字可能没被录进去（真机上表现为"第一个字总是丢"）。
-      voiceDiag('开始转写', {
-        按住ms: durationMs,
-        音频ms: rec.durationMs,
-        格式: rec.mime,
-      })
-
-      const r = await transcribeWithRetry(
-        dataUrlToBlob(rec.dataUrl),
-        transcribe ?? { baseUrl: '', apiKey: '', model: '' },
-        { durationMs: Math.max(durationMs, rec.durationMs) },
-      )
-
-      if (r.ok) {
-        // ★ 走和系统识别**完全相同**的处理函数：
-        //   说作文 → 追加；改作文 → 解析修改指令
-        handleFinal(r.text)
         endRound()
         return
       }
 
-      setFeedback({ text: r.message, ok: false })
-      // 转写这条路没成 —— 让诊断行有机会说明"这一轮没拿到结果"
-      endRound()
-    } catch (err) {
-      voiceDiag('转写这条路上抛了异常', {
-        err: err instanceof Error ? `${err.name}: ${err.message}` : String(err),
-      })
-      setFeedback({
-        text: err instanceof Error && err.message ? err.message : '转文字失败了，再试一次',
-        ok: false,
-      })
-      endRound()
-    } finally {
-      setTranscribing(false)
+      await finishVolcRound(session, pcm, captureHadAudio)
+      return
     }
-  }, [handleFinal, endRound, transcribe, useVolc])
+
+    /* ⛔ 这里原来是「整包上传」那一支（`recorder.stop()` → 上传 → 转写）。
+       2026-10-02 那条路已删 —— 见 beginHold 里的说明。
+       ⚠️ 流式那一支在上面已经 `return` 了，能走到这里的只有
+          "按下了按住说话、但流式不可用"这种不该发生的情况。 */
+    voiceDiag('松手时没有可用的转写会话（不该发生）', { 按住ms: durationMs })
+  }, [endRound, canTranscribe, finishVolcRound])
 
   /** 中途放弃（手指滑出按钮、或组件卸载）*/
   const cancelHold = useCallback(() => {
     if (!holdActiveRef.current) return
     holdActiveRef.current = false
+    // ★ 真·放弃：把"松手了请收尾"那个意图也撤掉，
+    //   否则 beginHold 的尾巴会以为孩子松手了，去把这一轮收尾（见那三个 ref 的说明）
+    holdReleasedRef.current = false
     // 手指滑出按钮了。这条日志专门用来解释"为什么没有后面的上传日志"，
     // 免得把"用户主动放弃"误判成"录音链路断了"。
     voiceDiag('中途放弃（手指滑出按钮）', { 按住ms: Date.now() - holdStartRef.current })
@@ -861,10 +1045,14 @@ export function VoiceComposer({
     return () => {
       // 按住说话中途离开页面：把录音收掉，别让麦克风一直开着
       holdActiveRef.current = false
+      // 同理：卸载 = 真·放弃，别让 beginHold 的尾巴去收尾
+      holdReleasedRef.current = false
       recRef.current?.abort()
       recorderRef.current?.cancel()
       pcmRef.current?.cancel()
       volcRef.current?.cancel()
+      // 预热的那条连接也要收掉 —— 离开页面还挂着一条 socket 纯属浪费
+      dropWarmVolcStream()
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current)
     }
   }, [])
@@ -1188,18 +1376,42 @@ export function VoiceComposer({
 
         {/* 键盘兜底：日记明确不给这个入口 */}
         {!voiceOnly ? (
-          <button
-            type="button"
-            onClick={() => {
-              setManualOpen((v) => !v)
-              setManualValue('')
-            }}
-            className={`text-xs font-medium underline decoration-dotted underline-offset-4 ${
-              ink ? 'text-mist-300' : 'text-mist-500'
-            }`}
-          >
-            {manualOpen ? '收起键盘输入' : '不方便说话？用键盘输入'}
-          </button>
+          <div className="flex flex-col items-center gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                setManualOpen((v) => !v)
+                setManualValue('')
+              }}
+              className={`text-xs font-medium underline decoration-dotted underline-offset-4 ${
+                ink ? 'text-mist-300' : 'text-mist-500'
+              }`}
+            >
+              {manualOpen ? '收起键盘输入' : '不方便说话？用键盘输入'}
+            </button>
+
+            {/* ★ 这台设备没有云端转写时，必须把话说明白。
+                **只有网页 / 桌面会走到这里**（APK 上 `isStreamingSupported()` 恒为真）。
+
+                为什么非要这一段：桌面 Chrome **有** `SpeechRecognition` 对象，
+                所以上面那句「这台设备不支持语音识别」（`!speechOk` 那段）**不会出现**；
+                而浏览器自带的识别在国内连不上服务端 —— 孩子按下去只会看到
+                「我在听……」，一个字都不回来，也没有任何解释。
+                所以这里主动把人引到真正能用的路上：键盘，或输入法自带的语音输入。
+
+                ⚠️ 判据用 `isStreamingSupported()` 而**不是** `!canTranscribe`：
+                   后者在「APK 上没配密钥」时也为假，而那种情况是在手机上，
+                   说一句"请在手机 App 里用"是错的。
+                ⚠️ 这段在 APK 上**恒不渲染** → 不增加任何高度，
+                   因此碰不到「按下时按钮一动都不动」那条红线（见本文件上方注释）。 */}
+            {!isStreamingSupported() && (
+              <p className={`max-w-[18rem] text-center text-2xs leading-relaxed ${S.hint}`}>
+                这台设备没有云端语音转写，语音输入请在手机 App 里用。
+                <br />
+                也可以打字，或用输入法自带的语音输入（Windows 按 Win+H）。
+              </p>
+            )}
+          </div>
         ) : (
           <p className={`max-w-[16rem] text-center text-2xs leading-relaxed ${S.hint}`}>
             日记只用声音写。
