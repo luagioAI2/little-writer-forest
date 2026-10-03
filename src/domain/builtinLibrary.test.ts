@@ -10,16 +10,19 @@ import {
 } from './builtinLibrary'
 import { PROMPT_TEMPLATES, TOPIC_TAGS } from './prompts'
 import type { LibraryItem } from './library'
+import { resolveGenre } from './types'
 import { sceneMeta } from '../assets/scenes'
 
 const builtin = buildBuiltinLibrary()
 
 describe('内置题库 · 生成', () => {
-  it('136 条 —— 就是 PROMPT_TEMPLATES 里的模板总数', () => {
+  it('条数 —— 就是 PROMPT_TEMPLATES 里的模板总数', () => {
+    // ⚠️ 期望值**从数据算**，别写死数字：家长会往题库里加题，
+    //    写死的那一刻起，这个测试就从"守行为"变成了"守一个过期数字"。
     const total = Object.values(PROMPT_TEMPLATES).reduce((n, list) => n + list.length, 0)
+    expect(total).toBeGreaterThan(0)
     expect(builtin.length).toBe(total)
-    expect(builtin.length).toBe(136)
-    expect(builtinCount()).toBe(136)
+    expect(builtinCount()).toBe(total)
   })
 
   it('id 唯一、带前缀、可复现', () => {
@@ -91,12 +94,36 @@ describe('内置题库 · 内容质量', () => {
   /**
    * 这条是防「静默失败」的：sceneKey 写错不报错，
    * 只是永远渲染成占位画 —— 界面看不出错，孩子看到的是空白。
+   *
+   * ⚠️ `sceneKey` 现在是**可选**的：`scenes` 里写 `PHOTO_SLOT`（空串）表示
+   *    「这一格是纯照片位」，它本来就没有插画可查。所以这里只要求
+   *    「**写了的** sceneKey 必须查得到」，而不是「每个图位都得有 sceneKey」。
+   *    「图位不许空着」这个意图由下面那条守着 —— 判据跟着模型走，意图不变。
    */
-  it('每个 sceneKey 都对应一张真实存在的插画', () => {
+  it('写了的 sceneKey 都对应一张真实存在的插画', () => {
     for (const it of builtin) {
       for (const img of it.images) {
-        expect(img.sceneKey, `${it.id} 的配图没有 sceneKey`).toBeTruthy()
-        expect(sceneMeta(img.sceneKey!), `${it.id} 引用了不存在的插画「${img.sceneKey}」`).toBeDefined()
+        if (!img.sceneKey) continue
+        expect(sceneMeta(img.sceneKey), `${it.id} 引用了不存在的插画「${img.sceneKey}」`).toBeDefined()
+      }
+    }
+  })
+
+  /**
+   * 上一版这条写的是「每个图位都必须有 sceneKey」，现在不成立了 ——
+   * 纯照片题的图来自覆盖层（`library-items.json`），代码里本来就没有 sceneKey。
+   *
+   * 但「不许出现空白图位」这个**意图**没变，只是判据要跟着模型走：
+   * 一个图位至少要有一个来源 —— 插画（`sceneKey`）或照片（`imageUrl`）。
+   * 两个都没有 → `SceneArt` 会渲染成「暂无插图」占位框，而**界面不会报错**。
+   */
+  it('每个图位都有图可画 —— 插画或照片，至少有一个', () => {
+    for (const it of builtin) {
+      for (const img of it.images) {
+        expect(
+          Boolean(img.sceneKey || img.imageUrl),
+          `${it.id} 的图位既没有插画也没有照片 —— 会静默渲染成「暂无插图」`,
+        ).toBe(true)
       }
     }
   })
@@ -141,13 +168,13 @@ describe('内置题库 · 对账', () => {
   })
 
   it('空库 → 长出全部内置题', () => {
-    expect(reconcileBuiltinLibrary([])).toHaveLength(136)
+    expect(reconcileBuiltinLibrary([])).toHaveLength(builtin.length)
   })
 
   it('用户自己的题一条不动，而且排在前面', () => {
     const mine = [userItem('a'), userItem('b')]
     const out = reconcileBuiltinLibrary(mine)
-    expect(out).toHaveLength(138)
+    expect(out).toHaveLength(builtin.length + mine.length)
     expect(out.slice(0, 2).map((i) => i.id)).toEqual(['a', 'b'])
     // 连使用痕迹一起原样保留
     expect(out[0]).toEqual(mine[0])
@@ -169,7 +196,7 @@ describe('内置题库 · 对账', () => {
     stored.push({ ...stored[0], id: 'builtin-season-99' })
     const out = reconcileBuiltinLibrary(stored)
     expect(out.find((i) => i.id === 'builtin-season-99')).toBeUndefined()
-    expect(out).toHaveLength(136)
+    expect(out).toHaveLength(builtin.length)
   })
 
   it('模板内容改了 → 以代码为准，但痕迹留着', () => {
@@ -194,5 +221,45 @@ describe('内置题库 · 对账', () => {
     expect(sameLibraryIds(a, reconcileBuiltinLibrary([]))).toBe(true)
     expect(sameLibraryIds(a, a.slice(1))).toBe(false)
     expect(sameLibraryIds(a, [...a].reverse())).toBe(false)
+  })
+})
+
+/* ============================================================
+   内置题 · 格式要求与命题方式（2026-10-01）
+   ------------------------------------------------------------
+   内置题是「从标签派生」的，所以这两条守卫其实在守一件事：
+   **格式要求/命题方式只有一个来源（标签），派生这一层不许自己再判一次。**
+   两处判定 = 改一处漏一处，而且两边都不报错。
+   ============================================================ */
+
+describe('内置题库 · 格式要求与命题方式', () => {
+  it('★ 每条题的 requiredGenre 都等于它标签解析出来的值', () => {
+    for (const it of builtin) {
+      const tag = TOPIC_TAGS.find((t) => t.id === it.tagId)
+      expect(tag, `题 ${it.id} 的标签「${it.tagId}」不在标签表里`).toBeDefined()
+      expect(it.requiredGenre, `题 ${it.id}（${it.title}）`).toBe(resolveGenre(tag!.requiredGenre))
+    }
+  })
+
+  it('★ 命题方式同样只从标签来', () => {
+    for (const it of builtin) {
+      const tag = TOPIC_TAGS.find((t) => t.id === it.tagId)!
+      expect(it.promptMode, `题 ${it.id}（${it.title}）`).toBe(tag.promptMode)
+    }
+  })
+
+  /* ⛔ 2026-10-02：原本这里有一条「看图作文 / 漫画的题：命题方式是材料
+     作文」的守卫 —— 那两条标签连同它们的 11 道题已经按家长决定删掉了
+     （家长：「整个应用就是看图作文」），所以这条守卫**没有对象了**。
+     ⚠️ 别改成 `expect(material.length).toBe(0)`：那是把「当前状态」写成
+        规格 —— 将来真加了材料题，它会误报。标签还在不在，由
+        `prompts.test.ts` 那条「不许加回来」的守卫盯着。
+     ★ 「题目挂的标签必须真实存在」这条不变量仍然有人守 ——
+       就是上面那条「每条题的 requiredGenre 都等于它标签解析出来的值」。 */
+
+  it('★ 应用文的题：格式要求是题目自带的（不是靠 category 表达）', () => {
+    const applied = builtin.filter((i) => i.requiredGenre === 'applied')
+    expect(applied.length).toBeGreaterThan(0)
+    expect(new Set(applied.map((i) => i.tagId))).toEqual(new Set(['applied-writing']))
   })
 })

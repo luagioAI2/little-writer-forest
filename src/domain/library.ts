@@ -14,12 +14,15 @@
 
 import type {
   CompositionCategory,
+  CompositionGenre,
   CompositionPrompt,
   GradeLevel,
   PromptImage,
+  PromptMode,
 } from './types'
+import { GENRES, PROMPT_MODES, resolveGenre } from './types'
 /* prompts.ts 只依赖 types.ts，不会成环 */
-import { resolveTagId } from './prompts'
+import { resolveTagId, tagById } from './prompts'
 
 /** 题库里的一条记录 = 题目 + 使用情况 */
 export interface LibraryItem extends CompositionPrompt {
@@ -519,13 +522,33 @@ function validateItem(
       )
     : []
 
+  /* 中文标签也认 —— 跟 tagId 同一条规矩：家长手写数据时写「应用文」
+     和写 "applied" 等价。不归一化的话，写中文会静默落回记叙文。 */
+  const tagId = typeof o.tagId === 'string' ? resolveTagId(o.tagId) : ''
+
   return {
     item: {
       id: typeof o.id === 'string' && o.id ? o.id : `imported-${now}-${Math.random().toString(36).slice(2, 8)}`,
       category,
       /* 中文标签也认 —— 家长手写数据时写「天气」和写 "weather" 等价。
          不归一化的话，写中文会静默匹配不上（筛不到题、也不出 emoji）。 */
-      tagId: typeof o.tagId === 'string' ? resolveTagId(o.tagId) : '',
+      tagId,
+      /* ★ 格式要求：① 显式写了合法值就用它；② 没写/不认识 → **从标签推**
+         （标签自己知道「题目自带了什么格式要求」）；③ 标签也查不到 → 退回记叙文。
+         这样导进来的题跟内置题口径一致，不会出现「同一道题两种判定」。
+
+         ⚠️ 认两个 key：`requiredGenre`（2026-10-01 起的名字）和
+            `genre`（之前导出的文件里就是这个）—— 老导出文件导回来时，
+            少了这一行就会**静默**退回记叙文，一道应用文题悄悄变成记叙文题。
+            `parseGenre` 认不出来返回 `undefined`，所以两个 key 可以安全串联。 */
+      requiredGenre:
+        parseGenre(o.requiredGenre) ??
+        parseGenre(o.genre) ??
+        resolveGenre(tagById(tagId)?.requiredGenre),
+      /* ★ 命题方式：显式写了就用，否则从标签推（`undefined` = 命题作文）。
+         ⚠️ 没有「旧名字」可认 —— 2026-10-01 之前的导出里根本没有这个字段，
+            所以老文件一律走「从标签推」，那条路是通的。 */
+      promptMode: parsePromptMode(o.promptMode) ?? tagById(tagId)?.promptMode,
       title,
       lead: typeof o.lead === 'string' ? o.lead : '',
       images,
@@ -588,6 +611,46 @@ function clampGrade(v: unknown): GradeLevel {
 }
 
 /**
+ * 认出「题目自带的格式要求」。
+ *
+ * 和 `parseSource` 一样是**只认白名单**的解析器：认不出来一律返回 `undefined`，
+ * 交给调用方去「从标签推」或「退回记叙文」。
+ *
+ * ⚠️ 这里**必须**返回 `undefined` 而不是 `'narrative'`：
+ * 调用方写的是 `parseGenre(x) ?? resolveGenre(tagById(tagId)?.requiredGenre)`，
+ * 如果这里把「不认识」硬翻成记叙文，`??` 就永远拿不到右边的值 ——
+ * 一道标了 `requiredGenre:'applied'` 的应用文题，只要文件里写了个错别字，
+ * 就会被**静默**改成记叙文，而且不报错、不崩、计数还是对的。
+ *
+ * 中英文都认（`'applied'` 与 `'应用文'` 等价），跟 `tagId` 同一条规矩：
+ * 家长手写 JSON 时写中文不应该静默失效。
+ */
+function parseGenre(v: unknown): CompositionGenre | undefined {
+  if (typeof v !== 'string') return undefined
+  const s = v.trim()
+  if (!s) return undefined
+  const hit = GENRES.find((g) => g.key === s || g.label === s)
+  return hit?.key
+}
+
+/**
+ * 认出「命题方式」（轴 2）。
+ *
+ * 和 `parseGenre` 同一条规矩：只认白名单，认不出来一律 `undefined`
+ * （交给调用方「从标签推」）。⚠️ 同样**不许**硬翻成 `'assigned'` —— 理由
+ * 跟 `parseGenre` 一模一样，`??` 右边还有一层可用的信息。
+ *
+ * 中英文都认（`'material'` 与 `'材料作文'` 等价）。
+ */
+function parsePromptMode(v: unknown): PromptMode | undefined {
+  if (typeof v !== 'string') return undefined
+  const s = v.trim()
+  if (!s) return undefined
+  const hit = PROMPT_MODES.find((m) => m.key === s || m.label === s)
+  return hit?.key
+}
+
+/**
  * 认出来源。
  *
  * 导出的文件里带着 `source`，导回来时保留 —— 所以「内置题库」导出再导回，
@@ -609,4 +672,33 @@ export function hasTitle(items: LibraryItem[], title: string): boolean {
 
 export function existingTitles(items: LibraryItem[]): string[] {
   return items.map((i) => i.title)
+}
+
+/* ============================================================
+   六、老存档迁移
+   ============================================================ */
+
+/** 2026-10-01 之前存进去的题库记录 —— 文体那个字段还叫 `genre`。 */
+type LegacyStoredItem = LibraryItem & { genre?: CompositionGenre }
+
+/**
+ * ★★ 把**存在库里的老记录**补齐成当前形状。
+ *
+ * 2026-10-01：题目的 `genre` 改名成 `requiredGenre`（语义收窄为
+ * 「题目**自带**的格式要求」）。改名会改掉**存进去的 key** —— 老用户库里
+ * 那批题带的是旧名字，直接读会**全部变成记叙文题**（包括那 8 道应用文题，
+ * 以及家长自己导入过的题）。
+ *
+ * ⚠️ 这个失败是**静默**的：不报错、不崩、题一道不少、界面照常，
+ *    只是格式要求悄悄退回缺省了。所以「从库里读题」的路必须全部走它 ——
+ *    见 `db.ts` 的 `readLibraryRows()`。
+ *
+ * ★ 只做一件事：把旧 key 搬到新 key。**不改值、不猜** ——
+ *   认不出来就该走缺省（那是 `resolveGenre` 的活，不是这里的）。
+ * ★ 已经有新 key 的原样返回（幂等，读多少次都一样）。
+ */
+export function migrateStoredItem(row: LibraryItem): LibraryItem {
+  const legacy = row as LegacyStoredItem
+  if (legacy.requiredGenre || !legacy.genre) return row
+  return { ...legacy, requiredGenre: legacy.genre }
 }

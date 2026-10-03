@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>小笔苗 · 作文库浏览 / 编辑</title>
+<style>
+  /* ============================================================
+     作文库浏览 + 编辑页 —— 跟 App / landmarks-browse.html 同一套暖色配色。
+
+     ★ 只做一件事：把**内置 136 道题**列出来，点一道就能改
+       标题 / 引导语 / 配图，改完存进 `src/data/library-items.json`。
+     ★ 不引任何外部资源（跟 App 一样离线可用）。
+     ★ 走 import() 读**真实的领域模块**，不在这一页里抄第二份数据 ——
+       列表来自 `builtinBaseItems()`，预览来自 `buildBuiltinLibrary(草稿)`，
+       校验来自 `libraryItemShapeProblems()`（跟落盘端点同一个函数）。
+     ⚠️ 必须通过 dev server 打开（http://localhost:5190/library-browse.html），
+        file:// 会被浏览器跨源拦掉。
+     ⚠️ 保存走 `/__save-library-items`，那个端点在**生产包里不存在**。
+     ★ 也能**被内嵌**（`content-config.html` 的「作文库配置」那一屏）。
+        嵌进去时把"有没有没保存的改动"报给父页，并把自己的 `beforeunload`
+        让给父页 —— 见下面 `reportDirty()` 和文件末尾那个守卫。
+     ============================================================ */
+  :root{
+    --bg:#fbf9f4; --card:#fff; --line:#e7e2d8; --ink:#2f3a34; --ink2:#5b655e;
+    --dim:#8b948d; --leaf:#29ce89; --leaf-d:#10a368; --amber:#febb32;
+    --amber-d:#b57f0d; --slate:#9ca3af; --red:#b42318; --red-bg:#fde8e8;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:14px/1.6 system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  }
+  header{padding:20px 18px 6px}
+  h1{margin:0 0 4px; font-size:20px; letter-spacing:.02em}
+  .sub{color:var(--ink2); font-size:12.5px}
+  .sub code{background:#f1efe9; border-radius:5px; padding:1px 5px; font-size:12px}
+  main{padding:0 18px 60px}
+
+  /* ---- 统计 ---- */
+  .stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(104px,1fr)); gap:10px; margin-top:14px}
+  .stat{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 12px}
+  .stat b{display:block; font-size:20px; line-height:1.25}
+  .stat span{color:var(--dim); font-size:12px}
+  .stat.hot b{color:var(--leaf-d)}
+
+  /* ---- 筛选栏 ---- */
+  .bar{
+    display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:10px 12px; margin-top:14px; position:sticky; top:0; z-index:5;
+    box-shadow:0 1px 4px rgba(0,0,0,.03);
+  }
+  .bar select,.bar input[type=search],.bar button{
+    font:inherit; color:var(--ink); background:#fff;
+    border:1px solid var(--line); border-radius:9px; padding:6px 9px;
+  }
+  .bar select{cursor:pointer; min-width:92px}
+  .bar input[type=search]{flex:1 1 160px; min-width:130px}
+  .bar select:focus,.bar input[type=search]:focus{outline:none; border-color:var(--leaf-d)}
+  .bar button{cursor:pointer; color:var(--ink2)}
+  .bar button:hover{border-color:var(--slate); color:var(--ink)}
+  .bar button.on{background:#eefaf3; border-color:#bfe8d5; color:var(--leaf-d); font-weight:700}
+  .bar .lbl{color:var(--dim); font-size:12px; white-space:nowrap}
+
+  /* ---- 结果计数 ---- */
+  .cnt-row{margin:14px 0 10px; color:var(--ink2); font-size:13px; display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+  .cnt-row b{color:var(--ink)}
+  .cnt-row .primary{margin-left:auto}
+
+  /* 「保存全部改动」—— 全局动作，跟筛选栏、计数行在一起（不在右栏面板里） */
+  button.primary{
+    font:inherit; cursor:pointer; border-radius:9px; padding:7px 15px;
+    border:1px solid var(--leaf-d); background:var(--leaf-d); color:#fff; font-weight:700;
+  }
+  button.primary:hover{background:#0d8a58}
+  button.primary:disabled{opacity:.45; cursor:not-allowed; background:var(--leaf-d)}
+  button.primary:disabled:hover{background:var(--leaf-d)}
+
+  /* ---- 两栏：左列表 / 右编辑 ---- */
+  .wrap{display:grid; grid-template-columns:minmax(0,1fr) 372px; gap:14px; align-items:start}
+  @media (max-width:900px){ .wrap{grid-template-columns:minmax(0,1fr)} .panel{position:static !important} }
+
+  .items{display:grid; grid-template-columns:repeat(auto-fill,minmax(224px,1fr)); gap:10px}
+  .item{
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:10px 12px; display:flex; flex-direction:column; gap:6px;
+    cursor:pointer; transition:border-color .12s, box-shadow .12s;
+  }
+  .item:hover{border-color:var(--leaf-d); box-shadow:0 2px 10px rgba(16,163,104,.13)}
+  .item.sel{border-color:var(--leaf-d); box-shadow:0 0 0 2px rgba(41,206,137,.28)}
+  .thumb{
+    aspect-ratio:4/3; border-radius:9px; overflow:hidden; background:#f4f1ea;
+    border:1px solid var(--line);
+  }
+  .thumb svg,.thumb img{width:100%; height:100%; display:block; object-fit:cover}
+  .nm{font-weight:600; font-size:14px; line-height:1.35}
+  .lead{color:var(--ink2); font-size:12.5px; line-height:1.5;
+        display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
+  .meta{display:flex; flex-wrap:wrap; gap:4px; font-size:11.5px; color:var(--dim); align-items:center}
+  .tag{display:inline-block; padding:1px 7px; border-radius:6px; font-size:11px; line-height:1.6; white-space:nowrap}
+  .tag.cat{background:#eef2f7; color:var(--ink2); border:1px solid #cfd8e3}
+  .tag.tag2{background:#f0f0ee; color:var(--ink2); border:1px solid #d4cfc4}
+  .tag.edited{background:#eefaf3; color:var(--leaf-d); border:1px solid #bfe8d5; font-weight:700}
+  .tag.photo{background:#fff3d6; color:var(--amber-d); border:1px solid #f4d97a}
+
+  /* ---- 编辑面板 ---- */
+  .panel{
+    position:sticky; top:64px; background:var(--card); border:1px solid var(--line);
+    border-radius:12px; padding:14px; display:flex; flex-direction:column; gap:12px;
+  }
+  .panel h2{margin:0; font-size:15px}
+  .empty{color:var(--dim); font-size:13px; padding:26px 6px; text-align:center; line-height:1.8}
+  .field{display:flex; flex-direction:column; gap:5px}
+  .field label{font-size:12px; color:var(--ink2); display:flex; justify-content:space-between; gap:8px}
+  .field label .n{color:var(--dim); font-variant-numeric:tabular-nums}
+  .field label .n.over{color:var(--red); font-weight:700}
+  .field input,.field textarea{
+    font:inherit; color:var(--ink); background:#fff; width:100%;
+    border:1px solid var(--line); border-radius:9px; padding:7px 9px; resize:vertical;
+  }
+  .field textarea{min-height:66px; line-height:1.55}
+  .field input:focus,.field textarea:focus{outline:none; border-color:var(--leaf-d)}
+  .field input.bad,.field textarea.bad{border-color:#e9a7a1; background:#fffafa}
+  .hint{color:var(--dim); font-size:11.5px; line-height:1.5}
+  .hint code{background:#f1efe9; border-radius:4px; padding:0 4px}
+
+  .info{background:#faf8f3; border:1px solid var(--line); border-radius:9px; padding:8px 10px;
+        font-size:12px; color:var(--ink2); display:flex; flex-direction:column; gap:4px}
+  .info .row{display:flex; gap:8px}
+  .info .k{color:var(--dim); flex:0 0 60px}
+  .info .v{flex:1; word-break:break-all}
+  .info .v.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11.5px}
+
+  .slots{display:flex; flex-direction:column; gap:10px}
+  .slot{border:1px solid var(--line); border-radius:10px; padding:9px; display:flex; flex-direction:column; gap:7px}
+  .slot-top{display:flex; gap:9px; align-items:flex-start}
+  .slot-art{flex:0 0 96px; aspect-ratio:4/3; border-radius:8px; overflow:hidden; background:#f4f1ea; border:1px solid var(--line)}
+  .slot-art svg,.slot-art img{width:100%; height:100%; display:block; object-fit:cover}
+  .slot-body{flex:1; min-width:0; display:flex; flex-direction:column; gap:5px}
+  .slot-name{font-size:12px; color:var(--ink2)}
+  .slot-name b{color:var(--ink)}
+  .slot-body input{font:inherit; font-size:12.5px; color:var(--ink); background:#fff; width:100%;
+                   border:1px solid var(--line); border-radius:8px; padding:6px 8px}
+  .slot-body input:focus{outline:none; border-color:var(--leaf-d)}
+  .slot-body input.bad{border-color:#e9a7a1; background:#fffafa}
+  .slot-tools{display:flex; gap:6px}
+  .slot-tools button{font:inherit; font-size:11.5px; cursor:pointer; background:#fff; color:var(--ink2);
+                     border:1px solid var(--line); border-radius:7px; padding:3px 8px}
+  .slot-tools button:hover{border-color:var(--slate); color:var(--ink)}
+
+  .acts{display:flex; flex-wrap:wrap; gap:8px}
+  .acts button{
+    font:inherit; cursor:pointer; border-radius:9px; padding:8px 14px;
+    border:1px solid var(--line); background:#fff; color:var(--ink2);
+  }
+  .acts button:hover{border-color:var(--slate); color:var(--ink)}
+  .acts button.primary{background:var(--leaf-d); border-color:var(--leaf-d); color:#fff; font-weight:700}
+  .acts button.primary:hover{background:#0d8a58}
+  .acts button:disabled{opacity:.45; cursor:not-allowed}
+  .acts button.danger:hover{border-color:#e9a7a1; color:var(--red)}
+
+  .probs{border-radius:9px; padding:8px 10px; font-size:12px; line-height:1.6;
+         background:var(--red-bg); color:var(--red); border:1px solid #f5b5b0;
+         display:flex; flex-direction:column; gap:3px; white-space:pre-wrap; word-break:break-word}
+  .probs.ok{background:#eefaf3; color:var(--leaf-d); border-color:#bfe8d5}
+
+  /* ---- 整份体检（幽灵记录 / 别的题的毛病） ---- */
+  .global{
+    margin:0 0 12px; border-radius:11px; padding:10px 12px; font-size:12.5px; line-height:1.7;
+    background:var(--red-bg); color:var(--red); border:1px solid #f5b5b0;
+    display:flex; flex-direction:column; gap:6px;
+  }
+  .global b{color:inherit}
+  .global ul{margin:0; padding-left:18px}
+  .global li{word-break:break-word}
+  .global button{
+    font:inherit; font-size:12px; cursor:pointer; align-self:flex-start;
+    background:#fff; color:var(--red); border:1px solid #e9a7a1; border-radius:8px; padding:5px 11px;
+  }
+  .global button:hover{background:#fff5f4}
+
+  /* ---- 提示条 ---- */
+  .toast{
+    position:fixed; left:50%; bottom:22px; transform:translateX(-50%) translateY(12px);
+    background:#2f3a34; color:#fff; border-radius:10px; padding:9px 16px; font-size:13px;
+    opacity:0; pointer-events:none; transition:opacity .16s, transform .16s; z-index:50;
+    max-width:min(560px,90vw);
+  }
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
+  .toast.err{background:var(--red)}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>作文库 · 浏览与编辑</h1>
+  <div class="sub">
+    内置 <b id="n-total">…</b> 道题。改过的那几笔存进 <code>src/data/library-items.json</code>，
+    App 下次启动对账时自动生效 —— <b>不用改代码、不用重新打包</b>。
+  </div>
+  <div class="stats">
+    <div class="stat"><b id="s-total">…</b><span>内置题</span></div>
+    <div class="stat hot"><b id="s-edited">…</b><span>已改过</span></div>
+    <div class="stat"><b id="s-photo">…</b><span>配了外链图</span></div>
+    <div class="stat"><b id="s-unsaved">…</b><span>未保存的改动</span></div>
+  </div>
+</header>
+
+<main>
+  <div class="bar">
+    <input type="search" id="q" placeholder="搜标题 / 引导语 / 标签…" autocomplete="off">
+    <select id="cat"><option value="">全部大类</option></select>
+    <select id="tag"><option value="">全部标签</option></select>
+    <button id="only-edited" title="只看改过的">只看改过的</button>
+    <button id="reload" title="丢掉未保存的改动，重新读盘">重新载入</button>
+  </div>
+
+  <div class="cnt-row">
+    <span>共 <b id="n-show">…</b> 道</span>
+    <span id="dirty-note"></span>
+    <!-- ★ 「保存全部改动」放在这里，**不是**右栏面板里：
+         它存的是**整份草稿**（所有改过的题），不是"当前这道题"。
+         ⚠️ 放在面板里会出两个问题：① 没选任何题时它根本不存在 →
+            体检横幅喊"按保存落盘"却找不到按钮；② 让人以为只存当前这道。 -->
+    <button class="primary" id="save" disabled>保存全部改动</button>
+  </div>
+
+  <!-- 整份体检：只显示"当前这道题"以外的毛病 —— 否则和右栏那个方块重复。
+       ★ 存在的理由：**幽灵记录**（覆盖层里挂着一个不存在的 id）在列表里
+         **根本不会出现**（列表是从 136 道底稿生成的），
+         但它会让 `allProblems()` 非空 → 「保存」永久禁用、而家长看不到原因。
+         没有这块，那就成了一个**死胡同**。 -->
+  <div class="global" id="global" hidden></div>
+
+  <div class="wrap">
+    <div class="items" id="items"></div>
+    <aside class="panel" id="panel">
+      <div class="empty">左边点一道题，这里就能改它的<br>标题 / 引导语 / 配图</div>
+    </aside>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script type="module">
+/* ============================================================
+   数据从哪来 —— 一律走 App 自己的模块，这一页不抄第二份
+   ------------------------------------------------------------
+   ★ `builtinBaseItems()`   → 全部**底稿**（也是 baseTitle/baseLead 的来源）
+                              ⚠️ 条数**从数据算**，别在这儿写死数字 —— 家长会往题库里加题
+   ★ `buildBuiltinLibrary(draft)` → 盖上草稿后的样子（列表与预览用它）
+   ★ `libraryItemShapeProblems()` → 形态校验，**跟落盘端点同一个函数**
+   ★ `checkLibraryOverrides()`    → 再补"要拿底稿才能判"的那几条
+   ★ `SceneArt` → 出图**唯一的那个口子**，跟写作台 / 题库页完全一致
+   ============================================================ */
+import React from 'react'
+import { createRoot } from 'react-dom/client'
+
+const { builtinBaseItems, buildBuiltinLibrary } = await import('./src/domain/builtinLibrary.ts')
+const { LIBRARY_ITEM_OVERRIDES, libraryOverrideCount, checkLibraryOverrides } =
+  await import('./src/domain/libraryItems.ts')
+const { LIBRARY_TITLE_MAX, LIBRARY_LEAD_MAX, libraryItemShapeProblems, imageUrlProblem } =
+  await import('./src/domain/libraryItemRules.ts')
+const { CATEGORIES, categoryMeta, gradeLabel } = await import('./src/domain/types.ts')
+const { TOPIC_TAGS, tagLabel } = await import('./src/domain/prompts.ts')
+const { SceneArt, sceneMeta } = await import('./src/assets/scenes.tsx')
+
+/* ---------------- 状态 ---------------- */
+const BASE = builtinBaseItems()                 // 全部底稿（一图一题：插画题 + 纯照片题），永不改
+const BASE_BY_ID = new Map(BASE.map((i) => [i.id, i]))
+
+/** 盘上那份（原始）。`draft` 是页面里可改的那份，保存成功后同步过来。 */
+let saved = deepCopy(LIBRARY_ITEM_OVERRIDES)
+let draft = deepCopy(LIBRARY_ITEM_OVERRIDES)
+
+let selectedId = null
+const filters = { q: '', cat: '', tag: '', onlyEdited: false }
+
+const $ = (id) => document.getElementById(id)
+
+function deepCopy(o) { return JSON.parse(JSON.stringify(o)) }
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"']/g, (c) =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+}
+function dirty() { return JSON.stringify(draft) !== JSON.stringify(saved) }
+function dirtyCount() {
+  const ids = new Set([...Object.keys(draft), ...Object.keys(saved)])
+  let n = 0
+  for (const id of ids) if (JSON.stringify(draft[id]) !== JSON.stringify(saved[id])) n += 1
+  return n
+}
+
+/*
+ * ★★ 嵌在别的页面里（`content-config.html` 的「作文库配置」那一屏）时，
+ *    要把"有没有没保存的改动"**报上去**。
+ *
+ * ⚠️ 为什么非报不可：iframe 里的 `beforeunload` **弹不出对话框**
+ *    （浏览器只给顶层页面弹）。于是"关标签页"这条路上，
+ *    只剩父页那一份守卫 —— 不报上去 = 家长刚改的那几笔静默消失。
+ * ⚠️ 判据用 `window.parent !== window`，**不加 URL 参数**：
+ *    单独打开 `library-browse.html` 时的行为必须一个字节都不变。
+ */
+const EMBEDDED = window.parent !== window
+
+/**
+ * 把"脏不脏"报给父页。
+ *
+ * ★ 调用点**只有 `renderStats()` 一处**，而且是在它的末尾 ——
+ *   那个函数是这一页所有"跟状态有关的界面"的唯一出口（按钮可用状态也在那儿）。
+ *   要是改成"哪个事件顺手报一下"，迟早有个路径忘了报 ——
+ *   而忘了的现象只是"父页小圆点不亮"，界面上看不出差别。
+ */
+function reportDirty() {
+  if (!EMBEDDED) return
+  window.parent.postMessage(
+    { type: 'lw-tool-dirty', tool: 'library', dirty: dirty() }, location.origin)
+}
+
+/** 重新挂一张图 / 卸载一个容器里的所有 root */
+function unmountWithin(container) {
+  for (const [el, root] of artRoots) {
+    if (!container.contains(el)) continue
+    root.unmount()
+    artRoots.delete(el)
+  }
+}
+
+/* ---------------- 出图（唯一的那个口子） ---------------- */
+/** 每张图一个 React root —— 卡片滚进视野才挂，别一上来就挂 136 个 */
+const artRoots = new Map()
+
+function artInto(el, sceneKey, imageUrl) {
+  let root = artRoots.get(el)
+  if (!root) { root = createRoot(el); artRoots.set(el, root) }
+  root.render(React.createElement(SceneArt, { sceneKey, imageUrl }))
+}
+
+const io = new IntersectionObserver((entries) => {
+  for (const e of entries) {
+    if (!e.isIntersecting) continue
+    io.unobserve(e.target)
+    const el = e.target
+    artInto(el, el.dataset.scene || undefined, el.dataset.url || undefined)
+  }
+}, { rootMargin: '260px' })
+
+/* ---------------- 草稿怎么维护 ----------------
+   ★ 草稿必须**始终是归一化的**（跟落盘端点的 normalizeLibraryItems 同构），
+     否则"存两次"出来的文件会不一样：
+       · 标题跟底稿一样 → 不写
+       · 引导语跟底稿一样 → 不写
+       · 三个可改字段一个都没落下 → 整条删掉
+   ⚠️ 这一页**不重复实现**那套规则 —— 上面三条就是规则本身，
+      而它们跟 `normalizeLibraryItems()` 是"同一件事的两种写法"，
+      由 `_verify-library-editor.mjs` 里"存两次逐字节一样"那条守着。
+*/
+/**
+ * 把一条草稿排成**规范顺序**：`baseTitle, baseLead, title, lead, imageUrls`。
+ *
+ * ★ 为什么页面也要排：`normalizeLibraryItems()`（落盘端点）写文件时就是这个顺序。
+ *   页面要是按"用户先改了哪个字段"的顺序发过去，第一次保存就会让文件里
+ *   那几个键**换位置** —— 内容没变、diff 却飘红，真改动就淹在噪音里了。
+ */
+function canonical(cur) {
+  const out = { baseTitle: cur.baseTitle, baseLead: cur.baseLead }
+  if (cur.title !== undefined) out.title = cur.title
+  if (cur.lead !== undefined) out.lead = cur.lead
+  if (cur.imageUrls && cur.imageUrls.length) out.imageUrls = cur.imageUrls
+  return out
+}
+
+function setField(id, key, value) {
+  const base = BASE_BY_ID.get(id)
+  if (!base) return
+  const cur = draft[id] ?? { baseTitle: base.title, baseLead: base.lead }
+
+  if (value) cur[key] = value
+  else delete cur[key]
+
+  // 跟底稿一样 = 白写
+  if (cur.title === base.title) delete cur.title
+  if (cur.lead === base.lead) delete cur.lead
+
+  if (cur.title === undefined && cur.lead === undefined &&
+      !(cur.imageUrls && cur.imageUrls.length)) {
+    delete draft[id]
+  } else {
+    draft[id] = canonical(cur)
+  }
+}
+
+/** 设置第 k 张配图的地址；地址清了就把这张起后面的一起砍掉（"从第一张起连着换"） */
+function setImage(id, k, value) {
+  const base = BASE_BY_ID.get(id)
+  if (!base) return
+  const cur = draft[id] ?? { baseTitle: base.title, baseLead: base.lead }
+  const urls = (cur.imageUrls ?? []).slice()
+  const v = value.trim()
+
+  if (v) {
+    // ⚠️ 不许隔空写：`urls[2]=v` 会造出 `[null,null,"v"]`（带洞的数组，存不进去）
+    if (k > urls.length) return
+    urls[k] = v
+  } else {
+    urls.splice(k)               // 清掉这张 → 后面的一起砍
+  }
+
+  // 去掉尾部空位
+  while (urls.length && !urls[urls.length - 1]) urls.pop()
+  if (urls.length) cur.imageUrls = urls
+  else delete cur.imageUrls
+
+  if (cur.title === undefined && cur.lead === undefined && cur.imageUrls === undefined) {
+    delete draft[id]
+  } else {
+    draft[id] = canonical(cur)
+  }
+}
+
+/* 撤回这道题的**未保存改动** —— 回到盘上那一份。
+ *
+ * ⚠️⚠️ 不能写成 `delete draft[id]`（那只有当"盘上本来就没有这一条"时才等价）。
+ *   一旦这道题盘上**已经有覆盖**（比如已经配了外链图），`delete` 会让
+ *   `draft ≠ saved` 一直成立 → 小圆点永远亮着、`beforeunload` 一直拦；
+ *   而且**一点「保存」就把这道题的配图整个删掉**（草稿里没这一条了）。
+ *   ★ 这个坑以前看不出来：覆盖层是 `{}` 的时候，每道题的 `saved[id]` 都不存在，
+ *     `delete` 恰好等于"回到盘上那一份"，所以它绿了很久。
+ *   现在 144 道题**全都有覆盖**（都配了外链图）→ 这个口子对每一道题都张开了。
+ */
+function revertItem(id) {
+  if (saved[id]) draft[id] = deepCopy(saved[id])
+  else delete draft[id]
+}
+
+/* ---------------- 取当前值 ---------------- */
+function valueOf(id, key) {
+  const base = BASE_BY_ID.get(id)
+  const ov = draft[id]
+  return (ov && ov[key]) ?? base[key]
+}
+function imageUrlsOf(id) {
+  return (draft[id] && draft[id].imageUrls) ?? []
+}
+
+/* ---------------- 列表 ---------------- */
+const CURRENT = () => buildBuiltinLibrary(draft)
+
+function visible() {
+  const q = filters.q.trim().toLowerCase()
+  return CURRENT().filter((it) => {
+    if (filters.cat && it.category !== filters.cat) return false
+    if (filters.tag && it.tagId !== filters.tag) return false
+    if (filters.onlyEdited && !draft[it.id]) return false
+    if (!q) return true
+    const hay = [it.title, it.lead, tagLabel(it.tagId), categoryMeta(it.category).label]
+      .join(' ').toLowerCase()
+    return hay.includes(q)
+  })
+}
+
+function itemHTML(it) {
+  const edited = !!draft[it.id]
+  const photo = it.images.some((im) => im.imageUrl)
+  const first = it.images[0] ?? {}
+  const cat = categoryMeta(it.category)
+  return `
+    <div class="item${it.id === selectedId ? ' sel' : ''}" data-id="${esc(it.id)}">
+      <div class="thumb" data-scene="${esc(first.sceneKey ?? '')}" data-url="${esc(first.imageUrl ?? '')}"></div>
+      <div class="nm">${esc(it.title)}</div>
+      <div class="lead">${esc(it.lead)}</div>
+      <div class="meta">
+        <span class="tag cat">${esc(cat.emoji)} ${esc(cat.label)}</span>
+        <span class="tag tag2">${esc(tagLabel(it.tagId))}</span>
+        ${edited ? '<span class="tag edited">已改</span>' : ''}
+        ${photo ? '<span class="tag photo">外链图</span>' : ''}
+      </div>
+    </div>`
+}
+
+function renderList() {
+  /*
+   * ★ 重建列表前先把这一批 React root 卸掉。
+   *   ⚠️ 必须在 `innerHTML =` **之前** —— 换掉之后再找，那些元素已经不在
+   *      文档里了，`contains()` 一律 false，root 就永远漏着（136 个 × 每次筛选）。
+   */
+  unmountWithin($('items'))
+
+  const list = visible()
+  $('items').innerHTML = list.map(itemHTML).join('')
+  $('n-show').textContent = String(list.length)
+
+  // 滚进视野才挂插画（一页 136 个 React root 太重）
+  for (const el of $('items').querySelectorAll('.thumb')) io.observe(el)
+}
+
+/**
+ * 只把"选中"这一下更新掉，**不重建列表**。
+ * ⚠️ 重建列表 = 136 个 React root 全卸全挂，点一下卡一下 —— 而且插画会闪。
+ */
+function updateSelection() {
+  for (const el of $('items').querySelectorAll('.item')) {
+    el.classList.toggle('sel', el.dataset.id === selectedId)
+  }
+}
+
+/** 改标题/引导语时只更新这一张卡片的字 —— 同上，别重建整页 */
+function updateCardText(id) {
+  const card = $('items').querySelector(`.item[data-id="${CSS.escape(id)}"]`)
+  if (!card) return
+  const it = CURRENT().find((x) => x.id === id)
+  if (!it) return
+  card.querySelector('.nm').textContent = it.title
+  card.querySelector('.lead').textContent = it.lead
+  const edited = !!draft[id]
+  const has = !!card.querySelector('.tag.edited')
+  if (edited && !has) {
+    const s = document.createElement('span')
+    s.className = 'tag edited'
+    s.textContent = '已改'
+    card.querySelector('.meta').appendChild(s)
+  } else if (!edited && has) {
+    card.querySelector('.tag.edited').remove()
+  }
+}
+
+/* ---------------- 编辑面板 ---------------- */
+/** 整份草稿的问题（形态 + 底稿两层，跟单元测试/落盘端点同一套） */
+function allProblems() {
+  return [...libraryItemShapeProblems(draft), ...checkLibraryOverrides(draft, BASE)]
+}
+
+function problemsFor(id, all) {
+  return (all ?? allProblems()).filter((s) => s.startsWith(`${id}：`))
+}
+
+function renderPanel() {
+  const panel = $('panel')
+  // ★ 同上：换 innerHTML 之前先卸掉面板里那几个 root，否则每渲染一次漏一批
+  unmountWithin(panel)
+  if (!selectedId) {
+    panel.innerHTML = '<div class="empty">左边点一道题，这里就能改它的<br>标题 / 引导语 / 配图</div>'
+    return
+  }
+  const base = BASE_BY_ID.get(selectedId)
+  const it = CURRENT().find((x) => x.id === selectedId)
+  const cat = categoryMeta(base.category)
+  const edited = !!draft[selectedId]
+  const title = valueOf(selectedId, 'title')
+  const lead = valueOf(selectedId, 'lead')
+  const urls = imageUrlsOf(selectedId)
+  const probs = problemsFor(selectedId)
+
+  /*
+   * ★ 配图**只能从第一张起连着换**（数据模型就是"按下标补位"，见 libraryItems.ts）。
+   *   所以"第一张空着"后面的槽位一律锁住 —— 否则会写出一串带洞的数组
+   *   （`[null, null, "https://…"]`），那正是 `checkLibraryOverrides` 要报的错。
+   *   ⚠️ 别把锁去掉改成"自动补空串"：空串也是非法值，一样存不进去。
+   */
+  let leadingFilled = 0
+  while (leadingFilled < base.images.length && urls[leadingFilled]) leadingFilled += 1
+
+  const slotHTML = base.images.map((img, k) => {
+    const url = urls[k] ?? ''
+    const meta = sceneMeta(img.sceneKey ?? '')
+    const locked = k > leadingFilled
+    return `
+      <div class="slot">
+        <div class="slot-top">
+          <div class="slot-art" id="art-${k}"></div>
+          <div class="slot-body">
+            <div class="slot-name">
+              ${meta
+                ? `第 ${k + 1} 张 · 内置插画 <b>${esc(meta.label)}</b>`
+                : `第 ${k + 1} 张 · <b>纯照片位</b>（这道题没有内置插画）`}
+            </div>
+            <input type="text" data-k="${k}" value="${esc(url)}"
+                   ${locked ? 'disabled' : ''}
+                   placeholder="${locked ? '先把上一张填上' : '粘 https:// 图片地址（留空 = 用内置插画）'}">
+            <div class="slot-tools">
+              <button data-clear="${k}" ${url ? '' : 'disabled'}>清空这张</button>
+            </div>
+          </div>
+        </div>
+      </div>`
+  }).join('')
+
+  panel.innerHTML = `
+    <h2>${esc(it ? it.title : base.title)}</h2>    <div class="info">
+      <div class="row"><span class="k">id</span><span class="v mono">${esc(base.id)}</span></div>
+      <div class="row"><span class="k">大类 / 标签</span><span class="v">${esc(cat.emoji)} ${esc(cat.label)} · ${esc(tagLabel(base.tagId))}</span></div>
+      <div class="row"><span class="k">年级</span><span class="v">${esc(gradeLabel(base.minGrade))} 起</span></div>
+      <div class="row"><span class="k">字数</span><span class="v">${base.wordRange[0]}–${base.wordRange[1]} 字</span></div>
+      <div class="row"><span class="k">状态</span><span class="v">${edited ? '已改过' : '跟底稿一样'}</span></div>
+    </div>
+
+    <div class="field">
+      <label><span>标题</span><span class="n" id="n-title">0 / ${LIBRARY_TITLE_MAX}</span></label>
+      <input type="text" id="f-title" maxlength="${LIBRARY_TITLE_MAX + 20}" value="${esc(title)}">
+      <div class="hint">底稿：${esc(base.title)}</div>
+    </div>
+
+    <div class="field">
+      <label><span>引导语</span><span class="n" id="n-lead">0 / ${LIBRARY_LEAD_MAX}</span></label>
+      <textarea id="f-lead" maxlength="${LIBRARY_LEAD_MAX + 60}">${esc(lead)}</textarea>
+      <div class="hint">底稿：${esc(base.lead)}</div>
+    </div>
+
+    <div class="field">
+      <label><span>配图</span></label>
+      <div class="hint">
+        每一格：填了外链就用外链；<b>没填就用这一格的「内置插画」</b>（外链挂了也会自动退回它）。
+        纯照片位没有内置插画可退 —— 那种格子没填外链就会显示「暂无插图」。
+      </div>
+      <div class="slots">${slotHTML}</div>
+    </div>
+
+    ${probs.length
+      ? `<div class="probs">${probs.map((p) => esc(p.replace(`${selectedId}：`, ''))).join('\n')}</div>`
+      : '<div class="probs ok">这道题没问题</div>'}
+
+    <div class="acts">
+      <button class="danger" id="revert" ${edited ? '' : 'disabled'}>恢复这道题的原文</button>
+    </div>`
+
+  // 挂插画（当前值：填了外链就显示外链，没填就是内置插画）
+  base.images.forEach((img, k) => {
+    artInto($(`art-${k}`), img.sceneKey, urls[k] || undefined)
+  })
+
+  updateCounters()
+  bindPanel()
+}
+
+function updateCounters() {
+  const t = $('f-title'); const l = $('f-lead')
+  if (t) {
+    const n = $('n-title')
+    n.textContent = `${t.value.length} / ${LIBRARY_TITLE_MAX}`
+    n.classList.toggle('over', t.value.length > LIBRARY_TITLE_MAX)
+    t.classList.toggle('bad', t.value.length > LIBRARY_TITLE_MAX)
+  }
+  if (l) {
+    const n = $('n-lead')
+    n.textContent = `${l.value.length} / ${LIBRARY_LEAD_MAX}`
+    n.classList.toggle('over', l.value.length > LIBRARY_LEAD_MAX)
+    l.classList.toggle('bad', l.value.length > LIBRARY_LEAD_MAX)
+  }
+}
+
+function bindPanel() {
+  const t = $('f-title'); const l = $('f-lead')
+  /* ⚠️ 只更新这一张卡的字，**不重建列表** —— 重建会把 136 个 React root 全卸全挂 */
+  if (t) t.addEventListener('input', () => {
+    setField(selectedId, 'title', t.value.trim())
+    updateCounters(); updateCardText(selectedId); renderStats()
+  })
+  if (l) l.addEventListener('input', () => {
+    setField(selectedId, 'lead', l.value.trim())
+    updateCounters(); updateCardText(selectedId); renderStats()
+  })
+
+  for (const inp of $('panel').querySelectorAll('.slot-body input')) {
+    const k = Number(inp.dataset.k)
+    inp.addEventListener('input', () => {
+      const v = inp.value.trim()
+      // 形态当场判（★ 跟落盘端点**同一个函数**，别在这页里另写一份正则）
+      inp.classList.toggle('bad', !!v && !!imageUrlProblem(v))
+      setImage(selectedId, k, v)
+      renderStats()
+    })
+    // 失焦/回车才重挂插画（边打字边换图会闪）
+    inp.addEventListener('change', () => { renderPanel(); renderList() })
+  }
+  for (const btn of $('panel').querySelectorAll('[data-clear]')) {
+    btn.addEventListener('click', () => {
+      setImage(selectedId, Number(btn.dataset.clear), '')
+      renderPanel(); renderList(); renderStats()
+    })
+  }
+
+  const r = $('revert'); if (r) r.addEventListener('click', () => {
+    revertItem(selectedId); renderPanel(); renderList(); renderStats()
+  })
+}
+
+/*
+ * ⚠️⚠️ 这里**原来抄了一份 `imageProblem()`**（"https 或 / 开头就算过"）——
+ *    已经删掉了，改用 `libraryItemRules.ts` 的 `imageUrlProblem()`。
+ *
+ *    为什么必须共用：那一份是**落盘端点用的同一个函数**。
+ *    抄一份的后果不是"报错"，而是**两边说法不一样** ——
+ *    编辑页给个绿勾、按了保存却 400，而**两边都不报错**
+ *    （正是 `libraryItemRules.ts` 文件头警告的那件事）。
+ *    ➜ 判据：这一页里**不许出现任何"地址合法性"的正则**，只许调那一个函数。
+ */
+
+/* ---------------- 统计 / 筛选 ---------------- */
+/** 一份覆盖层里挂着的、**不存在的**内置题 id（幽灵记录） */
+function ghostIdsIn(map) {
+  return Object.keys(map).filter((id) => !BASE_BY_ID.has(id)).sort()
+}
+
+/**
+ * 整份体检横幅 —— 只显示"当前这道题"**以外**的毛病，免得跟右栏那个方块重复。
+ *
+ * ★ 为什么非要有它：**幽灵记录**（覆盖层里挂着一个不存在的 id）在左边的列表里
+ *   **永远不会出现**（列表是从 136 道底稿生成的），但它会让 `allProblems()` 非空 →
+ *   「保存」永久禁用、而家长**看不到原因**。没有出口就是一个死胡同。
+ *
+ * ⚠️⚠️ 「删掉幽灵」只能删**草稿**里那份，**绝不能连 `saved` 一起删**：
+ *   两边都删 = `dirty()` 变成 false = 「保存」又是灰的 = **幽灵留在盘上、横幅还消失**，
+ *   一个彻底的静默失败。删草稿 → 变 dirty → 按保存才真的落盘。
+ */
+function renderGlobal(all) {
+  const box = $('global')
+  const probs = all ?? allProblems()
+  const sel = selectedId ? problemsFor(selectedId, probs) : []
+  const others = probs.filter((p) => !sel.includes(p))
+
+  const ghostsDraft = ghostIdsIn(draft)
+  const ghostsSaved = ghostIdsIn(saved)
+  // 盘上有、草稿里已经删掉的 —— 就差按一下保存
+  const pending = ghostsSaved.filter((id) => !ghostsDraft.includes(id))
+
+  if (!others.length && !ghostsDraft.length && !pending.length) {
+    box.hidden = true
+    box.innerHTML = ''
+    return
+  }
+
+  const shown = others.slice(0, 8)
+  box.hidden = false
+  box.innerHTML = `
+    <div><b>整份体检：${others.length} 个问题${
+      ghostsDraft.length + pending.length
+        ? ` · 幽灵记录 ${ghostsDraft.length + pending.length} 条`
+        : ''
+    }</b></div>
+    ${ghostsDraft.length
+      ? `<div>这些 id 在 ${BASE.length} 道底稿里**不存在**（模板被删了？手改过 JSON？）——
+           它们不会出现在左边的列表里，但会让「保存」一直禁用。</div>`
+      : ''}
+    ${pending.length
+      ? `<div>盘上还有 ${pending.length} 条幽灵记录，草稿里已经删掉了 ——
+           <b>按「保存全部改动」才会真的落盘</b>。</div>`
+      : ''}
+    <ul>${shown.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>
+    ${others.length > shown.length ? `<div>…… 还有 ${others.length - shown.length} 条</div>` : ''}
+    ${ghostsDraft.length
+      ? `<button id="drop-ghosts">从草稿里删掉这 ${ghostsDraft.length} 条幽灵记录</button>`
+      : ''}`
+
+  const drop = $('drop-ghosts')
+  if (drop) {
+    drop.addEventListener('click', () => {
+      for (const id of ghostsDraft) delete draft[id]   // ⚠️ 只删草稿，见上面的注释
+      renderStats(); renderList(); renderPanel()
+      toast('已从草稿里删掉 —— 按「保存全部改动」才会写进文件')
+    })
+  }
+}
+
+/** 只刷新右栏那个"体检"小方块 —— 打字时它得当场变（别等失焦） */
+function renderProblems(all) {
+  const box = $('panel')?.querySelector('.probs')
+  if (!box || !selectedId) return
+  const probs = problemsFor(selectedId, all)
+  box.classList.toggle('ok', probs.length === 0)
+  box.textContent = probs.length
+    ? probs.map((p) => p.replace(`${selectedId}：`, '')).join('\n')
+    : '这道题没问题'
+}
+
+function renderStats() {
+  const d = dirtyCount()
+  const probs = allProblems()
+  $('n-total').textContent = String(BASE.length)
+  $('s-total').textContent = String(BASE.length)
+  $('s-edited').textContent = String(Object.keys(saved).length)
+  $('s-photo').textContent = String(
+    Object.values(draft).filter((o) => o.imageUrls && o.imageUrls.length).length)
+  $('s-unsaved').textContent = String(d)
+
+  $('dirty-note').innerHTML = d
+    ? `　<span style="color:var(--amber-d)">● 有 ${d} 道没保存</span>`
+    : '　<span style="color:var(--dim)">已保存</span>'
+  $('only-edited').classList.toggle('on', filters.onlyEdited)
+
+  /*
+   * ★★ 两个按钮的可用状态必须**每次统计时一起同步**。
+   *    只在 `renderPanel()` 里设一次的话，改完字按钮还是灰的 ——
+   *    家长会以为"改了不让存"（这个坑实测踩过：`#save` 一直 disabled）。
+   * ★ 而且**有非法值的时候一律不许存** —— 让端点去拒收也算对，
+   *   但那要多跑一趟、报错还只在提示条上；本地拦下来最直接。
+   */
+  const sb = $('save'); if (sb) sb.disabled = !dirty() || probs.length > 0
+  const rb = $('revert'); if (rb) rb.disabled = !draft[selectedId]
+
+  renderProblems(probs)
+  renderGlobal(probs)
+
+  /*
+   * ★ 报给父页（嵌在 `content-config.html` 里时）。
+   *   ⚠️ 必须放在这个函数的**末尾**：它读的是上面刚算完的 `dirty()`，
+   *      而且这是这一页唯一一处"状态变了"的统一出口。
+   */
+  reportDirty()
+}
+
+function buildFilters() {
+  $('cat').innerHTML = '<option value="">全部大类</option>' +
+    CATEGORIES.map((c) => `<option value="${esc(c.key)}">${esc(c.emoji)} ${esc(c.label)}</option>`).join('')
+  $('tag').innerHTML = '<option value="">全部标签</option>' +
+    TOPIC_TAGS.map((t) => `<option value="${esc(t.id)}">${esc(t.emoji)} ${esc(t.label)}</option>`).join('')
+}
+
+/* ---------------- 保存 ---------------- */
+function toast(msg, isErr) {
+  const el = $('toast')
+  el.textContent = msg
+  el.classList.toggle('err', !!isErr)
+  el.classList.add('show')
+  clearTimeout(el._t)
+  el._t = setTimeout(() => el.classList.remove('show'), isErr ? 6000 : 2600)
+}
+
+async function doSave() {
+  // 先本地体检一遍 —— 有问题就别打端点，省得来回一趟
+  const probs = allProblems()
+  if (probs.length) {
+    toast(`还有 ${probs.length} 个问题，先在下面改掉：${probs[0]}`, true)
+    return
+  }
+  const btn = $('save')
+  btn.disabled = true
+  try {
+    const res = await fetch('/__save-library-items', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(draft),
+    })
+    const json = await res.json().catch(() => ({}))
+    if (!res.ok || !json.ok) {
+      toast(`保存失败：${(json.errors || [res.status]).join('；')}`, true)
+      // ⚠️ 别自己 `btn.disabled = false` —— 按钮的可用状态只有 `renderStats()` 一个出口
+      renderStats()
+      return
+    }
+    saved = deepCopy(draft)
+    renderStats(); renderList(); renderPanel()
+    toast(`已保存 ${json.count} 道改动 → ${json.file}`)
+  } catch (e) {
+    toast(`保存失败：${String(e)}`, true)
+    renderStats()
+  }
+}
+
+/* ---------------- 事件 ---------------- */
+// ★ 「保存全部改动」在顶栏，绑一次就够（不在面板里，别在 bindPanel 里再绑）
+$('save').addEventListener('click', doSave)
+
+$('items').addEventListener('click', (e) => {
+  const card = e.target.closest('.item')
+  if (!card) return
+  selectedId = card.dataset.id
+  updateSelection()      // ⚠️ 只挪选中样式，别重建列表
+  renderPanel()
+})
+
+$('q').addEventListener('input', (e) => { filters.q = e.target.value; renderList(); renderStats() })
+$('cat').addEventListener('change', (e) => { filters.cat = e.target.value; renderList() })
+$('tag').addEventListener('change', (e) => { filters.tag = e.target.value; renderList() })
+$('only-edited').addEventListener('click', () => {
+  filters.onlyEdited = !filters.onlyEdited; renderList(); renderStats()
+})
+$('reload').addEventListener('click', () => {
+  if (dirty() && !confirm('有没保存的改动，确定丢掉、重新读盘？')) return
+  saved = deepCopy(LIBRARY_ITEM_OVERRIDES)
+  draft = deepCopy(LIBRARY_ITEM_OVERRIDES)
+  renderStats(); renderList(); renderPanel()
+  toast('已重新读盘')
+})
+window.addEventListener('beforeunload', (e) => {
+  /*
+   * ⚠️ 嵌在 `content-config.html` 里时**让给父页守**：
+   *    iframe 自己的 `beforeunload` 弹不出对话框（浏览器只给顶层页面弹），
+   *    留着它除了让人以为"已经守住了"之外没有任何作用 ——
+   *    而父页那边是靠 `reportDirty()` 报上去的状态来守的。
+   */
+  if (EMBEDDED) return
+  if (!dirty()) return
+  e.preventDefault()
+  e.returnValue = ''
+})
+
+/* ---------------- 起飞 ---------------- */
+buildFilters()
+renderStats()
+renderList()
+renderPanel()
+console.log('[library-browse] 覆盖层条数', libraryOverrideCount(), '| 底稿', BASE.length)
+</script>
+</body>
+</html>

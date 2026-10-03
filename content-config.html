@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>小笔苗 · 内容配置</title>
+<style>
+  /* ============================================================
+     内容配置 —— 两个工具共用这一页，顶上一条切换栏。
+
+     ★★ 每一屏都是**内嵌的整页**（`landmarks-browse.html` / `library-browse.html`），
+        不是把哪一份抄过来。抄一份的话，字段、校验、保存逻辑迟早漂移，
+        而**界面上完全看不出哪个是新的** —— 跟 `landmarks-browse.html`
+        里那个编辑抽屉是同一条规矩。
+
+     ⚠️⚠️ 切走的 iframe **只是藏起来，绝不卸载**（不改 `src`、不 remove）：
+        两个工具"没保存的改动"都活在 iframe 里，卸载 = 静默丢掉。
+        所以这里只动 class（`display`），`src` 只在**建的时候**设一次。
+
+     ⚠️⚠️ "关标签页"这条守卫**必须由这一页挂** ——
+        iframe 里的 `beforeunload` **弹不出对话框**（浏览器只给顶层页面弹）。
+        两个子页各自把改动状态 postMessage 上来（`lw-tool-dirty`），
+        这一页汇总起来守（见下面那个 `beforeunload`）。
+
+     ⚠️ 必须通过 dev server 打开（http://localhost:5190/content-config.html）：
+        两个子页都要读 TS 模块、fetch JSON，保存端点也只在 dev 里存在，
+        file:// 打不开（而且本来也打不开）。
+     ============================================================ */
+  :root{
+    --bg:#fbf9f4; --card:#fff; --line:#e7e2d8; --ink:#2f3a34; --ink2:#5b655e;
+    --dim:#8b948d; --leaf:#29ce89; --leaf-d:#10a368; --amber:#febb32;
+    --amber-d:#b57f0d; --slate:#9ca3af;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:14px/1.6 system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    display:flex; flex-direction:column;
+  }
+
+  /* ---- 顶栏：做**细**一条，别跟子页自己的大标题打架 ---- */
+  .top{
+    flex:0 0 auto; display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+    padding:8px 14px; background:var(--card); border-bottom:1px solid var(--line);
+  }
+  .brand{font-weight:700; font-size:14px; white-space:nowrap}
+  .brand span{color:var(--dim); font-weight:400; font-size:12px; margin-left:8px}
+
+  .tabs{display:flex; gap:6px}
+  .tab{
+    font:inherit; cursor:pointer; border:1px solid var(--line); background:#fff;
+    color:var(--ink2); border-radius:9px; padding:5px 13px;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .tab:hover{border-color:#b9c3bc; color:var(--ink)}
+  .tab.on{background:#eefaf3; border-color:#bfe8d5; color:var(--leaf-d); font-weight:700}
+  /*
+   * ⚠️ `.dot` 自己写了 `display`，会**盖掉**浏览器默认的 `[hidden]{display:none}`
+   *    （作者样式优先于 UA 样式）—— 所以必须自己补一条 `.dot[hidden]`。
+   *    少了它，小圆点**永远亮着**，而且不报任何错。
+   */
+  .dot{display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--amber-d)}
+  .dot[hidden]{display:none}
+
+  .spacer{flex:1}
+  .note{color:var(--dim); font-size:11.5px; white-space:nowrap}
+
+  /* ---- 舞台：同一时刻只有一个 iframe 显示，其余 `display:none`（**不卸载**）---- */
+  .stage{flex:1; min-height:0; position:relative}
+  .stage iframe{
+    position:absolute; inset:0; width:100%; height:100%;
+    border:0; background:var(--bg); display:none;
+  }
+  .stage iframe.on{display:block}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="brand">小笔苗 · 内容配置<span>两个工具共用这一页，切换不会丢改动</span></div>
+  <nav class="tabs" id="tabs" role="tablist">
+    <button class="tab" type="button" data-tool="travel" role="tab" aria-selected="false">
+      旅游点配置<i class="dot" hidden title="有没保存的改动"></i>
+    </button>
+    <button class="tab" type="button" data-tool="library" role="tab" aria-selected="false">
+      作文库配置<i class="dot" hidden title="有没保存的改动"></i>
+    </button>
+  </nav>
+  <span class="spacer"></span>
+  <span class="note">改完各自按自己页面里的「保存」落盘；这一页只管切换，不动数据</span>
+</div>
+
+<div class="stage" id="stage"></div>
+
+<script>
+'use strict'
+
+/* ============================================================
+   两个工具 —— 声明顺序就是标签栏的顺序，第一个是默认打开的那个。
+   ⚠️ 加第三个工具只要往这里加一行（标签按钮还得在 HTML 里加一个）。
+   ============================================================ */
+const TOOLS = {
+  travel:  { url: './landmarks-browse.html', label: '旅游点配置' },
+  library: { url: './library-browse.html',  label: '作文库配置' },
+}
+const ORDER = ['travel', 'library']
+const DEFAULT = ORDER[0]
+
+const stage = document.getElementById('stage')
+const tabBtns = new Map(
+  [...document.querySelectorAll('.tab')].map((b) => [b.dataset.tool, b]))
+
+const frames = new Map()   // tool → iframe（第一次切到才建，之后**一直留着**）
+const dirty = new Map()    // tool → 有没有没保存的改动（子页报上来的）
+let active = ''
+
+/**
+ * 拿到某个工具的 iframe；没有就建。
+ *
+ * ⚠️ `src` **只在这里设一次** —— 以后切换只动 class。
+ *    重设 src 就是重载，等于把人家没保存的改动扔掉，
+ *    而家长看到的现象只是"切了一下就没了"（不报错）。
+ */
+function ensureFrame(tool) {
+  let f = frames.get(tool)
+  if (f) return f
+  f = document.createElement('iframe')
+  f.dataset.tool = tool
+  f.title = TOOLS[tool].label
+  f.src = TOOLS[tool].url
+  stage.appendChild(f)
+  frames.set(tool, f)
+  return f
+}
+
+/**
+ * 标签栏 + 小圆点。
+ * ★ 圆点要**在别的标签上也亮** —— 不然切走之后就忘了还有没保存的改动，
+ *   一直放到关标签页，那时候只能弹一句"确定离开吗"（家长已经想不起来改了什么）。
+ */
+function renderTabs() {
+  for (const [tool, btn] of tabBtns) {
+    const on = tool === active
+    btn.classList.toggle('on', on)
+    btn.setAttribute('aria-selected', String(on))
+    btn.querySelector('.dot').hidden = !dirty.get(tool)
+  }
+}
+
+/**
+ * 切到某个工具。
+ *
+ * ★ 只改 class，**不卸载、不重设 src**（见文件头那段）。
+ * ★ 切走**不弹"有未保存的改动"** —— 因为什么都没丢：iframe 还活着，
+ *   改动就在里面。真正会丢的只有"关标签页"，那条由下面的守卫管。
+ *   （弹一下的话反而误导：家长会以为切走就得存。）
+ */
+function activate(tool, push) {
+  if (!TOOLS[tool]) tool = DEFAULT
+  if (tool !== active) {
+    active = tool
+    ensureFrame(tool)
+    for (const [t, f] of frames) f.classList.toggle('on', t === tool)
+  }
+  renderTabs()
+  if (push && location.hash !== '#' + tool) location.hash = tool
+}
+
+/* ---- 子页报上来的改动状态 ---- */
+window.addEventListener('message', (e) => {
+  // ⚠️ 先验来源：同源才认（别让别的窗口塞一条"我脏了"过来）
+  if (e.origin !== location.origin) return
+  const m = e.data || {}
+  if (m.type !== 'lw-tool-dirty') return
+  if (!TOOLS[m.tool]) return
+  dirty.set(m.tool, !!m.dirty)
+  renderTabs()
+})
+
+/* ---- 点标签 ---- */
+for (const [tool, btn] of tabBtns) {
+  btn.addEventListener('click', () => activate(tool, true))
+}
+
+/* ---- 地址栏的 #travel / #library 跟着走（刷新、前进后退都能回到对的那一屏）---- */
+window.addEventListener('hashchange', () => {
+  const t = location.hash.replace(/^#/, '')
+  activate(TOOLS[t] ? t : DEFAULT, false)
+})
+
+/*
+ * ★★ 关标签页 / 刷新的守卫 —— **必须由这一页挂**。
+ *
+ * 两个子页嵌进来之后，它们自己的 `beforeunload` 是**弹不出对话框**的
+ * （浏览器只给顶层页面弹），所以它们改成把状态报上来（`lw-tool-dirty`）。
+ * 少了这一段，家长在作文库里改了一屏、切去旅游点、顺手关掉标签页 ——
+ * **一声不响全没了**。
+ */
+window.addEventListener('beforeunload', (e) => {
+  if (![...dirty.values()].some(Boolean)) return
+  e.preventDefault()
+  e.returnValue = ''
+})
+
+/* ---- 起飞：地址栏带 #xxx 就用它，否则默认第一个 ---- */
+const fromHash = location.hash.replace(/^#/, '')
+if (TOOLS[fromHash]) {
+  activate(fromHash, false)
+} else {
+  /*
+   * ⚠️ 用 `replaceState` 把 hash 补上 —— 别写 `location.hash = DEFAULT`：
+   *    那会平白多出一条历史记录，点一次"后退"什么都不发生（看着像后退坏了）。
+   */
+  history.replaceState(null, '', '#' + DEFAULT)
+  activate(DEFAULT, false)
+}
+</script>
+</body>
+</html>

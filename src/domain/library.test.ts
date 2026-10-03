@@ -17,7 +17,7 @@
    ============================================================ */
 
 import { describe, expect, it } from 'vitest'
-import { importLibrary, exportLibrary, searchLibrary } from './library'
+import { importLibrary, exportLibrary, searchLibrary, migrateStoredItem } from './library'
 import type { LibraryItem } from './library'
 
 const NOW = 1_700_000_000_000
@@ -345,5 +345,148 @@ describe('题库导入 · 标签写中文也认', () => {
   it('标签留空不报错', () => {
     const r = importLibrary([], raw([{ title: '没标签', category: 'scene' }]), NOW)
     expect(r.items[0].tagId).toBe('')
+  })
+})
+
+/* ============================================================
+   导入 · 格式要求（原「轴 3」）与命题方式（轴 2）（2026-10-01）
+   ------------------------------------------------------------
+   这一天把题目的 `genre` 改名成 `requiredGenre`，语义收窄为
+   「题目**指定**的文体」。（⛔ 2026-10-02 又收窄一次：现在是
+   「题目**自带**的格式要求」—— 家长定了「APP 不需要区分文体」。）
+   改名会**改掉导出的 key** ——
+   所以 2026-10-01 之前导出的文件里写的是旧名字 `genre`。
+
+   ⚠️ 这里认不出来的失败是**静默**的：一道应用文题会悄悄变成记叙文题，
+      不报错、不崩、题也进得来、计数也对，只是格式要求错了。
+   ============================================================ */
+
+describe('导入 · 格式要求（原「轴 3」）', () => {
+  it('★★ 旧导出文件里的 `genre` key 仍然认（改名兼容）', () => {
+    // 2026-10-01 之前导出的文件长这样。少认这一个 key，
+    // 家长手上的老备份导回来就全变成记叙文题了。
+    const r = importLibrary(
+      [],
+      raw([{ title: '旧文件里的倡议书', category: 'event', genre: 'applied' }]),
+      NOW,
+    )
+    expect(r.items[0].requiredGenre).toBe('applied')
+  })
+
+  it('★ 两个名字都写了 → 新名字优先', () => {
+    const r = importLibrary(
+      [],
+      raw([
+        { title: '两个都写了', category: 'event', genre: 'applied', requiredGenre: 'narrative' },
+      ]),
+      NOW,
+    )
+    expect(r.items[0].requiredGenre).toBe('narrative')
+  })
+
+  it('写中文也认（跟 tagId 同一条规矩）', () => {
+    const r = importLibrary(
+      [],
+      raw([{ title: '中文文体', category: 'event', requiredGenre: '应用文' }]),
+      NOW,
+    )
+    expect(r.items[0].requiredGenre).toBe('applied')
+  })
+
+  it('★★ 格式要求写了错别字 → 退回「从标签推」，不许硬翻成记叙文', () => {
+    // ⚠️ 这条守的是 `parseGenre` 必须返回 `undefined`（而不是 'narrative'）：
+    //    一旦它硬翻，`??` 右边那层「从标签推」就永远拿不到值 ——
+    //    一道应用文题会因为一个错别字**静默**变成记叙文题。
+    const r = importLibrary(
+      [],
+      raw([
+        {
+          title: '打错字了',
+          category: 'event',
+          tagId: 'applied-writing',
+          requiredGenre: 'appliedd',
+        },
+      ]),
+      NOW,
+    )
+    expect(r.items[0].requiredGenre).toBe('applied')
+  })
+
+  it('什么都没写、标签也查不到 → 记叙文（老行为，零变更）', () => {
+    const r = importLibrary([], raw([{ title: '光秃秃', category: 'scene' }]), NOW)
+    expect(r.items[0].requiredGenre).toBe('narrative')
+  })
+})
+
+describe('导入 · 命题方式（轴 2）', () => {
+  it('英文 key 和中文名都认', () => {
+    const r = importLibrary(
+      [],
+      raw([
+        { title: 'a', category: 'event', promptMode: 'material' },
+        { title: 'b', category: 'event', promptMode: '材料作文' },
+      ]),
+      NOW,
+    )
+    expect(r.items.map((i) => i.promptMode)).toEqual(['material', 'material'])
+  })
+
+  it('★★ 没写 → 从标签推：标签写了什么就存什么', () => {
+    /* ⛔ 2026-10-02：这条原来用的是 `look-picture`（看图作文）——
+       那个标签连同它的题已按家长决定删掉，所以换成应用文。
+       ★ 判据要能**区分**「从标签取了值」和「走了缺省」：
+         · `applied-writing` 标签显式写了 `promptMode: 'assigned'`
+           → 存下去就是 `'assigned'`；
+         · `weather` 标签**没写** → 存下去是 `undefined`
+           （解析后才变「命题作文」）。
+       两者解析后都是命题作文，但**存的值不一样**，所以这条能咬住。 */
+    const withTag = importLibrary(
+      [],
+      raw([{ title: '写一份倡议书', category: 'event', tagId: 'applied-writing' }]),
+      NOW,
+    )
+    expect(withTag.items[0].promptMode).toBe('assigned')
+    expect(withTag.items[0].requiredGenre).toBe('applied')
+
+    const noTag = importLibrary(
+      [],
+      raw([{ title: '雨后的校园', category: 'scene', tagId: 'weather' }]),
+      NOW,
+    )
+    expect(noTag.items[0].promptMode).toBeUndefined()
+  })
+
+  it('认不出来 → undefined（= 命题作文），不许硬翻', () => {
+    // 跟 parseGenre 同理：硬翻成 'assigned' 会盖掉「从标签推」那条路。
+    const r = importLibrary([], raw([{ title: 'c', category: 'event', promptMode: '啥玩意儿' }]), NOW)
+    expect(r.items[0].promptMode).toBeUndefined()
+  })
+})
+
+/* ============================================================
+   老存档迁移 · `genre` → `requiredGenre`（2026-10-01）
+   ------------------------------------------------------------
+   改名会改掉**存进去的 key**，老用户库里那批题带的是旧名字。
+   「读出来之后走哪条路」由 `src/db/libraryMigration.test.ts` 守着，
+   这里只守这个纯函数本身的两条性质。
+   ============================================================ */
+
+describe('migrateStoredItem · 纯函数的两条性质', () => {
+  it('★★ 不改动传进来的那条记录（它是从 IndexedDB 读出来的活对象）', () => {
+    const old = { ...item(), genre: 'applied' } as unknown as LibraryItem
+    const snapshot = JSON.parse(JSON.stringify(old))
+    const migrated = migrateStoredItem(old)
+
+    expect(migrated).not.toBe(old)
+    expect(migrated.requiredGenre).toBe('applied')
+    // 传进来的那份必须原封不动
+    expect(old).toEqual(snapshot)
+  })
+
+  it('★ 只搬 key，不猜格式要求 —— 旧值认不出来时不许硬翻', () => {
+    // 判据是「旧 key 在不在」，不是「旧值合不合法」。
+    // 这里硬翻成记叙文，会把「家长写错别字」这条信息抹掉。
+    const weird = { ...item(), genre: 'appliedd' } as unknown as LibraryItem
+    expect(migrateStoredItem(weird).requiredGenre).toBe('appliedd')
   })
 })
