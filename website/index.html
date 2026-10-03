@@ -1,0 +1,1072 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<!--
+  ════════════════════════════════════════════════════════════════
+  小笔苗 · 作文森林 —— 官方网站（单文件，纯静态）
+  ════════════════════════════════════════════════════════════════
+
+  ⚙️ 上线前必改 5 处（在本文件里搜 "TODO-BEFORE-LAUNCH" 就能全部找到）：
+
+     ① 域名          https://www.example.com/
+        → 换成备案通过的真实域名。canonical / og:url / JSON-LD / sitemap.xml
+          / 下载二维码 都跟它走（二维码换域名后要重跑 scripts/_site/mk-qr.py）。
+
+     ② ICP 备案号    京ICP备00000000号-1
+        → 换成工信部下发的备案号（页脚已链接到 beian.miit.gov.cn）。
+
+     ③ 公安备案号    京公网安备11000000000000号
+        → 换成公安备案号（页脚已链接到 beian.mps.gov.cn）。
+          没办公安备案就把这一行整段删掉。
+
+     ④ 主办单位名称  页脚「主办单位」一栏
+        → 填**与备案主体完全一致**的单位或个人名称。备案审核会核对这一项。
+
+     ⑤ 联系邮箱      页脚 mailto:hello@example.com
+        → 换成真实可收信的邮箱。备案审核也会看联系方式是否有效。
+
+  📄 配套文件：robots.txt、sitemap.xml、assets/（图标 / 截图 / OG 图）
+  🖼 截图是脚本从**真 App** 里拍的：scripts/_site/shots.mjs
+     图标与 OG 图是 scripts/_site/mk-assets.py 生成的
+  ════════════════════════════════════════════════════════════════
+-->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+<title>小笔苗 · 作文森林 — 小学生看图作文练习 App｜语音说作文 · AI 点评 · 段位成长</title>
+<meta name="description" content="小笔苗 · 作文森林是一款给 1-9 年级小学生的看图作文练习 App：370 道带图作文题、按住说话就能写、AI 从观察力 / 条理性 / 词汇量 / 想象力 / 真情实感五个维度温柔点评，还有密码锁日记本、成长树段位和旅行图收集。完全免费，无广告，作文只存在孩子手机里。" />
+<meta name="keywords" content="小学生作文,看图作文,看图写话,作文练习,小学作文app,作文辅导,作文点评,日记app,小学生日记,小学语文,作文起步,作文素材,段位成长,小笔苗,作文森林" />
+<meta name="author" content="小笔苗 · 作文森林" />
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1" />
+<meta name="theme-color" content="#0a5d3c" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="apple-mobile-web-app-title" content="小笔苗" />
+<meta name="application-name" content="小笔苗 · 作文森林" />
+
+<!-- TODO-BEFORE-LAUNCH ① 域名 -->
+<link rel="canonical" href="https://www.example.com/" />
+
+<!-- 社交分享 -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="小笔苗 · 作文森林" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:title" content="小笔苗 · 作文森林 — 让孩子笑着把作文写出来" />
+<meta property="og:description" content="370 道看图作文题，按住说话就能写，AI 温柔点评，写完还有段位和旅行图等着他。1-9 年级，完全免费，无广告。" />
+<meta property="og:url" content="https://www.example.com/" />
+<meta property="og:image" content="https://www.example.com/assets/og-cover.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="小笔苗 · 作文森林 —— 让孩子笑着把作文写出来" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="小笔苗 · 作文森林 — 让孩子笑着把作文写出来" />
+<meta name="twitter:description" content="370 道看图作文题，按住说话就能写，AI 温柔点评，写完还有段位和旅行图等着他。" />
+<meta name="twitter:image" content="https://www.example.com/assets/og-cover.png" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+<link rel="preload" as="image" href="assets/shot-home.png" />
+<link rel="dns-prefetch" href="https://beian.miit.gov.cn" />
+
+<!-- 给 <html> 打上 js 标记：滚动入场动画的「初始隐藏」只在这个类下生效，
+     没有 JS 时正文保持可见（爬虫 / 禁用 JS / 打印都不会看到空白页）。 -->
+<script>document.documentElement.className += ' js';</script>
+
+<style>
+/* ============================================================
+   设计令牌 —— 直接沿用 App 自己的调色板（src/styles/theme.css），
+   官网和产品看起来才是同一个东西。
+   ============================================================ */
+:root{
+  --paper:#fbfefc; --paper-2:#f1f8f4; --paper-3:#e3efe9;
+  --ink-950:#121714; --ink-900:#1a211d; --ink-800:#2b342e; --ink-700:#414b44;
+  --ink-600:#5a655d; --ink-500:#737e76; --ink-400:#939d96; --ink-300:#b3bbb5;
+  --ink-200:#cfd5d0; --ink-150:#e0e4e0; --ink-100:#ebeeeb; --ink-50:#f4f6f4;
+  --leaf-950:#05271a; --leaf-900:#073623; --leaf-800:#09472e; --leaf-700:#0a5d3c;
+  --leaf-600:#0c7c4f; --leaf-500:#10a368; --leaf-400:#29ce89; --leaf-300:#69dda7;
+  --leaf-200:#a8eeca; --leaf-100:#d6f8e5; --leaf-50:#eafbf1;
+  --gold-600:#b87700; --gold-500:#ec9e06; --gold-400:#febb32; --gold-300:#ffd374; --gold-100:#fff4d8;
+  --mist-500:#3789a2; --mist-100:#e9f4f8;
+  --moss-500:#6b4d9c; --moss-100:#f2ecf9;
+  --clay-300:#f0b48f; --clay-100:#fdede3;
+  --r-sm:10px; --r:16px; --r-lg:22px; --r-xl:30px;
+  --sh-1:0 1px 2px rgba(18,23,20,.04), 0 6px 18px -8px rgba(18,23,20,.10);
+  --sh-2:0 2px 6px rgba(18,23,20,.05), 0 22px 44px -22px rgba(10,93,60,.26);
+  --sh-3:0 30px 70px -34px rgba(5,39,26,.55);
+  --wrap:1140px;
+  --font:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC","Source Han Sans SC",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth; scroll-padding-top:84px}
+body{
+  margin:0; font-family:var(--font); color:var(--ink-800); background:var(--paper);
+  font-size:16px; line-height:1.75; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* ⚠️ 必须 height:auto —— 截图都带 width/height 属性（防抖动），
+   CSS 只覆盖 width 的话，浏览器会把 height 属性当成固定高度 → 图被纵向拉长。 */
+img{max-width:100%; height:auto; display:block}
+a{color:inherit; text-decoration:none}
+h1,h2,h3,h4{margin:0; line-height:1.25; color:var(--ink-950); font-weight:800; letter-spacing:-.01em}
+p{margin:0}
+ul{margin:0; padding:0; list-style:none}
+button{font:inherit; color:inherit}
+:focus-visible{outline:3px solid var(--leaf-400); outline-offset:3px; border-radius:6px}
+
+.wrap{width:100%; max-width:var(--wrap); margin:0 auto; padding:0 22px}
+.skip{position:absolute; left:-9999px; top:0; background:var(--leaf-700); color:#fff; padding:10px 16px; border-radius:0 0 10px 0; z-index:99}
+.skip:focus{left:0}
+.sec{padding:96px 0}
+.sec-tight{padding:72px 0}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:7px;
+  font-size:13px; font-weight:700; letter-spacing:.04em;
+  color:var(--leaf-700); background:var(--leaf-50);
+  border:1px solid var(--leaf-100); border-radius:999px; padding:6px 14px;
+}
+.sec-head{max-width:660px; margin:0 auto 54px; text-align:center}
+.sec-head h2{font-size:clamp(27px,4.2vw,40px); margin:18px 0 14px}
+.sec-head .lead{color:var(--ink-600); font-size:17px}
+.sec-head.left{margin-left:0; text-align:left}
+.hl{color:var(--leaf-600)}
+.mark{
+  background:linear-gradient(transparent 62%, var(--leaf-200) 62%);
+  padding:0 2px; border-radius:2px;
+}
+
+/* ---------------- 按钮 ---------------- */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  border:0; cursor:pointer; border-radius:14px; padding:14px 24px;
+  font-size:15.5px; font-weight:700; line-height:1;
+  transition:transform .18s cubic-bezier(.2,.7,.3,1), box-shadow .18s, background .18s;
+  white-space:nowrap;
+}
+.btn-primary{background:var(--leaf-600); color:#fff; box-shadow:0 10px 24px -12px rgba(12,124,79,.75)}
+.btn-primary:hover{background:var(--leaf-700); transform:translateY(-2px); box-shadow:0 16px 30px -14px rgba(12,124,79,.8)}
+.btn-ghost{background:#fff; color:var(--ink-800); box-shadow:inset 0 0 0 1px var(--ink-150), var(--sh-1)}
+.btn-ghost:hover{transform:translateY(-2px); box-shadow:inset 0 0 0 1px var(--ink-200), var(--sh-2)}
+.btn-light{background:#fff; color:var(--leaf-800)}
+.btn-light:hover{transform:translateY(-2px)}
+.btn-sm{padding:10px 18px; font-size:14px; border-radius:12px}
+
+/* ---------------- 顶栏 ---------------- */
+.hdr{position:fixed; inset:0 0 auto; z-index:60; transition:background .25s, box-shadow .25s, backdrop-filter .25s}
+.hdr-in{display:flex; align-items:center; gap:14px; height:68px}
+.brand{display:flex; align-items:center; gap:10px; font-weight:800; color:var(--ink-950); font-size:16.5px; letter-spacing:-.01em}
+.brand img{width:34px; height:34px; border-radius:10px; box-shadow:var(--sh-1)}
+.brand small{display:block; font-size:11px; font-weight:600; color:var(--ink-500); letter-spacing:.02em}
+.nav{display:flex; gap:4px; margin-left:auto}
+.nav a{
+  padding:9px 14px; border-radius:10px; font-size:15px; font-weight:600; color:var(--ink-700);
+  transition:background .16s, color .16s;
+}
+.nav a:hover{background:var(--leaf-50); color:var(--leaf-700)}
+.hdr .btn{margin-left:6px}
+.hdr.solid{background:rgba(251,254,252,.86); backdrop-filter:saturate(1.6) blur(14px); box-shadow:0 1px 0 var(--ink-100)}
+.burger{display:none; margin-left:auto; background:none; border:0; padding:9px; cursor:pointer; border-radius:10px}
+.burger svg{display:block}
+
+/* ---------------- Hero ---------------- */
+.hero{position:relative; padding:132px 0 88px; overflow:hidden}
+.hero::before{
+  content:''; position:absolute; inset:0; z-index:-2;
+  background:
+    radial-gradient(900px 520px at 88% 6%, var(--leaf-100) 0%, transparent 62%),
+    radial-gradient(760px 480px at 4% 88%, var(--gold-100) 0%, transparent 58%),
+    linear-gradient(180deg, var(--paper-2) 0%, var(--paper) 62%);
+}
+.hero::after{
+  content:''; position:absolute; inset:0; z-index:-1; opacity:.5;
+  background-image:radial-gradient(var(--leaf-200) 1px, transparent 1px);
+  background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(620px 420px at 78% 30%, #000 0%, transparent 72%);
+  mask-image:radial-gradient(620px 420px at 78% 30%, #000 0%, transparent 72%);
+}
+.hero-grid{display:grid; grid-template-columns:1.06fr .94fr; gap:56px; align-items:center}
+.hero h1{font-size:clamp(34px,5.6vw,58px); margin:20px 0 20px; letter-spacing:-.025em}
+.hero .lead{font-size:clamp(16px,2.1vw,18.5px); color:var(--ink-600); max-width:30em}
+.hero-cta{display:flex; flex-wrap:wrap; gap:12px; margin:32px 0 0}
+.hero-note{display:flex; flex-wrap:wrap; gap:8px 20px; margin-top:20px; font-size:13.5px; color:var(--ink-500)}
+.hero-note span{display:inline-flex; align-items:center; gap:6px}
+.hero-note i{
+  width:16px; height:16px; border-radius:50%; background:var(--leaf-100); color:var(--leaf-700);
+  display:inline-flex; align-items:center; justify-content:center; font-style:normal; font-size:10px; font-weight:900;
+}
+.hero-visual{position:relative; display:flex; justify-content:center}
+
+/* 手机壳 */
+.phone{
+  position:relative; width:290px; flex:none; padding:9px; border-radius:46px;
+  background:linear-gradient(160deg,#1c2420,#0b100e);
+  box-shadow:var(--sh-3), inset 0 0 0 1px rgba(255,255,255,.07);
+}
+.phone img{border-radius:38px; width:100%}
+.phone.sm{width:236px; padding:7px; border-radius:38px}
+.phone.sm img{border-radius:31px}
+.float{
+  position:absolute; background:#fff; border-radius:var(--r); box-shadow:var(--sh-2);
+  padding:13px 16px; font-size:13.5px; font-weight:700; color:var(--ink-800);
+  display:flex; align-items:center; gap:9px; z-index:3;
+}
+.float .dot{width:9px; height:9px; border-radius:50%; background:var(--leaf-400); flex:none}
+.f1{left:-18px; top:78px; animation:bob 5.2s ease-in-out infinite}
+.f2{right:-14px; bottom:96px; animation:bob 6.4s ease-in-out .6s infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* ---------------- 数字条 ---------------- */
+.stats{border-top:1px solid var(--ink-100); border-bottom:1px solid var(--ink-100); background:#fff}
+.stats-in{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; padding:34px 0}
+.stat{text-align:center; padding:8px 10px; border-right:1px solid var(--ink-100)}
+.stat:last-child{border-right:0}
+.stat b{display:block; font-size:clamp(26px,3.4vw,36px); color:var(--leaf-700); letter-spacing:-.02em; line-height:1.15}
+.stat span{font-size:13.5px; color:var(--ink-500)}
+
+/* ---------------- 卡片 ---------------- */
+.cards{display:grid; gap:22px}
+.c3{grid-template-columns:repeat(3,1fr)}
+.c2{grid-template-columns:repeat(2,1fr)}
+.card{
+  background:#fff; border:1px solid var(--ink-100); border-radius:var(--r-lg);
+  padding:30px 28px; box-shadow:var(--sh-1);
+  transition:transform .22s cubic-bezier(.2,.7,.3,1), box-shadow .22s, border-color .22s;
+}
+.card:hover{transform:translateY(-5px); box-shadow:var(--sh-2); border-color:var(--leaf-200)}
+.card h3{font-size:20px; margin-bottom:10px}
+.card p{color:var(--ink-600); font-size:15px}
+.ico{
+  width:52px; height:52px; border-radius:16px; display:flex; align-items:center; justify-content:center;
+  font-size:26px; margin-bottom:18px;
+}
+.i-leaf{background:var(--leaf-50)} .i-gold{background:var(--gold-100)}
+.i-mist{background:var(--mist-100)} .i-moss{background:var(--moss-100)}
+.i-clay{background:var(--clay-100)} .i-ink{background:var(--ink-50)}
+.tagrow{display:flex; flex-wrap:wrap; gap:7px; margin-top:16px}
+.tag{font-size:12.5px; font-weight:700; padding:5px 11px; border-radius:999px; background:var(--paper-3); color:var(--leaf-800)}
+.card-num{font-size:13px; font-weight:800; color:var(--leaf-500); letter-spacing:.06em}
+
+/* ---------------- 深色区 ---------------- */
+.dark{background:var(--leaf-950); color:var(--ink-200); position:relative; overflow:hidden}
+.dark::before{
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(720px 420px at 82% 0%, rgba(41,206,137,.18) 0%, transparent 62%),
+             radial-gradient(600px 400px at 6% 100%, rgba(236,158,6,.12) 0%, transparent 60%);
+}
+.dark .wrap{position:relative}
+.dark h2,.dark h3,.dark h4{color:#fff}
+.dark .sec-head .lead{color:var(--ink-300)}
+.dark .eyebrow{background:rgba(41,206,137,.12); border-color:rgba(41,206,137,.3); color:var(--leaf-200)}
+
+/* 五步 */
+.steps{display:grid; grid-template-columns:repeat(5,1fr); gap:18px; position:relative}
+.steps::before{
+  content:''; position:absolute; left:8%; right:8%; top:29px; height:2px;
+  background:repeating-linear-gradient(90deg, rgba(168,238,202,.4) 0 7px, transparent 7px 15px);
+}
+.step{text-align:center; position:relative}
+.step b{
+  display:flex; align-items:center; justify-content:center; width:58px; height:58px; margin:0 auto 16px;
+  border-radius:50%; background:var(--leaf-800); color:var(--leaf-200);
+  font-size:21px; font-weight:800; box-shadow:0 0 0 8px var(--leaf-950), 0 0 0 9px rgba(41,206,137,.28);
+}
+.step h3{font-size:17px; margin-bottom:8px}
+.step p{font-size:14px; color:var(--ink-300); line-height:1.7}
+.step .em{font-size:22px; display:block; margin-bottom:6px}
+
+/* ---------------- 段位 ----------------
+   桌面端 6×2 网格，12 个段位一眼看全；窄屏才切成横向滑动条。 */
+.stages{display:grid; grid-template-columns:repeat(6,1fr); gap:10px; padding:6px 0 18px}
+.stage{
+  text-align:center; background:#fff; border:1px solid var(--ink-100); border-radius:var(--r);
+  padding:16px 8px; box-shadow:var(--sh-1);
+}
+.stage .lv{font-size:11px; font-weight:800; color:var(--ink-400); letter-spacing:.08em}
+.stage .tree{font-size:27px; line-height:1.5}
+.stage .nm{font-size:14.5px; font-weight:800; color:var(--ink-900)}
+.stage .sub{font-size:11.5px; color:var(--ink-500)}
+.stage.now{border-color:var(--leaf-300); box-shadow:0 0 0 3px var(--leaf-50), var(--sh-2)}
+.hint-scroll{display:none}
+
+/* ---------------- 截图带 ---------------- */
+.gallery{display:flex; gap:26px; overflow-x:auto; padding:14px 22px 34px; scroll-snap-type:x mandatory}
+.gallery figure{margin:0; flex:none; scroll-snap-align:center; text-align:center}
+.gallery figcaption{margin-top:14px; font-size:14px; font-weight:700; color:var(--ink-700)}
+.gallery figcaption small{display:block; font-weight:500; color:var(--ink-500); font-size:12.5px; margin-top:3px}
+.gallery-wrap{position:relative}
+.gallery-wrap::before,.gallery-wrap::after{
+  content:''; position:absolute; top:0; bottom:0; width:70px; pointer-events:none; z-index:2;
+}
+.gallery-wrap::before{left:0; background:linear-gradient(90deg,var(--paper-2),transparent)}
+.gallery-wrap::after{right:0; background:linear-gradient(270deg,var(--paper-2),transparent)}
+.scroll-hint{text-align:center; font-size:13px; color:var(--ink-400); margin-top:2px}
+
+/* ---------------- 下载 ---------------- */
+.dl-grid{display:grid; grid-template-columns:1.35fr .65fr; gap:30px; align-items:center}
+.dl-list{display:grid; gap:14px}
+.dl-item{
+  display:flex; align-items:center; gap:16px; padding:20px 22px; border-radius:var(--r-lg);
+  background:rgba(255,255,255,.045); border:1px solid rgba(168,238,202,.16);
+  transition:background .2s, transform .2s, border-color .2s;
+}
+.dl-item:hover{background:rgba(255,255,255,.08); transform:translateX(4px); border-color:rgba(168,238,202,.34)}
+.dl-ico{
+  width:48px; height:48px; flex:none; border-radius:14px; background:rgba(41,206,137,.14);
+  display:flex; align-items:center; justify-content:center; font-size:24px;
+}
+.dl-item .t{flex:1; min-width:0}
+.dl-item .t b{display:block; color:#fff; font-size:16.5px}
+.dl-item .t span{font-size:13.5px; color:var(--ink-300)}
+.dl-item .go{
+  flex:none; font-size:13.5px; font-weight:800; color:var(--leaf-200);
+  background:rgba(41,206,137,.14); border-radius:10px; padding:9px 15px;
+}
+.dl-item.soon{opacity:.62}
+.dl-item.soon .go{color:var(--ink-400); background:rgba(255,255,255,.07)}
+.qr-card{
+  background:#fff; border-radius:var(--r-xl); padding:26px; text-align:center; color:var(--ink-800);
+  box-shadow:var(--sh-3);
+}
+.qr-card img{width:100%; max-width:190px; margin:0 auto; border-radius:12px}
+.qr-card b{display:block; margin-top:16px; font-size:16px; color:var(--ink-900)}
+.qr-card span{font-size:13px; color:var(--ink-500)}
+
+/* ---------------- FAQ ---------------- */
+.faq{max-width:840px; margin:0 auto}
+.faq details{
+  background:#fff; border:1px solid var(--ink-100); border-radius:var(--r);
+  margin-bottom:12px; overflow:hidden; transition:border-color .2s, box-shadow .2s;
+}
+.faq details[open]{border-color:var(--leaf-200); box-shadow:var(--sh-1)}
+.faq summary{
+  cursor:pointer; padding:19px 24px; font-weight:700; color:var(--ink-900); font-size:16.5px;
+  display:flex; align-items:center; gap:12px; list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:'+'; margin-left:auto; font-size:22px; font-weight:400; color:var(--leaf-500);
+  line-height:1; transition:transform .2s;
+}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 24px 22px; color:var(--ink-600); font-size:15.5px}
+.faq .a strong{color:var(--leaf-700)}
+
+/* ---------------- 页脚 ---------------- */
+.ft{background:var(--leaf-950); color:var(--ink-300); padding:66px 0 34px; position:relative; overflow:hidden}
+.ft::before{content:''; position:absolute; inset:0; background:radial-gradient(600px 340px at 90% 0%, rgba(41,206,137,.14), transparent 62%)}
+.ft .wrap{position:relative}
+.ft-grid{display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:34px; padding-bottom:36px; border-bottom:1px solid rgba(168,238,202,.14)}
+.ft h4{color:#fff; font-size:15px; margin-bottom:14px}
+.ft li{margin-bottom:9px}
+.ft li a{font-size:14.5px; color:var(--ink-300); transition:color .16s}
+.ft li a:hover{color:var(--leaf-200)}
+.ft-brand{display:flex; align-items:center; gap:11px; margin-bottom:14px}
+.ft-brand img{width:40px; height:40px; border-radius:12px}
+.ft-brand b{color:#fff; font-size:17px; display:block; line-height:1.3}
+.ft-brand span{font-size:12.5px; color:var(--ink-400)}
+.ft-desc{font-size:14.5px; color:var(--ink-400); max-width:30em}
+.ft-bottom{padding-top:26px; display:flex; flex-wrap:wrap; gap:10px 22px; align-items:center; font-size:13.5px; color:var(--ink-400)}
+.ft-bottom a{color:var(--ink-400); text-decoration:underline; text-underline-offset:3px}
+.ft-bottom a:hover{color:var(--leaf-200)}
+.beian{display:flex; flex-wrap:wrap; gap:6px 20px; align-items:center; margin-left:auto}
+
+/* ---------------- 滚动入场 ----------------
+   ★★ 隐藏效果只挂在 `html.js` 下 —— 没 JS 时（爬虫、禁用 JS、打印）
+      .rv 保持完全可见，绝不能出现「正文一片空白」。
+      html 上的 js 类由 <head> 里的内联脚本立刻加上。 */
+.rv{transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1)}
+.js .rv{opacity:0; transform:translateY(22px)}
+.js .rv.in{opacity:1; transform:none}
+.rv.d1{transition-delay:.08s} .rv.d2{transition-delay:.16s} .rv.d3{transition-delay:.24s}
+.rv.d4{transition-delay:.32s} .rv.d5{transition-delay:.4s}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1; transform:none; transition:none}
+  .f1,.f2{animation:none}
+  .btn,.card,.dl-item{transition:none}
+}
+
+/* ---------------- 响应式 ---------------- */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr; gap:46px}
+  .hero-visual{order:-1}
+  .hero{padding:112px 0 70px}
+  .dl-grid{grid-template-columns:1fr; gap:36px}
+  .c3{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr); gap:26px 18px}
+  .steps::before{display:none}
+  .ft-grid{grid-template-columns:1fr 1fr; gap:30px}
+}
+@media (max-width:760px){
+  .nav{display:none}
+  .nav.open{
+    display:flex; flex-direction:column; position:fixed; inset:68px 0 auto; gap:2px;
+    background:rgba(251,254,252,.98); backdrop-filter:blur(14px);
+    padding:14px 22px 22px; box-shadow:0 18px 30px -18px rgba(5,39,26,.3);
+    border-bottom:1px solid var(--ink-100);
+  }
+  .nav.open a{padding:14px; font-size:16.5px}
+  .burger{display:block}
+  .hdr .btn{display:none}
+  .sec{padding:68px 0}
+  .c3,.c2{grid-template-columns:1fr}
+  .stats-in{grid-template-columns:repeat(2,1fr); gap:18px 8px}
+  .stat:nth-child(2){border-right:0}
+  .stages{display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:10px; padding:6px 2px 18px}
+  .stage{flex:none; width:132px; scroll-snap-align:start}
+  .hint-scroll{display:block}
+  .float{display:none}
+  .phone{width:250px}
+  .gallery{gap:18px}
+  .ft-grid{grid-template-columns:1fr; gap:26px}
+  .beian{margin-left:0}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<!-- ═══════════ 顶栏 ═══════════ -->
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top" aria-label="小笔苗 · 作文森林 首页">
+      <img src="assets/icon-192.png" alt="小笔苗 · 作文森林 App 图标" width="34" height="34" />
+      <span>小笔苗 · 作文森林<small>小学生看图作文练习</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="主导航">
+      <a href="#why">为什么好用</a>
+      <a href="#features">功能</a>
+      <a href="#steps">五步流程</a>
+      <a href="#shots">界面预览</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="#download">免费下载</a>
+    <button class="burger" id="burger" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1a211d" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ═══════════ Hero ═══════════ -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">🌱 给 1–9 年级小学生</span>
+      <h1>让孩子<span class="hl">笑着</span>把作文<br />写出来</h1>
+      <p class="lead">
+        不用催、不用陪。打开就有一张图和一句引子，孩子看图起笔、说一句写一句；
+        AI 从五个维度温柔点评，写完还有段位、卡片和旅行图等着他。
+        把「写作文」从一件苦差事，变回一件能完成的小事。
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#download">免费下载安卓版
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#shots">先看看界面</a>
+      </div>
+      <div class="hero-note">
+        <span><i>✓</i>完全免费</span>
+        <span><i>✓</i>没有广告</span>
+        <span><i>✓</i>作文只存在孩子手机里</span>
+        <span><i>✓</i>安卓 / 手机浏览器 / 电脑</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="float f1"><span class="dot"></span>今日目标 3 / 3 篇</div>
+      <div class="float f2"><span class="dot"></span>经验 +30 · 升到青华树</div>
+      <div class="phone">
+        <img src="assets/shot-topic.png" width="780" height="1688"
+             alt="小笔苗写作台：一张孩子扫地的照片配着题目《一起值日》，下方是语音输入和麦克风按钮" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 数字条 ═══════════ -->
+<section class="stats">
+  <div class="wrap stats-in">
+    <div class="stat"><b>370</b><span>道看图作文题</span></div>
+    <div class="stat"><b>5</b><span>大类 · 42 个细标签</span></div>
+    <div class="stat"><b>12</b><span>段成长树等级</span></div>
+    <div class="stat"><b>0 元</b><span>免费 · 无广告</span></div>
+  </div>
+</section>
+
+<!-- ═══════════ 三张价值卡 ═══════════ -->
+<section class="sec" id="why">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">为什么孩子愿意写</span>
+      <h2>轻松起步 · 集中突破 · 日记陪伴</h2>
+      <p class="lead">孩子怕作文，多半不是不会写，而是<b>不知道从哪一句开始</b>。这三件事，是专门为「让他先动起来」设计的。</p>
+    </div>
+
+    <div class="cards c3">
+      <article class="card rv d1">
+        <div class="ico i-leaf">🪄</div>
+        <h3>轻松起步</h3>
+        <p>打开就是一张图和一句引子，不用对着空白页发呆。实在不会写？<b>按住麦克风说出来</b>，语音自动变成文字——起笔这件事，先变得不费劲。</p>
+        <div class="tagrow"><span class="tag">看图起笔</span><span class="tag">语音说作文</span><span class="tag">随机出题</span></div>
+      </article>
+
+      <article class="card rv d2">
+        <div class="ico i-gold">🎯</div>
+        <h3>集中突破</h3>
+        <p>5 大类、42 个细标签，想练「写景」就<b>只出写景题</b>。同一类连着练几篇，比漫无目的地写十篇都管用——弱点在哪里，就补哪里。</p>
+        <div class="tagrow"><span class="tag">按标签专项练</span><span class="tag">按年级配题</span><span class="tag">1–9 年级</span></div>
+      </article>
+
+      <article class="card rv d3">
+        <div class="ico i-moss">🔒</div>
+        <h3>日记陪伴</h3>
+        <p>带密码锁的日记本，只属于孩子自己。日记<b>不评分数、只找亮点</b>，评语格外温柔——因为它要养成的是「愿意写」，而不是「写得对」。</p>
+        <div class="tagrow"><span class="tag">密码锁</span><span class="tag">温柔点评</span><span class="tag">天天能写</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 功能 ═══════════ -->
+<section class="sec" id="features" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">功能一览</span>
+      <h2>该有的都有，不该有的都没有</h2>
+      <p class="lead">没有排行榜、没有广告弹窗、没有逼你付费的关卡。只有「出题 — 写 — 被看见」这一件事，被认真做了一遍。</p>
+    </div>
+
+    <div class="cards c3">
+      <article class="card rv d1">
+        <div class="ico i-leaf">🏞️</div>
+        <h3>370 道看图作文题</h3>
+        <p>写景 · 写人 · 写事 · 状物 · 想象 五大类，42 个细标签。每道题都配了图，也标好了适合的年级。</p>
+      </article>
+      <article class="card rv d2">
+        <div class="ico i-leaf">🎤</div>
+        <h3>按住说话就能写</h3>
+        <p>不会打字也能写作文。按住麦克风把想到的说出来，松开就变成文字；说错了，可以只改那一句。</p>
+      </article>
+      <article class="card rv d3">
+        <div class="ico i-gold">⭐</div>
+        <h3>五个维度的点评</h3>
+        <p>观察力 · 条理性 · 词汇量 · 想象力 · 真情实感。不只给一个分数，每条都说清好在哪、下次怎么改。</p>
+      </article>
+      <article class="card rv d1">
+        <div class="ico i-moss">🌳</div>
+        <h3>成长树 · 12 个段位</h3>
+        <p>从一颗「灵芽树」慢慢长到「通天神树」。经验值只跟写作和日记有关，坚持写就能看见自己的树在长。</p>
+      </article>
+      <article class="card rv d2">
+        <div class="ico i-mist">🗺️</div>
+        <h3>旅行图 · 点亮中国</h3>
+        <p>643 个中国地标加世界地标，写作攒下的旅行币可以出发，拍照、听故事、收集相册。</p>
+      </article>
+      <article class="card rv d3">
+        <div class="ico i-clay">🃏</div>
+        <h3>文心卡 · 收集 40 张</h3>
+        <p>用金币抽卡，从「普通」到「传说」共 40 张。孩子写完一篇，就离下一张更近一点。</p>
+      </article>
+      <article class="card rv d1">
+        <div class="ico i-ink">📖</div>
+        <h3>带锁的日记本</h3>
+        <p>四位密码只有孩子知道。日记重在「愿意写」，所以点评格外温柔、多肯定、少挑刺。</p>
+      </article>
+      <article class="card rv d2">
+        <div class="ico i-ink">🧩</div>
+        <h3>好词好句 · 背一背</h3>
+        <p>每一篇都会挑出用得好的词句存起来，随时能翻出来读一读、背一背，慢慢变成自己的。</p>
+      </article>
+      <article class="card rv d3">
+        <div class="ico i-ink">💾</div>
+        <h3>家长能备份、能加题</h3>
+        <p>一键导出备份到电脑或网盘；题库也能导出成 JSON——想自己给孩子加题，随时可以。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 五步（深色） ═══════════ -->
+<section class="sec dark" id="steps">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">孩子实际经历的</span>
+      <h2>五步，一次作文就走完了</h2>
+      <p class="lead">每一步都只做一件事。孩子不需要理解「作文方法」，他只需要点下一步。</p>
+    </div>
+
+    <div class="steps">
+      <div class="step rv d1">
+        <b>1</b>
+        <span class="em">🎲</span>
+        <h3>出题</h3>
+        <p>选大类、选细标签，或直接点「随机出题」，一秒拿到一道带图的题。</p>
+      </div>
+      <div class="step rv d2">
+        <b>2</b>
+        <span class="em">✍️</span>
+        <h3>写作文</h3>
+        <p>看图说话，按住麦克风说，松开就成文字；写完可以自己再读一遍改一改。</p>
+      </div>
+      <div class="step rv d3">
+        <b>3</b>
+        <span class="em">⭐</span>
+        <h3>看点评</h3>
+        <p>五个维度给分，每条都说清好在哪、下次怎么改——而不是只丢一个分数。</p>
+      </div>
+      <div class="step rv d4">
+        <b>4</b>
+        <span class="em">📖</span>
+        <h3>看写法</h3>
+        <p>同一道题给一篇参考写法，只讲思路和好词，绝不让孩子照着抄。</p>
+      </div>
+      <div class="step rv d5">
+        <b>5</b>
+        <span class="em">🔁</span>
+        <h3>背一背</h3>
+        <p>把这篇里用得好的词句存起来，随时翻出来读一读、背一背。</p>
+      </div>
+    </div>
+
+    <div class="card rv" style="margin-top:44px;background:rgba(255,255,255,.05);border-color:rgba(168,238,202,.2);box-shadow:none">
+      <h3 style="font-size:19px">🛡️ 一条我们守住的底线：AI 只教，不代写</h3>
+      <p style="color:var(--ink-300);margin-top:8px">
+        点评只<b style="color:var(--leaf-200)">描述</b>和<b style="color:var(--leaf-200)">引导</b>，绝不给出可以照抄的句子。
+        「改作文」也只在孩子自己写的那句话上改，不许凭空加字、不许替他编情节。
+        作文里每一个字，都必须是孩子自己想的。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 12 段位 ═══════════ -->
+<section class="sec" id="stages">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">看得见的成长</span>
+      <h2>从一颗灵芽，长成一棵通天神树</h2>
+      <p class="lead">12 个段位不是装饰——经验值只来自写作和日记，孩子写下的每一篇，都会让他的树高一点。</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="stages" role="list" aria-label="成长树的 12 个段位">
+      <div class="stage now" role="listitem"><div class="lv">LV.1</div><div class="tree">🌱</div><div class="nm">灵芽树</div><div class="sub">萌芽</div></div>
+      <div class="stage" role="listitem"><div class="lv">LV.2</div><div class="tree">🌿</div><div class="nm">青华树</div><div class="sub">幼苗</div></div>
+      <div class="stage" role="listitem"><div class="lv">LV.3</div><div class="tree">🪴</div><div class="nm">扶摇树</div><div class="sub">小树</div></div>
+      <div class="stage" role="listitem"><div class="lv">LV.4</div><div class="tree">🌳</div><div class="nm">琼华树</div><div class="sub">花成</div></div>
+      <div class="stage" role="listitem"><div class="lv">LV.5</div><div class="tree">🌳</div><div class="nm">苍梧树</div><div class="sub">稳成</div></div>
+      <div class="stage" role="listitem"><div class="lv">LV.6</div><div class="tree">🌸</div><div class="nm">紫宸树</div><div class="sub">细成</div></div>
+      <div class="stage" role="listitem"><div class="lv">LV.7</div><div class="tree">🍁</div><div class="nm">赤霄树</div><div class="sub">深成</div></div>
+      <div class="stage" role="listitem"><div class="lv">LV.8</div><div class="tree">🌟</div><div class="nm">玉衡树</div><div class="sub">成熟</div></div>
+      <div class="stage" role="listitem"><div class="lv">LV.9</div><div class="tree">🌊</div><div class="nm">沧溟树</div><div class="sub">卓越</div></div>
+      <div class="stage" role="listitem"><div class="lv">LV.10</div><div class="tree">✨</div><div class="nm">星辰树</div><div class="sub">才成</div></div>
+      <div class="stage" role="listitem"><div class="lv">LV.11</div><div class="tree">🌌</div><div class="nm">玄极树</div><div class="sub">大师</div></div>
+      <div class="stage" role="listitem"><div class="lv">LV.12</div><div class="tree">🌈</div><div class="nm">通天神树</div><div class="sub">巅峰</div></div>
+    </div>
+    <p class="scroll-hint hint-scroll">← 左右滑动看完整 12 段 →</p>
+  </div>
+</section>
+
+<!-- ═══════════ 界面预览 ═══════════ -->
+<section class="sec" id="shots" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">真实界面</span>
+      <h2>没有修图，就是从 App 里截的</h2>
+      <p class="lead">下面每一张都是产品里的真实界面。孩子看到的，和您在这里看到的，是同一个。</p>
+    </div>
+  </div>
+
+  <div class="gallery-wrap">
+    <div class="gallery">
+      <figure class="rv d1">
+        <div class="phone sm"><img src="assets/shot-home.png" width="780" height="1688" loading="lazy" alt="写作台首页：今天写什么，可选写景 / 写人 / 写事 / 状物 / 想象，下面还有更细的标签" /></div>
+        <figcaption>今天写什么<small>选大类 → 选细标签</small></figcaption>
+      </figure>
+      <figure class="rv d2">
+        <div class="phone sm"><img src="assets/shot-category.png" width="780" height="1688" loading="lazy" alt="选了「写人」大类后，下面列出爸爸妈妈、老师同学、我的理想、形形色色的人等更细的标签" /></div>
+        <figcaption>想练哪一类就只练哪一类<small>42 个细标签，专项突破</small></figcaption>
+      </figure>
+      <figure class="rv d3">
+        <div class="phone sm"><img src="assets/shot-topic.png" width="780" height="1688" loading="lazy" alt="写作界面：题目《一起值日》配一张照片，下方有语音输入区和麦克风按钮" /></div>
+        <figcaption>看图写作文<small>按住麦克风，说出来</small></figcaption>
+      </figure>
+      <figure class="rv d4">
+        <div class="phone sm"><img src="assets/shot-library.png" width="780" height="1688" loading="lazy" alt="题库选择器：按分类浏览带图的作文题，可以搜索，也可以随机抽一道" /></div>
+        <figcaption>从题库里挑一道<small>370 道题随你挑</small></figcaption>
+      </figure>
+      <figure class="rv d5">
+        <div class="phone sm"><img src="assets/shot-level.png" width="780" height="1688" loading="lazy" alt="成长树页面：一棵灵芽树、经验值进度、能力描述和成长故事" /></div>
+        <figcaption>成长树<small>12 段位，慢慢长高</small></figcaption>
+      </figure>
+      <figure class="rv d1">
+        <div class="phone sm"><img src="assets/shot-diary.png" width="780" height="1688" loading="lazy" alt="日记本页面" /></div>
+        <figcaption>日记本<small>带密码锁，只属于他</small></figcaption>
+      </figure>
+      <figure class="rv d2">
+        <div class="phone sm"><img src="assets/shot-cards.png" width="780" height="1688" loading="lazy" alt="文心卡页面：收集进度、稀有度分类和五个卡包" /></div>
+        <figcaption>文心卡<small>写完一篇，离下一张更近</small></figcaption>
+      </figure>
+      <figure class="rv d3">
+        <div class="phone sm"><img src="assets/shot-map.png" width="780" height="1688" loading="lazy" alt="旅行图页面：中国地图、已点亮地标数量和旅行徽章" /></div>
+        <figcaption>旅行图<small>点亮 643 个地标</small></figcaption>
+      </figure>
+    </div>
+  </div>
+  <p class="scroll-hint">← 左右滑动看更多 →</p>
+</section>
+
+<!-- ═══════════ 下载（深色） ═══════════ -->
+<section class="sec dark" id="download">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">下载与使用</span>
+      <h2>装上就能写，不用注册</h2>
+      <p class="lead">安卓直接装 APK；iPhone 和电脑用浏览器打开网页版即可。完全免费，没有账号，没有广告。</p>
+    </div>
+
+    <div class="dl-grid">
+      <div class="dl-list">
+        <a class="dl-item rv d1" href="download/xiaobimiao-android.apk" download>
+          <span class="dl-ico" aria-hidden="true">🤖</span>
+          <span class="t"><b>安卓版 · 直接下载 APK</b><span>Android 7.0 及以上 · 约 9.5 MB · 版本 1.0</span></span>
+          <span class="go">下载</span>
+        </a>
+        <a class="dl-item rv d2" href="#download">
+          <span class="dl-ico" aria-hidden="true">📱</span>
+          <span class="t"><b>iPhone / iPad · 用网页版</b><span>用 Safari 打开本站网页版 → 分享 → 添加到主屏幕</span></span>
+          <span class="go">说明</span>
+        </a>
+        <a class="dl-item rv d3" href="#download">
+          <span class="dl-ico" aria-hidden="true">💻</span>
+          <span class="t"><b>电脑浏览器</b><span>Chrome / Edge / Safari 打开网页版，大屏写作文更舒服</span></span>
+          <span class="go">说明</span>
+        </a>
+        <div class="dl-item soon rv d4">
+          <span class="dl-ico" aria-hidden="true">💬</span>
+          <span class="t"><b>微信小程序</b><span>正在做，还没上线——上线前不忽悠您先加微信</span></span>
+          <span class="go">敬请期待</span>
+        </div>
+      </div>
+
+      <div class="qr-card rv d2">
+        <!-- TODO-BEFORE-LAUNCH ① 域名：二维码指向本站下载页，换域名后要重新生成
+             生成脚本：scripts/_site/mk-qr.py -->
+        <img src="assets/qr-download.png" width="380" height="380" loading="lazy" alt="扫码下载小笔苗 · 作文森林安卓版" />
+        <b>扫码下载安卓版</b>
+        <span>手机扫码即可安装</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="eyebrow">常见问题</span>
+      <h2>家长最想问的几件事</h2>
+    </div>
+
+    <div class="faq">
+      <details class="rv d1" open>
+        <summary>要花钱吗？会有广告吗？</summary>
+        <div class="a">完全免费，<strong>没有广告，也没有内购和会员墙</strong>。所有功能——370 道题、语音输入、AI 点评、成长树、日记本、旅行图、文心卡——都是打开就能用的。</div>
+      </details>
+
+      <details class="rv d2">
+        <summary>适合几年级的孩子？</summary>
+        <div class="a">1–9 年级。每道题都标了适合的年级区间，孩子选好自己的年级后，看到的都是这个难度段的题。低年级可以只用语音说、少写几个字；高年级可以按细标签专项练。</div>
+      </details>
+
+      <details class="rv d3">
+        <summary>孩子的作文会被传到网上吗？</summary>
+        <div class="a">默认<strong>只保存在孩子这台手机上</strong>，不会公开、也没有任何排行榜。<br />
+        只有您或孩子主动点「AI 出题 / AI 点评」时，<em>那一次</em>的内容才会发给 AI 服务用于生成结果——就像请一位老师看一眼，看完不会留下。您随时可以在设置里把全部数据导出备份或清空。</div>
+      </details>
+
+      <details class="rv d4">
+        <summary>AI 会不会直接替孩子把作文写了？</summary>
+        <div class="a">不会，这是我们特意守住的底线。<strong>点评只描述、只引导，绝不给出可以照抄的句子</strong>；「改作文」也只在孩子自己写的那句话上改，不许凭空加字、不许替他编情节。作文里的每一个字，都必须来自孩子自己。</div>
+      </details>
+
+      <details class="rv d5">
+        <summary>孩子不会打字怎么办？</summary>
+        <div class="a">按住麦克风说出来就行，语音会自动变成文字。说错了也不用整段重来，可以只改那一句。对刚学写作文的孩子，这一步能省掉「打字太慢」带来的挫败感。</div>
+      </details>
+
+      <details class="rv d1">
+        <summary>我怎么看到孩子的进步？</summary>
+        <div class="a">成长树会记录段位和经验，从「灵芽树」到「通天神树」共 12 级；文心卡的收集进度、旅行图点亮的地标，都是看得见的成果。经验值只来自写作和日记，不会靠别的方式刷出来。</div>
+      </details>
+
+      <details class="rv d2">
+        <summary>换手机了，写过的作文会丢吗？</summary>
+        <div class="a">建议定期在设置里<strong>导出备份</strong>，存到电脑或网盘；换新手机后用「恢复备份」导入即可。题库也能单独导出成 JSON，导出来还能打印，或者换设备接着用。</div>
+      </details>
+
+      <details class="rv d3">
+        <summary>必须一直联网吗？</summary>
+        <div class="a">不用。随机出题、写作文、日记本、成长树、文心卡、旅行图都能离线使用；只有「AI 出题」和「AI 点评」这两件需要联网。</div>
+      </details>
+
+      <details class="rv d4">
+        <summary>iPhone 上没有 App Store 版本，能用吗？</summary>
+        <div class="a">可以。用 iPhone 的 Safari 打开本站的网页版，点「分享 → 添加到主屏幕」，桌面上就会出现一个图标，用起来和 App 几乎一样。iOS 原生版本还在做，上线后会在这里更新。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 收尾 CTA ═══════════ -->
+<section class="sec-tight" style="background:var(--leaf-50);border-top:1px solid var(--leaf-100)">
+  <div class="wrap" style="text-align:center">
+    <h2 class="rv" style="font-size:clamp(24px,3.6vw,34px)">今天就让他写第一篇</h2>
+    <p class="rv d1" style="color:var(--ink-600);margin:14px auto 26px;max-width:34em">
+      不用先讲道理，也不用先买练习册。装上、点一下「随机出题」，剩下的交给那张图和孩子的嘴。
+    </p>
+    <div class="rv d2">
+      <a class="btn btn-primary" href="download/xiaobimiao-android.apk" download>免费下载安卓版</a>
+      <a class="btn btn-ghost" href="#faq" style="margin-left:10px">还有疑问</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════ 页脚 ═══════════ -->
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-brand">
+          <img src="assets/icon-192.png" alt="小笔苗 · 作文森林 图标" width="40" height="40" />
+          <span><b>小笔苗 · 作文森林</b><span>小学生看图作文练习 App</span></span>
+        </div>
+        <p class="ft-desc">370 道看图作文题 · 语音说作文 · 五维点评 · 成长树段位 · 密码锁日记 · 旅行图收集。完全免费，无广告，作文只存在孩子手机里。</p>
+      </div>
+      <div>
+        <h4>产品</h4>
+        <ul>
+          <li><a href="#why">为什么好用</a></li>
+          <li><a href="#features">功能一览</a></li>
+          <li><a href="#steps">五步流程</a></li>
+          <li><a href="#stages">成长树段位</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>下载</h4>
+        <ul>
+          <li><a href="download/xiaobimiao-android.apk" download>安卓版 APK</a></li>
+          <li><a href="#download">iPhone / iPad</a></li>
+          <li><a href="#download">电脑浏览器</a></li>
+          <li><a href="#faq">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于</h4>
+        <ul>
+          <li><a href="#faq">家长须知</a></li>
+          <li><a href="#faq">数据与隐私</a></li>
+          <li><a href="mailto:hello@example.com">联系我们</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="ft-bottom">
+      <span>© <span id="yr">2026</span> 小笔苗 · 作文森林</span>
+      <!-- TODO-BEFORE-LAUNCH ④ 主办单位名称：必须与备案主体一致 -->
+      <span>主办单位：待填写（与备案主体一致）</span>
+      <span class="beian">
+        <!-- TODO-BEFORE-LAUNCH ② ICP 备案号 -->
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener nofollow">京ICP备00000000号-1</a>
+        <!-- TODO-BEFORE-LAUNCH ③ 公安备案号（没办就删掉这一行） -->
+        <a href="https://beian.mps.gov.cn/" target="_blank" rel="noopener nofollow">京公网安备11000000000000号</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  /* 年份 */
+  var y = document.getElementById('yr');
+  if (y) y.textContent = String(new Date().getFullYear());
+
+  /* 顶栏：滚过一屏就加毛玻璃底 */
+  var hdr = document.getElementById('hdr');
+  var onScroll = function () { hdr.classList.toggle('solid', window.scrollY > 12); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* 移动端菜单 */
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('nav');
+  if (burger && nav) {
+    burger.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        nav.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* 滚动入场 —— 尊重 prefers-reduced-motion */
+  var items = document.querySelectorAll('.rv');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function (el) { el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    items.forEach(function (el) { io.observe(el); });
+  }
+
+  /* 点击导航平滑滚动（旧浏览器兜底） */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var t = document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      history.replaceState(null, '', id);
+    });
+  });
+})();
+</script>
+
+<!-- ═══════════ 结构化数据（SEO） ═══════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.example.com/#website",
+      "url": "https://www.example.com/",
+      "name": "小笔苗 · 作文森林",
+      "inLanguage": "zh-CN",
+      "description": "小学生看图作文练习 App 官方网站"
+    },
+    {
+      "@type": ["SoftwareApplication", "MobileApplication"],
+      "@id": "https://www.example.com/#app",
+      "name": "小笔苗 · 作文森林",
+      "alternateName": "小笔苗",
+      "applicationCategory": "EducationalApplication",
+      "applicationSubCategory": "语文 · 作文练习",
+      "operatingSystem": "Android 7.0+, iOS, Web",
+      "softwareVersion": "1.0",
+      "fileSize": "9.5MB",
+      "inLanguage": "zh-CN",
+      "isAccessibleForFree": true,
+      "downloadUrl": "https://www.example.com/download/xiaobimiao-android.apk",
+      "installUrl": "https://www.example.com/download/xiaobimiao-android.apk",
+      "url": "https://www.example.com/",
+      "image": "https://www.example.com/assets/og-cover.png",
+      "screenshot": [
+        "https://www.example.com/assets/shot-home.png",
+        "https://www.example.com/assets/shot-topic.png",
+        "https://www.example.com/assets/shot-level.png",
+        "https://www.example.com/assets/shot-map.png"
+      ],
+      "description": "给 1-9 年级小学生的看图作文练习 App：370 道带图作文题，按住说话就能写，AI 从观察力、条理性、词汇量、想象力、真情实感五个维度温柔点评，还有密码锁日记本、成长树段位与旅行图收集。完全免费，无广告。",
+      "featureList": [
+        "370 道看图作文题，5 大类 42 个细标签",
+        "按住麦克风语音输入，语音自动转文字",
+        "观察力 / 条理性 / 词汇量 / 想象力 / 真情实感 五维点评",
+        "成长树 12 段位，从灵芽树到通天神树",
+        "带密码锁的日记本",
+        "旅行图点亮 643 个中国地标",
+        "文心卡收集 40 张",
+        "题库与备份导出，家长可自行加题"
+      ],
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "student",
+        "audienceType": "小学生及其家长"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CNY",
+        "availability": "https://schema.org/InStock"
+      },
+      "publisher": { "@id": "https://www.example.com/#org" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.example.com/#org",
+      "name": "小笔苗 · 作文森林",
+      "url": "https://www.example.com/",
+      "logo": "https://www.example.com/assets/icon-512.png"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.example.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "小笔苗 · 作文森林要花钱吗？会有广告吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "完全免费，没有广告，也没有内购和会员墙。370 道题、语音输入、AI 点评、成长树、日记本、旅行图、文心卡等全部功能打开即可使用。" }
+        },
+        {
+          "@type": "Question",
+          "name": "小笔苗适合几年级的孩子？",
+          "acceptedAnswer": { "@type": "Answer", "text": "适合 1-9 年级。每道题都标注了适合的年级区间，孩子选好自己的年级后只会看到该难度段的题目；低年级可多用语音输入，高年级可按细标签专项练习。" }
+        },
+        {
+          "@type": "Question",
+          "name": "孩子的作文会被上传到网上吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "默认只保存在孩子本机，不会公开，也没有排行榜。只有主动点击 AI 出题或 AI 点评时，该次内容才会发送给 AI 服务用于生成结果。家长可随时在设置中导出备份或清空全部数据。" }
+        },
+        {
+          "@type": "Question",
+          "name": "AI 会不会直接替孩子写作文？",
+          "acceptedAnswer": { "@type": "Answer", "text": "不会。点评只描述和引导，绝不给出可以照抄的句子；改作文只在孩子自己写的句子上修改，不凭空加字、不代编情节。作文里的每个字都来自孩子自己。" }
+        },
+        {
+          "@type": "Question",
+          "name": "孩子不会打字怎么用？",
+          "acceptedAnswer": { "@type": "Answer", "text": "按住麦克风说出来即可，语音会自动转成文字；说错了可以只修改那一句。" }
+        },
+        {
+          "@type": "Question",
+          "name": "家长怎么看到孩子的进步？",
+          "acceptedAnswer": { "@type": "Answer", "text": "成长树记录段位与经验，从灵芽树到通天神树共 12 级；文心卡收集进度与旅行图点亮的地标都是可视化成果。经验值只来自写作和日记。" }
+        },
+        {
+          "@type": "Question",
+          "name": "换手机后写过的作文会丢吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "建议定期在设置中导出备份到电脑或网盘，换机后用恢复备份导入。题库也可单独导出为 JSON，可打印或跨设备继续使用。" }
+        },
+        {
+          "@type": "Question",
+          "name": "小笔苗必须一直联网吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "不需要。随机出题、写作文、日记本、成长树、文心卡、旅行图均可离线使用，只有 AI 出题和 AI 点评需要联网。" }
+        },
+        {
+          "@type": "Question",
+          "name": "iPhone 上没有 App Store 版本，能用吗？",
+          "acceptedAnswer": { "@type": "Answer", "text": "可以。用 iPhone 的 Safari 打开网页版，选择分享中的添加到主屏幕，即可像 App 一样使用。iOS 原生版本仍在开发中。" }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</body>
+</html>

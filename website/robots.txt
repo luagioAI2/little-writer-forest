@@ -1,0 +1,10 @@
+# 小笔苗 · 作文森林 —— 官网
+# TODO-BEFORE-LAUNCH ① 域名：把下面 Sitemap 的域名换成真实域名
+
+User-agent: *
+Allow: /
+
+# 下载包体积大，不参与收录
+Disallow: /download/
+
+Sitemap: https://www.example.com/sitemap.xml
