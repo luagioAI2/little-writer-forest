@@ -77,5 +77,33 @@ dist-apk/
 # 临时调试脚本（_debug-*.mjs 与其截图）
 /scripts/_debug*
 
+# ---- 配图 / 抓站 / 迁移的**工作目录**（几百 MB，不入库）----
+# 实测体积（2026-10-03）：_photo-scene 203M / _photo-all 104M / _site 61M /
+#   _photo-pilot 20M / _new50 7.3M / _photo-lib2 7.3M / _photo-life 2.1M。
+# ⚠️ 整个目录都忽略，**包括里面的 .py / .mjs** —— 那些是 130 多个一次性的
+#    迭代脚本（apply2.py、_chk3.py 这种），留着只是噪音。
+#    "图是怎么来的"由 scripts/build-landmark-photos.mjs + src/data/*.json 记录，
+#    不靠这些。文件仍在本地磁盘上，只是不入库。
+/scripts/_photo-*/
+/scripts/_site/
+/scripts/_new50/
+# 动画帧 / 合并素材的工作目录（根目录）
+/_mv/
+# 一次性的中间产物（跑一遍就过期）
+/scripts/_tmp-*
+/scripts/_inventory.json
+# 这些是 `scripts/_photo-list.ts` / `_pilot-list.ts` 的**产物**，随时可重建
+/scripts/_photo-list.json
+/scripts/_pilot-list.json
+# 手工改动前留的备份（.bak），别跟着入库
+*.bak
+
+# 抓取脚本的**原始响应缓存**（.world-landmarks-cache.json）——
+# 体积不小、随时可重建，不入库。
+# ⚠️ 别把它的**产物**一起忽略掉：`scripts/world-landmarks.json`、
+#    `scripts/cn-a-level.json`、`scripts/ne-110m-land.geojson` 都是**要入库**的
+#    （没有它们，`build-*.mjs` 就不可复现了）。
+/scripts/.*cache*.json
+
 # 测试
 coverage/
