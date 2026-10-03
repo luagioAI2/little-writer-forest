@@ -1,0 +1,1923 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>小笔苗 · 旅行内容编辑器</title>
+<style>
+  /* ============================================================
+     旅行内容编辑器 —— 给家长用的桌面工具。
+     ★ 只做一件事：编辑 `src/data/travel-contents.json`。
+     ★ 不引任何外部资源（跟 App 一样离线可用）。
+     ⚠️ 必须通过 dev server 打开：
+        http://localhost:5190/travel-editor.html
+        file:// 会被跨源拦掉，而且**保存**需要 dev server 上的端点。
+     ⚠️ 保存端点在 `vite.config.ts` 的 `travelContentsSaver()` 里，
+        `apply:'serve'` → 只在 dev 里存在，构建产物里没有。
+     ============================================================ */
+  :root{
+    --bg:#fbf9f4; --card:#fff; --line:#e7e2d8; --ink:#2f3a34; --ink2:#5b655e;
+    --dim:#8b948d; --leaf:#29ce89; --leaf-d:#10a368; --amber:#febb32;
+    --amber-d:#b57f0d; --slate:#9ca3af; --danger:#c9534a;
+    --g1:#3e7f5e; --g2:#42779a; --g3:#8c73c5; --g4:#c9534a; --g5:#c98a2e;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:13.5px/1.6 system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  }
+  button{font:inherit; cursor:pointer}
+
+  /* ---------- 顶栏 ---------- */
+  header{
+    display:flex; align-items:center; gap:12px; flex-wrap:wrap;
+    padding:12px 18px; background:var(--card); border-bottom:1px solid var(--line);
+    position:sticky; top:0; z-index:20;
+  }
+  header h1{margin:0; font-size:16px; letter-spacing:.02em}
+  header .sub{color:var(--ink2); font-size:12px}
+  header .spacer{flex:1}
+  .btn{
+    border:1px solid var(--line); background:#fff; color:var(--ink2);
+    border-radius:9px; padding:6px 13px;
+  }
+  .btn:hover{border-color:var(--slate); color:var(--ink)}
+  .btn.primary{background:var(--leaf-d); border-color:var(--leaf-d); color:#fff; font-weight:700}
+  .btn.primary:hover{filter:brightness(1.08); color:#fff}
+  .btn.danger{color:var(--danger); border-color:#e8cfcb}
+  .btn.danger:hover{border-color:var(--danger)}
+  .btn:disabled{opacity:.5; cursor:not-allowed}
+  .dirty{color:var(--amber-d); font-size:12px; font-weight:700}
+
+  /* ---------- 两栏 ---------- */
+  .wrap{display:grid; grid-template-columns:330px 1fr; gap:0; height:calc(100vh - 57px)}
+  .left{border-right:1px solid var(--line); overflow:auto; padding:10px}
+  .right{overflow:auto; padding:14px 18px 60px}
+  @media(max-width:900px){.wrap{grid-template-columns:1fr; height:auto}.left{border-right:0; border-bottom:1px solid var(--line)}}
+
+  /* ---------- 左：列表 ---------- */
+  .tools{display:flex; flex-direction:column; gap:7px; margin-bottom:9px}
+  .tools input[type=search],.tools select{
+    font:inherit; color:var(--ink); background:#fff; border:1px solid var(--line);
+    border-radius:9px; padding:6px 9px; width:100%;
+  }
+  .tools input[type=search]:focus,.tools select:focus{outline:none; border-color:var(--leaf-d)}
+  /* ⚠️ 别写成 `.tools input{width:100%}` —— 那会把**复选框**也撑满一整行，
+     文字被挤到右边换行，看着像排版坏了。 */
+  .chk{display:flex; align-items:center; gap:6px; color:var(--ink2); font-size:12.5px}
+  .chk input{flex:0 0 auto; margin:0}
+  .row{
+    display:block; width:100%; text-align:left; background:#fff;
+    border:1px solid var(--line); border-radius:10px; padding:8px 10px; margin-bottom:6px;
+  }
+  .row:hover{border-color:var(--slate)}
+  .row.on{border-color:var(--ink); box-shadow:0 0 0 2px rgba(47,58,52,.08)}
+  .row .t{font-weight:700}
+  .row .m{color:var(--dim); font-size:12px; margin-top:1px}
+  .row.gap{background:#fffdf5; border-style:dashed}
+  .chip{
+    display:inline-block; border-radius:999px; padding:1px 8px;
+    color:#fff; font-size:11px; font-weight:700; margin-left:6px;
+  }
+  .empty{color:var(--dim); padding:14px 4px}
+
+  /* ---------- 右：编辑器 ---------- */
+  .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 14px}
+  /* ★ 分区小标题 —— 把**两组字段**在视觉上分开：
+     上面那张卡片（`.lminfo`）说的是**地标**（只读，换个景点才变）；
+     下面这一组说的是**这一张图**（可改，同一个景点的另一张各有各的）。
+     ★ 2026-09-25 家长：「为啥要提醒」—— 原来那句长解释删了，只留一个词 + 一条细线。
+       信息本身会说话：上面那张卡片是白的、带边框（地标），这里是表单字段（这一张）。
+     ⚠️ 但「这张图」这四个字**不能一起删**：少了它，家长会以为"标题 / 等级"也是景点的属性，
+        于是同一个景点的第二张图直接复制第一张的标题 —— 而那是两条不一样的东西。
+     ★ 用 `::after` 画右侧那条细线（`flex:1`），比整行 `border-top` 轻，也更像"分组"而不是"分隔"。 */
+  .grid .cap2{
+    grid-column:1/-1; display:flex; align-items:center; gap:10px;
+    margin-top:6px; color:var(--ink2); font-size:12px; font-weight:600;
+  }
+  .grid .cap2::after{content:''; flex:1; height:1px; background:var(--line)}
+  .f{display:flex; flex-direction:column; gap:4px}
+  .f.full{grid-column:1/-1}
+  .f label{color:var(--ink2); font-size:12px; font-weight:600}
+  .f input,.f select,.f textarea{
+    font:inherit; color:var(--ink); background:#fff; border:1px solid var(--line);
+    border-radius:9px; padding:6px 9px; width:100%;
+  }
+  .f textarea{resize:vertical; line-height:1.75}
+  .f input:focus,.f select:focus,.f textarea:focus{outline:none; border-color:var(--leaf-d)}
+  .f .hint{color:var(--dim); font-size:11.5px}
+  /* 字段标题那一行：左边是标签，右边可以放一个动作按钮（AI 起稿） */
+  .lbl-row{display:flex; align-items:center; justify-content:space-between; gap:8px}
+  .lbl-row .btn{padding:3px 11px; font-size:12.5px}
+  .f.bad input,.f.bad textarea,.f.bad select{border-color:var(--danger)}
+  .sec{margin-top:16px; padding-top:12px; border-top:1px solid var(--line)}
+  .sec h2{margin:0 0 8px; font-size:13px; color:var(--ink2); letter-spacing:.04em}
+
+  /* ---------- 「这个景点」只读信息条 ----------
+     ★★ 为什么这些字段是**只读**的：它们属于**地标**，不属于这一张图。
+        原来每条内容自己存 place / lng / lat，于是同一个景点写了两套坐标
+        （八达岭 116.0167/40.3563 和 116.02/40.35，西湖也各一套）——
+        谁都不知道该信哪个，而且两套都不报错。改成派生之后，
+        这里只**显示**地标那一份；要改就得去改地标表。
+     ⚠️ 用 <div> 而不是一排 disabled 的 <input>：灰掉的输入框看着像
+        "本来能改、只是暂时锁住了"，家长会去点它、点不动，然后以为工具坏了。
+     ⚠️ `font-variant-numeric:tabular-nums`：经纬度是等宽数字，
+        换一条内容时那一列不会左右抖。 */
+  /* ★★ 2026-09-25 改版（家长：「这个不需要显示吧，信息显示就行了，为啥要提醒」）：
+     删掉那行「这个景点（只读 —— 这些字段属于地标，不随这一张图走）」，
+     改成**一张有视觉重量的卡片**来说话 —— 名字做大、知名度/官方称号做 pill、
+     坐标和 id 退成小字。识别靠**形状和层级**，不靠一句解释。
+     ⚠️ 白底 + 边框是**故意的**：上面是页面底色、下面是米色的图条带，
+        它夹在中间必须是白的，否则三块同色糊成一片（改版前就是那样）。
+     ⚠️ 字段名不再逐个写出来（「省市」「经纬度」…）—— 靠 `title=` 兜底，
+        值本身够清楚。★ 但 `data-lm="…"` 这些**测试钩子一个都不能少**（见下面的注释）。 */
+  .lminfo{
+    grid-column:1/-1; background:var(--card); border:1px solid var(--line);
+    border-radius:12px; padding:11px 14px;
+    display:flex; flex-direction:column; gap:6px;
+  }
+  /* 第一行：地标名 + 两个标签 */
+  .lminfo .lm-head{display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+  .lminfo .lm-name{font-size:15.5px; font-weight:700; color:var(--ink); line-height:1.3}
+  .lminfo .lm-pill{
+    font-size:11px; font-weight:700; line-height:1.7; white-space:nowrap;
+    border-radius:999px; padding:0 9px;
+    background:#eef6f2; color:var(--leaf-d); border:1px solid #dcece4;
+  }
+  /* 「没有这个值」和「值不适用」都长这样：虚框、淡色，一眼看出是**空的**而不是**没加载** */
+  .lminfo .lm-pill.none{background:transparent; color:var(--dim); border-style:dashed; font-weight:600}
+  /* 第二行：次要信息，用 `·` 分隔（写在 CSS 里，标记里就不用塞一堆 ·） */
+  .lminfo .lm-meta{
+    display:flex; flex-wrap:wrap; align-items:baseline;
+    font-size:12px; color:var(--dim);
+  }
+  .lminfo .lm-meta > span + span::before{content:'·'; color:#cfc9bb; margin:0 8px}
+  .lminfo .lm-meta b{color:var(--ink2); font-weight:600}
+  .lminfo .lm-meta .mono{font-variant-numeric:tabular-nums}
+  /* 地标 id 是给脚本看的内部标识，压到最弱 —— 家长几乎不会用到它 */
+  .lminfo .lm-meta .lm-id{color:#a8b0aa; font-size:11.5px}
+  /* 地标查不到 —— 这条内容存下去会被整条丢掉，必须红着说清楚。
+     ⚠️ 用 `.lm-warn`（块级）而不是 `.lm-meta`（flex）：见 `landmarkInfoHTML` 里的注释。 */
+  .lminfo.bad{background:#fdf3f1; border-color:#f0d6d2}
+  .lminfo.bad .lm-name{color:#8f3b32}
+  .lminfo .lm-warn{font-size:12px; line-height:1.75; color:#8f3b32}
+  .lminfo .lm-warn b{color:#8f3b32; font-weight:700}
+  /* 景点公共简介 —— 挂在**地标**上的一段话，跟这个景点配了几张图无关。
+     ★★ 它必须是 `.lminfo` 的**子块**，不能另起一块挂在信息条外面：
+        "公共的东西都在这一张卡片里"是家长 09-25 定下的版面
+        （原话：「这个是旅游点公共的」）。
+     ⚠️ 别给它加 `grid-column:1/-1` —— 它不是 `.grid` 的直接子元素，
+        加了没有任何效果，看着像"写了样式却不生效"。 */
+  .lminfo .lm-intro{
+    margin-top:5px; padding-top:9px; border-top:1px dashed var(--line);
+    display:flex; flex-direction:column; gap:5px;
+  }
+  .lminfo .lm-intro-head{display:flex; align-items:baseline; gap:8px}
+  .lminfo .lm-intro-head label{font-size:12px; font-weight:700; color:var(--ink2)}
+  /* 计数靠右 —— `margin-left:auto` 是这块唯一的对齐手段 */
+  .lminfo .lm-intro-count{
+    margin-left:auto; font-size:11.5px; color:var(--dim);
+    font-variant-numeric:tabular-nums;
+  }
+  /* 只有**超了**才变红（见 `updateIntroMeta`）—— 平时是灰的，
+     否则"上限 300"看着像"已经出错" */
+  .lminfo .lm-intro-count.bad{color:#8f3b32; font-weight:700}
+  .lminfo .lm-intro textarea{
+    width:100%; box-sizing:border-box; resize:vertical; min-height:64px;
+    font-family:inherit; font-size:12.5px; line-height:1.75; color:var(--ink);
+    background:#fff; border:1px solid var(--line); border-radius:8px; padding:8px 10px;
+  }
+  .lminfo .lm-intro textarea:focus{outline:none; border-color:var(--leaf-d)}
+  .lminfo .lm-intro-hint{font-size:11.5px; line-height:1.6; color:var(--dim)}
+
+  /* 等级选择 */
+  .grades{display:flex; gap:6px; flex-wrap:wrap}
+  .grades button{
+    border:1px solid var(--line); background:#fff; color:var(--ink2);
+    border-radius:999px; padding:5px 14px;
+  }
+  .grades button.on{color:#fff; border-color:transparent; font-weight:700}
+
+  /* 正文统计 */
+  .meta{display:flex; gap:12px; flex-wrap:wrap; color:var(--dim); font-size:11.5px; margin-top:4px}
+  .meta b{color:var(--ink2)}
+  .meta .bad{color:var(--danger); font-weight:700}
+
+  /* 体检 */
+  .report{margin-top:14px; border-radius:10px; padding:10px 12px; font-size:12.5px}
+  .report.ok{background:#f0faf5; color:#1c6b48; border:1px solid #cdeadd}
+  .report.bad{background:#fdf3f1; color:#8f3b32; border:1px solid #f0d6d2}
+  .report ul{margin:6px 0 0; padding-left:18px}
+  .report li{margin:2px 0}
+
+  .toast{
+    position:fixed; left:50%; bottom:22px; transform:translateX(-50%);
+    background:var(--ink); color:#fff; border-radius:10px; padding:9px 16px;
+    font-size:13px; box-shadow:0 6px 20px rgba(0,0,0,.18); z-index:50;
+    max-width:80vw;
+  }
+  .toast.bad{background:var(--danger)}
+  .hint-top{
+    background:#fffdf5; border-bottom:1px solid var(--line);
+    padding:8px 18px; color:var(--amber-d); font-size:12.5px;
+  }
+
+  /* ---------- 嵌进「旅游点名录浏览」的抽屉里（?embed=1&id=xxx） ----------
+     ★ 抽屉那边**已经知道是哪个景点**了，所以左边那份地标列表在这里是多余的 ——
+       整个页面只剩表单一栏。
+     ★ 高度改成 auto：原来那个 `calc(100vh - 57px)` 是按完整顶栏量出来的，
+       嵌进来之后顶栏变矮了（h1 被藏掉），那个魔数就对不上、底部会多出一条滚动。
+       索性让整个文档自己滚，顶栏是 sticky 的，照样不跑。 */
+  body.embed .wrap{grid-template-columns:1fr; height:auto}
+  body.embed .left{display:none}
+  body.embed .right{padding:12px 16px 40px}
+  body.embed header h1, body.embed header .sub{display:none}
+  body.embed .hint-top{display:none}
+  /* 嵌进来之后"这个景点叫什么"由抽屉的标题负责，页面里再报一遍是重复 */
+  body.embed #mode{display:none}
+
+  /* ---------- 「这一组的图」条带（只在抽屉里出现） ----------
+     ★★ 为什么需要它：一个景点会有**多张图**，每张各有自己的等级和散文。
+        而嵌进抽屉时左边那份列表被藏掉了 —— 于是"这个景点到底有几张、
+        我现在在改哪一张"完全看不见，也没地方加第二张。
+     ★ 为什么不做成 sticky：顶栏已经是 sticky top:0 了，两个都 sticky 会叠在一起，
+        而要让条带错开就得写死一个"顶栏有多高"的魔数（顶栏高度会随内容变）。
+        宁可让它跟着滚 —— 写散文写到一半时本来也不需要换图。 */
+  .strip{display:none}
+  body.embed .strip{
+    display:flex; flex-wrap:wrap; align-items:flex-start; gap:10px;
+    padding:10px 16px; background:#f5f2eb; border-bottom:1px solid var(--line);
+  }
+  /* ★★ 「这个景点」信息条在抽屉里的落点 —— 图条带**之上**、整个面板最顶上。
+     家长 09-25：「这个 东西 往 上放，这个是**旅游点公共的**」。
+     ★ 底色用**页面底色**（不是条带那个米色）：中间那张卡片是白的，
+        卡片才浮得起来。改版前槽位和条带同为米色 → 白卡片会糊在米色里。
+     ★ 下边框留着：于是从上到下是「页面底 → 细线 → 米色图条带 → 细线 → 表单」，
+        三段各归各的，不用一句话去解释谁是谁。
+     ⚠️ 单独打开时整块隐藏（`body:not(.embed)`）：那时左栏是地标列表，
+        通栏会读成"页头"，而它其实只属于右栏那条内容。
+     ⚠️ 别给它写 `display:...`：那会盖掉 `hidden` 属性（`[hidden]{display:none}` 只是 UA 默认值），
+        于是"没有选中内容时"这块会空着一条底色留在最上面。 */
+  .lmslot{
+    padding:14px 16px 12px; background:var(--bg);
+    border-bottom:1px solid var(--line);
+  }
+  body:not(.embed) .lmslot{display:none}
+  /* 条带最左边那句说明占满一整行 */
+  .strip .scap{
+    flex:1 0 100%; color:var(--dim); font-size:11.5px; margin-bottom:-2px;
+  }
+  .strip .scap b{color:var(--ink)}
+  .tile{
+    width:104px; flex:0 0 auto; padding:0; border:0; background:none;
+    text-align:left; cursor:pointer; font:inherit;
+  }
+  .tile .th{
+    /* ★★ `display:block` 不是可选项：`.th` 是 <span>，行内元素**吃掉 height**
+       —— 少了它 `height:74px` 静默失效，缩略图高度改由内容决定：
+       图片方块跟着原图比例（可能 110px）、文字方块跟着那行字（可能 60px）
+       ➜ 一排方块参差不齐，而且**条带总高随"这组里有没有照片"变**。
+       ⚠️ 这种错不报错、不崩，只是"看着有点歪"，最容易漏过去。 */
+    display:block;
+    height:74px; border-radius:10px; overflow:hidden; position:relative;
+    border:1px solid var(--line); background:#fff;
+  }
+  .tile .th img{width:100%; height:100%; object-fit:cover; display:block}
+  /* 图挂了 / 非图片类型（音乐·格言·笑话…）时的占位 */
+  .tile .th .fb{
+    display:none; width:100%; height:100%; align-items:center; justify-content:center;
+    color:var(--dim); font-size:12px; background:#f7f5f0;
+  }
+  .tile .th.bad img{display:none}
+  .tile .th.bad .fb{display:flex}
+  /* ★ 等级色：一条**贴在缩略图底边**的色条。这样"这一组里哪张是绝景"扫一眼就知道。
+     ⚠️⚠️ 它必须**长在 `.th` 里面**（`.th` 是 `position:relative`，见上）。
+        它原来是 `.th` 的**兄弟节点**，而 `.tile` 自己**不是定位元素** ——
+        于是 `bottom:0` 要找的"最近的定位祖先"落空，一路升到**初始包含块**，
+        在抽屉里画成一条**横贯整个 iframe 的 4px 绿线**
+        （09-25 家长报的「界面好像中间多了一条绿线」）。
+     ⚠️ 也别图省事给 `.tile` 加 `position:relative` 了事：量过 ——
+        `.t2`（副标题）底边到 `.tile` 底边只剩 **2px**，4px 的条会**压穿那行字**。 */
+  .tile .gbar{position:absolute; left:0; right:0; bottom:0; height:4px}
+  /* ★★ `display:block` 不是可选项（跟上面 `.th` 是**同一个坑**，2026-09-26 补）：
+     `.t1` / `.t2` 是 <span>，行内元素**没有 overflow 盒子** ——
+     实测 `scrollWidth` 和 `clientWidth` **都是 0**，
+     所以下面那串 `overflow:hidden; text-overflow:ellipsis; white-space:nowrap`
+     **一个字都没裁到**，文字直接横穿到下一个方块上。
+     ⚠️ 加默认图那个方块时才暴露出来（它的副标题长）：
+        文字跟右边「加完就能写它自己的散文」**叠在一起**，
+        而页面不报错、方块宽度也没变，只是"看着有点挤"。
+     ⚠️ 顺带让布局确定下来：行内元素是**放得下就同一行**，
+        文字一短，标题和副标题就会挤成一行 —— 加 `block` 才是稳定的一行一个。 */
+  .tile .t1{display:block; font-size:11.5px; color:var(--ink); margin-top:5px; font-weight:600;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .tile .t2{display:block; font-size:11.5px; color:var(--dim); overflow:hidden;
+    text-overflow:ellipsis; white-space:nowrap}
+  .tile .t2 .todo{color:var(--amber-d)}
+  /* 选中：描边。⚠️ 用 outline 而不是 border —— 加 border 会让方块整体挪 1px */
+  .tile.on .th{outline:2px solid var(--ink); outline-offset:-1px}
+  .tile.on .t1{color:var(--ink)}
+  .tile:hover .th{border-color:var(--slate)}
+  .tile.add .th{
+    border:1px dashed var(--slate); display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:2px; color:var(--ink2);
+  }
+  .tile.add .th .plus{font-size:17px; line-height:1}
+  .tile.add .th .lbl{font-size:11.5px}
+  .tile.add:hover .th{border-color:var(--leaf-d); color:var(--leaf-d); background:#f2fbf7}
+
+  /* ---------- 机器搜的那张图 ----------
+     ★ 家长 09-26：「抽屉里 景点图 至少要有一张吧。」
+       以前条带只画内容包里的图 —— 内容包只有 2 条，所以点开绝大多数
+       景点都是一块「还没填图」，看着像"什么都没有"。
+
+     ★★ 家长 09-26 第二轮 —— **把整层概念砍掉了**：
+       「我希望 默认图就是 第一张图。不需要默认图啊。
+        我里面没有默认图的概念。第一张就是默认图。帮我填好信息。」
+
+       ➜ 所以这里**再没有任何"默认图"专属的样式**。机器搜的那张走的是
+         `boot()` → `seedFromDefaultPhoto()` → 一条**普通条目**，
+         用的就是上面 `.tile` 那套样式，一个特殊 class 都不需要。
+     ⚠️⚠️ 别再往这儿加 `.tile.def` 之类的钩子 ——
+        那等于把"默认图"这个概念又请回来（它现在就是一条普通条目）。
+
+     ★ 只留「示意图」角标：那张图**不是**这个地方本人的样子时（`match === 'scene'`）
+       要看得出来。它现在挂在普通的 `.tile` 上，见 `tileHTML()`。 */
+  .tile .th .mtag{
+    position:absolute; left:4px; top:4px;
+    font-size:10px; line-height:1.6; padding:0 4px; border-radius:6px;
+    background:rgba(255,255,255,.92); color:var(--ink2); font-weight:600;
+  }
+
+  /* ---------- 密钥弹窗（「让小鸟写一篇」要先拿到家长的 AI 密钥） ----------
+     ⚠️ 密钥**不写进任何文件**，只进 sessionStorage（关掉标签页就没了）。
+        所以这里要说清楚，别让家长以为它被存起来了。 */
+  .modal{position:fixed; inset:0; background:rgba(47,58,52,.38); z-index:60;
+    display:flex; align-items:center; justify-content:center; padding:20px}
+  /* ⚠️ 必须有这条：上面的 display:flex 会盖掉 [hidden] 的默认 display:none，
+     少了它这个弹窗**永远显示**在页面上，而且关不掉。 */
+  .modal[hidden]{display:none}
+  .modal .box{background:var(--card); border-radius:14px; padding:18px 20px;
+    width:min(460px,100%); box-shadow:0 12px 40px rgba(0,0,0,.22)}
+  .modal h3{margin:0 0 6px; font-size:15px}
+  .modal p{margin:0 0 12px; color:var(--ink2); font-size:12.5px}
+  .modal input[type=password]{
+    font:inherit; width:100%; color:var(--ink); background:#fff;
+    border:1px solid var(--line); border-radius:9px; padding:7px 10px;
+  }
+  .modal input[type=password]:focus{outline:none; border-color:var(--leaf-d)}
+  .modal .row2{display:flex; align-items:center; gap:8px; margin-top:12px}
+  .modal .row2 .spacer{flex:1}
+  .modal .err{color:var(--danger); font-size:12px; margin-top:8px}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>旅行内容编辑器</h1>
+    <div class="sub">编辑 <code>src/data/travel-contents.json</code> —— 一个景点可以有好几张图，每张各有自己的等级和散文</div>
+  </div>
+  <span class="spacer"></span>
+  <span id="dirty" class="dirty" hidden>● 有未保存的改动</span>
+  <button class="btn" id="reload">重新载入</button>
+  <button class="btn primary" id="save">保存到文件</button>
+</header>
+<div class="hint-top" id="mode"></div>
+
+<div class="wrap">
+  <div class="left">
+    <div class="tools">
+      <input id="q" type="search" placeholder="搜标题 / 景点名 / 地标 id">
+      <select id="fg"><option value="">全部等级</option></select>
+      <label class="chk"><input type="checkbox" id="onlyGap"> 只看「还没有内容」的景点</label>
+      <!--
+        ★★ 这个按钮原来是「＋ 新建一条」，会把条目加在**没有地标**的状态下。
+           2026-09-25 起 `landmarkId` 是必填（图片是挂在地标上的附件），
+           那种条目存下去会被整条丢掉 —— 所以改成"给**当前这条**的景点再加一张"。
+        ⚠️ 单独打开时"给某个景点加**第一张**"走左边那个勾选框：
+           勾上「只看还没有内容的景点」，点一下景点名就起一条。
+           （嵌在抽屉里时左边整栏是藏起来的，加图走条带的「＋ 新建一张」。）
+      -->
+      <button class="btn" id="add">＋ 给这个景点再加一张</button>
+    </div>
+    <div id="list"></div>
+  </div>
+  <!-- 「这一组的图」条带 —— 只在抽屉里显示（见 CSS 的 body.embed .strip）。
+       ⚠️ 放在 #editor **外面**：renderEditor() 会把 #editor 的 innerHTML 整个换掉。 -->
+  <!-- ★★ 只读的「这个景点」信息条（名称/省市/经纬度/热度/知名度/官方称号/地标 id）。
+       家长 09-25 第二次要求「这个 东西 往 上放，这个是**旅游点公共的**」——
+       所以它不再只是"表单的第一格"，而是**整个抽屉最顶上那一块**：
+       先交代"在给哪个地方写"，再说这个景点的图，最后才是这一张图自己的字段。
+       ⚠️ 只在抽屉里用它（`body:not(.embed) .lmslot{display:none}`）：
+          单独打开编辑器时左栏是地标列表，把它拉成通栏会读成"页头"，
+          而它其实只属于右栏那条内容。那一路继续用表单里那一份。
+       ⚠️ 两份的**内容**都来自同一个 `landmarkInfoHTML()` ——
+          没有第二份实现，所以不会漂移；守卫断言**任何时刻页面上只有一个 `.lminfo`**。 -->
+  <div class="lmslot" id="lmslot" hidden></div>
+  <div class="strip" id="strip" hidden></div>
+  <div class="right" id="editor"></div>
+</div>
+
+<!-- 「让小鸟写一篇」的密钥弹窗（见下面 draftEssay） -->
+<div class="modal" id="keydlg" hidden>
+  <div class="box">
+    <h3>让小鸟写一篇</h3>
+    <p>
+      小鸟要借你的 AI 密钥去写。密钥<b>只留在这次浏览器会话里</b>（关掉标签页就没了），
+      不写进任何文件、也不会出现在内容包里 —— 它只从这台电脑转发给服务商。
+    </p>
+    <input type="password" id="keyin" placeholder="sk-..." autocomplete="off">
+    <div class="err" id="keyerr" hidden></div>
+    <div class="row2">
+      <label class="chk"><input type="checkbox" id="keysave" checked> 这次会话里记住它</label>
+      <span class="spacer"></span>
+      <button class="btn" id="keycancel">取消</button>
+      <button class="btn primary" id="keyok">开始写</button>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+/* ============================================================
+   这个页面**故意不引 App 的 store / React** —— 它是家长的工具，
+   跟孩子的运行时不共用状态，只共用「数据 + 等级定义」。
+
+   数据怎么拿：
+     · 地标表：`import('./src/domain/travel.ts')` → LANDMARKS
+       ⚠️ 必须用**运行时**的 LANDMARKS，不能用原始 JSON ——
+          原始 JSON 里有被官方名录取代的老 id（`gugong` / `huangshan`），
+          而 LANDMARKS 已经把那些滤掉了。用原始 JSON 的话，
+          编辑器会让人挑到一个**已经不存在的 id**，
+          存下去之后那条内容就再也点不亮地图（而且不报错）。
+     · 等级表：`import('./src/domain/types.ts')` → TRAVEL_GRADES
+       ⚠️ 从代码里读，不在这里再抄一遍五档 —— 抄一遍就迟早漂移。
+     · 内容包：**fetch JSON**，不走模块图。
+       走模块图的话，保存后 Vite 会 HMR 重载这个页面，
+       而页面手里可能有没保存的改动 —— 直接丢掉。
+   ============================================================ */
+
+const API = '/__save-travel-contents'
+const FILE = './src/data/travel-contents.json'
+/**
+ * 默认图（**机器搜的**，不是家长配的）—— 只读，只用来显示。
+ *
+ * ★★ 家长 09-26 报：「抽屉里 景点图 至少要有一张吧。」
+ *    以前条带只画 `travel-contents.json` 里的图，而那一份只有 **2 条** ——
+ *    于是点开任何景点都只有一块「还没填图」，看着像"这个地方什么都没有"，
+ *    其实**库里已经有 366 个景点配了默认图**。
+ *
+ * ⚠️⚠️ 它和 `FILE` 是**两层**，绝不能混：
+ *    · `travel-contents.json` = 家长手挑的（会写盘、会进 `items`）
+ *    · 这一份 = 机器搜的（**只读**，永远不写回任何文件）
+ *    混进去就等于替家长声称"这几百张是我配的"（见 `landmarkPhotos.ts` 的抬头）。
+ */
+const PHOTO_FILE = './src/data/landmark-photos.json'
+/** 「让小鸟写一篇」的起稿端点 —— 也在 `vite.config.ts` 里，同样只在 dev 存在 */
+const ESSAY_API = '/__draft-essay'
+/**
+ * 景点公共简介：落盘端点 + 文件。
+ * ⚠️ 跟内容包是**两个**端点、**两个**文件 —— 一个景点一条 vs 一张图一条。
+ *    共用一个端点的话，保存简介会把整份内容包也重写一遍（反过来也一样）。
+ */
+const INTRO_API = '/__save-landmark-intros'
+const INTRO_FILE = './src/data/landmark-intros.json'
+/** 密钥只进 sessionStorage：关掉标签页就没了，**不落盘** */
+const KEY_STORE = 'lwf-editor-ai-key'
+
+/*
+ * 嵌进「旅游点名录浏览」的抽屉里时用的参数。
+ *   ?embed=1    → 隐藏左边那份地标列表（抽屉那边已经知道是哪个景点了）
+ *   &id=xxx     → 直接定位到这个地标：有内容就打开第一条，没有就起一条空白的
+ * ⚠️ 不加 embed 参数时行为**完全不变** —— 这个页面还是要能单独打开的。
+ */
+const PARAMS = new URLSearchParams(location.search)
+const EMBED = PARAMS.get('embed') === '1'
+const FOCUS_ID = PARAMS.get('id') || ''
+
+/*
+ * ⚠️ 2026-09-25：这里原来有一份 `TYPES`（photo / music / joke / video / quote / story）
+ *    和 `TYPE_LABEL` 的中文对照表，2026-09-25 全删了。
+ *
+ *    家长重新定了口径：「图片是附件的……另外不需要类型。
+ *    类型是事件，是另外的系统。」
+ *    ➜ 内容包里**只有图片附件**，这个页面里每一张都是图，没有"类型"可填；
+ *      笑话 / 格言 / 音乐 / 故事 / 视频各有自己的池子，
+ *      见 `src/data/travel-event-contents.json`。
+ *
+ *    ★ 为什么不"留着当显示用"：留着的话每一行都会渲染成
+ *      「undefined · 八达岭」—— 因为内容包里已经没有 `type` 这个键了，
+ *      而 `undefined || undefined` 就是 undefined。不报错，只是很难看。
+ */
+
+let LANDMARKS = []
+let GRADES = []
+/**
+ * 公共简介的字数上限。★ **boot 里从 `types.ts` 读**，别在这里写死一个 300 ——
+ * 抄一份就会跟定义漂移：界面说"没超"，落盘端点却拒收，两边都不报错。
+ */
+let INTRO_MAX = 0
+/**
+ * 地标 id → 默认图（`landmarkId / match / mediaUrl / title / credit`）。
+ *
+ * ⚠️ **读不到就是空表**，不是错误：这一层只是"让抽屉不至于空着"，
+ *    它坏了编辑器其余部分（改数据、保存、起稿）必须照常能用。
+ */
+let DEFAULT_PHOTOS = new Map()
+/**
+ * `defaultAiConfig()` 里读出来的接口地址 / 模型名 / 预置密钥。
+ *
+ * ★ 从 `domain/ai.ts` **读**，不在这里再抄一遍 —— 抄一遍就会跟那边漂移
+ *   （模型名一改，编辑器还在用旧名，而且**不报错**，只是效果差一点）。
+ * ⚠️ `baseUrl` 为空 = 那个模块没载进来，按钮会明确报错，不会静默失败。
+ */
+let AI_DEFAULTS = { baseUrl: '', model: '', apiKey: '' }
+let items = []          // 工作副本（就是最终要落盘的东西）
+let sel = -1            // 当前选中的下标
+let dirty = false
+/**
+ * 景点公共简介的工作副本：`landmarkId → 一段话`（≤ `INTRO_MAX`）。
+ *
+ * ★★ 它**不在 `items` 里**：`items` 是**图片级**的（一张图一条），
+ *    而简介是**地标级**的（一个景点一条）。混进 `items` 的话，
+ *    同一个景点配两张图就会冒出两条简介，哪条生效看哪张被选中 ——
+ *    不报错、不崩，只是会飘。
+ * ⚠️ 手里是**整张表**，不是"当前景点那一条"：保存是**全量覆盖**写盘，
+ *    只带当前那条的话，别的景点的简介会被整片抹掉（同样不报错）。
+ */
+let INTROS = {}
+/**
+ * 载入时的简介快照（`JSON.stringify` 的结果）。
+ *
+ * ★★ 为什么要它：`dirty` 是**一个**总开关 —— 内容和简介任一改动都要点亮它
+ *    （改动必须告诉外面那一页，见 `setDirty`）。但保存时得知道
+ *    "简介**到底**改没改"：没改就**不要**去打简介端点，
+ *    否则每存一次都白写一次盘，而且只拦内容端点的 e2e 守卫会打到真端点。
+ * ⚠️ 比**内容**，不比"有没有敲过键盘"：改完又改回去，就不该写盘。
+ */
+let INTROS_BASE = '{}'
+
+
+const $ = (id) => document.getElementById(id)
+
+/* ---------------- 和外面那一页通话 ----------------
+   ★★ 嵌在抽屉里时，**必须**把两件事告诉外面：
+     ① 「有没有未保存的改动」 —— 否则家长点关闭，刚写好的散文**一声不响就没了**
+        （iframe 自己的 `beforeunload` 拦不住"父页把抽屉藏起来"这种关闭）；
+     ② 「刚保存成功」 —— 外面要立刻刷新卡片上的「内容 N 条」标记。
+   ⚠️ 只在真的嵌在 iframe 里时才发（单独打开时 `window.parent === window`）。 */
+function postToParent(msg) {
+  if (EMBED && window.parent !== window) window.parent.postMessage(msg, location.origin)
+}
+
+/**
+ * 唯一改 `dirty` 的地方。
+ *
+ * ★★ 为什么非要有这么一个函数：`dirty` 原来在 8 处被直接赋值，
+ *    而"告诉外面"这件事**只有一处漏掉**就够让家长丢掉一篇散文 ——
+ *    漏掉的地方还不会报任何错。收成一个出口，就不可能漏。
+ */
+function setDirty(v) {
+  dirty = v
+  $('dirty').hidden = !dirty
+  postToParent({ type: 'lwm-dirty', dirty, count: mineCount() })
+}
+
+/*
+ * 抽屉那边标题下写着「已有 N 条内容」。
+ *
+ * ★ 这个 N 必须跟着**正在编的这一组**走，不能等保存。
+ *   否则点一下「＋ 新建一张」，条带当场变 3 张，
+ *   而抽屉标题还写着「已有 2 条内容」—— 同屏两个数字打架，
+ *   家长不知道该信哪个（而且他多半会信那个大的、然后以为没加上）。
+ * ⚠️ 只在 embed 下算：单独打开时没有 FOCUS_ID，
+ *   按 `landmarkId === ''` 数会把"还没挂到地标上"的孤儿条目也算进去。
+ */
+function mineCount() {
+  if (!EMBED || !FOCUS_ID) return null
+  let n = 0
+  for (const c of items) if (c.landmarkId === FOCUS_ID) n += 1
+  return n
+}
+
+/* ---------------- 载入 ---------------- */
+
+async function boot() {
+  const [travel, types, ai] = await Promise.all([
+    import('./src/domain/travel.ts'),
+    import('./src/domain/types.ts'),
+    /*
+     * 只为拿 baseUrl / model / 预置密钥 —— **不在这里再抄一遍**。
+     * ⚠️ 用 `.catch(() => null)`：这个模块图比另外两个大得多，
+     *    万一它载不进来，编辑器其余部分（改数据、保存）必须照常能用 ——
+     *    坏一个按钮，不能坏整张页面。
+     */
+    import('./src/domain/ai.ts').catch(() => null),
+  ])
+  LANDMARKS = travel.LANDMARKS
+  GRADES = types.TRAVEL_GRADES
+  INTRO_MAX = types.LANDMARK_INTRO_MAX
+  if (ai) {
+    const cfg = ai.defaultAiConfig()
+    AI_DEFAULTS = { baseUrl: cfg.baseUrl, model: cfg.model, apiKey: cfg.apiKey }
+  }
+
+  // 等级下拉 + 等级按钮的配色都从 TRAVEL_GRADES 来
+  for (const g of GRADES) {
+    const o = document.createElement('option')
+    o.value = g.key; o.textContent = g.key
+    $('fg').appendChild(o)
+  }
+
+  await loadContents()
+  /*
+   * ★ 公共简介也要在第一次渲染**之前**读进来（09-26）——
+   *   它画在信息条里，晚一步读的话会先闪一下空框再填上。
+   *   ⚠️ 跟默认图一样：**读不到不抛**（见 `loadIntros`）。
+   */
+  await loadIntros()
+  /*
+   * 默认图**不 await 也不会坏**（它自己 catch），但这里等它一下，
+   * 是为了让第一次 `render()` 就能把方块画出来 ——
+   * 否则会先闪一下「还没填图」再把图补上。
+   */
+  await loadDefaultPhotos()
+
+  if (EMBED) document.body.classList.add('embed')
+
+  /*
+   * 嵌在抽屉里时，直接定位到抽屉点开的那个景点。
+   *
+   * ★ 这个景点**还没有内容**就当场起一条空白的 —— 抽屉那边已经知道是哪个地标了，
+   *   而 `addFor()` 会从地标表里把标题 / 地名 / 坐标 / 等级都抄好，
+   *   家长点开就能直接写，不用先点一次「新建」。
+   *
+   * ⚠️⚠️ 但**必须把 `dirty` 复位**：这条空白是**我们**造的，不是家长改的。
+   *    不复位的话，他只是点开看了一眼、什么都没写就关掉，
+   *    抽屉也会问「有未保存的改动，确定关掉？」—— 而那篇"改动"根本不存在。
+   *    这种假警告会训练用户闭着眼睛点"确定"，等真有改动时也照点不误。
+   */
+  let seeded = false
+  if (FOCUS_ID) {
+    const idx = items.findIndex((c) => c.landmarkId === FOCUS_ID)
+    if (idx >= 0) sel = idx
+    else {
+      /*
+       * ★★ 这个景点还没内容 → 当场起第一条，并把**机器搜的那张图填好**。
+       *
+       *    家长 09-26：「默认图就是第一张图。不需要默认图啊，
+       *    我里面没有默认图的概念。第一张就是默认图。帮我填好信息。」
+       *
+       *    ➜ 以前这里起的是**一条空白**，另外在条带里单画一个只读的
+       *      「默认图」方块 —— 于是界面上出现了"默认图"这个概念。
+       *      现在**那一层没有了**：机器搜的那张就是第一条。
+       *    ⚠️ 所以 `seedFromDefaultPhoto()` 必须把它知道的**全部填进去**
+       *      （标题 / 图片地址 / 署名 / 摘要 / `match`）——
+       *      少填一个，家长就得自己去把那张图找回来。
+       */
+      addFor(FOCUS_ID, seedFromDefaultPhoto(FOCUS_ID))
+      setDirty(false)
+      seeded = !!defaultPhotoOf(FOCUS_ID)
+    }
+  }
+
+  $('mode').textContent =
+    `地标 ${LANDMARKS.length} 个 · 内容 ${items.length} 条 · 等级 ${GRADES.map(g=>g.key).join(' / ')}`
+  render()
+
+  /*
+   * ★★ 家长 09-26：「连散文也帮我起稿。」
+   *    ➜ 只在**刚刚用机器搜的那张图起了第一条**时才试一次。
+   *    ⚠️ 这个函数**绝不会弹密钥框**（见它的注释）—— 没配密钥就静静地不做。
+   */
+  if (seeded) await autoDraftIfPossible(FOCUS_ID)
+}
+
+async function loadContents() {
+  const res = await fetch(FILE, { cache: 'no-store' })
+  if (!res.ok) throw new Error(`读不到 ${FILE}（HTTP ${res.status}）`)
+  items = await res.json()
+  /*
+   * 补齐可选字段，编辑框才有东西可绑。
+   *
+   * ★★ 只补**这一张图自己的东西**。
+   *    ⚠️ `place` / `lng` / `lat` **故意不补** —— 它们是从地标派生的
+   *       （见 `domain/travelContents.ts`）。在这里补一份、保存时再写回去，
+   *       就等于**又把它们存了一遍**，正是"同一个景点两套坐标"的起点。
+   *       要用的时候现场查，见 `landmarkOf()`。
+   *    ⚠️ `type` / `textContent` 也不补 —— 它们属于事件系统。
+   *
+   * ★★ `match` **必须补**（09-26 加）。
+   *    这张表是**白名单**：没列进来的键读一次就没了。
+   *    而 `match` 是"这张图跟这个地方的关系"—— 漏了它，
+   *    「就用这张」收进来的那张「示意图」，存一次、再读一次之后就
+   *    变成 `undefined`（= 家长从没声称过），于是**相册把它当成真地方**。
+   *    跟 `grade` 那次一模一样的静默降级：不报错、不崩、只是说了假话。
+   *    ⚠️ 端点那边（`vite.config.ts` 的 `Seed` / `normalize`）也是白名单，
+   *       两边**都要列**，只补一处等于没补。
+   */
+  items = items.map((c) => ({
+    id: c.id ?? '', landmarkId: c.landmarkId ?? '',
+    title: c.title ?? '', grade: c.grade ?? '',
+    mediaUrl: c.mediaUrl ?? '',
+    credit: { source: c.credit?.source ?? '', link: c.credit?.link ?? '', author: c.credit?.author ?? '' },
+    summary: c.summary ?? '', essay: c.essay ?? '',
+    match: c.match ?? undefined,
+  }))
+}
+
+/**
+ * 这条内容挂在哪个景点上。
+ *
+ * ★ 为什么要这么一个函数：`place` 不再是条目自己的字段了，
+ *   而列表副标题、搜索、AI 起稿都要"这个景点叫什么"。
+ *   三处各写一遍 `LANDMARKS.find(...)` 迟早有一处漏了判空 ——
+ *   漏了就是 `undefined.name`，整页白屏。
+ * ⚠️ 查不到**不是异常**：那正是"地标 id 打错了"的样子，
+ *    要红着显示出来（见 `landmarkInfoHTML`）。
+ */
+function landmarkOf(c) {
+  return c && c.landmarkId ? LANDMARKS.find((l) => l.id === c.landmarkId) : undefined
+}
+
+/**
+ * 读景点公共简介那一层：`landmarkId → 一段话`。
+ *
+ * ⚠️ 读不到**当空表**，不抛 —— 理由跟 `loadDefaultPhotos()` 一样：
+ *    这一层坏了，编辑器其余部分（改内容、存内容、起稿）必须照常能用。
+ * ⚠️ 但**保存**是另一回事：端点写盘失败会明确报错（见 `$('save')`）。
+ * ⚠️ 读失败时 `INTROS` 是空表、`INTROS_BASE` 是 `'{}'` ——
+ *    于是保存时两者相等，**不会**去写简介文件。
+ *    这是**故意**的：读都没读上来，绝不能拿一张空表把盘上的简介覆盖掉。
+ */
+async function loadIntros() {
+  try {
+    const res = await fetch(INTRO_FILE, { cache: 'no-store' })
+    const data = res.ok ? await res.json() : null
+    INTROS = data && typeof data === 'object' && !Array.isArray(data) ? data : {}
+  } catch {
+    INTROS = {}
+  }
+  INTROS_BASE = JSON.stringify(INTROS)
+}
+
+/**
+ * 读默认图那一层。**读不到就当没有**，绝不抛。
+ *
+ * ⚠️ 跟 `loadContents()` 的差别就在这里：内容包读不到必须炸
+ *    （那是家长的数据，悄悄吞掉会让他以为"我配的没了"），
+ *    默认图读不到只是条带里少一个方块。
+ */
+async function loadDefaultPhotos() {
+  try {
+    const res = await fetch(PHOTO_FILE, { cache: 'no-store' })
+    if (!res.ok) return
+    const data = await res.json()
+    DEFAULT_PHOTOS = new Map((data.items || []).map((p) => [p.landmarkId, p]))
+  } catch {
+    DEFAULT_PHOTOS = new Map()
+  }
+}
+
+/** 这个景点的默认图（没有就 `undefined`） */
+function defaultPhotoOf(landmarkId) {
+  return landmarkId ? DEFAULT_PHOTOS.get(landmarkId) : undefined
+}
+
+/**
+ * 起稿预填的「一句话摘要」—— 从**人写的公共简介**（`intro`）里截一句。
+ *
+ * ★★ 为什么**不再**用 `blurb`（09-27 改）：
+ *    A 级那 1348 条的 `blurb` 是**按 `scene` 从 17 句模板里挑的**，
+ *    而且**会事实出错** —— 九寨沟 / 白洋淀的 `scene` 都是 `city`，
+ *    于是两条拿到同一句「周围都是高楼，晚上灯全亮起来。」
+ *    起稿时把它填进摘要，等于把一句错话塞进家长的内容里
+ *    （他不会逐字看，而这句话最后会印在相册卡片上）。
+ *
+ * ★ 为什么是"截一句"而不是留空：
+ *    端点 `validate()` 缺摘要会**拒收整份内容包** —— 留空的话，
+ *    家长加完图必须先手写摘要才存得进去。`intro` 是人写的、
+ *    跟这个景点对得上，截一句正好当摘要，既不错也不用他动手。
+ *
+ * ⚠️ 60 是**摘要自己的规矩**（见 `checkAll()` 的「超过 60（会撑破卡片）」），
+ *    跟 `intro` 的 300 是两回事 —— 别把 `LANDMARK_INTRO_MAX` 拿来用。
+ * ⚠️ 一个地标没有 `intro` 时返回 `''` → 体检会立刻红「缺摘要」，
+ *    不会静默存进一份空卡片。补法就是给那个地标写一句公共简介。
+ */
+const SUMMARY_MAX = 60
+
+function summaryFromIntro(intro) {
+  const s = (intro || '').trim()
+  if (!s) return ''
+  if (s.length <= SUMMARY_MAX) return s
+  /*
+   * 按句末标点切句，**尽量多攒几句**但不越过上限。
+   * ⚠️ 攒而不是"只取第一句"：有些简介第一句只有十几个字
+   *    （「大三巴牌坊在中国澳门，是一座教堂留下来的前壁。」），
+   *    只取第一句的话摘要会薄得没信息量。
+   */
+  let out = ''
+  for (const p of s.split(/(?<=[。！？])/)) {
+    if (!p) continue
+    if (out.length + p.length > SUMMARY_MAX) break
+    out += p
+  }
+  if (out) return out
+  // 第一句本身就超 60 → 退到句内最后一个逗号类标点，别把句子拦腰砍断
+  const head = s.slice(0, SUMMARY_MAX)
+  const cut = Math.max(
+    head.lastIndexOf('，'), head.lastIndexOf('、'),
+    head.lastIndexOf('；'), head.lastIndexOf('：'),
+  )
+  return cut > 0 ? head.slice(0, cut + 1) : head
+}
+
+/**
+ * 机器搜的那张 → 第一条内容的**预填值**。
+ *
+ * ★★ 家长 09-26：「第一张就是默认图……帮我填好信息。」
+ *    这里就是"填好信息"那一处 —— 能确定的**全部填上**，别让家长自己去找：
+ *
+ *    · `title`    图库给的标题
+ *    · `mediaUrl` 图片地址（⚠️ 空着的话这条内容就是一张空白图）
+ *    · `credit`   图库署名 —— 外链图不能没有署名
+ *    · `summary`  从**公共简介**里截一句（`summaryFromIntro`）。
+ *                 ⚠️ 它还兼一个作用：端点 `validate()` 缺摘要会**拒收**，
+ *                    所以这里不能留空 —— 见上面那个函数的注释。
+ *                 ⚠️ **别改回 `blurb`** —— 那是按 `scene` 挑的模板，会事实出错。
+ *    · `match`    图跟地方的关系。**必须带** —— 漏了它，那张「示意图」
+ *                 在相册里就变成"真地方"了（跟 `grade` 那次同一类静默降级）。
+ *
+ * ⚠️ 没有默认图时返回 `undefined` → `addFor()` 退回"起一条空白草稿"。
+ */
+function seedFromDefaultPhoto(landmarkId) {
+  const p = defaultPhotoOf(landmarkId)
+  if (!p) return undefined
+  const lm = LANDMARKS.find((l) => l.id === landmarkId)
+  return {
+    title: p.title || '',
+    mediaUrl: p.mediaUrl || '',
+    credit: p.credit || { source: '', link: '', author: '' },
+    summary: summaryFromIntro(lm?.intro),
+    match: p.match,
+  }
+}
+
+/* ---------------- 体检 ----------------
+   ⚠️ 这些规则的**正主**是 `src/domain/travelContents.test.ts`。
+      这里只是提前告诉你，省得"存完才发现测试红"。
+      改规则时两边都要改 —— 但**以测试为准**。
+      另：保存端点里还有一遍（`vite.config.ts` 的 validate），
+      那一遍只保"能不能安全落盘"，比这里宽松。 */
+
+const EMOJI = /[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]|\u{FE0F}/u
+const halfComma = (s) => (s ?? '').includes(',')
+
+function checkAll() {
+  const out = []
+  const ids = new Set()
+  for (const c of items) {
+    if (!c.id.trim()) out.push([c, '缺 id'])
+    else if (ids.has(c.id)) out.push([c, `id「${c.id}」重复 —— 后面那条永远选不中`])
+    else ids.add(c.id)
+
+    if (!c.title.trim()) out.push([c, '缺标题'])
+    if (!c.summary.trim()) out.push([c, '缺摘要'])
+    else if (c.summary.length > 60) out.push([c, `摘要 ${c.summary.length} 字，超过 60（会撑破卡片）`])
+
+    if (c.grade && !GRADES.some((g) => g.key === c.grade))
+      out.push([c, `等级「${c.grade}」不在表里 —— 会被静默当成「顺路」`])
+
+    /*
+     * ★★ 地标是**必填**的（图片是挂在地标上的附件），所以这里分两句说：
+     *    「没填」和「填了但不存在」后果**完全一样** ——
+     *    这条内容会被 `toTravelContent()` **整条丢掉**
+     *    （`DROPPED_CONTENT_COUNT`），而丢掉是静默的：
+     *    存完界面上什么都不变，看着像"没保存上"，于是再存一遍。
+     *
+     * ⚠️ 以前这里写的是 `if (c.landmarkId && !…)` —— 空值直接跳过，
+     *    于是"没填地标"在体检里是**绿的**（而它会被丢掉）。
+     * ⚠️ 顺带：`place` / `lng` / `lat` 那三条检查也删了 ——
+     *    它们现在是从地标派生的，条目里根本没有这几个字段，
+     *    检查它们只会**恒红**（`!Number.isFinite(undefined)` 恒真）。
+     */
+    if (!c.landmarkId) out.push([c, '缺地标 —— 图片必须挂在某个景点上，否则会被整条丢掉'])
+    else if (!LANDMARKS.some((l) => l.id === c.landmarkId))
+      out.push([c, `地标 id「${c.landmarkId}」不存在 —— 这条会被整条丢掉`])
+
+    if (c.mediaUrl && !c.mediaUrl.startsWith('https://'))
+      out.push([c, '图片地址不是 https 外链'])
+    if (c.credit.source && !c.credit.link.startsWith('https://'))
+      out.push([c, '署名缺 https 出处链接'])
+
+    if (c.essay) {
+      const paras = paraCount(c.essay)
+      if (paras < 4) out.push([c, `散文只有 ${paras} 段（要 ≥ 4 段）`])
+      if (c.essay.length <= 200) out.push([c, `散文 ${c.essay.length} 字，太短（要 > 200）`])
+      if (halfComma(c.essay)) out.push([c, '散文里有半角逗号（给孩子看的一律全角）'])
+      if (EMOJI.test(c.essay)) out.push([c, '散文里有 emoji'])
+    }
+    if (halfComma(c.summary)) out.push([c, '摘要里有半角逗号'])
+    if (EMOJI.test(c.summary)) out.push([c, '摘要里有 emoji'])
+  }
+
+  /*
+   * ★★ 景点公共简介 —— **不属于任何一条内容**，所以单独一段。
+   *    ⚠️ 不能塞进上面那个 `for (const c of items)` 里：塞进去会变成
+   *       "每条内容都报一遍同一个简介问题"，同一句话说 N 遍。
+   *    ⚠️ 元组第一个槽在这里是 `null` —— 两个调用方（`renderReport` /
+   *       `$('save')`）**只用第二个槽和长度**，所以安全。
+   *    ★ "挂在不存在的地标上"这条最要紧：键打错一个字 = 这条简介
+   *      **永远不显示**，而不报错、不崩、计数也不变（跟 `fameOf()` 用 id 那次同形）。
+   */
+  for (const [id, text] of Object.entries(INTROS)) {
+    if (!text || !text.trim()) out.push([null, `简介「${id}」是空的 —— 空的应该直接删掉`])
+    else if (text.length > INTRO_MAX)
+      out.push([null, `简介「${id}」${text.length} 字，超过 ${INTRO_MAX}`])
+    else if (!LANDMARKS.some((l) => l.id === id))
+      out.push([null, `简介挂在不存在的地标「${id}」上 —— 这条永远不会显示`])
+  }
+  return out
+}
+
+/* ⚠️ 这里原来还有一个 `km()`（球面距离）—— 用来查"坐标离地标太远"。
+   坐标改成从地标派生之后，那个距离**恒等于 0**，检查成了废话，一起删了。 */
+
+/* ---------------- 渲染 ---------------- */
+
+function gradeColor(key) {
+  return (GRADES.find((g) => g.key === key) || {}).color || '#9ca3af'
+}
+
+function render() {
+  renderList()
+  renderStrip()
+  renderEditor()
+  $('dirty').hidden = !dirty
+}
+
+function renderList() {
+  const q = $('q').value.trim().toLowerCase()
+  const fg = $('fg').value
+  const onlyGap = $('onlyGap').checked
+  const box = $('list')
+  box.innerHTML = ''
+
+  if (onlyGap) {
+    // 「还没配内容的景点」—— 这是编辑器最有用的一屏：
+    // 1800 个地标里绝大多数是空的，得能一眼看出还剩哪些。
+    const used = new Set(items.map((c) => c.landmarkId).filter(Boolean))
+    const gaps = LANDMARKS.filter((l) => !used.has(l.id))
+      .filter((l) => !q || l.name.toLowerCase().includes(q) || l.id.toLowerCase().includes(q))
+    const head = document.createElement('div')
+    head.className = 'empty'
+    head.textContent = `还没配内容的景点：${gaps.length} 个（点一下就能给它新建一条）`
+    box.appendChild(head)
+    for (const l of gaps.slice(0, 300)) {
+      const b = document.createElement('button')
+      b.className = 'row gap'
+      b.innerHTML = `<div class="t">${esc(l.name)}</div>
+        <div class="m">${esc(l.province)} · ${esc(l.id)}</div>`
+      b.onclick = () => addFor(l.id)
+      box.appendChild(b)
+    }
+    if (gaps.length > 300) {
+      const more = document.createElement('div')
+      more.className = 'empty'
+      more.textContent = `…还有 ${gaps.length - 300} 个，用搜索缩小范围`
+      box.appendChild(more)
+    }
+    return
+  }
+
+  // 按地标分组，一个景点有多条的排在一起（这正是「一个景点多张图」）
+  const shown = items
+    .map((c, i) => ({ c, i }))
+    .filter(({ c }) => {
+      if (fg && c.grade !== fg) return false
+      if (!q) return true
+      /*
+       * ⚠️ 搜"景点名"要**现场查地标**（`landmarkOf`），不能读 `c.place` ——
+       *    那个字段已经从条目里删了（它属于地标）。留着读的话，
+       *    搜"八达岭"会一条都搜不到，而搜索框看着完全正常。
+       */
+      return (
+        c.title.toLowerCase().includes(q) ||
+        (landmarkOf(c)?.name || '').toLowerCase().includes(q) ||
+        (c.landmarkId || '').toLowerCase().includes(q)
+      )
+    })
+
+  if (shown.length === 0) {
+    const d = document.createElement('div')
+    d.className = 'empty'
+    d.textContent = items.length === 0 ? '一条内容都没有' : '没有匹配的条目'
+    box.appendChild(d)
+    return
+  }
+
+  const byLandmark = new Map()
+  for (const s of shown) {
+    const k = s.c.landmarkId || '(没关联地标)'
+    if (!byLandmark.has(k)) byLandmark.set(k, [])
+    byLandmark.get(k).push(s)
+  }
+
+  for (const [lmId, group] of byLandmark) {
+    const lm = LANDMARKS.find((l) => l.id === lmId)
+    const head = document.createElement('div')
+    head.className = 'empty'
+    head.textContent = `${lm ? lm.name : lmId} · ${group.length} 条`
+    box.appendChild(head)
+    for (const { c, i } of group) {
+      const b = document.createElement('button')
+      b.className = 'row' + (i === sel ? ' on' : '')
+      b.innerHTML =
+        `<div class="t">${esc(c.title || '(没标题)')}` +
+        (c.grade ? `<span class="chip" style="background:${gradeColor(c.grade)}">${esc(c.grade)}</span>` : '') +
+        `</div><div class="m">${
+          lm ? esc(lm.name) : `⚠️ 地标「${esc(c.landmarkId || '空')}」不存在`
+        } · ${c.mediaUrl ? '有图' : '还没填图'}</div>`
+      b.onclick = () => { sel = i; render() }
+      box.appendChild(b)
+    }
+  }
+}
+
+function esc(s) {
+  return String(s ?? '').replace(/[&<>"]/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]))
+}
+
+/* ---------------- 「这一组的图」条带 ----------------
+
+   ★★ 它要回答三个问题（抽屉里藏掉左边列表之后就没人回答了）：
+      ① 这个景点**一共几张**？  ② 我**正在改哪一张**？  ③ 怎么**再加一张**？
+
+   ★ 为什么不复用左边那份 `renderList()`：那个是"全库所有内容"的列表
+     （带搜索、等级筛选、缺口视图），在抽屉里是多余的；
+     而这里只要**当前这一个景点**的那几张，而且要是**图**的排法。
+   ------------------------------------------------------------ */
+
+function renderStrip() {
+  if (!EMBED) return
+  const box = $('strip')
+  box.hidden = false
+
+  const mine = []
+  items.forEach((c, i) => { if (c.landmarkId === FOCUS_ID) mine.push({ c, i }) })
+
+  /*
+   * ★★ 家长 09-26 两轮改口径：
+   *    ① 「抽屉里 景点图 至少要有一张吧。」
+   *    ② 「默认图就是第一张图。不需要默认图啊，我里面没有默认图的概念。」
+   *
+   *    ➜ 条带现在**只画 `items` 里的条目**，一条都不多画。
+   *      机器搜的那张之所以看得见，是因为 `boot()` 已经把它
+   *      **当成第一条填进 `items` 了**（见 `seedFromDefaultPhoto`）——
+   *      不再是"另外画一个只读方块"。
+   *
+   *    ⚠️⚠️ 所以这里**不许**再长出"只在没有图时才画"的分支 ——
+   *      那正是"默认图"这个概念能复活的地方（`def` / `hasPhoto` 那两个
+   *      变量连同 `defaultTileHTML()` 已经删掉了，别再写回来）。
+   */
+  box.innerHTML =
+    `<span class="scap">这个景点的图 · <b>${mine.length}</b> 张` +
+    (mine.length === 0 ? '　点右边那个虚线方块加第一张' : '') +
+    '</span>' +
+    mine.map(({ c, i }) => tileHTML(c, i)).join('') +
+    `<button type="button" class="tile add" id="stripAdd" title="给这个景点再加一张图">
+       <span class="th"><span class="plus">＋</span><span class="lbl">新建一张</span></span>
+       <span class="t1">给这个景点加图</span>
+       <span class="t2">加完就能写它自己的散文</span>
+     </button>`
+}
+
+function tileHTML(c, i) {
+  const gm = GRADES.find((g) => g.key === c.grade) || { key: '未标', color: '#9ca3af' }
+  /*
+   * ⚠️ 2026-09-25：这里原来有一个 `isPhoto = c.type === 'photo'` 分支 ——
+   *    非图片类型（音乐 / 格言 / 笑话 / 故事 / 视频）走占位块，
+   *    免得把音频地址塞进 <img> 变成一张碎图。
+   *    现在内容包里**只有图片附件**，那个分支连同 `type` 一起删了。
+   *    ⚠️ 剩下这个"没填地址"的分支**要留** —— 新建的那一张本来就是空的。
+   * ⚠️ `onerror` 把**父节点**标成 bad 再靠 CSS 换成占位文字：
+   *    直接 `this.hidden = true` 会留下一个空白方块，看不出是"图挂了"还是"本来就没图"。
+   */
+  /*
+   * ★★ 等级色条**必须拼进 `.th` 里面**，不能当 `.tile` 的兄弟节点。
+   *    原因见 CSS 里 `.tile .gbar` 那段 —— 兄弟节点会一路升到初始包含块，
+   *    画成一条横贯整个抽屉的 4px 绿线（09-25 家长报的就是它）。
+   *    ⚠️ 两个分支都要带：连"还没填图"的占位块也显示等级色，
+   *       否则新加的那一张看着像"什么等级都没定"。
+   *    ⚠️ `.th` 是 `overflow:hidden` + `border-radius:10px`
+   *       → 色条的下两个角会被裁圆，正好贴着方块，不用额外处理。
+   */
+  const bar = `<span class="gbar" style="background:${gm.color}"></span>`
+  /*
+   * ★★ 家长 09-26：机器搜的那张现在**就是第一条内容**（见 `seedFromDefaultPhoto`），
+   *    所以「示意图」这个角标要从原来那个只读方块**搬到这里来** ——
+   *    不然那张顶替图在条带里就**看不出是顶替图**了。
+   * ⚠️ 只认**显式** `'scene'`：`undefined`（家长手挑的图）**不许**标成"示意图" ——
+   *    那等于替家长声称了一件他从没说过的事（见 `TravelContent.match` 的注释）。
+   */
+  const mtag = c.match === 'scene' ? '<span class="mtag">示意图</span>' : ''
+  const th = c.mediaUrl
+    ? `<span class="th"><img src="${esc(c.mediaUrl)}" alt="" loading="lazy"
+         onerror="this.parentNode.classList.add('bad')"><span class="fb">图挂了</span>${bar}${mtag}</span>`
+    : `<span class="th bad"><span class="fb">还没填图</span>${bar}</span>`
+
+  // 这一张自己的状态：有没有散文。★ 家长最想知道"哪几张还没写"
+  const todo = c.essay && c.essay.trim()
+    ? '有散文'
+    : '<span class="todo">还没散文</span>'
+
+  return `<button type="button" class="tile${i === sel ? ' on' : ''}" data-i="${i}"
+      title="${esc(c.title || '(还没起标题)')}">
+    ${th}
+    <span class="t1">${esc(c.title || '(还没起标题)')}</span>
+    <span class="t2">${esc(gm.key)} · ${todo}</span>
+  </button>`
+}
+
+/* 条带的点击 —— 事件委托（条带每次重画，不给每个方块挂 onclick） */
+$('strip').addEventListener('click', (e) => {
+  if (e.target.closest('#stripAdd')) {
+    addFor(FOCUS_ID)
+    /*
+     * ★ 新加的这张，第一件事就是贴图的地址 —— 直接把光标放过去。
+     *   否则家长加完一张，光标停在原处，还得自己找那个输入框。
+     * ⚠️ 只在**抽屉里**这么做：单独打开时加了条目可能想先改标题。
+     */
+    const el = $('editor').querySelector('[data-k="mediaUrl"]')
+    if (el) { el.focus(); el.scrollIntoView({ block: 'center' }) }
+    return
+  }
+  const t = e.target.closest('.tile[data-i]')
+  if (!t) return
+  // 切换只是在换"表单显示哪一条"，改动都还在 items 里，不会丢
+  sel = Number(t.dataset.i)
+  render()
+})
+
+/**
+ * 散文的段数。
+ *
+ * ★★ 只许有**这一个**函数算它。
+ *    以前「体检面板」和「正文统计」各算各的：一个直接 `split('\n\n')`、
+ *    另一个先 `filter(p => p.trim())` —— 于是**结尾多一个空行**时，
+ *    统计里显示「段数 4」是绿的，体检里却说「只有 3 段」。
+ *    两个数字互相打架，而两边都不报错。
+ */
+function paraCount(text) {
+  return String(text ?? '').split('\n\n').filter((p) => p.trim()).length
+}
+
+/**
+ * 散文的三个统计 —— **原地**更新，不重渲染。
+ *
+ * ★ 为什么必须模块级：`draftEssay()`（AI 起稿）要调它。
+ *   它原来嵌在 `renderEditor` 里，模块级函数根本看不见。
+ * ⚠️ 原地更新（而不是 renderEditor()）是为了不打乱光标 —— 见下面那段注释。
+ */
+function updateEssayMeta() {
+  const box = $('editor')
+  const text = items[sel]?.essay || ''
+  const paras = paraCount(text)
+  const p = box.querySelector('#mParas')
+  const ch = box.querySelector('#mChars')
+  const cm = box.querySelector('#mComma')
+  if (p) { p.textContent = String(paras); p.className = paras >= 4 ? '' : 'bad' }
+  if (ch) { ch.textContent = String(text.length); ch.className = text.length > 200 ? '' : 'bad' }
+  if (cm) {
+    const has = halfComma(text)
+    cm.textContent = has ? '有' : '没有'
+    cm.className = has ? 'bad' : ''
+  }
+}
+
+/**
+ * 公共简介的字数计数 —— **原地**更新，不重渲染。
+ *
+ * ★ 模块级（**不是** `renderEditor` 里的内嵌函数）—— 理由跟 `updateEssayMeta`
+ *   一模一样：内嵌的话，模块级函数调不到它，一调就是
+ *   `ReferenceError: updateIntroMeta is not defined`，而那个错**不崩页面**，
+ *   只是计数不更新（看着像"没生效"，其实是真的没生效）。
+ * ⚠️ 用 `document.querySelector` 而不是 `$('editor')` 里找 ——
+ *    信息条在 embed 下挂在 `#lmslot`（**在 `#editor` 外面**）。
+ */
+function updateIntroMeta() {
+  const el = document.querySelector('[data-lm="intro"]')
+  const out = document.querySelector('[data-lm="intro-count"]')
+  if (!el || !out) return
+  const n = el.value.length
+  out.textContent = `${n} / ${INTRO_MAX}`
+  out.classList.toggle('bad', n > INTRO_MAX)
+}
+
+/**
+ * 「这个景点」只读信息条 —— 名称 / 省市 / 经纬度 / 热度 / 知名度 / 官方称号。
+ *
+ * ★★ 为什么这几个字段**只读**：它们属于**地标**，不属于这一张图。
+ *    原来每条内容自己存 `place` / `lng` / `lat`，于是**同一个景点写了两套坐标**
+ *    —— 八达岭 116.0167/40.3563 和 116.02/40.35，西湖也各一套，
+ *    而且两套都不报错、界面上也看不出来。
+ *    改成派生之后（`domain/travelContents.ts` 的 `toTravelContent()`），
+ *    这里只**显示**地标那一份。要改就去改地标表 —— 那才是它唯一的家。
+ *
+ * ⚠️ 地标查不到时**必须红着说清楚**：那意味着这条内容存下去会被
+ *    `toTravelContent()` **整条丢掉**（`DROPPED_CONTENT_COUNT`），
+ *    而丢掉是静默的 —— 存完界面上什么都不变。
+ *
+ * ★★ 2026-09-26 起，这张卡片里多了**一个可编辑的字段**：景点公共简介。
+ *    它跟上面那些只读字段**不是一回事**，别把它也当成"只能去改地标表"：
+ *      · 名称 / 省市 / 经纬度 / 热度 / 知名度 / 称号 —— **派生自地标表**，只读；
+ *      · 公共简介 —— **家长自己写的**，存在 `landmark-intros.json`，
+ *        保存走 `INTRO_API` 那个端点。
+ *    ⚠️ 两条路别混：简介**不是**地标数据的一部分，
+ *       写回 `landmarks-*.json` 会被下一次生成冲掉（那些是脚本产物）。
+ */
+function landmarkInfoHTML(c) {
+  const lm = landmarkOf(c)
+  if (!lm) {
+    /*
+     * ⚠️ 这一支**不能**复用 `.lm-meta`：那个是 `display:flex`，
+     *    而这里的子节点是文本 + `<b>` + `<br>` —— flex 会把每一段文字
+     *    变成匿名 flex item **横着排**，多行警告会糊成一行。
+     *    ➜ 单给一个 `.lm-warn` 当块级容器。
+     */
+    return `<div class="lminfo bad">
+      <div class="lm-head"><span class="lm-name">⚠️ 这个景点找不到</span></div>
+      <div class="lm-warn">地标 id <b>${esc(c.landmarkId || '（空）')}</b> 在地标表里不存在 ——
+        存下去这条<b>会被整条丢掉</b>，小鸟永远带不回来。<br>
+        到左边勾上「只看还没有内容的景点」，点一个景点重新起一条。</div></div>`
+  }
+  /*
+   * ⚠️ 「热度」和「官方称号」都可能**真的没有**，而且都**不是数据不全**：
+   *    · 热度是来源站的平台分 —— 世界景点那 231 条和广东 OSM 那批都没有；
+   *    · 官方称号只有评上 A 级景区的才有 —— 库里还有山峰 / 海滩 / 步行街 /
+   *      古村这些**本来就不是景区**的地方。
+   *    ★ 没有就显示「—」，**别写成「暂无评级」**：那会让人以为"少了个值"，
+   *      然后去补一个本来就不该存在的值。
+   * ⚠️ 知名度**一定有**（`toLandmark()` 用 `fameOf()` 兜底「地方知名」），
+   *    所以这里不用判空；写 `|| '—'` 只是为了万一。
+   */
+  const heat = typeof lm.heat === 'number' ? lm.heat.toFixed(1) : '—'
+  const where = [lm.province, lm.city].filter(Boolean).join(' · ') || '—'
+  /*
+   * ★★ 每个值上挂一个 `data-lm="…"`。
+   *
+   *    为什么：两个 e2e 守卫要断言"信息条里确实有名称 / 经纬度 / 知名度"，
+   *    而它们只能从 iframe 里 `evaluate` 出来读 DOM。靠 `innerText` 去正则抠
+   *    「地标 id」这种**带空格的中文标签**非常脆（多一个空格就抠不到，
+   *    而且抠不到时断言会**空过**——看着是绿的）。
+   *    ⚠️ 这些属性是**测试的接口**，改名就等于把守卫改成空过 —— 别顺手删。
+   *    ⚠️ 2026-09-25 改版删掉了「名称 / 省市 / 经纬度」这些**字面标签**，
+   *       于是守卫也**必须**跟着改成读 `data-lm`（原来它还断言 innerText 里含那六个词 ——
+   *       那种断言在"标签被删掉"时红，在"值没填上"时反而可能绿）。
+   *       换个说法：**标签是给人看的、会变；钩子是给测试用的、不许变。**
+   */
+  /*
+   * ★★ 景点公共简介（09-26 家长：「旅游景点 没有公共简介，字数不超过300」）。
+   *
+   *    它是**地标级**的：一个景点一条，跟这个景点配了几张图**无关**。
+   *    ➜ 所以它住在这张卡片里（"公共的东西都在这张卡片里"），
+   *      **不放进下面「这张图」那些字段**里 —— 放进去就成了"这张图的简介"，
+   *      同一个景点配两张图就会冒出两条，哪条生效看哪张被选中。
+   *
+   *    ⚠️ 值取 `INTROS[lm.id]`（**fetch 来的那一份**），不取 `lm.intro` ——
+   *       `lm.intro` 是 Vite 载入时读进去的**模块快照**，保存后不会自己更新。
+   *       用它的话就是"存完再看还是旧文案"，而且**不报错**。
+   *    ⚠️ `data-lm="intro"` / `data-lm="intro-count"` 是**测试的钩子**，
+   *       改名等于把守卫改成空过（跟上面那排 `data-lm` 同一条规矩）。
+   */
+  const intro = INTROS[lm.id] ?? ''
+  return `<div class="lminfo">
+    <div class="lm-head">
+      <span class="lm-name" data-lm="name">${esc(lm.name)}</span>
+      <span class="lm-pill" data-lm="fame" title="知名度">${esc(lm.fame || '—')}</span>
+      <span class="lm-pill${lm.rating ? '' : ' none'}" data-lm="rating"
+        title="官方称号（只有评上 A 级景区的才有，没有就是「—」）">${esc(lm.rating || '—')}</span>
+    </div>
+    <div class="lm-meta">
+      <span data-lm="where" title="省市">${esc(where)}</span>
+      <span class="mono" data-lm="lnglat" title="经纬度">${lm.lng.toFixed(4)}, ${lm.lat.toFixed(4)}</span>
+      <span title="来源站的平台热度分">热度 <b data-lm="heat">${esc(heat)}</b></span>
+      <span class="mono lm-id" data-lm="landmarkId" title="地标 id">${esc(lm.id)}</span>
+    </div>
+    <div class="lm-intro">
+      <div class="lm-intro-head">
+        <label for="lmIntro">景点公共简介</label>
+        <span class="lm-intro-count${intro.length > INTRO_MAX ? ' bad' : ''}"
+          data-lm="intro-count">${intro.length} / ${INTRO_MAX}</span>
+      </div>
+      <textarea id="lmIntro" data-lm="intro" rows="4"
+        placeholder="这是什么地方、孩子到了会看见什么（≤${INTRO_MAX} 字）">${esc(intro)}</textarea>
+      <div class="lm-intro-hint">这个景点<b>公共</b>的，跟配了几张图无关。留空就退回数据里那句一句话介绍。</div>
+    </div></div>`
+}
+
+function renderEditor() {
+  const box = $('editor')
+  const slot = $('lmslot')
+  const c = items[sel]
+  if (!c) {
+    box.innerHTML = `<div class="empty">左边选一条，或者勾上「只看还没有内容的景点」、点一个景点起一条。</div>`
+    // ⚠️ 没选中内容时这块必须一起清掉 —— 否则最上面会留着**上一条**的景点信息，
+    //    看着像"当前这条就是这个景点"（而这正是最容易被当成真的那种假话）。
+    slot.hidden = true
+    slot.innerHTML = ''
+    renderReport()
+    return
+  }
+
+  const paras = paraCount(c.essay)
+  /*
+   * ★★ 版面顺序（09-25 家长两次要求：「放到顶上去」→「往 上放，这个是**旅游点公共的**」）：
+   *    ① **抽屉里**：信息条挂在 `#lmslot`，排在「这个景点的图」条带**上面** ——
+   *       先交代"在给哪个地方写"，再是这个景点的图，最后才是这一张图自己的字段。
+   *    ② **单独打开**：`#lmslot` 是隐藏的（那时左栏是地标列表，通栏会读成页头），
+   *       信息条仍然是表单 `.grid` 的第一格。
+   *    ⚠️ 两份的**内容**都来自同一个 `landmarkInfoHTML(c)` —— 没有第二份实现。
+   *       守卫断言"页面上任何时刻只有一个 `.lminfo`"，把"两份都渲染了"直接钉死。
+   *    ⚠️ 别把它塞到 `.grid` 的**后面**或当成某个 `.f` 的 hint ——
+   *       它是"这一段的主体"，不是附属说明。
+   */
+  const infoHTML = landmarkInfoHTML(c)
+  if (EMBED) {
+    slot.innerHTML = infoHTML
+    slot.hidden = false
+  } else {
+    slot.hidden = true
+    slot.innerHTML = ''
+  }
+
+  box.innerHTML = `
+  <div class="grid">
+    ${EMBED ? '' : infoHTML}
+
+    <div class="cap2">这张图</div>
+
+    <div class="f"><label>id（唯一，别重复）</label>
+      <input data-k="id" value="${esc(c.id)}"></div>
+    <div class="f"><label>标题（这一张自己的名字）</label><input data-k="title" value="${esc(c.title)}"></div>
+
+    <div class="f full"><label>等级（只做标注，不影响掉落）</label>
+      <div class="grades" id="grades">${GRADES.map((g) =>
+        `<button type="button" data-g="${esc(g.key)}" class="${c.grade === g.key ? 'on' : ''}"
+          style="${c.grade === g.key ? `background:${g.color}` : ''}">${esc(g.key)}</button>`).join('')}
+        <button type="button" data-g="" class="${c.grade ? '' : 'on'}"
+          style="${c.grade ? '' : 'background:#9ca3af'}">（不标）</button>
+      </div></div>
+
+    <div class="f full"><label>图片地址（必须是 https 外链 —— 不打包图片，只存地址）</label>
+      <input data-k="mediaUrl" value="${esc(c.mediaUrl)}"></div>
+    <div class="f"><label>署名 · 图库名</label><input data-k="credit.source" value="${esc(c.credit.source)}"></div>
+    <div class="f"><label>署名 · 出处链接</label><input data-k="credit.link" value="${esc(c.credit.link)}"></div>
+    <div class="f"><label>署名 · 作者（查不到就留空，别编）</label><input data-k="credit.author" value="${esc(c.credit.author)}"></div>
+    <div class="f"><label>一句话摘要（≤60 字）</label><input data-k="summary" value="${esc(c.summary)}"></div>
+
+    <div class="f full">
+      <div class="lbl-row">
+        <label>散文正文（空行分段，不写 Markdown）</label>
+        <button type="button" class="btn" id="aiEssay" title="让 AI 起一稿，你改完再保存">让小鸟写一篇</button>
+      </div>
+      <textarea data-k="essay" rows="14">${esc(c.essay)}</textarea>
+      <div class="meta">
+        <span>段数 <b id="mParas" class="${paras >= 4 ? '' : 'bad'}">${paras}</b> / 要 ≥ 4</span>
+        <span>字数 <b id="mChars" class="${(c.essay || '').length > 200 ? '' : 'bad'}">${(c.essay || '').length}</b> / 要 &gt; 200</span>
+        <span>半角逗号 <b id="mComma" class="${halfComma(c.essay) ? 'bad' : ''}">${halfComma(c.essay) ? '有' : '没有'}</b></span>
+      </div></div>
+  </div>
+
+  <div class="sec">
+    <h2>操作</h2>
+    <button class="btn" id="dup">复制这一条</button>
+    <button class="btn danger" id="del">删除这一条</button>
+  </div>`
+
+  /*
+    ★★ 事件绑定 —— 这里有个必须守住的规矩：**打字时不许重渲染编辑器**。
+
+    第一版是"每敲一个字就 renderEditor()"，看着能跑，实际上
+    textarea 会被整个替换掉 → **光标每敲一下都跳走**，
+    散文根本没法连续输入。而这类问题在截图里完全看不出来。
+
+    ➜ 所以：输入类字段一律**原地改**（更新统计、脏标记、体检面板），
+      只有"离散动作"（选等级、换地标、增删）才重渲染。
+  */
+  /*
+   * ⚠️ 2026-09-25：这个集合里原来还有 `place` / `landmarkId` / `type`，
+   *    现在**只剩 `title`** —— 那三个字段已经不是输入框了：
+   *      · `place` / `lng` / `lat` 从地标派生（信息条里只读显示）
+   *      · `landmarkId` 由「从哪个景点进来的」决定，不给手改
+   *      · `type` 搬去了事件系统
+   *    ★ 留着它们不会报错，只是永远命中不了 —— 死代码。
+   */
+  const affectsList = new Set(['title'])
+
+  for (const el of box.querySelectorAll('[data-k]')) {
+    const path = el.dataset.k.split('.')
+    el.oninput = () => {
+      const cur = items[sel]
+      /*
+       * ⚠️ 这里原来有一句 `el.type === 'number' ? Number(el.value) : el.value`。
+       *    数字输入框（经度 / 纬度）删掉之后它没有用户了，一起删。
+       *    ★ 以后再往这个表单加数字字段，记得把它加回来 ——
+       *      不然存下去的是字符串，而 JSON 里 `"lat": "40.35"` 不会报错，
+       *      只会让 `haversineKm` 算出 NaN。
+       */
+      if (path.length === 2) cur[path[0]][path[1]] = el.value
+      else cur[path[0]] = el.value
+
+      setDirty(true)
+      if (path[0] === 'essay') updateEssayMeta()
+      if (affectsList.has(path[0])) renderList()
+      renderReport()
+    }
+  }
+
+  /*
+   * ★★ 景点公共简介：**原地改，不重渲染**（同上面那条规矩）。
+   *
+   *    ⚠️ 它是**地标级**的，所以写进 `INTROS[地标 id]`，**不是** `items[sel].xxx`。
+   *    ⚠️ 空值**删键**，不留一个 `''` —— 留着的后果是"看着像有简介"，
+   *       点进去一片空白（端点那边也会因此拒收）。
+   *    ⚠️ 一定要 `setDirty(true)` —— 那是**唯一**会把"有未保存改动"
+   *       告诉外面那一页的出口（见 `setDirty` 的注释）。漏了它，
+   *       家长点「关闭」抽屉时刚写好的简介**一声不响就没了**。
+   */
+  /*
+   * ⚠️⚠️ 必须从 `document` 找，**不能**用 `box`（= `#editor`）。
+   *
+   *    embed 下信息条挂在 `#lmslot` —— 那是在 `#editor` **外面**的
+   *    （见 `landmarkInfoHTML` 上面那段版面说明）。
+   *    用 `box.querySelector` 的话，抽屉里**永远找不到这个框**：
+   *    `oninput` 根本没绑上 → 打字不亮脏标记、计数不动、
+   *    而且 `INTROS` 压根没改 → 保存也不会去写简介。
+   *    症状是"框能打字，但怎么改都不生效"，**不报错、不崩、界面看着正常**。
+   *    （实测：`_verify-travel-editor` 的 11c 抓到的就是这个 ——
+   *      计数一直停在载入时那个数，红在"打到上限"那一条。）
+   *    ⚠️ 页面上只有一个 `.lminfo`（有守卫钉着），所以 `document` 找是安全的。
+   */
+  const introEl = document.querySelector('[data-lm="intro"]')
+  if (introEl) {
+    const lmId = landmarkOf(items[sel])?.id
+    introEl.oninput = () => {
+      if (!lmId) return
+      if (introEl.value.trim()) INTROS[lmId] = introEl.value
+      else delete INTROS[lmId]
+      setDirty(true)
+      updateIntroMeta()
+      renderReport()
+    }
+  }
+
+  /*
+    ⚠️ `updateEssayMeta` **不在这里**（虽然它一开始就写在这儿）。
+       它原来是 renderEditor 的**内嵌函数**，而 `draftEssay()`（AI 起稿）
+       是模块级的 —— 它调不到内嵌的那个，一调就是
+       `ReferenceError: updateEssayMeta is not defined`。
+       ⚠️⚠️ 这个错**不崩页面**：散文已经填进编辑框了，只是统计不更新、
+       提示条显示成"小鸟写不成"。看着像网络问题，其实是作用域问题。
+       ➜ 它现在是模块级的，见上面 `paraCount` 旁边。
+  */
+
+  /*
+   * ⚠️ 这里原来还有一个 `updateLandmarkHint()` —— 挂在「关联地标」那个输入框下面，
+   *    一边打字一边告诉家长"这个 id 有效 / 不存在"。
+   *    `landmarkId` 不再可编辑之后它没有用户了，一起删。
+   * ★ 它干的事**没有丢**：`landmarkInfoHTML()` 在信息条里说同一件事，
+   *   而且说得更全（名称 / 省市 / 经纬度 / 热度 / 知名度 / 官方称号），
+   *   查不到地标时整条变红。
+   */
+  for (const b of box.querySelectorAll('#grades button')) {
+    b.onclick = () => {
+      items[sel].grade = b.dataset.g
+      setDirty(true)
+      renderEditor()
+      renderList()
+    }
+  }
+  box.querySelector('#dup').onclick = () => {
+    const copy = JSON.parse(JSON.stringify(items[sel]))
+    copy.id = `${copy.id}-copy`
+    copy.title = `${copy.title}（副本）`
+    items.splice(sel + 1, 0, copy)
+    sel += 1
+    setDirty(true)
+    render()
+  }
+  box.querySelector('#del').onclick = () => {
+    if (!confirm(`删掉「${items[sel].title || items[sel].id}」？保存后才会真的生效。`)) return
+    items.splice(sel, 1)
+    sel = Math.min(sel, items.length - 1)
+    setDirty(true)
+    render()
+  }
+
+  box.querySelector('#aiEssay').onclick = () => draftEssay()
+
+  renderReport()
+}
+
+function renderReport() {
+  let box = $('report')
+  if (!box) {
+    box = document.createElement('div')
+    box.id = 'report'
+    $('editor').appendChild(box)
+  }
+  const bad = checkAll()
+  if (bad.length === 0) {
+    box.className = 'report ok'
+    box.textContent = `体检通过 —— ${items.length} 条内容都合规。`
+    return
+  }
+  box.className = 'report bad'
+  const uniq = [...new Set(bad.map(([, m]) => m))]
+  box.innerHTML = `体检有 <b>${bad.length}</b> 处问题（${uniq.length} 类）。⚠️ 这些规则的
+    <b>正主是 <code>travelContents.test.ts</code></b>，这里只是提前告诉你：<ul>${
+    uniq.slice(0, 12).map((m) => `<li>${esc(m)}</li>`).join('')}</ul>`
+}
+
+/* ---------------- AI 起稿：「让小鸟写一篇」 ----------------
+
+   ★★ 这一段有三条规矩，缺一条都会出事：
+
+   ① **只填进编辑框，不落盘。**
+      AI 写的东西必须过家长的眼睛。生成完只写进 `items[sel].essay`
+      和那个 textarea、把脏标记亮起来 —— 家长改完、看过，
+      自己点「保存到文件」，它才真的进内容包。
+
+   ② **密钥不落盘。**
+      只进 sessionStorage（关掉标签页就没了），并且只发给本机的 dev 端点，
+      由它转发给服务商。这个页面**永远不直接调服务商** ——
+      密钥会暴露在网页里（F12 就能看见），而且 CORS 多半会被拦。
+
+   ③ **散文是纯文本，不是 JSON。**
+      半角逗号 / emoji / 段落数这些"形状"问题在端点那边顺手收拾掉了，
+      并回一串 notes 说明改了什么。**内容本身一个字都不替它改。**
+   ------------------------------------------------------------ */
+
+/** 弹一次密钥输入框。返回密钥；取消返回 '' */
+function askKey() {
+  return new Promise((resolve) => {
+    const dlg = $('keydlg'), inp = $('keyin'), err = $('keyerr')
+    inp.value = ''
+    err.hidden = true
+    dlg.hidden = false
+    inp.focus()
+
+    const done = (v) => {
+      dlg.hidden = true
+      // ⚠️ 必须摘掉：keydown 是挂在 document 上的（见下），
+      //    不摘的话每弹一次就多挂一个，第二次按 Esc 会触发两遍。
+      document.removeEventListener('keydown', onDocKey)
+      dlg.onclick = null
+      $('keyok').onclick = $('keycancel').onclick = null
+      if (v && $('keysave').checked) sessionStorage.setItem(KEY_STORE, v)
+      resolve(v)
+    }
+    const submit = () => {
+      const v = inp.value.trim()
+      // ⚠️ 不许"空着也算取消" —— 那会让人以为按钮坏了
+      if (!v) { err.textContent = '密钥不能为空'; err.hidden = false; return }
+      done(v)
+    }
+    /*
+     * ★★ Esc / Enter 挂在 **document** 上，不是挂在输入框上。
+     *
+     *   挂输入框上的话：家长先点了一次「开始写」（空值报错），
+     *   焦点就从输入框跑到了按钮上 —— 这时按 Esc **一点反应都没有**，
+     *   弹窗关不掉，看着像页面卡死。（实测就是这样，见 verify 脚本第 8 节。）
+     */
+    const onDocKey = (e) => {
+      if (e.key === 'Escape') { e.preventDefault(); done('') }
+      else if (e.key === 'Enter') { e.preventDefault(); submit() }
+    }
+    document.addEventListener('keydown', onDocKey)
+    // 点灰色背景也能关 —— 多一个出口，少一次"关不掉"
+    dlg.onclick = (e) => { if (e.target === dlg) done('') }
+    $('keyok').onclick = submit
+    $('keycancel').onclick = () => done('')
+  })
+}
+
+async function draftEssay() {
+  const c = items[sel]
+  if (!c) return
+  const btn = $('editor').querySelector('#aiEssay')
+  const lm = landmarkOf(c)
+
+  if (!AI_DEFAULTS.baseUrl) {
+    toast('读不到 AI 默认配置（domain/ai.ts 没载进来）—— 刷新一下试试', true)
+    return
+  }
+  /*
+   * ⚠️ 这里原来是 `if (!c.place.trim() && !lm)` —— 因为"地名"当时可以手填。
+   *    现在 `place` 是从地标派生的，没地标就没地名，所以只剩一句判据。
+   *    ★ 提示语跟着改：以前让人"先填地名"，而那个输入框已经不存在了。
+   */
+  if (!lm) {
+    toast('这条内容没关联到景点 —— 小鸟得知道写哪儿', true)
+    return
+  }
+  if (c.essay.trim() && !confirm('这一条已经有散文了，让小鸟重写会盖掉现在这篇。继续？')) return
+
+  let key = sessionStorage.getItem(KEY_STORE) || AI_DEFAULTS.apiKey || ''
+  if (!key) {
+    key = await askKey()
+    if (!key) return
+  }
+
+  btn.disabled = true
+  const label = btn.textContent
+  btn.textContent = '小鸟正在写…'
+  try {
+    const res = await fetch(ESSAY_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        /*
+         * ⚠️ 2026-09-25：`place` 与 `textContent` 都从这里删了。
+         *    · `place` 现在等于 `landmarkName`（派生），传两遍没意义；
+         *    · `textContent` 属于事件系统，内容包里没有"正文"可给。
+         *    ➜ 端点那边（`vite.config.ts` 的 `DraftBody`）也一起删了，
+         *      两边必须同时改：只删一边的话，另一端会收到一个永远为空的值。
+         */
+        landmarkName: lm.name,
+        province: lm.province,
+        summary: c.summary,
+        baseUrl: AI_DEFAULTS.baseUrl,
+        model: AI_DEFAULTS.model,
+        apiKey: key,
+      }),
+    })
+    const out = await res.json()
+    if (!out.ok) {
+      const why = (out.errors || []).join('；') || '不知道为啥'
+      // 密钥不对就把它忘掉 —— 别让下一次还拿着错的去撞
+      if (/密钥|api key|401|403/i.test(why)) sessionStorage.removeItem(KEY_STORE)
+      toast(`小鸟没写成：${why}`, true)
+      return
+    }
+
+    // ★ 只写进编辑框（规矩①）—— 保存是家长的事
+    c.essay = out.essay
+    const ta = $('editor').querySelector('[data-k="essay"]')
+    if (ta) ta.value = out.essay
+    setDirty(true)
+    updateEssayMeta()
+    renderReport()
+
+    const took = out.ms < 1000 ? `${out.ms} 毫秒` : `${Math.round(out.ms / 1000)} 秒`
+    const notes = (out.notes || []).length > 0 ? `顺手改了：${out.notes.join('；')}。` : ''
+    toast(`小鸟写好了 ${out.essay.length} 字，用了 ${took}。${notes}请你改一改，再点「保存到文件」。`)
+  } catch (e) {
+    toast(`小鸟写不成：${String(e)} —— 这个页面必须通过 dev server 打开`, true)
+  } finally {
+    btn.disabled = false
+    btn.textContent = label
+  }
+}
+
+/**
+ * 「帮我填好信息」里的那半句："连散文也帮我起稿"。
+ *
+ * ★★ 家长 09-26 定的。
+ *
+ * ⚠️⚠️ 三条护栏，一条都不能松：
+ *
+ *  ① **绝不弹密钥框**。`draftEssay()` 在没有密钥时会 `await askKey()` ——
+ *     那是给"用户主动点按钮"设计的。要是打开一个景点就蹦一个密钥弹窗，
+ *     那是**惊吓**不是帮忙（家长还不知道它为什么蹦出来）。
+ *     所以这里先查一遍密钥：没有就**静静地什么都不做**，
+ *     把「让小鸟写一篇」那个按钮留在那儿，让他自己点。
+ *
+ *  ② **每个景点只自动起一次**。不然来回点几个景点、关掉再打开，
+ *     就会一直在花钱，而家长完全看不出来。
+ *
+ *  ③ 只在**刚用机器搜的那张图起了第一条**时才走这条路（调用点见 `boot()`）。
+ *     已经有散文的、家长自己建的条目，一概不碰。
+ */
+const AUTO_DRAFTED = new Set()
+async function autoDraftIfPossible(landmarkId) {
+  if (!landmarkId || AUTO_DRAFTED.has(landmarkId)) return
+  const c = items[sel]
+  if (!c || c.landmarkId !== landmarkId || c.essay.trim()) return
+  if (!AI_DEFAULTS.baseUrl) return
+  const key = sessionStorage.getItem(KEY_STORE) || AI_DEFAULTS.apiKey || ''
+  if (!key) return                    // ⚠️ 护栏①：没密钥就一声不响地不做
+  AUTO_DRAFTED.add(landmarkId)        // ⚠️ 护栏②：先登记，失败也不重试
+  await draftEssay()
+}
+
+/* ---------------- 增 / 存 ---------------- */
+
+/**
+ * 给某个景点**加一张图**。
+ *
+ * ★★ `landmarkId` 现在是**必填** —— 图片是挂在地标上的附件。
+ *    所以这里查不到地标就**直接不加**：加出来的条目会被
+ *    `toTravelContent()` 整条丢掉（`DROPPED_CONTENT_COUNT`），
+ *    而家长只会以为"我明明加了一张"。
+ *    ⚠️ 以前这里是 `addFor('')`（"新建一条"按钮）—— 造出来的正是这种条目。
+ */
+/**
+ * 给某个景点加一条内容。
+ *
+ * ⚠️ `seed` 是给"机器搜的那张图"用的 —— 把它的
+ *    `title / mediaUrl / credit / summary / match` 一起带进来
+ *    （组装在 `seedFromDefaultPhoto()`，调用点在 `boot()`）。
+ *    不传 = 起一条空白草稿（家长点「＋ 新建一张」走的就是这条）。
+ * ★ id 的唯一化**只在这里做一次** —— 别在调用处自己 `items.push()`
+ *   （两个地方各写一遍，迟早有一处漏掉去重，于是两条内容同 id，
+ *    而后面那条永远选不中，界面上看不出来）。
+ */
+function addFor(landmarkId, seed) {
+  const lm = LANDMARKS.find((l) => l.id === landmarkId)
+  if (!lm) {
+    toast('先选一个景点 —— 图片是挂在地标上的附件，不能没有景点', true)
+    return
+  }
+  const base = lm.id.replace(/[^\w\u4e00-\u9fa5-]/g, '') || 'img'
+  let id = base, n = 1
+  while (items.some((c) => c.id === id)) { n += 1; id = `${base}-${n}` }
+  /*
+   * ★★ 标题只在"这个景点的**第一张**"上预填名字。
+   *
+   *   同一个景点的第 2、3 张要各自有名字（「长城之秋」/「长城冬雪」），
+   *   全预填成同一个的话：条带上一排**一模一样**的标题分不出谁是谁，
+   *   而且还得一条条手改。留空反而明确告诉你"这一张得起个名"。
+   *   （体检面板会立刻提示「缺标题」，不会漏。）
+   *   ⚠️ 带了 `seed.title`（「就用这张」）时以它为准 —— 那是图库给的名字。
+   */
+  const first = !items.some((c) => c.landmarkId === lm.id)
+  items.push({
+    id, landmarkId: lm.id,
+    title: seed?.title || (first ? lm.name : ''),
+    grade: seed?.grade || '顺路',
+    mediaUrl: seed?.mediaUrl || '',
+    credit: seed?.credit || { source: '', link: '', author: '' },
+    summary: seed?.summary || '', essay: '',
+    /*
+     * ⚠️ `match` 也一起带过来（只有「就用这张」会传）。
+     *    不带的话，收进来的那张「示意图」在相册里就是"真地方"了 ——
+     *    而且**没有任何地方会报错**（见 `TravelSouvenir.match`）。
+     *    空白草稿不传 → `undefined` → `JSON.stringify` 直接不写这个键。
+     */
+    match: seed?.match,
+  })
+  sel = items.length - 1
+  setDirty(true)
+  $('onlyGap').checked = false
+  render()
+}
+
+/*
+ * ★★ 这个按钮**不能**再造"没有地标"的条目了（以前它就是 `addFor('')`）。
+ *    改成「给**当前这一条**的景点再加一张」。
+ *
+ * ⚠️ 什么都没选时**必须说出来**，不能默默什么都不做 ——
+ *    点了没反应，家长只会以为工具坏了，然后反复点。
+ * ⚠️ 单独打开时"给某个景点加**第一张**"走左边那个勾选框：
+ *    勾上「只看还没有内容的景点」→ 点一下景点名就起一条。
+ *    （嵌在抽屉里时左边整栏是藏起来的，加图走条带的「＋ 新建一张」。）
+ */
+$('add').onclick = () => {
+  const c = items[sel]
+  if (!c) {
+    toast('先在左边点一条内容（或勾上「只看还没有内容的景点」点一个景点）', true)
+    return
+  }
+  addFor(c.landmarkId)
+}
+
+$('save').onclick = async () => {
+  const bad = checkAll()
+  // ⚠️ 体检不过也**允许保存** —— 内容是一点点写起来的，
+  //    硬拦会让人没法"先存一半"。但要说清楚。
+  if (bad.length > 0 && !confirm(`体检有 ${bad.length} 处问题，仍然保存吗？\n（测试可能会红）`)) return
+
+  $('save').disabled = true
+  try {
+    const res = await fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(items),
+    })
+    const out = await res.json()
+    if (!out.ok) {
+      toast(`没写进去：${(out.errors || []).slice(0, 3).join('；')}`, true)
+      return
+    }
+
+    /*
+     * ★★ 内容存好之后，**再看简介改没改**（09-26）。
+     *
+     *    为什么比"内容"而不是比 `dirty`：`dirty` 是**一个**总开关，
+     *    内容或简介任一改动都会点亮它（见 `setDirty`）。拿它判断的话，
+     *    "只改了内容"也会去写一遍简介表 —— 白写一次盘，而且只拦内容端点的
+     *    e2e 守卫会**打到真端点**（那是真的写盘）。
+     *    ⚠️ 比内容不比"敲没敲过键盘"：改完又改回去，就不该写盘。
+     */
+    if (JSON.stringify(INTROS) === INTROS_BASE) {
+      setDirty(false)
+      render()
+      // 告诉外面那一页：卡片上的「内容 N 条」该刷新了
+      postToParent({ type: 'lwm-saved', count: out.count })
+      toast(`已写入 ${out.file} —— 共 ${out.count} 条。刷新 App 就能看到。`)
+      return
+    }
+
+    const res2 = await fetch(INTRO_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(INTROS),
+    })
+    const out2 = await res2.json()
+    if (!out2.ok) {
+      /*
+       * ⚠️ 内容**已经存进去了**，这里必须说清"哪一半成了、哪一半没成" ——
+       *    含糊地说一句"保存失败"会让家长以为整件事都没成，然后再存一遍。
+       */
+      setDirty(false)
+      render()
+      postToParent({ type: 'lwm-saved', count: out.count })
+      toast(`内容存好了（${out.count} 条），但简介没写进去：${
+        (out2.errors || []).slice(0, 3).join('；')}`, true)
+      return
+    }
+    INTROS_BASE = JSON.stringify(INTROS)
+    setDirty(false)
+    render()
+    postToParent({ type: 'lwm-saved', count: out.count })
+    toast(`已写入 ${out.file}（${out.count} 条）和 ${out2.file}（${out2.count} 条简介）。刷新 App 就能看到。`)
+  } catch (e) {
+    toast(`保存失败：${String(e)} —— 这个页面必须通过 dev server 打开`, true)
+  } finally {
+    $('save').disabled = false
+  }
+}
+
+$('reload').onclick = async () => {
+  if (dirty && !confirm('有未保存的改动，重新载入会丢掉它们。继续？')) return
+  await loadContents()
+  /*
+   * ★ 默认图也一起重读 —— 这个按钮的意思是"盘上变了，重新读一遍"，
+   *   而默认图同样可能被重新生成（`build-landmark-photos.mjs`）。
+   *   ⚠️ 只读一处的话，重新载入之后条带里的默认图还是旧的，
+   *      而界面上完全看不出它没更新。
+   */
+  await loadDefaultPhotos()
+  /*
+   * ★ 简介也一起重读 —— 同上：这个按钮的意思是"盘上变了，重新读一遍"。
+   *   ⚠️ 漏了它，"重新载入"之后简介框里还是旧的，而界面上完全看不出来。
+   */
+  await loadIntros()
+  sel = -1
+  setDirty(false)
+  render()
+}
+
+$('q').oninput = renderList
+$('fg').onchange = renderList
+$('onlyGap').onchange = renderList
+
+window.addEventListener('beforeunload', (e) => {
+  /*
+   * ★★ 嵌在抽屉里时**故意不挂**这个守卫 —— 抽屉那边已经有一条自己的确认
+   *     （关之前会问「有未保存的改动，确定关掉？」）。
+   *
+   *    两条都要的话：家长点一次「关闭」会被**连问两遍**，
+   *    第二遍还是浏览器原生那种"离开此网站？"，看着像页面出错了。
+   *    （实测：父页把 iframe 的 src 改成 about:blank 时，
+   *      这个 beforeunload 真的会弹 —— 因为点「关闭」本身就是一次用户手势。）
+   *
+   * ⚠️ 反过来说：**父页必须自己挂一个**，否则关标签页照样静默丢改动。
+   *    见 `landmarks-browse.html` 末尾那个 `beforeunload`。
+   */
+  if (EMBED) return
+  if (dirty) { e.preventDefault(); e.returnValue = '' }
+})
+
+function toast(msg, bad) {
+  const old = document.querySelector('.toast')
+  if (old) old.remove()
+  const d = document.createElement('div')
+  d.className = 'toast' + (bad ? ' bad' : '')
+  d.textContent = msg
+  document.body.appendChild(d)
+  setTimeout(() => d.remove(), bad ? 7000 : 4000)
+}
+
+boot().catch((e) => {
+  document.body.innerHTML =
+    `<div style="padding:24px;font:14px system-ui;color:#8f3b32">
+      载入失败：${esc(String(e))}<br><br>
+      这个页面<b>必须通过 dev server 打开</b>：<code>http://localhost:5190/travel-editor.html</code>
+     </div>`
+})
+</script>
+</body>
+</html>

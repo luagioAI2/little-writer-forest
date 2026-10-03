@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   LANDMARKS,
   landmarkById,
+  makePhoto,
   mapProgress,
   pickDestination,
   plantSeeds,
@@ -142,5 +143,69 @@ describe('挑旅行目的地', () => {
       rng: seededRng(11),
     })
     expect(LANDMARKS.some((l) => l.id === dest.id)).toBe(true)
+  })
+})
+
+/* ============================================================
+   程序化照片 —— 「没有内容包时别让孩子空手而归」
+   ------------------------------------------------------------
+   ★ 2026-09-24：`makePhoto` 原来还能接内容包（`story` 参数），
+     那条路已经并进 `TravelContent` → `TravelSouvenir` 了。
+     所以这里只守它**现在唯一的职责**：造一张带配文、没有真实图片的照片。
+   ⚠️ 这条路**必须留着**：1800 个地标里绝大多数没有内容包。
+   ============================================================ */
+
+describe('程序化照片', () => {
+  it('配文里带上地标名和鸟的名字', () => {
+    const photo = makePhoto({
+      landmark: landmarkById('xihu')!,
+      birdSpecies: 'sparrow',
+      birdName: '小麻',
+      at: 1000,
+      rng: seededRng(1),
+    })
+    expect(photo.caption).toContain('西湖')
+    expect(photo.caption).toContain('小麻')
+  })
+
+  it('★ 不带图片 / 散文字段 —— 那两样只有内容包才有', () => {
+    // ⚠️ 如果哪天这里冒出了 photoUrl，说明有人又把内容包塞回来了 ——
+    //    而两条路各写一遍的结果，是**界面上的图跟散文对不上**。
+    const photo = makePhoto({
+      landmark: landmarkById('xihu')!,
+      birdSpecies: 'sparrow',
+      birdName: '小麻',
+      at: 1000,
+      rng: seededRng(1),
+    })
+    expect(photo.photoUrl).toBeUndefined()
+    expect(photo.essay).toBeUndefined()
+    expect(photo.credit).toBeUndefined()
+    expect(photo.distanceKm).toBeUndefined()
+  })
+
+  it('传了距离就用传的', () => {
+    const photo = makePhoto({
+      landmark: landmarkById('xihu')!,
+      birdSpecies: 'sparrow',
+      birdName: '小麻',
+      at: 1000,
+      rng: seededRng(1),
+      distanceKm: 123,
+    })
+    expect(photo.distanceKm).toBe(123)
+  })
+
+  it('id 带地标与时间，同一时刻两次不会撞（带随机尾巴）', () => {
+    const opts = {
+      landmark: landmarkById('xihu')!,
+      birdSpecies: 'sparrow' as const,
+      birdName: '小麻',
+      at: 1000,
+    }
+    const a = makePhoto({ ...opts, rng: seededRng(1) })
+    const b = makePhoto({ ...opts, rng: seededRng(2) })
+    expect(a.id).toContain('xihu')
+    expect(a.id).not.toBe(b.id)
   })
 })

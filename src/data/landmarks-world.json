@@ -1,0 +1,2320 @@
+{
+ "source": "DBpedia SPARQL（坐标/中文名/简介/图片）+ OpenStreetMap Overpass（补 DBpedia 缺的坐标）",
+ "license": "DBpedia: CC BY-SA 3.0；图片: Wikimedia Commons（各自授权）；坐标含 © OpenStreetMap 贡献者（ODbL）",
+ "attribution": "DBpedia contributors / Wikimedia Commons contributors / © OpenStreetMap contributors",
+ "whyThisFileExists": "世界景点的坐标与图片由机器补齐；「哪些算知名」由人挑（world-landmarks-seed.mjs）。DBpedia 有 1,074 个世界遗产全带坐标，但没有可信的知名度字段 —— 按「标签语言数」排序区分不出来（全挤在 21-22，还混着 Pannonhalma Archabbey 这种）。DBpedia 的坐标覆盖不全（Colosseum/Tower_Bridge/Golden_Gate_Bridge 都没有），所以缺的那批用 wikidata QID 去 OSM 补 —— ⚠️ 必须用 QID，按名字查会张冠李戴。",
+ "fetchedAt": "2026-09-24",
+ "count": 231,
+ "items": [
+  {
+   "id": "world-日本-富士山",
+   "name": "富士山",
+   "province": "日本",
+   "country": "日本",
+   "lng": 138.72749,
+   "lat": 35.36083,
+   "blurb": "日本最高的山，山顶一年到头盖着雪，像戴了顶白帽子。",
+   "scene": "mountain"
+  },
+  {
+   "id": "world-日本-金阁寺",
+   "name": "金阁寺",
+   "province": "日本",
+   "country": "日本",
+   "lng": 135.7285,
+   "lat": 35.0395,
+   "blurb": "外墙贴满金箔的寺庙，倒映在池子里金光闪闪。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-日本-严岛神社",
+   "name": "严岛神社",
+   "province": "日本",
+   "country": "日本",
+   "lng": 132.31972,
+   "lat": 34.29583,
+   "blurb": "红色的大鸟居立在海里，涨潮时像浮在水面上。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-日本-浅草寺",
+   "name": "浅草寺",
+   "province": "日本",
+   "country": "日本",
+   "lng": 139.79675,
+   "lat": 35.71472,
+   "blurb": "东京最老的寺庙，门口挂着一只巨大的红灯笼。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-日本-东京塔",
+   "name": "东京塔",
+   "province": "日本",
+   "country": "日本",
+   "lng": 139.74556,
+   "lat": 35.65861,
+   "blurb": "红白相间的铁塔，晚上亮起来像一座灯塔。",
+   "scene": "city"
+  },
+  {
+   "id": "world-日本-奈良公园",
+   "name": "奈良公园",
+   "province": "日本",
+   "country": "日本",
+   "lng": 135.85001,
+   "lat": 34.685,
+   "blurb": "公园里的小鹿会向人点头要饼干吃。",
+   "scene": "forest"
+  },
+  {
+   "id": "world-韩国-景福宫",
+   "name": "景福宫",
+   "province": "韩国",
+   "country": "韩国",
+   "lng": 126.9769,
+   "lat": 37.57977,
+   "blurb": "首尔最大的宫殿，屋檐一层一层往上翘。",
+   "scene": "city"
+  },
+  {
+   "id": "world-韩国-南山首尔塔",
+   "name": "南山首尔塔",
+   "province": "韩国",
+   "country": "韩国",
+   "lng": 126.98822,
+   "lat": 37.55126,
+   "blurb": "建在山顶的塔，晚上能看到整个首尔的灯。",
+   "scene": "city"
+  },
+  {
+   "id": "world-韩国-济州岛",
+   "name": "济州岛",
+   "province": "韩国",
+   "country": "韩国",
+   "lng": 126.53,
+   "lat": 33.38,
+   "blurb": "火山喷出来的岛，海边全是黑黑的石头。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-泰国-大皇宫",
+   "name": "大皇宫",
+   "province": "泰国",
+   "country": "泰国",
+   "lng": 100.492,
+   "lat": 13.7501,
+   "blurb": "泰国王宫，屋顶金灿灿的，尖角一直戳到天上。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-泰国-郑王庙",
+   "name": "郑王庙",
+   "province": "泰国",
+   "country": "泰国",
+   "lng": 100.48889,
+   "lat": 13.74361,
+   "blurb": "河边的塔贴满瓷片，太阳一照会反光。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-泰国-皮皮岛",
+   "name": "皮皮岛",
+   "province": "泰国",
+   "country": "泰国",
+   "lng": 98.76667,
+   "lat": 7.73333,
+   "blurb": "海水清得能看见海底，两边是陡陡的石灰岩山。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-印度-泰姬陵",
+   "name": "泰姬陵",
+   "province": "印度",
+   "country": "印度",
+   "lng": 78.04195,
+   "lat": 27.175,
+   "blurb": "白色大理石造的陵墓，倒影在长水池里像一幅画。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-印度-恒河",
+   "name": "恒河",
+   "province": "印度",
+   "country": "印度",
+   "lng": 83.32091,
+   "lat": 25.40537,
+   "blurb": "印度人心中最神圣的河，天没亮就有人在河边沐浴。",
+   "scene": "water"
+  },
+  {
+   "id": "world-印度-琥珀堡",
+   "name": "琥珀堡",
+   "province": "印度",
+   "country": "印度",
+   "lng": 75.8507,
+   "lat": 26.9859,
+   "blurb": "建在山上的黄色城堡，有镜子宫殿和水道。",
+   "scene": "city"
+  },
+  {
+   "id": "world-印度-金庙",
+   "name": "金庙",
+   "province": "印度",
+   "country": "印度",
+   "lng": 74.87639,
+   "lat": 31.62,
+   "blurb": "屋顶镀金的庙，四面被水包围，谁都能进去吃免费饭。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-柬埔寨-吴哥窟",
+   "name": "吴哥窟",
+   "province": "柬埔寨",
+   "country": "柬埔寨",
+   "lng": 103.86667,
+   "lat": 13.4125,
+   "blurb": "藏在丛林里的巨大石头寺庙，墙上刻满了故事。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-印度尼西亚-婆罗浮屠",
+   "name": "婆罗浮屠",
+   "province": "印度尼西亚",
+   "country": "印度尼西亚",
+   "lng": 110.204,
+   "lat": -7.608,
+   "blurb": "一座用石头垒成的金字塔，每一层都刻着佛像。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-印度尼西亚-巴厘岛",
+   "name": "巴厘岛",
+   "province": "印度尼西亚",
+   "country": "印度尼西亚",
+   "lng": 115.08806,
+   "lat": -8.335,
+   "blurb": "稻田一层层像台阶，海边有神庙立在礁石上。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-越南-下龙湾",
+   "name": "下龙湾",
+   "province": "越南",
+   "country": "越南",
+   "lng": 107.2,
+   "lat": 20.9,
+   "blurb": "海面上立着上千座石头小山，船在中间穿来穿去。",
+   "scene": "water"
+  },
+  {
+   "id": "world-马来西亚-双子塔",
+   "name": "双子塔",
+   "province": "马来西亚",
+   "country": "马来西亚",
+   "lng": 101.71176,
+   "lat": 3.15797,
+   "blurb": "两座一模一样的塔，中间用一座天桥连起来。",
+   "scene": "city"
+  },
+  {
+   "id": "world-新加坡-滨海湾金沙",
+   "name": "滨海湾金沙",
+   "province": "新加坡",
+   "country": "新加坡",
+   "lng": 103.86072,
+   "lat": 1.2837,
+   "blurb": "三座楼顶着一艘船，船头是个无边泳池。",
+   "scene": "city"
+  },
+  {
+   "id": "world-新加坡-鱼尾狮",
+   "name": "鱼尾狮",
+   "province": "新加坡",
+   "country": "新加坡",
+   "lng": 103.85469,
+   "lat": 1.28702,
+   "blurb": "狮头鱼身子的白雕像，嘴里整天往外喷水。",
+   "scene": "city"
+  },
+  {
+   "id": "world-尼泊尔-珠穆朗玛峰",
+   "name": "珠穆朗玛峰",
+   "province": "尼泊尔",
+   "country": "尼泊尔",
+   "lng": 86.92528,
+   "lat": 27.98833,
+   "blurb": "世界上最高的地方，空气稀薄得让人喘不上气。",
+   "scene": "snow"
+  },
+  {
+   "id": "world-斯里兰卡-狮子岩",
+   "name": "狮子岩",
+   "province": "斯里兰卡",
+   "country": "斯里兰卡",
+   "lng": 80.75972,
+   "lat": 7.95694,
+   "blurb": "一块巨大的石头山，顶上竟然藏着一座宫殿。",
+   "scene": "mountain"
+  },
+  {
+   "id": "world-缅甸-仰光大金塔",
+   "name": "仰光大金塔",
+   "province": "缅甸",
+   "country": "缅甸",
+   "lng": 96.1497,
+   "lat": 16.79835,
+   "blurb": "整座塔贴满金箔，太阳底下亮得睁不开眼。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-缅甸-蒲甘",
+   "name": "蒲甘",
+   "province": "缅甸",
+   "country": "缅甸",
+   "lng": 94.86,
+   "lat": 21.1725,
+   "blurb": "平原上散落着两千多座佛塔，坐热气球看最壮观。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-菲律宾-长滩岛",
+   "name": "长滩岛",
+   "province": "菲律宾",
+   "country": "菲律宾",
+   "lng": 121.92389,
+   "lat": 11.96889,
+   "blurb": "沙子白得像面粉，踩上去软软的。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-以色列-哭墙",
+   "name": "哭墙",
+   "province": "以色列",
+   "country": "以色列",
+   "lng": 35.2345,
+   "lat": 31.7767,
+   "blurb": "犹太人最神圣的墙，人们把心愿写在纸条塞进石缝。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-以色列-死海",
+   "name": "死海",
+   "province": "以色列",
+   "country": "以色列",
+   "lng": 35.5,
+   "lat": 31.5,
+   "blurb": "水咸得人沉不下去，躺着就能浮在水面上看书。",
+   "scene": "water"
+  },
+  {
+   "id": "world-土耳其-圣索菲亚大教堂",
+   "name": "圣索菲亚大教堂",
+   "province": "土耳其",
+   "country": "土耳其",
+   "lng": 28.98,
+   "lat": 41.00834,
+   "blurb": "巨大的圆顶，做过教堂也做过清真寺。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-土耳其-棉花堡",
+   "name": "棉花堡",
+   "province": "土耳其",
+   "country": "土耳其",
+   "lng": 29.12333,
+   "lat": 37.92389,
+   "blurb": "温泉水流过山坡，结成一层层雪白的梯田。",
+   "scene": "water"
+  },
+  {
+   "id": "world-土耳其-卡帕多西亚",
+   "name": "卡帕多西亚",
+   "province": "土耳其",
+   "country": "土耳其",
+   "lng": 34.85361,
+   "lat": 38.65833,
+   "blurb": "到处是尖尖的石头烟囱，热气球早上一起升空。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-阿联酋-哈利法塔",
+   "name": "哈利法塔",
+   "province": "阿联酋",
+   "country": "阿联酋",
+   "lng": 55.27421,
+   "lat": 25.19704,
+   "blurb": "世界上最高的楼，站在顶上能看见沙漠和海的交界。",
+   "scene": "city"
+  },
+  {
+   "id": "world-阿联酋-谢赫扎耶德大清真寺",
+   "name": "谢赫扎耶德大清真寺",
+   "province": "阿联酋",
+   "country": "阿联酋",
+   "lng": 54.474,
+   "lat": 24.412,
+   "blurb": "白色大理石的大清真寺，地上铺着世界上最大的地毯。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-约旦-佩特拉",
+   "name": "佩特拉",
+   "province": "约旦",
+   "country": "约旦",
+   "lng": 35.44194,
+   "lat": 30.32861,
+   "blurb": "玫瑰色的石头城，整座宫殿是从岩壁上凿出来的。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-伊朗-波斯波利斯",
+   "name": "波斯波利斯",
+   "province": "伊朗",
+   "country": "伊朗",
+   "lng": 52.89,
+   "lat": 29.935,
+   "blurb": "古波斯帝国的宫殿遗址，石阶上刻着各国来朝的人。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-乌兹别克斯坦-雷吉斯坦广场",
+   "name": "雷吉斯坦广场",
+   "province": "乌兹别克斯坦",
+   "country": "乌兹别克斯坦",
+   "lng": 66.97556,
+   "lat": 39.65472,
+   "blurb": "三座蓝色圆顶的神学院围成一个广场。",
+   "scene": "city"
+  },
+  {
+   "id": "world-老挝-琅勃拉邦",
+   "name": "琅勃拉邦",
+   "province": "老挝",
+   "country": "老挝",
+   "lng": 102.13472,
+   "lat": 19.89,
+   "blurb": "清晨一队橙衣僧侣沿街化缘，安静得像画。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-马尔代夫-泰姬珊瑚礁",
+   "name": "泰姬珊瑚礁",
+   "province": "马尔代夫",
+   "country": "马尔代夫",
+   "lng": 73.50889,
+   "lat": 4.17528,
+   "blurb": "一千多个小岛，房子直接架在清亮的海水上。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-蒙古-戈壁沙漠",
+   "name": "戈壁沙漠",
+   "province": "蒙古",
+   "country": "蒙古",
+   "lng": 103.43,
+   "lat": 42.59,
+   "blurb": "一望无际的石头和沙子，能找到恐龙蛋化石。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-巴基斯坦-巴德夏希清真寺",
+   "name": "巴德夏希清真寺",
+   "province": "巴基斯坦",
+   "country": "巴基斯坦",
+   "lng": 74.30945,
+   "lat": 31.58805,
+   "blurb": "红砂岩砌的大清真寺，能装下几万人一起祈祷。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-哈萨克斯坦-阿拉木图",
+   "name": "阿拉木图",
+   "province": "哈萨克斯坦",
+   "country": "哈萨克斯坦",
+   "lng": 76.95,
+   "lat": 43.23333,
+   "blurb": "城市背后就是雪山，苹果据说是从这里传遍世界的。",
+   "scene": "mountain"
+  },
+  {
+   "id": "world-格鲁吉亚-第比利斯老城",
+   "name": "第比利斯老城",
+   "province": "格鲁吉亚",
+   "country": "格鲁吉亚",
+   "lng": 44.7925,
+   "lat": 41.7225,
+   "blurb": "彩色的老房子挂在河岸上，还有硫磺温泉。",
+   "scene": "city"
+  },
+  {
+   "id": "world-法国-埃菲尔铁塔",
+   "name": "埃菲尔铁塔",
+   "province": "法国",
+   "country": "法国",
+   "lng": 2.2945,
+   "lat": 48.85822,
+   "blurb": "铁做的塔，晚上整点会闪灯，是巴黎最高的地方。",
+   "scene": "city"
+  },
+  {
+   "id": "world-法国-卢浮宫",
+   "name": "卢浮宫",
+   "province": "法国",
+   "country": "法国",
+   "lng": 2.33586,
+   "lat": 48.86115,
+   "blurb": "玻璃金字塔下面是世界最大的博物馆，蒙娜丽莎住这儿。",
+   "scene": "city"
+  },
+  {
+   "id": "world-法国-凡尔赛宫",
+   "name": "凡尔赛宫",
+   "province": "法国",
+   "country": "法国",
+   "lng": 2.12158,
+   "lat": 48.80442,
+   "blurb": "宫殿里全是金子和镜子，后花园大得要走一整天。",
+   "scene": "city"
+  },
+  {
+   "id": "world-法国-圣米歇尔山",
+   "name": "圣米歇尔山",
+   "province": "法国",
+   "country": "法国",
+   "lng": -1.511,
+   "lat": 48.636,
+   "blurb": "涨潮时变成孤岛，退潮后露出大片滩涂。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-法国-巴黎圣母院",
+   "name": "巴黎圣母院",
+   "province": "法国",
+   "country": "法国",
+   "lng": 2.35,
+   "lat": 48.85305,
+   "blurb": "塞纳河中间岛上的大教堂，两座钟楼爬上去能看怪兽雕像。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-法国-普罗旺斯薰衣草田",
+   "name": "普罗旺斯薰衣草田",
+   "province": "法国",
+   "country": "法国",
+   "lng": 5.5,
+   "lat": 43.5,
+   "blurb": "夏天整片山坡变成紫色，风一吹全是香味。",
+   "scene": "grass"
+  },
+  {
+   "id": "world-英国-大本钟",
+   "name": "大本钟",
+   "province": "英国",
+   "country": "英国",
+   "lng": -0.1245,
+   "lat": 51.5007,
+   "blurb": "伦敦的大钟楼，整点会敲响很沉的声音。",
+   "scene": "city"
+  },
+  {
+   "id": "world-英国-伦敦塔桥",
+   "name": "伦敦塔桥",
+   "province": "英国",
+   "country": "英国",
+   "lng": -0.07537,
+   "lat": 51.50552,
+   "blurb": "桥面能像吊桥一样打开，让大船从中间过去。",
+   "scene": "city"
+  },
+  {
+   "id": "world-英国-巨石阵",
+   "name": "巨石阵",
+   "province": "英国",
+   "country": "英国",
+   "lng": -1.82611,
+   "lat": 51.17889,
+   "blurb": "几千年前的巨大石头围成一圈，谁搬来的至今没人知道。",
+   "scene": "grass"
+  },
+  {
+   "id": "world-英国-白金汉宫",
+   "name": "白金汉宫",
+   "province": "英国",
+   "country": "英国",
+   "lng": -0.14194,
+   "lat": 51.50083,
+   "blurb": "英国国王住的地方，卫兵戴着高高的黑帽子站岗。",
+   "scene": "city"
+  },
+  {
+   "id": "world-英国-爱丁堡城堡",
+   "name": "爱丁堡城堡",
+   "province": "英国",
+   "country": "英国",
+   "lng": -3.20083,
+   "lat": 55.94861,
+   "blurb": "建在死火山顶上的城堡，能俯瞰整个老城。",
+   "scene": "city"
+  },
+  {
+   "id": "world-意大利-罗马斗兽场",
+   "name": "罗马斗兽场",
+   "province": "意大利",
+   "country": "意大利",
+   "lng": 12.49237,
+   "lat": 41.89026,
+   "blurb": "两千年前的古罗马竞技场，能坐下五万人看比赛。",
+   "scene": "city"
+  },
+  {
+   "id": "world-意大利-比萨斜塔",
+   "name": "比萨斜塔",
+   "province": "意大利",
+   "country": "意大利",
+   "lng": 10.39639,
+   "lat": 43.72306,
+   "blurb": "一座歪着的白塔，越往上越斜，就是不倒。",
+   "scene": "city"
+  },
+  {
+   "id": "world-意大利-威尼斯",
+   "name": "威尼斯",
+   "province": "意大利",
+   "country": "意大利",
+   "lng": 12.33583,
+   "lat": 45.4375,
+   "blurb": "城里没有汽车，出门坐船，房子泡在水里。",
+   "scene": "water"
+  },
+  {
+   "id": "world-意大利-圣彼得大教堂",
+   "name": "圣彼得大教堂",
+   "province": "意大利",
+   "country": "意大利",
+   "lng": 12.45333,
+   "lat": 41.90222,
+   "blurb": "世界上最大的教堂，圆顶能爬到顶看罗马全城。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-意大利-庞贝古城",
+   "name": "庞贝古城",
+   "province": "意大利",
+   "country": "意大利",
+   "lng": 14.48611,
+   "lat": 40.75,
+   "blurb": "被火山灰埋掉的古城，街道和灶台都还留着。",
+   "scene": "city"
+  },
+  {
+   "id": "world-德国-新天鹅堡",
+   "name": "新天鹅堡",
+   "province": "德国",
+   "country": "德国",
+   "lng": 10.74944,
+   "lat": 47.5575,
+   "blurb": "白色城堡立在山崖上，迪士尼的城堡照它画的。",
+   "scene": "mountain"
+  },
+  {
+   "id": "world-德国-勃兰登堡门",
+   "name": "勃兰登堡门",
+   "province": "德国",
+   "country": "德国",
+   "lng": 13.3777,
+   "lat": 52.5163,
+   "blurb": "柏林的大石门，顶上驾着四匹马的雕像。",
+   "scene": "city"
+  },
+  {
+   "id": "world-德国-科隆大教堂",
+   "name": "科隆大教堂",
+   "province": "德国",
+   "country": "德国",
+   "lng": 6.95833,
+   "lat": 50.94139,
+   "blurb": "两座尖塔像针一样细，盖了六百多年才完工。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-西班牙-圣家堂",
+   "name": "圣家堂",
+   "province": "西班牙",
+   "country": "西班牙",
+   "lng": 2.17433,
+   "lat": 41.40369,
+   "blurb": "高迪设计的教堂，像从地里长出来的石头森林。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-西班牙-阿尔罕布拉宫",
+   "name": "阿尔罕布拉宫",
+   "province": "西班牙",
+   "country": "西班牙",
+   "lng": -3.59,
+   "lat": 37.1775,
+   "blurb": "红墙宫殿，墙上刻满细细的花纹，水池安静得像镜子。",
+   "scene": "city"
+  },
+  {
+   "id": "world-葡萄牙-贝伦塔",
+   "name": "贝伦塔",
+   "province": "葡萄牙",
+   "country": "葡萄牙",
+   "lng": -9.21611,
+   "lat": 38.69167,
+   "blurb": "河口的白色小塔，当年船队从这里出发去航海。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-荷兰-小孩堤防风车",
+   "name": "小孩堤防风车",
+   "province": "荷兰",
+   "country": "荷兰",
+   "lng": 4.631,
+   "lat": 51.8861,
+   "blurb": "十九座风车排成一排，专门用来把水抽走。",
+   "scene": "grass"
+  },
+  {
+   "id": "world-比利时-布鲁塞尔大广场",
+   "name": "布鲁塞尔大广场",
+   "province": "比利时",
+   "country": "比利时",
+   "lng": 4.3525,
+   "lat": 50.84667,
+   "blurb": "四周全是金灿灿的古老行会楼，晚上亮灯最好看。",
+   "scene": "city"
+  },
+  {
+   "id": "world-比利时-撒尿小童",
+   "name": "撒尿小童",
+   "province": "比利时",
+   "country": "比利时",
+   "lng": 4.34999,
+   "lat": 50.84499,
+   "blurb": "一个光屁股小男孩的铜像，只有半米高。",
+   "scene": "city"
+  },
+  {
+   "id": "world-瑞士-马特洪峰",
+   "name": "马特洪峰",
+   "province": "瑞士",
+   "country": "瑞士",
+   "lng": 7.65861,
+   "lat": 45.97639,
+   "blurb": "一个尖尖的三角，像被削过的雪糕。",
+   "scene": "snow"
+  },
+  {
+   "id": "world-瑞士-少女峰",
+   "name": "少女峰",
+   "province": "瑞士",
+   "country": "瑞士",
+   "lng": 7.96264,
+   "lat": 46.5368,
+   "blurb": "坐火车能一直坐到雪线上面，欧洲最高的车站。",
+   "scene": "snow"
+  },
+  {
+   "id": "world-奥地利-美泉宫",
+   "name": "美泉宫",
+   "province": "奥地利",
+   "country": "奥地利",
+   "lng": 16.31186,
+   "lat": 48.18452,
+   "blurb": "黄色的皇宫，后花园里有个能玩捉迷藏的迷宫。",
+   "scene": "city"
+  },
+  {
+   "id": "world-奥地利-哈尔施塔特",
+   "name": "哈尔施塔特",
+   "province": "奥地利",
+   "country": "奥地利",
+   "lng": 13.649,
+   "lat": 47.562,
+   "blurb": "小房子挤在湖边和山坡之间，倒影在水里。",
+   "scene": "water"
+  },
+  {
+   "id": "world-希腊-雅典卫城",
+   "name": "雅典卫城",
+   "province": "希腊",
+   "country": "希腊",
+   "lng": 23.72611,
+   "lat": 37.97167,
+   "blurb": "山上的神庙只剩柱子，却还是那么威风。",
+   "scene": "city"
+  },
+  {
+   "id": "world-希腊-圣托里尼",
+   "name": "圣托里尼",
+   "province": "希腊",
+   "country": "希腊",
+   "lng": 25.4325,
+   "lat": 36.415,
+   "blurb": "白房子蓝圆顶，挂在悬崖上，下面是深蓝的海。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-俄罗斯-红场",
+   "name": "红场",
+   "province": "俄罗斯",
+   "country": "俄罗斯",
+   "lng": 37.62,
+   "lat": 55.75417,
+   "blurb": "广场一头是彩色的洋葱头教堂，一头是红墙宫殿。",
+   "scene": "city"
+  },
+  {
+   "id": "world-俄罗斯-冬宫",
+   "name": "冬宫",
+   "province": "俄罗斯",
+   "country": "俄罗斯",
+   "lng": 30.31563,
+   "lat": 59.94123,
+   "blurb": "绿色的宫殿，里面收藏了几百万件宝贝。",
+   "scene": "city"
+  },
+  {
+   "id": "world-俄罗斯-贝加尔湖",
+   "name": "贝加尔湖",
+   "province": "俄罗斯",
+   "country": "俄罗斯",
+   "lng": 108,
+   "lat": 53.5,
+   "blurb": "世界上最深的湖，冬天冻成透明的蓝冰。",
+   "scene": "water"
+  },
+  {
+   "id": "world-捷克-布拉格城堡",
+   "name": "布拉格城堡",
+   "province": "捷克",
+   "country": "捷克",
+   "lng": 14.40377,
+   "lat": 50.09124,
+   "blurb": "世界上最大的古堡之一，站在山上看着伏尔塔瓦河。",
+   "scene": "city"
+  },
+  {
+   "id": "world-捷克-查理大桥",
+   "name": "查理大桥",
+   "province": "捷克",
+   "country": "捷克",
+   "lng": 14.41194,
+   "lat": 50.08639,
+   "blurb": "桥两边站满石头雕像，早上有雾时像走进画里。",
+   "scene": "city"
+  },
+  {
+   "id": "world-匈牙利-匈牙利国会大厦",
+   "name": "匈牙利国会大厦",
+   "province": "匈牙利",
+   "country": "匈牙利",
+   "lng": 19.04556,
+   "lat": 47.50694,
+   "blurb": "河边的哥特式大楼，晚上灯光照在河面上。",
+   "scene": "city"
+  },
+  {
+   "id": "world-波兰-维利奇卡盐矿",
+   "name": "维利奇卡盐矿",
+   "province": "波兰",
+   "country": "波兰",
+   "lng": 20.06389,
+   "lat": 49.97917,
+   "blurb": "地下的盐矿，连教堂和吊灯都是盐做的。",
+   "scene": "cave"
+  },
+  {
+   "id": "world-挪威-松恩峡湾",
+   "name": "松恩峡湾",
+   "province": "挪威",
+   "country": "挪威",
+   "lng": 5.16667,
+   "lat": 61.1,
+   "blurb": "海水伸进山里，两边是笔直的千米悬崖。",
+   "scene": "water"
+  },
+  {
+   "id": "world-瑞典-瓦萨博物馆",
+   "name": "瓦萨博物馆",
+   "province": "瑞典",
+   "country": "瑞典",
+   "lng": 18.09139,
+   "lat": 59.32794,
+   "blurb": "一艘沉了三百多年的木船，捞上来还基本完好。",
+   "scene": "city"
+  },
+  {
+   "id": "world-芬兰-圣诞老人村",
+   "name": "圣诞老人村",
+   "province": "芬兰",
+   "country": "芬兰",
+   "lng": 25.8475,
+   "lat": 66.54333,
+   "blurb": "北极圈上的村子，能寄出盖着北极邮戳的信。",
+   "scene": "snow"
+  },
+  {
+   "id": "world-丹麦-小美人鱼",
+   "name": "小美人鱼",
+   "province": "丹麦",
+   "country": "丹麦",
+   "lng": 12.59928,
+   "lat": 55.69286,
+   "blurb": "坐在港口石头上的小铜像，只有一米多高。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-冰岛-蓝湖",
+   "name": "蓝湖",
+   "province": "冰岛",
+   "country": "冰岛",
+   "lng": -22.44806,
+   "lat": 63.88,
+   "blurb": "奶蓝色的温泉，泡在里面脸上还可以抹白泥。",
+   "scene": "water"
+  },
+  {
+   "id": "world-爱尔兰-莫赫悬崖",
+   "name": "莫赫悬崖",
+   "province": "爱尔兰",
+   "country": "爱尔兰",
+   "lng": -9.42633,
+   "lat": 52.97175,
+   "blurb": "两百米高的悬崖直插海里，风大得站不稳。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-克罗地亚-杜布罗夫尼克古城",
+   "name": "杜布罗夫尼克古城",
+   "province": "克罗地亚",
+   "country": "克罗地亚",
+   "lng": 18.10833,
+   "lat": 42.64028,
+   "blurb": "橙顶白墙的老城，绕一圈城墙能看见整片海。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-罗马尼亚-布朗城堡",
+   "name": "布朗城堡",
+   "province": "罗马尼亚",
+   "country": "罗马尼亚",
+   "lng": 25.36722,
+   "lat": 45.515,
+   "blurb": "山顶上的城堡，传说吸血鬼住在这里。",
+   "scene": "mountain"
+  },
+  {
+   "id": "world-斯洛文尼亚-布莱德湖",
+   "name": "布莱德湖",
+   "province": "斯洛文尼亚",
+   "country": "斯洛文尼亚",
+   "lng": 14.09472,
+   "lat": 46.36444,
+   "blurb": "湖心小岛上有座教堂，划船过去要敲钟许愿。",
+   "scene": "water"
+  },
+  {
+   "id": "world-马耳他-马耳他蓝洞",
+   "name": "马耳他蓝洞",
+   "province": "马耳他",
+   "country": "马耳他",
+   "lng": 14.45,
+   "lat": 35.81667,
+   "blurb": "岩洞里的海水蓝得发亮，小船能开进去。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-美国-自由女神像",
+   "name": "自由女神像",
+   "province": "美国",
+   "country": "美国",
+   "lng": -74.04444,
+   "lat": 40.68917,
+   "blurb": "举着火炬的绿铜像，站在纽约港的小岛上。",
+   "scene": "city"
+  },
+  {
+   "id": "world-美国-大峡谷",
+   "name": "大峡谷",
+   "province": "美国",
+   "country": "美国",
+   "lng": -112.75,
+   "lat": 36.3,
+   "blurb": "大地被河切开一道巨大的口子，深得看不见底。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-美国-金门大桥",
+   "name": "金门大桥",
+   "province": "美国",
+   "country": "美国",
+   "lng": -122.47793,
+   "lat": 37.81677,
+   "blurb": "红色的大吊桥，雾一吹过来只剩两座桥塔露在外面。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-美国-白宫",
+   "name": "白宫",
+   "province": "美国",
+   "country": "美国",
+   "lng": -77.03639,
+   "lat": 38.89778,
+   "blurb": "美国总统办公和住的地方，白色的三层小楼。",
+   "scene": "city"
+  },
+  {
+   "id": "world-美国-黄石国家公园",
+   "name": "黄石国家公园",
+   "province": "美国",
+   "country": "美国",
+   "lng": -110.5,
+   "lat": 44.6,
+   "blurb": "地上到处冒热气，间歇泉会定时喷出几十米高。",
+   "scene": "forest"
+  },
+  {
+   "id": "world-美国-尼亚加拉瀑布",
+   "name": "尼亚加拉瀑布",
+   "province": "美国",
+   "country": "美国",
+   "lng": -79.0747,
+   "lat": 43.0799,
+   "blurb": "巨大的水墙砸下来，声音像打雷，水雾能淋湿衣服。",
+   "scene": "water"
+  },
+  {
+   "id": "world-美国-拉什莫尔山",
+   "name": "拉什莫尔山",
+   "province": "美国",
+   "country": "美国",
+   "lng": -103.45917,
+   "lat": 43.87889,
+   "blurb": "四位总统的脸刻在山壁上，每张有十八米高。",
+   "scene": "mountain"
+  },
+  {
+   "id": "world-加拿大-班夫国家公园",
+   "name": "班夫国家公园",
+   "province": "加拿大",
+   "country": "加拿大",
+   "lng": -116,
+   "lat": 51.5,
+   "blurb": "湖水绿得像宝石，背后是尖尖的雪山。",
+   "scene": "mountain"
+  },
+  {
+   "id": "world-加拿大-加拿大国家电视塔",
+   "name": "加拿大国家电视塔",
+   "province": "加拿大",
+   "country": "加拿大",
+   "lng": -79.38708,
+   "lat": 43.64256,
+   "blurb": "曾经世界上最高的塔，玻璃地板能看见脚下的城。",
+   "scene": "city"
+  },
+  {
+   "id": "world-墨西哥-奇琴伊察",
+   "name": "奇琴伊察",
+   "province": "墨西哥",
+   "country": "墨西哥",
+   "lng": -88.56861,
+   "lat": 20.68306,
+   "blurb": "玛雅人的石头金字塔，春分那天影子会变成一条蛇。",
+   "scene": "forest"
+  },
+  {
+   "id": "world-墨西哥-特奥蒂瓦坎",
+   "name": "特奥蒂瓦坎",
+   "province": "墨西哥",
+   "country": "墨西哥",
+   "lng": -98.84389,
+   "lat": 19.6925,
+   "blurb": "太阳金字塔和月亮金字塔排在一条大道两边。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-秘鲁-马丘比丘",
+   "name": "马丘比丘",
+   "province": "秘鲁",
+   "country": "秘鲁",
+   "lng": -72.54556,
+   "lat": -13.16333,
+   "blurb": "建在云里的印加石头城，羊驼在草地上走来走去。",
+   "scene": "mountain"
+  },
+  {
+   "id": "world-秘鲁-纳斯卡线条",
+   "name": "纳斯卡线条",
+   "province": "秘鲁",
+   "country": "秘鲁",
+   "lng": -75.13125,
+   "lat": -14.6986,
+   "blurb": "沙漠上画着巨大的蜂鸟和猴子，只有从天上才看得全。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-巴西-救世基督像",
+   "name": "救世基督像",
+   "province": "巴西",
+   "country": "巴西",
+   "lng": -43.21056,
+   "lat": -22.95194,
+   "blurb": "张开双臂的大雕像，站在山顶望着里约的海湾。",
+   "scene": "city"
+  },
+  {
+   "id": "world-巴西-亚马逊雨林",
+   "name": "亚马逊雨林",
+   "province": "巴西",
+   "country": "巴西",
+   "lng": -60,
+   "lat": -3,
+   "blurb": "世界上最大的雨林，树高得看不见天，河里还有粉红海豚。",
+   "scene": "forest"
+  },
+  {
+   "id": "world-巴西-伊瓜苏瀑布",
+   "name": "伊瓜苏瀑布",
+   "province": "巴西",
+   "country": "巴西",
+   "lng": -54.44472,
+   "lat": -25.68667,
+   "blurb": "两百多条瀑布排成一圈一起往下砸，彩虹整天都在。",
+   "scene": "water"
+  },
+  {
+   "id": "world-阿根廷-佩里托莫雷诺冰川",
+   "name": "佩里托莫雷诺冰川",
+   "province": "阿根廷",
+   "country": "阿根廷",
+   "lng": -73.13333,
+   "lat": -50.5,
+   "blurb": "一面会走路的冰墙，时不时轰一声掉下大冰块。",
+   "scene": "snow"
+  },
+  {
+   "id": "world-智利-复活节岛",
+   "name": "复活节岛",
+   "province": "智利",
+   "country": "智利",
+   "lng": -109.35,
+   "lat": -27.12,
+   "blurb": "岛上立着近千尊大石头人，全都背朝大海。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-智利-阿塔卡马沙漠",
+   "name": "阿塔卡马沙漠",
+   "province": "智利",
+   "country": "智利",
+   "lng": -69.25,
+   "lat": -24.5,
+   "blurb": "地球上最干的地方，有些地方一辈子没下过雨。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-玻利维亚-乌尤尼盐沼",
+   "name": "乌尤尼盐沼",
+   "province": "玻利维亚",
+   "country": "玻利维亚",
+   "lng": -67.48914,
+   "lat": -20.13378,
+   "blurb": "下过雨以后地面变成一面镜子，人像走在天上。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-古巴-哈瓦那",
+   "name": "哈瓦那",
+   "province": "古巴",
+   "country": "古巴",
+   "lng": -82.35889,
+   "lat": 23.13667,
+   "blurb": "街上跑着五颜六色的老爷车，房子刷成各种颜色。",
+   "scene": "city"
+  },
+  {
+   "id": "world-厄瓜多尔-加拉帕戈斯群岛",
+   "name": "加拉帕戈斯群岛",
+   "province": "厄瓜多尔",
+   "country": "厄瓜多尔",
+   "lng": -90.5,
+   "lat": -0.5,
+   "blurb": "岛上的大乌龟和大蜥蜴不怕人，达尔文在这里想通了进化。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-委内瑞拉-天使瀑布",
+   "name": "天使瀑布",
+   "province": "委内瑞拉",
+   "country": "委内瑞拉",
+   "lng": -62.53556,
+   "lat": 5.9675,
+   "blurb": "世界上落差最大的瀑布，水从近千米的悬崖直直落下。",
+   "scene": "water"
+  },
+  {
+   "id": "world-危地马拉-蒂卡尔",
+   "name": "蒂卡尔",
+   "province": "危地马拉",
+   "country": "危地马拉",
+   "lng": -89.62361,
+   "lat": 17.22194,
+   "blurb": "丛林里冒出一座座玛雅金字塔，猴子在树顶叫。",
+   "scene": "forest"
+  },
+  {
+   "id": "world-巴拿马-巴拿马运河",
+   "name": "巴拿马运河",
+   "province": "巴拿马",
+   "country": "巴拿马",
+   "lng": -79.57503,
+   "lat": 8.96659,
+   "blurb": "挖通的一条水道，大船坐着\"水电梯\"翻过山。",
+   "scene": "water"
+  },
+  {
+   "id": "world-哥斯达黎加-哥斯达黎加雨林",
+   "name": "哥斯达黎加雨林",
+   "province": "哥斯达黎加",
+   "country": "哥斯达黎加",
+   "lng": -84.79556,
+   "lat": 10.3025,
+   "blurb": "云雾飘在树梢上，树懒挂在枝头慢慢挪。",
+   "scene": "forest"
+  },
+  {
+   "id": "world-埃及-吉萨金字塔",
+   "name": "吉萨金字塔",
+   "province": "埃及",
+   "country": "埃及",
+   "lng": 31.13278,
+   "lat": 29.97611,
+   "blurb": "四千多年前用巨石垒成的三角塔，是古代世界七大奇迹里唯一还在的。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-埃及-狮身人面像",
+   "name": "狮身人面像",
+   "province": "埃及",
+   "country": "埃及",
+   "lng": 31.13758,
+   "lat": 29.97526,
+   "blurb": "人面狮身的大石像，蹲在金字塔旁边守着。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-埃及-卢克索神庙",
+   "name": "卢克索神庙",
+   "province": "埃及",
+   "country": "埃及",
+   "lng": 32.63917,
+   "lat": 25.7,
+   "blurb": "巨大的石柱像一片石头森林，柱子上刻满象形文字。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-埃及-阿布辛贝神庙",
+   "name": "阿布辛贝神庙",
+   "province": "埃及",
+   "country": "埃及",
+   "lng": 31.62556,
+   "lat": 22.33694,
+   "blurb": "整座神庙是从山岩里凿出来的，门口坐着四尊巨大的拉美西斯。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-南非-桌山",
+   "name": "桌山",
+   "province": "南非",
+   "country": "南非",
+   "lng": 18.40988,
+   "lat": -33.96218,
+   "blurb": "山顶平得像一张桌子，经常盖着一层\"桌布\"似的云。",
+   "scene": "mountain"
+  },
+  {
+   "id": "world-南非-好望角",
+   "name": "好望角",
+   "province": "南非",
+   "country": "南非",
+   "lng": 19.5,
+   "lat": -35,
+   "blurb": "非洲最西南的角，大西洋和印度洋在这里碰头。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-南非-克鲁格国家公园",
+   "name": "克鲁格国家公园",
+   "province": "南非",
+   "country": "南非",
+   "lng": 31.48528,
+   "lat": -24.01139,
+   "blurb": "南非最大的野生动物园，狮子和大象就住在路边。",
+   "scene": "grass"
+  },
+  {
+   "id": "world-摩洛哥-舍夫沙万",
+   "name": "舍夫沙万",
+   "province": "摩洛哥",
+   "country": "摩洛哥",
+   "lng": -5.26972,
+   "lat": 35.17139,
+   "blurb": "整座小城刷成蓝色，墙、台阶、花盆全是蓝的。",
+   "scene": "city"
+  },
+  {
+   "id": "world-摩洛哥-马拉喀什",
+   "name": "马拉喀什",
+   "province": "摩洛哥",
+   "country": "摩洛哥",
+   "lng": -8.00889,
+   "lat": 31.63,
+   "blurb": "傍晚的广场上耍蛇的、敲鼓的、卖果汁的全挤在一起。",
+   "scene": "city"
+  },
+  {
+   "id": "world-肯尼亚-马赛马拉",
+   "name": "马赛马拉",
+   "province": "肯尼亚",
+   "country": "肯尼亚",
+   "lng": 35.14389,
+   "lat": -1.49,
+   "blurb": "每年上百万头角马从这里跑过，后面跟着狮子。",
+   "scene": "grass"
+  },
+  {
+   "id": "world-坦桑尼亚-乞力马扎罗山",
+   "name": "乞力马扎罗山",
+   "province": "坦桑尼亚",
+   "country": "坦桑尼亚",
+   "lng": 37.35333,
+   "lat": -3.07583,
+   "blurb": "赤道边上的雪山，山脚下是热带，山顶却结着冰。",
+   "scene": "snow"
+  },
+  {
+   "id": "world-坦桑尼亚-塞伦盖蒂",
+   "name": "塞伦盖蒂",
+   "province": "坦桑尼亚",
+   "country": "坦桑尼亚",
+   "lng": 34.83333,
+   "lat": -2.33083,
+   "blurb": "无边无际的草原，金合欢树孤零零地立着。",
+   "scene": "grass"
+  },
+  {
+   "id": "world-埃塞俄比亚-拉利贝拉岩石教堂",
+   "name": "拉利贝拉岩石教堂",
+   "province": "埃塞俄比亚",
+   "country": "埃塞俄比亚",
+   "lng": 39.04333,
+   "lat": 12.0325,
+   "blurb": "十一座教堂全是从地下的整块岩石里凿出来的。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-纳米比亚-索苏斯维利",
+   "name": "索苏斯维利",
+   "province": "纳米比亚",
+   "country": "纳米比亚",
+   "lng": 15.29017,
+   "lat": -24.7395,
+   "blurb": "红色沙丘有三百米高，中间是白色的干盐湖。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-津巴布韦-维多利亚瀑布",
+   "name": "维多利亚瀑布",
+   "province": "津巴布韦",
+   "country": "津巴布韦",
+   "lng": 25.85485,
+   "lat": -17.92422,
+   "blurb": "当地人叫它\"轰隆作响的烟雾\"，水雾几十公里外都看得见。",
+   "scene": "water"
+  },
+  {
+   "id": "world-博茨瓦纳-奥卡万戈三角洲",
+   "name": "奥卡万戈三角洲",
+   "province": "博茨瓦纳",
+   "country": "博茨瓦纳",
+   "lng": 22.9,
+   "lat": -19.4,
+   "blurb": "河水不流进海里，而是在沙漠中间散成一片水乡。",
+   "scene": "water"
+  },
+  {
+   "id": "world-马达加斯加-猴面包树大道",
+   "name": "猴面包树大道",
+   "province": "马达加斯加",
+   "country": "马达加斯加",
+   "lng": 44.41945,
+   "lat": -20.25,
+   "blurb": "路边立着一排胖胖的猴面包树，夕阳下像剪影。",
+   "scene": "grass"
+  },
+  {
+   "id": "world-塞内加尔-戈雷岛",
+   "name": "戈雷岛",
+   "province": "塞内加尔",
+   "country": "塞内加尔",
+   "lng": -17.39833,
+   "lat": 14.66694,
+   "blurb": "小岛上的彩色房子，曾经是大西洋奴隶贸易的中转站。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-澳大利亚-悉尼歌剧院",
+   "name": "悉尼歌剧院",
+   "province": "澳大利亚",
+   "country": "澳大利亚",
+   "lng": 151.21513,
+   "lat": -33.85681,
+   "blurb": "屋顶像一排张开的白色贝壳，就在海港边上。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-澳大利亚-大堡礁",
+   "name": "大堡礁",
+   "province": "澳大利亚",
+   "country": "澳大利亚",
+   "lng": 145.9,
+   "lat": -16.35,
+   "blurb": "世界上最大的珊瑚礁，从太空都看得见。",
+   "scene": "water"
+  },
+  {
+   "id": "world-澳大利亚-乌鲁鲁",
+   "name": "乌鲁鲁",
+   "province": "澳大利亚",
+   "country": "澳大利亚",
+   "lng": 131.03612,
+   "lat": -25.345,
+   "blurb": "沙漠中间一块巨大的红石头，傍晚会烧成橘红色。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-澳大利亚-十二门徒石",
+   "name": "十二门徒石",
+   "province": "澳大利亚",
+   "country": "澳大利亚",
+   "lng": 143.10001,
+   "lat": -38.66667,
+   "blurb": "海边的石灰岩柱子一根根站在浪里，被水冲了几百万年。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-新西兰-米尔福德峡湾",
+   "name": "米尔福德峡湾",
+   "province": "新西兰",
+   "country": "新西兰",
+   "lng": 167.90555,
+   "lat": -44.64806,
+   "blurb": "陡峭的山壁直接落进水里，瀑布从几百米高处挂下来。",
+   "scene": "water"
+  },
+  {
+   "id": "world-新西兰-霍比屯",
+   "name": "霍比屯",
+   "province": "新西兰",
+   "country": "新西兰",
+   "lng": 175.67972,
+   "lat": -37.8575,
+   "blurb": "山坡上一个个圆门的矮房子，是拍电影留下的村子。",
+   "scene": "grass"
+  },
+  {
+   "id": "world-新西兰-皇后镇",
+   "name": "皇后镇",
+   "province": "新西兰",
+   "country": "新西兰",
+   "lng": 168.66251,
+   "lat": -45.03111,
+   "blurb": "湖和雪山围成的小镇，很多人从这里蹦极。",
+   "scene": "mountain"
+  },
+  {
+   "id": "world-法属波利尼西亚-大溪地",
+   "name": "大溪地",
+   "province": "法属波利尼西亚",
+   "country": "法属波利尼西亚",
+   "lng": -149.41667,
+   "lat": -17.66667,
+   "blurb": "海水从浅绿渐变到深蓝，房子建在水上木桩上。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-美国-时代广场",
+   "name": "时代广场",
+   "province": "美国",
+   "country": "美国",
+   "lng": -73.9858,
+   "lat": 40.7575,
+   "blurb": "晚上全是巨大的电子广告牌，亮得像白天。",
+   "scene": "city"
+  },
+  {
+   "id": "world-美国-帝国大厦",
+   "name": "帝国大厦",
+   "province": "美国",
+   "country": "美国",
+   "lng": -73.98566,
+   "lat": 40.74844,
+   "blurb": "灰色的摩天大楼，顶上的灯会跟着节日换颜色。",
+   "scene": "city"
+  },
+  {
+   "id": "world-美国-优胜美地国家公园",
+   "name": "优胜美地国家公园",
+   "province": "美国",
+   "country": "美国",
+   "lng": -119.51667,
+   "lat": 37.85,
+   "blurb": "垂直的巨型花岗岩壁，瀑布从高处直直挂下来。",
+   "scene": "mountain"
+  },
+  {
+   "id": "world-美国-大烟山国家公园",
+   "name": "大烟山国家公园",
+   "province": "美国",
+   "country": "美国",
+   "lng": -83.425,
+   "lat": 35.61111,
+   "blurb": "早上山间飘着一层蓝白色的雾，像烟一样。",
+   "scene": "forest"
+  },
+  {
+   "id": "world-美国-拉斯维加斯大道",
+   "name": "拉斯维加斯大道",
+   "province": "美国",
+   "country": "美国",
+   "lng": -115.1726,
+   "lat": 36.11968,
+   "blurb": "沙漠中间的一条街，晚上灯亮得看不见星星。",
+   "scene": "city"
+  },
+  {
+   "id": "world-日本-大阪城",
+   "name": "大阪城",
+   "province": "日本",
+   "country": "日本",
+   "lng": 135.52583,
+   "lat": 34.68722,
+   "blurb": "绿色屋顶配金色装饰，外面围着护城河。",
+   "scene": "city"
+  },
+  {
+   "id": "world-日本-岚山竹林",
+   "name": "岚山竹林",
+   "province": "日本",
+   "country": "日本",
+   "lng": 135.67067,
+   "lat": 35.01509,
+   "blurb": "小路两边全是高高的竹子，风一吹沙沙响。",
+   "scene": "forest"
+  },
+  {
+   "id": "world-日本-广岛和平纪念碑",
+   "name": "广岛和平纪念碑",
+   "province": "日本",
+   "country": "日本",
+   "lng": 132.45361,
+   "lat": 34.39556,
+   "blurb": "只剩一个圆顶的废墟，提醒人们不要再打仗。",
+   "scene": "city"
+  },
+  {
+   "id": "world-法国-凯旋门",
+   "name": "凯旋门",
+   "province": "法国",
+   "country": "法国",
+   "lng": 2.29503,
+   "lat": 48.87378,
+   "blurb": "巨大的拱门，底下点着无名烈士墓的长明火。",
+   "scene": "city"
+  },
+  {
+   "id": "world-法国-蔚蓝海岸",
+   "name": "蔚蓝海岸",
+   "province": "法国",
+   "country": "法国",
+   "lng": 6.665,
+   "lat": 43.32,
+   "blurb": "地中海边的海岸线，沙滩和游艇排成一排。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-法国-香波堡",
+   "name": "香波堡",
+   "province": "法国",
+   "country": "法国",
+   "lng": 1.51722,
+   "lat": 47.61611,
+   "blurb": "河谷里的城堡，屋顶上全是小塔尖，像童话里的。",
+   "scene": "city"
+  },
+  {
+   "id": "world-英国-温莎城堡",
+   "name": "温莎城堡",
+   "province": "英国",
+   "country": "英国",
+   "lng": -0.60417,
+   "lat": 51.48333,
+   "blurb": "英国国王周末住的城堡，世界上还有人住的最大古堡。",
+   "scene": "city"
+  },
+  {
+   "id": "world-英国-湖区",
+   "name": "湖区",
+   "province": "英国",
+   "country": "英国",
+   "lng": -3.2116,
+   "lat": 54.45424,
+   "blurb": "山和湖挤在一起，彼得兔的故事就发生在这儿。",
+   "scene": "water"
+  },
+  {
+   "id": "world-意大利-佛罗伦萨大教堂",
+   "name": "佛罗伦萨大教堂",
+   "province": "意大利",
+   "country": "意大利",
+   "lng": 11.25694,
+   "lat": 43.77306,
+   "blurb": "巨大的红砖圆顶，文艺复兴就是从这里开始的。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-意大利-五渔村",
+   "name": "五渔村",
+   "province": "意大利",
+   "country": "意大利",
+   "lng": 9.71667,
+   "lat": 44.11945,
+   "blurb": "五个彩色小村子贴在悬崖上，下面就是海。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-意大利-阿马尔菲海岸",
+   "name": "阿马尔菲海岸",
+   "province": "意大利",
+   "country": "意大利",
+   "lng": 14.6,
+   "lat": 40.65,
+   "blurb": "柠檬树和彩色房子挂在陡峭的海岸上。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-意大利-特莱维喷泉",
+   "name": "特莱维喷泉",
+   "province": "意大利",
+   "country": "意大利",
+   "lng": 12.48306,
+   "lat": 41.90083,
+   "blurb": "往池子里扔一枚硬币，据说以后还会再回罗马。",
+   "scene": "city"
+  },
+  {
+   "id": "world-印度-红堡",
+   "name": "红堡",
+   "province": "印度",
+   "country": "印度",
+   "lng": 77.24084,
+   "lat": 28.65583,
+   "blurb": "红砂岩砌的城堡，印度总理每年在这儿讲话。",
+   "scene": "city"
+  },
+  {
+   "id": "world-印度-埃洛拉石窟",
+   "name": "埃洛拉石窟",
+   "province": "印度",
+   "country": "印度",
+   "lng": 75.1771,
+   "lat": 20.0268,
+   "blurb": "整座山被凿成寺庙，连柱子都雕满了花纹。",
+   "scene": "cave"
+  },
+  {
+   "id": "world-印度-果阿海滩",
+   "name": "果阿海滩",
+   "province": "印度",
+   "country": "印度",
+   "lng": 73.83,
+   "lat": 15.5,
+   "blurb": "椰林和沙滩，以前是葡萄牙的殖民地。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-埃及-帝王谷",
+   "name": "帝王谷",
+   "province": "埃及",
+   "country": "埃及",
+   "lng": 32.60222,
+   "lat": 25.74083,
+   "blurb": "沙漠山谷里埋着六十多位法老，墙上画满彩色壁画。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-埃及-尼罗河",
+   "name": "尼罗河",
+   "province": "埃及",
+   "country": "埃及",
+   "lng": 29.33139,
+   "lat": -2.28222,
+   "blurb": "世界上最长的河之一，两岸窄窄的绿带外全是沙漠。",
+   "scene": "water"
+  },
+  {
+   "id": "world-澳大利亚-大洋路",
+   "name": "大洋路",
+   "province": "澳大利亚",
+   "country": "澳大利亚",
+   "lng": 143.68727,
+   "lat": -38.73383,
+   "blurb": "海边公路一路都是石灰岩柱子，开车看最过瘾。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-澳大利亚-蓝山国家公园",
+   "name": "蓝山国家公园",
+   "province": "澳大利亚",
+   "country": "澳大利亚",
+   "lng": 150.46001,
+   "lat": -33.62,
+   "blurb": "满山的桉树会放出蓝色的雾，远看山真的是蓝的。",
+   "scene": "mountain"
+  },
+  {
+   "id": "world-澳大利亚-菲利普岛",
+   "name": "菲利普岛",
+   "province": "澳大利亚",
+   "country": "澳大利亚",
+   "lng": 145.23334,
+   "lat": -38.48333,
+   "blurb": "傍晚小企鹅排着队从海里摇摇摆摆走回窝。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-韩国-北村韩屋村",
+   "name": "北村韩屋村",
+   "province": "韩国",
+   "country": "韩国",
+   "lng": 126.98361,
+   "lat": 37.58306,
+   "blurb": "一片传统黑瓦房，小巷窄窄的，现在还住着人。",
+   "scene": "city"
+  },
+  {
+   "id": "world-泰国-大城遗址",
+   "name": "大城遗址",
+   "province": "泰国",
+   "country": "泰国",
+   "lng": 100.56055,
+   "lat": 14.34778,
+   "blurb": "古都留下的红砖佛塔，很多佛像的头都不见了。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-泰国-素可泰历史公园",
+   "name": "素可泰历史公园",
+   "province": "泰国",
+   "country": "泰国",
+   "lng": 99.70361,
+   "lat": 17.02111,
+   "blurb": "泰国最早的首都，佛像安静地坐在莲花座上。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-土耳其-以弗所",
+   "name": "以弗所",
+   "province": "土耳其",
+   "country": "土耳其",
+   "lng": 27.34194,
+   "lat": 37.94111,
+   "blurb": "古罗马城市的街道还在，图书馆的立面特别气派。",
+   "scene": "city"
+  },
+  {
+   "id": "world-德国-柏林墙",
+   "name": "柏林墙",
+   "province": "德国",
+   "country": "德国",
+   "lng": 13.44111,
+   "lat": 52.50444,
+   "blurb": "剩下的墙段上画满涂鸦，最长的一段叫东边画廊。",
+   "scene": "city"
+  },
+  {
+   "id": "world-德国-黑森林",
+   "name": "黑森林",
+   "province": "德国",
+   "country": "德国",
+   "lng": 8.05,
+   "lat": 47.87861,
+   "blurb": "密密的针叶林，黑森林蛋糕上的樱桃就产在这儿。",
+   "scene": "forest"
+  },
+  {
+   "id": "world-德国-海德堡城堡",
+   "name": "海德堡城堡",
+   "province": "德国",
+   "country": "德国",
+   "lng": 8.71532,
+   "lat": 49.41056,
+   "blurb": "红砂岩城堡的废墟立在山坡上，脚下是红顶老城。",
+   "scene": "city"
+  },
+  {
+   "id": "world-俄罗斯-圣瓦西里大教堂",
+   "name": "圣瓦西里大教堂",
+   "province": "俄罗斯",
+   "country": "俄罗斯",
+   "lng": 37.62305,
+   "lat": 55.7525,
+   "blurb": "九个洋葱头圆顶，每个的颜色和花纹都不一样。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-巴西-科帕卡巴纳海滩",
+   "name": "科帕卡巴纳海滩",
+   "province": "巴西",
+   "country": "巴西",
+   "lng": -43.18056,
+   "lat": -22.96694,
+   "blurb": "四公里长的海滩，人行道上全是波浪花纹。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-巴西-潘塔纳尔湿地",
+   "name": "潘塔纳尔湿地",
+   "province": "巴西",
+   "country": "巴西",
+   "lng": -57.5,
+   "lat": -17.4,
+   "blurb": "世界上最大的湿地，鳄鱼和金刚鹦鹉到处都是。",
+   "scene": "water"
+  },
+  {
+   "id": "world-南非-克尼斯纳",
+   "name": "克尼斯纳",
+   "province": "南非",
+   "country": "南非",
+   "lng": 23.04889,
+   "lat": -34.03556,
+   "blurb": "花园大道上最有名的小镇，湖口两座石岬把海挡在外面。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-新西兰-罗托鲁瓦",
+   "name": "罗托鲁瓦",
+   "province": "新西兰",
+   "country": "新西兰",
+   "lng": 176.25139,
+   "lat": -38.13778,
+   "blurb": "城里到处冒地热蒸汽，空气里有一股硫磺味。",
+   "scene": "water"
+  },
+  {
+   "id": "world-新西兰-库克山",
+   "name": "库克山",
+   "province": "新西兰",
+   "country": "新西兰",
+   "lng": 170.14194,
+   "lat": -43.595,
+   "blurb": "新西兰最高的山，冰川一直伸到山脚下。",
+   "scene": "snow"
+  },
+  {
+   "id": "world-印度尼西亚-科莫多岛",
+   "name": "科莫多岛",
+   "province": "印度尼西亚",
+   "country": "印度尼西亚",
+   "lng": 119.45,
+   "lat": -8.55,
+   "blurb": "岛上有世界上最大的蜥蜴，叫科莫多龙。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-以色列-耶路撒冷老城",
+   "name": "耶路撒冷老城",
+   "province": "以色列",
+   "country": "以色列",
+   "lng": 35.23417,
+   "lat": 31.77667,
+   "blurb": "老城分成四个区，石板路窄得只能走人。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-阿联酋-棕榈岛",
+   "name": "棕榈岛",
+   "province": "阿联酋",
+   "country": "阿联酋",
+   "lng": 55.13334,
+   "lat": 25.11806,
+   "blurb": "填海造出来的岛，形状像一棵棕榈树。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-西班牙-塞维利亚大教堂",
+   "name": "塞维利亚大教堂",
+   "province": "西班牙",
+   "country": "西班牙",
+   "lng": -5.99315,
+   "lat": 37.38592,
+   "blurb": "世界上最大的哥特式教堂，旁边立着一座钟楼。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-西班牙-古埃尔公园",
+   "name": "古埃尔公园",
+   "province": "西班牙",
+   "country": "西班牙",
+   "lng": 2.15278,
+   "lat": 41.41361,
+   "blurb": "高迪设计的公园，长椅弯弯曲曲还贴着碎瓷片。",
+   "scene": "city"
+  },
+  {
+   "id": "world-西班牙-圣地亚哥朝圣教堂",
+   "name": "圣地亚哥朝圣教堂",
+   "province": "西班牙",
+   "country": "西班牙",
+   "lng": -8.54444,
+   "lat": 42.88055,
+   "blurb": "朝圣路的终点，有人走几百公里就为了到这儿。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-瑞士-卢塞恩湖",
+   "name": "卢塞恩湖",
+   "province": "瑞士",
+   "country": "瑞士",
+   "lng": 8.4011,
+   "lat": 47.0194,
+   "blurb": "湖光山色围着小城，还有一座画满画的木头老桥。",
+   "scene": "water"
+  },
+  {
+   "id": "world-奥地利-维也纳国家歌剧院",
+   "name": "维也纳国家歌剧院",
+   "province": "奥地利",
+   "country": "奥地利",
+   "lng": 16.36847,
+   "lat": 48.20278,
+   "blurb": "世界有名的歌剧院，门口的大屏幕会免费直播演出。",
+   "scene": "city"
+  },
+  {
+   "id": "world-希腊-德尔斐",
+   "name": "德尔斐",
+   "province": "希腊",
+   "country": "希腊",
+   "lng": 22.5013,
+   "lat": 38.4823,
+   "blurb": "古希腊人认为这里是世界的中心，都来求神谕。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-捷克-克鲁姆洛夫",
+   "name": "克鲁姆洛夫",
+   "province": "捷克",
+   "country": "捷克",
+   "lng": 14.31528,
+   "lat": 48.81111,
+   "blurb": "河拐了个弯把老城抱在怀里，一片红屋顶。",
+   "scene": "city"
+  },
+  {
+   "id": "world-加拿大-魁北克老城",
+   "name": "魁北克老城",
+   "province": "加拿大",
+   "country": "加拿大",
+   "lng": -71.208,
+   "lat": 46.813,
+   "blurb": "北美的法语老城，城墙和石板路都是几百年前的。",
+   "scene": "city"
+  },
+  {
+   "id": "world-加拿大-路易斯湖",
+   "name": "路易斯湖",
+   "province": "加拿大",
+   "country": "加拿大",
+   "lng": -116.18056,
+   "lat": 51.42528,
+   "blurb": "湖水是绿的，背后是雪山，冬天冻住能滑冰。",
+   "scene": "water"
+  },
+  {
+   "id": "world-墨西哥-宪法广场",
+   "name": "宪法广场",
+   "province": "墨西哥",
+   "country": "墨西哥",
+   "lng": -99.13306,
+   "lat": 19.43278,
+   "blurb": "巨大的广场，四周是宫殿和大教堂。",
+   "scene": "city"
+  },
+  {
+   "id": "world-秘鲁-库斯科",
+   "name": "库斯科",
+   "province": "秘鲁",
+   "country": "秘鲁",
+   "lng": -71.97854,
+   "lat": -13.51709,
+   "blurb": "印加古都，墙是石头垒的，缝里连刀片都插不进去。",
+   "scene": "city"
+  },
+  {
+   "id": "world-智利-百内国家公园",
+   "name": "百内国家公园",
+   "province": "智利",
+   "country": "智利",
+   "lng": -73,
+   "lat": -51,
+   "blurb": "三座花岗岩尖塔直插云霄，风大得能把人吹歪。",
+   "scene": "mountain"
+  },
+  {
+   "id": "world-摩洛哥-撒哈拉沙漠",
+   "name": "撒哈拉沙漠",
+   "province": "摩洛哥",
+   "country": "摩洛哥",
+   "lng": 13,
+   "lat": 23,
+   "blurb": "沙丘一望无际，晚上星空亮得吓人。",
+   "scene": "desert"
+  },
+  {
+   "id": "world-阿根廷-布宜诺斯艾利斯",
+   "name": "布宜诺斯艾利斯",
+   "province": "阿根廷",
+   "country": "阿根廷",
+   "lng": -58.38139,
+   "lat": -34.60389,
+   "blurb": "探戈的发源地，街边随时有人当场跳起来。",
+   "scene": "city"
+  },
+  {
+   "id": "world-突尼斯-迦太基",
+   "name": "迦太基",
+   "province": "突尼斯",
+   "country": "突尼斯",
+   "lng": 10.3233,
+   "lat": 36.8528,
+   "blurb": "古代地中海最强的城邦之一，现在只剩石柱和浴场。",
+   "scene": "city"
+  },
+  {
+   "id": "world-阿尔及利亚-阿尔及尔卡斯巴",
+   "name": "阿尔及尔卡斯巴",
+   "province": "阿尔及利亚",
+   "country": "阿尔及利亚",
+   "lng": 3.06056,
+   "lat": 36.78695,
+   "blurb": "白色的老城一层层堆在山坡上。",
+   "scene": "city"
+  },
+  {
+   "id": "world-尼日利亚-祖马岩",
+   "name": "祖马岩",
+   "province": "尼日利亚",
+   "country": "尼日利亚",
+   "lng": 7.23389,
+   "lat": 9.13028,
+   "blurb": "一整块巨大的独石，比周围平原高出七百多米。",
+   "scene": "mountain"
+  },
+  {
+   "id": "world-加纳-海岸角城堡",
+   "name": "海岸角城堡",
+   "province": "加纳",
+   "country": "加纳",
+   "lng": -1.24111,
+   "lat": 5.10361,
+   "blurb": "白色的海边城堡，曾经是奴隶贸易的据点。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-卢旺达-火山国家公园",
+   "name": "火山国家公园",
+   "province": "卢旺达",
+   "country": "卢旺达",
+   "lng": 29.4925,
+   "lat": -1.4675,
+   "blurb": "云雾里的雨林，运气好能遇到山地大猩猩。",
+   "scene": "forest"
+  },
+  {
+   "id": "world-赞比亚-南卢安瓜国家公园",
+   "name": "南卢安瓜国家公园",
+   "province": "赞比亚",
+   "country": "赞比亚",
+   "lng": 31.5,
+   "lat": -13,
+   "blurb": "可以走着看野生动物的国家公园。",
+   "scene": "grass"
+  },
+  {
+   "id": "world-乌拉圭-埃斯特角城",
+   "name": "埃斯特角城",
+   "province": "乌拉圭",
+   "country": "乌拉圭",
+   "lng": -54.95,
+   "lat": -34.96667,
+   "blurb": "沙滩上从地里伸出来五根巨大的手指。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-巴拉圭-巴拉那耶稣会传教区",
+   "name": "巴拉那耶稣会传教区",
+   "province": "巴拉圭",
+   "country": "巴拉圭",
+   "lng": -55.7,
+   "lat": -27.133,
+   "blurb": "丛林里的红砖教堂废墟，是电影取景地。",
+   "scene": "forest"
+  },
+  {
+   "id": "world-牙买加-邓斯河瀑布",
+   "name": "邓斯河瀑布",
+   "province": "牙买加",
+   "country": "牙买加",
+   "lng": -77.1381,
+   "lat": 18.4158,
+   "blurb": "像台阶一样的瀑布，大家手拉手往上爬。",
+   "scene": "water"
+  },
+  {
+   "id": "world-多米尼加-圣多明各殖民城",
+   "name": "圣多明各殖民城",
+   "province": "多米尼加",
+   "country": "多米尼加",
+   "lng": -69.91666,
+   "lat": 18.48333,
+   "blurb": "美洲最老的欧洲人城市，有第一座大教堂。",
+   "scene": "city"
+  },
+  {
+   "id": "world-洪都拉斯-科潘",
+   "name": "科潘",
+   "province": "洪都拉斯",
+   "country": "洪都拉斯",
+   "lng": -89.1425,
+   "lat": 14.8375,
+   "blurb": "玛雅古城，石阶上刻着密密麻麻的象形文字。",
+   "scene": "forest"
+  },
+  {
+   "id": "world-斐济-玛玛努卡群岛",
+   "name": "玛玛努卡群岛",
+   "province": "斐济",
+   "country": "斐济",
+   "lng": 177.08333,
+   "lat": -17.66667,
+   "blurb": "三百多个小岛，海水是透明的浅蓝色。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-萨摩亚-拉洛马努海滩",
+   "name": "拉洛马努海滩",
+   "province": "萨摩亚",
+   "country": "萨摩亚",
+   "lng": -171.44083,
+   "lat": -14.04528,
+   "blurb": "细细的白沙滩，椰子树斜斜地伸到海面上。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-巴布亚新几内亚-科科达小径",
+   "name": "科科达小径",
+   "province": "巴布亚新几内亚",
+   "country": "巴布亚新几内亚",
+   "lng": 147.61774,
+   "lat": -9.1226,
+   "blurb": "穿过雨林的山路，二战时在这里打过仗。",
+   "scene": "forest"
+  },
+  {
+   "id": "world-文莱-奥马尔阿里赛义夫丁清真寺",
+   "name": "奥马尔阿里赛义夫丁清真寺",
+   "province": "文莱",
+   "country": "文莱",
+   "lng": 114.9392,
+   "lat": 4.8894,
+   "blurb": "金顶清真寺建在水上，倒影特别好看。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-孟加拉-孙德尔本斯",
+   "name": "孙德尔本斯",
+   "province": "孟加拉",
+   "country": "孟加拉",
+   "lng": 88.75,
+   "lat": 21.75,
+   "blurb": "世界上最大的红树林，孟加拉虎住在里面。",
+   "scene": "forest"
+  },
+  {
+   "id": "world-黎巴嫩-巴勒贝克",
+   "name": "巴勒贝克",
+   "province": "黎巴嫩",
+   "country": "黎巴嫩",
+   "lng": 36.20732,
+   "lat": 34.00634,
+   "blurb": "古罗马最大的神庙遗址，石柱粗得几个人抱不过来。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-卡塔尔-伊斯兰艺术博物馆",
+   "name": "伊斯兰艺术博物馆",
+   "province": "卡塔尔",
+   "country": "卡塔尔",
+   "lng": 51.5394,
+   "lat": 25.29554,
+   "blurb": "海边的白色博物馆，是贝聿铭设计的。",
+   "scene": "city"
+  },
+  {
+   "id": "world-阿曼-苏丹卡布斯大清真寺",
+   "name": "苏丹卡布斯大清真寺",
+   "province": "阿曼",
+   "country": "阿曼",
+   "lng": 58.38917,
+   "lat": 23.58389,
+   "blurb": "巨大的水晶吊灯，地上铺着世界上最大的手工地毯。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-塞浦路斯-帕福斯",
+   "name": "帕福斯",
+   "province": "塞浦路斯",
+   "country": "塞浦路斯",
+   "lng": 32.41667,
+   "lat": 34.76667,
+   "blurb": "海边有古罗马的马赛克地板画，颜色还很鲜艳。",
+   "scene": "coast"
+  },
+  {
+   "id": "world-卢森堡-卢森堡市",
+   "name": "卢森堡市",
+   "province": "卢森堡",
+   "country": "卢森堡",
+   "lng": 6.13194,
+   "lat": 49.61167,
+   "blurb": "建在峡谷两边，好多桥把上下两座城连起来。",
+   "scene": "city"
+  },
+  {
+   "id": "world-爱沙尼亚-塔林老城",
+   "name": "塔林老城",
+   "province": "爱沙尼亚",
+   "country": "爱沙尼亚",
+   "lng": 24.74528,
+   "lat": 59.43722,
+   "blurb": "中世纪的老城，塔楼和红屋顶保存得特别好。",
+   "scene": "city"
+  },
+  {
+   "id": "world-拉脱维亚-里加老城",
+   "name": "里加老城",
+   "province": "拉脱维亚",
+   "country": "拉脱维亚",
+   "lng": 24.10518,
+   "lat": 56.9494,
+   "blurb": "老城里有世界上最多的新艺术风格房子。",
+   "scene": "city"
+  },
+  {
+   "id": "world-立陶宛-特拉凯城堡",
+   "name": "特拉凯城堡",
+   "province": "立陶宛",
+   "country": "立陶宛",
+   "lng": 24.93306,
+   "lat": 54.6525,
+   "blurb": "红砖城堡建在湖心小岛上，靠一座木桥过去。",
+   "scene": "water"
+  },
+  {
+   "id": "world-斯洛伐克-斯皮什城堡",
+   "name": "斯皮什城堡",
+   "province": "斯洛伐克",
+   "country": "斯洛伐克",
+   "lng": 20.76833,
+   "lat": 49.00056,
+   "blurb": "东欧最大的城堡遗址，孤零零立在山头上。",
+   "scene": "city"
+  },
+  {
+   "id": "world-保加利亚-里拉修道院",
+   "name": "里拉修道院",
+   "province": "保加利亚",
+   "country": "保加利亚",
+   "lng": 23.34028,
+   "lat": 42.13334,
+   "blurb": "山里的修道院，墙上画满彩色的壁画。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-塞尔维亚-贝尔格莱德要塞",
+   "name": "贝尔格莱德要塞",
+   "province": "塞尔维亚",
+   "country": "塞尔维亚",
+   "lng": 20.45028,
+   "lat": 44.82333,
+   "blurb": "两条大河交汇的地方，白色的要塞守着老城。",
+   "scene": "city"
+  },
+  {
+   "id": "world-阿尔巴尼亚-培拉特",
+   "name": "培拉特",
+   "province": "阿尔巴尼亚",
+   "country": "阿尔巴尼亚",
+   "lng": 19.95833,
+   "lat": 40.70222,
+   "blurb": "白房子一层层叠在山坡上，人家叫它\"千窗之城\"。",
+   "scene": "city"
+  },
+  {
+   "id": "world-波黑-莫斯塔尔老桥",
+   "name": "莫斯塔尔老桥",
+   "province": "波黑",
+   "country": "波黑",
+   "lng": 17.81509,
+   "lat": 43.33727,
+   "blurb": "一座拱桥横跨碧绿的河，跳桥是当地的老传统。",
+   "scene": "city"
+  },
+  {
+   "id": "world-乌克兰-圣索菲亚大教堂（基辅）",
+   "name": "圣索菲亚大教堂（基辅）",
+   "province": "乌克兰",
+   "country": "乌克兰",
+   "lng": 30.51388,
+   "lat": 50.45301,
+   "blurb": "绿顶白墙，里面的马赛克拼画有一千年了。",
+   "scene": "temple"
+  },
+  {
+   "id": "world-亚美尼亚-格加尔德修道院",
+   "name": "格加尔德修道院",
+   "province": "亚美尼亚",
+   "country": "亚美尼亚",
+   "lng": 44.81851,
+   "lat": 40.14043,
+   "blurb": "一半是从山岩里凿出来的修道院，里面很凉。",
+   "scene": "cave"
+  },
+  {
+   "id": "world-阿塞拜疆-少女塔",
+   "name": "少女塔",
+   "province": "阿塞拜疆",
+   "country": "阿塞拜疆",
+   "lng": 49.8372,
+   "lat": 40.3661,
+   "blurb": "巴库老城里的圆柱形石塔，谁建的至今说不清。",
+   "scene": "city"
+  }
+ ]
+}

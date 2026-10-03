@@ -39,7 +39,7 @@
    ============================================================ */
 
 import type { BirdSpeciesId } from './types'
-import { haversineKm, type GeoPoint } from './travelStories'
+import { haversineKm, type GeoPoint } from './geo'
 
 /* ============================================================
    一、半径阶梯 —— 从家往外，一格一格推

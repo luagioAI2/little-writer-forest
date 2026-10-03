@@ -27,8 +27,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useApp } from '../../store/useApp'
 import { levelAt } from '../../domain/levels'
-import { LANDMARKS, landmarkById, mapProgress, pickDestination, sproutedIds } from '../../domain/travel'
-import { resolveDistanceKm, storyFor } from '../../domain/travelStories'
+import { distanceToLandmark, LANDMARKS, landmarkById, mapProgress, pickDestination, sproutedIds } from '../../domain/travel'
+import { contentsByLandmark } from '../../domain/travelContents'
 import {
   BIRD_SPECIES,
   awayBirds,
@@ -38,9 +38,17 @@ import {
   nextSpeciesToUnlock,
   speciesById,
 } from '../../domain/pets'
-import { CHINA_BBOX, CHINA_REGIONS, type MapRegion } from '../../assets/china-map'
-import type { Bird, Landmark, Sprout, TravelPhoto, TravelSouvenir, TravelStory, VisitedLandmark } from '../../domain/types'
-import { RARITIES } from '../../domain/types'
+import { CHINA_REGIONS } from '../../assets/china-map'
+import {
+  VIEWS,
+  landPath,
+  landmarkInScope,
+  makeProj,
+  regionPath,
+  type MapScope,
+} from './mapProjection'
+import type { Bird, Landmark, Sprout, TravelContent, TravelPhoto, TravelSouvenir, VisitedLandmark } from '../../domain/types'
+import { RARITIES, gradeMeta } from '../../domain/types'
 import {
   Badge,
   Button,
@@ -79,68 +87,39 @@ function rarityMeta(r: string) {
 /* ============================================================
    一、投影：经纬度 → SVG 坐标
    ------------------------------------------------------------
-   用等距圆柱投影（equirectangular）就够了：中国跨度不算极端，
-   简单线性映射在这个尺寸下肉眼看不出形变，而且可以离线算完。
+   ★★ 2026-09-24 拆到 `./mapProjection.ts` 去了。
 
-   纬度需要翻转 —— 经纬度是"北为正"，SVG 是"下为正"。
-   为了让雄鸡的形状在竖屏里更饱满，纬度方向给一点纵向拉伸。
+   原因：那里全是纯函数，而"坐标算到画布外面去了"属于
+   **不会报错**的那一类 bug（界面上什么都没有、控制台也一声不吭），
+   只能靠"把每一个地标都投影一遍再逐个断言"来防住 ——
+   留在组件文件里就没法写这个测试。守卫在 `mapProjection.test.ts`。
    ============================================================ */
-
-const MAP_W = 720
-const MAP_H = 560
-/** 纵向拉伸系数：让新疆/黑龙江的北缘与海南的南缘都留出余量 */
-const LAT_STRETCH = 1.16
-
-const LNG_SPAN = CHINA_BBOX.maxLng - CHINA_BBOX.minLng
-const LAT_SPAN = CHINA_BBOX.maxLat - CHINA_BBOX.minLat
-
-/** 内边距，避免最北 / 最西的省界贴到画布边缘 */
-const PAD_X = 18
-const PAD_Y = 22
-
-function projectX(lng: number): number {
-  return PAD_X + ((lng - CHINA_BBOX.minLng) / LNG_SPAN) * (MAP_W - PAD_X * 2)
-}
-
-function projectY(lat: number): number {
-  return PAD_Y + ((CHINA_BBOX.maxLat - lat) / LAT_SPAN) * (MAP_H - PAD_Y * 2) * LAT_STRETCH
-}
-
-/** 一个省的全部外环转成 SVG path 的 d 属性 */
-function regionPath(region: MapRegion): string {
-  const parts: string[] = []
-  for (const ring of region.r) {
-    if (ring.length < 3) continue
-    let d = ''
-    for (let i = 0; i < ring.length; i += 1) {
-      const [lng, lat] = ring[i]
-      const x = projectX(lng).toFixed(1)
-      const y = projectY(lat).toFixed(1)
-      d += i === 0 ? `M${x} ${y}` : `L${x} ${y}`
-    }
-    parts.push(`${d}Z`)
-  }
-  return parts.join(' ')
-}
 
 /* ============================================================
    二、地图本体
    ============================================================ */
 
 /**
- * 中国地图。
+ * 旅行地图 —— **中国 / 世界两个档共用这一个组件**。
  *
  * 层次（从下到上）：
- *   1. 省界填充（未点亮 = 极淡的纸色；点亮 = 淡绿）
- *   2. 省界线（发丝线，绝不加粗）
+ *   1. 底图填充（中国档 = 省界；世界档 = 陆地轮廓）
+ *   2. 底图描边（发丝线，绝不加粗）
  *   3. 已发芽地标的"光点"
- *   4. 地标圆点（去过的实心、没去过的空心）
+ *   4. 地标圆点
  *   5. 正在飞的小鸟（一个会摆动的小三角 + 虚线轨迹）
  *
- * 所有地标都画出来，包括没去过的 —— 看得见"还没到过的地方"
- * 才有"想再去一趟"的动力。
+ * ★★ 为什么两个档要共用组件、而不是各写一张图：
+ *    投影、地标点、小鸟轨迹、命中区域、发光滤镜这些**完全一样**，
+ *    只有"底图数据 + 窗口 + 画哪些地标"三处不同。
+ *    各写一张的话，以后改地标点的画法要改两遍 —— 而漏掉一处不报错，
+ *    只是那张图上地标不动了。
+ *
+ * ⚠️ 只有点亮过的地标才画（例外：正在被选中的那颗）。
+ *    原因见下面「没点亮的一颗都不画」那段。
  */
-function ChinaMap({
+function TravelMap({
+  scope,
   sprouts,
   flyingBirds,
   activeLandmarkId,
@@ -148,11 +127,13 @@ function ChinaMap({
   revealed,
   visitedIds,
 }: {
+  /** 看中国还是看世界 */
+  scope: MapScope
   sprouts: Sprout[]
   flyingBirds: Bird[]
   activeLandmarkId: string | null
   onPickLandmark: (l: Landmark) => void
-  /** 已点亮的省（用于给省界上色） */
+  /** 已点亮（用于给底图上色） */
   revealed: boolean
   /** v6：到过的地标 id 集合。用来区分「去过」和「没去过」 */
   visitedIds: Set<string>
@@ -164,12 +145,38 @@ function ChinaMap({
     return m
   }, [sprouts])
 
+  const proj = useMemo(() => makeProj(VIEWS[scope]), [scope])
+  const isWorld = scope === '世界'
+
+  /**
+   * ★★ 按 scope 过滤地标。判据是 `country`，不是 id 前缀、也不是坐标 ——
+   *    为什么不那样判，见 `mapProjection.ts` 的 `landmarkInScope`。
+   */
+  const shown = useMemo(
+    () => LANDMARKS.filter((l) => landmarkInScope(l.country, scope)),
+    [scope],
+  )
+
+  /** 世界档的底图 path 只算一次（1800 个点，别每帧重算） */
+  const worldD = useMemo(() => (isWorld ? landPath(proj) : ''), [isWorld, proj])
+
+  /**
+   * ★★ 正在飞的鸟也要按 scope 过滤 —— 否则会"飞到画布外面去"。
+   *
+   * 小鸟的落点可能在**另一档**（中国档里有一只飞往富士山的鸟）。
+   * 拿中国 bbox 去投影富士山（lng 138.7 > 135.09）→ x 超出画布右缘，
+   * 而 SVG **默认不裁剪** `overflow: hidden` 才裁，普通 svg 元素会画在框外
+   * 或者干脆看不见 —— 又是一个"不报错、只是没了"的形态。
+   * ➜ 只画落点落在当前这一档里的鸟。
+   */
+  const shownIds = useMemo(() => new Set(shown.map((l) => l.id)), [shown])
+
   return (
     <svg
-      viewBox={`0 0 ${MAP_W} ${MAP_H}`}
+      viewBox={`0 0 ${proj.view.w} ${proj.view.h}`}
       className="h-auto w-full"
       role="img"
-      aria-label="中国旅行地图"
+      aria-label={isWorld ? '世界旅行地图' : '中国旅行地图'}
     >
       <defs>
         <linearGradient id="mapLit" x1="0" y1="0" x2="0" y2="1">
@@ -185,58 +192,86 @@ function ChinaMap({
         </filter>
       </defs>
 
-      {/* 底图 */}
+      {/* 底图 —— 中国档画省界；世界档画陆地轮廓（**没有国界**，见 world-map.ts 抬头） */}
       <g className={revealed ? 'anim-fade-in' : ''}>
-        {CHINA_REGIONS.map((r) => (
-          <path
-            key={`fill-${r.n}`}
-            d={regionPath(r)}
-            fill={revealed ? 'url(#mapLit)' : 'rgb(18 23 20 / 0.045)'}
-            stroke="none"
-          />
-        ))}
-        {CHINA_REGIONS.map((r) => (
-          <path
-            key={`line-${r.n}`}
-            d={regionPath(r)}
-            fill="none"
-            stroke="rgb(18 23 20 / 0.16)"
-            strokeWidth={0.8}
-            strokeLinejoin="round"
-          />
-        ))}
+        {isWorld ? (
+          <>
+            <path d={worldD} fill={revealed ? 'url(#mapLit)' : 'rgb(18 23 20 / 0.045)'} stroke="none" />
+            <path
+              d={worldD}
+              fill="none"
+              stroke="rgb(18 23 20 / 0.16)"
+              strokeWidth={0.8}
+              strokeLinejoin="round"
+            />
+          </>
+        ) : (
+          <>
+            {CHINA_REGIONS.map((r) => (
+              <path
+                key={`fill-${r.n}`}
+                d={regionPath(r, proj)}
+                fill={revealed ? 'url(#mapLit)' : 'rgb(18 23 20 / 0.045)'}
+                stroke="none"
+              />
+            ))}
+            {CHINA_REGIONS.map((r) => (
+              <path
+                key={`line-${r.n}`}
+                d={regionPath(r, proj)}
+                fill="none"
+                stroke="rgb(18 23 20 / 0.16)"
+                strokeWidth={0.8}
+                strokeLinejoin="round"
+              />
+            ))}
+          </>
+        )}
       </g>
 
-      {/* 南海诸岛附图 —— 按制图规范单独框出，不与主图混排 */}
-      <g transform={`translate(${MAP_W - 96} ${MAP_H - 108})`}>
-        <rect
-          x="0"
-          y="0"
-          width="82"
-          height="94"
-          rx="4"
-          fill="rgb(255 255 255 / 0.5)"
-          stroke="rgb(18 23 20 / 0.16)"
-          strokeWidth={0.8}
-        />
-        {/* 简化的南海诸岛示意：若干小点，不表示具体岛礁位置 */}
-        {[
-          [22, 30], [34, 44], [46, 34], [58, 52], [30, 62], [48, 68], [62, 26], [40, 20],
-          [24, 78], [54, 80],
-        ].map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r={1.6} fill="rgb(18 23 20 / 0.28)" />
-        ))}
-        <text x="41" y="90" textAnchor="middle" fontSize="7" fill="rgb(18 23 20 / 0.42)">
-          南海诸岛
-        </text>
-      </g>
+      {/*
+        南海诸岛附图 —— 按制图规范单独框出，不与主图混排。
+
+        ★★ **只有中国档画，世界档绝不画**。
+          它锚在画布右下角（`w-96, h-108`）。世界档那条横带只有
+          约 270 高，这个框会直接压在**南太平洋**上 ——
+          一张世界图里飘出一个"南海诸岛"的框，是**错标**，
+          比不画严重得多。合规要点在"中国地图上南海诸岛必须出现"，
+          而世界图不承担这个职责（详见 assets/world-map.ts 抬头）。
+      */}
+      {!isWorld && (
+        <g transform={`translate(${proj.view.w - 96} ${proj.view.h - 108})`}>
+          <rect
+            x="0"
+            y="0"
+            width="82"
+            height="94"
+            rx="4"
+            fill="rgb(255 255 255 / 0.5)"
+            stroke="rgb(18 23 20 / 0.16)"
+            strokeWidth={0.8}
+          />
+          {/* 简化的南海诸岛示意：若干小点，不表示具体岛礁位置 */}
+          {[
+            [22, 30], [34, 44], [46, 34], [58, 52], [30, 62], [48, 68], [62, 26], [40, 20],
+            [24, 78], [54, 80],
+          ].map(([x, y], i) => (
+            <circle key={i} cx={x} cy={y} r={1.6} fill="rgb(18 23 20 / 0.28)" />
+          ))}
+          <text x="41" y="90" textAnchor="middle" fontSize="7" fill="rgb(18 23 20 / 0.42)">
+            南海诸岛
+          </text>
+        </g>
+      )}
 
       {/* 正在飞的鸟：从地标点向外画一条虚线，鸟挂在半途摆动 */}
       {flyingBirds.map((b) => {
         const dest = b.destinationId ? landmarkById(b.destinationId) : undefined
         if (!dest) return null
-        const x = projectX(dest.lng)
-        const y = projectY(dest.lat)
+        /* 落点在另一档 → 这张图上不画（否则会被投影到画布外，静默消失） */
+        if (!shownIds.has(dest.id)) return null
+        const x = proj.x(dest.lng)
+        const y = proj.y(dest.lat)
         return (
           <g key={`fly-${b.species}`} filter="url(#mapGlow)">
             <circle cx={x} cy={y} r="9" fill="none" stroke="rgb(254 187 50 / 0.5)" strokeWidth="0.9" strokeDasharray="2 3" />
@@ -251,19 +286,30 @@ function ChinaMap({
       })}
 
       {/* 地标点 */}
-      {LANDMARKS.map((l) => {
+      {shown.map((l) => {
         /*
           落点优先用内容包钉的坐标（更准），没有就用地标自己的。
           这就是「小鸟落在哪儿」——不用另外给地图图片，
           坐标本来就在数据里。
         */
-        const x = projectX(l.lng)
-        const y = projectY(l.lat)
+        const x = proj.x(l.lng)
+        const y = proj.y(l.lat)
         const stage = stageOf.get(l.id) ?? 0
         const isVisited = visitedIds.has(l.id)
         const isLit = isVisited || stage > 0
         const active = activeLandmarkId === l.id
         const r = stage >= 3 ? 6 : stage === 2 ? 5 : stage === 1 ? 4 : 3.2
+
+        /*
+          ★ 没点亮的一颗都不画。
+          以前是画成半透明灰点（fill #9ca3af / opacity .5）当"没去过"的占位；
+          地标库从 35 条涨到 265 条之后，没去过的有 230 个 →
+          整屏灰点，家长报「地图上出现了一堆黑圈，像是坏了」。
+          去过的地方本来就会自己亮起来，所以地图仍然是"随孩子走过而长大"。
+          ⚠️ 例外：正在被选中的那颗照画 —— 它可能来自小鸟的落点，
+             不一定是去过的，藏起来会变成"选中了却看不见"。
+        */
+        if (!isLit && !active) return null
 
         return (
           <g
@@ -278,17 +324,15 @@ function ChinaMap({
             {/* 命中区域，手指也点得中 */}
             <circle cx={x} cy={y} r="13" fill="transparent" />
 
-            {isLit && (
-              <circle
-                cx={x}
-                cy={y}
-                r={r + 5}
-                fill="#29ce89"
-                opacity="0.2"
-                className="anim-pulse-ring"
-                style={{ transformOrigin: `${x}px ${y}px` }}
-              />
-            )}
+            <circle
+              cx={x}
+              cy={y}
+              r={r + 5}
+              fill="#29ce89"
+              opacity="0.2"
+              className="anim-pulse-ring"
+              style={{ transformOrigin: `${x}px ${y}px` }}
+            />
 
             {/* v6：到过的地方套一圈金环 */}
             {isVisited && (
@@ -306,15 +350,7 @@ function ChinaMap({
               <circle cx={x} cy={y} r={r + 6} fill="none" stroke="#febb32" strokeWidth="1.4" />
             )}
 
-            <circle
-              cx={x}
-              cy={y}
-              r={r}
-              fill={isLit ? '#29ce89' : '#9ca3af'}
-              stroke={isLit ? '#10a368' : '#6b7280'}
-              strokeWidth={1}
-              opacity={isLit ? 1 : 0.5}
-            />
+            <circle cx={x} cy={y} r={r} fill="#29ce89" stroke="#10a368" strokeWidth={1} />
             {stage >= 2 && (
               <circle cx={x} cy={y} r={r * 0.42} fill="#eef6f1" opacity="0.9" />
             )}
@@ -603,7 +639,7 @@ function BirdRow({
 function LandmarkSheet({
   landmark,
   stage,
-  story,
+  contents,
   collected,
   distanceKm,
   onClose,
@@ -613,9 +649,13 @@ function LandmarkSheet({
 }: {
   landmark: Landmark | null
   stage: number
-  /** 这个地标的内容包（照片 + 散文）。没有就纯用程序化插画 */
-  story?: TravelStory
-  /** 小鸟是不是**真的**带回过这张照片 */
+  /**
+   * 这个景点的**全部**内容（可能好几条 = 好几张图）。
+   *
+   * ⚠️ 是数组，不是单条 —— 只传一条就等于把这个景点的其余照片藏了。
+   */
+  contents: TravelContent[]
+  /** 小鸟是不是**真的**带回过内容 */
   collected: boolean
   distanceKm?: number
   onClose: () => void
@@ -624,7 +664,22 @@ function LandmarkSheet({
   sending: boolean
   onSend: (landmarkId: string) => void
 }) {
+  /**
+   * 正在看第几张图。
+   *
+   * ⚠️ 这个 `useState` 必须在 `if (!landmark) return null` **之前** ——
+   *    放到后面就是"有时调用有时不调用"，React 会直接报 hook 顺序错。
+   * ⚠️ 换地标时靠调用方的 `key={landmark.id}` 重挂载来重置；
+   *    这里再 clamp 一次兜底（内容条数比下标少时不能越界）。
+   */
+  const [wantIdx, setWantIdx] = useState(0)
   if (!landmark) return null
+
+  const idx = Math.min(wantIdx, Math.max(0, contents.length - 1))
+  const current = contents[idx]
+  const gm = gradeMeta(current?.grade)
+  const hasContent = contents.length > 0
+
   return (
     <Sheet open onClose={onClose} title={landmark.name}>
       <div className="flex flex-col gap-3">
@@ -639,12 +694,12 @@ function LandmarkSheet({
         */}
         <div className="relative">
           <TravelPhotoFrame
-            url={story?.photoUrl}
-            alt={story ? `${story.place}的照片` : `${landmark.name}的风景`}
+            url={current?.mediaUrl}
+            alt={current ? `${current.place}的照片` : `${landmark.name}的风景`}
             landmark={landmark}
             className="h-36 w-full rounded-card"
           />
-          <div className="absolute left-3 top-3 flex gap-1.5">
+          <div className="absolute left-3 top-3 flex flex-wrap gap-1.5">
             {/*
               ★ 「评级」= 国家 A 级旅游景区等级（5A / 4A），来自官方名录
                 （`scripts/gd-a-level.json`，生成侧写在 `landmark.rating`）。
@@ -662,12 +717,87 @@ function LandmarkSheet({
             )}
             {stage > 0 && <Badge tone="leaf">已点亮 · {stage} 级</Badge>}
           </div>
+
+          {/*
+            ★ 等级角标 —— 顺路 / 驻足 / 奇遇 / 绝景 / 传世。
+            ⚠️ 这是**人标上去的**，不是掉落的稀有度（家长 09-24 定的：
+               等级只做标注）。所以文案说「这张」而不是「抽到」。
+            ⚠️ 颜色走内联 style，不走 class —— 等级色是数据，不是主题色，
+               写在 class 里就得为五档各配一条 CSS，加第六档时会漏。
+          */}
+          {current && (
+            <span
+              className="absolute bottom-3 right-3 rounded-full px-2.5 py-1 text-2xs font-bold text-white shadow-sm"
+              style={{ background: gm.color }}
+            >
+              {gm.key}
+            </span>
+          )}
         </div>
+
+        {/*
+          ★★ 多图：一个景点有好几张内容时，给一条可点的缩略条。
+          ⚠️ 只有 1 条时不画 —— 一条的"相册"没有意义，
+             而且会让孩子以为"是不是还有别的我没看到"。
+        */}
+        {contents.length > 1 && (
+          <div className="flex flex-col gap-1.5">
+            <span className="text-2xs text-ink-500">
+              这个景点有 <span className="tnum font-bold text-ink-700">{contents.length}</span> 张
+            </span>
+            <div className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1">
+              {contents.map((c, i) => {
+                const g = gradeMeta(c.grade)
+                const on = i === idx
+                return (
+                  <button
+                    key={c.id}
+                    type="button"
+                    onClick={() => {
+                      playSound('tap-soft')
+                      tapFeedback()
+                      setWantIdx(i)
+                    }}
+                    aria-pressed={on}
+                    title={c.title}
+                    className={`btn-base active:btn-press relative h-14 w-14 shrink-0 overflow-hidden rounded-md ${
+                      on ? 'ring-2 ring-ink-900' : 'ring-1 ring-ink-900/10'
+                    }`}
+                  >
+                    {/* 缩略图用整张图铺满；没有图（笑话/格言）就用等级色垫底 */}
+                    {c.mediaUrl ? (
+                      <img
+                        src={c.mediaUrl}
+                        alt=""
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                        onError={(e) => {
+                          // 外链图挂掉是常态（离线、图床挂了）—— 藏掉 img，
+                          // 露出底下那层等级色，而不是留一个破图标
+                          e.currentTarget.style.display = 'none'
+                        }}
+                      />
+                    ) : null}
+                    <span
+                      className="absolute inset-0 -z-10"
+                      style={{ background: g.color, opacity: 0.22 }}
+                    />
+                    {/* 等级色条 —— 缩略图上也要能一眼看出等级 */}
+                    <span
+                      className="absolute inset-x-0 bottom-0 h-1"
+                      style={{ background: g.color }}
+                    />
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+        )}
 
         <div className="flex items-center gap-2">
           <IconMapOutline size={15} className="text-ink-400" />
           <span className="text-xs text-ink-500">{landmark.province}</span>
-          {story && distanceKm !== undefined && (
+          {hasContent && distanceKm !== undefined && (
             <span className="inline-flex items-center gap-1 text-2xs text-amber-leaf-600">
               <IconRoute size={11} />
               飞了 {distanceKm} 公里
@@ -675,10 +805,25 @@ function LandmarkSheet({
           )}
         </div>
 
-        <p className="font-prose text-sm leading-loose text-ink-700">{landmark.blurb}</p>
+        {/*
+          ★★ 公共简介优先，没有就退回那句 `blurb`（09-26）。
+             `blurb` 是**数据源给的一句话**（8~29 字），`intro` 是**人写的公共简介**
+             （≤`LANDMARK_INTRO_MAX`，见 `types.ts`）。两者是"有更好的就用更好的"，
+             不是二选一。
+             ⚠️ 09-27 起全库 643 条**都**写了简介（见 `data/landmark-intros.json`），
+                所以兜底那句现在只在"新进来的地标还没写简介"时才用得上。
+                **但 `|| blurb` 不能删** —— `intro` 是可选字段，新地标一定是空的；
+                而且 `blurb` 是**模板**（按 `scene` 从 17 句里挑，会事实出错），
+                所以它只能当兜底，**不能反过来当成"简介"显示**。
+             ⚠️ 判空用 `||` 不用 `??`：编辑器里清空后可能留下空串 `''`，
+                 用 `??` 的话空串会通过，这段就渲染成一片空白（跟"忘了写"看不出来）。
+        */}
+        <p className="font-prose text-sm leading-loose text-ink-700">
+          {landmark.intro || landmark.blurb}
+        </p>
 
-        {/* 有内容包：说清「拿到了没有」；没有内容包：只说发芽 */}
-        {story ? (
+        {/* 有内容：说清「拿到了没有」；没有内容：只说发芽 */}
+        {hasContent ? (
           collected ? (
             <div className="flex flex-col gap-1 rounded-md bg-amber-leaf-50 px-3.5 py-2.5 shadow-[var(--hair-amber)]">
               <span className="flex items-center gap-1.5 text-xs font-bold text-amber-leaf-700">
@@ -686,17 +831,19 @@ function LandmarkSheet({
                 小鸟在这里带回过照片
               </span>
               <span className="text-2xs leading-relaxed text-amber-leaf-700">
-                {story.summary}完整的照片和散文收在「相册」里。
+                {current?.summary}完整的照片和散文收在「相册」里。
               </span>
             </div>
           ) : (
             <div className="flex flex-col gap-1 rounded-md bg-ink-50 px-3.5 py-2.5">
               <span className="flex items-center gap-1.5 text-xs font-bold text-ink-700">
                 <IconPhoto size={13} />
-                这里有一张照片等着小鸟去拍
+                {contents.length > 1
+                  ? `这里有 ${contents.length} 张照片等着小鸟去拍`
+                  : '这里有一张照片等着小鸟去拍'}
               </span>
               <span className="text-2xs leading-relaxed text-ink-500">
-                派一只小鸟飞过去，它会带回这张照片，还有一篇它自己写的游记。
+                派一只小鸟飞过去，它会带回一张照片，还有一篇它自己写的游记。
               </span>
             </div>
           )
@@ -812,8 +959,13 @@ function JokeCard({ text }: { text: string }) {
   )
 }
 
-/** 纪念品卡片 —— 阅后即毁 */
-function SouvenirCard({
+/** 纪念品卡片 —— 阅后即毁
+ *
+ *  ★ 导出是为了**能在单元测试里真的渲染它**（见 `SouvenirCard.test.tsx`）。
+ *    相册里的「示意图」角标是**界面有没有在撒谎**的地方，
+ *    只断言数据层（`souvenir.match`）不够 —— 那证明不了界面会去读它。
+ */
+export function SouvenirCard({
   souvenir,
   coins,
   onKeep,
@@ -858,6 +1010,14 @@ function SouvenirCard({
           <Badge tone={souvenir.kept ? 'leaf' : 'amber'}>
             {souvenir.kept ? '已保留' : typeLabel(souvenir.type)}
           </Badge>
+          {/*
+            ★ 「示意图」= 这张不是那个地方本人的样子（`match === 'scene'`）。
+
+            ⚠️⚠️ **只认 `=== 'scene'`**。家长手挑的图**不写** `match`，
+               那是"没声称过"，不是"顶替图" —— 把 `undefined` 也标出来
+               等于替他声称了一件他没说过的事（见 `TravelContent.match`）。
+          */}
+          {souvenir.match === 'scene' && <Badge tone="mist">示意图</Badge>}
           {souvenir.distanceKm > 0 && (
             <span className="inline-flex items-center gap-1 rounded-pill bg-white/10 px-2 py-0.5 text-[10px] font-bold text-[var(--color-night-text-2)]">
               <IconRoute size={11} />
@@ -997,6 +1157,14 @@ export default function MapPage() {
 
   const [picked, setPicked] = useState<Landmark | null>(null)
   const [tab, setTab] = useState<'map' | 'album' | 'birds'>('map')
+  /**
+   * 地图看哪一档。
+   *
+   * ⚠️ 存成**本地 state**，没进 settings —— 进 settings 就要配迁移
+   *    （默认值改了老存档不跟着走，见 MEMORY §五），而这一项
+   *    没有"记住"的必要：默认看中国，切到世界是一次主动动作。
+   */
+  const [scope, setScope] = useState<MapScope>('中国')
   /** 正在派鸟 / 收鸟 —— 防止连点重复结算 */
   const [busy, setBusy] = useState(false)
   const mountRef = useRef(false)
@@ -1099,12 +1267,34 @@ export default function MapPage() {
     return sprouts.find((s) => s.landmarkId === picked.id)?.stage ?? 0
   }, [picked, sprouts])
 
-  /** 抽屉里那条内容的距离。有内容包就显示 —— 距离是这个地标的属性，不用等鸟回来 */
-  const pickedStoryDistance = useMemo(() => {
-    if (!picked) return undefined
-    const s = storyFor(picked.id)
-    return s ? resolveDistanceKm(s, homePoint) : undefined
-  }, [picked, homePoint])
+  /**
+   * 抽屉里要展示的**全部**内容 —— 一个景点可能有好几张图。
+   *
+   * ★ 以前这里是 `storyFor(picked.id)`，只拿得到**一条**（v5 内容包
+   *   「一个地标一条」）。现在改读 v6 内容包，一个景点几条都能拿到 ——
+   *   这正是「一个景点多张图」的落点，不用另建结构。
+   *
+   * ⚠️ 别写成 `contentsByLandmark(id)[0]` —— 那会把其余几张静默藏起来，
+   *    而界面上完全看不出"还有别的图"。
+   */
+  const pickedContents = useMemo(
+    () => (picked ? contentsByLandmark(picked.id) : []),
+    [picked],
+  )
+
+  /**
+   * 抽屉里显示的距离。
+   *
+   * ★ 距离是**这个地点**的属性，不用等鸟真的回来 —— 所以直接从地标算。
+   * ⚠️ 这里原来是「把该地标的每条内容都算一遍、取最近的」，
+   *    因为同一个地标的不同条目坐标**略有差异**（八达岭两条写了两套）。
+   *    2026-09-25 起坐标统一从地标派生，差异在结构上不可能再有，
+   *    所以直接算地标 —— 少一次 map/min，也少一个"为什么取最近"的疑问。
+   */
+  const pickedDistance = useMemo(
+    () => (picked ? distanceToLandmark(picked, homePoint) : undefined),
+    [picked, homePoint],
+  )
 
   /** v6：按 place 聚合纪念品，方便背包里按地方分组 */
   const souvenirsByPlace = useMemo(() => {
@@ -1237,8 +1427,46 @@ export default function MapPage() {
          ============================================================ */}
       {tab === 'map' && (
         <div className="flex flex-col gap-3">
+          {/*
+            中国 / 世界 切换
+            ★ 两个档共用同一个 `TravelMap`，只有底图数据、窗口、画哪些地标不同。
+              详见 `TravelMap` 的注释。
+          */}
+          <div className="flex gap-1.5">
+            {(
+              [
+                ['中国', '中国'],
+                ['世界', '世界'],
+              ] as const
+            ).map(([key, label]) => {
+              const on = scope === key
+              return (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => {
+                    playSound('tap-soft')
+                    tapFeedback()
+                    setScope(key)
+                    /* 换了一张图，之前选中的点不一定在这张图上 —— 收起抽屉，
+                       免得出现"抽屉里讲着富士山、图上找不到它" */
+                    setPicked(null)
+                  }}
+                  aria-pressed={on}
+                  className={`btn-base active:btn-press flex flex-1 items-center justify-center gap-1.5 rounded-btn py-2 text-xs font-bold ${
+                    on ? 'bg-ink-900 text-paper' : 'surface text-ink-600'
+                  }`}
+                >
+                  <IconCompass size={13} />
+                  {label}
+                </button>
+              )
+            })}
+          </div>
+
           <Card padded={false} className="overflow-hidden" pad="p-2.5">
-            <ChinaMap
+            <TravelMap
+              scope={scope}
               sprouts={sprouts}
               flyingBirds={away}
               activeLandmarkId={picked?.id ?? null}
@@ -1246,7 +1474,11 @@ export default function MapPage() {
               revealed={revealed}
               visitedIds={visitedIds}
             />
-            {/* 图例 */}
+            {/*
+              图例
+              ⚠️ 这里**没有**「还没去过」那一项 —— 没点亮的地标现在整颗不画，
+                 留一条图例会指向一个画不出来的东西。原因见上面「地标点」那段注释。
+            */}
             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 border-t border-ink-900/[0.06] px-2 pb-1 pt-2.5">
               <span className="flex items-center gap-1.5 text-2xs text-ink-500">
                 <span className="h-2.5 w-2.5 rounded-full bg-inkleaf-500" /> 已发芽
@@ -1254,9 +1486,6 @@ export default function MapPage() {
               <span className="flex items-center gap-1.5 text-2xs text-ink-500">
                 <span className="h-2.5 w-2.5 rounded-full border-[1.5px] border-amber-leaf-500 bg-inkleaf-500" />{' '}
                 到过的地方
-              </span>
-              <span className="flex items-center gap-1.5 text-2xs text-ink-500">
-                <span className="h-2.5 w-2.5 rounded-full border border-ink-300 bg-white" /> 还没去过
               </span>
               <span className="flex items-center gap-1.5 text-2xs text-ink-500">
                 <span className="h-2.5 w-2.5 rotate-45 bg-amber-leaf-400" /> 小鸟在路上
@@ -1476,13 +1705,19 @@ export default function MapPage() {
       )}
 
       <LandmarkSheet
+        /*
+          ⚠️ `key` 不能省：抽屉里「正在看第几张图」是组件内的 state，
+             换一个地标时如果不重挂载，下标会**留在上一张的位置** ——
+             点故宫可能一进来就显示第 2 张图，或者越界。
+        */
+        key={picked?.id ?? 'none'}
         landmark={picked}
         stage={pickedStage}
-        /* 照片只要有内容包就显示（点开就能看到）；
+        /* 这个景点的**全部**内容（可能好几张图）；
            collected 只决定「散文和相册算不算拿到了」 */
-        story={picked ? storyFor(picked.id) : undefined}
+        contents={pickedContents}
         collected={picked ? visitedIds.has(picked.id) : false}
-        distanceKm={pickedStoryDistance}
+        distanceKm={pickedDistance}
         canSend={home.length > 0}
         sending={busy}
         onSend={(id) => {

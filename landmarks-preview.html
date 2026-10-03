@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>小笔苗 · 旅游点总览（只读）</title>
+<style>
+  /* ============================================================
+     只读查看页 —— 配色跟着 App 的暖色系（墨绿 / 琥珀 / 米白）。
+     ★ 不引任何外部资源（不加载字体、不加载图片、不走 CDN）：
+       跟 App 一样离线可用，也免得看个数据还要联网。
+     ============================================================ */
+  :root{
+    --bg:#fbf9f4; --card:#fff; --line:#e7e2d8; --ink:#2f3a34; --ink2:#5b655e;
+    --dim:#8b948d; --leaf:#29ce89; --leaf-d:#10a368; --amber:#febb32;
+    --amber-d:#b57f0d; --slate:#9ca3af;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:14px/1.6 system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  }
+  header{padding:20px 18px 6px}
+  h1{margin:0 0 4px; font-size:20px; letter-spacing:.02em}
+  .sub{color:var(--ink2); font-size:12.5px}
+  main{padding:0 18px 40px; max-width:1180px}
+  h2{font-size:15px; margin:26px 0 10px; display:flex; align-items:center; gap:8px;
+     /* ⚠️ 有 sticky 筛选栏时，锚点跳过去会把标题藏在栏底下 → 留出让位的高度 */
+     scroll-margin-top:calc(var(--barh,0px) + 12px)}
+  h2 .cnt{font-weight:400; color:var(--dim); font-size:12.5px}
+
+  /* ---- 页内跳转 ----
+     ⚠️ 加这个是因为「全国」那一节在第 15,800px 左右（上面 1,577 张卡片太长了），
+        没有跳转的话等于藏起来了。 */
+  .nav{display:flex; flex-wrap:wrap; gap:8px; margin-top:12px}
+  .nav a{
+    font-size:12.5px; text-decoration:none; color:var(--ink2);
+    background:var(--card); border:1px solid var(--line); border-radius:999px; padding:4px 11px;
+  }
+  .nav a:hover{border-color:var(--slate); color:var(--ink)}
+
+  /* ---- 汇总卡 ---- */
+  .stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(104px,1fr)); gap:10px; margin-top:14px}
+  .stat{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 12px}
+  .stat b{display:block; font-size:20px; line-height:1.25}
+  .stat span{color:var(--dim); font-size:12px}
+
+  /* ---- 筛选 ---- */
+  .bar{
+    display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:10px 12px; margin-top:14px; position:sticky; top:0; z-index:5;
+  }
+  .bar input[type=search],.bar select{
+    font:inherit; color:var(--ink); background:#fff;
+    border:1px solid var(--line); border-radius:9px; padding:6px 9px;
+  }
+  .bar input[type=search]{flex:1 1 190px; min-width:150px}
+  .bar button{
+    font:inherit; cursor:pointer; border:1px solid var(--line); background:#fff;
+    color:var(--ink2); border-radius:9px; padding:6px 11px;
+  }
+  .bar button:hover{border-color:var(--slate)}
+  .hint{color:var(--dim); font-size:12.5px; margin-left:auto}
+
+  /* ---- 城市分组 ---- */
+  .city{margin-top:18px}
+  .city-head{
+    display:flex; align-items:baseline; gap:9px; flex-wrap:wrap;
+    padding-bottom:6px; border-bottom:1px solid var(--line);
+  }
+  .city-head b{font-size:15px}
+  .city-head .n{color:var(--dim); font-size:12.5px}
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr)); gap:10px; margin-top:10px}
+  .item{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:11px 12px}
+  .item-top{display:flex; align-items:flex-start; gap:8px}
+  .item-top .nm{font-weight:600; flex:1; word-break:break-all}
+  .item .blurb{color:var(--ink2); font-size:12.5px; margin-top:5px}
+  .item .meta{color:var(--dim); font-size:11.5px; margin-top:7px; display:flex; gap:8px; flex-wrap:wrap}
+  .tag{
+    display:inline-block; font-size:11px; line-height:1.5; padding:1px 7px;
+    border-radius:999px; border:1px solid var(--line); color:var(--ink2); background:#faf8f3;
+    white-space:nowrap;
+  }
+  .tag.r5{background:#fff6e2; border-color:#f2d79a; color:var(--amber-d); font-weight:600}
+  .tag.r4{background:#f2f7f3; border-color:#bfe0cd; color:#1c6b47; font-weight:600}
+  .tag.hand{background:#eef4ff; border-color:#c4d7f5; color:#2b5aa8}
+  .tag.osm{background:#f3f6f3; border-color:#cfd9cf; color:#4a6b52}
+  .tag.cn{background:#fdf1f6; border-color:#f0c9dc; color:#a03a68}
+  .sub3{font-size:13px; font-weight:700; color:var(--ink-700, #3d4a44); margin:14px 0 6px}
+  .mono{font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:11px}
+  .warn{color:#b4531f}
+
+  /* ---- 全国名录那一节 ---- */
+  /* ⚠️ 一页里**只留一条 sticky 筛选栏**：两条都 sticky 会叠在 top:0 互相盖住。
+     留「全国」这条（它管着 1,357 行，比上面那 1,577 行更需要常驻），把上面那条改成 static。
+     ➜ 于是 `--barh`（表头让位用的变量）也必须改成取**这一条**的高度，见脚本里的 setBarh。 */
+  #bar{position:static}
+  .lv{font-weight:600; white-space:nowrap}
+  .lv5{color:var(--amber-d)}
+  .lv4{color:#1c6b47}
+  .heat{color:var(--dim)}
+  /* 热度缺失的那个「—」：点一下/悬停能看出「为什么没有」，别让人读成"没抓" */
+  .noh{border-bottom:1px dotted currentColor;cursor:help;opacity:.75}
+  /* ⚠️ 列宽不写死的话，「简介」那一列会把「景区」挤成一列竖排的字（实测如此）。 */
+  .nat{table-layout:fixed}
+  .nat th:nth-child(1),.nat td:nth-child(1){width:25%}
+  .nat th:nth-child(2),.nat td:nth-child(2){width:10%}
+  .nat th:nth-child(3),.nat td:nth-child(3){width:8%}
+  .nat th:nth-child(4),.nat td:nth-child(4){width:8%}
+  .nat th:nth-child(5),.nat td:nth-child(5){width:49%}
+  .nat td:nth-child(1){font-weight:600}
+  .nat td:nth-child(5){color:var(--ink2); font-size:12.5px}
+  /* 简介最长有 ~700 字（安吉竹博园那条）→ 夹到 2 行，全文放 title 里 */
+  .nat .desc{display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
+  .nat .raw{color:var(--dim)}
+
+  /* ---- 对账表 ---- */
+  /* ⚠️ 这里**不能**用 `overflow:hidden` 去裁圆角：那会让 table 自己变成 sticky 的
+     滚动容器（而它并不滚动）→ 表头 sticky 直接失效。改成给四个角单独圆角。 */
+  table{border-collapse:separate; border-spacing:0; width:100%; background:var(--card);
+        border:1px solid var(--line); border-radius:12px; font-size:13px}
+  th,td{padding:7px 10px; text-align:left; border-bottom:1px solid var(--line)}
+  th{background:#f6f3ec; font-weight:600; color:var(--ink2); font-size:12px; white-space:nowrap;
+     position:sticky; top:var(--barh,0px); z-index:3}
+  thead th:first-child{border-top-left-radius:11px}
+  thead th:last-child{border-top-right-radius:11px}
+  tbody tr:last-child td:first-child{border-bottom-left-radius:11px}
+  tbody tr:last-child td:last-child{border-bottom-right-radius:11px}
+  tr:last-child td{border-bottom:0}
+  td.num{text-align:right; font-variant-numeric:tabular-nums}
+  .gap{color:#b4453b; font-weight:600}
+
+  .note{
+    background:#fffdf6; border:1px solid #f0e4c4; border-radius:10px;
+    padding:10px 12px; color:#6b5a2c; font-size:12.5px; margin-top:10px;
+  }
+  .err{
+    background:#fff3f2; border:1px solid #f2c9c4; border-radius:12px;
+    padding:14px 16px; color:#8d3129; margin-top:20px;
+  }
+  .err code{background:#fff; padding:1px 6px; border-radius:6px; border:1px solid #f2c9c4}
+  footer{padding:0 18px 40px; color:var(--dim); font-size:12px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>小笔苗 · 旅游点总览</h1>
+  <div class="sub">
+    <b>只读页</b> —— 只看不改，数据一个字都不动。改数据请改
+    <code>src/data/*.json</code>（App 现在用的库）或 <code>scripts/cn-a-level.json</code>（抓下来的原始名录）；
+    重新抓数据跑 <code>scripts/fetch-a-level-cn.mjs</code>，
+    重新生成全国那份跑 <code>scripts/build-landmarks-cn.mjs</code>。
+  </div>
+</header>
+
+<main id="app">
+  <nav class="nav">
+    <a href="#appHead">① App 现在的库（合并后 1,577 条）</a>
+    <a href="#mergeHead">② 合并去重报告</a>
+    <a href="#natHead">③ 上游：全国 A 级名录（1,357 条）</a>
+    <a href="#auditHead">④ 广东对账</a>
+  </nav>
+
+  <div class="stats" id="stats"></div>
+
+  <h2 id="appHead">App 现在的库（合并后）<span class="cnt" id="appCnt"></span></h2>
+  <div class="sub" style="margin-bottom:8px">
+    三个数据文件合起来：<code>landmarks.json</code>（手工精选 35）+ <code>landmarks-gd.json</code>（广东 OSM 230）
+    + <code>landmarks-cn.json</code>（全国 A 级 1,348），再滤掉被官方取代的 36 条。
+    <br>★ 湖南现在有 <b>46</b> 条（以前只有 1 条「张家界」—— 因为库里当时压根没接全国名录）。
+  </div>
+  <div class="bar" id="bar" hidden>
+    <input type="search" id="q" placeholder="搜名字 / 介绍…" autocomplete="off">
+    <select id="fCity"><option value="">全部市 / 省</option></select>
+    <select id="fRating">
+      <option value="">全部评级</option>
+      <option value="5A">仅 5A</option>
+      <option value="4A">仅 4A</option>
+      <option value="none">仅无评级</option>
+    </select>
+    <select id="fScene"><option value="">全部画面</option></select>
+    <select id="fSrc">
+      <option value="">全部来源</option>
+      <option value="hand">手工精选</option>
+      <option value="osm">OSM 生成</option>
+      <option value="cn">全国 A 级</option>
+    </select>
+    <button id="reset">重置</button>
+    <span class="hint" id="hint"></span>
+  </div>
+
+  <div id="list"></div>
+
+  <h2 id="mergeHead">合并去重报告 <span class="cnt" id="mergeCnt"></span></h2>
+  <div id="merge"></div>
+
+  <h2 id="natHead">上游：全国 A 级名录（抓下来的原始数据）<span class="cnt" id="natCnt"></span></h2>
+  <div class="sub" style="margin-bottom:8px">
+    来自 <code>scripts/cn-a-level.json</code>。口径（家长 09-24 定）：
+    <b>5A 全保留</b>；<b>4A 按知名度取前 1000</b>（用源站自带的平台综合热度，不是我们自己加权）。<br>
+    ⚠️ <b>「热度」这一列只有 4A 有值 —— 357 个 5A 全是「—」，那不是没抓到</b>：
+    文旅部那份官方名录<b>只有名字</b>，压根没有平台热度分（4A 那 1000 条的热度正是"取前 1000"的依据）。<br>
+    ⚠️ 这一节看的是<b>抓下来的原始名录</b>（1,357 条），第一节看的是<b>它接进 App 之后的结果</b>。
+    两边条数不同是因为：官方内部有 9 条是同一个景区在 5A 和 4A 各出现一次，合并掉了。<br>
+    ⚠️ 5A 的坐标是<b>后补的</b>，其中 21 条是「市中心 / 省中心点」凑的（误差可达几十公里）——
+    见 <code>cn-a-level.json</code> 里每条自己的 <code>coordSource</code>。
+  </div>
+  <div class="stats" id="natStats"></div>
+  <div class="bar" id="natBar">
+    <input type="search" id="nq" placeholder="搜景区名 / 市 / 简介…" autocomplete="off">
+    <select id="nProv"><option value="">全部省</option></select>
+    <select id="nLevel">
+      <option value="">全部级别</option>
+      <option value="5A">仅 5A</option>
+      <option value="4A">仅 4A</option>
+    </select>
+    <button id="nReset">重置</button>
+    <span class="hint" id="nHint"></span>
+  </div>
+  <div id="natList"></div>
+
+  <h2 id="auditHead">官方名录对账 <span class="cnt" id="auditCnt"></span></h2>
+  <div class="sub" style="margin-bottom:8px">
+    左边是库里实际条数，右边是官方 A 级景区名录（<code>scripts/gd-a-level.json</code>）里该市的家数。
+    <b>两边差得多，就是这个市还有不少官方景区没进库</b>（旧版"每城上限"的取舍已作废）。
+  </div>
+  <div id="audit"></div>
+
+  <div class="note" id="caveat"></div>
+
+  <h2>这个页面不做什么</h2>
+  <div class="sub">
+    · 不显示「谁被上限砍掉了」的<b>逐条名单</b> —— 那要用生成器的去后缀匹配逻辑，
+    在这里再写一遍就会跟 <code>fetch-landmarks.mjs</code> 漂移（项目规矩：同一个判定只许有一个函数）。
+    想知道具体某家有没有进库，用上面的搜索框搜名字。<br>
+    · 合并报告（第二节）里的两张表**不是这一页算的** ——
+    它们是 <code>build-landmarks-cn.mjs</code> 算完写进 <code>landmarks-cn.json</code> 的
+    <code>supersedes</code> / <code>nearMiss</code> 字段，这一页只是念出来。
+    理由同上：判据只有一份。<br>
+    · 不写回任何数据。
+  </div>
+</main>
+
+<footer>
+  旅游点数据来自 © OpenStreetMap 贡献者（ODbL 授权）；
+  官方 A 级景区名录见 <code>scripts/gd-a-level.json</code>。
+</footer>
+
+<script>
+'use strict'
+
+/* ============================================================
+   一、取数据
+
+   ★ 走 fetch 而不是把数据内联进来：数据一改，刷新页面就是新的，
+     不用重新生成一遍 HTML。（仓库里那几个 *-preview.html 是内联的，
+     但那些是"生成物快照"；这一页是"随时看现状"。）
+
+   ⚠️ 必须通过 dev server 打开（`npm run dev` → http://localhost:5190/landmarks-preview.html）。
+     直接双击文件走 file:// 的话 fetch 会被浏览器拦掉（跨源），
+     下面 catch 里会给出提示。
+   ============================================================ */
+const SRC = {
+  hand: { url: './src/data/landmarks.json', label: '手工精选' },
+  osm: { url: './src/data/landmarks-gd.json', label: 'OSM 生成' },
+  cn: { url: './src/data/landmarks-cn.json', label: '全国 A 级' },
+}
+const LEVEL_URL = './scripts/gd-a-level.json'
+/* 全国 A 级名录（09-24 抓的）：5A 全保留 + 4A 按热度取前 1000。
+   ⚠️ 09-24 之后它**已经接进 App 的库了** —— 这一页第一节显示的就是合并后的结果
+      （手工 35 + 广东 OSM 230 + 全国 1348，再滤掉被官方取代的 36 条 = 1577 条）。
+      它自带的 `supersedes` / `nearMiss` 两个字段是**合并报告**，第三节照着念出来。 */
+const NATIONAL_URL = './scripts/cn-a-level.json'
+
+const SCENE_CN = {
+  mountain: '山', water: '水', city: '城市', desert: '沙漠', forest: '森林',
+  snow: '雪', temple: '寺庙', coast: '海岸', grass: '草原', cave: '洞穴',
+}
+
+async function getJSON(url) {
+  const res = await fetch(url, { cache: 'no-store' })
+  if (!res.ok) throw new Error(url + ' → HTTP ' + res.status)
+  return res.json()
+}
+
+function normalize(raw, source) {
+  return raw.map((x) => ({
+    id: x.id,
+    name: x.name,
+    province: x.province,
+    country: x.country,
+    city: x.city,
+    lng: x.lng,
+    lat: x.lat,
+    blurb: x.blurb,
+    scene: x.scene,
+    rating: x.rating,
+    tier: x.tier,
+    source,
+    group: x.city || x.province || x.country || '（没写地名）',
+  }))
+}
+
+/* ============================================================
+   二、渲染
+   ============================================================ */
+let ALL = []
+let OFFICIAL = null
+let NAT = []
+let CN = null
+
+const $ = (id) => document.getElementById(id)
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => (
+  { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]
+))
+
+function ratingTag(it) {
+  if (it.rating === '5A') return '<span class="tag r5">5A 景区</span>'
+  if (it.rating === '4A') return '<span class="tag r4">4A 景区</span>'
+  // ⚠️ 没评级**不是**"数据不全"：山峰、海滩、步行街本来就不是景区（见 types.ts 的注释）
+  return ''
+}
+
+const SRC_TAG = {
+  hand: '<span class="tag hand">手工精选</span>',
+  osm: '<span class="tag osm">OSM 生成</span>',
+  cn: '<span class="tag cn">全国 A 级</span>',
+}
+
+function itemHTML(it) {
+  const tags = [
+    ratingTag(it),
+    '<span class="tag">' + esc(SCENE_CN[it.scene] || it.scene) + '</span>',
+    SRC_TAG[it.source] || '',
+    it.tier ? '<span class="tag">tier ' + it.tier + '</span>' : '',
+  ].filter(Boolean).join(' ')
+  return '<div class="item">' +
+    '<div class="item-top"><div class="nm">' + esc(it.name) + '</div></div>' +
+    (it.blurb ? '<div class="blurb">' + esc(it.blurb) + '</div>' : '') +
+    '<div class="meta">' + tags + '</div>' +
+    '<div class="meta">' + it.lng.toFixed(4) + ', ' + it.lat.toFixed(4) +
+      ' · ' + esc(it.id) + '</div>' +
+  '</div>'
+}
+
+function applyFilters() {
+  const q = $('q').value.trim().toLowerCase()
+  const city = $('fCity').value
+  const rating = $('fRating').value
+  const scene = $('fScene').value
+  const src = $('fSrc').value
+
+  const hit = ALL.filter((it) => {
+    if (city && it.group !== city) return false
+    if (scene && it.scene !== scene) return false
+    if (src && it.source !== src) return false
+    if (rating === 'none' && it.rating) return false
+    if (rating && rating !== 'none' && it.rating !== rating) return false
+    if (q && !(it.name.toLowerCase().includes(q) || (it.blurb || '').toLowerCase().includes(q))) return false
+    return true
+  })
+
+  // 按地名分组；组内 5A → 4A → 无评级，再按名字
+  const RANK = { '5A': 0, '4A': 1 }
+  const byGroup = new Map()
+  for (const it of hit) {
+    if (!byGroup.has(it.group)) byGroup.set(it.group, [])
+    byGroup.get(it.group).push(it)
+  }
+  const groups = [...byGroup.entries()].sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], 'zh'))
+  for (const [, list] of groups) {
+    list.sort((a, b) => (RANK[a.rating] ?? 9) - (RANK[b.rating] ?? 9) || a.name.localeCompare(b.name, 'zh'))
+  }
+
+  $('list').innerHTML = groups.map(([g, list]) => {
+    const r5 = list.filter((x) => x.rating === '5A').length
+    const r4 = list.filter((x) => x.rating === '4A').length
+    const badge = [r5 ? r5 + ' 个 5A' : '', r4 ? r4 + ' 个 4A' : ''].filter(Boolean).join(' · ')
+    return '<section class="city">' +
+      '<div class="city-head"><b>' + esc(g) + '</b>' +
+        '<span class="n">' + list.length + ' 条' + (badge ? ' · ' + badge : '') + '</span></div>' +
+      '<div class="grid">' + list.map(itemHTML).join('') + '</div>' +
+    '</section>'
+  }).join('') || '<div class="note">没有符合条件的条目。</div>'
+
+  $('hint').textContent = '显示 ' + hit.length + ' / ' + ALL.length + ' 条'
+}
+
+function renderStats() {
+  const n = (f) => ALL.filter(f).length
+  const cities = new Set(ALL.filter((x) => x.city).map((x) => x.city))
+  const cells = [
+    ['总条数', ALL.length],
+    ['手工精选', n((x) => x.source === 'hand')],
+    ['OSM 生成', n((x) => x.source === 'osm')],
+    ['全国 A 级', n((x) => x.source === 'cn')],
+    ['5A', n((x) => x.rating === '5A')],
+    ['4A', n((x) => x.rating === '4A')],
+    ['无评级', n((x) => !x.rating)],
+    ['涉及地市', cities.size],
+  ]
+  $('appCnt').textContent = '共 ' + ALL.length + ' 条'
+  $('stats').innerHTML = cells.map(([k, v]) =>
+    '<div class="stat"><b>' + v + '</b><span>' + k + '</span></div>').join('')
+}
+
+/* ============================================================
+   合并报告（第三节）
+   ★★ 判据**不在这里** —— 它是 `scripts/build-landmarks-cn.mjs` 算完写进
+      `landmarks-cn.json` 的 `supersedes` / `nearMiss` 两个字段。
+      这一节只是把它们**念出来**。
+      ⚠️ 为什么不在这里重算："像不像同一个地方"的判据一旦在这里再写一遍，
+         就会跟生成侧漂移（项目规矩：同一个判定只许有一个函数）——
+         而且漂移的表现是"页面说没有重影、库里其实有"，**不报错**。
+   ============================================================ */
+function renderMerge() {
+  if (!CN) {
+    $('merge').innerHTML = '<div class="note">读不到全国名录，合并报告看不了。</div>'
+    return
+  }
+  const sup = CN.supersedes || []
+  const near = CN.nearMiss || []
+
+  $('mergeCnt').textContent =
+    '被取代 ' + sup.length + ' 条 · 待人工确认 ' + near.length + ' 条'
+
+  const supRows = sup.map((id) => {
+    const was = ALL.find((x) => x.id === id)
+    return '<tr><td class="mono">' + esc(id) + '</td><td>' +
+      (was ? esc(was.province + ' ' + was.name) : '<span class="warn">（已不在库里）</span>') +
+      '</td></tr>'
+  }).join('')
+
+  $('merge').innerHTML =
+    '<div class="sub" style="margin-bottom:10px">' +
+      '家长 09-24 定：「并进去，<b>重名以官方为准</b>」。判据是「<b>同市</b>（没市则同省）+ <b>同一个景区</b>」。' +
+      '被取代的条目**没有从原文件删掉**（手工那份是家长手写的、广东那份是另一个脚本生成的），' +
+      '而是记在 <code>landmarks-cn.json</code> 的 <code>supersedes</code> 里，由 <code>landmarks.ts</code> 加载时滤掉。' +
+      '所以上面的「总条数」里已经不含它们了。' +
+    '</div>' +
+    '<h3 class="sub3">① 被官方取代的 ' + sup.length + ' 条</h3>' +
+    '<table class="nat"><thead><tr><th style="width:34%">旧 id</th><th>原来是哪条</th></tr></thead>' +
+    '<tbody>' + supRows + '</tbody></table>' +
+    '<h3 class="sub3" style="margin-top:16px">② 名字沾边、但<b>没有自动合并</b>的 ' + near.length + ' 对</h3>' +
+    '<div class="sub" style="margin-bottom:8px">' +
+      '⚠️ 这些<b>需要人看一眼</b>。判据只用了"包含关系"当筛子，它分不清"同一处"和"名字里带同一个词" —— ' +
+      '<code>张家界</code> ⊂ <code>张家界大峡谷</code>、<code>西双版纳</code> ⊂ <code>中科院西双版纳热带植物园</code> ' +
+      '都是<b>不同</b>的地方，所以脚本<b>不敢自动合并</b>。' +
+      '（<code>西湖</code> ⇔ <code>杭州西湖风景区</code> 这种<b>确实该并</b>的也在里面 —— ' +
+      '要并得单独开一张人工白名单，不能靠规则。）' +
+    '</div>' +
+    '<table class="nat"><thead><tr><th style="width:38%">库里已有的</th><th>官方那批里沾边的</th></tr></thead>' +
+    '<tbody>' + near.map((x) => {
+      const [a, b] = x.split('  ⇔  ')
+      return '<tr><td>' + esc(a) + '</td><td>' + esc(b || '') + '</td></tr>'
+    }).join('') + '</tbody></table>'
+}
+
+function renderAudit() {
+  const gd = OFFICIAL && OFFICIAL.byProvince && OFFICIAL.byProvince['广东']
+  if (!gd) {
+    $('audit').innerHTML = '<div class="note">读不到官方名录的广东部分。</div>'
+    return
+  }
+  // 库里按市统计 —— ⚠️⚠️ **必须限定广东**。
+  //    这一节比的是「广东的库 vs 广东的官方名录」，而 `ALL` 现在是**全国**的库
+  //    （280 个市）。不限定的话表格会变成 280 行、其中 260 行官方那边是 0，
+  //    合计显示「库里 1341 条 / 官方 179 家」—— **拿 280 个市跟一个省比**，
+  //    每个数字都还在、但整张表失去意义（上一轮接全国库时漏了这里，已修）。
+  // ⚠️ 数据里的 `city` 是**不带「市」**的（`广州` 而不是 `广州市`），
+  //    官方名录里也一样。两边必须用同一个写法当键，拼「市」就对不上了
+  //    （踩过：全表显示 0 条）。
+  const libByCity = new Map()
+  for (const it of ALL) {
+    if (!it.city || it.province !== '广东') continue
+    libByCity.set(it.city, (libByCity.get(it.city) || 0) + 1)
+  }
+  const rows = new Map() // 市 → {lib, a5, a4}
+  const bump = (city, key) => {
+    if (!rows.has(city)) rows.set(city, { lib: libByCity.get(city) || 0, a5: 0, a4: 0 })
+    rows.get(city)[key] += 1
+  }
+  for (const x of gd['5A'] || []) if (x.city) bump(x.city, 'a5')
+  for (const x of gd['4A'] || []) if (x.city) bump(x.city, 'a4')
+  for (const [c, v] of libByCity) if (!rows.has(c)) rows.set(c, { lib: v, a5: 0, a4: 0 })
+
+  /** 显示时补一个「市」好看点，但键不动 */
+  const cityLabel = (c) => (c.endsWith('市') ? c : c + '市')
+
+  const list = [...rows.entries()].sort((a, b) => (b[1].a5 + b[1].a4) - (a[1].a5 + a[1].a4))
+  const tot = list.reduce((s, [, v]) => ({ lib: s.lib + v.lib, a5: s.a5 + v.a5, a4: s.a4 + v.a4 }), { lib: 0, a5: 0, a4: 0 })
+
+  $('auditCnt').textContent = '库里 ' + tot.lib + ' 条 / 官方 ' + (tot.a5 + tot.a4) + ' 家（5A ' + tot.a5 + '、4A ' + tot.a4 + '）'
+  $('audit').innerHTML =
+    '<table><thead><tr><th>市</th><th>库里条数</th><th>官方 5A</th><th>官方 4A</th><th>官方合计</th><th>差</th></tr></thead><tbody>' +
+    list.map(([c, v]) => {
+      const off = v.a5 + v.a4
+      const gap = off - v.lib
+      return '<tr><td>' + esc(cityLabel(c)) + '</td>' +
+        '<td class="num">' + v.lib + '</td>' +
+        '<td class="num">' + v.a5 + '</td>' +
+        '<td class="num">' + v.a4 + '</td>' +
+        '<td class="num">' + off + '</td>' +
+        '<td class="num' + (gap > 0 ? ' gap' : '') + '">' + (gap > 0 ? '-' + gap : '—') + '</td></tr>'
+    }).join('') +
+    '<tr><td><b>合计</b></td><td class="num"><b>' + tot.lib + '</b></td>' +
+    '<td class="num"><b>' + tot.a5 + '</b></td><td class="num"><b>' + tot.a4 + '</b></td>' +
+    '<td class="num"><b>' + (tot.a5 + tot.a4) + '</b></td>' +
+    '<td class="num"><b>' + (tot.a5 + tot.a4 - tot.lib) + '</b></td></tr>' +
+    '</tbody></table>'
+
+  $('caveat').innerHTML =
+    '⚠️ 右边只统计<b>官方 A 级景区</b>（5A/4A）。库里的条目<b>不全是景区</b> —— ' +
+    '山峰、海滩、步行街、古村本来就不参与评级，所以「差」为正<b>不等于</b>' +
+    '「被砍了这么多家」，它只是「这个市还有多少家官方景区没进库」的上界。'
+}
+
+/* ============================================================
+   二·五、全国名录（scripts/cn-a-level.json）
+
+   ★ 这份文件的形状跟 App 的 landmarks.json **不一样**，别混着读：
+     · byProvince[省] = { '5A': [...], '4A': [...] }  ← 全量参考（5A 357 / 4A 3,322）
+     · top4A = [...]                                  ← 要进库的那 1000 条 4A
+   5A 只在 byProvince 里，**省名在"键"上**（条目里没有 province 字段）；
+   4A 要进库的在 top4A 里，**省名在"条目"上**。两边在这儿拼成同一种行。
+   ⚠️ 5A **真正缺的只有 `heat`**（文旅部那份只给了名字）。
+      `desc` / 坐标 / `coordSource` 是抓坐标那趟顺手带回来的 —— **别写死成空**：
+      早先这里写死 `desc: ''` 并只显示原名，于是 357 行看起来像「数据没更新」，
+      而数据就在文件里（282/357 有简介、357/357 有坐标）。
+   ============================================================ */
+function buildNational(j) {
+  const rows = []
+  for (const [prov, g] of Object.entries((j && j.byProvince) || {})) {
+    for (const x of (g && g['5A']) || []) {
+      rows.push({
+        name: x.name, province: prov, city: x.city || '',
+        // ⚠️ 每个字段**都要显式给值**，不能漏：下面 filter 里的
+        //    `r.desc.toLowerCase()` 会抛 `Cannot read properties of undefined`
+        //    —— 表现是**搜索框整个失灵**，且不报在界面上、只在 console 里。
+        level: '5A', raw: x.rawName || '',
+        heat: null, // ← 真的没有（见上面那段说明）
+        desc: x.desc || '',
+        coordSource: x.coordSource || '',
+      })
+    }
+  }
+  for (const x of (j && j.top4A) || []) {
+    rows.push({
+      name: x.name,
+      // ⚠️ 认不出来的省留个显眼的字，别让它混进正常省份里看不见
+      province: x.province || '（没认出来）',
+      city: x.city || '',
+      level: '4A',
+      heat: typeof x.heat === 'number' ? x.heat : null,
+      desc: x.desc || '',
+    })
+  }
+  return rows
+}
+
+function renderNatStats() {
+  const n = (f) => NAT.filter(f).length
+  const cells = [
+    ['要进库合计', NAT.length],
+    ['5A（全保留）', n((r) => r.level === '5A')],
+    ['4A（热度前 1000）', n((r) => r.level === '4A')],
+    ['覆盖省级行政区', new Set(NAT.map((r) => r.province)).size],
+    ['带市名', n((r) => r.city)],
+    ['带简介', n((r) => r.desc)],
+    // ★ 把「热度只有 4A 有」明写出来：不写的话 357 个「—」看着像没抓到
+    ['带热度（只有 4A）', n((r) => r.heat != null)],
+  ]
+  $('natCnt').textContent = '共 ' + NAT.length + ' 条'
+  $('natStats').innerHTML = cells.map(([k, v]) =>
+    '<div class="stat"><b>' + v + '</b><span>' + k + '</span></div>').join('')
+}
+
+/** 简介那一格：4A 有 `desc`；5A 源头没有简介，就把**清洗前的原名**摆出来
+ *  （那是「县级前缀到底剥掉了什么」的凭证）。两样都没有才显示「—」。 */
+function descCell(r) {
+  if (r.desc) return '<div class="desc" title="' + esc(r.desc) + '">' + esc(r.desc) + '</div>'
+  if (r.raw) return '<span class="raw" title="清洗前的原名">原名：' + esc(r.raw) + '</span>'
+  return '—'
+}
+
+/* 热度那一格。
+   ★ 5A 那 357 条的「—」**不是"没抓"** —— 文旅部那份官方名录只有名字，
+     压根没有平台综合热度分（只有 4A 那 1000 条有，而且正是靠它排的前 1000）。
+   ⚠️ 不解释的话，一排「—」看起来就是「数据没更新」—— 家长正是这么报的。
+     所以给它一个 title，并在这一节的统计里写明覆盖率。 */
+function heatCell(r) {
+  if (r.heat != null) return r.heat.toFixed(1)
+  return '<span class="noh" title="' +
+    esc('5A 来自文旅部官方名录，只有名字，没有平台热度分；热度只有 4A 那 1000 条有') +
+    '">—</span>'
+}
+
+function applyNatFilters() {
+  const q = $('nq').value.trim().toLowerCase()
+  const prov = $('nProv').value
+  const lv = $('nLevel').value
+
+  const hit = NAT.filter((r) => {
+    if (prov && r.province !== prov) return false
+    if (lv && r.level !== lv) return false
+    if (q && !(r.name.toLowerCase().includes(q) ||
+               r.city.toLowerCase().includes(q) ||
+               r.desc.toLowerCase().includes(q))) return false
+    return true
+  })
+
+  const byProv = new Map()
+  for (const r of hit) {
+    if (!byProv.has(r.province)) byProv.set(r.province, [])
+    byProv.get(r.province).push(r)
+  }
+  // 组间按条数降序（省大的在前）；组内 5A 在前，再按热度降序
+  const LV = { '5A': 0, '4A': 1 }
+  const groups = [...byProv.entries()]
+    .sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0], 'zh'))
+  for (const [, list] of groups) {
+    list.sort((a, b) => (LV[a.level] - LV[b.level]) ||
+      ((b.heat ?? -1) - (a.heat ?? -1)) || a.name.localeCompare(b.name, 'zh'))
+  }
+
+  $('natList').innerHTML = groups.map(([p, list]) => {
+    const n5 = list.filter((r) => r.level === '5A').length
+    const n4 = list.length - n5
+    const badge = [n5 ? n5 + ' 个 5A' : '', n4 ? n4 + ' 个 4A' : ''].filter(Boolean).join(' · ')
+    return '<section class="city">' +
+      '<div class="city-head"><b>' + esc(p) + '</b>' +
+        '<span class="n">' + list.length + ' 条 · ' + badge + '</span></div>' +
+      '<table class="nat"><thead><tr><th>景区</th><th>市</th><th>级别</th><th>热度</th><th>简介 / 原名</th></tr></thead><tbody>' +
+      list.map((r) => '<tr>' +
+        '<td>' + esc(r.name) + '</td>' +
+        '<td>' + esc(r.city || '—') + '</td>' +
+        '<td class="lv lv' + (r.level === '5A' ? '5' : '4') + '">' + r.level + '</td>' +
+        '<td class="num heat">' + heatCell(r) + '</td>' +
+        '<td>' + descCell(r) + '</td>' +
+      '</tr>').join('') +
+      '</tbody></table></section>'
+  }).join('') || '<div class="note">没有符合条件的条目。</div>'
+
+  $('nHint').textContent = '显示 ' + hit.length + ' / ' + NAT.length + ' 条'
+}
+
+/* ============================================================
+   三、启动
+   ============================================================ */
+;(async function main() {
+  let hand, osm, lvl, cn
+  try {
+    [hand, osm, lvl, cn] = await Promise.all([
+      getJSON(SRC.hand.url), getJSON(SRC.osm.url), getJSON(LEVEL_URL), getJSON(SRC.cn.url),
+    ])
+  } catch (e) {
+    $('stats').innerHTML = ''
+    $('list').innerHTML =
+      '<div class="err"><b>取不到数据。</b><br><br>' +
+      '这个页面要靠 dev server 才能读到 <code>src/data/*.json</code>（直接双击打开会被浏览器的跨源限制拦住）。<br><br>' +
+      '请这样打开：<br>' +
+      '① 在项目根目录跑 <code>npm run dev</code><br>' +
+      '② 浏览器访问 <code>http://localhost:5190/landmarks-preview.html</code><br><br>' +
+      '<span style="opacity:.75">（原始错误：' + esc(e.message) + '）</span></div>'
+    return
+  }
+
+  const handItems = Array.isArray(hand) ? hand : (hand.items || [])
+  const osmItems = Array.isArray(osm) ? osm : (osm.items || [])
+  CN = cn && !Array.isArray(cn) ? cn : null
+  const cnItems = CN ? CN.items || [] : (Array.isArray(cn) ? cn : [])
+
+  /* ★★ 「重名以官方为准」在这里落地 —— 跟 `src/data/landmarks.ts` **同一套动作**：
+     把 `supersedes` 里列出的 id 从手工/广东那两份里滤掉。
+     ⚠️ 这里**不做判断**，只是执行数据里记着的名单（判据在生成侧，只有一份）。
+        所以这一页显示出来的条数，必须跟 App 里 `LANDMARKS.length` 一致。 */
+  const superseded = new Set((CN && CN.supersedes) || [])
+  ALL = [
+    ...normalize(handItems.filter((x) => !superseded.has(x.id)), 'hand'),
+    ...normalize(osmItems.filter((x) => !superseded.has(x.id)), 'osm'),
+    ...normalize(cnItems, 'cn'),
+  ]
+  OFFICIAL = lvl
+
+  // 数据文件自带的抬头 —— 顺手显示出来，确认 ODbL 署名还在
+  const attr = (osm && osm.attribution) || '(缺 attribution)'
+  const lic = (osm && osm.license) || '(缺 license)'
+  document.querySelector('footer').textContent =
+    'OSM 那批：' + lic + ' · ' + attr + ' · 生成于 ' + ((osm && osm.generatedAt) || '?') +
+    '（' + osmItems.length + ' 条）｜全国 A 级：' + ((CN && CN.asOf) || '?') +
+    '（' + cnItems.length + ' 条）｜官方名录：' + ((lvl && lvl.asOf) || '?')
+
+  renderStats()
+  renderMerge()
+
+  // 筛选项
+  const groups = [...new Set(ALL.map((x) => x.group))].sort((a, b) => a.localeCompare(b, 'zh'))
+  $('fCity').insertAdjacentHTML('beforeend',
+    groups.map((g) => '<option value="' + esc(g) + '">' + esc(g) + '</option>').join(''))
+  const scenes = [...new Set(ALL.map((x) => x.scene))].sort()
+  $('fScene').insertAdjacentHTML('beforeend',
+    scenes.map((s) => '<option value="' + esc(s) + '">' + esc(SCENE_CN[s] || s) + '</option>').join(''))
+
+  $('bar').hidden = false
+  // 对账表的 sticky 表头要贴在筛选栏**下面**，而筛选栏会换行、高度不固定 →
+  // 把它的实际高度写成 CSS 变量给 `th{top:var(--barh)}` 用。
+  // ⚠️ 取的是 **#natBar** 而不是 #bar —— 现在常驻 sticky 的是「全国」那条
+  //    （#bar 已被 CSS 改成 static，它的高度对表头没有意义）。
+  const setBarh = () =>
+    document.documentElement.style.setProperty('--barh', $('natBar').offsetHeight + 'px')
+  setBarh()
+  addEventListener('resize', setBarh)
+  for (const id of ['q', 'fCity', 'fRating', 'fScene', 'fSrc']) {
+    $(id).addEventListener('input', applyFilters)
+  }
+  $('reset').addEventListener('click', () => {
+    $('q').value = ''
+    for (const id of ['fCity', 'fRating', 'fScene', 'fSrc']) $(id).value = ''
+    applyFilters()
+  })
+
+  applyFilters()
+  renderAudit()
+
+  /* ---- 全国名录：**单独取** ----
+     ⚠️ 不并进上面那个 Promise.all —— 它挂了不该把整页带崩（上面那节还能看）。 */
+  try {
+    NAT = buildNational(await getJSON(NATIONAL_URL))
+    renderNatStats()
+    const provs = [...new Set(NAT.map((r) => r.province))].sort((a, b) => a.localeCompare(b, 'zh'))
+    $('nProv').insertAdjacentHTML('beforeend',
+      provs.map((p) => '<option value="' + esc(p) + '">' + esc(p) + '</option>').join(''))
+    for (const id of ['nq', 'nProv', 'nLevel']) $(id).addEventListener('input', applyNatFilters)
+    $('nReset').addEventListener('click', () => {
+      $('nq').value = ''
+      $('nProv').value = ''
+      $('nLevel').value = ''
+      applyNatFilters()
+    })
+    applyNatFilters()
+  } catch (e) {
+    $('natStats').innerHTML = ''
+    $('natList').innerHTML =
+      '<div class="note">读不到 <code>scripts/cn-a-level.json</code>：' + esc(e.message) + '</div>'
+  }
+})()
+</script>
+</body>
+</html>

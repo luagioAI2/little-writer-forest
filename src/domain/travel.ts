@@ -20,13 +20,14 @@
 
 import type {
   BirdSpeciesId,
+  HomePoint,
   Landmark,
   PhotoScene,
   Sprout,
   TravelPhoto,
-  TravelStory,
 } from './types'
 import { LANDMARK_SEEDS, toLandmark } from '../data/landmarks'
+import { haversineKm, resolveHomePoint } from './geo'
 
 /* ============================================================
    一、地标表
@@ -62,6 +63,35 @@ export const LANDMARKS: Landmark[] = LANDMARK_SEEDS.map((seed) => ({
 /** 按 id 查地标 */
 export function landmarkById(id: string): Landmark | undefined {
   return LANDMARKS.find((l) => l.id === id)
+}
+
+/**
+ * 从家到某个地标的距离（公里）。
+ *
+ * ★★ 2026-09-25 新加的：鸟现在飞向**地标**，不是飞向某条内容
+ *    （见 `travelEvents.ts` 开头）。距离是这个地点的属性，不用等鸟回来。
+ *
+ * ⚠️ 「家」的判定**不在这里** —— 一律走 `resolveHomePoint()`。
+ *    那是唯一决定基准点的地方（没设置 / 值不合法 → 深圳），
+ *    在别处再写一遍 `home && isUsablePoint(home) ? ... : ...`
+ *    就是第二个实现，迟早跟它分叉。
+ *
+ * ★★ 为什么这两道守卫缺一不可（原来写在 `distanceToContent` 上，搬过来的）：
+ *
+ *    ① **没传 home 时退回深圳**，不是返回 0。
+ *       `Settings.homePoint` 是**可选**的 —— 全新装好的 App 上它就是
+ *       `undefined`。丢了这道守卫，孩子每一次派鸟都会看到
+ *       「飞了 **0** 公里」，而且界面上完全看不出这是错的。
+ *
+ *    ② **坏 home 要被挡住**。调用方塞进来的是**存档里的值**，
+ *       可能来自以后某个版本的 GPS，而 **(0, 0) 是定位失败的经典产物**
+ *       （几内亚湾）。不挡的话孩子会看到「飞了 12179 公里」。
+ *
+ *    设置页显示一次、这里算的时候再挡一次 ——
+ *    因为存档里的值可以绕过入口。
+ */
+export function distanceToLandmark(landmark: Landmark, home?: HomePoint | null): number {
+  return haversineKm(resolveHomePoint(home), landmark)
 }
 
 /** 取某一档的全部地标 */
@@ -194,44 +224,34 @@ export interface MakePhotoOpts {
   birdName: string
   at: number
   rng: () => number
-  /**
-   * 内容包（可选）。
-   *
-   * 有内容包，这张照片就带上真实图片、散文和距离；
-   * 没有，就退回程序化插画 + 一句话配文。
-   * **两条路都必须走得通** —— 内容包是靠人一条条填的，
-   * 地图上大部分地标在很长一段时间里都会是空的。
-   */
-  story?: TravelStory
-  /** 内容包没手填距离时，由调用方算好的公里数 */
+  /** 调用方算好的公里数（可选） */
   distanceKm?: number
 }
 
+/**
+ * 造一张**程序化**照片：一条配文，没有真实图片。
+ *
+ * ⚠️ 2026-09-24 起这里**不再接内容包** —— 内容包那条路改走
+ *    `TravelContent` → `TravelSouvenir`（见 `pets.ts` 的 `resolveReturn`）。
+ *    所以这个函数现在的唯一职责是「**没有内容包时**别让孩子空手而归」：
+ *    界面上会画一张程序化插画 + 一句话配文。
+ *
+ * ★ 这条路**必须留着**：内容包是靠人一条条填的，1800 个地标里
+ *   绝大多数在很长一段时间里都会是空的 —— 删了它，小鸟飞一趟
+ *   就真的什么都不带回来。
+ */
 export function makePhoto(opts: MakePhotoOpts): TravelPhoto {
-  const { landmark, birdSpecies, birdName, at, rng, story, distanceKm } = opts
+  const { landmark, birdSpecies, birdName, at, rng, distanceKm } = opts
 
   const base: TravelPhoto = {
     id: `ph-${landmark.id}-${at}-${Math.floor(rng() * 1_000_000)}`,
     landmarkId: landmark.id,
     birdSpecies,
     at,
-    // 有内容包就用它那句摘要 —— 比程序化生成的配文具体得多
-    caption: story
-      ? `${birdName}从${story.place}带回来一张照片：${story.summary}`
-      : photoCaption(landmark, birdName, rng),
+    caption: photoCaption(landmark, birdName, rng),
   }
 
-  if (!story) return base
-
-  const km = distanceKm ?? story.distanceKm
-  return {
-    ...base,
-    photoUrl: story.photoUrl,
-    credit: story.credit,
-    place: story.place,
-    essay: story.essay,
-    ...(km !== undefined ? { distanceKm: km } : {}),
-  }
+  return distanceKm !== undefined ? { ...base, distanceKm } : base
 }
 
 /* ============================================================

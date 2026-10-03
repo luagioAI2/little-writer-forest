@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>小笔苗 · 旅游点名录浏览</title>
+<style>
+  /* ============================================================
+     名录浏览页 —— 跟 App 同一套暖色配色。
+     ★ 只做一件事：按 省 → 市 浏览全库 1,808 条旅游点。
+     ★ 不引任何外部资源（跟 App 一样离线可用）。
+     ★ 走 fetch 读 JSON → 数据改了刷新就是新的，不用重新生成 HTML。
+     ⚠️ 必须通过 dev server 打开（http://localhost:5190/landmarks-browse.html），
+        file:// 会被浏览器跨源拦掉。
+     ★ 也能**被内嵌**（`content-config.html` 的「旅游点配置」那一屏）。
+        嵌进去时把"有没有没保存的改动"报给父页，并把自己的 `beforeunload`
+        让给父页 —— 见下面 `setDrawerDirty()` 和文件末尾那个守卫。
+     ============================================================ */
+  :root{
+    --bg:#fbf9f4; --card:#fff; --line:#e7e2d8; --ink:#2f3a34; --ink2:#5b655e;
+    --dim:#8b948d; --leaf:#29ce89; --leaf-d:#10a368; --amber:#febb32;
+    --amber-d:#b57f0d; --slate:#9ca3af;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:14px/1.6 system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  }
+  header{padding:20px 18px 6px}
+  h1{margin:0 0 4px; font-size:20px; letter-spacing:.02em}
+  .sub{color:var(--ink2); font-size:12.5px}
+  main{padding:0 18px 40px; max-width:900px}
+
+  /* ---- 统计 ---- */
+  .stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(104px,1fr)); gap:10px; margin-top:14px}
+  .stat{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px 12px}
+  .stat b{display:block; font-size:20px; line-height:1.25}
+  .stat span{color:var(--dim); font-size:12px}
+
+  /* ---- 筛选栏 ---- */
+  .bar{
+    display:flex; flex-wrap:wrap; gap:8px; align-items:center;
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:10px 12px; margin-top:14px; position:sticky; top:0; z-index:5;
+    box-shadow:0 1px 4px rgba(0,0,0,.03);
+  }
+  .bar select{
+    font:inherit; color:var(--ink); background:#fff;
+    border:1px solid var(--line); border-radius:9px; padding:6px 9px;
+    cursor:pointer; min-width:90px;
+  }
+  .bar select:focus{outline:none; border-color:var(--leaf-d)}
+  .bar input[type=search]{
+    font:inherit; color:var(--ink); background:#fff;
+    border:1px solid var(--line); border-radius:9px; padding:6px 9px;
+    flex:1 1 180px; min-width:140px;
+  }
+  .bar input[type=search]:focus{outline:none; border-color:var(--leaf-d)}
+  .bar .reset{
+    font:inherit; cursor:pointer; border:1px solid var(--line); background:#fff;
+    border-radius:9px; padding:6px 12px; color:var(--ink2); white-space:nowrap;
+  }
+  .bar .reset:hover{border-color:var(--slate); color:var(--ink)}
+  .bar .lbl{color:var(--dim); font-size:12px; white-space:nowrap}
+
+  /* ---- 结果计数 ---- */
+  .cnt-row{
+    margin:14px 0 10px; color:var(--ink2); font-size:13px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .cnt-row b{color:var(--ink)}
+  .cnt-row .crumb{color:var(--dim)}
+  .cnt-row .crumb b{color:var(--ink2)}
+
+  /* ---- 卡片列表 ---- */
+  .items{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:10px}
+  .item{
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:12px 14px; display:flex; flex-direction:column; gap:6px;
+  }
+  .item-top{display:flex; align-items:flex-start; justify-content:space-between; gap:6px}
+  .nm{font-weight:600; font-size:14.5px; line-height:1.35}
+  .blurb{color:var(--ink2); font-size:12.5px; line-height:1.5}
+  .meta{display:flex; flex-wrap:wrap; gap:4px; font-size:11.5px; color:var(--dim)}
+  .meta .geo{color:var(--dim); font-size:11px; font-family:ui-monospace,monospace}
+
+  .tag{
+    display:inline-block; padding:1px 7px; border-radius:6px;
+    font-size:11px; line-height:1.6; white-space:nowrap;
+  }
+  .tag.r5{background:#fff3d6; color:var(--amber-d); border:1px solid #f4d97a}
+  .tag.r4{background:#e8f5e9; color:var(--leaf-d); border:1px solid #a5d6a7}
+  .tag.scene{background:#f0f0ee; color:var(--ink2); border:1px solid #d4cfc4}
+  .tag.src{background:#eef2f7; color:var(--slate); border:1px solid #cfd8e3}
+  /* ★ 知名度三档 —— 越"知名"颜色越重，扫一眼就能看出分布 */
+  .tag.fame{border:1px solid transparent}
+  .tag.f1{background:#fde8e8; color:#b42318; border-color:#f5b5b0}
+  .tag.f2{background:#fff3d6; color:var(--amber-d); border-color:#f4d97a}
+  .tag.f3{background:#f2f1ee; color:var(--dim); border-color:#e0dcd3}
+  /* 热度：没有就是「—」，别显示 0 */
+  .heat{color:var(--ink2); font-size:11.5px}
+  .heat.none{color:var(--dim); cursor:help}
+
+  /* ---- 内容包标记 + 点开就编辑 ----
+     ★★ browse 页原来**完全不知道内容包的存在** —— 1808 个景点里哪些已经写过了，
+        在这一页上一点都看不出来，只能去编辑器里开「只看还没配内容的景点」那一屏反查。
+        现在这一页也读 `src/data/travel-contents.json`，配过的卡片右上角挂标记。
+     ★ 整张卡片可点 = 「点一下这个景点就出现编辑」。 */
+  .item{cursor:pointer; transition:border-color .12s, box-shadow .12s}
+  .item:hover{border-color:var(--leaf-d); box-shadow:0 2px 10px rgba(16,163,104,.13)}
+  .item:hover .edit-hint{opacity:1}
+  .item .rt{display:flex; align-items:center; gap:6px; flex:0 0 auto}
+  .c-badge{
+    display:inline-flex; align-items:center; gap:5px;
+    background:#eefaf3; color:var(--leaf-d); border:1px solid #bfe8d5;
+    border-radius:999px; padding:1px 8px; font-size:11px; font-weight:700;
+  }
+  .edit-hint{
+    opacity:0; color:var(--leaf-d); font-size:11.5px; font-weight:600;
+    white-space:nowrap; transition:opacity .12s;
+  }
+  /* 等级小圆点 —— 颜色来自 TRAVEL_GRADES，**不在这里再抄一份五档配色** */
+  .dots{display:inline-flex; gap:3px; align-items:center}
+  .dots i{width:8px; height:8px; border-radius:50%; display:block}
+
+  /* ---- 右侧编辑抽屉 ---- */
+  .btn{
+    border:1px solid var(--line); background:#fff; color:var(--ink2);
+    border-radius:9px; padding:5px 12px; font:inherit; cursor:pointer;
+    text-decoration:none; display:inline-block;
+  }
+  .btn:hover{border-color:var(--slate); color:var(--ink)}
+  .scrim{position:fixed; inset:0; background:rgba(47,58,52,.26); z-index:60}
+  .scrim[hidden]{display:none}
+  .drawer{
+    position:fixed; top:0; right:0; bottom:0; z-index:61;
+    width:min(880px,94vw); background:var(--bg);
+    border-left:1px solid var(--line); box-shadow:-8px 0 30px rgba(0,0,0,.16);
+    display:flex; flex-direction:column;
+  }
+  .drawer[hidden]{display:none}
+  .dw-head{
+    display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+    padding:9px 14px; background:var(--card); border-bottom:1px solid var(--line);
+  }
+  .dw-head .dw-nm{font-weight:700; font-size:14.5px}
+  .dw-head .dw-sub{color:var(--dim); font-size:11.5px}
+  .dw-head .spacer{flex:1}
+  /* ⚠️ iframe 必须 flex:1 + min-height:0，否则它按内容撑高、
+     抽屉里的滚动条会跑到最外面那一页上。 */
+  .drawer iframe{flex:1; min-height:0; width:100%; border:0; background:var(--bg)}
+
+  /* ---- 分组分隔 ---- */
+  .group-head{
+    grid-column:1/-1; margin:16px 0 4px; padding:6px 10px;
+    font-size:13px; color:var(--ink2); background:#f5f2eb;
+    border-radius:8px; display:flex; align-items:center; gap:8px;
+  }
+  .group-head b{color:var(--ink); font-size:14px}
+  .group-head .g-cnt{color:var(--dim); font-size:12px}
+
+  /* ---- 空状态 ---- */
+  .empty{
+    text-align:center; padding:40px 20px; color:var(--dim);
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+  }
+
+  /* ---- 加载 / 错误 ---- */
+  .loading{text-align:center; padding:30px; color:var(--dim)}
+  .err{
+    background:#fef3f2; border:1px solid #f9c6bd; border-radius:10px;
+    padding:14px 16px; color:#b42318; font-size:13px; margin-top:14px;
+  }
+
+  footer{padding:16px 18px 30px; color:var(--dim); font-size:11.5px}
+</style>
+</head>
+<body>
+<header>
+  <h1>旅游点名录浏览</h1>
+  <div class="sub">
+    全库 1,808 条旅游点 = 手工精选 35 + 广东 OSM 230 + 全国 A 级 1,348 + <b>世界景点 231</b>
+    − 被取代 36。按 <b>省</b> → <b>市</b> 逐级筛选，支持按名称搜索。<br>
+    ⚠️ 世界条目的「省」就是<b>国家</b>（没有"市"这一层），用左上角的范围开关可以只看世界。
+  </div>
+</header>
+<main>
+  <div class="stats" id="stats"></div>
+
+  <div class="bar">
+    <select id="fScope" onchange="onScope()">
+      <option value="">全部</option>
+      <option value="cn">仅中国</option>
+      <option value="world">仅世界</option>
+    </select>
+    <span class="lbl">省 / 国家</span>
+    <select id="fProv" onchange="onProv()"></select>
+    <span class="lbl">市</span>
+    <select id="fCity" onchange="applyFilters()"></select>
+    <select id="fRating" onchange="applyFilters()">
+      <option value="">全部等级</option>
+      <option value="5A">5A 景区</option>
+      <option value="4A">4A 景区</option>
+      <option value="none">未评级</option>
+    </select>
+    <select id="fFame" onchange="applyFilters()">
+      <option value="">全部知名度</option>
+      <option value="世界知名">世界知名</option>
+      <option value="全国知名">全国知名</option>
+      <option value="地方知名">地方知名</option>
+    </select>
+    <select id="fContent" onchange="applyFilters()">
+      <option value="">全部内容状态</option>
+      <option value="gap">只看还没配内容的</option>
+      <option value="has">只看已配内容的</option>
+    </select>
+    <input type="search" id="q" placeholder="搜名称或简介…" oninput="applyFilters()" onfocus="this.select()">
+    <button class="reset" onclick="resetAll()">重置</button>
+  </div>
+
+  <div class="cnt-row" id="cntRow"></div>
+  <div id="result"></div>
+</main>
+
+<!-- ============================================================
+     右侧编辑抽屉 —— 点卡片就滑出来
+     ------------------------------------------------------------
+     ★★ 里面是**内嵌**的 `travel-editor.html`（`?embed=1&id=xxx`），
+        不是把编辑器那 900 行抄一份进来。
+        抄一份的话，两个页面的字段、校验规则、保存逻辑迟早漂移，
+        而**界面上完全看不出哪个是新的**。
+     ⚠️ 抽屉放在 `</main>` **外面** —— `#result` 每次筛选都会整块重渲染，
+        放里面会被一起冲掉。
+     ⚠️ 保存端点 / AI 起稿端点都只在 dev server 上有，
+        所以这一页**必须走 dev server**（file:// 打不开，而且本来也打不开）。
+     ============================================================ -->
+<div class="scrim" id="scrim" hidden></div>
+<div class="drawer" id="drawer" hidden>
+  <div class="dw-head">
+    <div>
+      <div class="dw-nm" id="dwName">—</div>
+      <div class="dw-sub" id="dwSub"></div>
+    </div>
+    <span class="spacer"></span>
+    <span id="dwDirty" class="dw-sub" hidden style="color:var(--amber-d);font-weight:700">● 有未保存的改动</span>
+    <a class="btn" id="dwOpen" href="#" target="_blank" rel="noopener">单独打开</a>
+    <button class="btn" id="dwClose">关闭</button>
+  </div>
+  <iframe id="dwFrame" title="旅行内容编辑"></iframe>
+</div>
+<footer>
+  数据来自手工精选、© OpenStreetMap 贡献者（ODbL）、文旅部 A 级景区名录，
+  以及世界景点的 DBpedia 贡献者（CC BY-SA 3.0）+ Wikimedia Commons 图片。
+  坐标精度：精确坐标 / 市中心 / 省中心（见 landmarks-cn.json 的 coordSource）。
+</footer>
+
+<script>
+'use strict'
+
+/* ============================================================
+   一、取数据
+   ============================================================ */
+const SRC = {
+  hand: { url: './src/data/landmarks.json', label: '手工精选' },
+  osm:  { url: './src/data/landmarks-gd.json', label: 'OSM 生成' },
+  cn:   { url: './src/data/landmarks-cn.json', label: '全国 A 级' },
+  world:{ url: './src/data/landmarks-world.json', label: '世界景点' },
+  // ★ 不是数据来源，是「**移出名单**」—— 见 init() 里那段说明
+  parked:{ url: './src/data/landmarks-4a.json', label: '已移出主库' },
+}
+
+const SCENE_CN = {
+  mountain: '山', water: '水', city: '城市', desert: '沙漠', forest: '森林',
+  snow: '雪', temple: '寺庙', coast: '海岸', grass: '草原', cave: '洞穴',
+}
+
+async function getJSON(url) {
+  const res = await fetch(url, { cache: 'no-store' })
+  if (!res.ok) throw new Error(url + ' → HTTP ' + res.status)
+  return res.json()
+}
+
+/* 把四个来源归一化成同一形状，标上 source */
+function normalize(hand, gd, cn, world) {
+  const sup = new Set(cn.supersedes || [])
+  const out = []
+  // 手工精选 35 条：没有 city（外省景点），没有 rating
+  for (const x of hand) {
+    if (sup.has(x.id)) continue
+    out.push({
+      id: x.id, name: x.name, province: x.province, city: x.city || '',
+      lng: x.lng, lat: x.lat, blurb: x.blurb || '', scene: x.scene || '',
+      rating: x.rating || '', tier: x.tier || 0, source: 'hand',
+    })
+  }
+  // 广东 OSM 230 条
+  for (const x of (gd.items || [])) {
+    if (sup.has(x.id)) continue
+    out.push({
+      id: x.id, name: x.name, province: x.province, city: x.city || '',
+      lng: x.lng, lat: x.lat, blurb: x.blurb || '', scene: x.scene || '',
+      rating: x.rating || '', tier: 0, source: 'osm',
+    })
+  }
+  // 全国 A 级 1,348 条
+  for (const x of (cn.items || [])) {
+    out.push({
+      id: x.id, name: x.name, province: x.province, city: x.city || '',
+      lng: x.lng, lat: x.lat, blurb: x.blurb || '', scene: x.scene || '',
+      rating: x.rating || '', tier: 0, source: 'cn',
+      // ⚠️⚠️ `heat` 必须带上 —— 我第一版漏了，后果有两个（都不报错）：
+      //   ① 每条都显示「热度 —」，看着像"源里就是没有"；
+      //   ② `fameOf()` 的规则③（热度 ≥ 8.5 算全国知名）**永远不触发**，
+      //      于是那 24 条悄悄掉到「地方知名」，而页面上的总数还是对的。
+      //   ➜ 跟 `toLandmark()` 漏抄 heat 是**同一个 bug**，只是发生在另一个文件里。
+      heat: typeof x.heat === 'number' ? x.heat : undefined,
+    })
+  }
+  // 世界景点 231 条 —— ⚠️ 它的 `province` 就是**国家名**（见 types.ts 的 Landmark.province），
+  // 所以「省」下拉里会直接列出国家；分组也按国家分（没有 city）。
+  for (const x of (world.items || [])) {
+    out.push({
+      id: x.id, name: x.name, province: x.province, city: '',
+      country: x.country || x.province,
+      lng: x.lng, lat: x.lat, blurb: x.blurb || '', scene: x.scene || '',
+      rating: '', tier: 0, source: 'world',
+    })
+  }
+  return out
+}
+
+/* ============================================================
+   二、全局状态
+   ============================================================ */
+let ALL = []         // 全库（**已按移出名单滤过**，跟 App 的 LANDMARK_SEEDS 同口径）
+let PARKED_COUNT = 0 // 被移出主库的条数 —— 只用来在统计条上说明"为啥不是 1808 了"
+let PROV_LIST = []   // 省列表（按条数降序）
+let CITY_MAP = {}    // { 省: [{city, count}] }
+
+/*
+ * 内容包，按地标索引：{ landmarkId: [{id,title,grade}, …] }
+ * ⚠️ 只收**有 landmarkId** 的条目 —— 野点（landmarkId 为空）不属于任何地标，
+ *    放进来会在 `CONTENT['']` 上堆一堆东西，而没有任何卡片会去读它。
+ */
+let CONTENT = {}
+/* { 等级名: 颜色 } —— 从 `TRAVEL_GRADES` 读，**不在这里再抄一份五档配色** */
+let GRADE_COLOR = {}
+
+const $ = (id) => document.getElementById(id)
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => (
+  { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]
+))
+
+const SRC_TAG = {
+  hand: '<span class="tag src">手工精选</span>',
+  osm:  '<span class="tag src">OSM</span>',
+  cn:   '<span class="tag src">A 级</span>',
+  world:'<span class="tag src">世界</span>',
+}
+
+function ratingTag(it) {
+  if (it.rating === '5A') return '<span class="tag r5">5A</span>'
+  if (it.rating === '4A') return '<span class="tag r4">4A</span>'
+  return ''
+}
+
+/* ============================================================
+   三、初始化
+   ============================================================ */
+
+/**
+ * 读内容包 —— 只为了在卡片上标出「这个景点配了几条内容」。
+ *
+ * ★ 它和上面那四个地标文件是**两回事**：那四个是"来源给的"
+ *   （只读、按省/市/等级/知名度审阅，加起来 1808 条 —— 其中 1165 条
+ *     已按 09-25 的口径移出主库，所以页面上的总条数是 643）；
+ *   这一份是"我们写的"（`travel-contents.json`：图 + 等级 + 散文）。
+ *   browse 页原来完全不读它，所以**看不出哪些景点已经写过了** ——
+ *   只能跑去编辑器里开「只看还没配内容的景点」那一屏反查。
+ */
+async function loadContent() {
+  const list = await getJSON('./src/data/travel-contents.json')
+  CONTENT = {}
+  for (const c of list) {
+    if (!c.landmarkId) continue
+    if (!CONTENT[c.landmarkId]) CONTENT[c.landmarkId] = []
+    CONTENT[c.landmarkId].push(c)
+  }
+}
+
+async function init() {
+  try {
+    $('result').innerHTML = '<div class="loading">正在加载旅游点数据…</div>'
+    const [hand, gd, cn, world, parked] = await Promise.all([
+      getJSON(SRC.hand.url),
+      getJSON(SRC.osm.url),
+      getJSON(SRC.cn.url),
+      getJSON(SRC.world.url),
+      getJSON(SRC.parked.url),
+    ])
+    ALL = normalize(hand, gd, cn, world)
+
+    /* ★★ 跟 `src/data/landmarks.ts` **读同一份移出名单**。
+       家长 2026-09-25 定：主库只留「5A / 全国知名 / 世界知名」，
+       4A 那批（+ 广东没评级的）移出去，另存 `landmarks-4a.json`。
+
+       ⚠️⚠️ 这里**不自己按 `fame` 再判一遍**。加载器是按这个文件滤的；
+          页面若改用 `fameOf()` 现算，同一个问题就有了两个答案 ——
+          `fameOf()` 改了、而这份文件没重新生成时，页面和 App 的条数
+          **对不上，而且两边都不报错**，正是最难查的那种。
+          ➜ 读同一份文件，结构上不可能不一致。
+
+       ⚠️ 顺序是**先 normalize 再滤**：`normalize` 里要先处理 `supersedes`，
+          移出名单是它的下一步。反过来的话，被取代的条目会先被算进 PARKED_COUNT。 */
+    const parkedIds = new Set((parked.items || []).map((x) => x.id))
+    PARKED_COUNT = parkedIds.size
+    ALL = ALL.filter((x) => !parkedIds.has(x.id))
+
+    /* ★★ 「知名度」不在那四个数据文件里 —— 它是**我们给的**，由
+       `src/data/landmarkFame.ts` 的 `fameOf()` 现算（名单 + 规则）。
+       ➜ 这里**直接 import 那个模块**，而不是在这个页面里重写一份判定：
+          两处各写一份的话，改了一处、另一处不跟着走，
+          而**页面上看不出差别**（它只会安静地显示旧档位）。
+       ⚠️ 只 import 这一个模块（它只依赖一个类型）——
+          不去 import `travel.ts`，那个会拖进整张依赖图。 */
+    const { fameOf } = await import('./src/data/landmarkFame.ts')
+    ALL = ALL.map((x) => ({ ...x, fame: fameOf(x) }))
+
+    /* ★ 等级配色也从代码里读，不在这页再抄一份五档 —— 抄一份就迟早漂移。
+       ⚠️ 只 import 这一个模块（它是纯常量 + 类型），不去 import `travel.ts`，
+          那个会把整张依赖图拖进来。 */
+    const { TRAVEL_GRADES } = await import('./src/domain/types.ts')
+    GRADE_COLOR = Object.fromEntries(TRAVEL_GRADES.map((g) => [g.key, g.color]))
+
+    await loadContent()
+
+    renderStats()
+
+    rebuildProv()
+    applyFilters()
+  } catch (e) {
+    $('result').innerHTML = '<div class="err">加载失败：' + esc(e.message) +
+      '<br>请通过 dev server 打开（http://localhost:5190/landmarks-browse.html），' +
+      '直接双击文件会被浏览器跨源拦掉。</div>'
+    console.error(e)
+  }
+}
+
+function stat(n, label) {
+  return '<div class="stat"><b>' + n + '</b><span>' + label + '</span></div>'
+}
+
+/**
+ * 统计条。
+ * ★ 单独抽出来是因为**保存之后要重画**（编辑器 postMessage 说存好了）——
+ *   不然「已配内容」那个数字会一直停在打开页面时的旧值，
+ *   家长刚写完一条、回来一看数字没变，会以为没存上。
+ */
+function renderStats() {
+  const provSet = new Set(ALL.map(x => x.province))
+  const cityCount = new Set(ALL.filter(x => x.city).map(x => x.province + '|' + x.city)).size
+  const a5 = ALL.filter(x => x.rating === '5A').length
+  const a4 = ALL.filter(x => x.rating === '4A').length
+  const worldN = ALL.filter(x => x.source === 'world').length
+  const countryN = new Set(ALL.filter(x => x.source === 'world').map(x => x.country)).size
+  const fames = ['世界知名', '全国知名', '地方知名']
+  // ★ 按**地标**数，不是内容条数 —— 一个景点可以有好几条，
+  //   而家长真正想知道的是「1808 个景点我写了几个」。
+  const withContent = ALL.filter(x => CONTENT[x.id]).length
+  $('stats').innerHTML = [
+    stat(ALL.length, '总条数'),
+    /* ★ 「已移出主库」紧跟在总条数后面 —— 不然家长会以为"数据少了 1165 条"。
+       这两个数加起来才是那四个来源文件的总量（1808）。 */
+    stat(PARKED_COUNT, '已移出主库'),
+    stat(provSet.size, '省级单位/国家'),
+    stat(cityCount, '城市数'),
+    stat(a5, '5A 景区'),
+    stat(a4, '4A 景区'),
+    stat(worldN, '世界景点（' + countryN + ' 国）'),
+  ].join('') + fames
+    /* ★ 0 条的那一档**不显示**。09-25 主库只留「5A / 全国知名 / 世界知名」之后，
+       「地方知名」在库里必然是 0 条 —— 挂一张「0 地方知名」的卡片，
+       看着像"一个地方景点都没有"，而其实它们只是被移出去了
+       （旁边那张「已移出主库」才是它们的去处）。
+       ⚠️ 只是**不显示**，不是"把 0 当没有"：档位存不存在由单元测试守
+          （拿全量来源跑，见 `landmarkFame.test.ts` 的「三档都要有人」）。 */
+    .map((f) => ({ f, n: ALL.filter((x) => x.fame === f).length }))
+    .filter(({ n }) => n > 0)
+    .map(({ f, n }) => stat(n, f)).join('') +
+    stat(withContent + ' / ' + ALL.length, '已配内容的景点')
+}
+
+/* ---- 范围（全部 / 仅中国 / 仅世界）----
+   ★ 世界条目的 `province` 就是国家名，所以「省 / 国家」下拉会直接列出国家。
+   ★ 切换范围要**重建**省列表与市列表 —— 否则会留着另一个范围的省，
+     选了之后一条都搜不到（看着像"数据没了"）。 */
+function scopedAll() {
+  const scope = $('fScope').value
+  if (scope === 'world') return ALL.filter(x => x.source === 'world')
+  if (scope === 'cn') return ALL.filter(x => x.source !== 'world')
+  return ALL
+}
+
+function rebuildProv() {
+  const base = scopedAll()
+  PROV_LIST = []
+  CITY_MAP = {}
+
+  const provCount = {}
+  for (const it of base) provCount[it.province] = (provCount[it.province] || 0) + 1
+  PROV_LIST = Object.entries(provCount)
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh'))
+    .map(([p, n]) => ({ prov: p, count: n }))
+
+  $('fProv').innerHTML = '<option value="">全部（' + base.length + '）</option>' +
+    PROV_LIST.map(p => `<option value="${esc(p.prov)}">${esc(p.prov)}（${p.count}）</option>`).join('')
+  $('fProv').value = ''
+  $('fCity').innerHTML = '<option value="">全部市</option>'
+  $('fCity').value = ''
+
+  for (const { prov } of PROV_LIST) {
+    const items = base.filter(x => x.province === prov)
+    const cityCount = {}
+    for (const it of items) {
+      // ★ 世界条目**没有"市"这个概念** —— 不给它们造一个「（未分市）」的伪市，
+      //   否则「日本」下面会冒出一个「市：（未分市）（9）」，看着像数据缺了一块。
+      //   ⚠️ 中国那批**保留**「（未分市）」：手工精选里有外省景点真的没填市，
+      //     那一项能用来单独筛出它们，不是噪音。
+      if (!it.city && it.source === 'world') continue
+      const c = it.city || '（未分市）'
+      cityCount[c] = (cityCount[c] || 0) + 1
+    }
+    CITY_MAP[prov] = Object.entries(cityCount)
+      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh'))
+      .map(([city, n]) => ({ city, count: n }))
+  }
+}
+
+function onScope() {
+  rebuildProv()
+  applyFilters()
+}
+
+/* ============================================================
+   四、交互
+   ============================================================ */
+function onProv() {
+  const prov = $('fProv').value
+  if (!prov) {
+    $('fCity').innerHTML = '<option value="">全部市</option>'
+  } else {
+    const cities = CITY_MAP[prov] || []
+    $('fCity').innerHTML = '<option value="">全部市（' + PROV_LIST.find(p => p.prov === prov).count + '）</option>' +
+      cities.map(c => `<option value="${esc(c.city)}">${esc(c.city)}（${c.count}）</option>`).join('')
+  }
+  applyFilters()
+}
+
+function resetAll() {
+  $('fScope').value = ''
+  $('fRating').value = ''
+  $('fFame').value = ''
+  $('fContent').value = ''
+  $('q').value = ''
+  rebuildProv()
+  applyFilters()
+}
+
+function applyFilters() {
+  const prov = $('fProv').value
+  const city = $('fCity').value
+  const rating = $('fRating').value
+  const fame = $('fFame').value
+  const content = $('fContent').value
+  const q = $('q').value.trim().toLowerCase()
+
+  // ★ 从「当前范围」里筛，不是从全库 —— 否则选了「仅世界」还会被中国的省过滤掉
+  let hit = scopedAll()
+
+  // 省
+  if (prov) hit = hit.filter(it => it.province === prov)
+
+  // 市
+  // ⚠️ 「未分市」那项 = city 为空。选了它就只看没分市的那些（直辖市等）。
+  if (city) {
+    if (city === '（未分市）') hit = hit.filter(it => !it.city)
+    else hit = hit.filter(it => it.city === city)
+  }
+
+  // 等级
+  if (rating === 'none') hit = hit.filter(it => !it.rating)
+  else if (rating) hit = hit.filter(it => it.rating === rating)
+
+  // ★ 知名度（我们判的那三档）
+  if (fame) hit = hit.filter(it => it.fame === fame)
+
+  // ★ 内容状态（我们**写没写过**这个景点）
+  if (content === 'gap') hit = hit.filter(it => !CONTENT[it.id])
+  else if (content === 'has') hit = hit.filter(it => CONTENT[it.id])
+
+  // 搜索
+  if (q) hit = hit.filter(it =>
+    it.name.toLowerCase().includes(q) || (it.blurb || '').toLowerCase().includes(q))
+
+  // 面包屑
+  const crumb = []
+  if (prov) crumb.push('<b>' + esc(prov) + '</b>')
+  if (city) crumb.push(esc(city))
+  if (rating) crumb.push(rating === 'none' ? '未评级' : rating)
+  if (fame) crumb.push(esc(fame))
+  if (content) crumb.push(content === 'gap' ? '还没配内容' : '已配内容')
+  if (q) crumb.push('「' + esc(q) + '」')
+  $('cntRow').innerHTML =
+    '<span>找到 <b>' + hit.length + '</b> 条</span>' +
+    (crumb.length ? '<span class="crumb">' + crumb.join(' · ') + '</span>' : '')
+
+  // 渲染
+  if (hit.length === 0) {
+    $('result').innerHTML = '<div class="empty">没有匹配的旅游点<br>试试换个筛选条件或重置</div>'
+    return
+  }
+
+  // 分组：有 city 的按 city 分；没 city 的，中国条目归到「（未分市）」，
+  // ★ 世界条目归到**它自己的国家**（不然 231 条世界景点会挤成一个「（未分市）」大组）
+  const byGroup = new Map()
+  for (const it of hit) {
+    const g = it.city || (it.source === 'world' ? it.country : '（未分市）')
+    if (!byGroup.has(g)) byGroup.set(g, [])
+    byGroup.get(g).push(it)
+  }
+
+  // 组排序：按条数降序，再按名字
+  const groups = [...byGroup.entries()].sort((a, b) =>
+    b[1].length - a[1].length || a[0].localeCompare(b[0], 'zh'))
+
+  // 组内排序：知名度高的在前 → 5A → 4A → 无评级 → 按名字
+  // ⚠️ 先按知名度：家长复核这一页时，最想先看到的是「世界知名」那几条对不对
+  const RANK = { '5A': 0, '4A': 1 }
+  const FAME_RANK = { '世界知名': 0, '全国知名': 1, '地方知名': 2 }
+  for (const [, list] of groups) {
+    list.sort((a, b) =>
+      (FAME_RANK[a.fame] ?? 9) - (FAME_RANK[b.fame] ?? 9) ||
+      (RANK[a.rating] ?? 9) - (RANK[b.rating] ?? 9) || a.name.localeCompare(b.name, 'zh'))
+  }
+
+  // 只有 1 个组且是"全部"时不显示组头
+  const showGroup = groups.length > 1 || (groups.length === 1 && groups[0][0] !== '（未分市）')
+
+  let html = '<div class="items">'
+  for (const [g, list] of groups) {
+    if (showGroup) {
+      const r5 = list.filter(x => x.rating === '5A').length
+      const r4 = list.filter(x => x.rating === '4A').length
+      const parts = [list.length + ' 条']
+      if (r5) parts.push('5A ' + r5)
+      if (r4) parts.push('4A ' + r4)
+      html += '<div class="group-head"><b>' + esc(g) + '</b><span class="g-cnt">' +
+        parts.join(' · ') + '</span></div>'
+    }
+    for (const it of list) html += itemHTML(it)
+  }
+  html += '</div>'
+  $('result').innerHTML = html
+}
+
+function fameTag(it) {
+  if (it.fame === '世界知名') return '<span class="tag fame f1">世界知名</span>'
+  if (it.fame === '全国知名') return '<span class="tag fame f2">全国知名</span>'
+  if (it.fame === '地方知名') return '<span class="tag fame f3">地方知名</span>'
+  return ''
+}
+
+/**
+ * 这个景点配了几条内容 —— 有内容才返回标记，没有就返回空串。
+ * ★ 没内容的**不显示任何东西**：1808 条里 1801 条是空的，
+ *   给每条都挂一个「未配」只会把真正的信息淹掉。要看缺口请用筛选栏。
+ */
+function contentBadge(it) {
+  const list = CONTENT[it.id]
+  if (!list || list.length === 0) return ''
+  // 等级小圆点：颜色来自 TRAVEL_GRADES；没标等级的用灰的
+  const dots = list.slice(0, 4).map((c) =>
+    '<i style="background:' + (GRADE_COLOR[c.grade] || '#9ca3af') + '"></i>').join('')
+  const tip = list.map((c) => (c.grade || '未标等级') + ' · ' + (c.title || '')).join('\n')
+  return '<span class="c-badge" title="' + esc(tip) + '">内容 ' + list.length +
+    '<span class="dots">' + dots + '</span></span>'
+}
+
+function itemHTML(it) {
+  const tags = [
+    fameTag(it),
+    ratingTag(it),
+    it.scene ? '<span class="tag scene">' + esc(SCENE_CN[it.scene] || it.scene) + '</span>' : '',
+    SRC_TAG[it.source] || '',
+    it.tier ? '<span class="tag scene">tier ' + it.tier + '</span>' : '',
+  ].filter(Boolean).join(' ')
+  // ★ 热度：没有就显示「—」而不是 0 —— 两者是两件事（见 types.ts 的注释）
+  const heat = typeof it.heat === 'number'
+    ? '<span class="heat">热度 ' + it.heat + '</span>'
+    : '<span class="heat none" title="来源站没有给这个景区的热度分">热度 —</span>'
+  // ★ `data-id` 是点开抽屉用的 —— 用事件委托，不给每张卡片挂 onclick
+  return '<div class="item" data-id="' + esc(it.id) + '">' +
+    '<div class="item-top"><div class="nm">' + esc(it.name) + '</div>' +
+      '<div class="rt">' + contentBadge(it) + '<span class="edit-hint">编辑 ›</span></div>' +
+    '</div>' +
+    (it.blurb ? '<div class="blurb">' + esc(it.blurb) + '</div>' : '') +
+    '<div class="meta">' + tags + '</div>' +
+    '<div class="meta"><span class="geo">' + it.lng.toFixed(4) + ', ' + it.lat.toFixed(4) +
+    '</span>' + heat + '</div>' +
+  '</div>'
+}
+
+/* ============================================================
+   三之二、编辑抽屉
+   ------------------------------------------------------------
+   ★★ 里面是**内嵌**的 `travel-editor.html?embed=1&id=xxx`，
+      不是把编辑器抄一份进来 —— 抄一份的话字段、校验、保存逻辑
+      迟早跟编辑器漂移，而界面上完全看不出哪个是新的。
+
+   ⚠️ 关抽屉**必须**先问一句「有未保存的改动」：
+      iframe 自己的 `beforeunload` 拦不住"父页把抽屉藏起来"这种关闭，
+      不问就是把家长刚写好的散文**一声不响地丢掉**。
+      有没有改动由编辑器 postMessage 告诉我们（见 travel-editor.html 的 setDirty）。
+   ============================================================ */
+
+let drawerId = ''
+let drawerDirty = false
+
+/*
+ * ★★ 嵌在别的页面里（`content-config.html` 的「旅游点配置」那一屏）时，
+ *    要把改动状态**报上去**。
+ *
+ * ⚠️ 为什么非报不可：iframe 里的 `beforeunload` **弹不出对话框**
+ *    （浏览器只给顶层页面弹）。于是"关标签页"这条路上，
+ *    只剩父页那一份守卫 —— 不报上去 = 家长刚写的散文静默消失。
+ * ⚠️ 判据用 `window.parent !== window`，**不加 URL 参数**：
+ *    单独打开 `landmarks-browse.html` 时的行为必须一个字节都不变
+ *    （这条由 `_verify-browse-edit.mjs` 守着）。
+ */
+const EMBEDDED = window.parent !== window
+
+/**
+ * 抽屉里"有没有没保存的改动" —— **只有这一个出口**。
+ *
+ * ★ 原来三处各自写 `drawerDirty = …` + `$('dwDirty').hidden = …`
+ *   （打开抽屉 / 关抽屉 / 编辑器报回来）。现在再加上"报给父页"就是第四件事，
+ *   三处各写一遍迟早漏一处 —— 而漏掉的那处在界面上**看不出差别**
+ *   （只是父页的小圆点不亮，然后关标签页时静默丢）。
+ * ➜ 收敛成一个 setter，谁改都得走这里。
+ */
+function setDrawerDirty(v) {
+  drawerDirty = !!v
+  $('dwDirty').hidden = !drawerDirty
+  if (EMBEDDED) {
+    window.parent.postMessage(
+      { type: 'lw-tool-dirty', tool: 'travel', dirty: drawerDirty }, location.origin)
+  }
+}
+
+/*
+ * 抽屉标题下那一行：「北京 · 已有 3 条内容」。
+ *
+ * ★★ 只许有**这一份** —— 打开抽屉、存完、改动中三处都调它。
+ *    三处各写一遍的话，改个文案就会有地方对不上（而且不对的那处
+ *    只在某个路径下才显示，走查时多半看不见）。
+ * ★ `unsaved` 那句是必须的：加了图还没存时数字已经变了，
+ *   不说一句「还没存」，家长会以为已经落盘了。
+ */
+function renderDrawerSub(id, n, unsaved) {
+  const it = ALL.find((x) => x.id === id)
+  if (!it) return
+  const where = [it.province, it.city].filter(Boolean).join(' · ')
+  const what = n ? '已有 ' + n + ' 条内容' : '还没配内容，打开就是一张空白的'
+  $('dwSub').textContent = where + ' · ' + what + (unsaved ? '（还没存）' : '')
+}
+
+function openDrawer(id) {
+  const it = ALL.find((x) => x.id === id)
+  if (!it) return
+  drawerId = id
+  setDrawerDirty(false)
+  $('dwName').textContent = it.name
+  renderDrawerSub(id, (CONTENT[id] || []).length, false)
+
+  const qs = 'id=' + encodeURIComponent(id)
+  /*
+   * ★ 抽屉里加 `embed=1` —— 左边那份地标列表在抽屉里是多余的（已经知道是哪个景点了）。
+   * ★「单独打开」给**不带 embed** 的完整编辑器 —— 单独开的时候，你还是想有那份列表的。
+   * ⚠️ 每次点开都**重设 src**（即使是同一个地标）——
+   *    不重设的话，上一次没保存的改动会**留在 iframe 里**，
+   *    下次点开看起来就像是"这个景点现在的内容"，而它其实没存过。
+   */
+  $('dwOpen').href = './travel-editor.html?' + qs
+  $('dwFrame').src = './travel-editor.html?embed=1&' + qs
+
+  $('scrim').hidden = false
+  $('drawer').hidden = false
+  $('dwClose').focus()
+}
+
+function closeDrawer(force) {
+  if ($('drawer').hidden) return
+  if (drawerDirty && !force) {
+    // 文案和编辑器里那个「● 有未保存的改动」保持一致 ——
+    // 两处一个说"没保存"、一个说"未保存"，看着像两件事
+    if (!confirm('这个景点的内容还有未保存的改动，关掉就丢了。确定关掉？')) return
+  }
+  $('drawer').hidden = true
+  $('scrim').hidden = true
+  // 把 iframe 也卸掉 —— 留着的话下次点开还是上一份没保存的状态
+  $('dwFrame').src = 'about:blank'
+  drawerId = ''
+  setDrawerDirty(false)
+}
+
+$('dwClose').onclick = () => closeDrawer()
+$('scrim').onclick = () => closeDrawer()
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !$('drawer').hidden) closeDrawer()
+})
+
+/* 编辑器发回来的两件事 */
+window.addEventListener('message', async (e) => {
+  if (e.origin !== location.origin) return
+  const msg = e.data || {}
+  if (msg.type === 'lwm-dirty') {
+    setDrawerDirty(msg.dirty)
+    /*
+     * ★ 顺手把「已有 N 条内容」也刷新掉 —— 编辑器把**它那一组**的条数
+     *   一起报了回来（见 travel-editor.html 的 mineCount）。
+     * ⚠️ 拿不到就用文件里的数兜底：单独打开时编辑器不报 count。
+     */
+    if (drawerId) {
+      const n = typeof msg.count === 'number' ? msg.count : (CONTENT[drawerId] || []).length
+      renderDrawerSub(drawerId, n, drawerDirty)
+    }
+  } else if (msg.type === 'lwm-saved') {
+    // ★ 存完立刻重读内容包并重画 —— 卡片上的「内容 N 条」和统计要当场变
+    await loadContent()
+    renderStats()
+    applyFilters()
+    // 抽屉标题上那句「已有 N 条内容」也要跟着走（这回是文件里的真数）
+    if (drawerId) renderDrawerSub(drawerId, (CONTENT[drawerId] || []).length, false)
+  }
+})
+
+/* 点卡片就编辑（事件委托：`#result` 自己不会被替换，只有它的 innerHTML 会） */
+$('result').addEventListener('click', (e) => {
+  const card = e.target.closest('.item')
+  if (card && card.dataset.id) openDrawer(card.dataset.id)
+})
+
+/*
+ * ★★ 关标签页 / 刷新时的守卫 —— **必须由这一页挂**。
+ *
+ * 嵌进来的编辑器（`embed=1`）**故意关掉了它自己的 `beforeunload`**
+ * （不关的话，点一次「关闭」会被连问两遍）。
+ * 于是"关标签页"这条路上，只剩这一条守卫了 —— 删了它就是静默丢散文。
+ */
+window.addEventListener('beforeunload', (e) => {
+  /*
+   * ⚠️ 嵌在 `content-config.html` 里时**让给父页守**：
+   *    iframe 自己的 `beforeunload` 弹不出对话框（浏览器只给顶层页面弹），
+   *    留着它除了让人以为"已经守住了"之外没有任何作用 ——
+   *    而父页那边是靠 `setDrawerDirty()` 报上去的状态来守的。
+   */
+  if (EMBEDDED) return
+  if (drawerDirty) { e.preventDefault(); e.returnValue = '' }
+})
+
+init()
+</script>
+</body>
+</html>

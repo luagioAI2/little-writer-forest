@@ -47,6 +47,14 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+/* ★ scene 规则与 blurb 表**不在这里** —— 见 `scripts/lib/landmark-text.mjs`。
+   `build-landmarks-cn.mjs`（全国 A 级名录）用的是**同一份**，两处各写一遍会漂移。 */
+import {
+  BLURB_BY_SCENE,
+  BLURB_BY_TYPE,
+  inferSceneFromName,
+  pickVariant,
+} from './lib/landmark-text.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const CACHE_DIR = path.join(ROOT, 'node_modules', '.cache', 'overpass')
@@ -588,27 +596,9 @@ function collectRings(elements) {
    四、scene 推断
    ============================================================
    数据里只写 scene，palette 由它推（见 `landmarks.ts` 的说明）。
-   顺序很重要：**先看标签，再看名字**，且名字里
-   「海/湾/岛」要排在「山」之前 —— 否则「海山公园」会判成 mountain。
+   顺序很重要：**先看标签，再看名字** ——
+   名字那一层的规则在 `lib/landmark-text.mjs`（全国那份也用同一份）。
    ============================================================ */
-
-const NAME_RULES = [
-  [/(温泉|冷泉|矿泉)/, 'water'],
-  [/(瀑布|溪|泉|湖|潭|水库|河|江)/, 'water'],
-  [/(海滨|沙滩|海岸|海湾|海滩)/, 'coast'],
-  [/(海岛|半岛|湾|海|岛)/, 'coast'],
-  [/(溶洞|岩洞|洞穴|地下河)/, 'cave'],
-  [/(森林|林场|植物园|树木园|竹林|榕)/, 'forest'],
-  [/(草原|牧场|草地|滑草)/, 'grass'],
-  [/(滑雪|冰雪|雪山)/, 'snow'],
-  /* ⚠️ `塔`/`古城`/`牌坊` 曾经放在这一条（temple），结果 `广州塔`
-     被判成"寺庙"配色。现代塔、古城街区、牌坊街都该按 city 走，
-     所以把它们挪到了最后一条。这里只留**宗教与宗祠**类。 */
-  [/(寺|庙|庙宇|禅院|道观|宫|祠|围屋|碉楼|书院)/, 'temple'],
-  [/(山|峰|岭|岩|峡|崖|石|嶂|顶)/, 'mountain'],
-  [/(公园|乐园|游乐园|动物园|植物园|农庄|庄园|花园)/, 'grass'],
-  [/(街|步行街|古城|广场|塔|中心|博物馆|美术馆|科学馆|展览馆|纪念馆|会馆|口岸|牌坊)/, 'city'],
-]
 
 function inferScene(tags) {
   const tourism = tags.tourism
@@ -628,11 +618,8 @@ function inferScene(tags) {
   if (historic === 'city_gate' || historic === 'castle') return 'city'
   if (historic === 'tomb' || historic === 'archaeological_site') return 'temple'
 
-  const name = tags.name || ''
-  for (const [re, scene] of NAME_RULES) {
-    if (re.test(name)) return scene
-  }
-  return 'city'
+  // 没有可用标签 → 交给共用的「按名字猜」
+  return inferSceneFromName(tags.name || '')
 }
 
 /* ============================================================
@@ -685,59 +672,9 @@ const CURATED = {
   世界之窗阿尔卑斯山冰雪世界: '在南方的夏天里玩雪，进去要穿棉袄。',
 }
 
-const BLURB_BY_TYPE = {
-  theme_park: [
-    '里面全是玩的，一天都玩不完。',
-    '有过山车和旋转木马，一进门就听见笑声。',
-    '游乐设施排得满满当当，记得留够时间。',
-  ],
-  zoo: [
-    '里面住着很多动物，猴子最热闹。',
-    '动物住得离人不远，能看得很清楚。',
-    '有长颈鹿、老虎和会开屏的孔雀。',
-  ],
-  aquarium: [
-    '隔着玻璃看鱼游来游去，像走进海底。',
-    '水里灯光蓝蓝的，鱼群会成群地转圈。',
-  ],
-  museum: [
-    '里面放着很多老东西，看一圈能知道不少事。',
-    '一件件展品摆得整整齐齐，慢慢看很有意思。',
-    '有讲解牌，看完能讲给同学听。',
-  ],
-  attraction: [
-    '是个值得停下来看看的地方。',
-    '很多人来这儿拍照，景色不错。',
-    '在这儿待上一会儿，能记住很久。',
-  ],
-}
-
-const BLURB_BY_SCENE = {
-  mountain: ['山不高，爬起来正好，山顶能看到很远。', '山路有树遮阴，走到顶有风。'],
-  water: ['一大片水，风一吹就有波纹。', '水边凉快，夏天来最舒服。'],
-  coast: ['有沙滩和海浪，可以光着脚走一走。', '海风咸咸的，浪一层层推上来。'],
-  forest: ['树长得又高又密，走进去一下凉快下来。', '满眼都是绿色，能听见鸟叫。'],
-  grass: ['有大片草地，可以跑一跑、放风筝。', '草地平平的，适合坐着发呆。'],
-  cave: ['洞里凉丝丝的，石头形状很怪。', '走进去像进了另一个世界。'],
-  temple: ['屋檐上有雕花，进去要轻声。', '老房子保存得很好，能看出以前的讲究。'],
-  city: ['街上人来人往，很热闹。', '周围都是高楼，晚上灯全亮起来。'],
-  snow: ['一片白，冷得直跺脚。', '雪踩上去咯吱响。'],
-  desert: ['干干的，一眼望过去全是黄沙。', '太阳很大，要戴帽子。'],
-}
-
-/** 稳定哈希 —— 同一个 id 永远选到同一条变体，重跑不会让文案乱跳 */
-function hash(s) {
-  let h = 2166136261
-  for (let i = 0; i < s.length; i += 1) {
-    h ^= s.charCodeAt(i)
-    h = Math.imul(h, 16777619)
-  }
-  return Math.abs(h)
-}
-
-function pickVariant(list, id) {
-  return list[hash(id) % list.length]
-}
+/* ★ `BLURB_BY_TYPE` / `BLURB_BY_SCENE` / `hash` / `pickVariant` **已移到
+   `scripts/lib/landmark-text.mjs`** —— 全国那份（`build-landmarks-cn.mjs`）用的是同一份。
+   这里只留**只有广东这份才有的** `CURATED`（逐条手写，按名字精确命中）。 */
 
 function makeBlurb(name, tags, scene, id) {
   const hit = CURATED[name]
