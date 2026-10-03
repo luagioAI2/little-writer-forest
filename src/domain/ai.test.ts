@@ -41,6 +41,7 @@ import { usedRhetoric } from './modelEssay'
 import type {
   AiConfig,
   CompositionCategory,
+  CompositionGenre,
   GradeLevel,
   PromptImage,
   ScoreDimension,
@@ -511,6 +512,8 @@ function scoreOpts(
     cfg?: AiConfig
     title?: string
     category?: CompositionCategory
+    /** ★ 格式要求（2026-10-01）。不传 = 记叙文 = 老行为。 */
+    genre?: CompositionGenre
     childText?: string
     text?: string
   } = {},
@@ -1001,7 +1004,7 @@ const ESSAY_REPLY = JSON.stringify({
   skeletonLines: [],
 })
 
-function essayOpts(over: { images?: PromptImage[]; cfg?: AiConfig } = {}) {
+function essayOpts(over: { images?: PromptImage[]; cfg?: AiConfig; genre?: CompositionGenre } = {}) {
   return {
     childText: ESSAY,
     title: '雨后的校园',
@@ -1269,3 +1272,117 @@ describe('★★ 指位字段：模型能表达"是哪一处"了', () => {
     expect(applied.candidates?.length).toBe(2)
   })
 })
+
+/* ============================================================
+   应用文 · 提示词里必须按应用文说（2026-10-02 补）
+   ------------------------------------------------------------
+   09-30 加了应用文的提示词分支（`appliedSectionFor` / `systemFor` /
+   `kindWordFor`），但**一条守卫都没有**。这一层坏了是**静默**的：
+   模型照样回一份合法 JSON，只是它把倡议书写成了记叙文 ——
+   孩子拿到的范文第一行不是称呼，而所有测试还是绿的。
+
+   2026-10-02 重构这段（删掉说明文/议论文）时顺手补上，三条一起守：
+     · user 消息里的**骨架**（称呼 / 落款）；
+     · system 消息里的**纠正**（`SCORE_SYSTEM` 那句「看图作文」必须被推翻）；
+     · 第一行的**称呼**（`kindWordFor` —— 模型会先信第一句）。
+   ============================================================ */
+
+describe('★★ 应用文 · 提示词必须按应用文说', () => {
+  const appliedOpts = () =>
+    scoreOpts({
+      title: '节约用水倡议书',
+      category: 'event',
+      genre: 'applied',
+      childText: '我们要节约用水。我家的水龙头有时候会滴水。',
+      text: '我们要节约用水。我家的水龙头有时候会滴水。',
+    })
+
+  it('★★ 记叙文一个字没变：不传 genre 与传 narrative 的请求体逐字节相同', async () => {
+    const a = mockReplySeq([SCORE_REPLY])
+    await scoreAndRewrite(scoreOpts())
+    const b = mockReplySeq([SCORE_REPLY])
+    await scoreAndRewrite(scoreOpts({ genre: 'narrative' }))
+    expect(outgoingBody(a, 0)).toBe(outgoingBody(b, 0))
+  })
+
+  it('★ user 消息里列出应用文骨架（称呼 / 落款）', async () => {
+    const f = mockReplySeq([SCORE_REPLY])
+    await scoreAndRewrite(appliedOpts())
+    const user = outgoingUser(f)
+    expect(user).toContain('应用文')
+    expect(user).toContain('称呼')
+    expect(user).toContain('落款')
+  })
+
+  it('★ 第一行不能是「看图作文」—— 应用文没有图可看', async () => {
+    const f = mockReplySeq([SCORE_REPLY])
+    await scoreAndRewrite(appliedOpts())
+    const first = outgoingUser(f).split('\n')[0]
+    expect(first).toContain('应用文')
+    expect(first).not.toContain('看图作文')
+  })
+
+  /*
+   * 2026-10-02 加这条守卫时**它第一次跑就红了**，而且红得有道理 ——
+   * 查出来一个**既有缺陷**（不是这次改动引入的）：
+   *
+   *   `systemFor(base, genre)` 当时只接到两条路上，而**孩子交作文走的
+   *   主路径** `scoreAndRewrite()` 用的是另一份 system 常量
+   *   `SCORE_AND_REWRITE_SYSTEM`，**没有**过 `systemFor`：
+   *
+   *       { role: 'system', content: SCORE_AND_REWRITE_SYSTEM }
+   *
+   *   而那份常量的第一行就是「正在批改学生的**看图作文**」，还写着
+   *   「必须结合配图来评……这是看图作文的评分重点」。
+   *   ➜ 给《节约用水倡议书》批改时，**system 说「看图作文」、user 说
+   *     「这是一篇倡议书，必须按应用文的格式写」** —— 自相矛盾，
+   *     而 `ai.ts` 里 09-30 那条注释已经写明「模型很可能听第一句的」。
+   *
+   * ★★ 当天晚些时候**把审计补做完**才敢说清范围 —— 先 `grep` 所有读取点，
+   *    再逐个数**哪些是活的**（光看「有一条漏了」会以为要修三处）：
+   *
+   *     | 用途             | 函数                 | 接了吗 | 活的吗        |
+   *     |------------------|----------------------|--------|---------------|
+   *     | 交作文（主路径） | `scoreAndRewrite`    | ❌→✅ | ✅ useApp:980 |
+   *     | 看范文 / 写法    | `generateModelEssay` | ✅     | ✅ ComposePage|
+   *     | 只评分           | `scoreWork`          | ✅     | ❌ **没人调** |
+   *     | AI 出题          | `generatePrompt`     | ❌     | ❌ **没人调** |
+   *
+   *   ➜ **需要它的活路径只有 2 条**，漏的只有主路径那一条；另外两条带同样
+   *     缺口的都是死代码（`scoreWork` 的注释自己写着「App 里没人调它」，
+   *     `generatePrompt` 则是界面上的「随机出题」根本走本地抽题）。
+   *
+   *   家长 2026-10-02 拍板：**补上**。改的就是这一行 ——
+   *       { role: 'system', content: systemFor(SCORE_AND_REWRITE_SYSTEM, opts.genre) }
+   *   记叙文逐字节不变（不传 genre 时 `systemFor` 原样返回，见上面那条
+   *   「不传 genre 与传 narrative 的请求体逐字节相同」），只有应用文多一段纠正。
+   */
+  it('★★ system 消息里必须**明确纠正**「看图作文」（模型会听第一句）', async () => {
+    const f = mockReplySeq([SCORE_REPLY])
+    await scoreAndRewrite(appliedOpts())
+    const sys = outgoingSystem(f)
+    expect(sys).toContain('不是看图作文')
+    expect(sys).toContain('应用文')
+  })
+
+  it('★ 对照：另一条**活**路径（看范文）也带上了纠正', async () => {
+    /*
+     * 两条活路径对照着看，才敢说「格式要求真的全程跟着走」。
+     * ⚠️ 这里**故意不用** `scoreWork` 做对照 —— 它虽然接了补丁，但
+     *    **App 里没人调它**（`ai.ts` 自己的注释写着），拿死路径当对照
+     *    会给人「主路径已经验过了」的错觉。
+     */
+    const f = mockReply(ESSAY_REPLY)
+    await generateModelEssay(essayOpts({ genre: 'applied' }))
+    const sys = outgoingSystem(f)
+    expect(sys).toContain('不是看图作文')
+    expect(sys).toContain('应用文')
+  })
+
+  it('★ 记叙文不许带上应用文那段 system 补丁', async () => {
+    const f = mockReplySeq([SCORE_REPLY])
+    await scoreAndRewrite(scoreOpts())
+    expect(outgoingSystem(f)).not.toContain('不是看图作文')
+  })
+})
+

@@ -68,7 +68,8 @@
      还要保证承载它的那个文体模板本身不是凭空编的。**
    ============================================================ */
 
-import type { ModelEssay, SkeletonLine } from './types'
+import type { CompositionGenre, ModelEssay, SkeletonLine } from './types'
+import { resolveGenre } from './types'
 import { analyzeText, countWords, splitSentences } from './scoring'
 
 /* ============================================================
@@ -457,10 +458,17 @@ export function extractChildMaterial(childText: string, title: string): ChildMat
    二、按大类决定「怎么拔高」
    ============================================================ */
 
-export type EssayKind = 'person' | 'scene' | 'event' | 'object' | 'imagine'
+export type EssayKind =
+  | 'person'
+  | 'scene'
+  | 'event'
+  | 'object'
+  | 'imagine'
+  /* ★ `applied` 是**题目自带的格式要求**（不是「写什么对象」）—— 见 `resolveKind` */
+  | 'applied'
 
 /**
- * 定文体。
+ * 定走哪一支：按「写什么对象」，还是按「题目自带的格式要求」。
  *
  * ★ 2026-09-19 加了 `opts.pictureFirst`，修的是家长第二次报的
  *   「更好的写法 也还是有问题。要结合 图 和 用户写的」。
@@ -491,8 +499,35 @@ export type EssayKind = 'person' | 'scene' | 'event' | 'object' | 'imagine'
 export function resolveKind(
   category: string,
   m: ChildMaterial,
-  opts: { pictureFirst?: boolean } = {},
+  opts: { pictureFirst?: boolean; genre?: CompositionGenre } = {},
 ): EssayKind {
+  /*
+   * ★★★ 2026-09-30 起：**格式要求优先于「写什么对象」**。
+   *
+   *   `category` 那一层只描述「记叙文写的是什么」（写人/写景/写事/状物/想象），
+   *   它装不下应用文 —— 题库里 `applied-writing` 的 category 就是 `event`。
+   *   所以应用文必须在 switch **之前**就分流出去，否则
+   *   「国旗下的讲话」会走写事模板，生成一段「一开始我还没反应过来」。
+   *
+   *   ⚠️ 判据是 `genre`，不是标题里有没有「倡议书」这类词 ——
+   *      标题词只决定**哪一种**应用文（见 `appliedFormOf`），
+   *      而"是不是应用文"是题库标好的，不该靠猜。
+   *
+   * ★★ 2026-10-01：说明文、议论文也走这条。一次加两个，所以不再逐个
+   *   `if` —— **只要不是记叙文，文体名就是 kind 名**（两者取值一一对应）。
+   *   ⚠️ 因此 `EssayKind` 必须装得下每一个非记叙文文体，否则这里会静默漏掉：
+   *      `modelEssay.test.ts` 有一条守卫**遍历 `GENRES`** 盯着这件事。
+   *
+   * ★★★ 2026-10-02 家长推翻了上面那一条的一半：
+   *   「不需要 写成什么文体…APP 不需要区分文体。」
+   *   所以说明文 / 议论文**从模型里删掉了**，`CompositionGenre` 只剩
+   *   `narrative` / `applied`。上面那句「遍历 `GENRES`」的守卫仍然有效
+   *   （现在只剩应用文一个非记叙文值），而且**更该留着** ——
+   *   万一以后有人把 `GENRES` 加回一个值而忘了 `EssayKind`，它立刻红。
+   */
+  const genre = resolveGenre(opts.genre)
+  if (genre !== 'narrative') return genre
+
   switch (category) {
     case 'scene':
       return 'scene'
@@ -513,6 +548,166 @@ export function resolveKind(
       if (m.event) return 'event'
       return 'event'
   }
+}
+
+/* ============================================================
+   二·五、应用文：子形态与「称呼 / 号召 / 落款」
+   ------------------------------------------------------------
+   应用文跟记叙文最大的差别不是「写什么」，而是**有固定格式**：
+   称呼 → 正文 → 号召 → 落款。孩子丢分基本都丢在这几样上，
+   所以这一节的存在意义就是**把格式写对**，不是把句子写漂亮。
+
+   ★ 子形态从**标题**认。为什么不用 `tagId`：调用链
+     （`composeModelEssay` → `buildOpening`）手里只有
+     `title` / `category` / `genre`，拿不到标签；
+     而题库里这几道题的标题本身就把形态写清楚了
+     （「…倡议书」「…建议书」「观后感」「…的发言」）。
+
+   ⚠️⚠️ **认不出来的默认是 `speech`（演讲稿）**。
+      理由：应用文里演讲稿占比最高（本库 8 道里 4 道），
+      它的形状（称呼 + 正文 + 号召 + 谢谢大家）也最通用。
+      ➜ 但这个默认**是会猜错的**（比如将来加「通知」「留言条」
+        会被套成演讲稿）。所以不靠"猜得准"，靠**让它猜错时看得见**：
+        `modelEssay.test.ts` 有一条**逐题断言** —— 题库里每道
+        应用文题的标题都必须认出**预期**的子形态。标题改了、
+        或新加了别的形态，那条测试立刻红。
+
+   ⚠️ **`letter`（书信）故意没进来**：题库里 `letter` 标签
+      （「给亲人的一封信」）现在**还是记叙文**（没标 `genre`），
+      所以加进来会是死代码。这是**分类上的一个缺口，已报家长**。
+      等 `letter` 真的标成应用文时，在这里加一档 + 补一条逐题断言。
+   ============================================================ */
+
+export type AppliedForm = 'proposal' | 'suggestion' | 'review' | 'speech'
+
+export interface AppliedShape {
+  /** 这是哪一种应用文 —— 正文和落款都照着它写 */
+  form: AppliedForm
+  /** 开头的称呼行（含冒号）。观后感没有称呼 → 空串 */
+  salutation: string
+  /** 开头点题的那一句（称呼下面那句） */
+  opener: string
+  /** 结尾的号召 / 收束句 */
+  call: string
+  /** 落款行（**不含**日期）。演讲稿和观后感没有落款 → 空串 */
+  signature: string
+  /**
+   * ★ 「这件事是什么」——**运行期**才有的字段（见 `appliedTopicOf`）。
+   *
+   * 为什么不做进上面那张静态表：话题是从**标题**抠出来的，
+   * 同一种形态配不同标题会有不同话题（两份倡议书话题不同），
+   * 所以它不能是表的一部分。调用方这样拼：
+   *   `{ ...appliedShapeOf(title), topic: appliedTopicOf(title) }`
+   *
+   * ⚠️ 别去读 `m.thing` 当话题 —— 那会把标题里的「书」当成孩子的物件。
+   */
+  topic?: string
+}
+
+/**
+ * 四种应用文的「骨架」。
+ *
+ * ⚠️ 这些句子是**照着小学阶段真实的应用文格式**写的，改动前请先想清楚
+ *    孩子在课堂上被要求的是什么 —— 这不是文案，是教学内容。
+ */
+const APPLIED_SHAPES: Record<AppliedForm, AppliedShape> = {
+  proposal: {
+    form: 'proposal',
+    salutation: '亲爱的同学们：',
+    opener: '今天我想请大家和我一起，做一件对大家都好的事。',
+    call: '一个人的力量很小，可大家一起做，就完全不一样了。让我们从今天开始，从身边的小事做起吧！',
+    signature: '倡议人：小笔苗',
+  },
+  suggestion: {
+    form: 'suggestion',
+    salutation: '尊敬的校长：',
+    opener: '我是本校的一名学生，有一件事想跟您说一说。',
+    call: '以上是我的想法，希望您能看一看。谢谢您！',
+    signature: '建议人：小笔苗',
+  },
+  review: {
+    form: 'review',
+    // 观后感既没有称呼、也没有落款 —— 它是「夹在记叙和议论之间」的文体
+    salutation: '',
+    opener: '看完之后，我心里一直放不下。',
+    call: '它让我明白，有些东西值得一遍遍回想。我会一直记得。',
+    signature: '',
+  },
+  speech: {
+    form: 'speech',
+    salutation: '老师们、同学们：',
+    opener: '今天我想和大家说一说我的想法。',
+    // 演讲稿用致谢收尾，不用落款
+    call: '我的话讲完了。谢谢大家！',
+    signature: '',
+  },
+}
+
+/**
+ * 从标题认应用文的子形态。
+ *
+ * ⚠️ 顺序有讲究：**「倡议书」和「建议书」必须先判** ——
+ *    它们都带「书」字，先判具体的那两个，再退到通用规则。
+ * ⚠️ 认不出 → `speech`（见上面那段注释，靠逐题断言兜住）。
+ */
+export function appliedFormOf(title: string): AppliedForm {
+  if (/倡议书/.test(title)) return 'proposal'
+  if (/建议书/.test(title)) return 'suggestion'
+  if (/观后感|读后感|听后感|观后有感/.test(title)) return 'review'
+  return 'speech'
+}
+
+export function appliedShapeOf(title: string): AppliedShape {
+  return APPLIED_SHAPES[appliedFormOf(title)]
+}
+
+/**
+ * 从标题里抠出「这件事到底是什么」。
+ *
+ * ⚠️⚠️ **不可以用 `m.thing`** —— `extractChildMaterial` 会把**标题**
+ *    也算进匹配范围，而应用文的标题自带一个「书」字
+ *    （倡议**书** / 建议**书**）→「节约用水倡议书」的 `m.thing` 是 **`书`**，
+ *    正文就会写成「因为**书**让我想了很久」。不报错、不崩，但整篇跑题。
+ *    （这是实测踩到的，不是假想。）
+ *
+ * 判据：把子形态那个词去掉，剩下的还得**像个话题** ——
+ *   至少 2 个字，而且**不能以「的」结尾**（「国旗下的讲话」→「国旗下的」是残句）。
+ *   认不出来就返回 `undefined`，让调用方退到通用说法。
+ *
+ *   实测：节约用水 ✓ / 保护环境 ✓ / 竞选班干部 ✓
+ *        国旗下的讲话 ✗ / 读书节的发言 ✗ / 毕业典礼上的发言 ✗ / 观后感 ✗ / 给校长的建议书 ✗
+ */
+export function appliedTopicOf(title: string): string | undefined {
+  const t = title
+    .replace(/倡议书|建议书|观后感|读后感|听后感|演讲稿|发言|讲话|致辞|演讲/g, '')
+    .replace(/^[《「]|[》」]$/g, '')
+    .trim()
+  if (t.length < 2) return undefined
+  if (/的$/.test(t)) return undefined
+  return t
+}
+
+/**
+ * 子形态的中文名 —— 提示词和亮点都要说人话。
+ * ⚠️ 别在别处再抄一份（本项目栽过「同一判定抄两份」）。
+ */
+export const APPLIED_FORM_LABELS: Record<AppliedForm, string> = {
+  proposal: '倡议书',
+  suggestion: '建议书',
+  review: '观后感',
+  speech: '演讲稿',
+}
+
+/**
+ * 落款里的日期。
+ *
+ * 范文是**示例**，用当天日期最自然（真写应用文本来就要写当天日期）。
+ * ⚠️ 调用方传 `now` 进来，别在函数里直接读 `Date.now()` ——
+ *    否则测试没法固定这个值。
+ */
+export function appliedDate(now: number): string {
+  const d = new Date(now)
+  return `${d.getFullYear()} 年 ${d.getMonth() + 1} 月 ${d.getDate()} 日`
 }
 
 /* ============================================================
@@ -735,7 +930,7 @@ const DEMAND_OF: Record<RhetoricName, keyof RhetoricDemand> = {
  * 家长点名要、但这篇**还没出现**的修辞 —— 补一句话进去。
  *
  * ⚠️ 每句都要在**任何题材下都读得通**，因为补哪一句是由
- *    「家长说了什么」决定的，不是由文体决定的 —— 这里拿不到文体。
+ *    「家长说了什么」决定的，跟走哪一支无关 —— 这里拿不到那一层。
  *    所以句子一律锚在「那天」和「我」上，不锚在具体名物上
  *    （锚名物就会在别的题材里出病句）。
  */
@@ -884,7 +1079,12 @@ export function buildImagerySentences(items: string[], rng: () => number): strin
 }
 
 /* ---- 各类文章的开头：点题 + 立画面 ---- */
-function buildOpening(kind: EssayKind, m: ChildMaterial, rng: () => number): string {
+function buildOpening(
+  kind: EssayKind,
+  m: ChildMaterial,
+  rng: () => number,
+  applied?: AppliedShape,
+): string {
   const time = m.time ?? '那天'
   const place = m.place
   const person = m.person
@@ -931,6 +1131,18 @@ function buildOpening(kind: EssayKind, m: ChildMaterial, rng: () => number): str
       ]
       return bank[Math.floor(rng() * bank.length)]
     }
+    case 'applied': {
+      /*
+       * 应用文的开头 = 称呼 + 一句点题。
+       *
+       * ⚠️ 用 `\n` 把称呼和起句分成两行 —— 称呼必须**单独占一行**
+       *    才是应用文的格式（挤在同一行就不是应用文了）。
+       *    组装处（`composeModelEssay`）会按 `\n` 拆成两条骨架行。
+       */
+      const shape = applied ?? APPLIED_SHAPES.speech
+      const line = `${shape.opener}`
+      return shape.salutation ? `${shape.salutation}\n${line}` : line
+    }
     default: {
       const bank = [
         `如果真有那么一个地方，我希望它是我闭上眼睛时看到的那个样子。`,
@@ -956,6 +1168,14 @@ function buildMiddles(
   m: ChildMaterial,
   g: number,
   rng: () => number,
+  applied?: AppliedShape,
+  /**
+   * 正文里必须出现的具体名物（孩子写的排前面、图上补的排后面）。
+   * ⚠️ 只有应用文这一支读它 —— 记叙文那几支走 `buildImagerySentences`。
+   *    应用文不能写「我最先注意到的是X」那种画面句，但**「结合孩子写的」
+   *    这条底线在应用文里同样成立**，所以换一种方式把他写的东西放进去。
+   */
+  items: string[] = [],
 ): string[] {
   const out: string[] = []
   const senseList = m.senses.length > 0 ? m.senses : ['视觉', '听觉', '触觉']
@@ -1006,6 +1226,80 @@ function buildMiddles(
       ? `阳光正好落在${m.place}上，亮亮的一小块，我盯着它看了很久。`
       : `阳光落在我手背上，亮亮的一小块，我盯着它看了很久。`)
     out.push(`最后我把这件事做完了。没有多漂亮，可我一点也不后悔——因为我试过了。`)
+  } else if (kind === 'applied') {
+    /*
+     * ★★ 应用文这一支**不写感官、不写景物**。
+     *
+     *   记叙文的正文靠「观察 + 名物 + 修辞」，而应用文根本没有画面可观察 ——
+     *   这就是为什么五维里的「观察力」对应用文是错指标（见 `focusFor`）。
+     *   硬把 `synesthesia` / `personify` 塞进来，出来的就不是应用文了。
+     *
+     *   这一支只写两件事：**为什么提这件事**、**具体怎么做**。
+     */
+    const shape = applied ?? APPLIED_SHAPES.speech
+    const topic = shape.topic
+
+    /*
+     * ⚠️ 句子顺序是**刻意**的：裁剪是从尾部拿掉的（低年级只留 4 句），
+     *    所以「缘由 / 分点 / 孩子的具体东西」必须排在前面 ——
+     *    这三样是应用文的主干。实测把它们排在后面时，
+     *    四年级只留下 4 句，**孩子的具体东西整句被裁掉**，
+     *    范文就变成一篇跟孩子无关的套话。
+     */
+    if (shape.form === 'review') {
+      out.push('我看得很认真，有几处甚至屏住了呼吸。')
+      if (items.length > 0) {
+        out.push(`让我印象最深的，是${items.slice(0, 2).join('、')}。`)
+      }
+      out.push('看完以后，有个问题一直在我脑子里转：如果换成我，我会怎么做？')
+      out.push(
+        pick([
+          '我想了很久，越想越觉得，有些事情看起来离我们很远，其实就在身边。',
+          '我原本以为这只是一场热闹，可它留下来的东西比热闹多得多。',
+        ]),
+      )
+      out.push('我不确定自己有没有看懂它全部的意思，但我知道，它在我心里留下了一点东西。')
+    } else {
+      out.push(
+        topic
+          ? `${topic}这件事，我放在心里很久了。`
+          : pick([
+              '这件事我放在心里很久了，越想越觉得该说出来。',
+              '我留意这件事很久了，越想越觉得该说点什么。',
+            ]),
+      )
+      if (shape.form === 'suggestion') {
+        out.push(
+          '我想到两点，都不太难做到：第一，把这件事定成一条大家都知道的规矩，贴在教室里；' +
+            '第二，每隔一段时间请老师带我们看一看，做得好的同学说一说。',
+        )
+      } else {
+        out.push(
+          '我想提三点，都是我们马上就能做到的：第一，先管好自己那一份，从自己做起；' +
+            '第二，看到身边的人没做到，轻轻提醒一句，别笑话他；' +
+            '第三，把这件事坚持下去，不是今天做了、明天就忘。',
+        )
+      }
+      // ★ 「结合孩子写的东西」这条底线在应用文里也成立 —— 排在前面，
+      //   保证它活过裁剪，而不是只写在套话里。
+      if (items.length > 0) {
+        out.push(`就拿${items.slice(0, 2).join('、')}来说，其实只要稍微留心，就能做得更好。`)
+      }
+      out.push(
+        pick([
+          '有人可能觉得，这不过是小事，做不做都一样。可我越想越觉得不是这样。',
+          '也许有人会想：一个人做不做，能有多大关系？我不同意。',
+        ]),
+      )
+      out.push(pick(['这些事都不难，难的是天天都做到。', '说起来简单，做起来也不难，难的是不半途而废。']))
+      if (shape.form === 'speech') {
+        out.push('我今天站在这里说这些，不是想教育谁，只是想邀请你一起试试。')
+      } else if (shape.form === 'suggestion') {
+        out.push('这些想法不一定都对，如果哪里不合适，请您指出来。')
+      } else {
+        out.push('也许有人会问：就我们几个人做，能改变什么？我想，改变不在今天，在很久以后。')
+      }
+    }
   } else {
     out.push(`在那里，一切都和这里不一样：${pick(['房子是软的，路是甜的', '树会走路，云会说话', '白天有星星，晚上出太阳'])}。`)
     out.push(`我试着往前走，脚下的路${pick(['软软地起伏着', '像绸带一样铺开去', '藏着说不清的凉意'])}，像${simile(g + 1)}。`)
@@ -1017,8 +1311,32 @@ function buildMiddles(
 }
 
 /* ---- 结尾：落到自己的感受上，这是满分作文的收口 ---- */
-function buildEnding(kind: EssayKind, m: ChildMaterial, rng: () => number): string {
+function buildEnding(
+  kind: EssayKind,
+  m: ChildMaterial,
+  rng: () => number,
+  applied?: AppliedShape,
+  now?: number,
+): string {
   const pick = <T,>(arr: T[]) => arr[Math.floor(rng() * arr.length)]
+
+  /*
+   * ★★ 应用文**必须**走在这条「继承孩子结尾」的判断**之前**。
+   *
+   *   下面那条是为了「如果孩子自己写了有感情的结尾，优先继承他的落点」——
+   *   对记叙文是对的。可应用文的结尾是**格式**（号召 + 落款 + 日期），
+   *   继承了孩子那句抒情，落款就丢了 —— 而落款正是应用文最要命的分。
+   */
+  if (kind === 'applied') {
+    const shape = applied ?? APPLIED_SHAPES.speech
+    const lines = [shape.call]
+    if (shape.signature) {
+      // ⚠️ 落款和日期各占一行 —— 挤在一行就不是应用文格式了
+      lines.push(shape.signature)
+      lines.push(appliedDate(now ?? Date.now()))
+    }
+    return lines.join('\n')
+  }
 
   // 如果孩子自己写了有感情的结尾，优先继承他的落点
   if (m.lastSentence && m.lastSentence.length >= 8 && /我|心|明白|懂|记得|温暖|难忘|幸福/.test(m.lastSentence)) {
@@ -1079,6 +1397,15 @@ export interface ComposeModelEssayInput {
   childText: string
   title: string
   category: string
+  /**
+   * ★★ 题目自带的格式要求（2026-09-30 加的）。
+   *
+   * 为什么必须传进来：`category` 那一层**只装记叙文**
+   * （写人/写景/写事/状物/想象），应用文在题库里的 category 是 `event`。
+   * 不传 genre，应用文就会走写事模板。
+   * 缺省 = 记叙文（`resolveGenre`）→ 老调用方行为逐字节不变。
+   */
+  genre?: CompositionGenre
   grade: number
   targetLen: number
   /**
@@ -1112,19 +1439,43 @@ export interface ComposeModelEssayInput {
  *   更要命的是：家长在设置里点了「多用比喻」，想知道的正是
  *   「有没有落实」，而这条假话让他**永远看不出没落实**。
  */
+/**
+ * 应用文的亮点。
+ *
+ * ★ 应用文跟记叙文的分水岭是**格式**，不是「画面立不立得住」，
+ *   所以亮点第一条必须说格式 —— 家长看的正是"有没有教对"。
+ * ⚠️ 只报**真的有**的那几样：观后感既没有称呼也没有落款，
+ *    不能夸它「格式对了」（那就是 §23 那种假话）。
+ */
+function appliedHighlight(shape: AppliedShape): string {
+  if (shape.salutation && shape.signature) {
+    return '开头有称呼、结尾有落款，应用文的格式对了'
+  }
+  if (shape.salutation) return '开头有称呼，讲话的格式对了'
+  return '写的是自己的感受和想法，没有编情节'
+}
+
 function buildHighlights(
   m: ChildMaterial,
   items: string[],
   used: RhetoricName[],
   demanded: RhetoricName[],
+  /**
+   * ★ 传进来 = 这是**应用文**。
+   *   下面三条「记叙文专属」的夸法要关掉 —— 它的开头是称呼不是场景、
+   *   结尾是号召和落款不是抒情、正文没有画面，照记叙文夸就是假话
+   *   （§23：宣称必须照实际产出说）。
+   */
+  applied?: AppliedShape,
 ): string[] {
   const out: string[] = []
+  const off = Boolean(applied)
 
   // 只夸孩子真的做到了的，没做到的不硬夸
   if (m.goodWords.length > 0) {
     out.push(`用上了「${m.goodWords.slice(0, 3).join('、')}」这样的好词`)
   }
-  if (m.senses.length > 0) {
+  if (!off && m.senses.length > 0) {
     out.push(`调动了${m.senses.join('、')}，画面立得住`)
   }
   // ★ 这一条是「不跑偏」的证明：把正文里真的写到的名物报出来，
@@ -1132,10 +1483,10 @@ function buildHighlights(
   if (items.length > 0) {
     out.push(`抓住了「${items.join('、')}」这些具体的东西，不是空写`)
   }
-  if (m.firstSentence) {
+  if (!off && m.firstSentence) {
     out.push('开头直接进入场景，没有绕圈子')
   }
-  if (m.lastSentence && /我|心|明白|懂|记得/.test(m.lastSentence)) {
+  if (!off && m.lastSentence && /我|心|明白|懂|记得/.test(m.lastSentence)) {
     out.push('结尾落回了自己的感受上')
   }
 
@@ -1150,7 +1501,12 @@ function buildHighlights(
       out.push(`家长点名的${done.join('、')}，都加进去了`)
     }
   }
-  out.push('分了段，读起来一清二楚')
+  if (applied) {
+    // 放在最前面 —— **格式对不对**是应用文的第一判据
+    out.unshift(appliedHighlight(applied))
+  } else {
+    out.push('分了段，读起来一清二楚')
+  }
 
   return out.slice(0, 6)
 }
@@ -1162,10 +1518,21 @@ function buildHighlights(
  */
 export function composeModelEssay(inp: ComposeModelEssayInput): ModelEssay {
   const m = extractChildMaterial(inp.childText, inp.title)
-  // ★ pictureFirst：有配图 → 这是「看图作文」，文体该由图和画面定
+  // ★ 只取一次时间：范文的 `at` 和落款里的日期必须是同一个时刻
+  const now = Date.now()
+  // ★ 应用文要先知道是哪一种（倡议书 / 建议书 / 观后感 / 演讲稿），
+  //   称呼、正文、落款三处都照着它写 —— 所以只算一次，往下传。
+  //   ⚠️ 必须**展开成新对象**再加 topic：`APPLIED_SHAPES` 是共享的静态表，
+  //      直接往上写 `topic` 会污染后面所有同形态的题（而且不报错）。
+  const applied: AppliedShape = {
+    ...appliedShapeOf(inp.title),
+    topic: appliedTopicOf(inp.title),
+  }
+  // ★ pictureFirst：有配图 → 这是「看图作文」，走哪一支该由图和画面定
   //   （见 resolveKind 的注释，2026-09-19 家长报的第二次「跑偏」）
   const kind = resolveKind(inp.category, m, {
     pictureFirst: (inp.imageHints ?? []).length > 0,
+    genre: inp.genre,
   })
 
   /*
@@ -1205,8 +1572,8 @@ export function composeModelEssay(inp: ComposeModelEssayInput): ModelEssay {
     .filter((w) => !already.has(w) && !fromChild.includes(w))
   const items = [...fromChild, ...fromImage].slice(0, 3)
 
-  const opening = buildOpening(kind, m, rng)
-  const ending = buildEnding(kind, m, rng)
+  const opening = buildOpening(kind, m, rng, applied)
+  const ending = buildEnding(kind, m, rng, applied, now)
 
   // 中间段：一次生成「满配」版，再按目标字数**从头裁剪**。
   // ⚠️ 不要改成「不够就再生成一轮补进去」—— buildMiddles 每轮都会
@@ -1219,8 +1586,13 @@ export function composeModelEssay(inp: ComposeModelEssayInput): ModelEssay {
   //
   // ⚠️ 写人是个例外：第一句必须是「这个人」，不能是「这个人的东西」。
   //    「我最先注意到的是摇椅」放在写奶奶的稿子里，读起来就不是写人了。
-  const imagery = buildImagerySentences(items, rng)
-  const generic = buildMiddles(kind, m, inp.grade, rng)
+  //
+  // ★★ 应用文**不要画面句**：
+  //    `buildImagerySentences` 产的是「我最先注意到的是X」这类记叙文句子，
+  //    放进倡议书里就不是应用文了。
+  //    它改用 `items` 参数把孩子的名物织进正文（见 `buildMiddles`）。
+  const imagery = kind === 'applied' ? [] : buildImagerySentences(items, rng)
+  const generic = buildMiddles(kind, m, inp.grade, rng, applied, items)
 
   /*
    * ★ 家长点名的修辞（见「三·五」那一节）。
@@ -1299,11 +1671,22 @@ export function composeModelEssay(inp: ComposeModelEssayInput): ModelEssay {
   const insertAt = personHeadCount + imageryKept
   const middles = [...base.slice(0, insertAt), ...demanded, ...base.slice(insertAt)]
 
+  /*
+   * ★★ 开头和结尾都可能是**多行**的 —— 只有应用文会这样：
+   *    开头是「称呼 \n 起句」，结尾是「号召 \n 落款 \n 日期」。
+   *    应用文的格式分就压在这些**换行**上（称呼必须独占一行），
+   *    所以这里按 `\n` 拆成多条骨架行，别把三行挤成一行。
+   *    ⚠️ 记叙文那几支的 opening/ending 里没有 `\n`，
+   *       拆出来仍然是一条 —— 行为逐字节不变。
+   */
+  const sectionLines = (s: string) =>
+    s.split('\n').filter((x) => x.trim().length > 0)
+
   const sections: BuiltSection[] = [
     {
       name: '开头',
       text: opening,
-      lines: [toLine(opening, inp.extract)],
+      lines: sectionLines(opening).map((t) => toLine(t, inp.extract)),
     },
     {
       name: '中间',
@@ -1313,7 +1696,7 @@ export function composeModelEssay(inp: ComposeModelEssayInput): ModelEssay {
     {
       name: '结尾',
       text: ending,
-      lines: [toLine(ending, inp.extract)],
+      lines: sectionLines(ending).map((t) => toLine(t, inp.extract)),
     },
   ]
 
@@ -1326,10 +1709,25 @@ export function composeModelEssay(inp: ComposeModelEssayInput): ModelEssay {
    */
   const finalUsed = usedRhetoric(text)
 
+  /*
+   * ★★ 应用文：`items` 那句话可能被字数裁剪砍掉（它排在正文靠后），
+   *    所以只报**真的出现在正文里**的那些 —— 「宣称」必须照实际产出说（§23）。
+   *    ⚠️ 只对应用文这么做：记叙文那边 `items` 走的是画面句、排在最前、
+   *       裁剪不会动它，改了反而会让老测试的行为变。
+   */
+  const reportedItems =
+    kind === 'applied' ? items.filter((w) => text.includes(w)) : items
+
   return {
-    at: Date.now(),
+    at: now,
     text,
-    highlights: buildHighlights(m, items, finalUsed, demandedNames),
+    highlights: buildHighlights(
+      m,
+      reportedItems,
+      finalUsed,
+      demandedNames,
+      kind === 'applied' ? applied : undefined,
+    ),
     skeleton: skeletonLines.map((l) => l.core).join(' '),
     skeletonLines,
     engine: 'local',

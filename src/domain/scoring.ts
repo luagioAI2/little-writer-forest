@@ -18,6 +18,7 @@
    ============================================================ */
 
 import type {
+  CompositionGenre,
   DimensionScores,
   MindMapNode,
   ModelEssay,
@@ -711,6 +712,12 @@ export interface ModelEssayInput {
   images: PromptImage[]
   grade: number
   category: string
+  /**
+   * ★ 题目自带的格式要求（2026-09-30 加的）。
+   * 缺省 = 记叙文 → 老调用方行为逐字节不变。
+   * 应用文要靠它才不会走写事模板（见 `composeModelEssay`）。
+   */
+  genre?: CompositionGenre
   /** 建议字数 */
   wordRange: [number, number]
   /**
@@ -746,6 +753,8 @@ export function buildModelEssay(inp: ModelEssayInput): ModelEssay {
     childText: inp.childText,
     title: inp.title,
     category: inp.category,
+    // ★ 格式要求必须跟着走 —— 少了这一行，应用文会被当成写事题改写
+    genre: inp.genre,
     grade: inp.grade,
     targetLen: inp.wordRange[1],
     imageHints: imageWords(inp.images),

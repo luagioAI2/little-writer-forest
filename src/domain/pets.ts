@@ -19,14 +19,18 @@ import type {
   BirdSpecies,
   BirdSpeciesId,
   CardDrop,
+  HomePoint,
+  Landmark,
   OwnedCard,
-  TravelContent,
+  PhotoCredit,
+  PhotoMatch,
+  TravelContentType,
+  TravelGrade,
   TravelSouvenir,
 } from './types'
-import { landmarkById, makePhoto } from './travel'
-import { resolveDistanceKm, storyFor, type GeoPoint } from './travelStories'
+import { distanceToLandmark, landmarkById, makePhoto } from './travel'
 import { rollDrops } from './cards'
-import { distanceToContent, contentById } from './travelContents'
+import { rollArrivalEvent } from './travelEvents'
 
 /* ============================================================
    一、鸟的种类
@@ -198,9 +202,20 @@ export function awayBirds(birds: Bird[]): Bird[] {
  *
  * 飞行时间基于距离计算，带 ±10% 浮动。
  */
+/**
+ * 把鸟放出去。
+ *
+ * ★★ 2026-09-25 改了：鸟现在飞向一个**地标**，不再飞向"某一条内容"。
+ *    家长原话：「到了旅游点 判断会产生什么事件」—— 目的地是**旅游点**，
+ *    带回来什么要**到了**才知道。出发时就定死内容的话，
+ *    "抽事件"这件事根本没有地方发生。
+ *
+ * ⚠️ 所以鸟身上**不再记 `contentId`**（`Bird` 上那个字段一起删了）。
+ *    老存档里那只已经在飞的鸟身上还留着它 —— 被忽略，无副作用。
+ */
 export function sendBird(
   bird: Bird,
-  content: TravelContent,
+  landmark: Landmark,
   distanceKm: number,
   now: number,
   rng: () => number,
@@ -214,8 +229,7 @@ export function sendBird(
     status: 'away',
     departedAt: now,
     returnsAt: now + Math.round(base * jitter),
-    destinationId: content.landmarkId,
-    contentId: content.id,
+    destinationId: landmark.id,
   }
 }
 
@@ -239,90 +253,153 @@ export interface ReturnResult {
 /** 保留一条纪念品的金币花费 */
 export const KEEP_SOUVENIR_COST = 50
 
+/** 纪念品的保质期：24 小时。过了就烂掉（除非花金币保留） */
+const SOUVENIR_TTL_MS = 24 * 60 * 60 * 1000
+
+/**
+ * 拼一条纪念品。
+ *
+ * ★★ **只许有这一份** —— 以前"内容包来的"和"程序化插画来的"两处
+ *    各拼了一遍这个对象（十来行、字段几乎一样），
+ *    于是加字段（比如 `grade`）时极容易只加一处：
+ *    表现就是"内容包的照片有等级、插画的照片没有"，而两边都不报错。
+ */
+function buildSouvenir(args: {
+  birdSpecies: BirdSpeciesId
+  now: number
+  place: string
+  distanceKm: number
+  contentId: string
+  type: TravelContentType
+  title: string
+  mediaUrl?: string
+  textContent?: string
+  credit?: PhotoCredit
+  essay?: string
+  grade?: TravelGrade
+  /**
+   * ★ 图与地方的关系 —— 只有**默认图**会带（见 `TravelSouvenir.match`）。
+   *   必须一路抄到底，否则相册会把顶替图当实景显示。
+   */
+  match?: PhotoMatch
+}): TravelSouvenir {
+  return {
+    id: `${args.birdSpecies}-${args.now}`,
+    contentId: args.contentId,
+    type: args.type,
+    title: args.title,
+    place: args.place,
+    mediaUrl: args.mediaUrl,
+    textContent: args.textContent,
+    credit: args.credit,
+    essay: args.essay,
+    grade: args.grade,
+    match: args.match,
+    distanceKm: args.distanceKm,
+    birdSpecies: args.birdSpecies,
+    at: args.now,
+    expiresAt: args.now + SOUVENIR_TTL_MS,
+    kept: false,
+    keepCost: KEEP_SOUVENIR_COST,
+  }
+}
+
 /**
  * 结算一次归巢（v6）。
  *
  * 规律：
  *   · 亲密度每次 +3，只涨不跌
- *   · 必定带回一条内容（内容包写好的东西不会白写）
+ *   · **到了才抽事件**：拍照 → 这个景点的一张图；笑话/音乐/格言 → 各自的池子
+ *     ★ 抽不到东西时会**退回拍照**，拍照没图还有程序化插画兜底 ——
+ *       总之尽量不出现"这次什么都没带回来"
  *   · 种子概率降低到 50%（v6：防止地图点得太快）
  *   · 有概率额外掉一张卡（source: 'travel'）
+ *
+ * ⚠️ 老存档里"已经在飞、但身上没记 destinationId"的鸟结算不出纪念品 ——
+ *    这是可接受的降级（鸟几小时内就回来了）。**别为此加兜底分支**：
+ *    兜底只能编一个地点出来，编出来的坐标会让鸟落到海里。
  */
 export function resolveReturn(
   bird: Bird,
   now: number,
-  opts: { rng: () => number; owned: OwnedCard[]; home?: GeoPoint },
+  opts: { rng: () => number; owned: OwnedCard[]; home?: HomePoint | null; seen?: string[] },
 ): ReturnResult {
   if (!birdReady(bird, now)) {
     return { bird, drops: [], coins: 0, seed: false }
   }
 
-  const { rng, owned, home } = opts
+  const { rng, owned, home, seen = [] } = opts
   const sp = speciesById(bird.species)
 
-  // v6：从 contentId 找内容包
-  const content = bird.contentId ? contentById(bird.contentId) : undefined
   const dest = bird.destinationId ? landmarkById(bird.destinationId) : undefined
 
   const hasLetter = rng() < 0.35
 
   // v6：生成纪念品（阅后即毁）
   let souvenir: TravelSouvenir | undefined
-  if (content) {
-    const distanceKm = distanceToContent(content, home)
-    souvenir = {
-      id: `${bird.species}-${now}`,
-      contentId: content.id,
-      type: content.type,
-      title: content.title,
-      place: content.place,
-      mediaUrl: content.mediaUrl,
-      textContent: content.textContent,
-      credit: content.credit,
-      essay: content.essay,
-      distanceKm,
-      birdSpecies: sp.id,
-      at: now,
-      expiresAt: now + 24 * 60 * 60 * 1000, // 24 小时后过期
-      kept: false,
-      keepCost: KEEP_SOUVENIR_COST,
-    }
-  }
+  if (dest) {
+    const distanceKm = distanceToLandmark(dest, home)
 
-  // v6：如果没有内容包，退回老逻辑生成照片（兼容老存档）
-  if (!souvenir && dest) {
-    const story = storyFor(dest.id)
-    if (story) {
-      const photo = makePhoto({
-        landmark: dest,
+    /*
+     * ★★ 到了才抽事件（家长原话：「到了旅游点 判断会产生什么事件」）。
+     *
+     *    抽中的类型决定带回什么：
+     *      拍照            → 这个景点的一张图（没配图就走下面的程序化插画）
+     *      笑话/音乐/格言  → 各自池子里的一条（按地标优先，缺了退全局）
+     *
+     *    ⚠️ 池子落空时 `rollArrivalEvent` **已经把它退回成拍照**了
+     *       （`fellBack` 标着），所以这里不用再兜一遍。
+     */
+    const ev = rollArrivalEvent({ landmarkId: dest.id, exclude: seen, rng })
+
+    if (ev.item) {
+      souvenir = buildSouvenir({
         birdSpecies: sp.id,
-        birdName: bird.nickname,
-        at: now,
-        rng,
-        story,
-        distanceKm: resolveDistanceKm(story, home),
+        now,
+        place: dest.name,
+        distanceKm,
+        contentId: ev.item.id,
+        type: ev.item.kind,
+        title: ev.item.title,
+        mediaUrl: ev.item.mediaUrl,
+        textContent: ev.item.textContent,
+        credit: ev.item.credit,
+        essay: ev.item.essay,
+        // ★ 等级必须从池子**抄下来**：相册显示的是纪念品，
+        //   不抄的话池子里标了「传世」、相册按最低档上色（静默降级）。
+        grade: ev.item.grade,
       })
-      // 把老照片转成纪念品格式
-      souvenir = {
-        id: photo.id,
-        contentId: '',
-        type: 'photo',
-        title: photo.place ?? dest.name,
-        place: photo.place ?? dest.name,
-        mediaUrl: photo.photoUrl,
-        credit: photo.credit,
-        essay: photo.essay,
-        distanceKm: photo.distanceKm ?? 0,
+    } else if (ev.photo) {
+      souvenir = buildSouvenir({
         birdSpecies: sp.id,
-        at: now,
-        expiresAt: now + 24 * 60 * 60 * 1000,
-        kept: false,
-        keepCost: KEEP_SOUVENIR_COST,
-      }
+        now,
+        place: dest.name,
+        distanceKm,
+        contentId: ev.photo.id,
+        type: 'photo',
+        title: ev.photo.title,
+        mediaUrl: ev.photo.mediaUrl,
+        credit: ev.photo.credit,
+        essay: ev.photo.essay,
+        grade: ev.photo.grade,
+        /*
+         * ★ 同上，`match` 也要抄 —— 默认图里那条 `scene` 是靠它传到相册的。
+         *   ⚠️ 内容包（家长手挑）**不写** `match` → 抄下来是 `undefined`，
+         *      界面据此**什么都不显示**（不是显示"示意图"）。
+         */
+        match: ev.photo.match,
+      })
     }
   }
 
-  // 没有内容包也没有 story：按旧概率生成程序化照片
+  /*
+    ★ 拍照事件、但这个景点**还没配图** → 程序化插画（按鸟的品种给概率）。
+
+    ⚠️ 这条路径**必须留着** —— 全库 1808 个地标，配了图的只有极少数，
+       删掉它就会变成"这次什么都没带回来"，那是最糟的结果。
+    ★ 它现在的定位变了：以前是"没有内容包时的兜底"，
+      现在是"**抽中了拍照但这个地方没图**"的兜底 —— 更常见，所以更重要。
+  */
   if (!souvenir && dest) {
     const chance = Math.min(0.9, 0.55 + sp.photoBonus)
     if (rng() < chance) {
@@ -333,22 +410,18 @@ export function resolveReturn(
         at: now,
         rng,
       })
-      souvenir = {
-        id: photo.id,
+      souvenir = buildSouvenir({
+        birdSpecies: sp.id,
+        now,
+        place: photo.place ?? dest.name,
+        distanceKm: photo.distanceKm ?? 0,
         contentId: '',
         type: 'photo',
         title: photo.place ?? dest.name,
-        place: photo.place ?? dest.name,
         mediaUrl: photo.photoUrl,
         credit: photo.credit,
         essay: photo.essay,
-        distanceKm: photo.distanceKm ?? 0,
-        birdSpecies: sp.id,
-        at: now,
-        expiresAt: now + 24 * 60 * 60 * 1000,
-        kept: false,
-        keepCost: KEEP_SOUVENIR_COST,
-      }
+      })
     }
   }
 
@@ -365,7 +438,6 @@ export function resolveReturn(
     bond: Math.min(100, bird.bond + 3),
     hasLetter,
     photos: souvenir ? bird.photos + 1 : bird.photos,
-    contentId: undefined,
     departedAt: undefined,
     returnsAt: undefined,
   }

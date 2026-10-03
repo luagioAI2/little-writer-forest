@@ -12,7 +12,11 @@
    ============================================================ */
 
 import { describe, expect, it } from 'vitest'
+import type { AppliedForm, EssayKind } from './modelEssay'
 import {
+  appliedFormOf,
+  appliedShapeOf,
+  appliedTopicOf,
   buildImagerySentences,
   composeModelEssay,
   explainMaterial,
@@ -23,6 +27,8 @@ import {
   usedRhetoric,
 } from './modelEssay'
 import { extractSkeleton, buildModelEssay, analyzeText } from './scoring'
+import { builtinBaseItems } from './builtinLibrary'
+import { GENRES } from './types'
 
 const MAMA = {
   title: '我的妈妈',
@@ -602,5 +608,226 @@ describe('确定性', () => {
       childText: '我的爸爸很高。他每天送我上学，从来不迟到。有一次下大雨，他把伞都给我了，自己淋湿了。',
     })
     expect(a.text).not.toBe(b.text)
+  })
+})
+
+
+/* ============================================================
+   应用文（2026-09-30）
+   ------------------------------------------------------------
+   背景：题库里 `applied-writing` 这个标签的 category 是 `event`（写事），
+   所以在加 `genre` 之前，「节约用水倡议书」走的是**写事模板** ——
+   实测会生成一篇「那个地方的样子，我记了很久」的**写景**范文。
+   这一节守的就是「应用文必须按应用文的格式写」。
+
+   ⚠️ 这里**故意**不断言具体句子（那种断言一改文案就红），
+      只断言**格式骨架**和**不许出现的记叙文特征**。
+   ============================================================ */
+
+const DRAFT_WATER = '我们要节约用水。我家的水龙头有时候会滴水。洗手的时候不要一直开着水。'
+
+function appliedOf(
+  title: string,
+  childText = DRAFT_WATER,
+  /*
+   * ⚠️ 必须有默认值 'applied' —— 写成可选参数（`genre?: 'applied'`）
+   *    会让不传的时候是 undefined，也就是**走记叙文**，
+   *    而下面那几条断言照样"跑得动"，只是断的是另一条路。
+   *
+   * ⚠️⚠️ 想测「不传 genre」时**不能用 `undefined`** ——
+   *    JS 的默认参数在实参为 `undefined` 时照样生效，
+   *    `appliedOf(t, d, undefined)` 会**悄悄变成 'applied'**。
+   *    所以这里用一个显式的哨兵 `'none'`。（实测踩过。）
+   */
+  genre: 'applied' | 'narrative' | 'none' = 'applied',
+) {
+  return composeModelEssay({
+    childText,
+    title,
+    category: 'event',
+    genre: genre === 'none' ? undefined : genre,
+    grade: 4,
+    targetLen: 400,
+    extract: extractSkeleton,
+  })
+}
+
+const lines = (t: string) => t.split('\n').filter((x) => x.trim().length > 0)
+
+describe('应用文 · 子形态', () => {
+  /**
+   * ★★★ 这条是**让"猜错"看得见**的那一条。
+   *
+   * 子形态只能从标题猜（调用链上没有 tagId），而"认不出"的默认是演讲稿。
+   * 所以这里把题库里**每一道**应用文题的预期形态登记下来：
+   * 标题改了、或者新加了别的形态（通知/留言条/书信），这条立刻红，
+   * 而不是静默套成演讲稿。
+   */
+  it('★ 题库里每道应用文题都认出预期子形态', () => {
+    const expected: Record<string, AppliedForm> = {
+      国旗下的讲话: 'speech',
+      竞选班干部: 'speech',
+      读书节的发言: 'speech',
+      毕业典礼上的发言: 'speech',
+      节约用水倡议书: 'proposal',
+      保护环境倡议书: 'proposal',
+      观后感: 'review',
+      给校长的建议书: 'suggestion',
+    }
+    const applied = builtinBaseItems().filter((i) => i.requiredGenre === 'applied')
+    expect(applied.length).toBeGreaterThan(0)
+
+    for (const item of applied) {
+      expect(
+        expected[item.title],
+        `新加的应用文题「${item.title}」还没登记预期子形态`,
+      ).toBeDefined()
+      expect(appliedFormOf(item.title), `「${item.title}」认成了错的子形态`).toBe(
+        expected[item.title],
+      )
+    }
+    // 反向：登记过的标题必须还在库里 —— 否则标题一改，这条就悄悄空转了
+    const titles = new Set(applied.map((i) => i.title))
+    for (const t of Object.keys(expected)) {
+      expect(titles.has(t), `「${t}」已经不在题库里了，这张表过期了`).toBe(true)
+    }
+  })
+
+  it('认不出来时退到演讲稿（会猜错，所以靠上面那条逐题断言兜着）', () => {
+    expect(appliedFormOf('给老师的一封信')).toBe('speech')
+  })
+
+  it('★ 话题只从标题抠，且残句要退掉', () => {
+    expect(appliedTopicOf('节约用水倡议书')).toBe('节约用水')
+    expect(appliedTopicOf('保护环境倡议书')).toBe('保护环境')
+    expect(appliedTopicOf('竞选班干部')).toBe('竞选班干部')
+    // 「国旗下的」「读书节的」都是残句，必须退掉
+    expect(appliedTopicOf('国旗下的讲话')).toBeUndefined()
+    expect(appliedTopicOf('读书节的发言')).toBeUndefined()
+    expect(appliedTopicOf('观后感')).toBeUndefined()
+  })
+})
+
+describe('应用文 · 格式骨架', () => {
+  it('有称呼的形态：第一行就是称呼，且独占一行', () => {
+    for (const title of ['节约用水倡议书', '给校长的建议书', '国旗下的讲话']) {
+      const shape = appliedShapeOf(title)
+      expect(shape.salutation, `${title} 应该有称呼`).toBeTruthy()
+      expect(lines(appliedOf(title).text)[0], `${title} 第一行不是称呼`).toBe(shape.salutation)
+    }
+  })
+
+  it('有落款的形态：最后两行是落款和日期', () => {
+    for (const title of ['节约用水倡议书', '给校长的建议书']) {
+      const shape = appliedShapeOf(title)
+      expect(shape.signature).toBeTruthy()
+      const ls = lines(appliedOf(title).text)
+      expect(ls[ls.length - 2]).toBe(shape.signature)
+      // ⚠️ 日期要**占一行**（格式分），所以用正则认，不写死具体日期
+      expect(ls[ls.length - 1]).toMatch(/^\d{4} 年 \d{1,2} 月 \d{1,2} 日$/)
+    }
+  })
+
+  it('演讲稿用致谢收尾，不写落款', () => {
+    const ls = lines(appliedOf('国旗下的讲话').text)
+    expect(ls[ls.length - 1]).toBe(appliedShapeOf('国旗下的讲话').call)
+    expect(appliedShapeOf('国旗下的讲话').signature).toBe('')
+  })
+
+  it('观后感既没有称呼也没有落款（它是夹在记叙和议论之间的文体）', () => {
+    const shape = appliedShapeOf('观后感')
+    expect(shape.salutation).toBe('')
+    expect(shape.signature).toBe('')
+    const ls = lines(appliedOf('观后感').text)
+    expect(ls[0]).not.toContain('：')
+    expect(ls[ls.length - 1]).not.toMatch(/^\d{4} 年/)
+  })
+})
+
+describe('应用文 · 不许带上记叙文的特征', () => {
+  it('★ 不出现画面句（应用文没有画面可观察）', () => {
+    for (const title of ['节约用水倡议书', '给校长的建议书', '观后感', '国旗下的讲话']) {
+      const t = appliedOf(title).text
+      expect(t, `${title} 里出现了记叙文的画面引入句`).not.toContain('我最先注意到的是')
+      expect(t, `${title} 里出现了感官句（通感）`).not.toContain('顺着指尖爬到了心口')
+    }
+  })
+
+  it('★★ 不把标题里的「书」当成孩子的物件（实测踩过）', () => {
+    // 「倡议**书**」的「书」会被 extractChildMaterial 当成名物 → m.thing === '书'
+    // → 正文写出「因为书让我想了很久」。所以正文必须一个字都不提「书」。
+    expect(appliedOf('节约用水倡议书').text).not.toContain('书')
+  })
+
+  it('★ 亮点先说格式，且不说记叙文那几条', () => {
+    const h = appliedOf('节约用水倡议书').highlights
+    expect(h[0]).toContain('格式')
+    expect(h.join()).not.toContain('画面立得住')
+    expect(h.join()).not.toContain('开头直接进入场景')
+    // 观后感没有称呼也没有落款 → 不能夸它「格式对了」
+    expect(appliedOf('观后感').highlights[0]).not.toContain('落款')
+  })
+})
+
+describe('应用文 · 格式要求优先于「写什么对象」', () => {
+  it('resolveKind 拿到 applied 就返回 applied，跟 category 无关', () => {
+    const m = explainMaterial(DRAFT_WATER, '节约用水倡议书')
+    expect(resolveKind('event', m, { genre: 'applied' })).toBe('applied')
+    expect(resolveKind('scene', m, { genre: 'applied' })).toBe('applied')
+    expect(resolveKind('person', m, { genre: 'applied' })).toBe('applied')
+  })
+
+  it('★★ 不传 genre = 老行为（同一道题会写成写景/写事）', () => {
+    // 这条是「零行为变更」的证据：老调用方（没传 genre）走的还是老路
+    const old = appliedOf('节约用水倡议书', DRAFT_WATER, 'none').text
+    expect(old).not.toContain('亲爱的同学们：')
+    expect(resolveKind('event', explainMaterial(DRAFT_WATER, '节约用水倡议书'))).not.toBe('applied')
+  })
+
+  it('★ 记叙文传 genre=narrative 与不传完全一致', () => {
+    const a = essayOf()
+    const b = composeModelEssay({
+      childText: MAMA.childText,
+      title: MAMA.title,
+      category: MAMA.category,
+      genre: 'narrative',
+      grade: MAMA.grade,
+      targetLen: 300,
+      extract: extractSkeleton,
+    })
+    expect(a.text).toBe(b.text)
+  })
+})
+
+
+/* ============================================================
+   `resolveKind` · 取值必须一一对应（2026-10-01 起）
+   ------------------------------------------------------------
+   `resolveKind` 里有一句「**只要不是记叙文，取值名就是 kind 名**」。
+   那个写法把「新增一个取值」变成了**两处**的事：`GENRES` 加一项，
+   还要 `EssayKind` 加一项。只加 `GENRES` 的话，`resolveKind` 返回一个
+   `EssayKind` 装不下的值 —— **编译不报错**（返回类型被断言放宽），
+   跑起来也不崩，只是那个取值悄悄走回记叙文模板。
+   所以这里**遍历 `GENRES`**，一个一个试。
+
+   ⚠️ 2026-10-02：说明文 / 议论文删掉之后 `GENRES` 只剩记叙文和应用文，
+      这条仍然有效 —— 而且兼职盯着「别把删掉的取值又加回来、
+      还忘了给 `EssayKind` 加上」。
+   ============================================================ */
+
+/** 状物稿 —— 给下面那条守卫当素材 */
+const DRAFT_PLANT =
+  '我家有一盆绿萝。它的叶子是心形的，绿绿的，摸上去滑滑的。妈妈说它很好养，不用天天浇水，放在窗边就行。'
+
+describe('resolveKind · 取值必须一一对应', () => {
+  it('★★ 每个取值都装得进 EssayKind，且 resolveKind 原样返回它', () => {
+    const m = explainMaterial(DRAFT_PLANT, '我家的绿萝')
+    for (const g of GENRES) {
+      const kind: EssayKind = resolveKind('object', m, { genre: g.key })
+      expect(kind, `取值「${g.label}」被 resolveKind 吞掉了`).toBe(
+        // 记叙文是缺省 → 它本来就该落回 category（这里是状物）
+        g.key === 'narrative' ? 'object' : g.key,
+      )
+    }
   })
 })

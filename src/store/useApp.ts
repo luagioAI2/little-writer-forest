@@ -37,6 +37,8 @@ import type {
   Work,
   WorkScore,
 } from '../domain/types'
+import { resolveGenre } from '../domain/types'
+import { focusForGenre } from '../domain/prompts'
 
 import {
   addDrops,
@@ -99,8 +101,7 @@ import {
   unlockedSpecies,
   type ReturnResult,
 } from '../domain/pets'
-import { plantSeeds, sproutCount } from '../domain/travel'
-import { pickContent, distanceToContent } from '../domain/travelContents'
+import { distanceToLandmark, landmarkById, pickDestination, plantSeeds, sproutCount } from '../domain/travel'
 import { dropDiary, isHollowUnlocked, rollHollowEvent } from '../domain/hollow'
 import { setHapticsEnabled } from '../platform/haptics'
 import { setSoundEnabled } from '../platform/sound'
@@ -589,22 +590,32 @@ export const useApp = create<AppState>()((set, get) => ({
 
   readyBirds: () => get().birds.filter((b) => birdReady(b, Date.now())),
 
-  dispatchBird: async (species, _landmarkId) => {
-    const { birds, souvenirs, settings } = get()
+  dispatchBird: async (species, landmarkId) => {
+    const { birds, visited, settings } = get()
     const idx = birds.findIndex((b) => b.species === species)
     if (idx < 0) return null
     const bird = birds[idx]
     if (bird.status === 'away') return null
 
-    // v6：从内容包选目的地。优先没去过的内容。
-    const visitedContentIds = souvenirs.map((s) => s.contentId)
-    const content = pickContent({ exclude: visitedContentIds, rng: Math.random })
-    if (!content) return null
+    /*
+     * ★★ 2026-09-25：目的地从**地标表**里挑，不再从内容包里挑。
+     *    家长原话：「到了旅游点 判断会产生什么事件」—— 飞的是**旅游点**，
+     *    带回来什么等**到了**再抽（见 `resolveReturn` / `travelEvents.ts`）。
+     *
+     * ★ `landmarkId` 是地图上「让它自己去一个没去过的地方」传进来的
+     *   （`MapPage` 的 `onAct`）—— 以前这个参数被忽略（形参叫 `_landmarkId`），
+     *   点了半天还是随机飞。现在认它了。
+     * ⚠️ 传了个查不到的 id 就**退回随机挑**，不返回 null ——
+     *    "点了没反应"比"去了别处"难查得多。
+     */
+    const dest =
+      (landmarkId ? landmarkById(landmarkId) : undefined) ??
+      pickDestination({ exclude: visited.map((v) => v.landmarkId), rng: Math.random })
 
-    const distanceKm = distanceToContent(content, settings.homePoint)
+    const distanceKm = distanceToLandmark(dest, settings.homePoint)
 
     const next = birds.slice()
-    next[idx] = sendBird(bird, content, distanceKm, Date.now(), Math.random)
+    next[idx] = sendBird(bird, dest, distanceKm, Date.now(), Math.random)
     set({ birds: next })
     await writeBirds(next)
     return next[idx]
@@ -625,6 +636,12 @@ export const useApp = create<AppState>()((set, get) => ({
       rng: Math.random,
       owned: cards,
       home: settings.homePoint,
+      /*
+       * ★ 已经见过的内容 / 事件条目 —— 抽事件时优先避开。
+       * ⚠️ 这个列表以前是在**派鸟时**算的（那时就定了带什么）；
+       *    现在改成到达时才抽，所以要在**结算时**算。
+       */
+      seen: souvenirs.map((s) => s.contentId),
     })
     if (!result.bird || result.bird.status === 'away') return null
 
@@ -899,6 +916,13 @@ export const useApp = create<AppState>()((set, get) => ({
       promptId: prompt.id,
       title: prompt.title,
       category: prompt.category,
+      // ★ 快照格式要求（跟 title/category 一样冗余存）：题目库以后改了或题被删了，
+      //   旧作还得知道当时按什么标准评的分。老存档没这个字段 → 读出记叙文。
+      //   ⚠️ 来源是 `requiredGenre`（题目**自带**的格式要求，目前只有应用文）。
+      //   ⛔ **没有「等孩子自选文体」这一步了** —— 家长 2026-10-02 明确说
+      //     「APP 不需要区分文体」，孩子写记叙/说明/议论由他自己决定。
+      //     别再照这句话去加文体选择器。
+      genre: resolveGenre(prompt.requiredGenre),
       grade,
       createdAt: now,
       updatedAt: now,
@@ -958,6 +982,8 @@ export const useApp = create<AppState>()((set, get) => ({
         childText: work.text,
         grade: work.grade,
         category: work.category ?? 'event',
+        // ★ 格式要求 —— 少了它，应用文会被当写事题改写、评分也按记叙文给
+        genre: resolveGenre(work.genre),
         title: work.title,
         wordRange: wordRangeOf(work),
         focus: focusOf(work, get().library),
@@ -1114,6 +1140,8 @@ export const useApp = create<AppState>()((set, get) => ({
         title: work.title,
         grade: work.grade,
         category: work.category ?? 'event',
+        // ★ 格式要求 —— 少了它，应用文会被当写事题改写
+        genre: resolveGenre(work.genre),
         wordRange: wordRangeOf(work),
         images: work.images,
         cfg: get().settings.ai,
@@ -1499,10 +1527,36 @@ function wordRangeOf(work: Work): [number, number] {
   return [200, 500]
 }
 
-function focusOf(work: Work, library: LibraryItem[]): ScoreDimension[] {
+/**
+ * 这篇作文按哪几个维度评分。
+ *
+ * ⚠️ **导出是为了给测试检查**（跟 `explainMaterial` 同一个理由）——
+ *    它守的是「应用文不能按记叙文评分」这条，而这条**不报错**：
+ *    权重错了照样出一个分数，只是那个分数在夸「观察力」。
+ */
+export function focusOf(work: Work, library: LibraryItem[]): ScoreDimension[] {
   // 优先用题库里标注的考察重点；没有就按年级和题材推
   const prompt = library.find((p) => p.id === work.promptId)
   if (prompt && prompt.focus.length > 0) return prompt.focus
+
+  /*
+   * ★★ 非记叙文：读**同一份**判定 —— `focusForGenre()`（在 `prompts.ts`）。
+   *
+   *   这个函数和 `focusFor` 是「同一套考察重点规则的两份实现」
+   *   （出题一份、评分一份）—— 本项目已经栽过「同一判定抄两份然后走散」。
+   *   2026-10-01 一次加过说明文/议论文（10-02 又删了），当时抄两份就等于抄四次，
+   *   所以**这一层**抽成了 `focusForGenre()`，两边都调它。
+   *
+   *   ⚠️ 内置题**不带 focus**（`builtinBaseItems` 留空），所以
+   *      应用文的评分权重**真的会走到这一行** —— 不是死代码。
+   *
+   *   ⚠️ 下面按年级分档那几行**仍然和 `focusFor` 不完全一样**
+   *      （1–4 年级的想象类：这里给 `vocabulary`，`focusFor` 给 `imagination`）。
+   *      这是**既有**分歧，2026-10-01 没动 —— 改它等于改变低年级想象类的
+   *      评分重点，属于行为变更。真要修就是让这个函数整个委托 `focusFor`。
+   */
+  const byGenre = focusForGenre(work.genre)
+  if (byGenre) return byGenre
 
   const cat = work.category ?? 'event'
   const g = work.grade

@@ -31,7 +31,9 @@ import { BIRD_SPECIES } from '../domain/pets'
 import { initialTreeState } from '../domain/tree'
 import { sproutCount } from '../domain/travel'
 import type { OwnedCard, Sprout, TreeYield, Work } from '../domain/types'
-import { useApp } from './useApp'
+import type { LibraryItem } from '../domain/library'
+import { focusOf, useApp } from './useApp'
+import { APPLIED_FOCUS } from '../domain/prompts'
 
 const NOW = 1_700_000_000_000
 
@@ -340,5 +342,50 @@ describe('文心树加成', () => {
     expect(boosted.score.total).toBe(base.score.total)
     expect(boosted.coins).toBeGreaterThan(base.coins)
     expect(boosted.coins / base.coins).toBeCloseTo(treeCoinBoost(6), 1)
+  })
+})
+
+
+/* ============================================================
+   评分考察重点 · 应用文（2026-09-30）
+   ------------------------------------------------------------
+   为什么这条必须写在 store 层：**内置题不带 `focus`**
+   （`builtinBaseItems` 留空，见 builtinLibrary.ts 文件头 ②），
+   所以题库里那 8 道应用文题的评分权重**真的会走到 `focusOf`**。
+
+   ⚠️ 这条守的失败是**静默**的：权重错了照样出分数，
+      只是那个分数在夸「观察力」——而应用文没有画面可观察。
+   ============================================================ */
+
+describe('评分考察重点 · 应用文', () => {
+  // ⚠️ 不改 grade：`draft()` 造的是 3 年级，而应用文分支**不看年级**
+  //    （年级无关性由 prompts.test.ts 那条守着），改 grade 只会引出一个类型断言
+  const appliedWork = (id: string, promptId?: string) => ({
+    ...draft(id),
+    category: 'event' as const,
+    genre: 'applied' as const,
+    promptId,
+  })
+
+  it('★★ 应用文按格式评分：去掉观察力，且以条理性打头', () => {
+    const w = appliedWork('applied-1')
+    expect(focusOf(w, [])).toEqual(APPLIED_FOCUS)
+    expect(focusOf(w, [])).not.toContain('observation')
+  })
+
+  it('★★ 老作品（没有 genre）还是记叙文那一套 —— 零行为变更', () => {
+    const w = draft('old-1')
+    expect(w.genre).toBeUndefined()
+    expect(focusOf(w, [])).toContain('observation') // 年级 3 的记叙文默认带观察力
+  })
+
+  it('★ 题库里标了 focus 的题优先 —— 应用文也不例外', () => {
+    // 「题库标注 > 按题目自带格式要求推」这条顺序不能被格式分支抢走
+    const w = appliedWork('applied-2', 'pinned-1')
+    const pinned = { id: 'pinned-1', focus: ['emotion'] } as unknown as LibraryItem
+    expect(focusOf(w, [pinned])).toEqual(['emotion'])
+    // 反证：题不在库里（promptId 对不上）时，才退回按格式要求推
+    const orphan = appliedWork('applied-3', 'not-in-library')
+    expect(focusOf(orphan, [pinned])).toEqual(APPLIED_FOCUS)
   })
 })

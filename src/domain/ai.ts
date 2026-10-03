@@ -42,10 +42,18 @@
 
 import { SCENES } from '../assets/scenes'
 import { imageHintText, imageWords } from './imageHints'
-import { extractChildMaterial, extractConcrete, resolveKind, unfulfilledDemands } from './modelEssay'
+import {
+  APPLIED_FORM_LABELS,
+  appliedShapeOf,
+  extractChildMaterial,
+  extractConcrete,
+  resolveKind,
+  unfulfilledDemands,
+} from './modelEssay'
 import type {
   AiConfig,
   CompositionCategory,
+  CompositionGenre,
   CompositionPrompt,
   DiaryReview,
   GradeLevel,
@@ -58,7 +66,7 @@ import type {
   Suggestion,
   WorkScore,
 } from './types'
-import { CATEGORIES, DIMENSIONS, categoryMeta } from './types'
+import { CATEGORIES, DIMENSIONS, categoryMeta, resolveGenre } from './types'
 import {
   analyzeText,
   buildModelEssay,
@@ -404,9 +412,22 @@ function normalizeGeneratedPrompt(
   )
 
   const now = Date.now()
+  const tag = tagById(tagId)
+  /*
+   * ★ 格式要求先算出来再放进对象 —— 下面的 `focus` 也要用它。
+   *   写进对象字面量里就没法被同一字面量的别的字段读到，
+   *   到时候又会有人「顺手再算一遍」→ 两份判定（§四）。
+   * ⚠️ 判据是标签的 `requiredGenre`（题目**自带**的格式要求，目前只有应用文）。
+   */
+  const genre = resolveGenre(tag?.requiredGenre)
   return {
     id: `p-${now.toString(36)}-${Math.random().toString(36).slice(2, 7)}`,
     category: opts.category,
+    // ★ 跟内置题、本地题同一条规矩：远程题也带上**解析后**的值。
+    //   它由标签决定 —— 模型返回的 tagId 已经过校验，查不到就退回记叙文。
+    requiredGenre: genre,
+    // ★ 命题方式同样由标签决定（材料题/话题题 → 不带格式要求）。
+    promptMode: tag?.promptMode,
     tagId,
     title: (parsed.title ?? '看图作文').trim().slice(0, 24),
     lead: (parsed.lead ?? '看看这张图，你想说些什么？').trim().slice(0, 60),
@@ -417,7 +438,7 @@ function normalizeGeneratedPrompt(
     wordRange: wordRangeFor(opts.grade),
     minGrade: Math.max(1, opts.grade - 2) as GradeLevel,
     maxGrade: Math.min(9, opts.grade + 2) as GradeLevel,
-    focus: focus.length > 0 ? focus : focusFor(opts.grade, opts.category),
+    focus: focus.length > 0 ? focus : focusFor(opts.grade, opts.category, genre),
   }
 }
 
@@ -429,6 +450,8 @@ export interface ScoreOptions {
   text: string
   grade: GradeLevel
   category: CompositionCategory
+  /** ★ 题目自带的格式要求（2026-09-30）。缺省 = 记叙文。要一路传到范文引擎。 */
+  genre?: CompositionGenre
   title: string
   wordRange: [number, number]
   focus: ScoreDimension[]
@@ -528,7 +551,7 @@ export async function scoreWork(opts: ScoreOptions): Promise<ScoreResult> {
     const raw = await callChat(
       opts.cfg,
       [
-        { role: 'system', content: SCORE_SYSTEM },
+        { role: 'system', content: systemFor(SCORE_SYSTEM, opts.genre) },
         { role: 'user', content: buildScoreUserMessage(opts, analysis) },
       ],
       { json: true, signal: opts.signal },
@@ -659,6 +682,12 @@ export interface ModelEssayOptions {
   title: string
   grade: GradeLevel
   category: CompositionCategory
+  /**
+   * ★ 题目自带的格式要求（2026-09-30 加的）。缺省 = 记叙文 → 老调用方行为不变。
+   * ⚠️ 只加字段不往下传，等于没加（本项目栽过「两个上限只补一个」）——
+   *    这个值必须一路传到 `resolveKind` 和提示词里的「类型：」那一行。
+   */
+  genre?: CompositionGenre
   wordRange: [number, number]
   images: PromptImage[]
   cfg: AiConfig
@@ -820,21 +849,71 @@ function withUnfulfilledNote(reason: string, cfg: AiConfig): string {
  *    模型这条路会踩得一模一样。
  *
  *    所以这里用**和本地引擎同一个 `resolveKind`**，
- *    两条路对"这是什么文体"的判断才是同一个。
+ *    两条路对「这道题走哪一支」的判断才是同一个。
  *    两者不一致时，把原标签也说出来 —— 别让模型以为我们搞错了题。
  */
 function kindLabelFor(opts: {
   childText: string
   title: string
   category: CompositionCategory
+  genre?: CompositionGenre
   images: PromptImage[]
 }): string {
   const raw = categoryMeta(opts.category).label
   const m = extractChildMaterial(opts.childText, opts.title)
-  const kind = resolveKind(opts.category, m, { pictureFirst: opts.images.length > 0 })
+  const kind = resolveKind(opts.category, m, {
+    pictureFirst: opts.images.length > 0,
+    genre: opts.genre,
+  })
+
+  /*
+   * ★★ 应用文单独一条路，**不能**掉进下面那句 `categoryMeta(kind)`。
+   *
+   *   `categoryMeta` 只认那 5 个记叙文对象值；传 'applied' 进去
+   *   查不到，它会**静默退回第一个**（写景）—— 于是提示词里会写着
+   *   「类型：写景」，而题目是《节约用水倡议书》。不报错、不崩，
+   *   只是让模型把应用文写成记叙文。
+   */
+  if (kind === 'applied') {
+    const shape = appliedShapeOf(opts.title)
+    return (
+      `应用文（${APPLIED_FORM_LABELS[shape.form]}）` +
+      `（题库给这道题标的类型是「${raw}」，但这是应用文、不是记叙文，按应用文的格式写）`
+    )
+  }
+
+  /*
+   * ★★ 这一支以前还有说明文 / 议论文（2026-10-01 加的）——
+   *   2026-10-02 删掉了：家长定的「APP 不需要区分文体」，孩子写记叙、
+   *   说明、议论由他自己决定，所以 `resolveKind` 不会再返回那两个值。
+   *   ⚠️ 万一哪天真的加回来，**必须**在这里再开一条分支：`categoryMeta`
+   *      只认那 5 个记叙文对象值，传文体值进去查不到，它会**静默退回
+   *      第一个**（写景）—— 于是提示词里写着「类型：写景」而题目是
+   *      《我家的绿萝》。不报错、不崩，只是让模型写错。
+   */
   if (kind === opts.category) return raw
   const resolved = categoryMeta(kind).label
   return `${resolved}（题库给这道题标的类型是「${raw}」，但孩子写的是画面、不是一件事，按「${resolved}」改）`
+}
+
+/**
+ * 批改提示词第一行的「这是篇什么」。
+ *
+ * ★★ 这一行是模型**读到的第一句**，而它会先信这一句 ——
+ *    所以格式写错，等于下面再怎么写「类型：应用文」都白搭。
+ *    09-30 修应用文时踩过一次：那一句原本写死「看图作文」，
+ *    第一行说「看图作文」、第十行说「这是应用文」，自相矛盾。
+ *
+ * ⚠️ 记叙文**仍然返回「看图作文」** —— 老提示词逐字节不变。
+ *    严格说，材料/命题作文哪怕写成记叙文也没有图可看，
+ *    但那是「命题方式（轴 2）」的账，不在这里动（见遗留清单）。
+ */
+function kindWordFor(opts: { title: string; genre?: CompositionGenre }): string {
+  const genre = resolveGenre(opts.genre)
+  if (genre === 'applied') {
+    return `应用文（${APPLIED_FORM_LABELS[appliedShapeOf(opts.title).form]}）`
+  }
+  return '看图作文'
 }
 
 /** 跑偏的补问 —— 要把"你丢了什么"点名说清，不然它还会再丢一次 */
@@ -862,6 +941,76 @@ const ESSAY_SYSTEM = `你是一位温柔又专业的中国小学语文老师，�
 
 必须严格输出 JSON，不要输出解释文字。`
 
+/**
+ * 非记叙文要额外告诉模型的「骨架要求」。
+ *
+ * ★★ 为什么必须单独成块、逐条列出来：
+ *   模型的默认倾向是**把一切都写成记叙文** —— 哪怕提示词里写着
+ *   「类型：应用文」，它也会交一篇有情节的小故事。而应用文最要命的
+ *   恰恰是格式分（称呼、落款、分点），所以这里把骨架列死，
+ *   要求它照骨架写、只替换内容。
+ *
+ * ⚠️ 记叙文返回**空串** —— 老路径的提示词一个字都不变。
+ * ⚠️ 骨架与硬要求来自 `modelEssay.ts` 的 `appliedShapeOf`，跟本地引擎
+ *    是**同一份**。别在这儿再抄一遍步骤说明 —— 两条路会走散，
+ *    而且两边都不报错。
+ *
+ * ★ 2026-10-02：这一支以前还管说明文 / 议论文，现在只管应用文 ——
+ *   家长定的「APP 不需要区分文体」，孩子写记叙、说明、议论由他自己决定。
+ */
+function appliedSectionFor(opts: { title: string; genre?: CompositionGenre }): string {
+  if (resolveGenre(opts.genre) !== 'applied') return ''
+
+  const shape = appliedShapeOf(opts.title)
+  const label = APPLIED_FORM_LABELS[shape.form]
+
+  const lines = [
+    `\n\n【这是一篇${label} —— 必须按应用文的格式写，不是记叙文】`,
+    '骨架（照这个顺序，每一部分单独成行/成段）：',
+  ]
+  if (shape.salutation) {
+    lines.push(`1. 第一行是称呼，顶格、独占一行：「${shape.salutation}」`)
+  } else {
+    lines.push('1. 这篇没有称呼，第一行直接进入正文。')
+  }
+  lines.push(
+    '2. 正文：说清「为什么提这件事」和「具体怎么做」——该分点的就分点' +
+      '（第一、第二、第三），不要编情节。',
+  )
+  if (shape.signature) {
+    lines.push(
+      `3. 结尾先写号召，然后落款：落款和日期**各占一行**，「${shape.signature}」+ 一行日期。`,
+    )
+  } else {
+    lines.push(`3. 结尾用这句话收住：「${shape.call}」`)
+  }
+  lines.push(
+    '【硬要求】不要写景物、不要写感官（应用文没有画面可观察）；不要编故事；' +
+      '孩子原文里说到的具体东西（人名、物件、事情）要保留下来。',
+  )
+  return lines.join('\n')
+}
+
+/**
+ * 应用文的 system 提示补丁。
+ *
+ * ⚠️ 为什么**追加**而不是改 `SCORE_SYSTEM` / `ESSAY_SYSTEM` 本身：
+ *    那两个常量是所有调用**共用**的，改了会连记叙文的行为一起变。
+ *    这里只在应用文时补一段，记叙文一个字不动。
+ * ⚠️ `SCORE_SYSTEM` 里写着「正在批改学生的**看图作文**」——
+ *    对应用文是错的，所以这段补丁必须**明确纠正**它，
+ *    不能只加一句「注意格式」（模型会听第一句）。
+ */
+const APPLIED_SYSTEM_NOTE = `
+【重要】这一篇是**应用文**，不是看图作文、也不是记叙文。
+上面说的"看图""写画面"都不适用 —— 应用文没有画面可观察。
+请按「称呼 → 正文（说清为什么提这件事、具体怎么做，该分点就分点）→ 号召 → 落款」的格式来，
+不要编故事情节，不要写景物和感官。`
+
+function systemFor(base: string, genre?: CompositionGenre): string {
+  return resolveGenre(genre) === 'applied' ? base + APPLIED_SYSTEM_NOTE : base
+}
+
 function buildEssayUserMessage(
   opts: ModelEssayOptions,
   a: TextAnalysis,
@@ -881,11 +1030,14 @@ function buildEssayUserMessage(
     ? `\n这道题的配图（孩子应该照着这些画面写）：\n${imageSection}\n`
     : ''
 
+  // ★ 应用文才有内容；记叙文是空串（老提示词一字不变）
+  const appliedSection = appliedSectionFor(opts)
+
   return `请把下面这篇学生作文改写成「更好的写法」。
 
 题目：《${opts.title}》
 年级：${opts.grade} 年级
-类型：${kindLabelFor(opts)}
+类型：${kindLabelFor(opts)}${appliedSection}
 建议字数：${lo}-${hi} 字${extraSection}
 ${imageBlock}${keepListSection(keep)}
 学生原文（**改写它** —— 保留他的思路和故事，别写成另一篇）：
@@ -921,6 +1073,8 @@ export async function generateModelEssay(
       images: opts.images,
       grade: opts.grade,
       category: opts.category,
+      // ★ 格式要求 —— 少了它，应用文会被当写事题改写
+      genre: opts.genre,
       wordRange: opts.wordRange,
       // ★ 家长设置里的附加提示词 —— 本地引擎也要落实（见 modelEssay.ts 三·五）
       extraPrompt: opts.cfg.extraPrompt,
@@ -938,7 +1092,7 @@ export async function generateModelEssay(
 
   try {
     const messages: { role: 'system' | 'user' | 'assistant'; content: string }[] = [
-      { role: 'system', content: ESSAY_SYSTEM },
+      { role: 'system', content: systemFor(ESSAY_SYSTEM, opts.genre) },
       { role: 'user', content: buildEssayUserMessage(opts, analysis, keep) },
     ]
 
@@ -1093,12 +1247,15 @@ ${extra}
     ? `\n这道题的配图（孩子应该照着这些画面写）：\n${imageSection}\n`
     : ''
 
-  return `请批改这篇【${opts.grade} 年级】看图作文，并把它改写成「更好的写法」。
+  // ★ 应用文才有内容；记叙文是空串（老提示词一字不变）
+  const appliedSection = appliedSectionFor(opts)
+
+  return `请批改这篇【${opts.grade} 年级】${kindWordFor(opts)}，并把它改写成「更好的写法」。
 
 题目：《${opts.title}》
 年级：${opts.grade} 年级
 建议字数：${lo}-${hi} 字
-类型：${kindLabelFor(opts)}${extraSection}
+类型：${kindLabelFor(opts)}${extraSection}${appliedSection}
 ${imageBlock}${keepListSection(keep)}
 学生原文：
 """
@@ -1309,6 +1466,8 @@ export async function scoreAndRewrite(
       images: opts.images,
       grade: opts.grade,
       category: opts.category,
+      // ★ 格式要求 —— 少了它，应用文会被当写事题改写
+      genre: opts.genre,
       wordRange: opts.wordRange,
       // ★ 家长设置里的附加提示词 —— 本地引擎也要落实（见 modelEssay.ts 三·五）
       extraPrompt: opts.cfg.extraPrompt,
@@ -1331,7 +1490,7 @@ export async function scoreAndRewrite(
     const keep = buildKeepList(opts)
 
     const messages: { role: 'system' | 'user' | 'assistant'; content: string }[] = [
-      { role: 'system', content: SCORE_AND_REWRITE_SYSTEM },
+      { role: 'system', content: systemFor(SCORE_AND_REWRITE_SYSTEM, opts.genre) },
       { role: 'user', content: buildScoreAndRewriteUserMessage(opts, analysis, keep) },
     ]
 
