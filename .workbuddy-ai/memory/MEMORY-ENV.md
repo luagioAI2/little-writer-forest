@@ -76,3 +76,25 @@
 - ★ `scripts/_site/app-probe.mjs` 现在吃三个环境变量：**`PROBE_GRADE`**（默认 3）、**`PROBE_TARGETS`**（逗号分隔的标题）、**`PROBE_SHOT`**（截图路径）。7–9 年级要额外传 **`PROBE_GRADE_RE`**（如 `'^初一$'`）。验新标签要在**它自己的 minGrade** 上跑，**再跑一次 minGrade−1 确认它确实不出现**（边界测试）—— 实测 `applied-writing` minGrade=4：年级 4 搜得到 8/8 且图全解码，年级 3 三道全 `found:false`。
 - ★ 其他可复用的探针：`scripts/_site/render-check.mjs`（`library-browse.html` 的 DOM 卡片数/解码数）、`scripts/_site/req-fail.mjs`（列出页面上所有 4xx/失败请求 —— 用来证明那个 404 **只是 `/favicon.ico`**）。
 
+
+
+## 八、git 推送（2026-10-03 实测）
+
+- ★★ **`git ls-remote` 会静默返回空**（exit 0、零输出），**即使远端有内容**。
+  实测对照：对已知非空的 `stripluagio/kid-quest-farm` 也返回空。
+  ➜ **别拿它当"远端是空仓库"的证据**。改用 REST API（`api.github.com` 走 7897 实测 200）：
+  `curl -s https://api.github.com/repos/<owner>/<repo>/branches`
+  （`github.com` 页面本身也 200，可用 `curl -o /dev/null -w '%{http_code}'` 探活。）
+- ★ **`git push --dry-run <url> <branch>` 能在不写远端的前提下验证权限** ——
+  判断"到底能不能推到那个仓库"就用它，别靠猜、也别真推一次才知道。
+- ★ **每个新仓库都要钉一次仓库级凭据助手**，否则 `helper-selector` 在非交互 shell 里
+  空转几十秒：
+  `git config --local credential.helper ""` + `git config --local --add credential.helper store`
+  （撤销：`git config --local --unset-all credential.helper`）
+- ⚠️ **`403 ... denied to <账号>` 先查账号，别查网络**。本机 github 凭据属于
+  `luagioAI2`（`~/.git-credentials` 里用户名写的是数字 id `250643379`），
+  推 `stripluagio/*` 必然 403。详见用户级 `~/.workbuddy-ai/MEMORY.md`。
+- ★ **提交前先量未跟踪内容的**体积**：`git ls-files --others --exclude-standard | xargs du -sch`。
+  本项目实测藏着 422 MB 的工作目录（`scripts/_photo-*` 等）。
+  ⚠️ 别用 `git status | grep '^??' | du` —— 目录里只有**部分**文件被忽略时，
+  git 仍会列出该目录，而 `du` 会把整个目录算进去（实测虚高到 419M）。
