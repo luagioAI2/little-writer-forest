@@ -1,0 +1,182 @@
+[
+  {
+    "n": 1,
+    "tag": "season",
+    "title": "冬天的暖阳",
+    "primary": {
+      "id": "30756616",
+      "url": "https://images.pexels.com/photos/30756616/pexels-photo-30756616.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/cozy-interior-with-large-window-view-30756616/",
+      "why": "室内客厅，大窗户透进暖色阳光照在沙发区，4095x2981 横图，正对'冬天在哪儿晒太阳'的室内暖光场景。"
+    },
+    "fallback": {
+      "id": "6131411",
+      "url": "https://images.pexels.com/photos/6131411/pexels-photo-6131411.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/cozy-room-interior-with-vintage-furniture-in-sunlight-6131411/",
+      "why": "阳光从窗户照进复古房间，落在扶手椅和木家具上，7360x4912 横图，暖光很足。"
+    },
+    "fail": null
+  },
+  {
+    "n": 2,
+    "tag": "weather",
+    "title": "刮风了",
+    "primary": {
+      "id": "30413650",
+      "url": "https://images.pexels.com/photos/30413650/pexels-photo-30413650.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/wind-swept-trees-on-coastal-dune-landscape-30413650/",
+      "why": "两棵松树被大风吹得明显弯向一侧，7952x5304 横图，一眼能看出'风很大'。"
+    },
+    "fallback": {
+      "id": "9059257",
+      "url": "https://images.pexels.com/photos/9059257/pexels-photo-9059257.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/a-big-tree-swaying-by-the-wind-under-blue-sky-9059257/",
+      "why": "一棵大树在风中摇摆、树干倾斜，5130x3420 横图，风力感清楚。"
+    },
+    "fail": null
+  },
+  {
+    "n": 3,
+    "tag": "water",
+    "title": "山里的瀑布",
+    "primary": {
+      "id": "11798773",
+      "url": "https://images.pexels.com/photos/11798773/pexels-photo-11798773.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/a-waterfalls-on-a-rocky-mountain-with-green-trees-11798773/",
+      "why": "森林里瀑布从岩石上倾泻而下、有明显落差，6960x4640 横图，是山涧不是海景。"
+    },
+    "fallback": {
+      "id": "6088126",
+      "url": "https://images.pexels.com/photos/6088126/pexels-photo-6088126.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/a-beautiful-scenery-of-waterfalls-6088126/",
+      "why": "瀑布从高处落入下方水潭，四周绿树环绕，3872x2592 横图，有落差。"
+    },
+    "fail": null
+  },
+  {
+    "n": 4,
+    "tag": "campus",
+    "title": "教室的窗边",
+    "primary": {
+      "id": "37812747",
+      "url": "https://images.pexels.com/photos/37812747/pexels-photo-37812747.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/students-taking-exam-in-classroom-with-sunlight-37812747/",
+      "why": "学生在教室里上课，阳光从窗户照进来，3543x2195 横图，正是'上课时往窗外看'的教室场景。"
+    },
+    "fallback": {
+      "id": "33807234",
+      "url": "https://images.pexels.com/photos/33807234/pexels-photo-33807234.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/sunlit-classroom-desks-by-the-window-33807234/",
+      "why": "暖阳照在教室靠窗的课桌上，4567x2115 横图，明确的教室窗边视角。"
+    },
+    "fail": null
+  },
+  {
+    "n": 5,
+    "tag": "night",
+    "title": "路灯下的影子",
+    "primary": {
+      "id": "9313773",
+      "url": "https://images.pexels.com/photos/9313773/pexels-photo-9313773.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/dark-road-with-street-lamps-during-night-time-9313773/",
+      "why": "夜晚空荡的马路上路灯亮着，地面有暖色光晕，4032x2688 横图。"
+    },
+    "fallback": {
+      "id": "4113044",
+      "url": "https://images.pexels.com/photos/4113044/pexels-photo-4113044.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/an-empty-street-at-night-4113044/",
+      "why": "夜晚路灯照亮空荡的路面，6000x4000 横图，地面有明显光影。"
+    },
+    "fail": null
+  },
+  {
+    "n": 6,
+    "tag": "home-scene",
+    "title": "客厅的沙发",
+    "primary": {
+      "id": "36363110",
+      "url": "https://images.pexels.com/photos/36363110/pexels-photo-36363110.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/cozy-living-room-sofa-with-warm-lighting-36363110/",
+      "why": "暖光下的客厅里一张沙发，氛围温馨，6240x4160 横图，贴'客厅的沙发'暖调。"
+    },
+    "fallback": {
+      "id": "6758245",
+      "url": "https://images.pexels.com/photos/6758245/pexels-photo-6758245.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/couch-with-cushions-in-living-room-6758245/",
+      "why": "客厅里一张带靠垫的沙发，7184x4795 横图，居家客厅场景清楚。"
+    },
+    "fail": null
+  },
+  {
+    "n": 7,
+    "tag": "travel",
+    "title": "古镇的早晨",
+    "primary": {
+      "id": "39126956",
+      "url": "https://images.pexels.com/photos/39126956/pexels-photo-39126956.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/historic-european-street-at-sunrise-with-cobblestones-39126956/",
+      "why": "清晨日出的欧洲老街，石板路两旁是历史建筑，6000x4000 横图，安静的老街清晨感。"
+    },
+    "fallback": {
+      "id": "35461117",
+      "url": "https://images.pexels.com/photos/35461117/pexels-photo-35461117.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/charming-old-town-cobbled-street-in-europe-35461117/",
+      "why": "安静的欧洲古镇石板路，两侧是历史建筑，6000x4000 横图。"
+    },
+    "fail": null
+  },
+  {
+    "n": 8,
+    "tag": "travel",
+    "title": "博物馆里的一天",
+    "primary": {
+      "id": "30150825",
+      "url": "https://images.pexels.com/photos/30150825/pexels-photo-30150825.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/busy-indoor-art-exhibit-in-toronto-museum-30150825/",
+      "why": "博物馆展厅内观众在看展，6000x4000 横图，拍的是整个展厅而不是单件文物特写。"
+    },
+    "fallback": {
+      "id": "30150849",
+      "url": "https://images.pexels.com/photos/30150849/pexels-photo-30150849.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/visitors-at-a-toronto-museum-art-exhibit-30150849/",
+      "why": "多伦多博物馆展厅里的参观者与展陈，5555x3703 横图，展厅全景。"
+    },
+    "fail": null
+  },
+  {
+    "n": 9,
+    "tag": "culture",
+    "title": "故宫的红墙",
+    "primary": {
+      "id": "9429300",
+      "url": "https://images.pexels.com/photos/9429300/pexels-photo-9429300.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/imposing-architecture-of-chinese-emperor-palace-9429300/",
+      "why": "中式宫殿建筑，朱红大门与红墙、屋顶，8765x5843 横图，正对'红墙很高'。"
+    },
+    "fallback": {
+      "id": "39468926",
+      "url": "https://images.pexels.com/photos/39468926/pexels-photo-39468926.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/majestic-view-of-the-forbidden-city-in-beijing-39468926/",
+      "why": "北京故宫的宫墙建筑立面，红墙配蓝天，6864x2942 横图。"
+    },
+    "fail": null
+  },
+  {
+    "n": 10,
+    "tag": "culture",
+    "title": "桥上的石狮子",
+    "primary": {
+      "id": "30470656",
+      "url": "https://images.pexels.com/photos/30470656/pexels-photo-30470656.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/stone-guardian-statues-in-chinese-temple-courtyard-30470656/",
+      "why": "一排石狮子雕像依次排列，4032x3024 横图，对应'栏杆上蹲着一排石狮子'（场景为寺庙，Pexels 上无桥栏石狮）。"
+    },
+    "fallback": {
+      "id": "20694821",
+      "url": "https://images.pexels.com/photos/20694821/pexels-photo-20694821.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/traditional-guardian-lions-sculptures-20694821/",
+      "why": "传统中式石狮雕像，3006x2000 横图，主体就是石狮子。"
+    },
+    "fail": null
+  }
+]

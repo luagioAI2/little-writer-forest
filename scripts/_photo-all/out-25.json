@@ -1,0 +1,225 @@
+{
+  "batch": "25",
+  "items": [
+    {
+      "landmarkId": "world-法国-蔚蓝海岸",
+      "match": "place",
+      "query": "French Riviera",
+      "mediaUrl": "https://images.pexels.com/photos/29864445/pexels-photo-29864445.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Stunning view of the Cote d'Azur coastline",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/stunning-view-of-the-cote-d-azur-coastline-29864445/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 68162 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-法国-香波堡",
+      "match": "place",
+      "query": "Château de Chambord",
+      "mediaUrl": "https://images.pexels.com/photos/35604759/pexels-photo-35604759.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Chateau de Chambord towers in the Loire valley",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/chateau-de-chambord-towers-in-the-loire-valley-35604759/", "author": "Alisa Skripina" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 122995 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-英国-温莎城堡",
+      "match": "place",
+      "query": "Windsor Castle",
+      "mediaUrl": "https://images.pexels.com/photos/8432940/pexels-photo-8432940.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The Windsor Castle in Berkshire England",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/the-windsor-castle-in-berkshire-england-8432940/", "author": "Beata Zsigoova" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 50036 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-英国-湖区",
+      "match": "place",
+      "query": "Lake District",
+      "mediaUrl": "https://images.pexels.com/photos/33595557/pexels-photo-33595557.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Serene view of Lake Windermere under moody skies",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/serene-view-of-lake-windermere-under-moody-skies-33595557/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 61806 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-意大利-佛罗伦萨大教堂",
+      "match": "place",
+      "query": "Florence Cathedral",
+      "mediaUrl": "https://images.pexels.com/photos/31202676/pexels-photo-31202676.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Sunlit facade of Florence Cathedral Duomo",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/sunlit-facade-of-florence-cathedral-duomo-31202676/", "author": "Bugra Cicek" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 154278 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-意大利-五渔村",
+      "match": "place",
+      "query": "Cinque Terre",
+      "mediaUrl": "https://images.pexels.com/photos/36522243/pexels-photo-36522243.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic view of Vernazza Cinque Terre Italy",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-view-of-vernazza-cinque-terre-italy-36522243/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 64992 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-意大利-阿马尔菲海岸",
+      "match": "place",
+      "query": "Amalfi Coast",
+      "mediaUrl": "https://images.pexels.com/photos/19102629/pexels-photo-19102629.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Amalfi coast in Italy",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/amalfi-coast-in-italy-19102629/", "author": "Alejandro Henriquez" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 61867 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-意大利-特莱维喷泉",
+      "match": "place",
+      "query": "Trevi Fountain",
+      "mediaUrl": "https://images.pexels.com/photos/30877365/pexels-photo-30877365.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Trevi Fountain in Rome at daytime",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/trevi-fountain-in-rome-at-daytime-30877365/", "author": "Anna Stasia" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 122107 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-印度-红堡",
+      "match": "place",
+      "query": "Red Fort Delhi",
+      "mediaUrl": "https://images.pexels.com/photos/19528159/pexels-photo-19528159.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Red Fort in Delhi",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/red-fort-in-delhi-19528159/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 100871 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-印度-埃洛拉石窟",
+      "match": "place",
+      "query": "Ellora Caves",
+      "mediaUrl": "https://images.pexels.com/photos/37540779/pexels-photo-37540779.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Kailasa temple in Ellora with tourist activity",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/kailasa-temple-in-ellora-with-tourist-activity-37540779/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 75198 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-印度-果阿海滩",
+      "match": "place",
+      "query": "Goa beach",
+      "mediaUrl": "https://images.pexels.com/photos/28550376/pexels-photo-28550376.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic aerial view of Chapora beach in Goa India",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-aerial-view-of-chapora-beach-in-goa-india-28550376/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 48743 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-埃及-帝王谷",
+      "match": "place",
+      "query": "Valley of the Kings Egypt",
+      "mediaUrl": "https://images.pexels.com/photos/39617542/pexels-photo-39617542.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Road to Valley of the Kings under rugged Egyptian cliffs",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/road-to-valley-of-the-kings-under-rugged-egyptian-cliffs-39617542/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 50183 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-埃及-尼罗河",
+      "match": "place",
+      "query": "Nile river Egypt",
+      "mediaUrl": "https://images.pexels.com/photos/32286110/pexels-photo-32286110.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Sailboats on the Nile River at sunset",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/sailboats-on-the-nile-river-at-sunset-32286110/", "author": "Indu Bikash Sarker" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 39949 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-澳大利亚-大洋路",
+      "match": "place",
+      "query": "Great Ocean Road",
+      "mediaUrl": "https://images.pexels.com/photos/34156951/pexels-photo-34156951.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic View of the Great Ocean Road Coastline",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-view-of-the-great-ocean-road-coastline-34156951/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 51974 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-澳大利亚-蓝山国家公园",
+      "match": "place",
+      "query": "Blue Mountains Australia",
+      "mediaUrl": "https://images.pexels.com/photos/18576998/pexels-photo-18576998.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The Three Sisters in the Blue Mountains",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/the-three-sisters-in-the-blue-mountains-18576998/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 123207 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-澳大利亚-菲利普岛",
+      "match": "place",
+      "query": "Phillip Island Australia",
+      "mediaUrl": "https://images.pexels.com/photos/10543517/pexels-photo-10543517.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Rock formations on Pinnacles Lookout Phillip Island Australia",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/rock-formations-on-pinnacles-lookout-phillip-island-australia-10543517/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 104004 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-韩国-北村韩屋村",
+      "match": "place",
+      "query": "Bukchon Hanok Village",
+      "mediaUrl": "https://images.pexels.com/photos/39037957/pexels-photo-39037957.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Traditional hanok houses in Bukchon Hanok Village",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/traditional-hanok-houses-in-bukchon-hanok-village-39037957/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 53592 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-泰国-大城遗址",
+      "match": "place",
+      "query": "Ayutthaya Thailand",
+      "mediaUrl": "https://images.pexels.com/photos/19067353/pexels-photo-19067353.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Wat Chaiwatthanaram in Thailand",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/wat-chaiwatthanaram-in-thailand-19067353/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 55024 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-泰国-素可泰历史公园",
+      "match": "place",
+      "query": "Sukhothai Historical Park",
+      "mediaUrl": "https://images.pexels.com/photos/38006080/pexels-photo-38006080.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Historic Sukhothai temple ruins under clear sky",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/historic-sukhothai-temple-ruins-under-clear-sky-38006080/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 73546 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-土耳其-以弗所",
+      "match": "place",
+      "query": "Ephesus Turkey",
+      "mediaUrl": "https://images.pexels.com/photos/20755099/pexels-photo-20755099.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Library of Celsus in Turkey",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/library-of-celsus-in-turkey-20755099/", "author": "Esra Nurdogan" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 128324 },
+      "verdict": "ok",
+      "note": ""
+    }
+  ]
+}

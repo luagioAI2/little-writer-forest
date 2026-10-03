@@ -1,0 +1,185 @@
+{
+  "batch": "F",
+  "items": [
+    {
+      "landmarkId": "world-秘鲁-马丘比丘",
+      "match": "place",
+      "query": "Machu Picchu",
+      "mediaUrl": "https://images.pexels.com/photos/5503219/pexels-photo-5503219.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenery of Machu Picchu during daytime",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/scenery-of-machu-picchu-during-daytime-5503219/",
+        "author": "Mike van Schoonderwalt"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 77892 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-巴西-救世基督像",
+      "match": "place",
+      "query": "Christ the Redeemer (statue)",
+      "mediaUrl": "https://images.pexels.com/photos/32714103/pexels-photo-32714103.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Christ the Redeemer beneath a clear blue sky",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/christ-the-redeemer-beneath-a-clear-blue-sky-32714103/",
+        "author": "Deivid Carreiras"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 53913 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-巴西-亚马逊雨林",
+      "match": "place",
+      "query": "Amazon rainforest",
+      "mediaUrl": "https://images.pexels.com/photos/30205697/pexels-photo-30205697.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Serene Amazon river view in Loreto, Peru",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/serene-amazon-river-view-in-loreto-peru-30205697/",
+        "author": "Miguel Angel Lozano Baron"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 39105 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-巴西-伊瓜苏瀑布",
+      "match": "place",
+      "query": "Iguazu Falls",
+      "mediaUrl": "https://images.pexels.com/photos/8571319/pexels-photo-8571319.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Iguazu Falls in Brazil",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/iguazu-falls-in-brazil-8571319/",
+        "author": "Dre Thousand"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 52754 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-智利-复活节岛",
+      "match": "place",
+      "query": "Easter Island moai",
+      "mediaUrl": "https://images.pexels.com/photos/14596489/pexels-photo-14596489.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Moai Statues on Easter Island, Chile",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/moai-statues-on-easter-island-chile-14596489/",
+        "author": "diesgomo"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 48445 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-玻利维亚-乌尤尼盐沼",
+      "match": "place",
+      "query": "Salar de Uyuni",
+      "mediaUrl": "https://images.pexels.com/photos/15563740/pexels-photo-15563740.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Incahuasi Island at Salar de Uyuni, Salt Flat Area in Bolivia",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/incahuasi-island-at-salar-de-uyuni-salt-flat-area-in-bolivia-15563740/",
+        "author": "Ana Lobo"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 64916 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-厄瓜多尔-加拉帕戈斯群岛",
+      "match": "place",
+      "query": "Galapagos Islands",
+      "mediaUrl": "https://images.pexels.com/photos/32206041/pexels-photo-32206041.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic Kicker Rock in the Galapagos Islands",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/majestic-kicker-rock-in-the-galapagos-islands-32206041/",
+        "author": "Yefferson Soler"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 133994 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-委内瑞拉-天使瀑布",
+      "match": "scene",
+      "query": "Angel Falls Venezuela",
+      "mediaUrl": "https://images.pexels.com/photos/7360544/pexels-photo-7360544.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic panorama with river cascade and a distant tepui mountain, Canaima National Park, Venezuela",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/scenic-panorama-with-river-cascade-and-a-distant-tepui-mountain-canaima-national-park-venezuela-7360544/",
+        "author": "Ederik Palencia Ferreira"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 56234 },
+      "verdict": "poor",
+      "note": "Pexels has no genuine photo of Angel Falls itself (tried 'Angel Falls Venezuela', 'Salto Angel waterfall' and 'Angel Falls'; all results were generic or unrelated waterfalls). Substituted a Canaima National Park, Venezuela scene - the park that contains Angel Falls - showing a tepui massif and river cascade, but not the falls."
+    },
+    {
+      "landmarkId": "world-埃及-吉萨金字塔",
+      "match": "place",
+      "query": "Giza pyramid complex",
+      "mediaUrl": "https://images.pexels.com/photos/30899056/pexels-photo-30899056.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The Majestic Pyramids of Giza Under Blue Skies",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/the-majestic-pyramids-of-giza-under-blue-skies-30899056/",
+        "author": "Michelle Chadwick"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 29965 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-埃及-狮身人面像",
+      "match": "place",
+      "query": "Great Sphinx of Giza",
+      "mediaUrl": "https://images.pexels.com/photos/35556543/pexels-photo-35556543.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic Great Sphinx of Giza Under Blue Sky",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/majestic-great-sphinx-of-giza-under-blue-sky-35556543/",
+        "author": "andromeda99"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 37372 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-南非-桌山",
+      "match": "place",
+      "query": "Table Mountain",
+      "mediaUrl": "https://images.pexels.com/photos/31083891/pexels-photo-31083891.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic View of Table Mountain in Cape Town",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/majestic-view-of-table-mountain-in-cape-town-31083891/",
+        "author": "Marina Zvada"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 46190 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-南非-好望角",
+      "match": "place",
+      "query": "Cape of Good Hope",
+      "mediaUrl": "https://images.pexels.com/photos/38235268/pexels-photo-38235268.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic view of Cape of Good Hope landmark",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/scenic-view-of-cape-of-good-hope-landmark-38235268/",
+        "author": "Magda Ehlers"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 74738 },
+      "verdict": "ok",
+      "note": ""
+    }
+  ]
+}

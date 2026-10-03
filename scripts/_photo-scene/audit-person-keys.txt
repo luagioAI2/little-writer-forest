@@ -1,0 +1,17 @@
+all-kinds-people	https://images.pexels.com/photos/8954779/pexels-photo-8954779.jpeg?auto=compress&cs=tinysrgb&w=640
+baby-arrive	https://images.pexels.com/photos/7491730/pexels-photo-7491730.jpeg?auto=compress&cs=tinysrgb&w=640
+best-friend	https://images.pexels.com/photos/13758652/pexels-photo-13758652.jpeg?auto=compress&cs=tinysrgb&w=640
+bus-driver	https://images.pexels.com/photos/15433376/pexels-photo-15433376.jpeg?auto=compress&cs=tinysrgb&w=640
+dad-repair	https://images.pexels.com/photos/5808015/pexels-photo-5808015.jpeg?auto=compress&cs=tinysrgb&w=640
+deskmate	https://images.pexels.com/photos/37812837/pexels-photo-37812837.jpeg?auto=compress&cs=tinysrgb&w=640
+doctor	https://images.pexels.com/photos/20100296/pexels-photo-20100296.jpeg?auto=compress&cs=tinysrgb&w=640
+future-me	https://images.pexels.com/photos/6162307/pexels-photo-6162307.jpeg?auto=compress&cs=tinysrgb&w=640
+grandma-knit	https://images.pexels.com/photos/39326745/pexels-photo-39326745.jpeg?auto=compress&cs=tinysrgb&w=640
+librarian	https://images.pexels.com/photos/9572664/pexels-photo-9572664.jpeg?auto=compress&cs=tinysrgb&w=640
+mirror-self	https://images.pexels.com/photos/5788310/pexels-photo-5788310.jpeg?auto=compress&cs=tinysrgb&w=640
+mom-cooking	https://images.pexels.com/photos/3785725/pexels-photo-3785725.jpeg?auto=compress&cs=tinysrgb&w=640
+play-with-baby	https://images.pexels.com/photos/4964356/pexels-photo-4964356.jpeg?auto=compress&cs=tinysrgb&w=640
+robot-friend	https://images.pexels.com/photos/8294792/pexels-photo-8294792.jpeg?auto=compress&cs=tinysrgb&w=640
+sewing-box	https://images.pexels.com/photos/38321413/pexels-photo-38321413.jpeg?auto=compress&cs=tinysrgb&w=640
+street-cleaner	https://images.pexels.com/photos/37297890/pexels-photo-37297890.jpeg?auto=compress&cs=tinysrgb&w=640
+teacher-class	https://images.pexels.com/photos/5212342/pexels-photo-5212342.jpeg?auto=compress&cs=tinysrgb&w=640

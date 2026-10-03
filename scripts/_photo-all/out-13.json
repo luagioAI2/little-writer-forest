@@ -1,0 +1,213 @@
+{
+  "batch": "13",
+  "items": [
+    {
+      "landmarkId": "cn-湖北-东湖景区",
+      "match": "place",
+      "query": "Wuhan East Lake China",
+      "mediaUrl": "https://images.pexels.com/photos/34464173/pexels-photo-34464173.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "City skyline overlooking serene lake and pagoda",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/city-skyline-overlooking-serene-lake-and-pagoda-34464173/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 139672 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-湖北-清江画廊景区",
+      "match": "scene",
+      "query": "Qingjiang River Yichang",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Qingjiang River Yichang', 'Qingjiang Hubei', 'Shennongxi Enshi'; the only Qingjiang Gallery hits are sponsored iStock ads, free results are generic rivers."
+    },
+    {
+      "landmarkId": "cn-湖北-神农架生态旅游区",
+      "match": "place",
+      "query": "Shennongjia",
+      "mediaUrl": "https://images.pexels.com/photos/16850864/pexels-photo-16850864.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Rocky cliffs at the Shennongjia National Park in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/rocky-cliffs-at-the-shennongjia-national-park-in-china-16850864/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 58679 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-湖北-神农溪纤夫文化旅游区",
+      "match": "scene",
+      "query": "Shennong Stream",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Shennong Stream', 'Shennongxi Enshi'; no Shennong Stream photos on Pexels, only generic streams/waterfalls."
+    },
+    {
+      "landmarkId": "cn-湖北-武当山风景区",
+      "match": "scene",
+      "query": "Wudang Mountain",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Wudang Mountain', 'Wudangshan', 'Wudang China'; genuine Wudang monastery shots exist only as sponsored iStock ads, free results are unidentifiable Chinese temples."
+    },
+    {
+      "landmarkId": "cn-湖北-三峡人家风景区",
+      "match": "scene",
+      "query": "Three Gorges Family Yichang",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Three Gorges Family Yichang', 'Xiling Gorge Yichang'; the scenic spot itself is only in sponsored iStock ads, free results are generic Yangtze gorges."
+    },
+    {
+      "landmarkId": "cn-湖北-三峡大坝－屈原故里文化旅游区",
+      "match": "place",
+      "query": "Three Gorges Dam",
+      "mediaUrl": "https://images.pexels.com/photos/38099083/pexels-photo-38099083.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of the Three Gorges Dam in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-view-of-the-three-gorges-dam-in-china-38099083/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 42309 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-湖北-黄鹤楼公园",
+      "match": "place",
+      "query": "Yellow Crane Tower Wuhan",
+      "mediaUrl": "https://images.pexels.com/photos/38800037/pexels-photo-38800037.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Stunning view of Yellow Crane Tower in Wuhan",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/stunning-view-of-yellow-crane-tower-in-wuhan-38800037/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 91488 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-湖南-凤凰古城旅游区",
+      "match": "place",
+      "query": "Fenghuang Ancient Town",
+      "mediaUrl": "https://images.pexels.com/photos/33672248/pexels-photo-33672248.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Sunset view of Fenghuang Ancient Town in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/sunset-view-of-fenghuang-ancient-town-in-china-33672248/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 61803 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-湖南-矮寨·十八洞•德夯大峡谷景区",
+      "match": "scene",
+      "query": "Dehang canyon",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Dehang canyon', 'Aizhai bridge', 'Aizhai Xiangxi'; Dehang/Aizhai appear only in sponsored iStock ads, free bridge photos are unidentified (e.g. a Chongqing bridge)."
+    },
+    {
+      "landmarkId": "cn-湖南-桃花源旅游区",
+      "match": "scene",
+      "query": "Taohuayuan Hunan",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Peach Blossom Spring Changde', 'Taohuayuan Hunan'; only generic peach-blossom close-ups, no Taohuayuan scenic area."
+    },
+    {
+      "landmarkId": "cn-湖南-炎帝陵景区",
+      "match": "scene",
+      "query": "Yandi Mausoleum Hunan",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Yandi Mausoleum Hunan', 'Yan Emperor mausoleum'; only Sun Yat-sen Mausoleum results, no Yandi Mausoleum."
+    },
+    {
+      "landmarkId": "cn-湖南-崀山景区",
+      "match": "scene",
+      "query": "Langshan Hunan",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Langshan Hunan', 'Langshan scenic Xinning'; only Changsha cityscapes and Zhangjiajie shots, no Langshan."
+    },
+    {
+      "landmarkId": "cn-湖南-东江湖旅游区",
+      "match": "place",
+      "query": "Dongjiang Lake Hunan",
+      "mediaUrl": "https://images.pexels.com/photos/16822665/pexels-photo-16822665.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "View of the Dongjiang Lake and surrounding hills in summer",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/view-of-the-dongjiang-lake-and-surrounding-hills-in-summer-16822665/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 167341 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-湖南-花明楼景区",
+      "match": "scene",
+      "query": "Huaminglou Hunan",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Huaminglou Hunan', 'Liu Shaoqi memorial Hunan'; only Zhangjiajie/Changsha photos, no Huaminglou."
+    },
+    {
+      "landmarkId": "cn-湖南-岳麓山-橘子洲旅游区",
+      "match": "scene",
+      "query": "Yuelu Mountain Changsha",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Yuelu Mountain Changsha', 'Orange Isle Changsha', 'Yuelu Academy Changsha'; Yuelu Mountain / Orange Isle appear only in sponsored iStock ads, free Changsha photos are city/lake panoramas that cannot be pinned to this scenic area."
+    },
+    {
+      "landmarkId": "cn-湖南-岳阳楼－君山岛景区",
+      "match": "place",
+      "query": "Yueyang Tower Hunan",
+      "mediaUrl": "https://images.pexels.com/photos/13430557/pexels-photo-13430557.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "A gate at the Yueyang Tower",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/a-gate-at-the-yueyang-tower-13430557/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 148720 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-湖南-韶山旅游区",
+      "match": "scene",
+      "query": "Shaoshan Hunan",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Shaoshan Hunan', 'Shaoshan Mao birthplace'; only sponsored iStock ads and Zhangjiajie/Changsha photos, no Shaoshan."
+    },
+    {
+      "landmarkId": "cn-湖南-衡山旅游区",
+      "match": "scene",
+      "query": "Mount Heng Hunan",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Mount Heng Hunan', 'Hengshan Hunan China'; the only free 'Hengshan' photo is the Hanging Temple of Shanxi's Mount Heng (wrong province), the rest are iStock ads."
+    },
+    {
+      "landmarkId": "cn-湖南-武陵源－天门山旅游区",
+      "match": "place",
+      "query": "Tianmen Mountain Zhangjiajie",
+      "mediaUrl": "https://images.pexels.com/photos/25000724/pexels-photo-25000724.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Gondola carts riding over Tianmen Mountain range in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/gondola-carts-riding-over-tianmen-mountain-range-in-china-25000724/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 53696 },
+      "verdict": "ok",
+      "note": ""
+    }
+  ]
+}

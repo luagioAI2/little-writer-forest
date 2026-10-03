@@ -1,0 +1,302 @@
+[
+  {
+    "id": "builtin-season-6",
+    "slot": 0,
+    "dupOf": "10383335",
+    "title": "金色的秋天",
+    "lead": "麦田一望无边，像铺了一地金子。",
+    "oldSceneKey": "wheat-field",
+    "sceneLabel": "金色麦田",
+    "hint": "满眼金黄的麦穗在风里摇晃，远处是小山和一座房子，田间有一条土路。"
+  },
+  {
+    "id": "builtin-sci-fi-3",
+    "slot": 1,
+    "dupOf": "12491650",
+    "title": "太空旅行",
+    "lead": "坐上火箭，去宇宙里探险。",
+    "oldSceneKey": "sci-fi-fly",
+    "sceneLabel": "插上科学的翅膀飞",
+    "hint": "深蓝色太空中有一架火箭拖着火焰在飞，远处有带光环的星球，旁边飘着一个小宇航员。"
+  },
+  {
+    "id": "builtin-pet-3",
+    "slot": 0,
+    "dupOf": "16861432",
+    "title": "窗外的小鸟",
+    "lead": "每天早上，它都会停在窗台上唱歌。",
+    "oldSceneKey": "bird-window",
+    "sceneLabel": "窗边的小鸟",
+    "hint": "窗台上停着一只蓝色的小鸟，旁边放着一盆小植物，一个孩子在窗边安静地看着。"
+  },
+  {
+    "id": "builtin-unforgettable-2",
+    "slot": 0,
+    "dupOf": "19760978",
+    "title": "第一次春游",
+    "lead": "背上小书包，我们出发啦！",
+    "oldSceneKey": "spring-outing-bus",
+    "sceneLabel": "春游·大巴",
+    "hint": "一辆黄色大巴停在路边，几个孩子排队上车，老师在旁边挥手，旁边开着粉色的花树。"
+  },
+  {
+    "id": "builtin-dream-job-3",
+    "slot": 0,
+    "dupOf": "20100296",
+    "title": "如果我当医生",
+    "lead": "穿上白大褂，你会怎么给病人看病？",
+    "oldSceneKey": "doctor",
+    "sceneLabel": "看病的医生",
+    "hint": "诊室里医生穿着白大褂站在桌旁，胸前挂着听诊器，一个小孩坐在台子前面。"
+  },
+  {
+    "id": "builtin-activity-5",
+    "slot": 0,
+    "dupOf": "2310482",
+    "title": "多彩的活动",
+    "lead": "你参加过什么活动？把场面和心情都写下来。",
+    "oldSceneKey": "colorful-activity",
+    "sceneLabel": "多彩的活动",
+    "hint": "椭圆形跑道上有人在跑步和跳绳，两边有观众在挥手，横幅上写着「运动会」。"
+  },
+  {
+    "id": "builtin-campus-3",
+    "slot": 0,
+    "dupOf": "28761314",
+    "title": "大扫除",
+    "lead": "大家分工合作，教室慢慢变干净了。",
+    "oldSceneKey": "cleaning-class",
+    "sceneLabel": "大扫除",
+    "hint": "教室里一个孩子在擦窗、一个在扫地、一个提着水桶，桌椅搬到了一边，黑板上还留着粉笔字。"
+  },
+  {
+    "id": "builtin-unforgettable-2",
+    "slot": 2,
+    "dupOf": "32004906",
+    "title": "第一次春游",
+    "lead": "背上小书包，我们出发啦！",
+    "oldSceneKey": "spring-outing-play",
+    "sceneLabel": "春游·游戏",
+    "hint": "草地上一个孩子举着线放风筝，风筝飞在半空，另外两个孩子在跑，天上飘着泡泡和花瓣。"
+  },
+  {
+    "id": "builtin-water-1",
+    "slot": 0,
+    "dupOf": "32961389",
+    "title": "家乡的小河",
+    "lead": "那条河从村子旁边流过，你还记得它什么样子吗？",
+    "oldSceneKey": "river-village",
+    "sceneLabel": "家乡的小河",
+    "hint": "一条小河从村子中间流过，河上架着石拱桥，两岸是白墙红顶的小屋和绿树，水面上还有一条小船。"
+  },
+  {
+    "id": "builtin-travel-2",
+    "slot": 0,
+    "dupOf": "35038978",
+    "title": "参观记",
+    "lead": "参观博物馆或古迹的时候，你看到了什么？",
+    "oldSceneKey": "travel-visit",
+    "sceneLabel": "游记参观",
+    "hint": "古亭子前有石阶和绿树，一个小孩举着相机在拍照。"
+  },
+  {
+    "id": "builtin-culture-2",
+    "slot": 0,
+    "dupOf": "35521703",
+    "title": "古城墙",
+    "lead": "站在城墙上，你能想象这里曾经发生过什么吗？",
+    "oldSceneKey": "cultural-heritage",
+    "sceneLabel": "文化遗产",
+    "hint": "城墙上有城楼和城垛，两个小孩在城墙前参观，旁边牌子写着「世界文化遗产」。"
+  },
+  {
+    "id": "builtin-travel-2",
+    "slot": 1,
+    "dupOf": "35521703",
+    "title": "参观记",
+    "lead": "参观博物馆或古迹的时候，你看到了什么？",
+    "oldSceneKey": "cultural-heritage",
+    "sceneLabel": "文化遗产",
+    "hint": "城墙上有城楼和城垛，两个小孩在城墙前参观，旁边牌子写着「世界文化遗产」。"
+  },
+  {
+    "id": "builtin-if-i-4",
+    "slot": 0,
+    "dupOf": "36639191",
+    "title": "假如我变小了",
+    "lead": "忽然你变得只有蚂蚁那么小，世界变成了什么样？",
+    "oldSceneKey": "if-tiny",
+    "sceneLabel": "假如我变小了",
+    "hint": "巨大的花朵和草丛中间站着一个很小的人，旁边有一只蚂蚁爬过，露珠像湖泊一样大。"
+  },
+  {
+    "id": "builtin-food-3",
+    "slot": 0,
+    "dupOf": "37111200",
+    "title": "推荐一本书",
+    "lead": "你读过的好书，像推荐好朋友一样推荐给同学吧。",
+    "oldSceneKey": "book-store",
+    "sceneLabel": "书店",
+    "hint": "暖色书架上排满了彩色书脊，柜台后面站着看书的小孩，门口挂着「书店」的牌子。"
+  },
+  {
+    "id": "builtin-water-3",
+    "slot": 0,
+    "dupOf": "37197428",
+    "title": "雨后的山",
+    "lead": "山被雨洗过一遍，颜色都变深了。",
+    "oldSceneKey": "mountain-climb",
+    "sceneLabel": "摸黑上山",
+    "hint": "天还没亮，深蓝的天上有月亮和星星，两座大山黑黑地立着，两个人打着手电走在上山的小路上。"
+  },
+  {
+    "id": "builtin-classmate-2",
+    "slot": 0,
+    "dupOf": "37812837",
+    "title": "一个爱笑的人",
+    "lead": "他一笑，周围的人也跟着笑。",
+    "oldSceneKey": "deskmate",
+    "sceneLabel": "我的同桌",
+    "hint": "一张课桌前坐着两个同学，桌上摊着书和笔，旁边冒出一个对话气泡，背景是黑板。"
+  },
+  {
+    "id": "builtin-home-scene-2",
+    "slot": 0,
+    "dupOf": "3785725",
+    "title": "厨房里的香味",
+    "lead": "还没进门，就闻到了香味。",
+    "oldSceneKey": "mom-cooking",
+    "sceneLabel": "妈妈做饭",
+    "hint": "厨房里妈妈系着围裙站在料理台后面，灶上一口锅冒着热气，台面上摆着切好的菜和一只碗。"
+  },
+  {
+    "id": "builtin-warm-moment-3",
+    "slot": 0,
+    "dupOf": "38321413",
+    "title": "奶奶的针线盒",
+    "lead": "那个旧旧的盒子，里面装满了故事。",
+    "oldSceneKey": "sewing-box",
+    "sceneLabel": "针线盒",
+    "hint": "打开的针线盒里排着五轴彩色线，旁边放着剪刀、顶针、针和几颗扣子。"
+  },
+  {
+    "id": "builtin-letter-2",
+    "slot": 0,
+    "dupOf": "3838324",
+    "title": "我想对您说",
+    "lead": "有什么话想对爸爸妈妈说？写下来吧。",
+    "oldSceneKey": "write-letter",
+    "sceneLabel": "写信",
+    "hint": "桌上有信封、邮票和信纸，一支铅笔斜放着，一个小孩在写，头顶飘着一个红色爱心。"
+  },
+  {
+    "id": "builtin-comic-2",
+    "slot": 0,
+    "dupOf": "4142267",
+    "title": "漫画里的道理",
+    "lead": "漫画常常用夸张的办法讲道理，你看懂了哪一幅？",
+    "oldSceneKey": "comic-inspiration",
+    "sceneLabel": "漫画的启示",
+    "hint": "墙上挂着四格漫画框，每格里有一个不同姿态的小人，桌上一个小孩在看漫画。"
+  },
+  {
+    "id": "builtin-season-4",
+    "slot": 0,
+    "dupOf": "4894630",
+    "title": "夏天的小院",
+    "lead": "太阳火辣辣的，知了在树上叫个不停。",
+    "oldSceneKey": "grandpa-garden",
+    "sceneLabel": "爷爷的花园",
+    "hint": "菜地里一畦畦菜苗排得整整齐齐，戴草帽的爷爷提着蓝色喷壶浇水，身后是木栅栏和小房子。"
+  },
+  {
+    "id": "builtin-teacher-2",
+    "slot": 0,
+    "dupOf": "5212342",
+    "title": "老师的那句话",
+    "lead": "有一句话，老师说过之后你就一直记着。",
+    "oldSceneKey": "teacher-class",
+    "sceneLabel": "我的老师",
+    "hint": "教室前面黑板上写着粉笔字，老师站在黑板旁伸手指着，下面是几排课桌和坐着的学生。"
+  },
+  {
+    "id": "builtin-warm-moment-1",
+    "slot": 0,
+    "dupOf": "5368943",
+    "title": "他扶了我一把",
+    "lead": "你摔倒了，有人伸出了手。",
+    "oldSceneKey": "help-hand",
+    "sceneLabel": "他扶了我一把",
+    "hint": "操场上一个孩子坐在地上抱着膝盖，另一个孩子弯腰伸出手去拉他，旁边有几道表示动作的线。"
+  },
+  {
+    "id": "builtin-self-2",
+    "slot": 0,
+    "dupOf": "5788310",
+    "title": "我的小毛病",
+    "lead": "每个人都有自己的小毛病，你的呢？",
+    "oldSceneKey": "mirror-self",
+    "sceneLabel": "这就是我",
+    "hint": "墙上的圆镜子里映出一个孩子，镜子外面站着同一个孩子，旁边是一盆绿植。"
+  },
+  {
+    "id": "builtin-observe-3",
+    "slot": 0,
+    "dupOf": "6034381",
+    "title": "观察日记",
+    "lead": "你每天观察的那株植物，今天变成什么样了？",
+    "oldSceneKey": "observe-diary",
+    "sceneLabel": "观察日记",
+    "hint": "桌上放着日记本和铅笔，旁边一盆蒜头瓶里长出三根绿苗，上方有放大镜，墙上日历写着「观察第7天」。"
+  },
+  {
+    "id": "builtin-dream-job-1",
+    "slot": 0,
+    "dupOf": "6162307",
+    "title": "我的理想",
+    "lead": "长大后你想做什么？为什么想做这个？",
+    "oldSceneKey": "future-me",
+    "sceneLabel": "未来的我",
+    "hint": "一个孩子站着抬头看，头顶一个大大的思考气泡，气泡里是一个戴头盔的宇航员。"
+  },
+  {
+    "id": "builtin-future-2",
+    "slot": 0,
+    "dupOf": "6162307",
+    "title": "二十年后的我",
+    "lead": "二十年后，你在做什么工作？过着怎样的生活？",
+    "oldSceneKey": "future-me",
+    "sceneLabel": "未来的我",
+    "hint": "一个孩子站着抬头看，头顶一个大大的思考气泡，气泡里是一个戴头盔的宇航员。"
+  },
+  {
+    "id": "builtin-unforgettable-2",
+    "slot": 1,
+    "dupOf": "7669111",
+    "title": "第一次春游",
+    "lead": "背上小书包，我们出发啦！",
+    "oldSceneKey": "spring-outing-picnic",
+    "sceneLabel": "春游·野餐",
+    "hint": "草地上铺着粉格子布，上面摆着篮子和食物，三个孩子围坐成一圈，旁边有开花的树。"
+  },
+  {
+    "id": "builtin-people-around-1",
+    "slot": 0,
+    "dupOf": "8954779",
+    "title": "形形色色的人",
+    "lead": "身边有各种各样的人，选一个让你印象最深的写。",
+    "oldSceneKey": "all-kinds-people",
+    "sceneLabel": "形形色色的人",
+    "hint": "草地上站着一排不同姿态不同颜色的小孩，头顶有对话气泡标着「同学」「路人」「邻居」。"
+  },
+  {
+    "id": "builtin-people-around-2",
+    "slot": 0,
+    "dupOf": "8954779",
+    "title": "街头众生",
+    "lead": "走在街上，你会看到哪些不同的人？他们在做什么？",
+    "oldSceneKey": "all-kinds-people",
+    "sceneLabel": "形形色色的人",
+    "hint": "草地上站着一排不同姿态不同颜色的小孩，头顶有对话气泡标着「同学」「路人」「邻居」。"
+  }
+]

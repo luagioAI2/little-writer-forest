@@ -1,0 +1,72 @@
+[
+  {
+    "key": "book-store",
+    "hint": "暖色书架上排满了彩色书脊，柜台后面站着看书的小孩，门口挂着「书店」的牌子。",
+    "en": "cozy bookstore bookshelf",
+    "usedBy": [
+      "builtin-campus-5",
+      "builtin-food-3"
+    ]
+  },
+  {
+    "key": "cultural-heritage",
+    "hint": "城墙上有城楼和城垛，两个小孩在城墙前参观，旁边牌子写着「世界文化遗产」。",
+    "en": "great wall of china",
+    "usedBy": [
+      "builtin-travel-2",
+      "builtin-culture-1",
+      "builtin-culture-2"
+    ]
+  },
+  {
+    "key": "hometown-custom",
+    "hint": "两座老房子之间挂着灯笼和鞭炮，桌上摆着碗和汤圆，一个穿红衣的小孩在挥手。",
+    "en": "chinese lanterns old village street",
+    "usedBy": [
+      "builtin-custom-2"
+    ]
+  },
+  {
+    "key": "mountain-climb",
+    "hint": "天还没亮，深蓝的天上有月亮和星星，两座大山黑黑地立着，两个人打着手电走在上山的小路上。",
+    "en": "hiking mountain trail before dawn",
+    "usedBy": [
+      "builtin-water-2",
+      "builtin-water-3"
+    ]
+  },
+  {
+    "key": "pencil-escape",
+    "hint": "一支铅笔从桌上跳下来朝门口跑，身后有几道速度线，桌上有橡皮和本子。",
+    "en": "pencil notebook on desk",
+    "usedBy": [
+      "builtin-talking-2"
+    ]
+  },
+  {
+    "key": "reading-notes",
+    "hint": "书架上排满了书，桌上翻开一本粉皮书，旁边放着写着「读后感」的笔记本，有个思考气泡。",
+    "en": "open book on desk",
+    "usedBy": [
+      "builtin-letter-3"
+    ]
+  },
+  {
+    "key": "space",
+    "hint": "黑色星空里有一个带光环的星球，一架火箭拖着火焰在飞，旁边飘着一个穿宇航服的小人。",
+    "en": "astronaut space rocket planet",
+    "usedBy": [
+      "builtin-future-4",
+      "builtin-sci-fi-3"
+    ]
+  },
+  {
+    "key": "travel-visit",
+    "hint": "古亭子前有石阶和绿树，一个小孩举着相机在拍照。",
+    "en": "chinese pavilion garden stone",
+    "usedBy": [
+      "builtin-travel-1",
+      "builtin-travel-2"
+    ]
+  }
+]

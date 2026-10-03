@@ -1,0 +1,201 @@
+[
+  {
+    "id": "cn-山东-奥帆海洋文化旅游区",
+    "name": "奥帆海洋文化旅游区",
+    "province": "山东",
+    "country": "中国",
+    "city": "青岛",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-微山湖旅游区",
+    "name": "微山湖旅游区",
+    "province": "山东",
+    "country": "中国",
+    "city": "济宁",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-萤火虫水洞•地下大峡谷旅游区",
+    "name": "萤火虫水洞•地下大峡谷旅游区",
+    "province": "山东",
+    "country": "中国",
+    "city": "临沂",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-黄河口生态旅游区",
+    "name": "黄河口生态旅游区",
+    "province": "山东",
+    "country": "中国",
+    "city": "东营",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-威海华夏城景区",
+    "name": "威海华夏城景区",
+    "province": "山东",
+    "country": "中国",
+    "city": "威海",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-青州古城景区",
+    "name": "青州古城景区",
+    "province": "山东",
+    "country": "中国",
+    "city": "潍坊",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-沂蒙山旅游区",
+    "name": "沂蒙山旅游区",
+    "province": "山东",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-天下第一泉景区",
+    "name": "天下第一泉景区",
+    "province": "山东",
+    "country": "中国",
+    "city": "济南",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-台儿庄古城景区",
+    "name": "台儿庄古城景区",
+    "province": "山东",
+    "country": "中国",
+    "city": "枣庄",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-南山景区",
+    "name": "南山景区",
+    "province": "山东",
+    "country": "中国",
+    "city": "烟台",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-刘公岛景区",
+    "name": "刘公岛景区",
+    "province": "山东",
+    "country": "中国",
+    "city": "威海",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-崂山景区",
+    "name": "崂山景区",
+    "province": "山东",
+    "country": "中国",
+    "city": "青岛",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-明故城三孔旅游区",
+    "name": "明故城三孔旅游区",
+    "province": "山东",
+    "country": "中国",
+    "city": "济宁",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-蓬莱阁-三仙山-八仙过海旅游区",
+    "name": "蓬莱阁-三仙山-八仙过海旅游区",
+    "province": "山东",
+    "country": "中国",
+    "city": "烟台",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-青岛啤酒博物馆",
+    "name": "青岛啤酒博物馆",
+    "province": "山东",
+    "country": "中国",
+    "city": "青岛",
+    "rating": "4A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-宝泉旅游区",
+    "name": "宝泉旅游区",
+    "province": "河南",
+    "country": "中国",
+    "city": "新乡",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-太昊伏羲陵文化旅游区",
+    "name": "太昊伏羲陵文化旅游区",
+    "province": "河南",
+    "country": "中国",
+    "city": "周口",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-鸡公山景区",
+    "name": "鸡公山景区",
+    "province": "河南",
+    "country": "中国",
+    "city": "信阳",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-八里沟景区",
+    "name": "八里沟景区",
+    "province": "河南",
+    "country": "中国",
+    "city": "新乡",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-芒砀山汉文化旅游景区",
+    "name": "芒砀山汉文化旅游景区",
+    "province": "河南",
+    "country": "中国",
+    "city": "商丘",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "id": "cn-湖南-湖南博物院",
+    "name": "湖南博物院",
+    "province": "湖南",
+    "country": "中国",
+    "city": "长沙",
+    "rating": "4A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-万绿湖风景区",
+    "name": "万绿湖风景区",
+    "province": "广东",
+    "country": "中国",
+    "city": "河源",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-开平碉楼文化旅游区",
+    "name": "开平碉楼文化旅游区",
+    "province": "广东",
+    "country": "中国",
+    "city": "江门",
+    "rating": "5A",
+    "scene": "temple",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-星湖旅游景区",
+    "name": "星湖旅游景区",
+    "province": "广东",
+    "country": "中国",
+    "city": "肇庆",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-惠州西湖旅游景区",
+    "name": "惠州西湖旅游景区",
+    "province": "广东",
+    "country": "中国",
+    "city": "惠州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-孙中山故里旅游区",
+    "name": "孙中山故里旅游区",
+    "province": "广东",
+    "country": "中国",
+    "city": "中山",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-海陵岛大角湾海上丝路旅游区",
+    "name": "海陵岛大角湾海上丝路旅游区",
+    "province": "广东",
+    "country": "中国",
+    "city": "阳江",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-长鹿旅游休博园",
+    "name": "长鹿旅游休博园",
+    "province": "广东",
+    "country": "中国",
+    "city": "佛山",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-罗浮山景区",
+    "name": "罗浮山景区",
+    "province": "广东",
+    "country": "中国",
+    "city": "惠州",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-西樵山景区",
+    "name": "西樵山景区",
+    "province": "广东",
+    "country": "中国",
+    "city": "佛山",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-丹霞山景区",
+    "name": "丹霞山景区",
+    "province": "广东",
+    "country": "中国",
+    "city": "韶关",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-地下河旅游景区",
+    "name": "地下河旅游景区",
+    "province": "广东",
+    "country": "中国",
+    "city": "清远",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-观澜湖休闲旅游区",
+    "name": "观澜湖休闲旅游区",
+    "province": "广东",
+    "country": "中国",
+    "city": "深圳",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-雁南飞茶田景区",
+    "name": "雁南飞茶田景区",
+    "province": "广东",
+    "country": "中国",
+    "city": "梅州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-白云山景区",
+    "name": "白云山景区",
+    "province": "广东",
+    "country": "中国",
+    "city": "广州",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-华侨城旅游度假区",
+    "name": "华侨城旅游度假区",
+    "province": "广东",
+    "country": "中国",
+    "city": "深圳",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-长隆旅游度假区",
+    "name": "长隆旅游度假区",
+    "province": "广东",
+    "country": "中国",
+    "city": "广州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-广东-广州塔",
+    "name": "广州塔",
+    "province": "广东",
+    "country": "中国",
+    "city": "广州",
+    "rating": "4A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-广西-花山岩画景区",
+    "name": "花山岩画景区",
+    "province": "广西",
+    "country": "中国",
+    "city": "崇左",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-广西-程阳八寨景区",
+    "name": "程阳八寨景区",
+    "province": "广西",
+    "country": "中国",
+    "city": "柳州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  }
+]

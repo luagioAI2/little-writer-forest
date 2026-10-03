@@ -1,0 +1,202 @@
+[
+  {
+    "id": "cn-黑龙江-扎龙生态旅游区",
+    "name": "扎龙生态旅游区",
+    "province": "黑龙江",
+    "country": "中国",
+    "city": "齐齐哈尔",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-黑龙江-虎头旅游景区",
+    "name": "虎头旅游景区",
+    "province": "黑龙江",
+    "country": "中国",
+    "city": "鸡西",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-黑龙江-北极村旅游景区",
+    "name": "北极村旅游景区",
+    "province": "黑龙江",
+    "country": "中国",
+    "city": "大兴安岭地区",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-黑龙江-林海奇石景区",
+    "name": "林海奇石景区",
+    "province": "黑龙江",
+    "country": "中国",
+    "city": "伊春",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-黑龙江-镜泊湖景区",
+    "name": "镜泊湖景区",
+    "province": "黑龙江",
+    "country": "中国",
+    "city": "牡丹江",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-黑龙江-五大连池景区",
+    "name": "五大连池景区",
+    "province": "黑龙江",
+    "country": "中国",
+    "city": "黑河",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-黑龙江-太阳岛景区",
+    "name": "太阳岛景区",
+    "province": "黑龙江",
+    "country": "中国",
+    "city": "哈尔滨",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-连岛景区",
+    "name": "连岛景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "连云港",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-洪泽湖湿地景区",
+    "name": "洪泽湖湿地景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "宿迁",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-惠山古镇景区",
+    "name": "惠山古镇景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "无锡",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-春秋淹城旅游区",
+    "name": "春秋淹城旅游区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "常州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-花果山景区",
+    "name": "花果山景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "连云港",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-云龙湖景区",
+    "name": "云龙湖景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "徐州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-中华麋鹿园景区",
+    "name": "中华麋鹿园景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "盐城",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-周恩来故里景区",
+    "name": "周恩来故里景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "淮安",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-茅山景区",
+    "name": "茅山景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "镇江",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-天目湖景区",
+    "name": "天目湖景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "常州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-沙家浜－虞山尚湖旅游区",
+    "name": "沙家浜－虞山尚湖旅游区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "苏州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-太湖旅游区",
+    "name": "太湖旅游区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "苏州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-鼋头渚旅游风景区",
+    "name": "鼋头渚旅游风景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "无锡",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  }
+]

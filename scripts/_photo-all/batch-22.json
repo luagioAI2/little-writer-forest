@@ -1,0 +1,162 @@
+[
+  {
+    "id": "world-以色列-哭墙",
+    "name": "哭墙",
+    "province": "以色列",
+    "country": "以色列",
+    "scene": "temple",
+    "en": "Western Wall"
+  },
+  {
+    "id": "world-土耳其-棉花堡",
+    "name": "棉花堡",
+    "province": "土耳其",
+    "country": "土耳其",
+    "scene": "water",
+    "en": "Pamukkale"
+  },
+  {
+    "id": "world-阿联酋-谢赫扎耶德大清真寺",
+    "name": "谢赫扎耶德大清真寺",
+    "province": "阿联酋",
+    "country": "阿联酋",
+    "scene": "temple",
+    "en": "Sheikh Zayed Grand Mosque"
+  },
+  {
+    "id": "world-伊朗-波斯波利斯",
+    "name": "波斯波利斯",
+    "province": "伊朗",
+    "country": "伊朗",
+    "scene": "desert",
+    "en": "Persepolis"
+  },
+  {
+    "id": "world-乌兹别克斯坦-雷吉斯坦广场",
+    "name": "雷吉斯坦广场",
+    "province": "乌兹别克斯坦",
+    "country": "乌兹别克斯坦",
+    "scene": "city",
+    "en": "Registan"
+  },
+  {
+    "id": "world-老挝-琅勃拉邦",
+    "name": "琅勃拉邦",
+    "province": "老挝",
+    "country": "老挝",
+    "scene": "temple",
+    "en": "Luang Prabang"
+  },
+  {
+    "id": "world-马尔代夫-泰姬珊瑚礁",
+    "name": "泰姬珊瑚礁",
+    "province": "马尔代夫",
+    "country": "马尔代夫",
+    "scene": "coast",
+    "en": "Maldives"
+  },
+  {
+    "id": "world-蒙古-戈壁沙漠",
+    "name": "戈壁沙漠",
+    "province": "蒙古",
+    "country": "蒙古",
+    "scene": "desert",
+    "en": "Gobi Desert"
+  },
+  {
+    "id": "world-巴基斯坦-巴德夏希清真寺",
+    "name": "巴德夏希清真寺",
+    "province": "巴基斯坦",
+    "country": "巴基斯坦",
+    "scene": "temple",
+    "en": "Badshahi Mosque"
+  },
+  {
+    "id": "world-哈萨克斯坦-阿拉木图",
+    "name": "阿拉木图",
+    "province": "哈萨克斯坦",
+    "country": "哈萨克斯坦",
+    "scene": "mountain",
+    "en": "Almaty"
+  },
+  {
+    "id": "world-格鲁吉亚-第比利斯老城",
+    "name": "第比利斯老城",
+    "province": "格鲁吉亚",
+    "country": "格鲁吉亚",
+    "scene": "city",
+    "en": "Tbilisi"
+  },
+  {
+    "id": "world-法国-普罗旺斯薰衣草田",
+    "name": "普罗旺斯薰衣草田",
+    "province": "法国",
+    "country": "法国",
+    "scene": "grass",
+    "en": "Provence"
+  },
+  {
+    "id": "world-英国-巨石阵",
+    "name": "巨石阵",
+    "province": "英国",
+    "country": "英国",
+    "scene": "grass",
+    "en": "Stonehenge"
+  },
+  {
+    "id": "world-英国-爱丁堡城堡",
+    "name": "爱丁堡城堡",
+    "province": "英国",
+    "country": "英国",
+    "scene": "city",
+    "en": "Edinburgh Castle"
+  },
+  {
+    "id": "world-德国-勃兰登堡门",
+    "name": "勃兰登堡门",
+    "province": "德国",
+    "country": "德国",
+    "scene": "city",
+    "en": "Brandenburg Gate"
+  },
+  {
+    "id": "world-德国-科隆大教堂",
+    "name": "科隆大教堂",
+    "province": "德国",
+    "country": "德国",
+    "scene": "temple",
+    "en": "Cologne Cathedral"
+  },
+  {
+    "id": "world-西班牙-阿尔罕布拉宫",
+    "name": "阿尔罕布拉宫",
+    "province": "西班牙",
+    "country": "西班牙",
+    "scene": "city",
+    "en": "Alhambra"
+  },
+  {
+    "id": "world-葡萄牙-贝伦塔",
+    "name": "贝伦塔",
+    "province": "葡萄牙",
+    "country": "葡萄牙",
+    "scene": "coast",
+    "en": "Belém Tower"
+  },
+  {
+    "id": "world-荷兰-小孩堤防风车",
+    "name": "小孩堤防风车",
+    "province": "荷兰",
+    "country": "荷兰",
+    "scene": "grass",
+    "en": "Kinderdijk"
+  },
+  {
+    "id": "world-比利时-布鲁塞尔大广场",
+    "name": "布鲁塞尔大广场",
+    "province": "比利时",
+    "country": "比利时",
+    "scene": "city",
+    "en": "Grand-Place"
+  }
+]

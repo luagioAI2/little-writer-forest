@@ -1,0 +1,199 @@
+[
+  {
+    "id": "cn-云南-曼听公园",
+    "name": "曼听公园",
+    "province": "云南",
+    "country": "中国",
+    "rating": "4A",
+    "scene": "grass",
+    "en": ""
+  },
+  {
+    "id": "cn-云南-云南民族村",
+    "name": "云南民族村",
+    "province": "云南",
+    "country": "中国",
+    "city": "昆明",
+    "rating": "4A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-云南-泸沽湖",
+    "name": "泸沽湖",
+    "province": "云南",
+    "country": "中国",
+    "rating": "4A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-云南-野象谷",
+    "name": "野象谷",
+    "province": "云南",
+    "country": "中国",
+    "rating": "4A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-西藏-雅鲁藏布大峡谷景区",
+    "name": "雅鲁藏布大峡谷景区",
+    "province": "西藏",
+    "country": "中国",
+    "city": "林芝",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-西藏-扎什伦布寺景区",
+    "name": "扎什伦布寺景区",
+    "province": "西藏",
+    "country": "中国",
+    "city": "日喀则",
+    "rating": "5A",
+    "scene": "temple",
+    "en": ""
+  },
+  {
+    "id": "cn-西藏-巴松措景区",
+    "name": "巴松措景区",
+    "province": "西藏",
+    "country": "中国",
+    "city": "林芝",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-西藏-大昭寺景区",
+    "name": "大昭寺景区",
+    "province": "西藏",
+    "country": "中国",
+    "city": "拉萨",
+    "rating": "5A",
+    "scene": "temple",
+    "en": ""
+  },
+  {
+    "id": "cn-陕西-乾陵景区",
+    "name": "乾陵景区",
+    "province": "陕西",
+    "country": "中国",
+    "city": "咸阳",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-陕西-延川黄河乾坤湾景区",
+    "name": "延川黄河乾坤湾景区",
+    "province": "陕西",
+    "country": "中国",
+    "city": "延安",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-陕西-大明宫旅游景区",
+    "name": "大明宫旅游景区",
+    "province": "陕西",
+    "country": "中国",
+    "city": "西安",
+    "rating": "5A",
+    "scene": "temple",
+    "en": ""
+  },
+  {
+    "id": "cn-陕西-延安革命纪念地景区",
+    "name": "延安革命纪念地景区",
+    "province": "陕西",
+    "country": "中国",
+    "city": "延安",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-陕西-城墙•碑林历史文化景区",
+    "name": "城墙•碑林历史文化景区",
+    "province": "陕西",
+    "country": "中国",
+    "city": "西安",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-陕西-太白山旅游景区",
+    "name": "太白山旅游景区",
+    "province": "陕西",
+    "country": "中国",
+    "city": "宝鸡",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-陕西-金丝峡景区",
+    "name": "金丝峡景区",
+    "province": "陕西",
+    "country": "中国",
+    "city": "商洛",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-陕西-法门文化景区",
+    "name": "法门文化景区",
+    "province": "陕西",
+    "country": "中国",
+    "city": "宝鸡",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-陕西-华山风景区",
+    "name": "华山风景区",
+    "province": "陕西",
+    "country": "中国",
+    "city": "渭南",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-陕西-大雁塔－大唐芙蓉园景区",
+    "name": "大雁塔－大唐芙蓉园景区",
+    "province": "陕西",
+    "country": "中国",
+    "city": "西安",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-陕西-黄帝陵景区",
+    "name": "黄帝陵景区",
+    "province": "陕西",
+    "country": "中国",
+    "city": "延安",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-陕西-华清宫景区",
+    "name": "华清宫景区",
+    "province": "陕西",
+    "country": "中国",
+    "city": "西安",
+    "rating": "5A",
+    "scene": "temple",
+    "en": ""
+  }
+]

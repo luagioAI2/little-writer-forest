@@ -1,0 +1,162 @@
+[
+  {
+    "id": "world-哥斯达黎加-哥斯达黎加雨林",
+    "name": "哥斯达黎加雨林",
+    "province": "哥斯达黎加",
+    "country": "哥斯达黎加",
+    "scene": "forest",
+    "en": "Monteverde Cloud Forest Reserve"
+  },
+  {
+    "id": "world-埃及-卢克索神庙",
+    "name": "卢克索神庙",
+    "province": "埃及",
+    "country": "埃及",
+    "scene": "desert",
+    "en": "Luxor Temple"
+  },
+  {
+    "id": "world-埃及-阿布辛贝神庙",
+    "name": "阿布辛贝神庙",
+    "province": "埃及",
+    "country": "埃及",
+    "scene": "desert",
+    "en": "Abu Simbel"
+  },
+  {
+    "id": "world-南非-克鲁格国家公园",
+    "name": "克鲁格国家公园",
+    "province": "南非",
+    "country": "南非",
+    "scene": "grass",
+    "en": "Kruger National Park"
+  },
+  {
+    "id": "world-摩洛哥-舍夫沙万",
+    "name": "舍夫沙万",
+    "province": "摩洛哥",
+    "country": "摩洛哥",
+    "scene": "city",
+    "en": "Chefchaouen"
+  },
+  {
+    "id": "world-摩洛哥-马拉喀什",
+    "name": "马拉喀什",
+    "province": "摩洛哥",
+    "country": "摩洛哥",
+    "scene": "city",
+    "en": "Marrakesh"
+  },
+  {
+    "id": "world-坦桑尼亚-塞伦盖蒂",
+    "name": "塞伦盖蒂",
+    "province": "坦桑尼亚",
+    "country": "坦桑尼亚",
+    "scene": "grass",
+    "en": "Serengeti"
+  },
+  {
+    "id": "world-埃塞俄比亚-拉利贝拉岩石教堂",
+    "name": "拉利贝拉岩石教堂",
+    "province": "埃塞俄比亚",
+    "country": "埃塞俄比亚",
+    "scene": "temple",
+    "en": "Rock-Hewn Churches, Lalibela"
+  },
+  {
+    "id": "world-纳米比亚-索苏斯维利",
+    "name": "索苏斯维利",
+    "province": "纳米比亚",
+    "country": "纳米比亚",
+    "scene": "desert",
+    "en": "Sossusvlei"
+  },
+  {
+    "id": "world-博茨瓦纳-奥卡万戈三角洲",
+    "name": "奥卡万戈三角洲",
+    "province": "博茨瓦纳",
+    "country": "博茨瓦纳",
+    "scene": "water",
+    "en": "Okavango Delta"
+  },
+  {
+    "id": "world-马达加斯加-猴面包树大道",
+    "name": "猴面包树大道",
+    "province": "马达加斯加",
+    "country": "马达加斯加",
+    "scene": "grass",
+    "en": "Avenue of the Baobabs"
+  },
+  {
+    "id": "world-塞内加尔-戈雷岛",
+    "name": "戈雷岛",
+    "province": "塞内加尔",
+    "country": "塞内加尔",
+    "scene": "coast",
+    "en": "Gorée"
+  },
+  {
+    "id": "world-新西兰-霍比屯",
+    "name": "霍比屯",
+    "province": "新西兰",
+    "country": "新西兰",
+    "scene": "grass",
+    "en": "Hobbiton Movie Set"
+  },
+  {
+    "id": "world-美国-优胜美地国家公园",
+    "name": "优胜美地国家公园",
+    "province": "美国",
+    "country": "美国",
+    "scene": "mountain",
+    "en": "Yosemite National Park"
+  },
+  {
+    "id": "world-美国-大烟山国家公园",
+    "name": "大烟山国家公园",
+    "province": "美国",
+    "country": "美国",
+    "scene": "forest",
+    "en": "Great Smoky Mountains National Park"
+  },
+  {
+    "id": "world-美国-拉斯维加斯大道",
+    "name": "拉斯维加斯大道",
+    "province": "美国",
+    "country": "美国",
+    "scene": "city",
+    "en": "Las Vegas Strip"
+  },
+  {
+    "id": "world-日本-大阪城",
+    "name": "大阪城",
+    "province": "日本",
+    "country": "日本",
+    "scene": "city",
+    "en": "Osaka Castle"
+  },
+  {
+    "id": "world-日本-岚山竹林",
+    "name": "岚山竹林",
+    "province": "日本",
+    "country": "日本",
+    "scene": "forest",
+    "en": "Arashiyama"
+  },
+  {
+    "id": "world-日本-广岛和平纪念碑",
+    "name": "广岛和平纪念碑",
+    "province": "日本",
+    "country": "日本",
+    "scene": "city",
+    "en": "Hiroshima Peace Memorial"
+  },
+  {
+    "id": "world-法国-凯旋门",
+    "name": "凯旋门",
+    "province": "法国",
+    "country": "法国",
+    "scene": "city",
+    "en": "Arc de Triomphe"
+  }
+]

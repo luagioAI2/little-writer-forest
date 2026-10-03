@@ -1,0 +1,162 @@
+[
+  {
+    "id": "world-法国-蔚蓝海岸",
+    "name": "蔚蓝海岸",
+    "province": "法国",
+    "country": "法国",
+    "scene": "coast",
+    "en": "French Riviera"
+  },
+  {
+    "id": "world-法国-香波堡",
+    "name": "香波堡",
+    "province": "法国",
+    "country": "法国",
+    "scene": "city",
+    "en": "Château de Chambord"
+  },
+  {
+    "id": "world-英国-温莎城堡",
+    "name": "温莎城堡",
+    "province": "英国",
+    "country": "英国",
+    "scene": "city",
+    "en": "Windsor Castle"
+  },
+  {
+    "id": "world-英国-湖区",
+    "name": "湖区",
+    "province": "英国",
+    "country": "英国",
+    "scene": "water",
+    "en": "Lake District"
+  },
+  {
+    "id": "world-意大利-佛罗伦萨大教堂",
+    "name": "佛罗伦萨大教堂",
+    "province": "意大利",
+    "country": "意大利",
+    "scene": "temple",
+    "en": "Florence Cathedral"
+  },
+  {
+    "id": "world-意大利-五渔村",
+    "name": "五渔村",
+    "province": "意大利",
+    "country": "意大利",
+    "scene": "coast",
+    "en": "Cinque Terre"
+  },
+  {
+    "id": "world-意大利-阿马尔菲海岸",
+    "name": "阿马尔菲海岸",
+    "province": "意大利",
+    "country": "意大利",
+    "scene": "coast",
+    "en": "Amalfi Coast"
+  },
+  {
+    "id": "world-意大利-特莱维喷泉",
+    "name": "特莱维喷泉",
+    "province": "意大利",
+    "country": "意大利",
+    "scene": "city",
+    "en": "Trevi Fountain"
+  },
+  {
+    "id": "world-印度-红堡",
+    "name": "红堡",
+    "province": "印度",
+    "country": "印度",
+    "scene": "city",
+    "en": "Red Fort"
+  },
+  {
+    "id": "world-印度-埃洛拉石窟",
+    "name": "埃洛拉石窟",
+    "province": "印度",
+    "country": "印度",
+    "scene": "cave",
+    "en": "Ellora Caves"
+  },
+  {
+    "id": "world-印度-果阿海滩",
+    "name": "果阿海滩",
+    "province": "印度",
+    "country": "印度",
+    "scene": "coast",
+    "en": "Goa"
+  },
+  {
+    "id": "world-埃及-帝王谷",
+    "name": "帝王谷",
+    "province": "埃及",
+    "country": "埃及",
+    "scene": "desert",
+    "en": "Valley of the Kings"
+  },
+  {
+    "id": "world-埃及-尼罗河",
+    "name": "尼罗河",
+    "province": "埃及",
+    "country": "埃及",
+    "scene": "water",
+    "en": "Nile"
+  },
+  {
+    "id": "world-澳大利亚-大洋路",
+    "name": "大洋路",
+    "province": "澳大利亚",
+    "country": "澳大利亚",
+    "scene": "coast",
+    "en": "Great Ocean Road"
+  },
+  {
+    "id": "world-澳大利亚-蓝山国家公园",
+    "name": "蓝山国家公园",
+    "province": "澳大利亚",
+    "country": "澳大利亚",
+    "scene": "mountain",
+    "en": "Blue Mountains National Park"
+  },
+  {
+    "id": "world-澳大利亚-菲利普岛",
+    "name": "菲利普岛",
+    "province": "澳大利亚",
+    "country": "澳大利亚",
+    "scene": "coast",
+    "en": "Phillip Island"
+  },
+  {
+    "id": "world-韩国-北村韩屋村",
+    "name": "北村韩屋村",
+    "province": "韩国",
+    "country": "韩国",
+    "scene": "city",
+    "en": "Bukchon Hanok Village"
+  },
+  {
+    "id": "world-泰国-大城遗址",
+    "name": "大城遗址",
+    "province": "泰国",
+    "country": "泰国",
+    "scene": "temple",
+    "en": "Ayutthaya Historical Park"
+  },
+  {
+    "id": "world-泰国-素可泰历史公园",
+    "name": "素可泰历史公园",
+    "province": "泰国",
+    "country": "泰国",
+    "scene": "temple",
+    "en": "Sukhothai Historical Park"
+  },
+  {
+    "id": "world-土耳其-以弗所",
+    "name": "以弗所",
+    "province": "土耳其",
+    "country": "土耳其",
+    "scene": "city",
+    "en": "Ephesus"
+  }
+]

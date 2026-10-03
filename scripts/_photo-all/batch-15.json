@@ -1,0 +1,199 @@
+[
+  {
+    "id": "cn-广西-黄姚古镇景区",
+    "name": "黄姚古镇景区",
+    "province": "广西",
+    "country": "中国",
+    "city": "贺州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-广西-涠洲岛南湾鳄鱼山景区",
+    "name": "涠洲岛南湾鳄鱼山景区",
+    "province": "广西",
+    "country": "中国",
+    "city": "北海",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-广西-百色起义纪念园景区",
+    "name": "百色起义纪念园景区",
+    "province": "广西",
+    "country": "中国",
+    "city": "百色",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-广西-德天跨国瀑布景区",
+    "name": "德天跨国瀑布景区",
+    "province": "广西",
+    "country": "中国",
+    "city": "崇左",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-广西-两江四湖•象山景区",
+    "name": "两江四湖•象山景区",
+    "province": "广西",
+    "country": "中国",
+    "city": "桂林",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-广西-青秀山风景名胜旅游区",
+    "name": "青秀山风景名胜旅游区",
+    "province": "广西",
+    "country": "中国",
+    "city": "南宁",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-广西-独秀峰•靖江王城景区",
+    "name": "独秀峰•靖江王城景区",
+    "province": "广西",
+    "country": "中国",
+    "city": "桂林",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-广西-漓江风景区",
+    "name": "漓江风景区",
+    "province": "广西",
+    "country": "中国",
+    "city": "桂林",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-海南-天涯海角游览区",
+    "name": "天涯海角游览区",
+    "province": "海南",
+    "country": "中国",
+    "city": "三亚",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-海南-蜈支洲岛旅游区",
+    "name": "蜈支洲岛旅游区",
+    "province": "海南",
+    "country": "中国",
+    "city": "三亚",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-海南-海南槟榔谷黎苗文化旅游区",
+    "name": "海南槟榔谷黎苗文化旅游区",
+    "province": "海南",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-海南-分界洲岛旅游区",
+    "name": "分界洲岛旅游区",
+    "province": "海南",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-海南-呀诺达雨林文化旅游区",
+    "name": "呀诺达雨林文化旅游区",
+    "province": "海南",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-海南-南山大小洞天旅游区",
+    "name": "南山大小洞天旅游区",
+    "province": "海南",
+    "country": "中国",
+    "city": "三亚",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-海南-南山文化旅游区",
+    "name": "南山文化旅游区",
+    "province": "海南",
+    "country": "中国",
+    "city": "三亚",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-海南-亚龙湾热带天堂森林公园",
+    "name": "亚龙湾热带天堂森林公园",
+    "province": "海南",
+    "country": "中国",
+    "city": "三亚",
+    "rating": "4A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-海南-西岛",
+    "name": "西岛",
+    "province": "海南",
+    "country": "中国",
+    "city": "三亚",
+    "rating": "4A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-四川-天台山景区",
+    "name": "天台山景区",
+    "province": "四川",
+    "country": "中国",
+    "city": "成都",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-四川-四姑娘山景区",
+    "name": "四姑娘山景区",
+    "province": "四川",
+    "country": "中国",
+    "city": "阿坝州",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-四川-安仁古镇景区",
+    "name": "安仁古镇景区",
+    "province": "四川",
+    "country": "中国",
+    "city": "成都",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  }
+]

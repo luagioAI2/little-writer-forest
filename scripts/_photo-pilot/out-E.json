@@ -1,0 +1,137 @@
+{
+  "batch": "E",
+  "items": [
+    {
+      "landmarkId": "world-捷克-查理大桥",
+      "match": "place",
+      "query": "Charles Bridge",
+      "mediaUrl": "https://images.pexels.com/photos/31878123/pexels-photo-31878123.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Charles Bridge over Vltava river in Prague",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/charles-bridge-over-vltava-river-in-prague-31878123/", "author": "nomundodejr" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 48454 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-丹麦-小美人鱼",
+      "match": "scene",
+      "query": "coastal cliffs ocean landscape",
+      "mediaUrl": "https://images.pexels.com/photos/4616317/pexels-photo-4616317.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Cliff, sea and clear sky landscape",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/cliff-sea-and-clear-sky-landscape-4616317/", "author": "Denis Larose" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 97941 },
+      "verdict": "ok",
+      "note": "No verifiable photo of the Copenhagen Little Mermaid exists on Pexels. Tried 5 queries (\"Little Mermaid statue Copenhagen\", \"Den Lille Havfrue\", \"Copenhagen mermaid\", \"little mermaid statue\", \"Langelinie\"); the only explicitly-Copenhagen id (38796445) returns a broken grey placeholder. Every other mermaid statue on Pexels is a different statue (Warsaw, Mazatlan, Amsterdam, Adriatic) or a Rusalka pond sculpture, so labelling one as this place would be dishonest. Used the honest coast fallback instead."
+    },
+    {
+      "landmarkId": "world-冰岛-蓝湖",
+      "match": "place",
+      "query": "Blue Lagoon Iceland",
+      "mediaUrl": "https://images.pexels.com/photos/20955080/pexels-photo-20955080.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "People bathing in the pool of the Blue Lagoon geothermal spa in Iceland",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/people-bathing-in-the-pool-of-the-blue-lagoon-geothermal-spa-in-iceland-20955080/", "author": "It's MJ" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 21129 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-美国-自由女神像",
+      "match": "place",
+      "query": "Statue of Liberty",
+      "mediaUrl": "https://images.pexels.com/photos/29580357/pexels-photo-29580357.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Statue of Liberty against clear blue sky",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/statue-of-liberty-against-clear-blue-sky-29580357/", "author": "Matteo Roman" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 61198 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-美国-大峡谷",
+      "match": "place",
+      "query": "Grand Canyon",
+      "mediaUrl": "https://images.pexels.com/photos/38207125/pexels-photo-38207125.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Stunning view of the Grand Canyon in Arizona",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/stunning-view-of-the-grand-canyon-in-arizona-38207125/", "author": "Creative Lindsey Photos" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 50641 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-美国-金门大桥",
+      "match": "place",
+      "query": "Golden Gate Bridge",
+      "mediaUrl": "https://images.pexels.com/photos/35076230/pexels-photo-35076230.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Golden Gate Bridge at dusk, San Francisco",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/golden-gate-bridge-at-dusk-san-francisco-35076230/", "author": "Stephen Leonardi" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 78623 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-美国-白宫",
+      "match": "place",
+      "query": "White House Washington",
+      "mediaUrl": "https://images.pexels.com/photos/32270812/pexels-photo-32270812.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The White House on a sunny day in Washington, DC",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/the-white-house-on-a-sunny-day-in-washington-dc-32270812/", "author": "Ramaz Photos" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 53272 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-美国-黄石国家公园",
+      "match": "place",
+      "query": "Yellowstone National Park",
+      "mediaUrl": "https://images.pexels.com/photos/35613483/pexels-photo-35613483.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Vibrant Grand Prismatic Spring in Yellowstone National Park",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/vibrant-grand-prismatic-spring-in-yellowstone-national-park-35613483/", "author": "James Lee" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 73442 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-美国-尼亚加拉瀑布",
+      "match": "place",
+      "query": "Niagara Falls",
+      "mediaUrl": "https://images.pexels.com/photos/6075956/pexels-photo-6075956.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "A view of the Niagara Falls",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/a-view-of-the-niagara-falls-6075956/", "author": "Eva Bronzini" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 86322 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-美国-拉什莫尔山",
+      "match": "place",
+      "query": "Mount Rushmore",
+      "mediaUrl": "https://images.pexels.com/photos/36033638/pexels-photo-36033638.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Iconic Mount Rushmore National Memorial in South Dakota",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/iconic-mount-rushmore-national-memorial-in-south-dakota-36033638/", "author": "mhaltiery" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 57126 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-加拿大-班夫国家公园",
+      "match": "place",
+      "query": "Banff National Park",
+      "mediaUrl": "https://images.pexels.com/photos/36185626/pexels-photo-36185626.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic sunrise over Peyto Lake in Banff",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-sunrise-over-peyto-lake-in-banff-36185626/", "author": "nunzg" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 48398 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-墨西哥-奇琴伊察",
+      "match": "place",
+      "query": "Chichen Itza",
+      "mediaUrl": "https://images.pexels.com/photos/6092060/pexels-photo-6092060.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Temple of Kukulcan on green grass field",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/temple-of-kukulcan-on-green-grass-field-6092060/", "author": "jloren3bcnspain" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 98227 },
+      "verdict": "ok",
+      "note": ""
+    }
+  ]
+}

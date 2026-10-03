@@ -77,17 +77,23 @@ dist-apk/
 # 临时调试脚本（_debug-*.mjs 与其截图）
 /scripts/_debug*
 
-# ---- 配图 / 抓站 / 迁移的**工作目录**（几百 MB，不入库）----
+# ---- 配图 / 抓站 / 迁移的工作目录：**只挡图片**（几百 MB）----
 # 实测体积（2026-10-03）：_photo-scene 203M / _photo-all 104M / _site 61M /
-#   _photo-pilot 20M / _new50 7.3M / _photo-lib2 7.3M / _photo-life 2.1M。
-# ⚠️ 整个目录都忽略，**包括里面的 .py / .mjs** —— 那些是 130 多个一次性的
-#    迭代脚本（apply2.py、_chk3.py 这种），留着只是噪音。
-#    "图是怎么来的"由 scripts/build-landmark-photos.mjs + src/data/*.json 记录，
-#    不靠这些。文件仍在本地磁盘上，只是不入库。
-/scripts/_photo-*/
-/scripts/_site/
-/scripts/_new50/
-# 动画帧 / 合并素材的工作目录（根目录）
+#   _photo-pilot 20M / _new50 7.3M / _photo-lib2 7.3M / _photo-life 2.1M；
+#   而里面**非图片**的文件只有 350 多个、合计 4.4 MB。
+#
+# ★ 所以只按扩展名挡图片，**脚本 / 数据 / README 一律入库** —— 它们是
+#   "这些图是怎么来的"唯一的记录，而且已入库的记忆文档引用的正是它们
+#   （MEMORY-ENV §七 的标题就点着 `scripts/_new50/app-probe4.mjs`）。
+# ⚠️⚠️ **别改成 `/scripts/_photo-*/` 那种整目录忽略** —— 2026-10-03 先那么写，
+#   提交后才发现 MEMORY-ENV / MEMORY-TOOLS / LESSONS 里几十处引用**全部悬空**
+#   （被点名的探针根本没入库）。整目录忽略省事，但会把"怎么做的"一起扔掉。
+/scripts/**/*.jpg
+/scripts/**/*.jpeg
+/scripts/**/*.png
+/scripts/**/*.webp
+/scripts/**/*.gif
+# 动画帧 / 合并素材的工作目录（根目录，纯 PNG）
 /_mv/
 # 一次性的中间产物（跑一遍就过期）
 /scripts/_tmp-*

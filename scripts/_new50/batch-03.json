@@ -1,0 +1,82 @@
+[
+  {
+    "n": 21,
+    "tag": "dream-job",
+    "title": "我想当一名老师",
+    "lead": "站在讲台上，你会怎么讲第一节课？",
+    "keyword": "teacher in front of classroom students",
+    "note": "讲台与黑板，老师可背影"
+  },
+  {
+    "n": 22,
+    "tag": "dream-job",
+    "title": "如果我是厨师",
+    "lead": "灶台前围裙一系，你打算先做哪一道菜？",
+    "keyword": "chef cooking kitchen apron pan",
+    "note": "厨房烹饪动作"
+  },
+  {
+    "n": 23,
+    "tag": "first-time",
+    "title": "第一次坐火车",
+    "lead": "车窗外的树一棵接一棵往后跑。你数得过来吗？",
+    "keyword": "train window view countryside landscape",
+    "note": "火车窗外风景（从车窗里往外看）"
+  },
+  {
+    "n": 24,
+    "tag": "unforgettable",
+    "title": "那一次我哭了",
+    "lead": "有一件事让我掉了眼泪。现在想起来，是什么感觉？",
+    "keyword": "sad child crying comfort hug",
+    "note": "安慰/难过（不要脸部特写，背影或手更好）"
+  },
+  {
+    "n": 25,
+    "tag": "warm-moment",
+    "title": "借我半块橡皮",
+    "lead": "考试时我忘了带橡皮，同桌掰了一半递过来。",
+    "keyword": "pencil eraser desk school stationery",
+    "note": "橡皮与铅笔在课桌上"
+  },
+  {
+    "n": 26,
+    "tag": "activity",
+    "title": "学校的读书节",
+    "lead": "教室里摆满了书，大家挑得眼花缭乱。你挑了哪一本？",
+    "keyword": "children reading books classroom library",
+    "note": "孩子读书/挑书（远景，避免正脸）"
+  },
+  {
+    "n": 27,
+    "tag": "mistake",
+    "title": "弄丢的那本书",
+    "lead": "从图书馆借的书找不到了，我把书包翻了个底朝天。",
+    "keyword": "child looking inside backpack searching",
+    "note": "翻书包/找东西，不要正脸"
+  },
+  {
+    "n": 28,
+    "tag": "lost-found",
+    "title": "突然停电了",
+    "lead": "灯一下子全灭了，屋里黑得看不见手指。",
+    "keyword": "dark room candle blackout night",
+    "note": "昏暗/烛光，不要恐怖氛围"
+  },
+  {
+    "n": 29,
+    "tag": "milestone",
+    "title": "我学会游泳了",
+    "lead": "第一次不用浮板游到对岸，那是什么感觉？",
+    "keyword": "child swimming pool water learning",
+    "note": "泳池戏水（远景，避免正脸特写）"
+  },
+  {
+    "n": 30,
+    "tag": "observe",
+    "title": "豆子发芽了",
+    "lead": "泡在水里的豆子，第三天冒出了小白芽。",
+    "keyword": "bean sprouts growing jar germination",
+    "note": "发芽的豆子/水培"
+  }
+]

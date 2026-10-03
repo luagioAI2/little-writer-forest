@@ -1,0 +1,42 @@
+[
+  {
+    "key": "fireflies",
+    "hint": "夜里草地上飞满发光的萤火虫，一个孩子举着玻璃罐去追，远处有月亮和树影。",
+    "en": "fireflies glowing night field",
+    "usedBy": [
+      "builtin-night-2"
+    ]
+  },
+  {
+    "key": "starry-night",
+    "hint": "深蓝的夜空挂满星星和一弯月亮，草地上一个孩子躺着看天，旁边是两棵松树和草丛。",
+    "en": "starry night sky milky way",
+    "usedBy": [
+      "builtin-night-3"
+    ]
+  },
+  {
+    "key": "neighbor",
+    "hint": "门廊前一个阿姨提着菜篮子笑着挥手，旁边有栅栏和花。",
+    "en": "woman carrying shopping basket smiling",
+    "usedBy": [
+      "builtin-family-6"
+    ]
+  },
+  {
+    "key": "police",
+    "hint": "十字路口一名警察穿着蓝色制服、戴着警帽，伸手指引方向，旁边有红绿灯和斑马线。",
+    "en": "traffic police officer directing traffic",
+    "usedBy": [
+      "builtin-community-helper-2"
+    ]
+  },
+  {
+    "key": "sleep-alone",
+    "hint": "夜里蓝幽幽的房间，窗外有月亮和星星，床上的被子鼓起来，只露出一双眼睛。",
+    "en": "child sleeping in bed night",
+    "usedBy": [
+      "builtin-first-time-4"
+    ]
+  }
+]

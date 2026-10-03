@@ -1,0 +1,225 @@
+{
+  "batch": "04",
+  "items": [
+    {
+      "landmarkId": "cn-河北-西柏坡景区",
+      "match": "scene",
+      "query": "Xibaipo Hebei China; Xibaipo",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Xibaipo Hebei China' and 'Xibaipo' — no free Pexels photo of the site; the real Xibaipo shots are all iStock ads, the rest are generic Hebei villages."
+    },
+    {
+      "landmarkId": "cn-河北-野三坡景区",
+      "match": "scene",
+      "query": "Yesanpo Hebei China; Yesanpo national park",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Yesanpo Hebei China' and 'Yesanpo national park' — only generic Hebei scenery, Korean parks and iStock ads; no Yesanpo itself."
+    },
+    {
+      "landmarkId": "cn-河北-白洋淀景区",
+      "match": "scene",
+      "query": "Baiyangdian lake Hebei; Baiyangdian",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Baiyangdian lake Hebei' and 'Baiyangdian' — the real Baiyangdian reed-lake photos are all iStock ads; free results are unrelated rivers/villages."
+    },
+    {
+      "landmarkId": "cn-河北-承德避暑山庄及周围寺庙景区",
+      "match": "place",
+      "query": "Chengde mountain resort",
+      "mediaUrl": "https://images.pexels.com/photos/12956279/pexels-photo-12956279.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial photo of a landscape over the mountain resort of Chengde in Hebei province, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-photo-of-a-landscape-over-the-mountain-resort-of-chengde-in-hebei-province-china-12956279/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 94507 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-山西-乔家大院景区",
+      "match": "scene",
+      "query": "Qiao family compound Shanxi; Qiao Family Compound",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Qiao family compound Shanxi' and 'Qiao Family Compound' — only generic Chinese courtyards; the actual Qiao compound photos are all iStock ads."
+    },
+    {
+      "landmarkId": "cn-山西-晋祠天龙山景区",
+      "match": "scene",
+      "query": "Jinci temple Taiyuan; Jinci Temple China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Jinci temple Taiyuan' and 'Jinci Temple China' — results are generic Chinese temples, nothing of Jinci/Tianlongshan."
+    },
+    {
+      "landmarkId": "cn-山西-云丘山景区",
+      "match": "scene",
+      "query": "Yunqiu mountain Shanxi; Yunqiu Shan China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Yunqiu mountain Shanxi' and 'Yunqiu Shan China' — only generic Shanxi/other-China mountains and iStock ads, no Yunqiu Mountain."
+    },
+    {
+      "landmarkId": "cn-山西-太行山大峡谷八泉峡景区",
+      "match": "place",
+      "query": "Taihang grand canyon",
+      "mediaUrl": "https://images.pexels.com/photos/37519012/pexels-photo-37519012.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Breathtaking view of Taihang Mountains China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/breathtaking-view-of-taihang-mountains-china-37519012/", "author": "zhang-zhi" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 50759 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-山西-洪洞大槐树寻根祭祖园旅游景区",
+      "match": "scene",
+      "query": "Hongtong Shanxi China; Hongtong China tree",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Hongtong Shanxi China' and 'Hongtong China tree' — the real Hongtong temple/cypress photos are all iStock ads; free results are unrelated."
+    },
+    {
+      "landmarkId": "cn-山西-雁门关景区",
+      "match": "scene",
+      "query": "Yanmen Pass China; Yanmen Pass Shanxi",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Yanmen Pass China' and 'Yanmen Pass Shanxi' — every real Yanmen Pass photo is an iStock ad; free results are other passes/great-wall spots."
+    },
+    {
+      "landmarkId": "cn-山西-平遥古城景区",
+      "match": "place",
+      "query": "Pingyao ancient city",
+      "mediaUrl": "https://images.pexels.com/photos/18506159/pexels-photo-18506159.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Ornamented buildings in Pingyao in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/ornamented-buildings-in-pingyao-in-china-18506159/", "author": "fatinmark" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 63658 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-山西-绵山风景区",
+      "match": "scene",
+      "query": "Mianshan Shanxi; Mianshan mountain China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Mianshan Shanxi' and 'Mianshan mountain China' — the real Mianshan hanging-temple photos are all iStock ads; free results are Zhangjiajie/Huangshan."
+    },
+    {
+      "landmarkId": "cn-山西-皇城相府生态文化旅游区",
+      "match": "scene",
+      "query": "Huangcheng Xiangfu Shanxi; Huangcheng Xiangfu China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Huangcheng Xiangfu Shanxi' and 'Huangcheng Xiangfu China' — only generic Shanxi/Yungang material; the real palace shots are iStock ads."
+    },
+    {
+      "landmarkId": "cn-山西-五台山风景名胜区",
+      "match": "scene",
+      "query": "Wutai mountain Shanxi; Wutai shan temple",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Wutai mountain Shanxi' and 'Wutai shan temple' — all genuine Wutaishan photos are iStock ads; free results are other temples (Emei/Fo Guang Shan)."
+    },
+    {
+      "landmarkId": "cn-山西-云冈石窟景区",
+      "match": "place",
+      "query": "Yungang grottoes",
+      "mediaUrl": "https://images.pexels.com/photos/35030453/pexels-photo-35030453.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Buddha stone carving in Yungang Grottoes, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/buddha-stone-carving-in-yungang-grottoes-china-35030453/", "author": "eric-prouzet" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 170278 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-内蒙古-老牛湾黄河大峡谷旅游区",
+      "match": "scene",
+      "query": "Yellow River canyon Inner Mongolia; Laoniuwan Yellow River",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Yellow River canyon Inner Mongolia' and 'Laoniuwan Yellow River' — results are Mongolia-country canyons and generic desert, nothing of Laoniuwan."
+    },
+    {
+      "landmarkId": "cn-内蒙古-呼伦贝尔大草原·莫尔格勒河景区",
+      "match": "place",
+      "query": "Hulunbuir grassland",
+      "mediaUrl": "https://images.pexels.com/photos/35497983/pexels-photo-35497983.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Traditional yurts in Inner Mongolia's vast grasslands",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/traditional-yurts-in-inner-mongolia-s-vast-grasslands-35497983/", "author": "eric-prouzet" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 49021 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-内蒙古-胡杨林旅游区",
+      "match": "scene",
+      "query": "Ejina poplar forest desert China; populus euphratica desert China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Ejina poplar forest desert China' and 'populus euphratica desert China' — desert golden-poplar shots exist but none tied to Ejina/Alxa, so the place cannot be confirmed."
+    },
+    {
+      "landmarkId": "cn-内蒙古-阿斯哈图石林景区",
+      "match": "scene",
+      "query": "Ashatu stone forest Inner Mongolia; Hexigten stone forest China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Ashatu stone forest Inner Mongolia' and 'Hexigten stone forest China' — only Naigu/Zhangjiajie stone forests and iStock ads, no Ashatu granite forest."
+    },
+    {
+      "landmarkId": "cn-内蒙古-阿尔山-柴河旅游景区",
+      "match": "scene",
+      "query": "Arxan Inner Mongolia; Arxan Chaihe China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Arxan Inner Mongolia' and 'Arxan Chaihe China' — no Arxan/Chaihe photo; free results are generic Inner Mongolia/Xinjiang grassland."
+    }
+  ]
+}

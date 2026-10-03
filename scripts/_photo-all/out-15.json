@@ -1,0 +1,225 @@
+{
+  "batch": "15",
+  "items": [
+    {
+      "landmarkId": "cn-广西-黄姚古镇景区",
+      "match": "scene",
+      "query": "Huangyao ancient town China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: Huangyao ancient town China / Huangyao / Huangyao town Guangxi China — only generic Chinese old towns + iStock ads for Huangyao itself"
+    },
+    {
+      "landmarkId": "cn-广西-涠洲岛南湾鳄鱼山景区",
+      "match": "scene",
+      "query": "Weizhou Island",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: Weizhou Island / Weizhou volcano Guangxi China — real Weizhou photos are iStock ads only"
+    },
+    {
+      "landmarkId": "cn-广西-百色起义纪念园景区",
+      "match": "scene",
+      "query": "Baise Guangxi China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: Baise Guangxi China / Baise city Guangxi China — no Baise photos at all"
+    },
+    {
+      "landmarkId": "cn-广西-德天跨国瀑布景区",
+      "match": "place",
+      "query": "Detian Waterfall",
+      "mediaUrl": "https://images.pexels.com/photos/5334888/pexels-photo-5334888.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of the Ban Gioc Detian Falls",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-view-of-the-ban-gioc-detian-falls-5334888/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 73930 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-广西-两江四湖•象山景区",
+      "match": "place",
+      "query": "Elephant Trunk Hill Guilin",
+      "mediaUrl": "https://images.pexels.com/photos/24415055/pexels-photo-24415055.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Elephants statues in river near Elephant Trunk Hill in Guilin in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/elephants-statues-in-river-near-elephant-trunk-hill-in-guilin-in-china-24415055/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 57596 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-广西-青秀山风景名胜旅游区",
+      "match": "scene",
+      "query": "Qingxiu Mountain Nanning",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: Qingxiu Mountain Nanning / Qingxiushan Nanning — only Nanning skyline + iStock ads"
+    },
+    {
+      "landmarkId": "cn-广西-独秀峰•靖江王城景区",
+      "match": "place",
+      "query": "Jingjiang Princes City Guilin",
+      "mediaUrl": "https://images.pexels.com/photos/19966097/pexels-photo-19966097.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Solitary beauty peak in Guilin, in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/solitary-beauty-peak-in-guilin-in-china-19966097/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 59109 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-广西-漓江风景区",
+      "match": "place",
+      "query": "Li River Guilin",
+      "mediaUrl": "https://images.pexels.com/photos/36304652/pexels-photo-36304652.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic sunset over Li River in Guilin, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-sunset-over-li-river-in-guilin-china-36304652/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 27193 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-海南-天涯海角游览区",
+      "match": "scene",
+      "query": "Tianya Haijiao Sanya",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: Tianya Haijiao Sanya — only generic Sanya beaches + iStock ads, no Tianya Haijiao rocks"
+    },
+    {
+      "landmarkId": "cn-海南-蜈支洲岛旅游区",
+      "match": "scene",
+      "query": "Wuzhizhou Island Sanya",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: Wuzhizhou Island Sanya — only generic Sanya beaches + iStock ads for Wuzhizhou"
+    },
+    {
+      "landmarkId": "cn-海南-海南槟榔谷黎苗文化旅游区",
+      "match": "scene",
+      "query": "Binglanggu Hainan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: Binglanggu Hainan — no match (generic Hainan coast only)"
+    },
+    {
+      "landmarkId": "cn-海南-分界洲岛旅游区",
+      "match": "scene",
+      "query": "Fenjiezhou Island Hainan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: Fenjiezhou Island Hainan — only Sanya beaches + iStock ads for Fenjiezhou"
+    },
+    {
+      "landmarkId": "cn-海南-呀诺达雨林文化旅游区",
+      "match": "scene",
+      "query": "Yanoda rainforest Sanya",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: Yanoda rainforest Sanya — generic forests/beaches only"
+    },
+    {
+      "landmarkId": "cn-海南-南山大小洞天旅游区",
+      "match": "scene",
+      "query": "Daxiaodongtian Sanya",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: Daxiaodongtian Sanya — no match"
+    },
+    {
+      "landmarkId": "cn-海南-南山文化旅游区",
+      "match": "place",
+      "query": "Nanshan Temple Sanya",
+      "mediaUrl": "https://images.pexels.com/photos/8138272/pexels-photo-8138272.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Guanyin of Nanshan in Sanya, Hainan, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/guanyin-of-nanshan-in-sanya-hainan-china-8138272/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 43267 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-海南-亚龙湾热带天堂森林公园",
+      "match": "scene",
+      "query": "Yalong Bay Sanya",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: Yalong Bay Sanya — only generic Sanya beaches + iStock ads for Yalong Bay"
+    },
+    {
+      "landmarkId": "cn-海南-西岛",
+      "match": "scene",
+      "query": "West Island Sanya",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: West Island Sanya — iStock ads only"
+    },
+    {
+      "landmarkId": "cn-四川-天台山景区",
+      "match": "scene",
+      "query": "Tiantai Mountain Sichuan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: Tiantai Mountain Sichuan — generic Sichuan mountains (Emei/Siguniang) only"
+    },
+    {
+      "landmarkId": "cn-四川-四姑娘山景区",
+      "match": "place",
+      "query": "Siguniang Mountain Sichuan",
+      "mediaUrl": "https://images.pexels.com/photos/19852230/pexels-photo-19852230.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Yaomei Feng peak of the Mount Siguniang in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/yaomei-feng-peak-of-the-mount-siguniang-in-china-19852230/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 83946 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-四川-安仁古镇景区",
+      "match": "place",
+      "query": "Anren Ancient Town Sichuan",
+      "mediaUrl": "https://images.pexels.com/photos/15015370/pexels-photo-15015370.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Liuwenhui residence in Chengdu in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/liuwenhui-residence-in-chengdu-in-china-15015370/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 183612 },
+      "verdict": "ok",
+      "note": "Liu Wenhui Mansion gate (刘文辉公馆), a site inside Anren Ancient Town, Dayi, Chengdu"
+    }
+  ]
+}

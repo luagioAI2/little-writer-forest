@@ -1,0 +1,851 @@
+{
+ "items": [
+  {
+   "id": "builtin-family-13",
+   "title": "妈妈的手",
+   "mediaUrl": "https://images.pexels.com/photos/5591788/pexels-photo-5591788.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "5591788",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/photo-of-a-person-s-hands-washing-a-white-plate-5591788/",
+    "author": "RDNE Stock project"
+   },
+   "note": "一双成年女性的手在厨房水槽上方用刷子刷洗一只白盘子，手和手臂是画面主体，旁边有水龙头和粉色抹布；彩色，无人脸特写",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 44412,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-family-14",
+   "title": "爷爷的老花镜",
+   "mediaUrl": "https://images.pexels.com/photos/5960680/pexels-photo-5960680.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "5960680",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/elderly-man-in-white-crew-neck-dress-shirt-reading-newspaper-5960680/",
+    "author": "cottonbro studio"
+   },
+   "note": "一位白发老人戴着金属圆框老花镜、低头看摊在手里的报纸，人和眼镜都清晰可见；彩色，侧前方中景非正脸特写",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 39395,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-teacher-6",
+   "title": "老师的手",
+   "mediaUrl": "https://images.pexels.com/photos/625219/pexels-photo-625219.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "625219",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/person-holding-white-chalk-625219/",
+    "author": "NEOSiAM 18+"
+   },
+   "note": "一只手捏着一小截白色粉笔按在墨绿色黑板上，手、粉笔、黑板三样齐全；板面是空的，没有任何中英文单词；彩色",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 31013,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-teacher-7",
+   "title": "放学后的办公室",
+   "mediaUrl": "https://images.pexels.com/photos/8363162/pexels-photo-8363162.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "8363162",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/a-woman-in-green-long-sleeve-shirt-sitting-at-the-table-holding-a-pencil-on-paper-8363162/",
+    "author": "RDNE Stock project"
+   },
+   "note": "穿绿衣的女老师坐在桌前低头用铅笔在纸上写字，桌上摊着纸张文具，身后是教室的绿色黑板和彩色墙报，能看出在批改/备课；彩色",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 38756,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-classmate-6",
+   "title": "同桌的铅笔盒",
+   "mediaUrl": "https://images.pexels.com/photos/8580767/pexels-photo-8580767.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "8580767",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/assorted-pencils-in-a-case-laid-on-white-surface-8580767/",
+    "author": "RDNE Stock project"
+   },
+   "note": "一个完全摊开的黑色拉链笔袋，格子里插满蓝杆铅笔和钢笔，还塞着橡皮、削笔刀、尺子，塞得满满当当有点乱；主体就是铅笔盒本身，彩色",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 49613,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-stranger-5",
+   "title": "修鞋的老人",
+   "mediaUrl": "https://images.pexels.com/photos/6317981/pexels-photo-6317981.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "6317981",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/elderly-man-fixing-shoe-6317981/",
+    "author": "Canan YAŞAR"
+   },
+   "note": "一位戴帽子的白发老人坐在修鞋摊前，双手捧着一只旧皮鞋低头缝补，身后是缝鞋机和满墙工具，人、鞋、工具三样都在；彩色",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 52721,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-stranger-6",
+   "title": "收废品的叔叔",
+   "mediaUrl": "https://images.pexels.com/photos/5582757/pexels-photo-5582757.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "5582757",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/elderly-man-pusing-a-cart-full-of-cartons-5582757/",
+    "author": "Damian van der Zwan"
+   },
+   "note": "一位老人推着一辆堆满废旧纸箱的手推车走在热闹的街上，人和车都完整看得见；彩色",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 72255,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-community-helper-9",
+   "title": "楼下的保安叔叔",
+   "mediaUrl": "https://images.pexels.com/photos/18530600/pexels-photo-18530600.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "18530600",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/security-guard-in-uniform-18530600/",
+    "author": "Click Jeth"
+   },
+   "note": "一位穿白色制服、戴大檐帽和橙色反光背心的保安从楼前广场走过（戴着口罩），人和制服清晰可见，全身中景不是正脸特写；彩色",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 44465,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-community-helper-10",
+   "title": "早餐摊的阿姨",
+   "mediaUrl": "https://images.pexels.com/photos/31990517/pexels-photo-31990517.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "31990517",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/authentic-asian-street-food-vendor-serving-customers-31990517/",
+    "author": "晓春 胡"
+   },
+   "note": "早餐摊的阿姨戴红帽系围裙，站在冒着腾腾热气的蒸笼后面卖包子点心，摊主和摊子（蒸笼、托盘、早点）都看得见；彩色",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 39114,
+   "ar": 1.502,
+   "wasAr": 1.502
+  },
+  {
+   "id": "builtin-pet-13",
+   "title": "我的小兔子",
+   "mediaUrl": "https://images.pexels.com/photos/12397296/pexels-photo-12397296.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "12397296",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/close-up-shot-of-a-kid-feeding-a-rabbit-12397296/",
+    "author": "Alexey Demidov"
+   },
+   "note": "一只浅棕色长耳朵兔子正低头啃孩子手里递过来的胡萝卜，兔子的长耳朵、眼睛和胡萝卜都看得清；彩色",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 38401,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-pet-14",
+   "title": "学说话的鹦鹉",
+   "mediaUrl": "https://images.pexels.com/photos/2317899/pexels-photo-2317899.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "2317899",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/close-up-photo-of-a-yellow-and-blue-macaw-2317899/",
+    "author": "Ilo Frey"
+   },
+   "note": "蓝黄金刚鹦鹉的头部大特写，蓝黄羽毛鲜亮、黑色钩状喙清楚、喙微张像在叫；彩色，背景是虚化的绿叶",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 45854,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-plant-9",
+   "title": "窗台上的多肉",
+   "mediaUrl": "https://images.pexels.com/photos/4575359/pexels-photo-4575359.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "4575359",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/pachyphytum-oviferum-succulent-plant-growing-in-pot-placed-on-windowsill-4575359/",
+    "author": "Hanbo Wang"
+   },
+   "note": "一株叶片肥厚饱满的多肉（星美人）种在小盆里摆在窗台上，背后是窗框和玻璃，暖阳从左侧照进来；彩色",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 22812,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-plant-10",
+   "title": "门口的桂花树",
+   "mediaUrl": "https://images.pexels.com/photos/36661189/pexels-photo-36661189.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "36661189",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/vibrant-yellow-tabebuia-tree-in-full-bloom-36661189/",
+    "author": "Sóc Năng Động"
+   },
+   "note": "整棵树冠开满细小的黄花（黄花风铃木），满屏都是小黄花，彩色。注意：并非桂花（osmanthus）本体照片，是同类“开满小黄花的树”的替代表达。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 100200,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-stationery-7",
+   "title": "尺子上的刻度",
+   "mediaUrl": "https://images.pexels.com/photos/35970041/pexels-photo-35970041.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "35970041",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/close-up-of-ruler-and-handwritten-measurements-35970041/",
+    "author": "Marek Ruczaj"
+   },
+   "note": "金属直尺压在方格纸上，刻度数字 48/49/50 清晰可见，旁边有铅笔和手写的“50 mm”，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 43964,
+   "ar": 1.333,
+   "wasAr": 1.333
+  },
+  {
+   "id": "builtin-treasure-11",
+   "title": "奶奶的顶针",
+   "mediaUrl": "https://images.pexels.com/photos/1266139/pexels-photo-1266139.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "1266139",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/spool-of-purple-thread-near-needle-thimble-and-measuring-tape-1266139/",
+    "author": "Suzy Hazelwood"
+   },
+   "note": "一个银色金属顶针摆在针线旁（紫色线轴、缝衣针、软尺，背景紫白玫瑰），顶针本身清晰可见，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 34566,
+   "ar": 1.707,
+   "wasAr": 1.707
+  },
+  {
+   "id": "builtin-treasure-12",
+   "title": "我的第一张奖状",
+   "mediaUrl": "https://images.pexels.com/photos/8177925/pexels-photo-8177925.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "8177925",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/certificate-of-achievement-and-diploma-among-confetti-8177925/",
+    "author": "Leeloothefirst"
+   },
+   "note": "粉色背景上一张纸质“CERTIFICATE OF ACHIEVEMENT”奖状，旁边是卷起系黑丝带的证书，撒着金色纸屑，彩色，无国旗/国徽。注意：是平铺摆拍，不是“贴在墙上”。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 28857,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-food-6",
+   "title": "妈妈煮的粥",
+   "mediaUrl": "https://images.pexels.com/photos/5652188/pexels-photo-5652188.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "5652188",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/rice-gruel-in-a-bowl-5652188/",
+    "author": "Kai-Chieh Chan"
+   },
+   "note": "青花瓷碗里盛着白粥（米粒+绿豆粥），旁边一小碟咸菜，放在木桌上，暖调，彩色。注意：画面里看不到明显热气（备选 5820105 有大量热气但碗里看不出是粥）。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 42770,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-food-7",
+   "title": "一根冰棍",
+   "mediaUrl": "https://images.pexels.com/photos/9646426/pexels-photo-9646426.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "9646426",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/a-person-holding-an-ice-cream-on-a-popsicle-9646426/",
+    "author": "Melanie Brumble"
+   },
+   "note": "一只手举着一根粉色雪糕（带糖霜），背景是浅粉色冰淇淋店，主体是这支冰棍，彩色、夏日感。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 25384,
+   "ar": 1.778,
+   "wasAr": 1.778
+  },
+  {
+   "id": "builtin-life-goods-1",
+   "title": "我的小台灯",
+   "mediaUrl": "https://images.pexels.com/photos/2168382/pexels-photo-2168382.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "2168382",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/powered-on-gold-desk-lamp-on-desk-with-opened-book-2168382/",
+    "author": "Yury Rymko"
+   },
+   "note": "书桌上一盏亮着的金色台灯（暖光），灯下摊开一本书，房间偏暗，台灯就是画面主体，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 20520,
+   "ar": 1.778,
+   "wasAr": 1.778
+  },
+  {
+   "id": "builtin-life-goods-2",
+   "title": "我家的电风扇",
+   "mediaUrl": "https://images.pexels.com/photos/3675622/pexels-photo-3675622.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "3675622",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/white-desk-fan-on-white-table-3675622/",
+    "author": "Enrique Zafra"
+   },
+   "note": "一台白色台式电风扇，白底，扇叶、网罩、底座和旋钮都看得清，是风扇不是空调/吊扇，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 23508,
+   "ar": 1.333,
+   "wasAr": 1.333
+  },
+  {
+   "id": "builtin-life-goods-3",
+   "title": "下雨天的雨伞",
+   "mediaUrl": "https://images.pexels.com/photos/15171377/pexels-photo-15171377.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "15171377",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/a-woman-holding-an-umbrella-15171377/",
+    "author": "Isaac Mitchell"
+   },
+   "note": "雨中城市街头，一个人撑着青色雨伞背对镜头走在湿漉漉的路上，看得见雨丝和水洼，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 41025,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-4",
+   "title": "叫我起床的闹钟",
+   "mediaUrl": "https://images.pexels.com/photos/15068318/pexels-photo-15068318.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "15068318",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/a-red-alarm-clock-on-an-orange-background-15068318/",
+    "author": "Towfiqu Barbhuiya"
+   },
+   "note": "一个红色双铃老式闹钟，橙色背景，闹钟是唯一主体、表盘指针清晰，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 20659,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-5",
+   "title": "我的水杯",
+   "mediaUrl": "https://images.pexels.com/photos/7402619/pexels-photo-7402619.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "7402619",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/a-glass-of-water-on-the-table-7402619/",
+    "author": "cottonbro studio"
+   },
+   "note": "浅色木桌上放着一杯清水，玻璃杯身清晰，旁边一把木椅，画面干净明亮，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 12381,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-6",
+   "title": "家里的冰箱",
+   "mediaUrl": "https://images.pexels.com/photos/6508357/pexels-photo-6508357.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "6508357",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/fridge-with-different-vegetable-in-modern-kitchen-6508357/",
+    "author": "Artbovich"
+   },
+   "note": "现代厨房里一台打开的冰箱，门开着，里面几层整齐摆着番茄、红萝卜、生菜、彩椒等蔬菜，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 29602,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-7",
+   "title": "洗衣机转起来了",
+   "mediaUrl": "https://images.pexels.com/photos/19846385/pexels-photo-19846385.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "19846385",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/white-washing-machine-with-beige-towels-19846385/",
+    "author": "Lisa Anna"
+   },
+   "note": "一台白色滚筒洗衣机正面朝镜头，圆形舱门清晰，机顶搭着一卷米色毛巾，左侧是木色洗手台；彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 23785,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-8",
+   "title": "墙角的扫帚",
+   "mediaUrl": "https://images.pexels.com/photos/5910384/pexels-photo-5910384.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "5910384",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/broom-with-bunch-of-dry-leaves-5910384/",
+    "author": "Plato Terentev"
+   },
+   "note": "一把竹草扎的扫帚斜立着靠在墙角，帚头下方聚着一小堆枯叶，扫帚是画面主体；暖棕色调，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 51971,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-9",
+   "title": "墙上的挂钟",
+   "mediaUrl": "https://images.pexels.com/photos/8542504/pexels-photo-8542504.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "8542504",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/a-clock-hanging-on-a-wall-8542504/",
+    "author": "Holafabiola"
+   },
+   "note": "圆形白底黑框挂钟挂在灰蓝色墙上，1-12 数字与时针分针清晰可见，下方木架上垂着绿萝；彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 23965,
+   "ar": 1.524,
+   "wasAr": 1.524
+  },
+  {
+   "id": "builtin-life-goods-10",
+   "title": "家里的遥控器",
+   "mediaUrl": "https://images.pexels.com/photos/5202948/pexels-photo-5202948.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "5202948",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/remote-control-on-pink-fabric-5202948",
+    "author": "Karola G"
+   },
+   "note": "一支黑色电视遥控器平放在粉色布艺沙发（靠垫旁）上，按键和 SAMSUNG 字样清晰，遥控器是主体；彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 52749,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-11",
+   "title": "门边的一串钥匙",
+   "mediaUrl": "https://images.pexels.com/photos/31989061/pexels-photo-31989061.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "31989061",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/hand-holding-keys-at-doorway-in-new-home-31989061/",
+    "author": "Jakub Zerdzicki"
+   },
+   "note": "一只手捏着一串（三四把）钥匙悬在门边/门框前，钥匙串清晰是主体；暖色调，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 18036,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-12",
+   "title": "洗手间的镜子",
+   "mediaUrl": "https://images.pexels.com/photos/7045717/pexels-photo-7045717.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "7045717",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/vintage-oval-shaped-mirror-in-bathroom-7045717/",
+    "author": "cottonbro studio"
+   },
+   "note": "洗手间洗手台上方的墙上挂着一面椭圆形花边边框镜子，两侧各一盏壁灯，下方是白色台盆；暖色大理石墙，彩色，无人物正脸。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 40550,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-13",
+   "title": "我的小拖鞋",
+   "mediaUrl": "https://images.pexels.com/photos/6651966/pexels-photo-6651966.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "6651966",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/close-up-shot-of-gray-slippers-for-kids-6651966/",
+    "author": "cottonbro studio"
+   },
+   "note": "一双灰色兔耳造型的儿童拖鞋并排放在浅色花纹地垫上，旁边有人走过，背景是粉橙色沙发；拖鞋是主体，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 33300,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-14",
+   "title": "水开了",
+   "mediaUrl": "https://images.pexels.com/photos/17086060/pexels-photo-17086060.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "17086060",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/steam-over-kettle-17086060/",
+    "author": "Anna McDonald"
+   },
+   "note": "不锈钢水壶放在燃气灶上，壶嘴正冒出大股白色蒸汽，旁边窗台有一束红花；暖调木屋厨房，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 46498,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-15",
+   "title": "电吹风呼呼地吹",
+   "mediaUrl": "https://images.pexels.com/photos/4839182/pexels-photo-4839182.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "4839182",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/close-up-shot-of-a-girl-in-floral-top-using-a-hair-blower-4839182/",
+    "author": "Singkham"
+   },
+   "note": "一位长发小女孩手持红色吹风机吹头发，长发被吹得飞扬；吹风机与头发都清晰，侧脸角度非正脸大特写，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 32755,
+   "ar": 1.339,
+   "wasAr": 1.339
+  },
+  {
+   "id": "builtin-life-goods-17",
+   "title": "会唱歌的收音机",
+   "mediaUrl": "https://images.pexels.com/photos/35525951/pexels-photo-35525951.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "35525951",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/vintage-red-radio-with-open-book-on-wooden-desk-35525951/",
+    "author": "Betül Güneş"
+   },
+   "note": "一台红色老式收音机（MUSTANG）摆在木桌上，机顶摊开一本书，旋钮和刻度盘清晰；暖色调，彩色，收音机是主体。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 33706,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-18",
+   "title": "门铃响了",
+   "mediaUrl": "https://images.pexels.com/photos/35430939/pexels-photo-35430939.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "35430939",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/vintage-doorbell-with-rustic-green-background-35430939/",
+    "author": "Ritvars Garoza"
+   },
+   "note": "绿色木门上装着一个圆形老式门铃按钮（黄色圆盘+中央黑色按钮），门铃居中清晰；面板上有一行小字 CAMPAINHA，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 27890,
+   "ar": 1.608,
+   "wasAr": 1.608
+  },
+  {
+   "id": "builtin-life-goods-19",
+   "title": "阳台上的晾衣架",
+   "mediaUrl": "https://images.pexels.com/photos/29396472/pexels-photo-29396472.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "29396472",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/colorful-clothes-drying-on-clothesline-in-sunlight-29396472/",
+    "author": "The Hung Photo"
+   },
+   "note": "户外晾衣绳上挂着一排衣服，用彩色晾衣夹和衣架固定，红/橙/粉等彩色衣物排成一行，阳光充足；彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 42299,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-20",
+   "title": "我的保温杯",
+   "mediaUrl": "https://images.pexels.com/photos/5358793/pexels-photo-5358793.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "5358793",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/close-up-photograph-of-a-vacuum-flask-beside-a-cup-of-coffee-5358793/",
+    "author": "Jill Wellington"
+   },
+   "note": "一只格纹保温杯立在花布桌上，不锈钢杯盖清晰，杯身完整可见；旁边有咖啡杯、小南瓜和点心，秋日暖光，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 49711,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-21",
+   "title": "我的存钱罐",
+   "mediaUrl": "https://images.pexels.com/photos/6052793/pexels-photo-6052793.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "6052793",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/close-up-shot-of-a-piggy-bank-beside-coins-6052793/",
+    "author": "Andre Taissin"
+   },
+   "note": "粉色带白点的小猪存钱罐放在木桌上，头顶投币口清楚，正前方散着几枚硬币；主体清晰、暖色调，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 18124,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-22",
+   "title": "我的小牙刷",
+   "mediaUrl": "https://images.pexels.com/photos/13466251/pexels-photo-13466251.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "13466251",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/toothbrushes-in-clear-glass-13466251/",
+    "author": "Towfiqu barbhuiya"
+   },
+   "note": "几把彩色牙刷（红、粉、蓝、黄刷头）插在透明玻璃杯里，立在洗手台上，背景是蓝色浴帘；颜色鲜艳、主体清晰，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 21266,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-23",
+   "title": "雨天的雨靴",
+   "mediaUrl": "https://images.pexels.com/photos/668355/pexels-photo-668355.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "668355",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/person-wearing-pink-knee-high-rain-boots-standing-on-brown-floor-668355/",
+    "author": "nicollazzi xiong"
+   },
+   "note": "第一人称俯视：一双红色白点雨靴踩在浅水洼里，靴子占画面中央很大一块、纹样清楚，水面有倒影；红色鲜亮，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 57046,
+   "ar": 1.502,
+   "wasAr": 1.502
+  },
+  {
+   "id": "builtin-life-goods-24",
+   "title": "家里的窗帘",
+   "mediaUrl": "https://images.pexels.com/photos/6995148/pexels-photo-6995148.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "6995148",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/a-close-up-shot-of-a-tied-curtain-by-the-window-6995148/",
+    "author": "Sunny Twinster"
+   },
+   "note": "窗边一挂米白色纱帘被绳子束在中间，阳光从窗外照进来，窗格后面是绿树；窗帘是画面主体、暖调，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 37977,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-25",
+   "title": "鞋柜里的鞋",
+   "mediaUrl": "https://images.pexels.com/photos/36738046/pexels-photo-36738046.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "36738046",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/colorful-shoe-storage-shelf-with-various-shoes-36738046/",
+    "author": "Kimberly Alves"
+   },
+   "note": "一整面木格鞋柜，格子里衬着黄、蓝、红三色，多个格子里摆着一双双运动鞋/皮鞋，一眼能看好几双鞋；颜色鲜艳，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 42905,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-26",
+   "title": "书包上的小挂件",
+   "mediaUrl": "https://images.pexels.com/photos/4887256/pexels-photo-4887256.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "4887256",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/a-pink-teddy-inside-a-bag-4887256/",
+    "author": "Karola G"
+   },
+   "note": "一个紫色儿童书包（带小心心、小花图案和前袋），前袋上挂着一只独角兽小毛绒挂件（带粉色穗子）；书包上还坐着一只粉色泰迪熊；粉紫配色、明亮，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 25524,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-27",
+   "title": "电饭煲冒气了",
+   "mediaUrl": "https://images.pexels.com/photos/31479830/pexels-photo-31479830.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "31479830",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/cozy-rustic-kitchen-with-rice-cooker-and-flowers-31479830/",
+    "author": "Nguyendesigner"
+   },
+   "note": "乡村风厨房的木台面上放着一台白色电饭煲（旁边是面包机），背景是木质案板和挂具，前景有粉色小花虚化；暖调、彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 38573,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-28",
+   "title": "空调吹出来的风",
+   "mediaUrl": "https://images.pexels.com/photos/38788452/pexels-photo-38788452.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "38788452",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/wall-mounted-air-conditioner-in-modern-interior-38788452/",
+    "author": "neosiam"
+   },
+   "note": "一台白色壁挂空调室内机装在墙上方，导风叶片和出风口正对镜头，机身完整、主体明确；墙面是浅灰蓝色，属低饱和但仍为彩色照片（偏素，无暖色）。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 18162,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-29",
+   "title": "一把旧椅子",
+   "mediaUrl": "https://images.pexels.com/photos/35414825/pexels-photo-35414825.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "35414825",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/rustic-wooden-chair-against-textured-wall-35414825/",
+    "author": "Jan van der Wolf"
+   },
+   "note": "一把木色旧靠背椅单独摆在斑驳水泥墙前，木面有磨损和年代感，椅子居中、是画面唯一主体；棕色木+灰墙，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 54274,
+   "ar": 1.499,
+   "wasAr": 1.499
+  },
+  {
+   "id": "builtin-life-goods-30",
+   "title": "我的小书桌",
+   "mediaUrl": "https://images.pexels.com/photos/5905443/pexels-photo-5905443.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "5905443",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/student-desk-with-copybooks-and-pencil-case-5905443/",
+    "author": "Katerina Holmes"
+   },
+   "note": "一张浅木色学生书桌占画面下半部，桌面上摆着几本练习本、散页纸、一支笔和一个蓝色笔袋，看得出使用痕迹；明亮、彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 29488,
+   "ar": 1.499,
+   "wasAr": 1.499
+  }
+ ],
+ "failed": [
+  {
+   "id": "builtin-classmate-7",
+   "title": "一起值日",
+   "query": "child sweeping classroom floor broom",
+   "pexelsId": null,
+   "mediaUrl": null,
+   "credit": null,
+   "verified": null,
+   "ar": null,
+   "verdict": "fail",
+   "note": "找不到符合的图。Pexels 上「孩子在教室里打扫/擦黑板/搬桌椅」的彩色横图几乎全被 iStock 赞助位占掉；免费位里只有室外扫地的孩子（4458033 幼儿扫人行道、36041981 村道扫地），以及黑白照 34003192（孩子扫地但为灰度），都不满足 must 的『在教室里劳动』和『彩色』，故弃用而不硬凑",
+   "from": "out-01.json",
+   "why": "子代理标 fail"
+  },
+  {
+   "id": "builtin-stationery-6",
+   "title": "越写越短的铅笔",
+   "query": "pencil stub / short pencil / tiny pencil / worn pencil / worn down pencil nub / stubby pencil / used short pencil",
+   "pexelsId": null,
+   "mediaUrl": null,
+   "credit": null,
+   "verified": null,
+   "ar": null,
+   "verdict": "fail",
+   "note": "试了 7 个检索词均无结果：Pexels 免费图库里没有“一支短到快握不住的铅笔头”作为主体的横图。命中的只有整支铅笔、一堆断铅笔（8406964/8406978/8386691/8386698）、彩色铅笔笔尖特写（5285730），或“stubby pencil”全是 iStock 赞助位（编号拼不出 CDN 直链）。不硬凑。",
+   "from": "out-02.json",
+   "why": "子代理标 fail"
+  },
+  {
+   "id": "builtin-life-goods-16",
+   "title": "手电筒的光",
+   "mediaUrl": "https://images.pexels.com/photos/5543899/pexels-photo-5543899.jpeg?auto=compress&cs=tinysrgb&w=640",
+   "pexelsId": "5543899",
+   "credit": {
+    "source": "Pexels",
+    "link": "https://www.pexels.com/photo/silhouette-of-a-person-holding-a-flashlight-5543899/",
+    "author": "Rafael Russano"
+   },
+   "note": "夜色中一个人（剪影）举着手电筒，一道亮蓝色光柱斜射向远处，远方有橙色城市灯点；深蓝+橙，彩色。",
+   "http": "200",
+   "type": "image/jpeg",
+   "bytes": 9959,
+   "ar": 1.499,
+   "wasAr": 1.499,
+   "why": "http=200 type=image/jpeg bytes=9959 ar=1.499"
+  }
+ ]
+}

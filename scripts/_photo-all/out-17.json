@@ -1,0 +1,225 @@
+{
+  "batch": "17",
+  "items": [
+    {
+      "landmarkId": "cn-贵州-织金洞景区",
+      "match": "scene",
+      "query": "Zhijin Cave",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Zhijin Cave\", \"Guizhou cave\" — only generic 'Guizhou cave' interior shots (same set also returned for Longgong), can't confirm as Zhijin; Zhijin-labelled shots are sponsored iStock ads."
+    },
+    {
+      "landmarkId": "cn-贵州-赤水丹霞旅游区",
+      "match": "scene",
+      "query": "Chishui Danxia",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Chishui Danxia\" — results are all Zhangye (Gansu) Danxia landform; the Chishui-labelled shots are sponsored iStock ads."
+    },
+    {
+      "landmarkId": "cn-贵州-镇远古城旅游景区",
+      "match": "scene",
+      "query": "Zhenyuan ancient town",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Zhenyuan ancient town\", \"Zhenyuan Guizhou\" — only Fenghuang (Hunan) and other unrelated Chinese old towns."
+    },
+    {
+      "landmarkId": "cn-贵州-梵净山旅游区",
+      "match": "scene",
+      "query": "Mount Fanjing",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Mount Fanjing\", \"Fanjingshan Guizhou\" — the real Fanjing/Red Cloud Golden Summit shots are all sponsored iStock ads; free results are Mount Emei / Zhangjiajie / Fansipan (other places)."
+    },
+    {
+      "landmarkId": "cn-贵州-青岩古镇景区",
+      "match": "scene",
+      "query": "Qingyan ancient town Guiyang",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Qingyan ancient town Guiyang\" — only Jiaxiu Tower (Guiyang), Chongqing and Wuzhou architecture; nothing of Qingyan."
+    },
+    {
+      "landmarkId": "cn-贵州-樟江景区",
+      "match": "scene",
+      "query": "Libo Xiaoqikong",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Libo Xiaoqikong\", \"Xiaoqikong Guizhou\", \"Guizhou Libo waterfall\" — only generic 'Guizhou waterfall/river' shots by one photographer (unconfirmable); the Libo/Xiaoqikong-labelled shots are sponsored iStock ads."
+    },
+    {
+      "landmarkId": "cn-贵州-百里杜鹃景区",
+      "match": "scene",
+      "query": "Baili azalea Guizhou",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Baili azalea Guizhou\" — only generic azalea close-ups; the Baili Azalea Mountain shots are sponsored iStock ads."
+    },
+    {
+      "landmarkId": "cn-贵州-龙宫景区",
+      "match": "scene",
+      "query": "Longgong cave Anshun",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Longgong cave Anshun\" — only generic cave interiors; the Longgong/Tianxing-labelled shots are sponsored iStock ads."
+    },
+    {
+      "landmarkId": "cn-贵州-黄果树瀑布景区",
+      "match": "place",
+      "query": "Huangguoshu Waterfall",
+      "mediaUrl": "https://images.pexels.com/photos/32563113/pexels-photo-32563113.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic Huangguoshu Waterfall in Guizhou, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-huangguoshu-waterfall-in-guizhou-china-32563113/", "author": "Good Night" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 51233 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-贵州-西江千户苗寨",
+      "match": "place",
+      "query": "Xijiang Miao village",
+      "mediaUrl": "https://images.pexels.com/photos/38964290/pexels-photo-38964290.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic View of Xijiang Miao Village in Guizhou",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-view-of-xijiang-miao-village-in-guizhou-38964290/", "author": "Alex Ning" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 61667 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-云南-和顺古镇景区",
+      "match": "scene",
+      "query": "Heshun ancient town Tengchong",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Heshun ancient town Tengchong\" — the Heshun shots are sponsored iStock ads; free results are other Chinese water towns (Hongcun/Shaoxing etc.)."
+    },
+    {
+      "landmarkId": "cn-云南-普者黑旅游景区",
+      "match": "scene",
+      "query": "Puzhehei Yunnan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Puzhehei Yunnan\", \"Puzhehei China\" — all Puzhehei shots are sponsored iStock ads; free results are Dali/other lakes."
+    },
+    {
+      "landmarkId": "cn-云南-火山热海旅游区",
+      "match": "scene",
+      "query": "Tengchong volcano hot spring",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Tengchong volcano hot spring\" — the Tengchong Rehai hot-spring shots are sponsored iStock ads; free geothermal shots are Iceland/Japan/Java (other places)."
+    },
+    {
+      "landmarkId": "cn-云南-昆明世博园景区",
+      "match": "scene",
+      "query": "Kunming Expo Garden",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Kunming Expo Garden\" — the Kunming World Expo Park shots are sponsored iStock ads; free results are generic Kunming city/gardens."
+    },
+    {
+      "landmarkId": "cn-云南-普达措国家公园",
+      "match": "scene",
+      "query": "Pudacuo National Park",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Pudacuo National Park\", \"Pudacuo\" — the Potatso/Shudu Lake shots are sponsored iStock ads; free results are unrelated pastures/hills."
+    },
+    {
+      "landmarkId": "cn-云南-中科院西双版纳热带植物园",
+      "match": "scene",
+      "query": "Xishuangbanna tropical botanical garden",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Xishuangbanna tropical botanical garden\" — only generic tropical gardens (Thailand/Vietnam/Malaysia etc.), nothing of XTBG."
+    },
+    {
+      "landmarkId": "cn-云南-崇圣寺三塔文化旅游区",
+      "match": "place",
+      "query": "Chongsheng Three Pagodas",
+      "mediaUrl": "https://images.pexels.com/photos/15583903/pexels-photo-15583903.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Three Pagodas of Chongsheng Temple against Blue Sky",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/three-pagodas-of-chongsheng-temple-against-blue-sky-15583903/", "author": "fei wang" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 32238 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-云南-丽江古城景区",
+      "match": "place",
+      "query": "Lijiang old town",
+      "mediaUrl": "https://images.pexels.com/photos/36847750/pexels-photo-36847750.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Vibrant Street Scene in Lijiang Old Town",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/vibrant-street-scene-in-lijiang-old-town-36847750/", "author": "xiaoxian" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 164531 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-云南-玉龙雪山景区",
+      "match": "place",
+      "query": "Jade Dragon Snow Mountain",
+      "mediaUrl": "https://images.pexels.com/photos/38329325/pexels-photo-38329325.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic Views of Jade Dragon Snow Mountain",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-views-of-jade-dragon-snow-mountain-38329325/", "author": "WJ Y" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 41263 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-云南-石林风景区",
+      "match": "place",
+      "query": "Stone Forest Shilin Yunnan",
+      "mediaUrl": "https://images.pexels.com/photos/5505108/pexels-photo-5505108.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Stone Forest",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/stone-forest-5505108/", "author": "Mike van Schoonderwalt" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 80725 },
+      "verdict": "ok",
+      "note": ""
+    }
+  ]
+}

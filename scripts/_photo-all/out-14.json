@@ -1,0 +1,225 @@
+{
+  "batch": "14",
+  "items": [
+    {
+      "landmarkId": "cn-湖南-湖南博物院",
+      "match": "scene",
+      "query": "Hunan Museum Changsha / Hunan Provincial Museum",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Hunan Museum Changsha' and 'Hunan Provincial Museum'; only generic Changsha city/temple/artifact shots, no image identifiable as the Hunan Museum building."
+    },
+    {
+      "landmarkId": "cn-广东-万绿湖风景区",
+      "match": "scene",
+      "query": "Wanlu Lake Heyuan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Wanlu Lake Heyuan'; only generic lakes/reservoirs, no photo of Wanlu Lake itself."
+    },
+    {
+      "landmarkId": "cn-广东-开平碉楼文化旅游区",
+      "match": "place",
+      "query": "Kaiping Diaolou",
+      "mediaUrl": "https://images.pexels.com/photos/38487357/pexels-photo-38487357.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Historic twin villas with unique architecture",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/historic-twin-villas-with-unique-architecture-38487357/", "author": "Sanynjez Gao" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 72916 },
+      "verdict": "ok",
+      "note": "Twin multi-storey Western-style Kaiping diaolou/villa towers; verified visually."
+    },
+    {
+      "landmarkId": "cn-广东-星湖旅游景区",
+      "match": "scene",
+      "query": "Xinghu Lake Zhaoqing",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Xinghu Lake Zhaoqing'; only generic lakes; the Zhaoqing Seven Star Crags hits were all iStock ads (skipped)."
+    },
+    {
+      "landmarkId": "cn-广东-惠州西湖旅游景区",
+      "match": "scene",
+      "query": "Huizhou West Lake",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Huizhou West Lake'; every result was Hangzhou West Lake (Leifeng Pagoda), not Huizhou."
+    },
+    {
+      "landmarkId": "cn-广东-孙中山故里旅游区",
+      "match": "scene",
+      "query": "Sun Yat-sen former residence Zhongshan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Sun Yat-sen former residence Zhongshan'; results were the Nanjing mausoleum (different place), not the Zhongshan birthplace."
+    },
+    {
+      "landmarkId": "cn-广东-海陵岛大角湾海上丝路旅游区",
+      "match": "scene",
+      "query": "Hailing Island Yangjiang beach",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Hailing Island Yangjiang beach'; only generic beaches; the Hailing Island hits were all iStock ads (skipped)."
+    },
+    {
+      "landmarkId": "cn-广东-长鹿旅游休博园",
+      "match": "scene",
+      "query": "Foshan amusement park",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Foshan amusement park'; only generic amusement rides, nothing identifiable as Changlu."
+    },
+    {
+      "landmarkId": "cn-广东-罗浮山景区",
+      "match": "scene",
+      "query": "Luofu Mountain Guangdong",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Luofu Mountain Guangdong'; only generic mountains; the real Luofu shots were all iStock ads (skipped)."
+    },
+    {
+      "landmarkId": "cn-广东-西樵山景区",
+      "match": "place",
+      "query": "Xiqiao Mountain Foshan",
+      "mediaUrl": "https://images.pexels.com/photos/14557597/pexels-photo-14557597.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The colossal statue of Guanyin of Mount Xiqiao in Foshan China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/the-colossal-statue-of-guanyin-of-mount-xiqiao-in-foshan-china-14557597/", "author": "tkirkgoz" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 92579 },
+      "verdict": "ok",
+      "note": "Colossal Guanyin statue of Mount Xiqiao, Foshan; verified visually."
+    },
+    {
+      "landmarkId": "cn-广东-丹霞山景区",
+      "match": "place",
+      "query": "Mount Danxia Shaoguan",
+      "mediaUrl": "https://images.pexels.com/photos/4997649/pexels-photo-4997649.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Brown rock formation in the middle of green trees",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/brown-rock-formation-in-the-middle-of-green-trees-4997649/", "author": "Mike Liu" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 95298 },
+      "verdict": "ok",
+      "note": "Iconic red sandstone pillar (Yangyuan Stone) of Danxia Mountain; verified visually. All other Mount Danxia hits were iStock ads or Zhangye Danxia (Gansu)."
+    },
+    {
+      "landmarkId": "cn-广东-地下河旅游景区",
+      "match": "scene",
+      "query": "Underground river cave Qingyuan Guangdong",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Underground river cave Qingyuan Guangdong'; only generic caves (mostly Vietnam), nothing identifiable as the Qingyuan site."
+    },
+    {
+      "landmarkId": "cn-广东-观澜湖休闲旅游区",
+      "match": "scene",
+      "query": "Mission Hills Shenzhen golf",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Mission Hills Shenzhen golf'; only generic golf courses, nothing identifiable as Mission Hills."
+    },
+    {
+      "landmarkId": "cn-广东-雁南飞茶田景区",
+      "match": "scene",
+      "query": "Yannanfei tea garden Meizhou",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Yannanfei tea garden Meizhou'; only generic tea plantations (mostly Hangzhou Longjing), nothing from Meizhou."
+    },
+    {
+      "landmarkId": "cn-广东-白云山景区",
+      "match": "place",
+      "query": "Baiyun Mountain Guangzhou",
+      "mediaUrl": "https://images.pexels.com/photos/36064131/pexels-photo-36064131.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Entrance to Baiyun Mountain in Guangzhou China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/entrance-to-baiyun-mountain-in-guangzhou-china-36064131/", "author": "Bingqian Li" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 37956 },
+      "verdict": "ok",
+      "note": "Entrance gate with the characters 白云山 clearly legible; verified visually."
+    },
+    {
+      "landmarkId": "cn-广东-华侨城旅游度假区",
+      "match": "scene",
+      "query": "OCT Shenzhen theme park / Splendid China Shenzhen",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'OCT Shenzhen theme park' and 'Splendid China Shenzhen'; only Shenzhen skylines and generic theme parks."
+    },
+    {
+      "landmarkId": "cn-广东-长隆旅游度假区",
+      "match": "scene",
+      "query": "Chimelong Guangzhou / Chimelong safari park Guangzhou",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Chimelong Guangzhou' and 'Chimelong safari park Guangzhou'; only generic amusement rides and zoo animals; the real Chimelong hits were iStock ads (skipped)."
+    },
+    {
+      "landmarkId": "cn-广东-广州塔",
+      "match": "place",
+      "query": "Canton Tower Guangzhou",
+      "mediaUrl": "https://images.pexels.com/photos/30304300/pexels-photo-30304300.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Canton Tower in Guangzhou under clear blue sky",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/canton-tower-in-guangzhou-under-clear-blue-sky-30304300/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 61831 },
+      "verdict": "ok",
+      "note": "Canton Tower clearly identifiable against the sky; verified visually."
+    },
+    {
+      "landmarkId": "cn-广西-花山岩画景区",
+      "match": "scene",
+      "query": "Huashan rock art Guangxi / cliff rock painting Guangxi China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Huashan rock art Guangxi' (Cloudflare-blocked) and 'cliff rock painting Guangxi China'; only Li River/Guilin karst and unrelated cliff inscriptions."
+    },
+    {
+      "landmarkId": "cn-广西-程阳八寨景区",
+      "match": "scene",
+      "query": "Chengyang wind and rain bridge Guangxi",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Chengyang wind and rain bridge Guangxi'; only generic Chinese bridges and ethnic-costume portraits; the real Chengyang bridge hits were all iStock ads (skipped)."
+    }
+  ]
+}

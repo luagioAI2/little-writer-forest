@@ -1,0 +1,43 @@
+[
+  {
+    "key": "spring-park",
+    "hint": "近处草地上开着各色小花、小路弯弯，中景两棵开满粉花的树，远处是淡绿的青山和白云，一个女孩牵着狗在散步。",
+    "en": "spring park blooming trees path",
+    "usedBy": [
+      "builtin-season-1"
+    ]
+  },
+  {
+    "key": "grandpa-garden",
+    "hint": "菜地里一畦畦菜苗排得整整齐齐，戴草帽的爷爷提着蓝色喷壶浇水，身后是木栅栏和小房子。",
+    "en": "grandfather watering vegetable garden",
+    "usedBy": [
+      "builtin-season-4",
+      "builtin-family-2"
+    ]
+  },
+  {
+    "key": "school-autumn",
+    "hint": "教学楼前两棵银杏树金黄一片，地上落满了叶子，一个女孩走在铺满落叶的小路上。",
+    "en": "ginkgo tree autumn leaves path",
+    "usedBy": [
+      "builtin-season-7"
+    ]
+  },
+  {
+    "key": "fog-morning",
+    "hint": "雾里只能看清近处的小路和两个人影，远处的树影若隐若现，路边立着一盏还亮着的路灯。",
+    "en": "foggy road morning mist",
+    "usedBy": [
+      "builtin-weather-3"
+    ]
+  },
+  {
+    "key": "umbrella-rain",
+    "hint": "雨天街道上，一把橙色的伞下站着两个人，地面积着水洼，远处是灰蓝色的楼房。",
+    "en": "umbrella rain street walking",
+    "usedBy": [
+      "builtin-weather-4"
+    ]
+  }
+]

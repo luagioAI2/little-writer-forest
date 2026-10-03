@@ -1,0 +1,182 @@
+[
+  {
+    "n": 41,
+    "tag": "treasure",
+    "title": "爸爸送的手表",
+    "primary": {
+      "id": "6328859",
+      "url": "https://images.pexels.com/photos/6328859/pexels-photo-6328859.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/person-wearing-an-analog-wrist-watch-6328859/",
+      "why": "一只手正在整理皮表带的腕表，表就戴在手腕上，棕色皮质暖调，正对'表带有点松了'的题眼；原图 6720x4480（3:2）横图。"
+    },
+    "fallback": {
+      "id": "5191434",
+      "url": "https://images.pexels.com/photos/5191434/pexels-photo-5191434.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/man-wearing-wristwatch-5191434/",
+      "why": "一只戴在男性手腕上的金色腕表特写，主体明确是'手腕上的表'；原图 5472x3648（3:2）横图。"
+    },
+    "fail": null
+  },
+  {
+    "n": 42,
+    "tag": "food",
+    "title": "奶奶做的红烧肉",
+    "primary": {
+      "id": "8256988",
+      "url": "https://images.pexels.com/photos/8256988/pexels-photo-8256988.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/close-up-shot-of-delicious-braised-pork-on-white-ceramic-plate-8256988/",
+      "why": "红烧肉（braised pork belly）浇汁配青菜的特写，标签含 Chinese Food / Soy Sauce，正是'奶奶做的红烧肉'；原图 6240x4160（3:2）横图。"
+    },
+    "fallback": {
+      "id": "34474143",
+      "url": "https://images.pexels.com/photos/34474143/pexels-photo-34474143.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/deliciously-braised-pork-belly-in-rich-sauce-34474143/",
+      "why": "浓汁炖五花肉（braised pork belly in rich sauce）的近景，肉块与汤汁占满画面；原图 4096x3072（4:3）横图。"
+    },
+    "fail": null
+  },
+  {
+    "n": 43,
+    "tag": "life-goods",
+    "title": "门口的擦鞋垫",
+    "primary": {
+      "id": "36550591",
+      "url": "https://images.pexels.com/photos/36550591/pexels-photo-36550591.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/black-rubber-doormat-with-footprint-design-36550591/",
+      "why": "黑色橡胶门垫的特写，垫面就是脚印纹样，正对'进门之前先在它上面踩两脚'，画面无任何印刷文字；原图 5926x3333（约16:9）横图。"
+    },
+    "fallback": {
+      "id": "8561914",
+      "url": "https://images.pexels.com/photos/8561914/pexels-photo-8561914.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/carpet-on-tile-floor-8561914/",
+      "why": "明亮的入户玄关，玻璃门内侧地面铺着一块地垫，把'门口'的场景交代得很清楚；原图 5884x3920（3:2）横图。"
+    },
+    "fail": null
+  },
+  {
+    "n": 44,
+    "tag": "if-i",
+    "title": "假如我有一支神笔",
+    "primary": {
+      "id": "6695116",
+      "url": "https://images.pexels.com/photos/6695116/pexels-photo-6695116.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/a-person-holding-a-paint-brush-painting-6695116/",
+      "why": "一个孩子拿着画笔在画架上的画布上作画，手、笔、画纸（画布）三样都在，贴合'假如我有一支神笔'；原图 5531x3680（约3:2）横图。"
+    },
+    "fallback": {
+      "id": "7283486",
+      "url": "https://images.pexels.com/photos/7283486/pexels-photo-7283486.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/a-person-painting-on-white-paper-7283486/",
+      "why": "一个人在白纸上作画的近景，周围散着彩色画材，直接对应'握画笔的手与画纸'；原图 6720x4480（3:2）横图。"
+    },
+    "fail": null
+  },
+  {
+    "n": 45,
+    "tag": "future",
+    "title": "未来的家",
+    "primary": {
+      "id": "39829574",
+      "url": "https://images.pexels.com/photos/39829574/pexels-photo-39829574.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/modern-luxurious-kitchen-and-living-area-interior-39829574/",
+      "why": "现代开放式厨房＋客厅一体的大宅内景，整洁的当代设计感，对应'未来的家'里自动亮灯、饭刚做好的场景；原图 3840x2160（16:9）横图。"
+    },
+    "fallback": {
+      "id": "34989208",
+      "url": "https://images.pexels.com/photos/34989208/pexels-photo-34989208.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/elegant-modern-dining-and-living-room-interior-34989208/",
+      "why": "现代风格的餐厅＋客厅，暖色氛围灯亮着，居家又带未来感；原图 5000x3333（3:2）横图。"
+    },
+    "fail": null
+  },
+  {
+    "n": 46,
+    "tag": "fairy",
+    "title": "《狐狸和乌鸦》新编",
+    "primary": {
+      "id": "38335455",
+      "url": "https://images.pexels.com/photos/38335455/pexels-photo-38335455.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/vibrant-red-fox-in-autumn-forest-38335455/",
+      "why": "一只赤狐坐在秋天的林地里，落叶与暖色背景，正是故事里那只在树林里动脑筋的狐狸；原图 14720x9824（约3:2）横图。"
+    },
+    "fallback": {
+      "id": "30506036",
+      "url": "https://images.pexels.com/photos/30506036/pexels-photo-30506036.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/wild-fox-in-a-romanian-forest-clearing-30506036/",
+      "why": "一只野狐站在森林空地上，主体清晰、背景是林地；原图 4529x2715（约5:3）横图。"
+    },
+    "fail": null
+  },
+  {
+    "n": 47,
+    "tag": "talking",
+    "title": "如果台灯会说话",
+    "primary": {
+      "id": "2168382",
+      "url": "https://images.pexels.com/photos/2168382/pexels-photo-2168382.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/powered-on-gold-desk-lamp-on-desk-with-opened-book-2168382/",
+      "why": "桌上一盏亮着的台灯，旁边摊着打开的书，暖光落在桌面，正对'每天晚上都亮着陪你'；原图 6000x3376（16:9）横图。"
+    },
+    "fallback": {
+      "id": "284951",
+      "url": "https://images.pexels.com/photos/284951/pexels-photo-284951.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/turned-on-desk-lamp-284951/",
+      "why": "一盏点亮的台灯把暖光打在墙上，安静的书桌夜景；原图 3088x2056（约3:2）横图。"
+    },
+    "fail": null
+  },
+  {
+    "n": 48,
+    "tag": "dream",
+    "title": "我梦见自己会飞",
+    "primary": {
+      "id": "38351370",
+      "url": "https://images.pexels.com/photos/38351370/pexels-photo-38351370.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/aerial-view-of-clouds-and-landscape-below-38351370/",
+      "why": "高空俯瞰视角：大片云朵下面铺着绿色大地，正好对应'飞过了哪些地方'；原图 4032x2268（16:9）横图。"
+    },
+    "fallback": {
+      "id": "35070574",
+      "url": "https://images.pexels.com/photos/35070574/pexels-photo-35070574.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/aerial-view-of-fluffy-clouds-and-clear-blue-sky-35070574/",
+      "why": "从云层之上拍过去的绵白云海配湛蓝天空，是'在云上飞'的视角；原图 5961x3974（3:2）横图。"
+    },
+    "fail": null
+  },
+  {
+    "n": 49,
+    "tag": "sci-fi",
+    "title": "会飞的汽车",
+    "primary": {
+      "id": "32232401",
+      "url": "https://images.pexels.com/photos/32232401/pexels-photo-32232401.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/futuristic-spacecraft-hovering-above-clouds-32232401/",
+      "why": "一架造型现代的飞行器悬停在云海之上（对应备注里的'未来交通工具/飞行器'），明亮干净、无品牌无文字；原图 3840x2160（16:9）横图。"
+    },
+    "fallback": {
+      "id": "14092094",
+      "url": "https://images.pexels.com/photos/14092094/pexels-photo-14092094.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/puma-helicopter-transporting-a-car-14092094/",
+      "why": "一辆汽车被吊在半空、背后是干净的蓝天，是'汽车升到半空'最直白的画面；原图 5616x3744（3:2）横图。"
+    },
+    "fail": null
+  },
+  {
+    "n": 50,
+    "tag": "deform",
+    "title": "我变成了一棵树",
+    "primary": {
+      "id": "31283401",
+      "url": "https://images.pexels.com/photos/31283401/pexels-photo-31283401.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/looking-up-at-tree-canopies-against-sky-31283401/",
+      "why": "从下往上仰视树冠，枝干向天空张开，正对'从下往上看树冠'的设定；原图 6000x4000（3:2）横图。"
+    },
+    "fallback": {
+      "id": "91491",
+      "url": "https://images.pexels.com/photos/91491/pexels-photo-91491.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/low-angle-photography-of-trees-during-daytime-91491/",
+      "why": "贴着树干从地面仰拍，树皮与枝丫一路向上展开，像'脚扎进土里、手臂变成树枝'的视角；原图 5184x3456（3:2）横图。"
+    },
+    "fail": null
+  }
+]

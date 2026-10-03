@@ -1,0 +1,60 @@
+{
+  "batch": "04",
+  "items": [
+    {
+      "key": "farewell-school",
+      "pexelsId": 37451367,
+      "mediaUrl": "https://images.pexels.com/photos/37451367/pexels-photo-37451367.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Group of Children Waving Outdoors",
+      "credit": { "link": "https://www.pexels.com/photo/group-of-children-waving-outdoors-37451367/", "author": "Ben Tran" },
+      "verified": { "http": 200, "bytes": 61374 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "一排穿各色衣服的孩子在户外站成一排、举手挥手打招呼，主体「多个小孩挥手」清晰可见；背景是素墙，没有校门/校旗/横幅，人数多于四个"
+    },
+    {
+      "key": "my-talent",
+      "pexelsId": 38624446,
+      "mediaUrl": "https://images.pexels.com/photos/38624446/pexels-photo-38624446.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Young Boy Playing Piano in Cozy Home Setting",
+      "credit": { "link": "https://www.pexels.com/photo/young-boy-playing-piano-in-cozy-home-setting-38624446/", "author": "Krishna Kids Photography" },
+      "verified": { "http": 200, "bytes": 39048 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "男孩坐在钢琴前弹奏、双手搭在琴键上，侧脸低头不看镜头，室内暖光米白调；没有聚光灯和紫色音符，琴是立式而非三角"
+    },
+    {
+      "key": "turtle",
+      "pexelsId": 32486966,
+      "mediaUrl": "https://images.pexels.com/photos/32486966/pexels-photo-32486966.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Turtle Resting on a Log in a Pond",
+      "credit": { "link": "https://www.pexels.com/photo/turtle-resting-on-a-log-in-a-pond-32486966/", "author": "patrice schoefolt" },
+      "verified": { "http": 200, "bytes": 62561 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "一只小乌龟趴在池塘里的木头上，头和四条腿都伸在外面、壳上花纹清晰，四周是水面；是池塘而非浅水盆，没有龟粮"
+    },
+    {
+      "key": "dandelion",
+      "pexelsId": 1153269,
+      "mediaUrl": "https://images.pexels.com/photos/1153269/pexels-photo-1153269.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Dandelion Beside Green Grass",
+      "credit": { "link": "https://www.pexels.com/photo/dandelion-beside-green-grass-1153269/", "author": "Marek Levak" },
+      "verified": { "http": 200, "bytes": 38461 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "绿草丛中一簇白色蒲公英绒球，其中一朵正在散开、绒毛飘在空气里，绿色草地背景；是成簇而非单独一朵，天空不入镜"
+    },
+    {
+      "key": "lotus",
+      "pexelsId": 21794245,
+      "mediaUrl": "https://images.pexels.com/photos/21794245/pexels-photo-21794245.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Lotus Blooming in Pond",
+      "credit": { "link": "https://www.pexels.com/photo/lotus-blooming-in-pond-21794245/", "author": "Alix Lee" },
+      "verified": { "http": 200, "bytes": 55462 },
+      "size": { "w": 640, "h": 421, "ar": 1.52 },
+      "verdict": "ok",
+      "note": "一朵粉色荷花盛开在铺满圆圆荷叶的池塘水面上，荷叶上带水珠，主体「圆叶+粉荷盛开」齐了；旁边没有花苞，也没有蜻蜓"
+    }
+  ]
+}

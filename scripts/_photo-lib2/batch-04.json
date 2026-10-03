@@ -1,0 +1,126 @@
+{
+ "batch": "4",
+ "items": [
+  {
+   "id": "builtin-life-goods-20",
+   "title": "我的保温杯",
+   "query": "thermos flask on desk",
+   "alts": [
+    "vacuum flask open steam",
+    "insulated water bottle on table",
+    "thermos cup close up"
+   ],
+   "must": "一个**保温杯**（看得清杯身），最好放在桌上或开着盖冒热气；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-21",
+   "title": "我的存钱罐",
+   "query": "piggy bank with coins",
+   "alts": [
+    "hand putting coin in piggy bank",
+    "coin bank with coins on table",
+    "saving money jar with coins"
+   ],
+   "must": "一个**存钱罐**（猪形或罐子都行），最好旁边有硬币或手在投币；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-22",
+   "title": "我的小牙刷",
+   "query": "toothbrush in cup bathroom",
+   "alts": [
+    "toothbrush and toothpaste on sink",
+    "toothbrush standing in holder",
+    "toothbrush cup bathroom counter"
+   ],
+   "must": "一把**牙刷**插在杯子里或放在洗手台上（旁边有牙膏更好）；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-23",
+   "title": "雨天的雨靴",
+   "query": "rain boots in puddle",
+   "alts": [
+    "child rain boots puddle",
+    "rubber boots by door",
+    "wellies splashing water"
+   ],
+   "must": "一双**雨靴**（最好踩在水洼里或放在门边），靴子本身看得清；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-24",
+   "title": "家里的窗帘",
+   "query": "curtains with sunlight window",
+   "alts": [
+    "curtain morning sunlight room",
+    "sheer curtains window light",
+    "pulling curtain open window"
+   ],
+   "must": "**窗帘**（最好有阳光透过窗帘、或拉开窗帘的画面）；★ 彩色，不要黑白；★ 暖调"
+  },
+  {
+   "id": "builtin-life-goods-25",
+   "title": "鞋柜里的鞋",
+   "query": "shoes on shoe rack shelf",
+   "alts": [
+    "shoe cabinet with shoes",
+    "shoes lined up on rack",
+    "family shoes on shelf"
+   ],
+   "must": "**鞋柜里排着的鞋**（打开的状态，看得见好几双鞋）；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-26",
+   "title": "书包上的小挂件",
+   "query": "backpack with keychain charm",
+   "alts": [
+    "school bag with hanging charm",
+    "backpack keyring pendant",
+    "bag with small plush keychain"
+   ],
+   "must": "一个**书包**，上面挂着一个**小挂件/钥匙扣**（书包和挂件都要看得见）；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-27",
+   "title": "电饭煲冒气了",
+   "query": "rice cooker with steam",
+   "alts": [
+    "rice cooker open lid steam",
+    "electric rice cooker on counter",
+    "cooked rice in rice cooker"
+   ],
+   "must": "一个**电饭煲**（开着盖冒白气更好），放在厨房台面上；★ 彩色，不要黑白；★ 暖调"
+  },
+  {
+   "id": "builtin-life-goods-28",
+   "title": "空调吹出来的风",
+   "query": "air conditioner on wall indoor",
+   "alts": [
+    "split air conditioner indoor unit",
+    "wall mounted air conditioner",
+    "air conditioner in room"
+   ],
+   "must": "一台**壁挂空调**（室内机）在墙上，或出风口的画面；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-29",
+   "title": "一把旧椅子",
+   "query": "old wooden chair worn",
+   "alts": [
+    "vintage wooden chair",
+    "old chair with worn wood",
+    "wooden chair against wall"
+   ],
+   "must": "一把**旧木椅子**（看得出年代感）；★ 主体是椅子；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-30",
+   "title": "我的小书桌",
+   "query": "study desk with books and pencil",
+   "alts": [
+    "wooden desk with notebooks",
+    "child desk with school supplies",
+    "writing desk with lamp and books"
+   ],
+   "must": "一张**书桌/写字台**（桌面上有书本文具，或看得出使用痕迹）；★ 彩色，不要黑白"
+  }
+ ]
+}

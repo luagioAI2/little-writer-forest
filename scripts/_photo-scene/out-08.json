@@ -1,0 +1,93 @@
+{
+  "batch": "08",
+  "items": [
+    {
+      "key": "cleaning-class",
+      "pexelsId": 28761314,
+      "mediaUrl": "https://images.pexels.com/photos/28761314/pexels-photo-28761314.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Woman Cleaning Classroom Window For School Maintenance",
+      "credit": { "link": "https://www.pexels.com/photo/woman-cleaning-classroom-window-for-school-maintenance-28761314/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 43751 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "教室里一个人（背影、不露脸）抬手擦窗，窗边桌椅搬到一边、暖光斜照（对上「一个孩子在擦窗+桌椅搬到一边」）；无扫地的孩子、无提水桶、黑板不在取景内"
+    },
+    {
+      "key": "deskmate",
+      "pexelsId": 37812837,
+      "mediaUrl": "https://images.pexels.com/photos/37812837/pexels-photo-37812837.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "students taking notes in classroom with desks",
+      "credit": { "link": "https://www.pexels.com/photo/students-taking-notes-in-classroom-with-desks-37812837/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 36012 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "课桌特写——学生的手在摊开的本子上用笔写字，桌上有书和笔（对上「桌上摊着书和笔」），暖光、不露脸；无「两个同桌」同框、无对话气泡、黑板不在画面"
+    },
+    {
+      "key": "introduce-thing",
+      "pexelsId": 6372911,
+      "mediaUrl": "https://images.pexels.com/photos/6372911/pexels-photo-6372911.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Modern Laptop with Mockup Screen on Wooden Table",
+      "credit": { "link": "https://www.pexels.com/photo/modern-laptop-with-mockup-screen-on-wooden-table-6372911/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 20783 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "木质桌面上端正放着一台笔记本电脑、旁边有手机和书（对上「展示台上放着笔记本电脑」），暖木色调；无标注线、无讲解的小孩"
+    },
+    {
+      "key": "my-paradise",
+      "pexelsId": 24786312,
+      "mediaUrl": "https://images.pexels.com/photos/24786312/pexels-photo-24786312.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Wooden treehouse in summer",
+      "credit": { "link": "https://www.pexels.com/photo/wooden-treehouse-in-summer-24786312/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 96184 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "大树枝叶间架着一座木屋（对上「大树上有个树屋」），木质+绿荫；无秋千、地上无五颜六色的花、无挥手的小孩"
+    },
+    {
+      "key": "pencil-home",
+      "pexelsId": 37187501,
+      "mediaUrl": "https://images.pexels.com/photos/37187501/pexels-photo-37187501.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Colorful Pencils in Patterned Pencil Case",
+      "credit": { "link": "https://www.pexels.com/photo/colorful-pencils-in-patterned-pencil-case-37187501/", "author": "jahratreza" },
+      "verified": { "http": 200, "bytes": 35779 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "一只打开的笔袋里挤满各色彩笔（对上「打开的笔袋里挤着好几支彩笔」）；笔袋是蓝白条纹不是红色、画面里没有橡皮"
+    },
+    {
+      "key": "school-garden",
+      "pexelsId": 31182410,
+      "mediaUrl": "https://images.pexels.com/photos/31182410/pexels-photo-31182410.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Charming Garden Pathway with Blooming Flowers",
+      "credit": { "link": "https://www.pexels.com/photo/charming-garden-pathway-with-blooming-flowers-31182410/", "author": "B.O Minh" },
+      "verified": { "http": 200, "bytes": 66594 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "石板小路两侧花圃里开满粉红各色小花（对上「小路+花圃里开满各色小花」），暖粉调；无教学楼、无木栅栏、无散步的学生、无小鸟"
+    },
+    {
+      "key": "sports-day",
+      "pexelsId": 31772339,
+      "mediaUrl": "https://images.pexels.com/photos/31772339/pexels-photo-31772339.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Children Running on a Track in Vibrant Dresses",
+      "credit": { "link": "https://www.pexels.com/photo/children-running-on-a-track-in-vibrant-dresses-31772339/", "author": "magapls" },
+      "verified": { "http": 200, "bytes": 45851 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "红色跑道上几个孩子在跑动、旁边是绿色球场（对上「跑道上孩子们正在赛跑」），远景不露脸、暖阳；无彩旗、无内圈挥手的同学、远处无教学楼"
+    },
+    {
+      "key": "turtle-rabbit",
+      "pexelsId": 31219146,
+      "mediaUrl": "https://images.pexels.com/photos/31219146/pexels-photo-31219146.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Tortoise Browsing Grass in Tunisian Sunlight",
+      "credit": { "link": "https://www.pexels.com/photo/tortoise-browsing-grass-in-tunisian-sunlight-31219146/", "author": "Alfred Franz" },
+      "verified": { "http": 200, "bytes": 103359 },
+      "size": { "w": 640, "h": 426, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "暖阳下一只乌龟在绿草地上慢慢爬行（对上「乌龟在慢慢往前爬」），暖调；无兔子、无红旗、不在跑道上"
+    }
+  ]
+}

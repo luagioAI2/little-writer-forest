@@ -1,0 +1,182 @@
+[
+  {
+    "n": 31,
+    "tag": "letter",
+    "title": "给老师的一封信",
+    "primary": {
+      "id": "6830868",
+      "url": "https://images.pexels.com/photos/6830868/pexels-photo-6830868.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/a-person-composing-a-personal-letter-6830868/",
+      "why": "Hands handwriting a letter on paper at a wooden table with a journal and coffee cup - literally the letter-writing desk the prompt asks for, and no face in frame (3500x2333, 3:2)."
+    },
+    "fallback": {
+      "id": "38545752",
+      "url": "https://images.pexels.com/photos/38545752/pexels-photo-38545752.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/vintage-wooden-desk-with-writing-supplies-38545752/",
+      "why": "A wooden desk laid out with writing supplies - the 'desk with letter paper and pen' scene from the note, no people and no text (8976x5984, 3:2)."
+    },
+    "fail": null
+  },
+  {
+    "n": 32,
+    "tag": "look-picture",
+    "title": "图上的那个下午",
+    "primary": {
+      "id": "37707801",
+      "url": "https://images.pexels.com/photos/37707801/pexels-photo-37707801.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/children-playing-in-a-park-on-a-sunny-day-37707801/",
+      "why": "Two boys playing on green grass in a lively sunny park - people active in a park in the afternoon, shot wide enough for a 'what happens next' prompt (4000x2472)."
+    },
+    "fallback": {
+      "id": "36034495",
+      "url": "https://images.pexels.com/photos/36034495/pexels-photo-36034495.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/children-playing-on-a-swing-in-a-lush-park-36034495/",
+      "why": "Two children on a swing amid lush greenery in a sunny park - same afternoon-park scene, distant framing (4256x2832, 3:2)."
+    },
+    "fail": null
+  },
+  {
+    "n": 33,
+    "tag": "look-picture",
+    "title": "四幅图，一件事",
+    "primary": {
+      "id": "139764",
+      "url": "https://images.pexels.com/photos/139764/pexels-photo-139764.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/four-paintings-on-wall-139764/",
+      "why": "Four framed artworks hung in a row on one wall - exactly the 'four pictures in a sequence' sense the title needs (2954x1989, 3:2)."
+    },
+    "fallback": {
+      "id": "2480854",
+      "url": "https://images.pexels.com/photos/2480854/pexels-photo-2480854.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/photo-frames-mounted-on-walls-2480854/",
+      "why": "A minimalist wall of framed black-and-white photos lined up in a row - multiple frames side by side, giving the counting feel (5312x2988, 16:9)."
+    },
+    "fail": null
+  },
+  {
+    "n": 34,
+    "tag": "custom",
+    "title": "端午的粽子",
+    "primary": {
+      "id": "20214475",
+      "url": "https://images.pexels.com/photos/20214475/pexels-photo-20214475.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/hands-of-a-woman-wrapping-rice-in-banana-leaves-20214475/",
+      "why": "Close-up of hands folding rice into leaves to wrap a sticky-rice dumpling - matches 'the leaf folds in your hand and the rice goes in' (6000x4000, 3:2)."
+    },
+    "fallback": {
+      "id": "12669840",
+      "url": "https://images.pexels.com/photos/12669840/pexels-photo-12669840.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/traditional-chinese-zongzi-dish-12669840/",
+      "why": "Traditional Chinese zongzi on a plate - the finished leaf-wrapped rice dumpling of the Dragon Boat Festival (5790x3860, 3:2)."
+    },
+    "fail": null
+  },
+  {
+    "n": 35,
+    "tag": "custom",
+    "title": "元宵看花灯",
+    "primary": {
+      "id": "31108476",
+      "url": "https://images.pexels.com/photos/31108476/pexels-photo-31108476.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/vibrant-red-lanterns-adorning-night-sky-31108476/",
+      "why": "Red lanterns glowing against a night sky in a festive scene - festival lanterns at night, exactly the 花灯夜景 the note calls for (5957x3971, 3:2)."
+    },
+    "fallback": {
+      "id": "6673241",
+      "url": "https://images.pexels.com/photos/6673241/pexels-photo-6673241.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/red-chinese-lanterns-hanging-in-rows-6673241/",
+      "why": "Rows of vibrant red Chinese lanterns strung overhead outdoors - a street lined with red lanterns, as the lead describes (5048x3365, 3:2)."
+    },
+    "fail": null
+  },
+  {
+    "n": 36,
+    "tag": "comic",
+    "title": "等一等再摘",
+    "primary": {
+      "id": "33239667",
+      "url": "https://images.pexels.com/photos/33239667/pexels-photo-33239667.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/lush-mango-tree-branch-with-unripe-mangoes-33239667/",
+      "why": "A mango tree branch with clusters of unripe green mangoes among the leaves - green fruit still hanging on the branch, not ready to pick (5455x3792)."
+    },
+    "fallback": {
+      "id": "38270175",
+      "url": "https://images.pexels.com/photos/38270175/pexels-photo-38270175.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/green-plums-on-a-branch-in-springtime-38270175/",
+      "why": "Green plums hanging on a branch in springtime - unripe green fruit on the tree, the same 'not yet ripe' subject (6000x4000, 3:2)."
+    },
+    "fail": null
+  },
+  {
+    "n": 37,
+    "tag": "comic",
+    "title": "各扫门前雪",
+    "primary": {
+      "id": "11026119",
+      "url": "https://images.pexels.com/photos/11026119/pexels-photo-11026119.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/man-shoveling-snow-on-street-11026119/",
+      "why": "A man shoveling snow off a street after a heavy snowfall, with cars and snow-covered trees around - a person clearing snow on a winter street (4608x3456, 4:3)."
+    },
+    "fallback": {
+      "id": "6952441",
+      "url": "https://images.pexels.com/photos/6952441/pexels-photo-6952441.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/a-person-removing-snow-with-a-shovel-6952441/",
+      "why": "A person pushing a shovel through deep snow - snow-clearing action with the shovel clearly in frame (6720x4480, 3:2)."
+    },
+    "fail": null
+  },
+  {
+    "n": 38,
+    "tag": "pet",
+    "title": "蚂蚁搬家",
+    "primary": {
+      "id": "2563028",
+      "url": "https://images.pexels.com/photos/2563028/pexels-photo-2563028.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/black-ants-lining-up-2563028/",
+      "why": "Macro close-up of a group of black ants walking in a line across brown earth - the ant column on the ground the note asks for (5184x3456, 3:2)."
+    },
+    "fallback": {
+      "id": "9588928",
+      "url": "https://images.pexels.com/photos/9588928/pexels-photo-9588928.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/ants-walking-along-metal-wire-9588928/",
+      "why": "A line of ants marching one behind another along a wire - an unmistakable single-file ant queue (5532x3688, 3:2)."
+    },
+    "fail": null
+  },
+  {
+    "n": 39,
+    "tag": "plant",
+    "title": "窗外的梧桐树",
+    "primary": {
+      "id": "1048251",
+      "url": "https://images.pexels.com/photos/1048251/pexels-photo-1048251.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/brown-tree-outside-closed-glass-window-1048251/",
+      "why": "A large leafy tree seen through a closed glass window from indoors - the 'big tree outside my window' view the note describes (3024x2005)."
+    },
+    "fallback": {
+      "id": "11811682",
+      "url": "https://images.pexels.com/photos/11811682/pexels-photo-11811682.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/trees-in-yard-seen-through-window-11811682/",
+      "why": "A tree in the yard framed by a window opening, seen from inside the room - same window-to-tree framing (5968x4045)."
+    },
+    "fail": null
+  },
+  {
+    "n": 40,
+    "tag": "stationery",
+    "title": "削笔刀",
+    "primary": {
+      "id": "37167865",
+      "url": "https://images.pexels.com/photos/37167865/pexels-photo-37167865.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/pencil-and-notebook-with-shavings-and-sharpener-37167865/",
+      "why": "A pencil, a sharpener and a pile of wood shavings on a notebook - sharpener plus shavings, exactly the prompt's subject (4032x3024, 4:3)."
+    },
+    "fallback": {
+      "id": "9903561",
+      "url": "https://images.pexels.com/photos/9903561/pexels-photo-9903561.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/person-sharpening-a-pencil-9903561/",
+      "why": "Top-down view of hands turning a pencil in a sharpener on a workspace - the sharpening action itself, no face in frame (5336x3557)."
+    },
+    "fail": null
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "id": "cn-陕西-秦始皇帝陵博物院景区",
+    "name": "秦始皇帝陵博物院景区",
+    "province": "陕西",
+    "country": "中国",
+    "city": "西安",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-陕西-陕西历史博物馆",
+    "name": "陕西历史博物馆",
+    "province": "陕西",
+    "country": "中国",
+    "city": "西安",
+    "rating": "4A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-甘肃-冶力关旅游区",
+    "name": "冶力关旅游区",
+    "province": "甘肃",
+    "country": "中国",
+    "city": "甘南州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-甘肃-官鹅沟景区",
+    "name": "官鹅沟景区",
+    "province": "甘肃",
+    "country": "中国",
+    "city": "陇南",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-甘肃-炳灵寺世界文化遗产旅游区",
+    "name": "炳灵寺世界文化遗产旅游区",
+    "province": "甘肃",
+    "country": "中国",
+    "city": "临夏州",
+    "rating": "5A",
+    "scene": "temple",
+    "en": ""
+  },
+  {
+    "id": "cn-甘肃-七彩丹霞景区",
+    "name": "七彩丹霞景区",
+    "province": "甘肃",
+    "country": "中国",
+    "city": "张掖",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-甘肃-鸣沙山月牙泉景区",
+    "name": "鸣沙山月牙泉景区",
+    "province": "甘肃",
+    "country": "中国",
+    "city": "酒泉",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-甘肃-麦积山景区",
+    "name": "麦积山景区",
+    "province": "甘肃",
+    "country": "中国",
+    "city": "天水",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-甘肃-崆峒山风景名胜区",
+    "name": "崆峒山风景名胜区",
+    "province": "甘肃",
+    "country": "中国",
+    "city": "平凉",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-甘肃-嘉峪关文物景区",
+    "name": "嘉峪关文物景区",
+    "province": "甘肃",
+    "country": "中国",
+    "city": "嘉峪关",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-青海-阿咪东索景区",
+    "name": "阿咪东索景区",
+    "province": "青海",
+    "country": "中国",
+    "city": "海北州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-青海-互助土族故土园旅游区",
+    "name": "互助土族故土园旅游区",
+    "province": "青海",
+    "country": "中国",
+    "city": "海东",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-青海-塔尔寺景区",
+    "name": "塔尔寺景区",
+    "province": "青海",
+    "country": "中国",
+    "city": "西宁",
+    "rating": "5A",
+    "scene": "temple",
+    "en": ""
+  },
+  {
+    "id": "cn-青海-青海湖风景区",
+    "name": "青海湖风景区",
+    "province": "青海",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-青海-茶卡盐湖",
+    "name": "茶卡盐湖",
+    "province": "青海",
+    "country": "中国",
+    "rating": "4A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-宁夏-六盘山红军长征旅游区",
+    "name": "六盘山红军长征旅游区",
+    "province": "宁夏",
+    "country": "中国",
+    "city": "固原",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-宁夏-青铜峡黄河大峡谷旅游区",
+    "name": "青铜峡黄河大峡谷旅游区",
+    "province": "宁夏",
+    "country": "中国",
+    "city": "吴忠",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-宁夏-水洞沟旅游区",
+    "name": "水洞沟旅游区",
+    "province": "宁夏",
+    "country": "中国",
+    "city": "银川",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-宁夏-宁夏镇北堡西部影视城",
+    "name": "宁夏镇北堡西部影视城",
+    "province": "宁夏",
+    "country": "中国",
+    "city": "银川",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-宁夏-沙坡头旅游景区",
+    "name": "沙坡头旅游景区",
+    "province": "宁夏",
+    "country": "中国",
+    "city": "中卫",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  }
+]

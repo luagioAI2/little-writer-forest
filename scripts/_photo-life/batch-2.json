@@ -1,0 +1,22 @@
+{
+  "batch": "2",
+  "items": [
+    { "id": "builtin-life-goods-18", "title": "门铃响了", "must": "门铃（门上的门铃按钮，或门铃本身）", "query": "doorbell on front door" },
+    { "id": "builtin-life-goods-19", "title": "阳台上的晾衣架", "must": "晾着的衣服，最好在阳台或户外的晾衣架上", "query": "clothes drying on rack balcony" },
+    { "id": "builtin-life-goods-20", "title": "我的保温杯", "must": "一个保温杯，放在桌上", "query": "thermos flask on table" },
+    { "id": "builtin-life-goods-21", "title": "我的存钱罐", "must": "一个存钱罐（小猪存钱罐最好），最好有硬币", "query": "piggy bank with coins" },
+    { "id": "builtin-life-goods-22", "title": "我的小牙刷", "must": "一支牙刷，最好插在杯子里", "query": "toothbrush in a cup" },
+    { "id": "builtin-life-goods-23", "title": "雨天的雨靴", "must": "一双雨靴，最好踩在水洼里", "query": "rain boots in puddle" },
+    { "id": "builtin-life-goods-24", "title": "家里的窗帘", "must": "窗帘，最好有阳光从窗户透进来", "query": "curtains with sunlight through window" },
+    { "id": "builtin-life-goods-25", "title": "鞋柜里的鞋", "must": "一排鞋子摆在鞋架上", "query": "shoes on shoe rack" },
+    { "id": "builtin-life-goods-26", "title": "书包上的小挂件", "must": "一个书包，最好带小挂件/钥匙扣（要有书包）", "query": "backpack with keychain charm" },
+    { "id": "builtin-life-goods-27", "title": "电饭煲冒气了", "must": "电饭煲，最好开着盖、冒着热气", "query": "rice cooker with steam" },
+    { "id": "builtin-life-goods-28", "title": "空调吹出来的风", "must": "一台空调（壁挂式室内机最好）", "query": "air conditioner on wall" },
+    { "id": "builtin-life-goods-29", "title": "一把旧椅子", "must": "一把旧木椅，看得清椅子本身", "query": "old wooden chair" },
+    { "id": "builtin-life-goods-30", "title": "我的小书桌", "must": "一张书桌，最好有书本/文具，看得出是孩子学习用的", "query": "study desk with books" },
+    { "id": "builtin-teacher-6", "title": "老师的手", "must": "老师在黑板上写字（重点是手和粉笔/黑板，可以是背影或侧影）", "query": "teacher writing on blackboard with chalk" },
+    { "id": "builtin-teacher-7", "title": "放学后的办公室", "must": "老师的办公桌，桌上堆着作业本/试卷（办公室或教室都行）", "query": "teacher desk with stacks of papers" },
+    { "id": "builtin-family-13", "title": "妈妈的手", "must": "妈妈牵着/握着孩子的手（必须看得见手，亚洲面孔优先）", "query": "mother holding child hand" },
+    { "id": "builtin-family-14", "title": "爷爷的老花镜", "must": "一位老人戴着老花镜看报纸/看书（亚洲老人优先）", "query": "elderly man reading newspaper with glasses" }
+  ]
+}

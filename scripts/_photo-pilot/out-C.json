@@ -1,0 +1,233 @@
+{
+  "batch": "C",
+  "items": [
+    {
+      "landmarkId": "world-法国-埃菲尔铁塔",
+      "match": "place",
+      "query": "Eiffel Tower",
+      "mediaUrl": "https://images.pexels.com/photos/11299566/pexels-photo-11299566.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Clouds around Eiffel Tower",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/clouds-around-eiffel-tower-11299566/",
+        "author": "Mathias Reding"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 83021
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-法国-卢浮宫",
+      "match": "place",
+      "query": "Louvre",
+      "mediaUrl": "https://images.pexels.com/photos/25053918/pexels-photo-25053918.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The Louvre Museum in Paris, France",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/the-louvre-museum-in-paris-france-25053918/",
+        "author": "detait"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 51684
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-法国-凡尔赛宫",
+      "match": "place",
+      "query": "Palace of Versailles",
+      "mediaUrl": "https://images.pexels.com/photos/29877481/pexels-photo-29877481.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Grand Exterior of the Palace of Versailles",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/grand-exterior-of-the-palace-of-versailles-29877481/",
+        "author": "Didier VEILLON"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 52660
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-法国-圣米歇尔山",
+      "match": "place",
+      "query": "Mont-Saint-Michel",
+      "mediaUrl": "https://images.pexels.com/photos/33690624/pexels-photo-33690624.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic Mont Saint-Michel under Blue Skies",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/majestic-mont-saint-michel-under-blue-skies-33690624/",
+        "author": "Ludovic Delot"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 47647
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-法国-巴黎圣母院",
+      "match": "place",
+      "query": "Notre-Dame de Paris",
+      "mediaUrl": "https://images.pexels.com/photos/24186954/pexels-photo-24186954.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The Western Facade of the Notre-Dame de Paris",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/the-western-facade-of-the-notre-dame-de-paris-24186954/",
+        "author": "gina bichsel"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 133754
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-英国-大本钟",
+      "match": "place",
+      "query": "Big Ben",
+      "mediaUrl": "https://images.pexels.com/photos/29253512/pexels-photo-29253512.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Big Ben and Westminster Palace under blue sky",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/big-ben-and-westminster-palace-under-blue-sky-29253512/",
+        "author": "Unknown"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 46256
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-英国-伦敦塔桥",
+      "match": "place",
+      "query": "Tower Bridge",
+      "mediaUrl": "https://images.pexels.com/photos/575410/pexels-photo-575410.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "London Tower Bridge",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/london-tower-bridge-575410/",
+        "author": "SevenStorm JUHASZIMRUS"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 60799
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-英国-白金汉宫",
+      "match": "place",
+      "query": "Buckingham Palace",
+      "mediaUrl": "https://images.pexels.com/photos/16333184/pexels-photo-16333184.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Buckingham Palace in London",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/buckingham-palace-in-london-16333184/",
+        "author": "Jatman 0007"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 48553
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-意大利-罗马斗兽场",
+      "match": "place",
+      "query": "Colosseum",
+      "mediaUrl": "https://images.pexels.com/photos/27428517/pexels-photo-27428517.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Close-up of the Colosseum in Rome, Italy",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/the-colosseum-in-rome-italy-27428517/",
+        "author": "Huseyn Ibadzade"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 178092
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-意大利-比萨斜塔",
+      "match": "place",
+      "query": "Leaning Tower of Pisa",
+      "mediaUrl": "https://images.pexels.com/photos/15960848/pexels-photo-15960848.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic photo of the Leaning Tower of Pisa in Italy",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/scenic-photo-of-the-leaning-tower-of-pisa-in-italy-15960848/",
+        "author": "Unknown"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 79587
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-意大利-威尼斯",
+      "match": "place",
+      "query": "Venice",
+      "mediaUrl": "https://images.pexels.com/photos/20068237/pexels-photo-20068237.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Gondolas in Canal in Venice",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/gondolas-in-canal-in-venice-20068237/",
+        "author": "Ozan Tabakoğlu"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 117543
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-意大利-圣彼得大教堂",
+      "match": "place",
+      "query": "St. Peter's Basilica",
+      "mediaUrl": "https://images.pexels.com/photos/29154973/pexels-photo-29154973.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Facade of St. Peter's Basilica in Vatican City",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/facade-of-st-peter-s-basilica-in-vatican-city-29154973/",
+        "author": "C1 Superstar"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 59164
+      },
+      "verdict": "ok",
+      "note": ""
+    }
+  ]
+}

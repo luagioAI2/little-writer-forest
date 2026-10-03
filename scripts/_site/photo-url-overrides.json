@@ -1,0 +1,4 @@
+{
+  "_comment": "少数老照片的 CDN 文件名带 slug（不是 pexels-photo-<id>.jpeg），标准路径会 404。这里逐条记真实基址，cand-sheet.py / apply-applied.py 都先查这里。",
+  "159671": "https://images.pexels.com/photos/159671/pupils-school-children-red-scarf-159671.jpeg"
+}

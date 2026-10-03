@@ -1,0 +1,452 @@
+[
+  {
+    "n": 11,
+    "level": "A",
+    "why": "小孩是西方孩子（浅色卷发）",
+    "id": "builtin-campus-3",
+    "slot": 0,
+    "title": "大扫除",
+    "pexelsId": "4867978",
+    "url": "https://images.pexels.com/photos/4867978/pexels-photo-4867978.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 14,
+    "level": "A",
+    "why": "学生浅色/姜黄色头发",
+    "id": "builtin-classmate-1",
+    "slot": 0,
+    "title": "我的同桌",
+    "pexelsId": "37812837",
+    "url": "https://images.pexels.com/photos/37812837/pexels-photo-37812837.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 15,
+    "level": "A",
+    "why": "女孩是中东/南亚面孔",
+    "id": "builtin-classmate-2",
+    "slot": 0,
+    "title": "一个爱笑的人",
+    "pexelsId": "9582978",
+    "url": "https://images.pexels.com/photos/9582978/pexels-photo-9582978.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 20,
+    "level": "A",
+    "why": "美国警察（POLICE 背心）",
+    "id": "builtin-community-helper-2",
+    "slot": 0,
+    "title": "警察叔叔",
+    "pexelsId": "16862086",
+    "url": "https://images.pexels.com/photos/16862086/pexels-photo-16862086.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 21,
+    "level": "A",
+    "why": "图书管理员是中东面孔",
+    "id": "builtin-community-helper-3",
+    "slot": 0,
+    "title": "图书管理员",
+    "pexelsId": "6344226",
+    "url": "https://images.pexels.com/photos/6344226/pexels-photo-6344226.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 22,
+    "level": "A",
+    "why": "公交司机是白人男性",
+    "id": "builtin-community-helper-4",
+    "slot": 0,
+    "title": "公交司机",
+    "pexelsId": "39639904",
+    "url": "https://images.pexels.com/photos/39639904/pexels-photo-39639904.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 36,
+    "level": "A",
+    "why": "孩子与大人是西方人",
+    "id": "builtin-dream-job-2",
+    "slot": 0,
+    "title": "我想成为的人",
+    "pexelsId": "8954779",
+    "url": "https://images.pexels.com/photos/8954779/pexels-photo-8954779.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 40,
+    "level": "A",
+    "why": "厨房是欧式乡村，人物偏欧洲",
+    "id": "builtin-family-1",
+    "slot": 0,
+    "title": "我的妈妈",
+    "pexelsId": "3785725",
+    "url": "https://images.pexels.com/photos/3785725/pexels-photo-3785725.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 41,
+    "level": "A",
+    "why": "爷爷是白人老人",
+    "id": "builtin-family-2",
+    "slot": 0,
+    "title": "爷爷和他的花园",
+    "pexelsId": "4894630",
+    "url": "https://images.pexels.com/photos/4894630/pexels-photo-4894630.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 42,
+    "level": "A",
+    "why": "婴儿皮肤/头发很浅",
+    "id": "builtin-family-3",
+    "slot": 0,
+    "title": "妹妹来了",
+    "pexelsId": "7491730",
+    "url": "https://images.pexels.com/photos/7491730/pexels-photo-7491730.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 43,
+    "level": "A",
+    "why": "婴儿脚，皮肤很浅",
+    "id": "builtin-family-3",
+    "slot": 1,
+    "title": "妹妹来了",
+    "pexelsId": "4964356",
+    "url": "https://images.pexels.com/photos/4964356/pexels-photo-4964356.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 45,
+    "level": "A",
+    "why": "奶奶是白人老人",
+    "id": "builtin-family-5",
+    "slot": 0,
+    "title": "奶奶织毛衣",
+    "pexelsId": "5585242",
+    "url": "https://images.pexels.com/photos/5585242/pexels-photo-5585242.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 46,
+    "level": "A",
+    "why": "邻居阿婆是南亚男性面孔",
+    "id": "builtin-family-6",
+    "slot": 0,
+    "title": "邻居阿姨",
+    "pexelsId": "7658788",
+    "url": "https://images.pexels.com/photos/7658788/pexels-photo-7658788.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 52,
+    "level": "A",
+    "why": "台上孩子是西方孩子",
+    "id": "builtin-first-time-3",
+    "slot": 0,
+    "title": "第一次上台",
+    "pexelsId": "5801564",
+    "url": "https://images.pexels.com/photos/5801564/pexels-photo-5801564.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 68,
+    "level": "A",
+    "why": "女孩浅棕头发",
+    "id": "builtin-if-i-2",
+    "slot": 0,
+    "title": "假如我是一阵风",
+    "pexelsId": "15952610",
+    "url": "https://images.pexels.com/photos/15952610/pexels-photo-15952610.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 77,
+    "level": "A",
+    "why": "金发孩子",
+    "id": "builtin-lost-found-1",
+    "slot": 1,
+    "title": "走丢的那个下午",
+    "pexelsId": "4871811",
+    "url": "https://images.pexels.com/photos/4871811/pexels-photo-4871811.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 78,
+    "level": "A",
+    "why": "街头两人偏西方，且街景是西方街道",
+    "id": "builtin-lost-found-2",
+    "slot": 0,
+    "title": "摔了一跤之后",
+    "pexelsId": "5368943",
+    "url": "https://images.pexels.com/photos/5368943/pexels-photo-5368943.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 83,
+    "level": "A",
+    "why": "孩子明显是非洲/南亚面孔",
+    "id": "builtin-milestone-4",
+    "slot": 0,
+    "title": "难忘小学生活",
+    "pexelsId": "37451367",
+    "url": "https://images.pexels.com/photos/37451367/pexels-photo-37451367.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 85,
+    "level": "A",
+    "why": "母子是西方人",
+    "id": "builtin-mistake-1",
+    "slot": 0,
+    "title": "我撒了一个谎",
+    "pexelsId": "7078729",
+    "url": "https://images.pexels.com/photos/7078729/pexels-photo-7078729.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 88,
+    "level": "A",
+    "why": "男孩浅色头发",
+    "id": "builtin-mistake-4",
+    "slot": 0,
+    "title": "考试前夜",
+    "pexelsId": "5303541",
+    "url": "https://images.pexels.com/photos/5303541/pexels-photo-5303541.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 131,
+    "level": "A",
+    "why": "西方教室，黑板上写着德语 Guten Morgen",
+    "id": "builtin-teacher-1",
+    "slot": 0,
+    "title": "我的老师",
+    "pexelsId": "5212342",
+    "url": "https://images.pexels.com/photos/5212342/pexels-photo-5212342.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 132,
+    "level": "A",
+    "why": "西方教室 + 金发老师",
+    "id": "builtin-teacher-2",
+    "slot": 0,
+    "title": "老师的那句话",
+    "pexelsId": "8087931",
+    "url": "https://images.pexels.com/photos/8087931/pexels-photo-8087931.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 144,
+    "level": "A",
+    "why": "母子偏西方/拉美",
+    "id": "builtin-unforgettable-1",
+    "slot": 0,
+    "title": "那一次，我很难忘",
+    "pexelsId": "6667330",
+    "url": "https://images.pexels.com/photos/6667330/pexels-photo-6667330.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 3,
+    "level": "B",
+    "why": "美国黄色校车",
+    "id": "builtin-activity-2",
+    "slot": 0,
+    "title": "快乐的春游",
+    "pexelsId": "19760978",
+    "url": "https://images.pexels.com/photos/19760978/pexels-photo-19760978.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 66,
+    "level": "B",
+    "why": "欧洲小镇（石桥 + 尖塔）",
+    "id": "builtin-hometown-3",
+    "slot": 0,
+    "title": "村口的那条河",
+    "pexelsId": "32961389",
+    "url": "https://images.pexels.com/photos/32961389/pexels-photo-32961389.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 76,
+    "level": "B",
+    "why": "街景里出现 PARIS 招牌",
+    "id": "builtin-lost-found-1",
+    "slot": 0,
+    "title": "走丢的那个下午",
+    "pexelsId": "8968338",
+    "url": "https://images.pexels.com/photos/8968338/pexels-photo-8968338.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 87,
+    "level": "B",
+    "why": "西式校舍，孩子走进校园",
+    "id": "builtin-mistake-3",
+    "slot": 0,
+    "title": "迟到了",
+    "pexelsId": "8500353",
+    "url": "https://images.pexels.com/photos/8500353/pexels-photo-8500353.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 96,
+    "level": "B",
+    "why": "美式街景（高楼 + 旗）",
+    "id": "builtin-people-around-2",
+    "slot": 0,
+    "title": "街头众生",
+    "pexelsId": "39483192",
+    "url": "https://images.pexels.com/photos/39483192/pexels-photo-39483192.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 125,
+    "level": "B",
+    "why": "伦敦红色双层巴士",
+    "id": "builtin-stranger-1",
+    "slot": 0,
+    "title": "清晨的环卫工",
+    "pexelsId": "37297890",
+    "url": "https://images.pexels.com/photos/37297890/pexels-photo-37297890.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 145,
+    "level": "B",
+    "why": "美国黄色校车",
+    "id": "builtin-unforgettable-2",
+    "slot": 0,
+    "title": "第一次春游",
+    "pexelsId": "10584546",
+    "url": "https://images.pexels.com/photos/10584546/pexels-photo-10584546.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 152,
+    "level": "B",
+    "why": "欧洲小镇（红顶 + 教堂尖塔）",
+    "id": "builtin-water-1",
+    "slot": 0,
+    "title": "家乡的小河",
+    "pexelsId": "33360580",
+    "url": "https://images.pexels.com/photos/33360580/pexels-photo-33360580.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 161,
+    "level": "B",
+    "why": "欧洲雨天街景",
+    "id": "builtin-weather-4",
+    "slot": 0,
+    "title": "下雨天，妈妈来了",
+    "pexelsId": "30504807",
+    "url": "https://images.pexels.com/photos/30504807/pexels-photo-30504807.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 1,
+    "level": "C",
+    "why": "前排女孩像穿韩服（朝鲜族），不是中国",
+    "id": "builtin-activity-1",
+    "slot": 0,
+    "title": "热闹的运动会",
+    "pexelsId": "31772339",
+    "url": "https://images.pexels.com/photos/31772339/pexels-photo-31772339.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 17,
+    "level": "C",
+    "why": "英文漫画",
+    "id": "builtin-comic-1",
+    "slot": 0,
+    "title": "一幅漫画的启示",
+    "pexelsId": "4142267",
+    "url": "https://images.pexels.com/photos/4142267/pexels-photo-4142267.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 18,
+    "level": "C",
+    "why": "西式英雄漫画",
+    "id": "builtin-comic-2",
+    "slot": 0,
+    "title": "漫画里的道理",
+    "pexelsId": "4142511",
+    "url": "https://images.pexels.com/photos/4142511/pexels-photo-4142511.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 32,
+    "level": "C",
+    "why": "宇航服上印着 CCCP（苏联）",
+    "id": "builtin-dream-2",
+    "slot": 0,
+    "title": "我梦见了未来",
+    "pexelsId": "6162307",
+    "url": "https://images.pexels.com/photos/6162307/pexels-photo-6162307.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 48,
+    "level": "C",
+    "why": "西式公园小路，人背对看不清",
+    "id": "builtin-first-time-1",
+    "slot": 1,
+    "title": "第一次骑自行车",
+    "pexelsId": "6209919",
+    "url": "https://images.pexels.com/photos/6209919/pexels-photo-6209919.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 57,
+    "level": "C",
+    "why": "西式未来建筑",
+    "id": "builtin-future-1",
+    "slot": 0,
+    "title": "未来的学校",
+    "pexelsId": "37457088",
+    "url": "https://images.pexels.com/photos/37457088/pexels-photo-37457088.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 72,
+    "level": "C",
+    "why": "英文手写体 don't be",
+    "id": "builtin-letter-2",
+    "slot": 0,
+    "title": "我想对您说",
+    "pexelsId": "3826685",
+    "url": "https://images.pexels.com/photos/3826685/pexels-photo-3826685.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 95,
+    "level": "C",
+    "why": "人群里有浅肤色的人（混）",
+    "id": "builtin-people-around-1",
+    "slot": 0,
+    "title": "形形色色的人",
+    "pexelsId": "33999099",
+    "url": "https://images.pexels.com/photos/33999099/pexels-photo-33999099.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 114,
+    "level": "C",
+    "why": "西式木屋雪景",
+    "id": "builtin-season-3",
+    "slot": 1,
+    "title": "冬天的第一场雪",
+    "pexelsId": "6667086",
+    "url": "https://images.pexels.com/photos/6667086/pexels-photo-6667086.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 126,
+    "level": "C",
+    "why": "东南亚街景（车牌/招牌）",
+    "id": "builtin-stranger-2",
+    "slot": 0,
+    "title": "雨天的快递员",
+    "pexelsId": "25048304",
+    "url": "https://images.pexels.com/photos/25048304/pexels-photo-25048304.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 143,
+    "level": "C",
+    "why": "西式树屋",
+    "id": "builtin-treasure-7",
+    "slot": 0,
+    "title": "我的乐园",
+    "pexelsId": "24786312",
+    "url": "https://images.pexels.com/photos/24786312/pexels-photo-24786312.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 159,
+    "level": "C",
+    "why": "欧洲房子",
+    "id": "builtin-weather-2",
+    "slot": 1,
+    "title": "雨后的彩虹",
+    "pexelsId": "28241045",
+    "url": "https://images.pexels.com/photos/28241045/pexels-photo-28241045.jpeg?auto=compress&cs=tinysrgb&w=640"
+  },
+  {
+    "n": 160,
+    "level": "C",
+    "why": "欧洲雾天街景",
+    "id": "builtin-weather-3",
+    "slot": 0,
+    "title": "大雾的早晨",
+    "pexelsId": "10119203",
+    "url": "https://images.pexels.com/photos/10119203/pexels-photo-10119203.jpeg?auto=compress&cs=tinysrgb&w=640"
+  }
+]

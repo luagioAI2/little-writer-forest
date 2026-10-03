@@ -1,0 +1,75 @@
+{
+  "batch": "E",
+  "items": [
+    {
+      "id": "builtin-first-time-1",
+      "slot": 1,
+      "query": "chinese kid riding bicycle",
+      "pexelsId": "13840340",
+      "mediaUrl": "https://images.pexels.com/photos/13840340/pexels-photo-13840340.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "pageUrl": "https://www.pexels.com/photo/photograph-of-a-child-riding-a-bike-13840340/",
+      "author": "Jenkin Shen",
+      "region": "CN",
+      "bytes": 50050,
+      "ar": 1.50,
+      "verdict": "ok",
+      "note": "中国城市街道：一个扎羊角辫的中国小女孩骑着带车筐的小自行车在铺装路面上前行（正面偏侧、脸看得清），旁边一位穿白裙的成年女性（妈妈）和另一个白衣男孩跟着走，路边停着电动车，背景是挂着中文招牌的店铺（红/绿底中文店招）。Pexels 标签为 Chinese Girl / Chinese People / Chinese Family / Chinese Woman，是中国街景而非西式公园小路。彩色。"
+    },
+    {
+      "id": "builtin-future-1",
+      "slot": 0,
+      "query": "chinese school building",
+      "pexelsId": "36159725",
+      "mediaUrl": "https://images.pexels.com/photos/36159725/pexels-photo-36159725.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "pageUrl": "https://www.pexels.com/photo/front-view-of-urban-school-building-under-blue-sky-36159725/",
+      "author": "晓鸟 蓝",
+      "region": "CN",
+      "bytes": 57249,
+      "ar": 1.50,
+      "verdict": "ok",
+      "note": "中国广东汕头华侨中学的教学楼正面：白色多层现代教学楼、橙瓦檐口、成排玻璃窗与空调外机，楼顶立着红色中文大字校名“汕头华侨中学”及“镜鸿楼”，楼身有“勤教勤学”“改革创新”等中文标语，楼前是热带棕榈树、蓝天。照片作者自述“a student in Canton, China”，定位 China。是中国现代学校建筑，非纯欧美造型；画面无外文招牌、无外国国旗。彩色。"
+    },
+    {
+      "id": "builtin-letter-2",
+      "slot": 0,
+      "query": "chinese writing letter paper pen",
+      "pexelsId": "6391532",
+      "mediaUrl": "https://images.pexels.com/photos/6391532/pexels-photo-6391532.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "pageUrl": "https://www.pexels.com/photo/person-writing-chinese-letters-on-a-letter-paper-sheet-6391532/",
+      "author": "Feng Zou",
+      "region": "CN",
+      "bytes": 23185,
+      "ar": 1.50,
+      "verdict": "ok",
+      "note": "中国书法写信场景：一只手握毛笔，在信笺上书写中文（可辨认“靈飛經四十三行”等中文字样），旁边是两只青瓷墨盂、一支毛笔，前面摆着一只印有中文的米色文具纸盒。画面里只有中文，**没有任何英文手写体**；是中式中式文房用具。作者 Feng Zou 为中国摄影师。彩色。"
+    },
+    {
+      "id": "builtin-people-around-1",
+      "slot": 0,
+      "query": "chinese crowd people",
+      "pexelsId": "15555090",
+      "mediaUrl": "https://images.pexels.com/photos/15555090/pexels-photo-15555090.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "pageUrl": "https://www.pexels.com/photo/view-of-a-crowded-narrow-street-at-a-market-in-a-chinese-city-15555090/",
+      "author": "自由使者 Ruby",
+      "region": "CN",
+      "bytes": 56678,
+      "ar": 1.50,
+      "verdict": "ok",
+      "note": "中国城市小吃街的人群：镜头贴近一排挤在一起的顾客（男男女女、大人小孩，有人把孩子架在肩上，有人戴口罩/眼镜），全是黑发东亚面孔，没有一个浅肤色的人；上方是挂满金色汉字的店招（“蟹黄汤包”等简体中文），还有红灯笼、中式屋檐。是“形形色色的人”的中国人街景，画面里没有外国国旗、没有外文招牌。彩色。"
+    },
+    {
+      "id": "builtin-season-3",
+      "slot": 1,
+      "query": "chinese winter snow courtyard house",
+      "pexelsId": "36694896",
+      "mediaUrl": "https://images.pexels.com/photos/36694896/pexels-photo-36694896.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "pageUrl": "https://www.pexels.com/photo/traditional-chinese-courtyard-in-winter-snow-scene-36694896/",
+      "author": "Alex Bian",
+      "region": "CN",
+      "bytes": 81915,
+      "ar": 1.78,
+      "verdict": "ok",
+      "note": "中国（照片定位 China / 成都）老院子下雪：中式飞檐亭子（青瓦上积着厚雪）、挂着一串红灯笼，右边是挂着中文红招牌的沿街铺面，地面铺石、积雪成片。是典型的中式院子/中式房子雪景，不是西式木屋、没有圣诞装饰、无外文招牌。彩色。"
+    }
+  ]
+}

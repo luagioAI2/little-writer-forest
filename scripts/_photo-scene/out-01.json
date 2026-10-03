@@ -1,0 +1,104 @@
+{
+  "batch": "01",
+  "items": [
+    {
+      "key": "all-kinds-people",
+      "pexelsId": 8954779,
+      "mediaUrl": "https://images.pexels.com/photos/8954779/pexels-photo-8954779.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Group of children walking on gray concrete road",
+      "credit": { "link": "https://www.pexels.com/photo/group-of-children-walking-on-gray-concrete-road-8954779/", "author": "Kampus Production" },
+      "verified": { "http": 200, "bytes": 66018 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "一排不同颜色衣服的小孩在草地上行走，背影不露脸；无对话气泡（插画元素）"
+    },
+    {
+      "key": "clock",
+      "pexelsId": 12421977,
+      "mediaUrl": "https://images.pexels.com/photos/12421977/pexels-photo-12421977.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Close-up shot of an alarm clock",
+      "credit": { "link": "https://www.pexels.com/photo/close-up-shot-of-an-alarm-clock-12421977/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 38146 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "棕色双铃闹钟立在木质床头柜，暖调；双铃、两根指针、两只脚齐全"
+    },
+    {
+      "key": "dumplings",
+      "pexelsId": 6680787,
+      "mediaUrl": "https://images.pexels.com/photos/6680787/pexels-photo-6680787.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "A person using a rolling pin on a piece of dumpling dough",
+      "credit": { "link": "https://www.pexels.com/photo/a-person-using-a-rolling-pin-on-a-piece-of-dumpling-dough-6680787/", "author": "Nadezhda Moryak" },
+      "verified": { "http": 200, "bytes": 49562 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "案板上排着一排饺子，旁边有擀面杖和面粉（俯拍局部）；无冒热气的锅、无两人出镜"
+    },
+    {
+      "key": "invention",
+      "pexelsId": 220096,
+      "mediaUrl": "https://images.pexels.com/photos/220096/pexels-photo-220096.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Clear bulb on brown surface",
+      "credit": { "link": "https://www.pexels.com/photo/clear-bulb-on-brown-surface-220096/", "author": "Pixabay" },
+      "verified": { "http": 200, "bytes": 27690 },
+      "size": { "w": 640, "h": 360, "ar": 1.78 },
+      "verdict": "ok",
+      "note": "暖调木质背景上亮着的灯泡（对应「灯泡亮着」）；无设计图/齿轮/小孩"
+    },
+    {
+      "key": "my-room",
+      "pexelsId": 28942619,
+      "mediaUrl": "https://images.pexels.com/photos/28942619/pexels-photo-28942619.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Cozy bedroom with bookshelf and large window",
+      "credit": { "link": "https://www.pexels.com/photo/cozy-bedroom-with-bookshelf-and-large-window-28942619/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 45149 },
+      "size": { "w": 640, "h": 360, "ar": 1.78 },
+      "verdict": "ok",
+      "note": "床+书架+挂窗帘的大窗，木质暖调；桌上台灯/墙上贴画不明显"
+    },
+    {
+      "key": "play-game",
+      "pexelsId": 8034586,
+      "mediaUrl": "https://images.pexels.com/photos/8034586/pexels-photo-8034586.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Children playing tug of war on grass field",
+      "credit": { "link": "https://www.pexels.com/photo/children-playing-tug-of-war-on-grass-field-8034586/", "author": "RDNE Stock project" },
+      "verified": { "http": 200, "bytes": 69851 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "草地上几个小孩拉绳、弯腰用力；孩子露脸（远景抓拍），无红布条"
+    },
+    {
+      "key": "sci-fi-fly",
+      "pexelsId": 12491650,
+      "mediaUrl": "https://images.pexels.com/photos/12491650/pexels-photo-12491650.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Planet with ring",
+      "credit": { "link": "https://www.pexels.com/photo/planet-with-ring-12491650/", "author": "Zelch" },
+      "verified": { "http": 200, "bytes": 12505 },
+      "size": { "w": 640, "h": 360, "ar": 1.78 },
+      "verdict": "poor",
+      "note": "深蓝星空中的带光环蓝色行星，对得上「深蓝色太空+带光环的星球」；缺火箭/火焰/小宇航员"
+    },
+    {
+      "key": "spring-outing-bus",
+      "pexelsId": 19760978,
+      "mediaUrl": "https://images.pexels.com/photos/19760978/pexels-photo-19760978.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Yellow school bus",
+      "credit": { "link": "https://www.pexels.com/photo/yellow-school-bus-19760978/", "author": "Vitaliy Haiduk" },
+      "verified": { "http": 200, "bytes": 50019 },
+      "size": { "w": 640, "h": 424, "ar": 1.51 },
+      "verdict": "ok",
+      "note": "路边停着的黄色大巴、车门开着像在候车，暖调；无孩子排队/老师/粉色花树"
+    },
+    {
+      "key": "winter-window",
+      "pexelsId": 19212896,
+      "mediaUrl": "https://images.pexels.com/photos/19212896/pexels-photo-19212896.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Cat sitting by window in winter",
+      "credit": { "link": "https://www.pexels.com/photo/cat-sitting-by-window-in-winter-19212896/", "author": "Natalia Sevruk" },
+      "verified": { "http": 200, "bytes": 42416 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "从屋里往外看，窗外雪景+落光叶子的树和小房子；窗台上是猫，不是绿植/热饮"
+    }
+  ]
+}

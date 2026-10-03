@@ -1,0 +1,12 @@
+{
+  "batch": "fix",
+  "items": [
+    { "id": "builtin-classmate-7", "title": "一起值日", "must": "孩子在学校/教室里扫地、擦黑板或打扫（必须看得见孩子在劳动）", "query": "children sweeping floor with broom", "alts": ["kid sweeping classroom floor", "school children cleaning japan", "child mopping floor", "students doing chores school"] },
+    { "id": "builtin-teacher-6", "title": "老师的手", "must": "老师拿着粉笔在黑板上写字（手+粉笔+黑板）；★★ 黑板上不许出现英文/外文单词（家长上次就为「黑板上写着德语」退过一张），优先中文或空黑板", "query": "teacher writing on blackboard with chalk hand", "alts": ["chinese teacher writing blackboard", "teacher chalk writing close up hands", "asian teacher classroom blackboard"] },
+    { "id": "builtin-treasure-12", "title": "我的第一张奖状", "must": "一张奖状/证书（纸质、带边框）；★★ 优先中式奖状（红底/金字/中文），不要满屏英文的 CERTIFICATE", "query": "chinese school award certificate", "alts": ["award certificate paper red", "school prize certificate", "certificate of merit paper"] },
+    { "id": "builtin-life-goods-27", "title": "电饭煲冒气了", "must": "★★ 必须有可见的热气/白汽从锅或壶里冒出来（「冒气了」是题眼）；电饭煲最好，煮饭的锅也行", "query": "steam rising from cooking pot", "alts": ["rice cooker steaming hot", "hot pot steam kitchen", "cooking rice steam"] },
+    { "id": "builtin-life-goods-11", "title": "门边的一串钥匙", "must": "一串家用钥匙（挂在门边挂钩或门锁上）；★★ 要亮堂、暖调、居家感，不要深色工业感的一排旧铁钥匙", "query": "keys hanging on hook by door", "alts": ["house keys on door lock", "keyring hanging wall home", "keys in door lock"] },
+    { "id": "builtin-stationery-6", "title": "越写越短的铅笔", "must": "★★ 要短 —— 一支用到只剩一小截的铅笔头（跟橡皮头差不多长最好），不要正常长度", "query": "short used pencil stub", "alts": ["tiny pencil stub", "worn down pencil", "pencil almost finished"] },
+    { "id": "builtin-plant-10", "title": "门口的桂花树", "must": "一棵开满细碎小花的树；★★ 花色偏米黄/橙黄更像桂花（上次那张是纯白花，家长可能觉得不像）", "query": "yellow flowers on tree blooming", "alts": ["osmanthus fragrans", "sweet olive tree flowers", "small yellow blossoms tree"] }
+  ]
+}

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "world-意大利-庞贝古城",
+    "name": "庞贝古城",
+    "province": "意大利",
+    "country": "意大利",
+    "scene": "city",
+    "en": "Pompeii",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-德国-新天鹅堡",
+    "name": "新天鹅堡",
+    "province": "德国",
+    "country": "德国",
+    "scene": "mountain",
+    "en": "Neuschwanstein Castle",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-西班牙-圣家堂",
+    "name": "圣家堂",
+    "province": "西班牙",
+    "country": "西班牙",
+    "scene": "temple",
+    "en": "Sagrada Família",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-瑞士-马特洪峰",
+    "name": "马特洪峰",
+    "province": "瑞士",
+    "country": "瑞士",
+    "scene": "snow",
+    "en": "Matterhorn",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-瑞士-少女峰",
+    "name": "少女峰",
+    "province": "瑞士",
+    "country": "瑞士",
+    "scene": "snow",
+    "en": "Jungfrau",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-奥地利-哈尔施塔特",
+    "name": "哈尔施塔特",
+    "province": "奥地利",
+    "country": "奥地利",
+    "scene": "water",
+    "en": "Hallstatt",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-希腊-雅典卫城",
+    "name": "雅典卫城",
+    "province": "希腊",
+    "country": "希腊",
+    "scene": "city",
+    "en": "Acropolis of Athens",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-希腊-圣托里尼",
+    "name": "圣托里尼",
+    "province": "希腊",
+    "country": "希腊",
+    "scene": "coast",
+    "en": "Santorini",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-俄罗斯-红场",
+    "name": "红场",
+    "province": "俄罗斯",
+    "country": "俄罗斯",
+    "scene": "city",
+    "en": "Red Square",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-俄罗斯-冬宫",
+    "name": "冬宫",
+    "province": "俄罗斯",
+    "country": "俄罗斯",
+    "scene": "city",
+    "en": "Hermitage Museum",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-俄罗斯-贝加尔湖",
+    "name": "贝加尔湖",
+    "province": "俄罗斯",
+    "country": "俄罗斯",
+    "scene": "water",
+    "en": "Lake Baikal",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-捷克-布拉格城堡",
+    "name": "布拉格城堡",
+    "province": "捷克",
+    "country": "捷克",
+    "scene": "city",
+    "en": "Prague Castle",
+    "hasEnFromWiki": true
+  }
+]

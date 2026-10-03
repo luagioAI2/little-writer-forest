@@ -1,0 +1,82 @@
+[
+  {
+    "n": 11,
+    "tag": "hometown",
+    "title": "回家的那条小路",
+    "lead": "从村口到家要走过一条小路。路上有什么？",
+    "keyword": "countryside path village road field",
+    "note": "乡间小路"
+  },
+  {
+    "n": 12,
+    "tag": "family",
+    "title": "爸爸的呼噜声",
+    "lead": "夜里，爸爸的呼噜一阵一阵的。你被吵醒过吗？",
+    "keyword": "man sleeping on sofa living room",
+    "note": "睡觉的人（可侧脸/背影，不要正脸特写）"
+  },
+  {
+    "n": 13,
+    "tag": "teacher",
+    "title": "老师嗓子哑了",
+    "lead": "老师说话的声音变小了，还站在讲台上。那天你怎么做的？",
+    "keyword": "teacher standing classroom blackboard teaching",
+    "note": "讲台前的老师（背影/侧身更好）"
+  },
+  {
+    "n": 14,
+    "tag": "classmate",
+    "title": "我们吵架了",
+    "lead": "因为一件小事，我们俩谁也不理谁。后来呢？",
+    "keyword": "two children sitting apart back to back",
+    "note": "两个孩子背对背/分开坐，不要正脸"
+  },
+  {
+    "n": 15,
+    "tag": "stranger",
+    "title": "公园里练字的老爷爷",
+    "lead": "他提着一支大毛笔，在地上写字。你停下来看过吗？",
+    "keyword": "old man writing calligraphy brush water ground",
+    "note": "地书/练字，可只要笔与字迹"
+  },
+  {
+    "n": 16,
+    "tag": "community-helper",
+    "title": "小区里的园丁",
+    "lead": "花坛里的花开得正好，都是他种的。你注意过他的手吗？",
+    "keyword": "gardener planting flowers hands soil",
+    "note": "园丁的手/种花动作，不要花海特写"
+  },
+  {
+    "n": 17,
+    "tag": "self",
+    "title": "我的名字",
+    "lead": "你的名字是谁取的？它有什么来历？",
+    "keyword": "child hand writing name notebook pencil",
+    "note": "写字的手与纸，不要人脸"
+  },
+  {
+    "n": 18,
+    "tag": "self",
+    "title": "我长高了",
+    "lead": "门框上那道铅笔线，又往上挪了一格。",
+    "keyword": "measuring height wall pencil mark child",
+    "note": "身高刻度/墙上的铅笔线"
+  },
+  {
+    "n": 19,
+    "tag": "people-around",
+    "title": "楼下下棋的爷爷们",
+    "lead": "棋盘一摆，围过来一圈人。他们在争什么？",
+    "keyword": "old men playing chess park table",
+    "note": "下棋场景（俯拍/侧拍更好，避免正脸）"
+  },
+  {
+    "n": 20,
+    "tag": "people-around",
+    "title": "广场上跳舞的奶奶",
+    "lead": "音乐一响，她们就排好了队。你留意过谁？",
+    "keyword": "elderly women dancing outdoor square",
+    "note": "广场舞/集体舞（远景，避免正脸）"
+  }
+]

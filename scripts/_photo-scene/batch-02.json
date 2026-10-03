@@ -1,0 +1,78 @@
+[
+  {
+    "key": "baby-arrive",
+    "hint": "屋里放着一张婴儿床，里面躺着一个小宝宝，两个人围在床边看，墙上飘着三只气球。",
+    "en": "baby crib nursery",
+    "usedBy": [
+      "builtin-family-3"
+    ]
+  },
+  {
+    "key": "colorful-activity",
+    "hint": "椭圆形跑道上有人在跑步和跳绳，两边有观众在挥手，横幅上写着「运动会」。",
+    "en": "children running running track",
+    "usedBy": [
+      "builtin-activity-1",
+      "builtin-activity-5"
+    ]
+  },
+  {
+    "key": "experiment",
+    "hint": "桌上有烧杯冒气泡，上方滴管滴着粉色液体，旁边放着记录本，一个小孩在认真观察，头顶有个大问号。",
+    "en": "science experiment beaker liquid",
+    "usedBy": [
+      "builtin-observe-2"
+    ]
+  },
+  {
+    "key": "look-picture-series",
+    "hint": "墙上并排挂着三幅小图，中间有箭头连接，画着一个故事的三个场景，桌上有铅笔和纸。",
+    "en": "three picture frames on wall",
+    "usedBy": [
+      "builtin-look-picture-2"
+    ]
+  },
+  {
+    "key": "noodle-soup",
+    "hint": "桌上一只白色大碗，里面是热腾腾的面条、鸡蛋和青菜，旁边搁着一双筷子，窗外有太阳。",
+    "en": "noodle soup bowl chopsticks",
+    "usedBy": [
+      "builtin-food-2"
+    ]
+  },
+  {
+    "key": "play-with-baby",
+    "hint": "地垫上坐着小宝宝，旁边两个大孩子陪着他玩，地上散着玩具熊和积木。",
+    "en": "baby playing blocks on floor",
+    "usedBy": [
+      "builtin-family-3"
+    ]
+  },
+  {
+    "key": "sewing-box",
+    "hint": "打开的针线盒里排着五轴彩色线，旁边放着剪刀、顶针、针和几颗扣子。",
+    "en": "sewing kit thread scissors buttons",
+    "usedBy": [
+      "builtin-warm-moment-3",
+      "builtin-treasure-1"
+    ]
+  },
+  {
+    "key": "spring-outing-picnic",
+    "hint": "草地上铺着粉格子布，上面摆着篮子和食物，三个孩子围坐成一圈，旁边有开花的树。",
+    "en": "picnic blanket grass basket",
+    "usedBy": [
+      "builtin-unforgettable-2",
+      "builtin-activity-2"
+    ]
+  },
+  {
+    "key": "write-letter",
+    "hint": "桌上有信封、邮票和信纸，一支铅笔斜放着，一个小孩在写，头顶飘着一个红色爱心。",
+    "en": "envelope stamp letter on desk",
+    "usedBy": [
+      "builtin-letter-1",
+      "builtin-letter-2"
+    ]
+  }
+]

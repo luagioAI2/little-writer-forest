@@ -1,0 +1,203 @@
+{
+  "batch": "28",
+  "items": [
+    {
+      "landmarkId": "world-文莱-奥马尔阿里赛义夫丁清真寺",
+      "match": "place",
+      "query": "Omar Ali Saifuddien Mosque",
+      "mediaUrl": "https://images.pexels.com/photos/34787043/pexels-photo-34787043.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Omar Ali Saifuddien Mosque at sunrise reflection",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/omar-ali-saifuddien-mosque-at-sunrise-reflection-34787043/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 33323 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-孟加拉-孙德尔本斯",
+      "match": "place",
+      "query": "Sundarbans",
+      "mediaUrl": "https://images.pexels.com/photos/29290592/pexels-photo-29290592.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Lush green mangrove trees in Sundarbans",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/lush-green-mangrove-trees-in-sundarbans-29290592/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 65044 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-黎巴嫩-巴勒贝克",
+      "match": "place",
+      "query": "Baalbek",
+      "mediaUrl": "https://images.pexels.com/photos/16432679/pexels-photo-16432679.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Ruins of Temple of Bacchus in Baalbek in Lebanon",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/ruins-of-temple-of-bacchus-in-baalbek-in-lebanon-16432679/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 153465 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-卡塔尔-伊斯兰艺术博物馆",
+      "match": "place",
+      "query": "Museum of Islamic Art Doha",
+      "mediaUrl": "https://images.pexels.com/photos/5451169/pexels-photo-5451169.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Museum of Islamic Art under clear blue sky",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/museum-of-islamic-art-under-clear-blue-sky-5451169/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 25982 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-阿曼-苏丹卡布斯大清真寺",
+      "match": "place",
+      "query": "Sultan Qaboos Grand Mosque",
+      "mediaUrl": "https://images.pexels.com/photos/30856263/pexels-photo-30856263.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Sultan Qaboos Grand Mosque in Muscat Oman",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/sultan-qaboos-grand-mosque-in-muscat-oman-30856263/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 75992 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-塞浦路斯-帕福斯",
+      "match": "place",
+      "query": "Paphos Cyprus",
+      "mediaUrl": "https://images.pexels.com/photos/37256451/pexels-photo-37256451.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Medieval Paphos Castle by the Mediterranean Sea",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/medieval-paphos-castle-by-the-mediterranean-sea-37256451/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 66726 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-卢森堡-卢森堡市",
+      "match": "place",
+      "query": "Luxembourg City",
+      "mediaUrl": "https://images.pexels.com/photos/16084644/pexels-photo-16084644.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The Old Town of Luxembourg",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/the-old-town-of-luxembourg-16084644/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 155013 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-爱沙尼亚-塔林老城",
+      "match": "place",
+      "query": "Tallinn old town",
+      "mediaUrl": "https://images.pexels.com/photos/23227692/pexels-photo-23227692.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Panoramic View of the Old Town of Tallinn Estonia",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/panoramic-view-of-the-old-town-of-tallinn-estonia-23227692/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 61271 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-拉脱维亚-里加老城",
+      "match": "place",
+      "query": "Riga old town",
+      "mediaUrl": "https://images.pexels.com/photos/37526831/pexels-photo-37526831.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Historic architecture in Old Riga square",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/historic-architecture-in-old-riga-square-37526831/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 137790 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-立陶宛-特拉凯城堡",
+      "match": "place",
+      "query": "Trakai Island Castle",
+      "mediaUrl": "https://images.pexels.com/photos/17269196/pexels-photo-17269196.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Trakai Island Castle in Lithuania",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/trakai-island-castle-in-lithuania-17269196/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 90592 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-斯洛伐克-斯皮什城堡",
+      "match": "place",
+      "query": "Spiš Castle Slovakia",
+      "mediaUrl": "https://images.pexels.com/photos/39205715/pexels-photo-39205715.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic View of Spis Castle in Slovakia",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-view-of-spis-castle-in-slovakia-39205715/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 38023 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-保加利亚-里拉修道院",
+      "match": "place",
+      "query": "Rila Monastery",
+      "mediaUrl": "https://images.pexels.com/photos/14447495/pexels-photo-14447495.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The Monastery of Saint John of Rila",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/the-monastery-of-saint-john-of-rila-14447495/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 109346 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-塞尔维亚-贝尔格莱德要塞",
+      "match": "place",
+      "query": "Belgrade Fortress",
+      "mediaUrl": "https://images.pexels.com/photos/17853059/pexels-photo-17853059.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "View of the Belgrade Fortress from the Sava River Serbia",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/view-of-the-belgrade-fortress-from-the-sava-river-serbia-17853059/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 56485 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-阿尔巴尼亚-培拉特",
+      "match": "place",
+      "query": "Berat Albania",
+      "mediaUrl": "https://images.pexels.com/photos/36962968/pexels-photo-36962968.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Charming view of Berat's Ottoman architecture",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/charming-view-of-berat-s-ottoman-architecture-36962968/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 72784 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-波黑-莫斯塔尔老桥",
+      "match": "place",
+      "query": "Stari Most Mostar",
+      "mediaUrl": "https://images.pexels.com/photos/18037875/pexels-photo-18037875.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "View of the Stari Most in Mostar in Bosnia and Herzegovina",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/view-of-the-stari-most-in-mostar-in-bosnia-and-herzegovina-18037875/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 67859 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-乌克兰-圣索菲亚大教堂（基辅）",
+      "match": "place",
+      "query": "Saint Sophia Cathedral Kyiv",
+      "mediaUrl": "https://images.pexels.com/photos/9532435/pexels-photo-9532435.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Cathedral of St. Sophia in Kyiv, Ukraine",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/cathedral-of-st-sophia-in-kyiv-ukraine-9532435/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 108109 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-亚美尼亚-格加尔德修道院",
+      "match": "place",
+      "query": "Geghard Monastery Armenia",
+      "mediaUrl": "https://images.pexels.com/photos/35224035/pexels-photo-35224035.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic view of Geghard Monastery in Armenia",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-view-of-geghard-monastery-in-armenia-35224035/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 130319 },
+      "verdict": "ok",
+      "note": "Church dome is under renovation scaffolding, but the monastery and its cliff setting are clearly Geghard."
+    },
+    {
+      "landmarkId": "world-阿塞拜疆-少女塔",
+      "match": "place",
+      "query": "Maiden Tower Baku",
+      "mediaUrl": "https://images.pexels.com/photos/14383805/pexels-photo-14383805.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The Maiden Tower Monument in Baku Azerbaijan",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/the-maiden-tower-monument-in-baku-azerbaijan-14383805/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 37545 },
+      "verdict": "ok",
+      "note": ""
+    }
+  ]
+}

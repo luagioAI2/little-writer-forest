@@ -1,0 +1,42 @@
+[
+  {
+    "key": "memory-album",
+    "hint": "桌上摊开一本厚厚的相册，两页里各贴着一张照片，一个孩子坐在旁边翻看。",
+    "en": "open photo album on table",
+    "usedBy": [
+      "builtin-unforgettable-1"
+    ]
+  },
+  {
+    "key": "lie-truth",
+    "hint": "屋里一个孩子低着头站着，一个大人蹲下来平视他听他说话，桌上摆着一瓶花。",
+    "en": "mother talking to child at home",
+    "usedBy": [
+      "builtin-mistake-1"
+    ]
+  },
+  {
+    "key": "late",
+    "hint": "清晨校门口，一个孩子背着书包飞跑过来，头顶有个钟显示八点十分，远处是学校大门。",
+    "en": "child running to school backpack",
+    "usedBy": [
+      "builtin-mistake-3"
+    ]
+  },
+  {
+    "key": "exam-nervous",
+    "hint": "书桌前一个孩子坐着，桌上堆着课本和台灯，墙上有钟，孩子表情紧张。",
+    "en": "student studying desk lamp night",
+    "usedBy": [
+      "builtin-mistake-4"
+    ]
+  },
+  {
+    "key": "moving",
+    "hint": "空荡荡的新房间里堆着几个大纸箱，一个孩子抱着一个小纸箱，窗帘是粉色的。",
+    "en": "cardboard moving boxes empty room",
+    "usedBy": [
+      "builtin-milestone-3"
+    ]
+  }
+]

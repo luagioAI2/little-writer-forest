@@ -1,0 +1,268 @@
+{
+  "batch": "18",
+  "items": [
+    {
+      "landmarkId": "cn-云南-曼听公园",
+      "match": "scene",
+      "query": "Manting Park Xishuangbanna",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Manting Park Xishuangbanna, Xishuangbanna Dai park Jinghong. Real Manting Park shots appear only as iStock ads; organic hits are generic Dai temples elsewhere in Xishuangbanna (Jinghong golden stupa, white ordination hall), not the park."
+    },
+    {
+      "landmarkId": "cn-云南-云南民族村",
+      "match": "scene",
+      "query": "Yunnan Nationalities Village Kunming",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Yunnan Nationalities Village Kunming, Kunming Yunnan village ethnic. Only generic Yunnan/Dali/Lijiang streets and villages; nothing of the Kunming ethnic village itself."
+    },
+    {
+      "landmarkId": "cn-云南-泸沽湖",
+      "match": "place",
+      "query": "Lugu Lake Yunnan",
+      "mediaUrl": "https://images.pexels.com/photos/35760882/pexels-photo-35760882.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic view of Lugu Lake, Yunnan province",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/scenic-view-of-lugu-lake-yunnan-province-35760882/",
+        "author": "Unknown"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 43631
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-云南-野象谷",
+      "match": "scene",
+      "query": "Wild Elephant Valley Xishuangbanna",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Wild Elephant Valley Xishuangbanna, Xishuangbanna elephant. Page returns only generic zoo/wild Asian elephant stock (mostly Thailand/India), none of the Xishuangbanna valley itself."
+    },
+    {
+      "landmarkId": "cn-西藏-雅鲁藏布大峡谷景区",
+      "match": "place",
+      "query": "Yarlung Tsangpo Grand Canyon Tibet",
+      "mediaUrl": "https://images.pexels.com/photos/38243821/pexels-photo-38243821.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic Yarlung Tsangpo River Bend in Tibet",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/scenic-yarlung-tsangpo-river-bend-in-tibet-38243821/",
+        "author": "Greece China News"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 68966
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-西藏-扎什伦布寺景区",
+      "match": "scene",
+      "query": "Tashilhunpo Monastery Shigatse",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Tashilhunpo Monastery Shigatse, Tashilhunpo Shigatse Tibet. Real Tashilhunpo shots are iStock ads only; organic hits are Songzanlin (Shangri-La) and other Tibetan monasteries."
+    },
+    {
+      "landmarkId": "cn-西藏-巴松措景区",
+      "match": "scene",
+      "query": "Basum Lake Tibet",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Basum Lake Tibet, Basum Tso Nyingchi. Real Basum Tso shots are iStock ads only; organic hits are Yamdrok Lake, Pangong Lake and generic Tibetan lakes."
+    },
+    {
+      "landmarkId": "cn-西藏-大昭寺景区",
+      "match": "place",
+      "query": "Jokhang Temple Lhasa",
+      "mediaUrl": "https://images.pexels.com/photos/16154562/pexels-photo-16154562.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Jokhang under cloud",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/jokhang-under-cloud-16154562/",
+        "author": "tizzy"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 53282
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-陕西-乾陵景区",
+      "match": "scene",
+      "query": "Qianling Mausoleum Shaanxi",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Qianling Mausoleum Shaanxi, Qianling Xianyang. Results are Terracotta Army, Xi'an Bell Tower and Sun Yat-sen Mausoleum; Qianling itself appears only as iStock ads."
+    },
+    {
+      "landmarkId": "cn-陕西-延川黄河乾坤湾景区",
+      "match": "scene",
+      "query": "Yellow River canyon Shaanxi Yan an",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Yellow River canyon Shaanxi Yan an, Yellow River bend China. Only generic river bends (Glen Canyon, Xinjiang) and iStock ads for the Yellow River; nothing identifiable as Qiankun Bay."
+    },
+    {
+      "landmarkId": "cn-陕西-大明宫旅游景区",
+      "match": "place",
+      "query": "Daming Palace Xian",
+      "mediaUrl": "https://images.pexels.com/photos/13997553/pexels-photo-13997553.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Exterior of the Daming Palace in Xi'an, China",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/exterior-of-the-daming-palace-in-xian-china-13997553/",
+        "author": "Tao Wang"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 37729
+      },
+      "verdict": "poor",
+      "note": "Photographer captioned it as the Daming Palace in Xi'an and the white perimeter wall with Tang-style grey roofs matches the heritage-park reconstruction, but it is a distant wide shot and cannot be independently confirmed; also includes a running track in the foreground. Tried: Daming Palace Xian, Daming Palace National Heritage Park."
+    },
+    {
+      "landmarkId": "cn-陕西-延安革命纪念地景区",
+      "match": "scene",
+      "query": "Yan an pagoda hill Shaanxi",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Yan an pagoda hill Shaanxi, Yan an Shaanxi China. Organic hits are all Xi'an pagodas; Yan'an Baota Mountain / loess plateau appear only as iStock ads."
+    },
+    {
+      "landmarkId": "cn-陕西-城墙•碑林历史文化景区",
+      "match": "place",
+      "query": "Xian city wall",
+      "mediaUrl": "https://images.pexels.com/photos/29403950/pexels-photo-29403950.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Ancient Xi'an city wall with modern skyline",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/ancient-xi-an-city-wall-with-modern-skyline-29403950/",
+        "author": "dazecat"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 97882
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-陕西-太白山旅游景区",
+      "match": "scene",
+      "query": "Mount Taibai Shaanxi",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Mount Taibai Shaanxi, Taibai Mountain National Forest Park. Real Taibai Mountain shots are iStock ads only; organic hits are Huashan and generic Chinese ranges."
+    },
+    {
+      "landmarkId": "cn-陕西-金丝峡景区",
+      "match": "scene",
+      "query": "Jinsi Gorge Shaanxi",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Jinsi Gorge Shaanxi, Jinsixia canyon Shangluo. Results are Kastamonu (Turkey) canyons and unlabelled Chinese streams; nothing identifiable as Jinsi Gorge."
+    },
+    {
+      "landmarkId": "cn-陕西-法门文化景区",
+      "match": "scene",
+      "query": "Famen Temple Shaanxi",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Famen Temple Shaanxi, Famen Temple Baoji. Real Famen Temple shots are iStock ads only; organic hits are Xi'an Bell/Drum Tower and generic Chinese temples."
+    },
+    {
+      "landmarkId": "cn-陕西-华山风景区",
+      "match": "place",
+      "query": "Mount Hua Shaanxi China",
+      "mediaUrl": "https://images.pexels.com/photos/32762655/pexels-photo-32762655.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic view of Mount Hua in Shaanxi, China",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/majestic-view-of-mount-hua-in-shaanxi-china-32762655/",
+        "author": "Yan Zhang"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 46158
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-陕西-大雁塔－大唐芙蓉园景区",
+      "match": "place",
+      "query": "Giant Wild Goose Pagoda Xian",
+      "mediaUrl": "https://images.pexels.com/photos/28890193/pexels-photo-28890193.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Night view of the ancient Big Wild Goose Pagoda",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/night-view-of-the-ancient-big-wild-goose-pagoda-28890193/",
+        "author": "Unknown"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 25719
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-陕西-黄帝陵景区",
+      "match": "scene",
+      "query": "Huangdi Mausoleum Shaanxi",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Huangdi Mausoleum Shaanxi, Huangdi Ling Huangling. Results are all Terracotta Army / Qin Shi Huang and Sun Yat-sen Mausoleum (wrong mausoleums); Huangdi Mausoleum itself only as iStock ads."
+    },
+    {
+      "landmarkId": "cn-陕西-华清宫景区",
+      "match": "scene",
+      "query": "Huaqing Palace Xian",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Huaqing Palace Xian, Huaqing Hot Spring Lintong. Organic hits are Xi'an Bell/Drum Tower, city wall and pagodas; Huaqing itself appears only as iStock ads."
+    }
+  ]
+}

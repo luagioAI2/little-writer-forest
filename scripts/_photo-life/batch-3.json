@@ -1,0 +1,21 @@
+{
+  "batch": "3",
+  "items": [
+    { "id": "builtin-classmate-6", "title": "同桌的铅笔盒", "must": "一个铅笔盒/文具袋，放在课桌上", "query": "pencil case on school desk" },
+    { "id": "builtin-classmate-7", "title": "一起值日", "must": "孩子在教室里扫地/擦黑板/打扫（要有孩子在，亚洲孩子优先）", "query": "children cleaning classroom sweeping" },
+    { "id": "builtin-community-helper-9", "title": "楼下的保安叔叔", "must": "一位穿制服的保安（亚洲面孔优先，不要美国警察）", "query": "security guard in uniform" },
+    { "id": "builtin-community-helper-10", "title": "早餐摊的阿姨", "must": "一位摆摊卖早点的阿姨（亚洲面孔优先，要有摊位和食物）", "query": "asian street food vendor woman cooking" },
+    { "id": "builtin-stranger-5", "title": "修鞋的老人", "must": "一位修鞋匠在修鞋（要有鞋和工具，低头的老人最好）", "query": "shoemaker repairing shoes craftsman" },
+    { "id": "builtin-stranger-6", "title": "收废品的叔叔", "must": "一个人推着/骑着装满废品的三轮车或手推车（亚洲面孔优先）", "query": "man pushing cart with collected scrap cardboard" },
+    { "id": "builtin-pet-13", "title": "我的小兔子", "must": "一只兔子，要看得清兔子本身", "query": "pet rabbit" },
+    { "id": "builtin-pet-14", "title": "学说话的鹦鹉", "must": "一只鹦鹉，停在架子/树枝上", "query": "parrot perched on branch" },
+    { "id": "builtin-plant-9", "title": "窗台上的多肉", "must": "多肉植物，最好摆在窗台上", "query": "succulent plants on windowsill" },
+    { "id": "builtin-plant-10", "title": "门口的桂花树", "must": "一棵开着细碎小花的树（桂花搜不到就用开花的树顶上，但要真有花）", "query": "osmanthus fragrans tree with small flowers" },
+    { "id": "builtin-stationery-6", "title": "越写越短的铅笔", "must": "一支很短的铅笔头，看得出用剩下的一小截", "query": "short pencil stub" },
+    { "id": "builtin-stationery-7", "title": "尺子上的刻度", "must": "一把尺子，要看得见上面的刻度", "query": "ruler with markings close up" },
+    { "id": "builtin-treasure-11", "title": "奶奶的顶针", "must": "一个缝纫用的顶针（金属小套），最好在布/针线旁边", "query": "thimble sewing on fabric" },
+    { "id": "builtin-treasure-12", "title": "我的第一张奖状", "must": "一张奖状/证书（纸质的，有边框和字），最好贴在墙上", "query": "certificate award paper on wall" },
+    { "id": "builtin-food-6", "title": "妈妈煮的粥", "must": "一碗粥/稀饭（要看得出是粥，不是干饭，最好冒热气）", "query": "bowl of rice congee porridge" },
+    { "id": "builtin-food-7", "title": "一根冰棍", "must": "一根冰棍/雪糕，看得清冰棍本身", "query": "popsicle ice cream stick summer" }
+  ]
+}

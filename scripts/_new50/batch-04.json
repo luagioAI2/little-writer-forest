@@ -1,0 +1,82 @@
+[
+  {
+    "n": 31,
+    "tag": "letter",
+    "title": "给老师的一封信",
+    "lead": "快毕业了，有些话想写在信里告诉老师。",
+    "keyword": "writing letter paper pen envelope desk",
+    "note": "写信的桌面：信纸、笔"
+  },
+  {
+    "n": 32,
+    "tag": "look-picture",
+    "title": "图上的那个下午",
+    "lead": "图里的人都停在一瞬间。接下来会发生什么？",
+    "keyword": "children playing park afternoon bench",
+    "note": "公园午后有人活动（远景）"
+  },
+  {
+    "n": 33,
+    "tag": "look-picture",
+    "title": "四幅图，一件事",
+    "lead": "四幅图按顺序排好，把它们连成一件完整的事。",
+    "keyword": "four picture frames on wall gallery",
+    "note": "墙上并排的相框（数量感）"
+  },
+  {
+    "n": 34,
+    "tag": "custom",
+    "title": "端午的粽子",
+    "lead": "粽叶在手里一折，米就装进去了。你会包吗？",
+    "keyword": "zongzi rice dumpling bamboo leaves",
+    "note": "粽子/包粽子"
+  },
+  {
+    "n": 35,
+    "tag": "custom",
+    "title": "元宵看花灯",
+    "lead": "街上挂满了花灯，人挤着人往前挪。你猜中了哪个灯谜？",
+    "keyword": "chinese lanterns festival night red",
+    "note": "红灯笼/花灯夜景"
+  },
+  {
+    "n": 36,
+    "tag": "comic",
+    "title": "等一等再摘",
+    "lead": "漫画里的果子还没熟，有人已经伸手了。你看懂了什么？",
+    "keyword": "unripe green fruit on tree branch",
+    "note": "未熟的青果在枝头"
+  },
+  {
+    "n": 37,
+    "tag": "comic",
+    "title": "各扫门前雪",
+    "lead": "漫画里两个人各扫一段路，中间的雪谁也没动。这让你想到什么？",
+    "keyword": "person shoveling snow winter street",
+    "note": "扫雪（可只要雪与铁锹）"
+  },
+  {
+    "n": 38,
+    "tag": "pet",
+    "title": "蚂蚁搬家",
+    "lead": "一队蚂蚁排着长队往前爬。它们要去哪儿？",
+    "keyword": "ants marching in a line on ground",
+    "note": "蚂蚁队列（微距）"
+  },
+  {
+    "n": 39,
+    "tag": "plant",
+    "title": "窗外的梧桐树",
+    "lead": "它一年四季都在变。你见过它哪几种样子？",
+    "keyword": "large tree outside window branches",
+    "note": "从窗口看大树"
+  },
+  {
+    "n": 40,
+    "tag": "stationery",
+    "title": "削笔刀",
+    "lead": "转几圈，铅笔就尖了，下面堆着一层木屑。",
+    "keyword": "pencil sharpener wood shavings pencil",
+    "note": "削笔刀与木屑"
+  }
+]

@@ -1,0 +1,225 @@
+{
+  "batch": "06",
+  "items": [
+    {
+      "landmarkId": "cn-黑龙江-扎龙生态旅游区",
+      "match": "place",
+      "query": "Zhalong wetland crane",
+      "mediaUrl": "https://images.pexels.com/photos/31410314/pexels-photo-31410314.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Red-crowned crane in Qiqihar wetlands",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/red-crowned-crane-in-qiqihar-wetlands-31410314/", "author": "tom fly" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 38210 },
+      "verdict": "ok",
+      "note": "Photo is tagged Qiqihar wetlands; Zhalong reserve is in Qiqihar, red-crowned crane is the reserve's signature species."
+    },
+    {
+      "landmarkId": "cn-黑龙江-虎头旅游景区",
+      "match": "scene",
+      "query": "Ussuri river China",
+      "mediaUrl": "https://images.pexels.com/photos/36297047/pexels-photo-36297047.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic river view with boats and distant mountains",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-river-view-with-boats-and-distant-mountains-36297047/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 35213 },
+      "verdict": "ok",
+      "note": "No Hutou photos on Pexels; generic border-river town scene standing in for the Ussuri riverside town."
+    },
+    {
+      "landmarkId": "cn-黑龙江-北极村旅游景区",
+      "match": "scene",
+      "query": "Mohe Arctic Village China",
+      "mediaUrl": "https://images.pexels.com/photos/13457229/pexels-photo-13457229.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Wooden huts in a snow covered village",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/wooden-huts-in-a-snow-covered-village-13457229/", "author": "liuguangxi" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 75421 },
+      "verdict": "ok",
+      "note": "Snow village is actually in Altay, Xinjiang (checked photo page); visual stand-in for Arctic Village, not the real place."
+    },
+    {
+      "landmarkId": "cn-黑龙江-林海奇石景区",
+      "match": "scene",
+      "query": "Yichun forest Heilongjiang",
+      "mediaUrl": "https://images.pexels.com/photos/35696973/pexels-photo-35696973.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Snow covered pine trees in Heilongjiang, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/snow-covered-pine-trees-in-heilongjiang-china-35696973/", "author": "Man Fong Wong" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 100497 },
+      "verdict": "ok",
+      "note": "Heilongjiang forest, correct province and 'forest sea' theme, but not the specific stone formations."
+    },
+    {
+      "landmarkId": "cn-黑龙江-镜泊湖景区",
+      "match": "scene",
+      "query": "Jingpo Lake",
+      "mediaUrl": "https://images.pexels.com/photos/36103492/pexels-photo-36103492.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic mountain lake with clear reflections",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-mountain-lake-with-clear-reflections-36103492/", "author": "Gang Liang" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 65093 },
+      "verdict": "ok",
+      "note": "Only sponsored iStock results exist for Jingpo Lake; generic calm mountain lake used."
+    },
+    {
+      "landmarkId": "cn-黑龙江-五大连池景区",
+      "match": "scene",
+      "query": "Wudalianchi volcano",
+      "mediaUrl": "https://images.pexels.com/photos/9992567/pexels-photo-9992567.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of volcanic crater",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-view-of-volcanic-crater-9992567/", "author": "Paul Hoekman" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 38031 },
+      "verdict": "ok",
+      "note": "Generic volcanic crater; real Wudalianchi images on Pexels are iStock ads only."
+    },
+    {
+      "landmarkId": "cn-黑龙江-太阳岛景区",
+      "match": "scene",
+      "query": "Sun Island Harbin China",
+      "mediaUrl": "https://images.pexels.com/photos/36231955/pexels-photo-36231955.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Winter landscape in Harbin with distant figures",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/winter-landscape-in-harbin-with-distant-figures-36231955/", "author": "ainc T" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 135200 },
+      "verdict": "ok",
+      "note": "Photo page confirms Harbin, Heilongjiang, China; snowy river-island expanse, but not verified as Sun Island itself."
+    },
+    {
+      "landmarkId": "cn-江苏-连岛景区",
+      "match": "scene",
+      "query": "Liandao island Lianyungang",
+      "mediaUrl": "https://images.pexels.com/photos/38287222/pexels-photo-38287222.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic coastal view with hills and ocean",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-coastal-view-with-hills-and-ocean-38287222/", "author": "Feng He" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 39222 },
+      "verdict": "ok",
+      "note": "Generic Chinese coastal bay; Liandao/Dashawan beach only available as iStock ads."
+    },
+    {
+      "landmarkId": "cn-江苏-洪泽湖湿地景区",
+      "match": "scene",
+      "query": "Hongze Lake wetland",
+      "mediaUrl": "https://images.pexels.com/photos/32429301/pexels-photo-32429301.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of boardwalk through scenic wetlands",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-view-of-boardwalk-through-scenic-wetlands-32429301/", "author": "Micong" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 53449 },
+      "verdict": "ok",
+      "note": "Generic reed-bed wetland with boardwalk; matches the wetland-park theme, not Hongze Lake specifically."
+    },
+    {
+      "landmarkId": "cn-江苏-惠山古镇景区",
+      "match": "scene",
+      "query": "Huishan ancient town Wuxi",
+      "mediaUrl": "https://images.pexels.com/photos/29266974/pexels-photo-29266974.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic night view of Wuxi canal in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-night-view-of-wuxi-canal-in-china-29266974/", "author": "Nikki Villanueva" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 81136 },
+      "verdict": "ok",
+      "note": "Wuxi canal town at night, same city and same canal-town character; Huishan Ancient Town itself only on iStock."
+    },
+    {
+      "landmarkId": "cn-江苏-春秋淹城旅游区",
+      "match": "scene",
+      "query": "Changzhou China",
+      "mediaUrl": "https://images.pexels.com/photos/19556439/pexels-photo-19556439.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Tianning Temple in Jiangsu, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/tianning-temple-in-jiangsu-in-china-19556439/", "author": "dqnguyen15" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 157463 },
+      "verdict": "ok",
+      "note": "Changzhou city landmark (Tianning Temple pagoda); Yancheng ruins site not on Pexels."
+    },
+    {
+      "landmarkId": "cn-江苏-花果山景区",
+      "match": "scene",
+      "query": "Huaguo Mountain Lianyungang",
+      "mediaUrl": "https://images.pexels.com/photos/9383523/pexels-photo-9383523.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "View of mountains and clouds",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/view-of-a-mountains-and-clouds-9383523/", "author": "Lan Yao" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 90043 },
+      "verdict": "ok",
+      "note": "Generic green mountain valley; a tiny hiker in the lower-left corner. No Huaguoshan photos on Pexels."
+    },
+    {
+      "landmarkId": "cn-江苏-云龙湖景区",
+      "match": "scene",
+      "query": "Yunlong Lake Xuzhou",
+      "mediaUrl": "https://images.pexels.com/photos/37444868/pexels-photo-37444868.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Serene lake with Asian pagoda and bridge at sunset",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/serene-lake-with-asian-pagoda-and-bridge-at-sunset-37444868/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 26016 },
+      "verdict": "ok",
+      "note": "Lake with pagoda and arched bridge, matching Yunlong Lake's look, but location not confirmed."
+    },
+    {
+      "landmarkId": "cn-江苏-中华麋鹿园景区",
+      "match": "scene",
+      "query": "Pere David deer",
+      "mediaUrl": "https://images.pexels.com/photos/30945240/pexels-photo-30945240.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic milu deer in open field",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-milu-deer-in-open-field-30945240/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 67957 },
+      "verdict": "ok",
+      "note": "Pere David's (milu) deer behind a fence - the reserve's namesake species, but not the park itself."
+    },
+    {
+      "landmarkId": "cn-江苏-周恩来故里景区",
+      "match": "scene",
+      "query": "Huaian Jiangsu China",
+      "mediaUrl": "https://images.pexels.com/photos/38218852/pexels-photo-38218852.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic canal with traditional Chinese architecture",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-canal-with-traditional-chinese-architecture-38218852/", "author": "Yudi Ding" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 161708 },
+      "verdict": "ok",
+      "note": "Jiangsu canal-town scene; the Huai'an historic residence site is not on Pexels."
+    },
+    {
+      "landmarkId": "cn-江苏-茅山景区",
+      "match": "scene",
+      "query": "Maoshan mountain China",
+      "mediaUrl": "https://images.pexels.com/photos/35008257/pexels-photo-35008257.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Misty mountain view with temple in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/misty-mountain-view-with-temple-in-china-35008257/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 85658 },
+      "verdict": "ok",
+      "note": "Forested peak with temple complex in mist, close to Maoshan's Taoist-mountain character; generic."
+    },
+    {
+      "landmarkId": "cn-江苏-天目湖景区",
+      "match": "scene",
+      "query": "Tianmu Lake China",
+      "mediaUrl": "https://images.pexels.com/photos/36849855/pexels-photo-36849855.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Serene lake in lush mountainous landscape",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/serene-lake-in-lush-mountainous-landscape-36849855/", "author": "Gang Liang" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 54157 },
+      "verdict": "ok",
+      "note": "Lake ringed by bamboo-covered hills, very close to Tianmu Lake's scenery; not the actual lake."
+    },
+    {
+      "landmarkId": "cn-江苏-沙家浜－虞山尚湖旅游区",
+      "match": "scene",
+      "query": "Shajiabang Changshu",
+      "mediaUrl": "https://images.pexels.com/photos/38585065/pexels-photo-38585065.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Serene mountain lake with lush green hills",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/serene-mountain-lake-with-lush-green-hills-38585065/", "author": "Rain Lu" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 34883 },
+      "verdict": "ok",
+      "note": "Lake at the foot of green hills, matching Shanghu lake; Shajiabang/Changshu not on Pexels."
+    },
+    {
+      "landmarkId": "cn-江苏-太湖旅游区",
+      "match": "place",
+      "query": "Taihu",
+      "mediaUrl": "https://images.pexels.com/photos/2947077/pexels-photo-2947077.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Moonlight reflecting on the lake Taihu",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/moonlight-reflecting-on-the-lake-taihu-2947077/", "author": "Long Tang" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 20024 },
+      "verdict": "poor",
+      "note": "Genuinely Lake Taihu, but it is a very dark night shot - moon over water with faint city lights, little detail."
+    },
+    {
+      "landmarkId": "cn-江苏-鼋头渚旅游风景区",
+      "match": "place",
+      "query": "Yuantouzhu Wuxi",
+      "mediaUrl": "https://images.pexels.com/photos/20833697/pexels-photo-20833697.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Turtle Head Isle in Wuxi",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/turtle-head-isle-in-wuxi-20833697/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 91318 },
+      "verdict": "poor",
+      "note": "Actual Turtle Head Isle (Yuantouzhu) gate in cherry-blossom season, but packed with tourists and large calligraphy signage."
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "batch": "A",
+  "items": [
+    {
+      "landmarkId": "tiananmen",
+      "match": "place",
+      "query": "Tiananmen Square",
+      "mediaUrl": "https://images.pexels.com/photos/2975021/pexels-photo-2975021.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Landscape Photography of Tiananmen Square",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/landscape-photography-of-tiananmen-square-2975021/", "author": "Markus Winkler" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 50615 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "badaling",
+      "match": "place",
+      "query": "Great Wall of China Badaling",
+      "mediaUrl": "https://images.pexels.com/photos/19031655/pexels-photo-19031655.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Part of the Great Wall of China in Beijing",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/part-of-the-great-wall-of-china-in-beijing-19031655/", "author": "Van Anh Nguyen" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 40431 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "xihu",
+      "match": "place",
+      "query": "West Lake Hangzhou",
+      "mediaUrl": "https://images.pexels.com/photos/8588837/pexels-photo-8588837.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Pavilion on West Lake, Hangzhou, Zhejiang, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/pavilion-on-west-lake-hangzhou-zhejiang-china-8588837/", "author": "Marstion" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 82167 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "guilin",
+      "match": "place",
+      "query": "Guilin Li River karst",
+      "mediaUrl": "https://images.pexels.com/photos/36535023/pexels-photo-36535023.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial View of Karst Mountains in Guilin, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-view-of-karst-mountains-in-guilin-china-36535023/", "author": "Willian Justen de Vasconcellos" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 57337 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "bingmayong",
+      "match": "place",
+      "query": "Terracotta Army Xian",
+      "mediaUrl": "https://images.pexels.com/photos/16472051/pexels-photo-16472051.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Terracotta Army in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/terracotta-army-in-china-16472051/", "author": "兴 罗" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 47082 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "zhangjiajie",
+      "match": "place",
+      "query": "Zhangjiajie China mountains",
+      "mediaUrl": "https://images.pexels.com/photos/33231933/pexels-photo-33231933.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic Zhangjiajie National Forest Peaks",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-zhangjiajie-national-forest-peaks-33231933/", "author": "Deimantas Viburys" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 43297 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "weiduoliya",
+      "match": "place",
+      "query": "Victoria Harbour Hong Kong skyline",
+      "mediaUrl": "https://images.pexels.com/photos/11786636/pexels-photo-11786636.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Illuminated Victoria Harbour, Hong Kong, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/illuminated-victoria-harbour-hong-kong-china-11786636/", "author": "Janam Parikh" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 30505 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "mogao",
+      "match": "place",
+      "query": "Mogao Caves Dunhuang",
+      "mediaUrl": "https://images.pexels.com/photos/25974825/pexels-photo-25974825.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "View of the Mogao Caves, Dunhuang, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/view-of-the-mogao-caves-dunhuang-china-25974825/", "author": "Manta paopao" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 52627 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-北京-故宫博物院",
+      "match": "place",
+      "query": "Forbidden City Beijing",
+      "mediaUrl": "https://images.pexels.com/photos/18549556/pexels-photo-18549556.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Hall of Supreme Harmony in Forbidden City",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/hall-of-supreme-harmony-in-forbidden-city-18549556/", "author": "Yan Zhang" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 56762 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-安徽-黄山风景区",
+      "match": "place",
+      "query": "Huangshan Yellow Mountain China",
+      "mediaUrl": "https://images.pexels.com/photos/31582902/pexels-photo-31582902.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic Huangshan Mountain Peaks in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-huangshan-mountain-peaks-in-china-31582902/", "author": "香菜 顾" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 69003 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-山东-泰山景区",
+      "match": "place",
+      "query": "Mount Tai Shandong",
+      "mediaUrl": "https://images.pexels.com/photos/35896164/pexels-photo-35896164.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Traditional Chinese Temple with Winter Scenery",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/traditional-chinese-temple-with-winter-scenery-35896164/", "author": "Andy Lee" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 81350 },
+      "verdict": "ok",
+      "note": "Pexels title is generic, but this is Mount Tai's South Gate to Heaven (Nantianmen) atop the Eighteen Bends stairway — same location/photo series as the explicitly-titled 'Crowded staircase at Mount Tai in winter' by the same photographer. Chosen over that shot because the framing is clearer; wintry/overcast."
+    },
+    {
+      "landmarkId": "cn-四川-九寨沟景区",
+      "match": "place",
+      "query": "Jiuzhaigou valley China",
+      "mediaUrl": "https://images.pexels.com/photos/38399400/pexels-photo-38399400.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Stunning Lake View in Jiuzhaigou Valley, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/stunning-lake-view-in-jiuzhaigou-valley-china-38399400/", "author": "yong zhu" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 56468 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-西藏-布达拉宫景区",
+      "match": "place",
+      "query": "Potala Palace Lhasa",
+      "mediaUrl": "https://images.pexels.com/photos/38462384/pexels-photo-38462384.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic View of the Potala Palace in Lhasa",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-view-of-the-potala-palace-in-lhasa-38462384/", "author": "INDU BIKASH SARKER" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 60769 },
+      "verdict": "ok",
+      "note": ""
+    }
+  ]
+}

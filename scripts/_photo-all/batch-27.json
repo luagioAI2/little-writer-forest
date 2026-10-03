@@ -1,0 +1,162 @@
+[
+  {
+    "id": "world-加拿大-路易斯湖",
+    "name": "路易斯湖",
+    "province": "加拿大",
+    "country": "加拿大",
+    "scene": "water",
+    "en": "Lake Louise, Alberta"
+  },
+  {
+    "id": "world-墨西哥-宪法广场",
+    "name": "宪法广场",
+    "province": "墨西哥",
+    "country": "墨西哥",
+    "scene": "city",
+    "en": "Zócalo"
+  },
+  {
+    "id": "world-秘鲁-库斯科",
+    "name": "库斯科",
+    "province": "秘鲁",
+    "country": "秘鲁",
+    "scene": "city",
+    "en": "Cusco"
+  },
+  {
+    "id": "world-智利-百内国家公园",
+    "name": "百内国家公园",
+    "province": "智利",
+    "country": "智利",
+    "scene": "mountain",
+    "en": "Torres del Paine National Park"
+  },
+  {
+    "id": "world-摩洛哥-撒哈拉沙漠",
+    "name": "撒哈拉沙漠",
+    "province": "摩洛哥",
+    "country": "摩洛哥",
+    "scene": "desert",
+    "en": "Sahara"
+  },
+  {
+    "id": "world-阿根廷-布宜诺斯艾利斯",
+    "name": "布宜诺斯艾利斯",
+    "province": "阿根廷",
+    "country": "阿根廷",
+    "scene": "city",
+    "en": "Buenos Aires"
+  },
+  {
+    "id": "world-突尼斯-迦太基",
+    "name": "迦太基",
+    "province": "突尼斯",
+    "country": "突尼斯",
+    "scene": "city",
+    "en": "Carthage"
+  },
+  {
+    "id": "world-阿尔及利亚-阿尔及尔卡斯巴",
+    "name": "阿尔及尔卡斯巴",
+    "province": "阿尔及利亚",
+    "country": "阿尔及利亚",
+    "scene": "city",
+    "en": "Casbah of Algiers"
+  },
+  {
+    "id": "world-尼日利亚-祖马岩",
+    "name": "祖马岩",
+    "province": "尼日利亚",
+    "country": "尼日利亚",
+    "scene": "mountain",
+    "en": "Zuma Rock"
+  },
+  {
+    "id": "world-加纳-海岸角城堡",
+    "name": "海岸角城堡",
+    "province": "加纳",
+    "country": "加纳",
+    "scene": "coast",
+    "en": "Cape Coast Castle"
+  },
+  {
+    "id": "world-卢旺达-火山国家公园",
+    "name": "火山国家公园",
+    "province": "卢旺达",
+    "country": "卢旺达",
+    "scene": "forest",
+    "en": "Volcanoes National Park"
+  },
+  {
+    "id": "world-赞比亚-南卢安瓜国家公园",
+    "name": "南卢安瓜国家公园",
+    "province": "赞比亚",
+    "country": "赞比亚",
+    "scene": "grass",
+    "en": "South Luangwa National Park"
+  },
+  {
+    "id": "world-乌拉圭-埃斯特角城",
+    "name": "埃斯特角城",
+    "province": "乌拉圭",
+    "country": "乌拉圭",
+    "scene": "coast",
+    "en": "Punta del Este"
+  },
+  {
+    "id": "world-巴拉圭-巴拉那耶稣会传教区",
+    "name": "巴拉那耶稣会传教区",
+    "province": "巴拉圭",
+    "country": "巴拉圭",
+    "scene": "forest",
+    "en": "La Santísima Trinidad de Paraná"
+  },
+  {
+    "id": "world-牙买加-邓斯河瀑布",
+    "name": "邓斯河瀑布",
+    "province": "牙买加",
+    "country": "牙买加",
+    "scene": "water",
+    "en": "Dunn's River Falls"
+  },
+  {
+    "id": "world-多米尼加-圣多明各殖民城",
+    "name": "圣多明各殖民城",
+    "province": "多米尼加",
+    "country": "多米尼加",
+    "scene": "city",
+    "en": "Ciudad Colonial (Santo Domingo)"
+  },
+  {
+    "id": "world-洪都拉斯-科潘",
+    "name": "科潘",
+    "province": "洪都拉斯",
+    "country": "洪都拉斯",
+    "scene": "forest",
+    "en": "Copán"
+  },
+  {
+    "id": "world-斐济-玛玛努卡群岛",
+    "name": "玛玛努卡群岛",
+    "province": "斐济",
+    "country": "斐济",
+    "scene": "coast",
+    "en": "Mamanuca Islands"
+  },
+  {
+    "id": "world-萨摩亚-拉洛马努海滩",
+    "name": "拉洛马努海滩",
+    "province": "萨摩亚",
+    "country": "萨摩亚",
+    "scene": "coast",
+    "en": "Lalomanu"
+  },
+  {
+    "id": "world-巴布亚新几内亚-科科达小径",
+    "name": "科科达小径",
+    "province": "巴布亚新几内亚",
+    "country": "巴布亚新几内亚",
+    "scene": "forest",
+    "en": "Kokoda Track"
+  }
+]

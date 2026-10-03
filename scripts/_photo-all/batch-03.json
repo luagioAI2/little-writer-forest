@@ -1,0 +1,191 @@
+[
+  {
+    "id": "cn-重庆-濯水景区",
+    "name": "濯水景区",
+    "province": "重庆",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-重庆-阿依河景区",
+    "name": "阿依河景区",
+    "province": "重庆",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-重庆-龙缸景区",
+    "name": "龙缸景区",
+    "province": "重庆",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-重庆-四面山景区",
+    "name": "四面山景区",
+    "province": "重庆",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-重庆-金佛山景区",
+    "name": "金佛山景区",
+    "province": "重庆",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-重庆-万盛黑山谷-龙鳞石海风景区",
+    "name": "万盛黑山谷-龙鳞石海风景区",
+    "province": "重庆",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-重庆-桃花源旅游景区",
+    "name": "桃花源旅游景区",
+    "province": "重庆",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-重庆-喀斯特旅游区",
+    "name": "喀斯特旅游区",
+    "province": "重庆",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-重庆-小三峡－小小三峡旅游区",
+    "name": "小三峡－小小三峡旅游区",
+    "province": "重庆",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-重庆-大足石刻景区",
+    "name": "大足石刻景区",
+    "province": "重庆",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-重庆-长江索道",
+    "name": "长江索道",
+    "province": "重庆",
+    "country": "中国",
+    "rating": "4A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-河北-衡水湖旅游景区",
+    "name": "衡水湖旅游景区",
+    "province": "河北",
+    "country": "中国",
+    "city": "衡水",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-河北-南湖·开滦旅游景区",
+    "name": "南湖·开滦旅游景区",
+    "province": "河北",
+    "country": "中国",
+    "city": "唐山",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-河北-金山岭长城景区",
+    "name": "金山岭长城景区",
+    "province": "河北",
+    "country": "中国",
+    "city": "承德",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-河北-清西陵景区",
+    "name": "清西陵景区",
+    "province": "河北",
+    "country": "中国",
+    "city": "保定",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-河北-山海关景区",
+    "name": "山海关景区",
+    "province": "河北",
+    "country": "中国",
+    "city": "秦皇岛",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-河北-白石山景区",
+    "name": "白石山景区",
+    "province": "河北",
+    "country": "中国",
+    "city": "保定",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-河北-广府古城景区",
+    "name": "广府古城景区",
+    "province": "河北",
+    "country": "中国",
+    "city": "邯郸",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-河北-娲皇宫景区",
+    "name": "娲皇宫景区",
+    "province": "河北",
+    "country": "中国",
+    "city": "邯郸",
+    "rating": "5A",
+    "scene": "temple",
+    "en": ""
+  },
+  {
+    "id": "cn-河北-清东陵景区",
+    "name": "清东陵景区",
+    "province": "河北",
+    "country": "中国",
+    "city": "唐山",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  }
+]

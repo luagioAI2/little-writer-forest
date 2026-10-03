@@ -1,0 +1,178 @@
+[
+  {
+    "id": "zhuozhengyuan",
+    "name": "拙政园",
+    "province": "江苏",
+    "country": "中国",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "waitan",
+    "name": "上海外滩",
+    "province": "上海",
+    "country": "中国",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "hulunbuir",
+    "name": "呼伦贝尔草原",
+    "province": "内蒙古",
+    "country": "中国",
+    "scene": "grass",
+    "en": ""
+  },
+  {
+    "id": "hukou",
+    "name": "壶口瀑布",
+    "province": "山西",
+    "country": "中国",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "riyuetan",
+    "name": "日月潭",
+    "province": "中国台湾",
+    "country": "中国",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "dasanba",
+    "name": "大三巴牌坊",
+    "province": "中国澳门",
+    "country": "中国",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "mingshashan",
+    "name": "敦煌鸣沙山",
+    "province": "甘肃",
+    "country": "中国",
+    "scene": "desert",
+    "en": ""
+  },
+  {
+    "id": "daxinganling",
+    "name": "大兴安岭",
+    "province": "黑龙江",
+    "country": "中国",
+    "scene": "forest",
+    "en": ""
+  },
+  {
+    "id": "changbaishan",
+    "name": "长白山天池",
+    "province": "吉林",
+    "country": "中国",
+    "scene": "snow",
+    "en": ""
+  },
+  {
+    "id": "xishuangbanna",
+    "name": "西双版纳",
+    "province": "云南",
+    "country": "中国",
+    "scene": "forest",
+    "en": ""
+  },
+  {
+    "id": "kanasi",
+    "name": "喀纳斯湖",
+    "province": "新疆",
+    "country": "中国",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "mohe",
+    "name": "漠河北极村",
+    "province": "黑龙江",
+    "country": "中国",
+    "scene": "snow",
+    "en": ""
+  },
+  {
+    "id": "gd-w440314443",
+    "name": "长隆飞鸟乐园",
+    "province": "广东",
+    "country": "中国",
+    "city": "广州",
+    "rating": "5A",
+    "scene": "forest",
+    "en": ""
+  },
+  {
+    "id": "gd-w292110019",
+    "name": "长隆欢乐世界",
+    "province": "广东",
+    "country": "中国",
+    "city": "广州",
+    "rating": "5A",
+    "scene": "grass",
+    "en": ""
+  },
+  {
+    "id": "gd-w297262698",
+    "name": "长隆水上乐园",
+    "province": "广东",
+    "country": "中国",
+    "city": "广州",
+    "rating": "5A",
+    "scene": "grass",
+    "en": ""
+  },
+  {
+    "id": "gd-w297264709",
+    "name": "长隆野生动物世界",
+    "province": "广东",
+    "country": "中国",
+    "city": "广州",
+    "rating": "5A",
+    "scene": "forest",
+    "en": ""
+  },
+  {
+    "id": "gd-w1304963159",
+    "name": "开平碉楼与村落文化展示区",
+    "province": "广东",
+    "country": "中国",
+    "city": "江门",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "gd-w181234737",
+    "name": "欢乐谷",
+    "province": "广东",
+    "country": "中国",
+    "city": "深圳",
+    "rating": "5A",
+    "scene": "grass",
+    "en": ""
+  },
+  {
+    "id": "gd-w236402467",
+    "name": "锦绣中华民俗村",
+    "province": "广东",
+    "country": "中国",
+    "city": "深圳",
+    "rating": "5A",
+    "scene": "grass",
+    "en": ""
+  },
+  {
+    "id": "gd-w236402460",
+    "name": "世界之窗",
+    "province": "广东",
+    "country": "中国",
+    "city": "深圳",
+    "rating": "5A",
+    "scene": "grass",
+    "en": ""
+  }
+]

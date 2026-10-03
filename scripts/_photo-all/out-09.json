@@ -1,0 +1,257 @@
+{
+  "batch": "09",
+  "items": [
+    {
+      "landmarkId": "cn-安徽-万佛湖风景区",
+      "match": "scene",
+      "query": "Wanfo Lake Anhui",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Wanfo Lake Anhui / Wanfohu — no real Wanfo Lake photo on Pexels (only generic Anhui lakes + Huangshan villages)"
+    },
+    {
+      "landmarkId": "cn-安徽-方特旅游区",
+      "match": "scene",
+      "query": "Fantawild",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Fantawild / Wuhu theme park — only generic amusement-park shots, no Fantawild park"
+    },
+    {
+      "landmarkId": "cn-安徽-三河古镇景区",
+      "match": "scene",
+      "query": "Sanhe Ancient Town",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Sanhe Ancient Town / Sanhe town Hefei Anhui — only generic water-towns and Hefei city, no Sanhe"
+    },
+    {
+      "landmarkId": "cn-安徽-古徽州文化旅游区",
+      "match": "place",
+      "query": "Huizhou ancient village Anhui",
+      "mediaUrl": "https://images.pexels.com/photos/39725318/pexels-photo-39725318.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Historic entrance in Shexian at night",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/historic-entrance-in-shexian-at-night-39725318/",
+        "author": "Cheng Shi Song"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 130778
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-安徽-八里河风景区",
+      "match": "scene",
+      "query": "Balihe Fuyang",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Balihe Fuyang / Balihe scenic area China — no Balihe photos on Pexels"
+    },
+    {
+      "landmarkId": "cn-安徽-龙川景区",
+      "match": "scene",
+      "query": "Longchuan Anhui",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Longchuan Anhui / Longchuan Jixi Huizhou — no Longchuan village photos"
+    },
+    {
+      "landmarkId": "cn-安徽-天堂寨旅游景区",
+      "match": "scene",
+      "query": "Tiantangzhai",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Tiantangzhai / Tiantangzhai Anhui — free results are generic peaks & Shennongjia; the real one is an iStock ad"
+    },
+    {
+      "landmarkId": "cn-安徽-皖南古村落－西递宏村",
+      "match": "place",
+      "query": "Xidi Hongcun",
+      "mediaUrl": "https://images.pexels.com/photos/16064790/pexels-photo-16064790.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Shuren Hall in Hongcun",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/shuren-hall-in-hongcun-16064790/",
+        "author": "Zhicheng Zhang"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 236492
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-安徽-天柱山风景区",
+      "match": "scene",
+      "query": "Tianzhu Mountain Anhui",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Tianzhu Mountain Anhui / Tianzhushan — only Huangshan & generic peaks (real one is an iStock ad)"
+    },
+    {
+      "landmarkId": "cn-安徽-九华山风景区",
+      "match": "scene",
+      "query": "Jiuhua Mountain",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Jiuhua Mountain / Jiuhuashan / Jiuhua Mountain Anhui temple — no usable Jiuhua landscape (only a costume portrait shot at Jiuhuashan)"
+    },
+    {
+      "landmarkId": "cn-福建-冠豸山景区",
+      "match": "scene",
+      "query": "Guanzhi Mountain",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Guanzhi Mountain / Guanzhai Mountain Liancheng — no Guanzhi photos"
+    },
+    {
+      "landmarkId": "cn-福建-厦门园林植物园景区",
+      "match": "scene",
+      "query": "Xiamen Botanical Garden",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Xiamen Botanical Garden / Xiamen garden — only Gulangyu, Nanputuo and cityscape, no botanical garden"
+    },
+    {
+      "landmarkId": "cn-福建-湄洲岛妈祖文化旅游区",
+      "match": "place",
+      "query": "Meizhou Island Mazu",
+      "mediaUrl": "https://images.pexels.com/photos/36097643/pexels-photo-36097643.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic Mazu statue on blue sky day",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/majestic-mazu-statue-on-blue-sky-day-36097643/",
+        "author": "Wuchao"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 63442
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-福建-古田旅游区",
+      "match": "scene",
+      "query": "Gutian Fujian",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Gutian Fujian / Gutian Longyan Fujian — no Gutian photos"
+    },
+    {
+      "landmarkId": "cn-福建-三坊七巷景区",
+      "match": "scene",
+      "query": "Three Lanes Seven Alleys Fuzhou",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Three Lanes Seven Alleys Fuzhou / Sanfang Qixiang — all real ones are iStock ads; free results are generic alleys"
+    },
+    {
+      "landmarkId": "cn-福建-太姥山旅游区",
+      "match": "scene",
+      "query": "Taimu Mountain",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Taimu Mountain — only generic rocky mountains, no Taimu"
+    },
+    {
+      "landmarkId": "cn-福建-清源山风景名胜区",
+      "match": "scene",
+      "query": "Qingyuan Mountain Quanzhou",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Qingyuan Mountain Quanzhou — no Qingyuan Mountain photos"
+    },
+    {
+      "landmarkId": "cn-福建-（白水洋•鸳鸯溪）旅游景区",
+      "match": "scene",
+      "query": "Baishuiyang Yangyuan stream",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Baishuiyang Yangyuan stream — only generic streams/waterfalls, no Baishuiyang"
+    },
+    {
+      "landmarkId": "cn-福建-福建土楼（永定•南靖）旅游景区",
+      "match": "place",
+      "query": "Fujian Tulou",
+      "mediaUrl": "https://images.pexels.com/photos/34041411/pexels-photo-34041411.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of Fujian Tulou earth buildings",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/aerial-view-of-fujian-tulou-earth-buildings-34041411/",
+        "author": "Donny Tang"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 197584
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-福建-泰宁风景旅游区",
+      "match": "scene",
+      "query": "Taining Fujian",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "tried: Taining Fujian / Taining Danxia — only Zhangye Danxia (Gansu) & generic, no Taining"
+    }
+  ]
+}

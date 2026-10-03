@@ -1,0 +1,60 @@
+{
+  "batch": "02",
+  "items": [
+    {
+      "key": "fireflies",
+      "pexelsId": 38188604,
+      "mediaUrl": "https://images.pexels.com/photos/38188604/pexels-photo-38188604.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Enchanting Fireflies in a Serene Forest Setting",
+      "credit": { "link": "https://www.pexels.com/photo/enchanting-fireflies-in-a-serene-forest-setting-38188604/", "author": "Marclyc Li" },
+      "verified": { "http": 200, "bytes": 32195 },
+      "size": { "w": 640, "h": 349, "ar": 1.83 },
+      "verdict": "ok",
+      "note": "夜里飞满发光萤火虫（黄绿光点），下缘是蕨类草丛；真实萤火虫但为林间而非开阔草地，画面里没有举玻璃罐的孩子与月亮"
+    },
+    {
+      "key": "starry-night",
+      "pexelsId": 32480442,
+      "mediaUrl": "https://images.pexels.com/photos/32480442/pexels-photo-32480442.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Silhouetted Forest Under Crescent Moon Night Sky",
+      "credit": { "link": "https://www.pexels.com/photo/silhouetted-forest-under-crescent-moon-night-sky-32480442/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 12762 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "深蓝夜空 + 一弯清晰新月 + 松林剪影，色调整齐；星星偏稀疏，画面里没有躺着看天的孩子"
+    },
+    {
+      "key": "neighbor",
+      "pexelsId": 7658788,
+      "mediaUrl": "https://images.pexels.com/photos/7658788/pexels-photo-7658788.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Woman Carrying a Basket with Vegetables",
+      "credit": { "link": "https://www.pexels.com/photo/woman-carrying-a-basket-with-vegetables-7658788/", "author": "Kampus Production" },
+      "verified": { "http": 200, "bytes": 46483 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "白发阿姨笑着捧一篮新鲜蔬菜，站在户外菜园里，身后有木栅栏/藤架；为户外菜园非门廊，未挥手、花少"
+    },
+    {
+      "key": "police",
+      "pexelsId": 16862086,
+      "mediaUrl": "https://images.pexels.com/photos/16862086/pexels-photo-16862086.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "A Police Officer Coordinating the Traffic in City",
+      "credit": { "link": "https://www.pexels.com/photo/a-police-officer-coordinating-the-traffic-in-city-16862086/", "author": "Rodolfo Gaion" },
+      "verified": { "http": 200, "bytes": 45347 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "路口警察背影、手臂伸出指挥车流，前方是斑马线/车流/锥桶；制服为卡其色+白警帽而非蓝制服，无正脸"
+    },
+    {
+      "key": "sleep-alone",
+      "pexelsId": 6985726,
+      "mediaUrl": "https://images.pexels.com/photos/6985726/pexels-photo-6985726.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "A Kid Covered with Pillows and Blanket",
+      "credit": { "link": "https://www.pexels.com/photo/a-kid-covered-with-pillows-and-blanket-6985726/", "author": "cottonbro" },
+      "verified": { "http": 200, "bytes": 30849 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "孩子整个人裹进鼓起的大被窝里，只从被缝里探出脸/眼睛，暖光；缺夜里蓝调与窗外的月亮星星"
+    }
+  ]
+}

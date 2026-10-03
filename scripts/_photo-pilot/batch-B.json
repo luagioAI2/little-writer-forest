@@ -1,0 +1,110 @@
+[
+  {
+    "id": "world-日本-富士山",
+    "name": "富士山",
+    "province": "日本",
+    "country": "日本",
+    "scene": "mountain",
+    "en": "Mount Fuji",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-泰国-大皇宫",
+    "name": "大皇宫",
+    "province": "泰国",
+    "country": "泰国",
+    "scene": "temple",
+    "en": "Grand Palace",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-印度-泰姬陵",
+    "name": "泰姬陵",
+    "province": "印度",
+    "country": "印度",
+    "scene": "temple",
+    "en": "Taj Mahal",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-柬埔寨-吴哥窟",
+    "name": "吴哥窟",
+    "province": "柬埔寨",
+    "country": "柬埔寨",
+    "scene": "temple",
+    "en": "Angkor Wat",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-印度尼西亚-巴厘岛",
+    "name": "巴厘岛",
+    "province": "印度尼西亚",
+    "country": "印度尼西亚",
+    "scene": "coast",
+    "en": "Bali",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-越南-下龙湾",
+    "name": "下龙湾",
+    "province": "越南",
+    "country": "越南",
+    "scene": "water",
+    "en": "Hạ Long Bay",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-尼泊尔-珠穆朗玛峰",
+    "name": "珠穆朗玛峰",
+    "province": "尼泊尔",
+    "country": "尼泊尔",
+    "scene": "snow",
+    "en": "Mount Everest",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-以色列-死海",
+    "name": "死海",
+    "province": "以色列",
+    "country": "以色列",
+    "scene": "water",
+    "en": "Dead Sea",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-土耳其-圣索菲亚大教堂",
+    "name": "圣索菲亚大教堂",
+    "province": "土耳其",
+    "country": "土耳其",
+    "scene": "temple",
+    "en": "Hagia Sophia",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-土耳其-卡帕多西亚",
+    "name": "卡帕多西亚",
+    "province": "土耳其",
+    "country": "土耳其",
+    "scene": "desert",
+    "en": "Cappadocia",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-阿联酋-哈利法塔",
+    "name": "哈利法塔",
+    "province": "阿联酋",
+    "country": "阿联酋",
+    "scene": "city",
+    "en": "Burj Khalifa",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-约旦-佩特拉",
+    "name": "佩特拉",
+    "province": "约旦",
+    "country": "约旦",
+    "scene": "desert",
+    "en": "Petra",
+    "hasEnFromWiki": true
+  }
+]

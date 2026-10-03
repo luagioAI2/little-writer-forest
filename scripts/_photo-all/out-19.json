@@ -1,0 +1,214 @@
+{
+  "batch": "19",
+  "items": [
+    {
+      "landmarkId": "cn-陕西-秦始皇帝陵博物院景区",
+      "match": "place",
+      "query": "Terracotta Army Xian",
+      "mediaUrl": "https://images.pexels.com/photos/28844770/pexels-photo-28844770.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Terracotta Army figures in Qin Shi Huang Mausoleum",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/terracotta-army-figures-in-qin-shi-huang-mausoleum-28844770/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 120064 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-陕西-陕西历史博物馆",
+      "match": "place",
+      "query": "Shaanxi History Museum",
+      "mediaUrl": "https://images.pexels.com/photos/34717724/pexels-photo-34717724.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Visit to the Shaanxi History Museum in Xi'an",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/visit-to-the-shaanxi-history-museum-in-xi-an-34717724/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 111421 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-甘肃-冶力关旅游区",
+      "match": "scene",
+      "query": "Yeliguan Gansu",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Yeliguan Gansu, Yeliguan Linxia (only generic Gansu mountains; real shots appear only as iStock ads)."
+    },
+    {
+      "landmarkId": "cn-甘肃-官鹅沟景区",
+      "match": "scene",
+      "query": "Guanegou Gansu China",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Guanegou Gansu China, Guanegou National Forest Park (only generic forests/waterfalls; real Guanegou autumn shots exist only as iStock ads)."
+    },
+    {
+      "landmarkId": "cn-甘肃-炳灵寺世界文化遗产旅游区",
+      "match": "scene",
+      "query": "Bingling Temple Gansu",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Bingling Temple Gansu (only Mogao/Yungang/Datong grotto photos, none from Bingling Temple)."
+    },
+    {
+      "landmarkId": "cn-甘肃-七彩丹霞景区",
+      "match": "place",
+      "query": "Zhangye Danxia",
+      "mediaUrl": "https://images.pexels.com/photos/38762891/pexels-photo-38762891.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Colorful Danxia landform in Zhangye, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/colorful-danxia-landform-in-zhangye-china-38762891/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 38455 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-甘肃-鸣沙山月牙泉景区",
+      "match": "place",
+      "query": "Mingsha Mountain Crescent Lake",
+      "mediaUrl": "https://images.pexels.com/photos/33412586/pexels-photo-33412586.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic view of Crescent Lake and Mingsha dunes",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-view-of-crescent-lake-and-mingsha-dunes-33412586/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 42331 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-甘肃-麦积山景区",
+      "match": "place",
+      "query": "Maijishan Grottoes",
+      "mediaUrl": "https://images.pexels.com/photos/37579575/pexels-photo-37579575.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Intricate Buddhist carvings in Maijishan Grottoes",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/intricate-buddhist-carvings-in-maijishan-grottoes-37579575/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 76691 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-甘肃-崆峒山风景名胜区",
+      "match": "scene",
+      "query": "Kongtong Mountain",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Kongtong Mountain, Kongtong Mountain Pingliang Gansu (only Korean/Seoraksan and generic mountain shots)."
+    },
+    {
+      "landmarkId": "cn-甘肃-嘉峪关文物景区",
+      "match": "place",
+      "query": "Jiayuguan Great Wall",
+      "mediaUrl": "https://images.pexels.com/photos/10044834/pexels-photo-10044834.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Low angle shot of Great Wall at Jiayuguan Pass in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/low-angle-shot-of-great-wall-at-jiayuanguan-pass-in-china-10044834/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 91201 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-青海-阿咪东索景区",
+      "match": "scene",
+      "query": "Amidongsuo Qinghai",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Amidongsuo Qinghai, Ami Dongsuo (only generic Qinghai plateau/lake shots)."
+    },
+    {
+      "landmarkId": "cn-青海-互助土族故土园旅游区",
+      "match": "scene",
+      "query": "Huzhu Tu Qinghai",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Huzhu Tu Qinghai, Huzhu Tu Nationality Park (only generic Qinghai scenery)."
+    },
+    {
+      "landmarkId": "cn-青海-塔尔寺景区",
+      "match": "place",
+      "query": "Kumbum Monastery Qinghai",
+      "mediaUrl": "https://images.pexels.com/photos/9868483/pexels-photo-9868483.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Prayer wheels in Ta'er Temple in Xining, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/prayer-wheels-in-taer-temple-in-xining-china-9868483/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 55822 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-青海-青海湖风景区",
+      "match": "place",
+      "query": "Qinghai Lake China",
+      "mediaUrl": "https://images.pexels.com/photos/34630868/pexels-photo-34630868.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic aerial view of Qinghai Lake and snow-capped mountains",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-aerial-view-of-qinghai-lake-and-snow-capped-mountains-34630868/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 29177 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-青海-茶卡盐湖",
+      "match": "place",
+      "query": "Chaka Salt Lake Qinghai",
+      "mediaUrl": "https://images.pexels.com/photos/8739403/pexels-photo-8739403.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "White clouds over the Chaka Salt Lake",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/white-clouds-over-the-chaka-salt-lake-8739403/", "author": "Ken Chuang" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 29042 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-宁夏-六盘山红军长征旅游区",
+      "match": "scene",
+      "query": "Liupan Mountain Ningxia",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Liupan Mountain Ningxia (only generic mountains, no Liupan-specific shots)."
+    },
+    {
+      "landmarkId": "cn-宁夏-青铜峡黄河大峡谷旅游区",
+      "match": "scene",
+      "query": "Qingtongxia Yellow River Canyon",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Qingtongxia Yellow River Canyon (only generic canyons abroad; real shots are iStock ads)."
+    },
+    {
+      "landmarkId": "cn-宁夏-水洞沟旅游区",
+      "match": "scene",
+      "query": "Shuidonggou Ningxia",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Shuidonggou Ningxia (only fermentation jars and generic China scenes)."
+    },
+    {
+      "landmarkId": "cn-宁夏-宁夏镇北堡西部影视城",
+      "match": "scene",
+      "query": "Zhenbeibao Western Film Studio",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Zhenbeibao Western Film Studio, Zhenbeibao Ningxia (only unrelated vintage-car/Macao street scenes)."
+    },
+    {
+      "landmarkId": "cn-宁夏-沙坡头旅游景区",
+      "match": "scene",
+      "query": "Shapotou Zhongwei",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Shapotou Zhongwei, Tengger Desert Shapotou, Shapotou Ningxia desert (only generic desert; real Shapotou shots are iStock ads)."
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+[
+  {
+    "id": "cn-宁夏-沙湖旅游景区",
+    "name": "沙湖旅游景区",
+    "province": "宁夏",
+    "country": "中国",
+    "city": "石嘴山",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-天山托木尔景区",
+    "name": "天山托木尔景区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "阿克苏地区",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-江布拉克景区",
+    "name": "江布拉克景区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "昌吉回族自治州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-赛里木湖景区",
+    "name": "赛里木湖景区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "博尔塔拉蒙古自治州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-世界魔鬼城景区",
+    "name": "世界魔鬼城景区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "克拉玛依",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-帕米尔旅游区",
+    "name": "帕米尔旅游区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "喀什地区",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-巴音布鲁克景区",
+    "name": "巴音布鲁克景区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "巴音郭楞蒙古自治州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-喀拉峻景区",
+    "name": "喀拉峻景区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "伊犁哈萨克自治州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-喀什古城景区",
+    "name": "喀什古城景区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "喀什地区",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-博斯腾湖景区",
+    "name": "博斯腾湖景区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "巴音郭楞蒙古自治州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-天山大峡谷",
+    "name": "天山大峡谷",
+    "province": "新疆",
+    "country": "中国",
+    "city": "乌鲁木齐",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-金湖杨景区",
+    "name": "金湖杨景区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "喀什地区",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-可可托海景区",
+    "name": "可可托海景区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "阿勒泰地区",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-那拉提旅游风景区",
+    "name": "那拉提旅游风景区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "伊犁哈萨克自治州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-喀纳斯景区",
+    "name": "喀纳斯景区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "阿勒泰地区",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-葡萄沟风景区",
+    "name": "葡萄沟风景区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "吐鲁番",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-天山天池风景名胜区",
+    "name": "天山天池风景名胜区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "昌吉回族自治州",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-塔克拉玛干•三五九旅文化旅游区",
+    "name": "塔克拉玛干•三五九旅文化旅游区",
+    "province": "新疆",
+    "country": "中国",
+    "city": "兵团阿拉尔",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-新疆-兵团十师185团白沙湖景区（阿勒泰地区）",
+    "name": "兵团十师185团白沙湖景区（阿勒泰地区）",
+    "province": "新疆",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "world-日本-金阁寺",
+    "name": "金阁寺",
+    "province": "日本",
+    "country": "日本",
+    "scene": "temple",
+    "en": "Kinkaku-ji"
+  }
+]

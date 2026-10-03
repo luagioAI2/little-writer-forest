@@ -1,0 +1,43 @@
+[
+  {
+    "key": "eraser-talking",
+    "hint": "桌上放着一块长了笑脸的粉色橡皮，旁边躺着一支铅笔，橡皮上方冒出一个对话气泡。",
+    "en": "eraser and pencil on desk",
+    "usedBy": [
+      "builtin-stationery-2"
+    ]
+  },
+  {
+    "key": "pencil-case",
+    "hint": "打开的文具盒里躺着钢笔、铅笔、直尺和橡皮，每样文具都整整齐齐地排在格子里。",
+    "en": "pencil case stationery pens ruler",
+    "usedBy": [
+      "builtin-stationery-3"
+    ]
+  },
+  {
+    "key": "wind-travel",
+    "hint": "白色的风一道道吹过草地，两棵树被吹得弯了腰，叶子在空中乱飞，一个孩子站在风里。",
+    "en": "wind blowing tall grass",
+    "usedBy": [
+      "builtin-if-i-2"
+    ]
+  },
+  {
+    "key": "talk-animals",
+    "hint": "林间空地上坐着一只猫、一只狗和一只小鸟，每个头顶都有一个对话气泡。",
+    "en": "cat dog bird together",
+    "usedBy": [
+      "builtin-if-i-3"
+    ]
+  },
+  {
+    "key": "if-tiny",
+    "hint": "巨大的花朵和草丛中间站着一个很小的人，旁边有一只蚂蚁爬过，露珠像湖泊一样大。",
+    "en": "tiny figurine among flowers macro",
+    "usedBy": [
+      "builtin-if-i-4",
+      "builtin-deform-2"
+    ]
+  }
+]

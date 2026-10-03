@@ -1,0 +1,230 @@
+[
+ {
+  "id": "builtin-activity-10",
+  "tag": "activity",
+  "old": "班级大扫除",
+  "new": "擦窗还是扫地"
+ },
+ {
+  "id": "builtin-activity-12",
+  "tag": "activity",
+  "old": "多彩的活动",
+  "new": "操场上的活动"
+ },
+ {
+  "id": "builtin-activity-13",
+  "tag": "activity",
+  "old": "我的拿手好戏",
+  "new": "聚光灯下的琴声"
+ },
+ {
+  "id": "builtin-comic-3",
+  "tag": "comic",
+  "old": "一幅漫画的启示",
+  "new": "四格漫画里的道理"
+ },
+ {
+  "id": "builtin-custom-4",
+  "tag": "custom",
+  "old": "家乡的风俗",
+  "new": "过节时的老规矩"
+ },
+ {
+  "id": "builtin-deform-5",
+  "tag": "deform",
+  "old": "假如我变小了",
+  "new": "变小以后的世界"
+ },
+ {
+  "id": "builtin-fairy-5",
+  "tag": "fairy",
+  "old": "笔尖流出的故事",
+  "new": "笔尖冒出的小人"
+ },
+ {
+  "id": "builtin-family-12",
+  "tag": "family",
+  "old": "奶奶织毛衣",
+  "new": "毛线团和摇椅"
+ },
+ {
+  "id": "builtin-first-time-9",
+  "tag": "first-time",
+  "old": "第一次上台",
+  "new": "幕布拉开的时候"
+ },
+ {
+  "id": "builtin-food-5",
+  "tag": "food",
+  "old": "一碗热汤面",
+  "new": "面碗里的热气"
+ },
+ {
+  "id": "builtin-future-5",
+  "tag": "future",
+  "old": "未来的学校",
+  "new": "飘在天上的学校"
+ },
+ {
+  "id": "builtin-future-7",
+  "tag": "future",
+  "old": "时间快进",
+  "new": "跳到未来去看"
+ },
+ {
+  "id": "builtin-future-8",
+  "tag": "future",
+  "old": "我的奇思妙想",
+  "new": "我的发明设计图"
+ },
+ {
+  "id": "builtin-home-scene-1",
+  "tag": "home-scene",
+  "old": "窗台上的绿萝",
+  "new": "悄悄长大的绿萝"
+ },
+ {
+  "id": "builtin-home-scene-3",
+  "tag": "home-scene",
+  "old": "窗外的小鸟",
+  "new": "清晨的窗台"
+ },
+ {
+  "id": "builtin-hometown-6",
+  "tag": "hometown",
+  "old": "我的乐园",
+  "new": "藏着快乐的角落"
+ },
+ {
+  "id": "builtin-if-i-4",
+  "tag": "if-i",
+  "old": "假如我变小了",
+  "new": "假如我只有蚂蚁大"
+ },
+ {
+  "id": "builtin-milestone-7",
+  "tag": "milestone",
+  "old": "搬新家",
+  "new": "新家的第一晚"
+ },
+ {
+  "id": "builtin-milestone-11",
+  "tag": "milestone",
+  "old": "过生日",
+  "new": "蜡烛和生日歌"
+ },
+ {
+  "id": "builtin-mistake-6",
+  "tag": "mistake",
+  "old": "打碎的花瓶",
+  "new": "花瓶碎了以后"
+ },
+ {
+  "id": "builtin-mistake-7",
+  "tag": "mistake",
+  "old": "迟到了",
+  "new": "跑进校门的那天"
+ },
+ {
+  "id": "builtin-observe-3",
+  "tag": "observe",
+  "old": "观察日记",
+  "new": "它今天变了样"
+ },
+ {
+  "id": "builtin-observe-5",
+  "tag": "observe",
+  "old": "观察日记",
+  "new": "蒜苗长到第七天"
+ },
+ {
+  "id": "builtin-observe-6",
+  "tag": "observe",
+  "old": "介绍一种事物",
+  "new": "展示台前介绍它"
+ },
+ {
+  "id": "builtin-people-around-4",
+  "tag": "people-around",
+  "old": "形形色色的人",
+  "new": "身边都有谁"
+ },
+ {
+  "id": "builtin-pet-11",
+  "tag": "pet",
+  "old": "小乌龟",
+  "new": "水盆里的小乌龟"
+ },
+ {
+  "id": "builtin-pet-12",
+  "tag": "pet",
+  "old": "国宝大熊猫",
+  "new": "竹林里的大熊猫"
+ },
+ {
+  "id": "builtin-plant-7",
+  "tag": "plant",
+  "old": "池塘里的荷花",
+  "new": "荷叶上的蜻蜓"
+ },
+ {
+  "id": "builtin-plant-8",
+  "tag": "plant",
+  "old": "我的仙人掌",
+  "new": "开花的仙人掌"
+ },
+ {
+  "id": "builtin-sci-fi-3",
+  "tag": "sci-fi",
+  "old": "太空旅行",
+  "new": "宇宙探险记"
+ },
+ {
+  "id": "builtin-sci-fi-4",
+  "tag": "sci-fi",
+  "old": "海底探险",
+  "new": "珊瑚丛里的小鱼"
+ },
+ {
+  "id": "builtin-sci-fi-6",
+  "tag": "sci-fi",
+  "old": "我的机器人朋友",
+  "new": "方脑袋的机器人"
+ },
+ {
+  "id": "builtin-teacher-5",
+  "tag": "teacher",
+  "old": "漫画老师",
+  "new": "给老师画漫画"
+ },
+ {
+  "id": "builtin-treasure-8",
+  "tag": "treasure",
+  "old": "外婆的针线盒",
+  "new": "打开的针线盒"
+ },
+ {
+  "id": "builtin-treasure-10",
+  "tag": "treasure",
+  "old": "一张旧照片",
+  "new": "相框里的老照片"
+ },
+ {
+  "id": "builtin-unforgettable-5",
+  "tag": "unforgettable",
+  "old": "难忘小学生活",
+  "new": "挥手告别那天"
+ },
+ {
+  "id": "builtin-warm-moment-5",
+  "tag": "warm-moment",
+  "old": "他扶了我一把",
+  "new": "伸过来的那只手"
+ },
+ {
+  "id": "builtin-weather-8",
+  "tag": "weather",
+  "old": "大雾的早晨",
+  "new": "雾里的小路"
+ }
+]

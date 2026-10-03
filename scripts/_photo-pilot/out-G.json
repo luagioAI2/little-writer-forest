@@ -1,0 +1,137 @@
+{
+  "batch": "G",
+  "items": [
+    {
+      "landmarkId": "world-肯尼亚-马赛马拉",
+      "match": "place",
+      "query": "Maasai Mara",
+      "mediaUrl": "https://images.pexels.com/photos/37419265/pexels-photo-37419265.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "African elephants at sunset in Maasai Mara",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/african-elephants-at-sunset-in-maasai-mara-37419265/", "author": "iamllwyd" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 48049 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-坦桑尼亚-乞力马扎罗山",
+      "match": "place",
+      "query": "Mount Kilimanjaro",
+      "mediaUrl": "https://images.pexels.com/photos/8427984/pexels-photo-8427984.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Mount Kilimanjaro in Tanzania",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/mount-kilimanjaro-in-tanzania-8427984/", "author": "Sergey Pesterev" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 44627 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-津巴布韦-维多利亚瀑布",
+      "match": "place",
+      "query": "Victoria Falls",
+      "mediaUrl": "https://images.pexels.com/photos/27878404/pexels-photo-27878404.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of Victoria Falls in Zimbabwe",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/an-aerial-view-of-victoria-falls-in-zimbabwe-27878404/", "author": "babijaphoto" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 216070 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-澳大利亚-悉尼歌剧院",
+      "match": "place",
+      "query": "Sydney Opera House",
+      "mediaUrl": "https://images.pexels.com/photos/15453729/pexels-photo-15453729.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Opera House in Sydney, Australia",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/opera-house-in-sydney-australia-15453729/", "author": "gorgeouspixels" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 95958 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-澳大利亚-大堡礁",
+      "match": "place",
+      "query": "Great Barrier Reef",
+      "mediaUrl": "https://images.pexels.com/photos/35762005/pexels-photo-35762005.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Vibrant coral reef ecosystem in Queensland waters",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/vibrant-coral-reef-ecosystem-in-queensland-waters-35762005/", "author": "Rob McSwain" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 57739 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-澳大利亚-乌鲁鲁",
+      "match": "place",
+      "query": "Uluru",
+      "mediaUrl": "https://images.pexels.com/photos/35890005/pexels-photo-35890005.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Uluru at sunrise in the Australian outback",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/uluru-at-sunrise-in-the-australian-outback-35890005/", "author": "gu-bra" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 52567 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-澳大利亚-十二门徒石",
+      "match": "place",
+      "query": "Twelve Apostles",
+      "mediaUrl": "https://images.pexels.com/photos/20721132/pexels-photo-20721132.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Twelve Apostles on a sunny day",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/twelve-apostles-on-a-sunny-day-20721132/", "author": "Eclipse Chasers" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 51528 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-新西兰-米尔福德峡湾",
+      "match": "place",
+      "query": "Milford Sound",
+      "mediaUrl": "https://images.pexels.com/photos/32830524/pexels-photo-32830524.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Cruise boat in Milford Sound fjord, New Zealand",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/cruise-boat-in-milford-sound-fjord-new-zealand-32830524/", "author": "Don Geyer" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 46402 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-新西兰-皇后镇",
+      "match": "place",
+      "query": "Queenstown, New Zealand",
+      "mediaUrl": "https://images.pexels.com/photos/39434598/pexels-photo-39434598.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic Lake Wakatipu with Queenstown dock and mountains",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-lake-wakatipu-with-queenstown-dock-and-mountains-39434598/", "author": "Leyvaine Davids" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 65455 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-法属波利尼西亚-大溪地",
+      "match": "place",
+      "query": "Tahiti",
+      "mediaUrl": "https://images.pexels.com/photos/33980501/pexels-photo-33980501.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic tropical beach in French Polynesia",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-tropical-beach-in-french-polynesia-33980501/", "author": "adriendrj" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 57770 },
+      "verdict": "ok",
+      "note": "Pexels' top result for the query 'Tahiti' (checked 'Tahiti' and 'Tahiti island'); genuine French Polynesia lagoon with overwater bungalows, i.e. the same archipelago/country as the landmark, but not shot on Tahiti island itself."
+    },
+    {
+      "landmarkId": "world-美国-时代广场",
+      "match": "place",
+      "query": "Times Square",
+      "mediaUrl": "https://images.pexels.com/photos/34934277/pexels-photo-34934277.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Bustling Times Square New York City view",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/bustling-times-square-new-york-city-view-34934277/", "author": "Namrata Garad" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 93704 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-美国-帝国大厦",
+      "match": "place",
+      "query": "Empire State Building",
+      "mediaUrl": "https://images.pexels.com/photos/17568719/pexels-photo-17568719.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Empire State Building towering over New York City",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/empire-state-building-towering-over-new-york-city-17568719/", "author": "shtefutsa" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 90880 },
+      "verdict": "ok",
+      "note": ""
+    }
+  ]
+}

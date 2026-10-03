@@ -1,0 +1,202 @@
+[
+  {
+    "id": "cn-江苏-金山•焦山•北固山风景区",
+    "name": "金山•焦山•北固山风景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "镇江",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-金鸡湖旅游区",
+    "name": "金鸡湖旅游区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "苏州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-溱湖旅游景区",
+    "name": "溱湖旅游景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "泰州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-濠河风景区",
+    "name": "濠河风景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "南通",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-瘦西湖风景区",
+    "name": "瘦西湖风景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "扬州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-环球恐龙城休闲旅游区",
+    "name": "环球恐龙城休闲旅游区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "常州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-夫子庙－秦淮风光带",
+    "name": "夫子庙－秦淮风光带",
+    "province": "江苏",
+    "country": "中国",
+    "city": "南京",
+    "rating": "5A",
+    "scene": "temple",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-同里古镇景区",
+    "name": "同里古镇景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "苏州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-灵山大佛景区",
+    "name": "灵山大佛景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "无锡",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-中央电视台无锡影视基地三国水浒城景区",
+    "name": "中央电视台无锡影视基地三国水浒城景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "无锡",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-钟山风景名胜区－中山陵园风景区",
+    "name": "钟山风景名胜区－中山陵园风景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "南京",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-周庄古镇景区",
+    "name": "周庄古镇景区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "苏州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-苏州园林（拙政园－留园－虎丘）",
+    "name": "苏州园林（拙政园－留园－虎丘）",
+    "province": "江苏",
+    "country": "中国",
+    "city": "苏州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-牛首山文化旅游区",
+    "name": "牛首山文化旅游区",
+    "province": "江苏",
+    "country": "中国",
+    "city": "南京",
+    "rating": "4A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江苏-寒山寺",
+    "name": "寒山寺",
+    "province": "江苏",
+    "country": "中国",
+    "city": "苏州",
+    "rating": "4A",
+    "scene": "temple",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-双龙风景旅游区",
+    "name": "双龙风景旅游区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "金华",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-云和梯田景区",
+    "name": "云和梯田景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "丽水",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-台州府城文化旅游区",
+    "name": "台州府城文化旅游区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "台州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-刘伯温故里景区",
+    "name": "刘伯温故里景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "温州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-缙云仙都景区",
+    "name": "缙云仙都景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "丽水",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  }
+]

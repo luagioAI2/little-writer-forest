@@ -1,0 +1,93 @@
+{
+  "batch": "07",
+  "items": [
+    {
+      "key": "book-store",
+      "pexelsId": 37111200,
+      "mediaUrl": "https://images.pexels.com/photos/37111200/pexels-photo-37111200.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Warm Cozy Bookstore with Reflection",
+      "credit": { "link": "https://www.pexels.com/photo/warm-cozy-bookstore-with-reflection-37111200/", "author": "wal_ 172619" },
+      "verified": { "http": 200, "bytes": 53814 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "暖光照亮的木质书架上排满彩色书脊（对上「暖色书架上排满了彩色书脊」），色调暖；柜台后无看书的小孩、门口无「书店」牌子"
+    },
+    {
+      "key": "cultural-heritage",
+      "pexelsId": 35521703,
+      "mediaUrl": "https://images.pexels.com/photos/35521703/pexels-photo-35521703.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Great Wall of China during serene sunset",
+      "credit": { "link": "https://www.pexels.com/photo/great-wall-of-china-during-serene-sunset-35521703/", "author": "Rain Lü" },
+      "verified": { "http": 200, "bytes": 42526 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "夕阳下长城蜿蜒、右侧有城楼与成排城垛（对上「城墙上有城楼和城垛」），暖调；无参观的小孩、无「世界文化遗产」牌子"
+    },
+    {
+      "key": "hometown-custom",
+      "pexelsId": 39016366,
+      "mediaUrl": "https://images.pexels.com/photos/39016366/pexels-photo-39016366.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Charming Historic Street with Cultural Decor",
+      "credit": { "link": "https://www.pexels.com/photo/charming-historic-street-with-cultural-decor-39016366/", "author": "rongkum Li" },
+      "verified": { "http": 200, "bytes": 58922 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "阳光下的老街巷、两侧是黄土老屋、挂着红灯笼（对上「两座老房子之间挂着灯笼」），暖调；无鞭炮、桌上无碗和汤圆、无穿红衣挥手的小孩"
+    },
+    {
+      "key": "mountain-climb",
+      "pexelsId": 37197428,
+      "mediaUrl": "https://images.pexels.com/photos/37197428/pexels-photo-37197428.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Milky Way Over Mountain Trail at Night",
+      "credit": { "link": "https://www.pexels.com/photo/milky-way-over-mountain-trail-at-night-37197428/", "author": "Marek Piwnicki" },
+      "verified": { "http": 200, "bytes": 33284 },
+      "size": { "w": 640, "h": 379, "ar": 1.69 },
+      "verdict": "ok",
+      "note": "深蓝夜色里银河与星星横贯天空、黑色山体轮廓、小路上有一束手电/头灯的光（对上「深蓝的天上有星星+两座大山黑黑地立着+打着手电走在上山的小路上」）；是单人不是两人、无月亮"
+    },
+    {
+      "key": "pencil-escape",
+      "pexelsId": 36081044,
+      "mediaUrl": "https://images.pexels.com/photos/36081044/pexels-photo-36081044.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Close-up of Pencils on a Brown Notebook",
+      "credit": { "link": "https://www.pexels.com/photo/close-up-of-pencils-on-a-brown-notebook-36081044/", "author": "Yeşim Çolak" },
+      "verified": { "http": 200, "bytes": 31052 },
+      "size": { "w": 640, "h": 360, "ar": 1.78 },
+      "verdict": "poor",
+      "note": "暖木色桌面上一排削好的铅笔搭在棕色本子上（对上「铅笔+本子」），色调暖；但实拍无法还原「铅笔跳下桌朝门口跑」的动作与速度线，也没有橡皮"
+    },
+    {
+      "key": "reading-notes",
+      "pexelsId": 963628,
+      "mediaUrl": "https://images.pexels.com/photos/963628/pexels-photo-963628.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "White Ceramic Mug Near Books",
+      "credit": { "link": "https://www.pexels.com/photo/white-ceramic-mug-near-books-963628/", "author": "Brett Sayles" },
+      "verified": { "http": 200, "bytes": 50632 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "暖红色桌面上摊开一本书、旁边有眼镜、笔记本和一只白杯（对上「桌上翻开一本书+旁边放着笔记本」），暖调；无书架、书页不是粉色、无思考气泡"
+    },
+    {
+      "key": "space",
+      "pexelsId": 796206,
+      "mediaUrl": "https://images.pexels.com/photos/796206/pexels-photo-796206.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Space Shuttle Launch during Nighttime",
+      "credit": { "link": "https://www.pexels.com/photo/space-shuttle-launch-during-nighttime-796206/", "author": "Edvin Richardson" },
+      "verified": { "http": 200, "bytes": 18841 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "黑色星空中一枚火箭拖着明亮尾迹直冲而上（对上「黑色星空里+一架火箭拖着火焰在飞」）；无带光环的星球、无飘着的宇航员小人"
+    },
+    {
+      "key": "travel-visit",
+      "pexelsId": 35038978,
+      "mediaUrl": "https://images.pexels.com/photos/35038978/pexels-photo-35038978.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Serene Chinese Pavilion in Warsaw Park",
+      "credit": { "link": "https://www.pexels.com/photo/serene-chinese-pavilion-in-warsaw-park-35038978/", "author": "Serhii Barkanov" },
+      "verified": { "http": 200, "bytes": 72967 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "绿树环绕中的中式古亭，前面有石桥/石块与小路（对上「古亭子前有石阶和绿树」）；无举着相机拍照的小孩"
+    }
+  ]
+}

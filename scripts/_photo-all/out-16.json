@@ -1,0 +1,225 @@
+{
+  "batch": "16",
+  "items": [
+    {
+      "landmarkId": "cn-四川-稻城亚丁旅游景区",
+      "match": "place",
+      "query": "Daocheng Yading",
+      "mediaUrl": "https://images.pexels.com/photos/14117013/pexels-photo-14117013.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Mount Chenrezig (Xiannairi) peak over the boardwalk",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/green-and-gray-mountain-under-blue-sky-14117013/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 173472 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-四川-光雾山旅游景区",
+      "match": "scene",
+      "query": "Guangwu Mountain Sichuan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Guangwu Mountain', 'Guangwu mountain Sichuan': only iStock ads show the real mountain; free results are unrelated Sichuan peaks"
+    },
+    {
+      "landmarkId": "cn-四川-碧峰峡旅游景区",
+      "match": "scene",
+      "query": "Bifengxia gorge",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Bifengxia', 'Bifengxia gorge': no genuine Bifengxia photo; ads only, rest are generic gorges/villages"
+    },
+    {
+      "landmarkId": "cn-四川-海螺沟景区",
+      "match": "scene",
+      "query": "Hailuogou Sichuan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Hailuogou glacier', 'Hailuogou Sichuan': real glacier shots are iStock ads only; free results are Alpine/other glaciers"
+    },
+    {
+      "landmarkId": "cn-四川-朱德故里景区",
+      "match": "scene",
+      "query": "Zhu De former residence",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Zhu De former residence', 'Zhu De memorial Sichuan': nothing relevant on Pexels"
+    },
+    {
+      "landmarkId": "cn-四川-剑门蜀道剑门关旅游景区",
+      "match": "scene",
+      "query": "Jianmen Guan Sichuan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Jianmen Pass', 'Jianmen Guan Sichuan': ads only; free results are Dali/ancient-town gates, no Jianmen Pass"
+    },
+    {
+      "landmarkId": "cn-四川-邓小平故里旅游区",
+      "match": "scene",
+      "query": "Deng Xiaoping former residence",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Deng Xiaoping former residence', 'Deng Xiaoping memorial': nothing relevant on Pexels"
+    },
+    {
+      "landmarkId": "cn-四川-阆中古城旅游景区",
+      "match": "scene",
+      "query": "Langzhong ancient city",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Langzhong ancient city', 'Langzhong Sichuan': genuine photos are iStock ads only; free results are generic Chinese towns"
+    },
+    {
+      "landmarkId": "cn-四川-汶川特别旅游区",
+      "match": "scene",
+      "query": "Wenchuan Sichuan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Wenchuan Sichuan', 'Wenchuan special tourist area': no genuine photo; free results are other Sichuan landscapes"
+    },
+    {
+      "landmarkId": "cn-四川-羌城旅游区",
+      "match": "scene",
+      "query": "Qiang minority Sichuan village",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Qiang minority Sichuan village', 'Qiang village China': real Qiang villages are iStock ads only"
+    },
+    {
+      "landmarkId": "cn-四川-黄龙风景名胜区",
+      "match": "place",
+      "query": "Huanglong Sichuan",
+      "mediaUrl": "https://images.pexels.com/photos/29767796/pexels-photo-29767796.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Huanglong's terraced travertine pools",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-view-of-huanglong-s-terraced-pools-29767796/", "author": "Jan Dvorak" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 64905 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-四川-乐山大佛景区",
+      "match": "place",
+      "query": "Leshan Giant Buddha",
+      "mediaUrl": "https://images.pexels.com/photos/38869397/pexels-photo-38869397.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Leshan Giant Buddha stone carving (swastika on chest)",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-leshan-giant-buddha-stone-carving-38869397/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 108789 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-四川-峨眉山景区",
+      "match": "place",
+      "query": "Mount Emei",
+      "mediaUrl": "https://images.pexels.com/photos/27594946/pexels-photo-27594946.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Golden Samantabhadra statue on Mount Emei summit",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/golden-sanmantabhadra-statue-on-mount-emei-27594946/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 43686 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-四川-青城山－都江堰旅游景区",
+      "match": "place",
+      "query": "Qingcheng Mountain",
+      "mediaUrl": "https://images.pexels.com/photos/16413104/pexels-photo-16413104.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Yangping Taoist Temple at Mount Qingcheng (signboard visible)",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/woman-walking-towards-shrine-on-mount-qingcheng-16413104/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 176690 },
+      "verdict": "ok",
+      "note": "Foreground tourist; temple gate and its Qingcheng signboard clearly visible"
+    },
+    {
+      "landmarkId": "cn-四川-成都大熊猫繁育研究基地",
+      "match": "place",
+      "query": "Chengdu panda base",
+      "mediaUrl": "https://images.pexels.com/photos/31404910/pexels-photo-31404910.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Giant panda in its naturalistic Chengdu habitat",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/giant-panda-relaxing-in-chengdu-s-natural-habitat-31404910/", "author": "Chris Duan" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 77340 },
+      "verdict": "ok",
+      "note": "Giant panda in a Chengdu enclosure; subject is the Base's signature species"
+    },
+    {
+      "landmarkId": "cn-四川-武侯祠",
+      "match": "scene",
+      "query": "Wuhou Shrine Chengdu",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Wuhou Shrine Chengdu', 'Wuhou Temple Chengdu': genuine Wuhou Shrine photos are iStock ads only; free Chengdu temples unidentifiable"
+    },
+    {
+      "landmarkId": "cn-四川-三星堆博物馆",
+      "match": "place",
+      "query": "Sanxingdui",
+      "mediaUrl": "https://images.pexels.com/photos/11197734/pexels-photo-11197734.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Sanxingdui bronze head mask on black background",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/photo-of-a-sanxingdui-in-black-background-11197734/", "author": "William Liu" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 57270 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-四川-杜甫草堂",
+      "match": "place",
+      "query": "Du Fu Thatched Cottage",
+      "mediaUrl": "https://images.pexels.com/photos/15545815/pexels-photo-15545815.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Round moon-gate entrance at Du Fu Thatched Cottage",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/traditional-chinese-round-entrance-to-a-garden-at-du-fu-thatched-cottage-15545815/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 58850 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-四川-金沙遗址博物馆",
+      "match": "scene",
+      "query": "Jinsha site museum",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Jinsha site museum', 'Jinsha Chengdu': no genuine Jinsha photo; free results are foreign archaeology museums"
+    },
+    {
+      "landmarkId": "cn-贵州-万峰林景区",
+      "match": "scene",
+      "query": "Wanfenglin Guizhou karst",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Wanfenglin', 'Wanfenglin Guizhou karst', 'Wanfenglin Xingyi Guizhou': genuine photos are iStock ads only; free Guizhou karst shots are unlabeled and unconfirmable"
+    }
+  ]
+}

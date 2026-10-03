@@ -1,0 +1,202 @@
+[
+  {
+    "id": "cn-浙江-天一阁•月湖景区",
+    "name": "天一阁•月湖景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "宁波",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-江郎山•廿八都旅游区",
+    "name": "江郎山•廿八都旅游区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "衢州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-西塘古镇旅游景区",
+    "name": "西塘古镇旅游景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "嘉兴",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-神仙居景区",
+    "name": "神仙居景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "台州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-天台山景区",
+    "name": "天台山景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "台州",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-南浔古镇景区",
+    "name": "南浔古镇景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "湖州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-根宫佛国文化旅游区",
+    "name": "根宫佛国文化旅游区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "衢州",
+    "rating": "5A",
+    "scene": "temple",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-鲁迅故里•沈园景区",
+    "name": "鲁迅故里•沈园景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "绍兴",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-西溪湿地旅游区",
+    "name": "西溪湿地旅游区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "杭州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-南湖旅游区",
+    "name": "南湖旅游区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "嘉兴",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-横店影视城景区",
+    "name": "横店影视城景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "金华",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-溪口－滕头旅游景区",
+    "name": "溪口－滕头旅游景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "宁波",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-乌镇古镇旅游区",
+    "name": "乌镇古镇旅游区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "嘉兴",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-千岛湖风景区",
+    "name": "千岛湖风景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "杭州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-普陀山风景区",
+    "name": "普陀山风景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "舟山",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-雁荡山风景区",
+    "name": "雁荡山风景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "温州",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-杭州西湖风景区",
+    "name": "杭州西湖风景区",
+    "province": "浙江",
+    "country": "中国",
+    "city": "杭州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-浙江-杭州宋城",
+    "name": "杭州宋城",
+    "province": "浙江",
+    "country": "中国",
+    "city": "杭州",
+    "rating": "4A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-安徽-琅琊山景区",
+    "name": "琅琊山景区",
+    "province": "安徽",
+    "country": "中国",
+    "city": "滁州",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-安徽-长江采石矶文化生态旅游区",
+    "name": "长江采石矶文化生态旅游区",
+    "province": "安徽",
+    "country": "中国",
+    "city": "马鞍山",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  }
+]

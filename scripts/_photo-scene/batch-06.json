@@ -1,0 +1,70 @@
+[
+  {
+    "key": "bird-window",
+    "hint": "窗台上停着一只蓝色的小鸟，旁边放着一盆小植物，一个孩子在窗边安静地看着。",
+    "en": "bird on windowsill",
+    "usedBy": [
+      "builtin-home-scene-3",
+      "builtin-pet-3"
+    ]
+  },
+  {
+    "key": "cook-start",
+    "hint": "厨房台面上摆好了案板、蔬菜、鸡蛋和碗，一个系着围裙的孩子站在台前准备动手，墙上贴着食谱。",
+    "en": "kitchen counter vegetables cutting board",
+    "usedBy": [
+      "builtin-first-time-2"
+    ]
+  },
+  {
+    "key": "help-hand",
+    "hint": "操场上一个孩子坐在地上抱着膝盖，另一个孩子弯腰伸出手去拉他，旁边有几道表示动作的线。",
+    "en": "helping hand reaching out",
+    "usedBy": [
+      "builtin-warm-moment-1",
+      "builtin-lost-found-2"
+    ]
+  },
+  {
+    "key": "mom-cooking",
+    "hint": "厨房里妈妈系着围裙站在料理台后面，灶上一口锅冒着热气，台面上摆着切好的菜和一只碗。",
+    "en": "kitchen cooking pot steam",
+    "usedBy": [
+      "builtin-home-scene-2",
+      "builtin-family-1"
+    ]
+  },
+  {
+    "key": "pencil-adventure",
+    "hint": "一支大铅笔站在一本摊开的巨书上，书页像山谷一样起伏，周围有云和太阳。",
+    "en": "pencil on open book",
+    "usedBy": [
+      "builtin-talking-2"
+    ]
+  },
+  {
+    "key": "rainbow",
+    "hint": "一道六色彩虹架在天地之间，草地上有两摊水洼，远处是山丘和云，一个孩子举起双手。",
+    "en": "rainbow over field landscape",
+    "usedBy": [
+      "builtin-weather-2"
+    ]
+  },
+  {
+    "key": "snowman",
+    "hint": "雪地中间站着一个戴红围巾、胡萝卜鼻子的雪人，两边各有一个孩子，天上飘着雪。",
+    "en": "snowman carrot scarf snow",
+    "usedBy": [
+      "builtin-season-3"
+    ]
+  },
+  {
+    "key": "teacher-class",
+    "hint": "教室前面黑板上写着粉笔字，老师站在黑板旁伸手指着，下面是几排课桌和坐着的学生。",
+    "en": "empty classroom blackboard",
+    "usedBy": [
+      "builtin-teacher-1",
+      "builtin-teacher-2"
+    ]
+  }
+]

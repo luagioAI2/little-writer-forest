@@ -1,0 +1,67 @@
+[
+  {
+    "key": "bike-fail",
+    "hint": "公园小路上，一辆自行车歪倒在地，一个孩子坐在地上摸着膝盖，另一个孩子伸手来扶。",
+    "en": "fallen bicycle on ground",
+    "usedBy": [
+      "builtin-first-time-1"
+    ]
+  },
+  {
+    "key": "cook-done",
+    "hint": "一家人围坐在餐桌旁，桌子中间是一盘冒着热气的菜，每个人面前都有小碟子。",
+    "en": "family dinner table home cooking",
+    "usedBy": [
+      "builtin-first-time-2"
+    ]
+  },
+  {
+    "key": "found-mom",
+    "hint": "妈妈蹲下来张开手臂，孩子扑进她怀里，两人中间冒出一颗小爱心，周围的人群是模糊的。",
+    "en": "mother hugging child",
+    "usedBy": [
+      "builtin-lost-found-1"
+    ]
+  },
+  {
+    "key": "lost-crowd",
+    "hint": "街上全是走来走去的大人，中间一个矮矮的孩子仰着头四处张望，头上冒出一个对话气泡。",
+    "en": "crowd of people legs street",
+    "usedBy": [
+      "builtin-lost-found-1"
+    ]
+  },
+  {
+    "key": "old-photo",
+    "hint": "相框里是一张泛黄的风景照，相架立在书桌上，旁边搁着一本书和一支钢笔。",
+    "en": "vintage photo frame on desk",
+    "usedBy": [
+      "builtin-treasure-3"
+    ]
+  },
+  {
+    "key": "pothos",
+    "hint": "书架上摆着一盆绿萝，心形的叶子从花盆边垂下来，旁边是透光的窗户。",
+    "en": "pothos plant hanging window",
+    "usedBy": [
+      "builtin-home-scene-1",
+      "builtin-plant-1"
+    ]
+  },
+  {
+    "key": "snow-clear",
+    "hint": "雪停了天晴了，蓝天下的屋顶挂着冰棱，远处雪山白白的，一个雪人戴着围巾，一个孩子在挥手。",
+    "en": "snow covered roof blue sky",
+    "usedBy": [
+      "builtin-campus-4"
+    ]
+  },
+  {
+    "key": "sunrise-peak",
+    "hint": "太阳从两座山之间升起来，山谷里铺着白色的云海，山顶上两个孩子举起手欢呼。",
+    "en": "sunrise mountain peak clouds",
+    "usedBy": [
+      "builtin-water-2"
+    ]
+  }
+]

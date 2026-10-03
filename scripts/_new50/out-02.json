@@ -1,0 +1,182 @@
+[
+  {
+    "n": 11,
+    "tag": "hometown",
+    "title": "回家的那条小路",
+    "primary": {
+      "id": "5531177",
+      "url": "https://images.pexels.com/photos/5531177/pexels-photo-5531177.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/road-in-countryside-fields-5531177/",
+      "why": "一条穿过绿色田野的乡间小路，远处是村舍，正是「从村口到家要走过的那条小路」。"
+    },
+    "fallback": {
+      "id": "10848011",
+      "url": "https://images.pexels.com/photos/10848011/pexels-photo-10848011.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/path-in-a-village-10848011/",
+      "why": "村中的一条小路，两侧是绿树与房屋，画面干净无文字，贴合「村口到家的小路」。"
+    },
+    "fail": null
+  },
+  {
+    "n": 12,
+    "tag": "family",
+    "title": "爸爸的呼噜声",
+    "primary": {
+      "id": "7983206",
+      "url": "https://images.pexels.com/photos/7983206/pexels-photo-7983206.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/a-man-sleeping-with-his-daughter-on-the-couch-7983206/",
+      "why": "一位爸爸在沙发上睡着、孩子在旁边，正是「夜里爸爸的呼噜声」的画面，有「人」且是侧躺不怼脸。"
+    },
+    "fallback": {
+      "id": "8526713",
+      "url": "https://images.pexels.com/photos/8526713/pexels-photo-8526713.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/a-man-sleeping-8526713/",
+      "why": "一个人蜷在客厅沙发上熟睡，有绿植与挂钟的居家环境，贴合「睡着的爸爸」。"
+    },
+    "fail": null
+  },
+  {
+    "n": 13,
+    "tag": "teacher",
+    "title": "老师嗓子哑了",
+    "primary": {
+      "id": "8617906",
+      "url": "https://images.pexels.com/photos/8617906/pexels-photo-8617906.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/a-teacher-in-black-coat-contemplating-by-the-blackboard-8617906/",
+      "why": "一位老师静静站在黑板前，侧身不怼脸，安静疲惫的姿态正合「嗓子哑了还站在讲台上」。"
+    },
+    "fallback": {
+      "id": "5212342",
+      "url": "https://images.pexels.com/photos/5212342/pexels-photo-5212342.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/teacher-teaching-his-students-5212342/",
+      "why": "老师站在教室讲台前给学生们讲课，教室与黑板环境明确，贴合「讲台前的老师」。"
+    },
+    "fail": null
+  },
+  {
+    "n": 14,
+    "tag": "classmate",
+    "title": "我们吵架了",
+    "primary": {
+      "id": "9785024",
+      "url": "https://images.pexels.com/photos/9785024/pexels-photo-9785024.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/a-boy-and-a-girl-sitting-back-to-back-using-their-smartphones-9785024/",
+      "why": "一男一女两个小孩背对背坐着、互不理睬，正是「谁也不理谁」的姿态（画面里的手机只是道具）。"
+    },
+    "fallback": {
+      "id": "9785022",
+      "url": "https://images.pexels.com/photos/9785022/pexels-photo-9785022.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/kids-sitting-on-the-wooden-bench-9785022/",
+      "why": "两个小孩背靠背坐在木凳上，光线偏暗、气氛沉默，贴合「吵架后各自别开脸」。"
+    },
+    "fail": null
+  },
+  {
+    "n": 15,
+    "tag": "stranger",
+    "title": "公园里练字的老爷爷",
+    "primary": {
+      "id": "19195608",
+      "url": "https://images.pexels.com/photos/19195608/pexels-photo-19195608.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/painting-writing-on-pavement-19195608/",
+      "why": "阳光下的地面水书——正是「提着一支大毛笔，在地上写字」的地书场景，字迹清晰、无文字牌。"
+    },
+    "fallback": {
+      "id": "32754244",
+      "url": "https://images.pexels.com/photos/32754244/pexels-photo-32754244.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/artist-creating-traditional-calligraphy-outdoors-32754244/",
+      "why": "一位人在户外提笔写书法，环境在室外，贴合「公园里练字」。"
+    },
+    "fail": null
+  },
+  {
+    "n": 16,
+    "tag": "community-helper",
+    "title": "小区里的园丁",
+    "primary": {
+      "id": "18463235",
+      "url": "https://images.pexels.com/photos/18463235/pexels-photo-18463235.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/holding-a-handful-of-soil-with-a-blooming-flower-18463235/",
+      "why": "一双沾着泥土的手捧起一捧土与一朵盛开的花，正合「你注意过他的手吗」这个题眼。"
+    },
+    "fallback": {
+      "id": "6627077",
+      "url": "https://images.pexels.com/photos/6627077/pexels-photo-6627077.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/hand-of-a-person-planting-a-flowering-plant-6627077/",
+      "why": "特写一双手用铲子把开花的植株种进盆里，是「种花的手」而非花海特写。"
+    },
+    "fail": null
+  },
+  {
+    "n": 17,
+    "tag": "self",
+    "title": "我的名字",
+    "primary": {
+      "id": "5905476",
+      "url": "https://images.pexels.com/photos/5905476/pexels-photo-5905476.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/crop-faceless-girl-doing-homework-and-taking-notes-in-notebook-5905476/",
+      "why": "镜头裁掉了脸、只留下手在本子上写字，正好对应「写字的手与纸，不要人脸」。"
+    },
+    "fallback": {
+      "id": "13779221",
+      "url": "https://images.pexels.com/photos/13779221/pexels-photo-13779221.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/close-up-shot-of-a-kid-writing-on-notebook-using-a-pencil-13779221/",
+      "why": "特写一个孩子拿铅笔在本子上写字，横构图、主体是手与纸，贴合「写下自己的名字」。"
+    },
+    "fail": null
+  },
+  {
+    "n": 18,
+    "tag": "self",
+    "title": "我长高了",
+    "primary": {
+      "id": "8188741",
+      "url": "https://images.pexels.com/photos/8188741/pexels-photo-8188741.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/father-measuring-the-height-of-his-son-and-marking-it-on-the-wall-8188741/",
+      "why": "大人贴着墙给孩子量身高并做记号，正是「门框上那道铅笔线又往上挪了一格」。"
+    },
+    "fallback": {
+      "id": "8188745",
+      "url": "https://images.pexels.com/photos/8188745/pexels-photo-8188745.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/father-measuring-height-of-his-son-8188745/",
+      "why": "同一组照片：大人给小男孩在木柱上标出身高刻度，贴「墙上的身高线」。"
+    },
+    "fail": null
+  },
+  {
+    "n": 19,
+    "tag": "people-around",
+    "title": "楼下下棋的爷爷们",
+    "primary": {
+      "id": "39696959",
+      "url": "https://images.pexels.com/photos/39696959/pexels-photo-39696959.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/outdoor-game-of-xiangqi-in-lively-urban-setting-39696959/",
+      "why": "一群人在城市里围着下中国象棋，正是「棋盘一摆，围过来一圈人」的街头棋局。"
+    },
+    "fallback": {
+      "id": "3372681",
+      "url": "https://images.pexels.com/photos/3372681/pexels-photo-3372681.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/elderly-men-playing-chess-in-a-park-3372681/",
+      "why": "公园里几位老先生围桌对弈，侧拍不怼正脸，贴合「楼下下棋的爷爷们」。"
+    },
+    "fail": null
+  },
+  {
+    "n": 20,
+    "tag": "people-around",
+    "title": "广场上跳舞的奶奶",
+    "primary": {
+      "id": "12086690",
+      "url": "https://images.pexels.com/photos/12086690/pexels-photo-12086690.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/dancing-group-12086690/",
+      "why": "一群人在跳舞的集体舞画面（出自「积极老龄化」题材的图组），贴合「音乐一响就排好队」的广场舞。"
+    },
+    "fallback": {
+      "id": "21405570",
+      "url": "https://images.pexels.com/photos/21405570/pexels-photo-21405570.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/elderly-women-exercising-21405570/",
+      "why": "一群老年妇女集体锻炼/起舞，主体确实是「奶奶们」，只是场景在室内而非广场。"
+    },
+    "fail": null
+  }
+]

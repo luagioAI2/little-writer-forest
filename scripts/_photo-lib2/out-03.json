@@ -1,0 +1,161 @@
+{
+  "batch": "3",
+  "items": [
+    {
+      "id": "builtin-life-goods-7",
+      "title": "洗衣机转起来了",
+      "query": "washing machine laundry room",
+      "pexelsId": "19846385",
+      "mediaUrl": "https://images.pexels.com/photos/19846385/pexels-photo-19846385.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/white-washing-machine-with-beige-towels-19846385/", "author": "Lisa Anna" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 23785 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一台白色滚筒洗衣机正面朝镜头，圆形舱门清晰，机顶搭着一卷米色毛巾，左侧是木色洗手台；彩色。"
+    },
+    {
+      "id": "builtin-life-goods-8",
+      "title": "墙角的扫帚",
+      "query": "broom standing in corner",
+      "pexelsId": "5910384",
+      "mediaUrl": "https://images.pexels.com/photos/5910384/pexels-photo-5910384.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/broom-with-bunch-of-dry-leaves-5910384/", "author": "Plato Terentev" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 51971 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一把竹草扎的扫帚斜立着靠在墙角，帚头下方聚着一小堆枯叶，扫帚是画面主体；暖棕色调，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-9",
+      "title": "墙上的挂钟",
+      "query": "wall clock hanging on wall",
+      "pexelsId": "8542504",
+      "mediaUrl": "https://images.pexels.com/photos/8542504/pexels-photo-8542504.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/a-clock-hanging-on-a-wall-8542504/", "author": "Holafabiola" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 23965 },
+      "ar": 1.524,
+      "verdict": "ok",
+      "note": "圆形白底黑框挂钟挂在灰蓝色墙上，1-12 数字与时针分针清晰可见，下方木架上垂着绿萝；彩色。"
+    },
+    {
+      "id": "builtin-life-goods-10",
+      "title": "家里的遥控器",
+      "query": "tv remote control on table",
+      "pexelsId": "5202948",
+      "mediaUrl": "https://images.pexels.com/photos/5202948/pexels-photo-5202948.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/remote-control-on-pink-fabric-5202948", "author": "Karola G" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 52749 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一支黑色电视遥控器平放在粉色布艺沙发（靠垫旁）上，按键和 SAMSUNG 字样清晰，遥控器是主体；彩色。"
+    },
+    {
+      "id": "builtin-life-goods-11",
+      "title": "门边的一串钥匙",
+      "query": "keys on hook by door",
+      "pexelsId": "31989061",
+      "mediaUrl": "https://images.pexels.com/photos/31989061/pexels-photo-31989061.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/hand-holding-keys-at-doorway-in-new-home-31989061/", "author": "Jakub Zerdzicki" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 18036 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一只手捏着一串（三四把）钥匙悬在门边/门框前，钥匙串清晰是主体；暖色调，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-12",
+      "title": "洗手间的镜子",
+      "query": "bathroom mirror on wall",
+      "pexelsId": "7045717",
+      "mediaUrl": "https://images.pexels.com/photos/7045717/pexels-photo-7045717.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/vintage-oval-shaped-mirror-in-bathroom-7045717/", "author": "cottonbro studio" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 40550 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "洗手间洗手台上方的墙上挂着一面椭圆形花边边框镜子，两侧各一盏壁灯，下方是白色台盆；暖色大理石墙，彩色，无人物正脸。"
+    },
+    {
+      "id": "builtin-life-goods-13",
+      "title": "我的小拖鞋",
+      "query": "slippers on floor by door",
+      "pexelsId": "6651966",
+      "mediaUrl": "https://images.pexels.com/photos/6651966/pexels-photo-6651966.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/close-up-shot-of-gray-slippers-for-kids-6651966/", "author": "cottonbro studio" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 33300 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一双灰色兔耳造型的儿童拖鞋并排放在浅色花纹地垫上，旁边有人走过，背景是粉橙色沙发；拖鞋是主体，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-14",
+      "title": "水开了",
+      "query": "kettle boiling steam kitchen",
+      "pexelsId": "17086060",
+      "mediaUrl": "https://images.pexels.com/photos/17086060/pexels-photo-17086060.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/steam-over-kettle-17086060/", "author": "Anna McDonald" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 46498 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "不锈钢水壶放在燃气灶上，壶嘴正冒出大股白色蒸汽，旁边窗台有一束红花；暖调木屋厨房，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-15",
+      "title": "电吹风呼呼地吹",
+      "query": "hair dryer drying hair",
+      "pexelsId": "4839182",
+      "mediaUrl": "https://images.pexels.com/photos/4839182/pexels-photo-4839182.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/close-up-shot-of-a-girl-in-floral-top-using-a-hair-blower-4839182/", "author": "Singkham" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 32755 },
+      "ar": 1.339,
+      "verdict": "ok",
+      "note": "一位长发小女孩手持红色吹风机吹头发，长发被吹得飞扬；吹风机与头发都清晰，侧脸角度非正脸大特写，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-16",
+      "title": "手电筒的光",
+      "query": "flashlight beam in dark",
+      "pexelsId": "5543899",
+      "mediaUrl": "https://images.pexels.com/photos/5543899/pexels-photo-5543899.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/silhouette-of-a-person-holding-a-flashlight-5543899/", "author": "Rafael Russano" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 9959 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "夜色中一个人（剪影）举着手电筒，一道亮蓝色光柱斜射向远处，远方有橙色城市灯点；深蓝+橙，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-17",
+      "title": "会唱歌的收音机",
+      "query": "vintage radio on table",
+      "pexelsId": "35525951",
+      "mediaUrl": "https://images.pexels.com/photos/35525951/pexels-photo-35525951.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/vintage-red-radio-with-open-book-on-wooden-desk-35525951/", "author": "Betül Güneş" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 33706 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一台红色老式收音机（MUSTANG）摆在木桌上，机顶摊开一本书，旋钮和刻度盘清晰；暖色调，彩色，收音机是主体。"
+    },
+    {
+      "id": "builtin-life-goods-18",
+      "title": "门铃响了",
+      "query": "doorbell on door frame",
+      "pexelsId": "35430939",
+      "mediaUrl": "https://images.pexels.com/photos/35430939/pexels-photo-35430939.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/vintage-doorbell-with-rustic-green-background-35430939/", "author": "Ritvars Garoza" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 27890 },
+      "ar": 1.608,
+      "verdict": "ok",
+      "note": "绿色木门上装着一个圆形老式门铃按钮（黄色圆盘+中央黑色按钮），门铃居中清晰；面板上有一行小字 CAMPAINHA，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-19",
+      "title": "阳台上的晾衣架",
+      "query": "clothes hanging on drying rack",
+      "pexelsId": "29396472",
+      "mediaUrl": "https://images.pexels.com/photos/29396472/pexels-photo-29396472.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/colorful-clothes-drying-on-clothesline-in-sunlight-29396472/", "author": "The Hung Photo" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 42299 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "户外晾衣绳上挂着一排衣服，用彩色晾衣夹和衣架固定，红/橙/粉等彩色衣物排成一行，阳光充足；彩色。"
+    }
+  ]
+}

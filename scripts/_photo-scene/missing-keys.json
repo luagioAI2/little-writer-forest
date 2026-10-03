@@ -1,0 +1,236 @@
+[
+  {
+    "key": "spring-park",
+    "label": "春天的公园",
+    "hint": "近处草地上开着各色小花、小路弯弯，中景两棵开满粉花的树，远处是淡绿的青山和白云，一个女孩牵着狗在散步。",
+    "usedBy": [
+      "builtin-season-1"
+    ]
+  },
+  {
+    "key": "grandpa-garden",
+    "label": "爷爷的花园",
+    "hint": "菜地里一畦畦菜苗排得整整齐齐，戴草帽的爷爷提着蓝色喷壶浇水，身后是木栅栏和小房子。",
+    "usedBy": [
+      "builtin-season-4",
+      "builtin-family-2"
+    ]
+  },
+  {
+    "key": "school-autumn",
+    "label": "校园的秋天",
+    "hint": "教学楼前两棵银杏树金黄一片，地上落满了叶子，一个女孩走在铺满落叶的小路上。",
+    "usedBy": [
+      "builtin-season-7"
+    ]
+  },
+  {
+    "key": "fog-morning",
+    "label": "大雾的早晨",
+    "hint": "雾里只能看清近处的小路和两个人影，远处的树影若隐若现，路边立着一盏还亮着的路灯。",
+    "usedBy": [
+      "builtin-weather-3"
+    ]
+  },
+  {
+    "key": "umbrella-rain",
+    "label": "雨中送伞",
+    "hint": "雨天街道上，一把橙色的伞下站着两个人，地面积着水洼，远处是灰蓝色的楼房。",
+    "usedBy": [
+      "builtin-weather-4"
+    ]
+  },
+  {
+    "key": "fireflies",
+    "label": "萤火虫之夜",
+    "hint": "夜里草地上飞满发光的萤火虫，一个孩子举着玻璃罐去追，远处有月亮和树影。",
+    "usedBy": [
+      "builtin-night-2"
+    ]
+  },
+  {
+    "key": "starry-night",
+    "label": "数星星的晚上",
+    "hint": "深蓝的夜空挂满星星和一弯月亮，草地上一个孩子躺着看天，旁边是两棵松树和草丛。",
+    "usedBy": [
+      "builtin-night-3"
+    ]
+  },
+  {
+    "key": "neighbor",
+    "label": "邻居阿姨",
+    "hint": "门廊前一个阿姨提着菜篮子笑着挥手，旁边有栅栏和花。",
+    "usedBy": [
+      "builtin-family-6"
+    ]
+  },
+  {
+    "key": "police",
+    "label": "警察叔叔",
+    "hint": "十字路口一名警察穿着蓝色制服、戴着警帽，伸手指引方向，旁边有红绿灯和斑马线。",
+    "usedBy": [
+      "builtin-community-helper-2"
+    ]
+  },
+  {
+    "key": "sleep-alone",
+    "label": "第一次独睡",
+    "hint": "夜里蓝幽幽的房间，窗外有月亮和星星，床上的被子鼓起来，只露出一双眼睛。",
+    "usedBy": [
+      "builtin-first-time-4"
+    ]
+  },
+  {
+    "key": "memory-album",
+    "label": "那一次，我很难忘",
+    "hint": "桌上摊开一本厚厚的相册，两页里各贴着一张照片，一个孩子坐在旁边翻看。",
+    "usedBy": [
+      "builtin-unforgettable-1"
+    ]
+  },
+  {
+    "key": "lie-truth",
+    "label": "说谎与承认",
+    "hint": "屋里一个孩子低着头站着，一个大人蹲下来平视他听他说话，桌上摆着一瓶花。",
+    "usedBy": [
+      "builtin-mistake-1"
+    ]
+  },
+  {
+    "key": "late",
+    "label": "迟到了",
+    "hint": "清晨校门口，一个孩子背着书包飞跑过来，头顶有个钟显示八点十分，远处是学校大门。",
+    "usedBy": [
+      "builtin-mistake-3"
+    ]
+  },
+  {
+    "key": "exam-nervous",
+    "label": "考试前夜",
+    "hint": "书桌前一个孩子坐着，桌上堆着课本和台灯，墙上有钟，孩子表情紧张。",
+    "usedBy": [
+      "builtin-mistake-4"
+    ]
+  },
+  {
+    "key": "moving",
+    "label": "搬新家",
+    "hint": "空荡荡的新房间里堆着几个大纸箱，一个孩子抱着一个小纸箱，窗帘是粉色的。",
+    "usedBy": [
+      "builtin-milestone-3"
+    ]
+  },
+  {
+    "key": "farewell-school",
+    "label": "难忘小学生活",
+    "hint": "教学楼前站着四个穿不同颜色衣服的小孩在挥手，校门口有校旗和「难忘小学生活」横幅。",
+    "usedBy": [
+      "builtin-milestone-4"
+    ]
+  },
+  {
+    "key": "my-talent",
+    "label": "我的拿手好戏",
+    "hint": "聚光灯下一架钢琴，小孩坐在凳上弹琴，旁边飘着紫色的音符。",
+    "usedBy": [
+      "builtin-milestone-5"
+    ]
+  },
+  {
+    "key": "turtle",
+    "label": "小乌龟",
+    "hint": "浅水盆里趴着一只小乌龟，壳上有六边形花纹，头和四条腿伸在外面，旁边放着几粒龟粮。",
+    "usedBy": [
+      "builtin-pet-5"
+    ]
+  },
+  {
+    "key": "dandelion",
+    "label": "蒲公英",
+    "hint": "草地上长着几朵蒲公英，一朵白色的绒球正在散开，种子随风飘向天空。",
+    "usedBy": [
+      "builtin-plant-2"
+    ]
+  },
+  {
+    "key": "lotus",
+    "label": "荷花",
+    "hint": "池塘水面上铺着圆圆的荷叶，一朵粉色荷花盛开着，旁边还有一个花苞，一只蜻蜓停在花尖上。",
+    "usedBy": [
+      "builtin-plant-3"
+    ]
+  },
+  {
+    "key": "eraser-talking",
+    "label": "会说话的橡皮",
+    "hint": "桌上放着一块长了笑脸的粉色橡皮，旁边躺着一支铅笔，橡皮上方冒出一个对话气泡。",
+    "usedBy": [
+      "builtin-stationery-2"
+    ]
+  },
+  {
+    "key": "pencil-case",
+    "label": "文具盒",
+    "hint": "打开的文具盒里躺着钢笔、铅笔、直尺和橡皮，每样文具都整整齐齐地排在格子里。",
+    "usedBy": [
+      "builtin-stationery-3"
+    ]
+  },
+  {
+    "key": "wind-travel",
+    "label": "假如我是风",
+    "hint": "白色的风一道道吹过草地，两棵树被吹得弯了腰，叶子在空中乱飞，一个孩子站在风里。",
+    "usedBy": [
+      "builtin-if-i-2"
+    ]
+  },
+  {
+    "key": "talk-animals",
+    "label": "会说话的动物",
+    "hint": "林间空地上坐着一只猫、一只狗和一只小鸟，每个头顶都有一个对话气泡。",
+    "usedBy": [
+      "builtin-if-i-3"
+    ]
+  },
+  {
+    "key": "if-tiny",
+    "label": "假如我变小了",
+    "hint": "巨大的花朵和草丛中间站着一个很小的人，旁边有一只蚂蚁爬过，露珠像湖泊一样大。",
+    "usedBy": [
+      "builtin-if-i-4",
+      "builtin-deform-2"
+    ]
+  },
+  {
+    "key": "weird-dream",
+    "label": "奇怪的梦",
+    "hint": "紫色的天空下，房子倒着长、鱼在云里游，一个孩子躺在云朵上睡觉，周围飘着气球和风筝。",
+    "usedBy": [
+      "builtin-dream-1"
+    ]
+  },
+  {
+    "key": "time-travel",
+    "label": "时间快进",
+    "hint": "一个大钟表旋出螺旋纹，前方是未来城市的天际线剪影，楼里亮着星星点点的灯。",
+    "usedBy": [
+      "builtin-dream-4"
+    ]
+  },
+  {
+    "key": "adventure-trip",
+    "label": "探险之旅",
+    "hint": "山洞入口有一支火把，背着包的小孩打着手电往里走，光束照到一个宝藏箱。",
+    "usedBy": [
+      "builtin-deform-3"
+    ]
+  },
+  {
+    "key": "pen-story",
+    "label": "笔尖流出的故事",
+    "hint": "桌上摊着一本大笔记本，一支铅笔斜着在写字，笔尖冒出一个小人和星光，旁边有个思考气泡。",
+    "usedBy": [
+      "builtin-deform-4"
+    ]
+  }
+]

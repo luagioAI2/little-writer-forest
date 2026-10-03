@@ -1,0 +1,148 @@
+{
+ "batch": "3",
+ "items": [
+  {
+   "id": "builtin-life-goods-7",
+   "title": "洗衣机转起来了",
+   "query": "washing machine laundry room",
+   "alts": [
+    "front load washing machine",
+    "washing machine with laundry basket",
+    "laundry room washing machine"
+   ],
+   "must": "一台**洗衣机**（滚筒或波轮），最好旁边有衣服或洗衣篮；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-8",
+   "title": "墙角的扫帚",
+   "query": "broom standing in corner",
+   "alts": [
+    "broom leaning against wall",
+    "broom and dustpan corner",
+    "old broom on floor corner"
+   ],
+   "must": "一把**扫帚**立在墙角或靠着墙；★ 主体是扫帚本身；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-9",
+   "title": "墙上的挂钟",
+   "query": "wall clock hanging on wall",
+   "alts": [
+    "round wall clock",
+    "analog clock on wall",
+    "vintage wall clock home"
+   ],
+   "must": "一个**挂在墙上的钟**（看得清表盘和指针）；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-10",
+   "title": "家里的遥控器",
+   "query": "tv remote control on table",
+   "alts": [
+    "remote control on sofa",
+    "tv remote close up",
+    "remote controller on coffee table"
+   ],
+   "must": "一个**遥控器**（电视或空调的），放在桌上或沙发旁；★ 主体是遥控器；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-11",
+   "title": "门边的一串钥匙",
+   "query": "bunch of keys hanging on hook",
+   "alts": [
+    "keyring hanging by door",
+    "keys on hook by door",
+    "set of keys on nail wall"
+   ],
+   "must": "**一串钥匙**挂在门边挂钩上，或拿在手里；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-12",
+   "title": "洗手间的镜子",
+   "query": "bathroom mirror on wall",
+   "alts": [
+    "mirror above bathroom sink",
+    "washroom mirror on wall",
+    "bathroom mirror reflection"
+   ],
+   "must": "一面**挂在墙上的洗手间镜子**，镜面最好有倒影；★ 彩色，不要黑白；★ 避免正脸大特写（拍镜子/背影/局部都可以）"
+  },
+  {
+   "id": "builtin-life-goods-13",
+   "title": "我的小拖鞋",
+   "query": "slippers on floor by door",
+   "alts": [
+    "pair of slippers at doorway",
+    "house slippers on mat",
+    "slippers on floor indoors"
+   ],
+   "must": "一双**拖鞋**放在门口地垫上或地上；★ 主体是拖鞋；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-14",
+   "title": "水开了",
+   "query": "kettle boiling steam kitchen",
+   "alts": [
+    "boiling kettle on stove steam",
+    "tea kettle steam close up",
+    "hot water kettle steaming"
+   ],
+   "must": "一把**冒白气的烧水壶**（灶上或桌上，看得见蒸汽）；★ 彩色，不要黑白；★ 暖调"
+  },
+  {
+   "id": "builtin-life-goods-15",
+   "title": "电吹风呼呼地吹",
+   "query": "hair dryer drying hair",
+   "alts": [
+    "blow dryer at home",
+    "using hair dryer",
+    "hair dryer close up"
+   ],
+   "must": "一把**吹风机**在使用（看得见吹风机，最好还有头发）；★ 彩色，不要黑白；★ 避免正脸大特写（背影/侧脸/局部可以）"
+  },
+  {
+   "id": "builtin-life-goods-16",
+   "title": "手电筒的光",
+   "query": "flashlight beam in dark",
+   "alts": [
+    "torch light beam dark room",
+    "hand holding flashlight dark",
+    "flashlight shining on wall"
+   ],
+   "must": "一把**亮着的手电筒**，最好在暗处、看得见光柱；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-17",
+   "title": "会唱歌的收音机",
+   "query": "vintage radio on table",
+   "alts": [
+    "old radio on shelf",
+    "retro radio close up",
+    "portable radio on table"
+   ],
+   "must": "一台**收音机**（老式更好），放在桌上或拿在手里；★ 主体是收音机；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-18",
+   "title": "门铃响了",
+   "query": "doorbell on door frame",
+   "alts": [
+    "hand pressing doorbell",
+    "doorbell button by door",
+    "visitor at front door"
+   ],
+   "must": "一个**门铃**（装在门框旁），或者有人站在门口按门铃；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-19",
+   "title": "阳台上的晾衣架",
+   "query": "clothes hanging on drying rack",
+   "alts": [
+    "laundry hanging on line balcony",
+    "clothes drying rack with clothes",
+    "washing hanging outside"
+   ],
+   "must": "**晾着的衣服**（晾衣架或晾衣绳上排着一排衣服），阳台或院子里；★ 彩色，不要黑白"
+  }
+ ]
+}

@@ -1,0 +1,185 @@
+{
+  "batch": "B",
+  "items": [
+    {
+      "landmarkId": "world-日本-富士山",
+      "match": "place",
+      "query": "Mount Fuji",
+      "mediaUrl": "https://images.pexels.com/photos/32416035/pexels-photo-32416035.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Snow-capped Mount Fuji in springtime, Japan",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/snow-capped-mount-fuji-in-springtime-japan-32416035/",
+        "author": "ekrulila"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 41827 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-泰国-大皇宫",
+      "match": "place",
+      "query": "Grand Palace Bangkok",
+      "mediaUrl": "https://images.pexels.com/photos/11105014/pexels-photo-11105014.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Grand Palace in Bangkok",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/grand-palace-in-bangkok-11105014/",
+        "author": "Maksim Romashkin"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 67891 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-印度-泰姬陵",
+      "match": "place",
+      "query": "Taj Mahal",
+      "mediaUrl": "https://images.pexels.com/photos/11521892/pexels-photo-11521892.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Taj Mahal, Agra, India",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/taj-mahal-agra-india-11521892/",
+        "author": "rsapmech"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 91380 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-柬埔寨-吴哥窟",
+      "match": "place",
+      "query": "Angkor Wat",
+      "mediaUrl": "https://images.pexels.com/photos/15890625/pexels-photo-15890625.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Panoramic view of the Angkor Wat, Siem Reap, Cambodia seen from across the water",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/panoramic-view-of-the-angkor-wat-siem-reap-cambodia-seen-from-across-the-water-15890625/",
+        "author": "sergk1"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 29309 },
+      "verdict": "ok",
+      "note": "Distant reflection view; the towers are small in frame but the silhouette is unmistakably Angkor Wat."
+    },
+    {
+      "landmarkId": "world-印度尼西亚-巴厘岛",
+      "match": "place",
+      "query": "Bali island Indonesia",
+      "mediaUrl": "https://images.pexels.com/photos/34356770/pexels-photo-34356770.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of rocky coastline in Bali, Indonesia",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/aerial-view-of-rocky-coastline-in-bali-indonesia-34356770/",
+        "author": "Sergio Monsalve"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 60330 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-越南-下龙湾",
+      "match": "place",
+      "query": "Ha Long Bay",
+      "mediaUrl": "https://images.pexels.com/photos/38116437/pexels-photo-38116437.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic limestone cliffs at Halong Bay",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/majestic-limestone-cliffs-at-halong-bay-38116437/",
+        "author": "Valeria Drozdova"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 43883 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-尼泊尔-珠穆朗玛峰",
+      "match": "place",
+      "query": "Mount Everest",
+      "mediaUrl": "https://images.pexels.com/photos/12798654/pexels-photo-12798654.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Mount Everest",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/mount-everest-12798654/",
+        "author": "Nanda Ram Gharti"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 71364 },
+      "verdict": "ok",
+      "note": "Everest massif with the Khumbu glacier and a glacial lake, shot from Khumjung, Nepal."
+    },
+    {
+      "landmarkId": "world-以色列-死海",
+      "match": "place",
+      "query": "Dead Sea",
+      "mediaUrl": "https://images.pexels.com/photos/15997551/pexels-photo-15997551.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Beach of the Dead Sea",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/beach-of-the-dead-sea-15997551/",
+        "author": "Francesco Ungaro"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 68579 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-土耳其-圣索菲亚大教堂",
+      "match": "place",
+      "query": "Hagia Sophia",
+      "mediaUrl": "https://images.pexels.com/photos/12240132/pexels-photo-12240132.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic Hagia Sophia Mosque, Istanbul, Turkey",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/majestic-hagia-sophia-mosque-istambul-turkey-12240132/",
+        "author": "Musa Ortaç"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 94231 },
+      "verdict": "ok",
+      "note": "First pick showed restoration scaffolding on a minaret; replaced with this cleaner four-minaret view."
+    },
+    {
+      "landmarkId": "world-土耳其-卡帕多西亚",
+      "match": "place",
+      "query": "Cappadocia",
+      "mediaUrl": "https://images.pexels.com/photos/9896355/pexels-photo-9896355.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Hot air balloons over Cappadocia",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/hot-air-balloons-9896355/",
+        "author": "Hazal Çelik"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 68517 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-阿联酋-哈利法塔",
+      "match": "place",
+      "query": "Burj Khalifa",
+      "mediaUrl": "https://images.pexels.com/photos/19741511/pexels-photo-19741511.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "View of the Burj Khalifa",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/view-of-the-burj-khalifa-19741511/",
+        "author": "Unknown"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 76989 },
+      "verdict": "ok",
+      "note": "Photographer credit not shown on the page. First pick was a cramped low-angle shot; replaced with this full-tower view."
+    },
+    {
+      "landmarkId": "world-约旦-佩特拉",
+      "match": "place",
+      "query": "Petra Jordan",
+      "mediaUrl": "https://images.pexels.com/photos/18682567/pexels-photo-18682567.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Canyon with Al-Khazneh of ancient Petra city",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/canyon-with-al-khazneh-of-ancient-petra-city-18682567/",
+        "author": "AXP Photography"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 145388 },
+      "verdict": "ok",
+      "note": ""
+    }
+  ]
+}

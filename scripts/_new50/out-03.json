@@ -1,0 +1,182 @@
+[
+  {
+    "n": 21,
+    "tag": "dream-job",
+    "title": "我想当一名老师",
+    "primary": {
+      "id": "5212342",
+      "url": "https://images.pexels.com/photos/5212342/pexels-photo-5212342.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/teacher-teaching-his-students-5212342/",
+      "why": "老师站在教室前方，学生们举手互动，正是「站上讲台讲课」的画面；横图 8008x5339。"
+    },
+    "fallback": {
+      "id": "8423008",
+      "url": "https://images.pexels.com/photos/8423008/pexels-photo-8423008.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/a-teacher-standing-in-front-of-her-students-8423008/",
+      "why": "女老师站在学生前面授课的教室全景，横图 6016x4016，贴「当老师」主题。"
+    },
+    "fail": null
+  },
+  {
+    "n": 22,
+    "tag": "dream-job",
+    "title": "如果我是厨师",
+    "primary": {
+      "id": "2544829",
+      "url": "https://images.pexels.com/photos/2544829/pexels-photo-2544829.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/chef-cooking-in-the-kitchen-2544829/",
+      "why": "厨师在现代厨房里烹饪摆盘，灶台、锅具齐备，正对「系围裙下厨」的画面；横图 5760x3840。"
+    },
+    "fallback": {
+      "id": "6605151",
+      "url": "https://images.pexels.com/photos/6605151/pexels-photo-6605151.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/a-chef-preparing-food-6605151/",
+      "why": "穿厨师服的厨师在厨房备餐，横图 5307x3538，贴「如果我是厨师」。"
+    },
+    "fail": null
+  },
+  {
+    "n": 23,
+    "tag": "first-time",
+    "title": "第一次坐火车",
+    "primary": {
+      "id": "6261755",
+      "url": "https://images.pexels.com/photos/6261755/pexels-photo-6261755.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/countryside-landscape-seen-through-a-train-window-6261755/",
+      "why": "从行驶中的火车车窗望出去，绿色田野与山丘一路后退，正是题目里「车窗外的树往后跑」的视角；横图 4928x3264。"
+    },
+    "fallback": {
+      "id": "32273859",
+      "url": "https://images.pexels.com/photos/32273859/pexels-photo-32273859.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/train-window-view-of-lush-green-countryside-32273859/",
+      "why": "火车车窗外的葱郁乡野风景，横图 7008x4672，贴「第一次坐火车」的窗外视角。"
+    },
+    "fail": null
+  },
+  {
+    "n": 24,
+    "tag": "unforgettable",
+    "title": "那一次我哭了",
+    "primary": {
+      "id": "9197364",
+      "url": "https://images.pexels.com/photos/9197364/pexels-photo-9197364.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/man-comforting-crying-child-9197364/",
+      "why": "大人蹲下身安慰哭泣的孩子，情绪支持的中景画面，不是脸部特写；横图 6240x4160。"
+    },
+    "fallback": {
+      "id": "7447264",
+      "url": "https://images.pexels.com/photos/7447264/pexels-photo-7447264.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/man-in-black-blazer-talking-to-a-child-7447264/",
+      "why": "大人陪着难过的小女孩轻声交谈的安慰场景，横图 5760x3840，贴「我哭了」的情绪。"
+    },
+    "fail": null
+  },
+  {
+    "n": 25,
+    "tag": "warm-moment",
+    "title": "借我半块橡皮",
+    "primary": {
+      "id": "8250892",
+      "url": "https://images.pexels.com/photos/8250892/pexels-photo-8250892.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/brown-pencil-beside-papers-and-an-eraser-8250892/",
+      "why": "桌面近景：一支铅笔、一块橡皮和方格纸并排放着，正是「橡皮与铅笔在课桌上」的画面；横图 3855x2570。"
+    },
+    "fallback": {
+      "id": "8478390",
+      "url": "https://images.pexels.com/photos/8478390/pexels-photo-8478390.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/colorful-erasers-on-pencils-8478390/",
+      "why": "一排带彩色橡皮头的铅笔特写，橡皮和铅笔同框，横图 6720x4480。"
+    },
+    "fail": null
+  },
+  {
+    "n": 26,
+    "tag": "activity",
+    "title": "学校的读书节",
+    "primary": {
+      "id": "14025659",
+      "url": "https://images.pexels.com/photos/14025659/pexels-photo-14025659.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/children-reading-books-together-14025659/",
+      "why": "几个孩子凑在一起翻看书本，正是「读书节里挑书、看书」的场景；横图 6787x4527。"
+    },
+    "fallback": {
+      "id": "8926840",
+      "url": "https://images.pexels.com/photos/8926840/pexels-photo-8926840.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/students-reading-books-in-a-library-8926840/",
+      "why": "两个女孩在摆满书的学校图书角里看书，横图 6720x4480，贴「读书节」。"
+    },
+    "fail": null
+  },
+  {
+    "n": 27,
+    "tag": "mistake",
+    "title": "弄丢的那本书",
+    "primary": {
+      "id": "8465449",
+      "url": "https://images.pexels.com/photos/8465449/pexels-photo-8465449.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/girl-in-beige-long-sleeves-shirt-opening-her-backpack-8465449/",
+      "why": "女孩在学校更衣室里打开书包翻找东西，正对「把书包翻了个底朝天」；横图 5653x3774。"
+    },
+    "fallback": {
+      "id": "5211430",
+      "url": "https://images.pexels.com/photos/5211430/pexels-photo-5211430.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/students-putting-things-on-their-bags-5211430/",
+      "why": "学生在教室里整理、翻动书包，横图 6000x4000，贴「翻书包找东西」。"
+    },
+    "fail": null
+  },
+  {
+    "n": 28,
+    "tag": "lost-found",
+    "title": "突然停电了",
+    "primary": {
+      "id": "37771422",
+      "url": "https://images.pexels.com/photos/37771422/pexels-photo-37771422.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/candlelight-glow-in-a-dark-room-37771422/",
+      "why": "烛光在昏暗房间里柔和地亮着，氛围安静温暖、毫不恐怖，正对「停电后点起蜡烛」；横图 6000x4000。"
+    },
+    "fallback": {
+      "id": "8564607",
+      "url": "https://images.pexels.com/photos/8564607/pexels-photo-8564607.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/candles-in-the-dark-8564607/",
+      "why": "暗背景下用手点亮蜡烛，横图 6000x4000，贴「突然停电」后点蜡的画面。"
+    },
+    "fail": null
+  },
+  {
+    "n": 29,
+    "tag": "milestone",
+    "title": "我学会游泳了",
+    "primary": {
+      "id": "34193272",
+      "url": "https://images.pexels.com/photos/34193272/pexels-photo-34193272.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/child-swimming-joyfully-in-a-sparkling-pool-34193272/",
+      "why": "孩子在碧蓝的池水中游动，宽幅水下视角、非脸部特写，正对「学会游泳」；横图 5367x2683。"
+    },
+    "fallback": {
+      "id": "35232154",
+      "url": "https://images.pexels.com/photos/35232154/pexels-photo-35232154.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/child-enjoying-pool-fun-with-colorful-floaties-35232154/",
+      "why": "孩子戴着彩色浮圈在泳池里戏水，横图 4389x2887，贴「游泳」主题。"
+    },
+    "fail": null
+  },
+  {
+    "n": 30,
+    "tag": "observe",
+    "title": "豆子发芽了",
+    "primary": {
+      "id": "14637614",
+      "url": "https://images.pexels.com/photos/14637614/pexels-photo-14637614.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/sprouting-chickpeas-and-beans-14637614/",
+      "why": "鹰嘴豆与豆子正在发芽，长出小小的白芽尖，正对「泡在水里的豆子冒出小白芽」；横图 5760x3840。"
+    },
+    "fallback": {
+      "id": "8912711",
+      "url": "https://images.pexels.com/photos/8912711/pexels-photo-8912711.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "page": "https://www.pexels.com/photo/close-up-shot-of-bean-sprouts-8912711/",
+      "why": "近景特写满框的发芽豆子（豆芽），横图 4272x2848，贴「豆子发芽了」。"
+    },
+    "fail": null
+  }
+]

@@ -1,0 +1,161 @@
+{
+  "batch": "2",
+  "items": [
+    {
+      "id": "builtin-plant-10",
+      "title": "门口的桂花树",
+      "query": "tree full of small yellow flowers",
+      "pexelsId": "36661189",
+      "mediaUrl": "https://images.pexels.com/photos/36661189/pexels-photo-36661189.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/vibrant-yellow-tabebuia-tree-in-full-bloom-36661189/", "author": "Sóc Năng Động" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 100200 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "整棵树冠开满细小的黄花（黄花风铃木），满屏都是小黄花，彩色。注意：并非桂花（osmanthus）本体照片，是同类“开满小黄花的树”的替代表达。"
+    },
+    {
+      "id": "builtin-stationery-6",
+      "title": "越写越短的铅笔",
+      "query": "pencil stub / short pencil / tiny pencil / worn pencil / worn down pencil nub / stubby pencil / used short pencil",
+      "pexelsId": null,
+      "mediaUrl": null,
+      "credit": null,
+      "verified": null,
+      "ar": null,
+      "verdict": "fail",
+      "note": "试了 7 个检索词均无结果：Pexels 免费图库里没有“一支短到快握不住的铅笔头”作为主体的横图。命中的只有整支铅笔、一堆断铅笔（8406964/8406978/8386691/8386698）、彩色铅笔笔尖特写（5285730），或“stubby pencil”全是 iStock 赞助位（编号拼不出 CDN 直链）。不硬凑。"
+    },
+    {
+      "id": "builtin-stationery-7",
+      "title": "尺子上的刻度",
+      "query": "ruler with markings on paper",
+      "pexelsId": "35970041",
+      "mediaUrl": "https://images.pexels.com/photos/35970041/pexels-photo-35970041.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/close-up-of-ruler-and-handwritten-measurements-35970041/", "author": "Marek Ruczaj" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 43964 },
+      "ar": 1.333,
+      "verdict": "ok",
+      "note": "金属直尺压在方格纸上，刻度数字 48/49/50 清晰可见，旁边有铅笔和手写的“50 mm”，彩色。"
+    },
+    {
+      "id": "builtin-treasure-11",
+      "title": "奶奶的顶针",
+      "query": "thimble on finger sewing",
+      "pexelsId": "1266139",
+      "mediaUrl": "https://images.pexels.com/photos/1266139/pexels-photo-1266139.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/spool-of-purple-thread-near-needle-thimble-and-measuring-tape-1266139/", "author": "Suzy Hazelwood" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 34566 },
+      "ar": 1.707,
+      "verdict": "ok",
+      "note": "一个银色金属顶针摆在针线旁（紫色线轴、缝衣针、软尺，背景紫白玫瑰），顶针本身清晰可见，彩色。"
+    },
+    {
+      "id": "builtin-treasure-12",
+      "title": "我的第一张奖状",
+      "query": "award certificate",
+      "pexelsId": "8177925",
+      "mediaUrl": "https://images.pexels.com/photos/8177925/pexels-photo-8177925.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/certificate-of-achievement-and-diploma-among-confetti-8177925/", "author": "Leeloothefirst" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 28857 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "粉色背景上一张纸质“CERTIFICATE OF ACHIEVEMENT”奖状，旁边是卷起系黑丝带的证书，撒着金色纸屑，彩色，无国旗/国徽。注意：是平铺摆拍，不是“贴在墙上”。"
+    },
+    {
+      "id": "builtin-food-6",
+      "title": "妈妈煮的粥",
+      "query": "bowl of porridge steam",
+      "pexelsId": "5652188",
+      "mediaUrl": "https://images.pexels.com/photos/5652188/pexels-photo-5652188.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/rice-gruel-in-a-bowl-5652188/", "author": "Kai-Chieh Chan" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 42770 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "青花瓷碗里盛着白粥（米粒+绿豆粥），旁边一小碟咸菜，放在木桌上，暖调，彩色。注意：画面里看不到明显热气（备选 5820105 有大量热气但碗里看不出是粥）。"
+    },
+    {
+      "id": "builtin-food-7",
+      "title": "一根冰棍",
+      "query": "popsicle held in hand summer",
+      "pexelsId": "9646426",
+      "mediaUrl": "https://images.pexels.com/photos/9646426/pexels-photo-9646426.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/a-person-holding-an-ice-cream-on-a-popsicle-9646426/", "author": "Melanie Brumble" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 25384 },
+      "ar": 1.778,
+      "verdict": "ok",
+      "note": "一只手举着一根粉色雪糕（带糖霜），背景是浅粉色冰淇淋店，主体是这支冰棍，彩色、夏日感。"
+    },
+    {
+      "id": "builtin-life-goods-1",
+      "title": "我的小台灯",
+      "query": "lamp on desk at night",
+      "pexelsId": "2168382",
+      "mediaUrl": "https://images.pexels.com/photos/2168382/pexels-photo-2168382.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/powered-on-gold-desk-lamp-on-desk-with-opened-book-2168382/", "author": "Yury Rymko" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 20520 },
+      "ar": 1.778,
+      "verdict": "ok",
+      "note": "书桌上一盏亮着的金色台灯（暖光），灯下摊开一本书，房间偏暗，台灯就是画面主体，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-2",
+      "title": "我家的电风扇",
+      "query": "electric fan standing in room",
+      "pexelsId": "3675622",
+      "mediaUrl": "https://images.pexels.com/photos/3675622/pexels-photo-3675622.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/white-desk-fan-on-white-table-3675622/", "author": "Enrique Zafra" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 23508 },
+      "ar": 1.333,
+      "verdict": "ok",
+      "note": "一台白色台式电风扇，白底，扇叶、网罩、底座和旋钮都看得清，是风扇不是空调/吊扇，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-3",
+      "title": "下雨天的雨伞",
+      "query": "umbrella in rain street",
+      "pexelsId": "15171377",
+      "mediaUrl": "https://images.pexels.com/photos/15171377/pexels-photo-15171377.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/a-woman-holding-an-umbrella-15171377/", "author": "Isaac Mitchell" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 41025 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "雨中城市街头，一个人撑着青色雨伞背对镜头走在湿漉漉的路上，看得见雨丝和水洼，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-4",
+      "title": "叫我起床的闹钟",
+      "query": "alarm clock on bedside table",
+      "pexelsId": "15068318",
+      "mediaUrl": "https://images.pexels.com/photos/15068318/pexels-photo-15068318.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/a-red-alarm-clock-on-an-orange-background-15068318/", "author": "Towfiqu Barbhuiya" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 20659 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一个红色双铃老式闹钟，橙色背景，闹钟是唯一主体、表盘指针清晰，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-5",
+      "title": "我的水杯",
+      "query": "glass of water on table",
+      "pexelsId": "7402619",
+      "mediaUrl": "https://images.pexels.com/photos/7402619/pexels-photo-7402619.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/a-glass-of-water-on-the-table-7402619/", "author": "cottonbro studio" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 12381 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "浅色木桌上放着一杯清水，玻璃杯身清晰，旁边一把木椅，画面干净明亮，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-6",
+      "title": "家里的冰箱",
+      "query": "open refrigerator full of food",
+      "pexelsId": "6508357",
+      "mediaUrl": "https://images.pexels.com/photos/6508357/pexels-photo-6508357.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/fridge-with-different-vegetable-in-modern-kitchen-6508357/", "author": "Artbovich" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 29602 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "现代厨房里一台打开的冰箱，门开着，里面几层整齐摆着番茄、红萝卜、生菜、彩椒等蔬菜，彩色。"
+    }
+  ]
+}

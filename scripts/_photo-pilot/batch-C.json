@@ -1,0 +1,110 @@
+[
+  {
+    "id": "world-法国-埃菲尔铁塔",
+    "name": "埃菲尔铁塔",
+    "province": "法国",
+    "country": "法国",
+    "scene": "city",
+    "en": "Eiffel Tower",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-法国-卢浮宫",
+    "name": "卢浮宫",
+    "province": "法国",
+    "country": "法国",
+    "scene": "city",
+    "en": "Louvre",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-法国-凡尔赛宫",
+    "name": "凡尔赛宫",
+    "province": "法国",
+    "country": "法国",
+    "scene": "city",
+    "en": "Palace of Versailles",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-法国-圣米歇尔山",
+    "name": "圣米歇尔山",
+    "province": "法国",
+    "country": "法国",
+    "scene": "coast",
+    "en": "Mont-Saint-Michel",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-法国-巴黎圣母院",
+    "name": "巴黎圣母院",
+    "province": "法国",
+    "country": "法国",
+    "scene": "temple",
+    "en": "Notre-Dame de Paris",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-英国-大本钟",
+    "name": "大本钟",
+    "province": "英国",
+    "country": "英国",
+    "scene": "city",
+    "en": "Big Ben",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-英国-伦敦塔桥",
+    "name": "伦敦塔桥",
+    "province": "英国",
+    "country": "英国",
+    "scene": "city",
+    "en": "Tower Bridge",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-英国-白金汉宫",
+    "name": "白金汉宫",
+    "province": "英国",
+    "country": "英国",
+    "scene": "city",
+    "en": "Buckingham Palace",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-意大利-罗马斗兽场",
+    "name": "罗马斗兽场",
+    "province": "意大利",
+    "country": "意大利",
+    "scene": "city",
+    "en": "Colosseum",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-意大利-比萨斜塔",
+    "name": "比萨斜塔",
+    "province": "意大利",
+    "country": "意大利",
+    "scene": "city",
+    "en": "Leaning Tower of Pisa",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-意大利-威尼斯",
+    "name": "威尼斯",
+    "province": "意大利",
+    "country": "意大利",
+    "scene": "water",
+    "en": "Venice",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-意大利-圣彼得大教堂",
+    "name": "圣彼得大教堂",
+    "province": "意大利",
+    "country": "意大利",
+    "scene": "temple",
+    "en": "St. Peter's Basilica",
+    "hasEnFromWiki": true
+  }
+]

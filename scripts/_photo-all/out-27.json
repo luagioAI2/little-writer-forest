@@ -1,0 +1,225 @@
+{
+  "batch": "27",
+  "items": [
+    {
+      "landmarkId": "world-加拿大-路易斯湖",
+      "match": "place",
+      "query": "Lake Louise, Alberta",
+      "mediaUrl": "https://images.pexels.com/photos/15369251/pexels-photo-15369251.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Lake Louise in Alberta",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/lake-louise-in-alberta-15369251/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 56693 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-墨西哥-宪法广场",
+      "match": "place",
+      "query": "Zocalo Mexico City",
+      "mediaUrl": "https://images.pexels.com/photos/20848559/pexels-photo-20848559.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Plaza de la Constitucion in Mexico City in Mexico",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/plaza-de-la-constitucion-in-mexico-city-in-mexico-20848559/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 41785 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-秘鲁-库斯科",
+      "match": "place",
+      "query": "Cusco Peru",
+      "mediaUrl": "https://images.pexels.com/photos/33569086/pexels-photo-33569086.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of historic Cusco cityscape",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-view-of-historic-cusco-cityscape-33569086/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 107423 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-智利-百内国家公园",
+      "match": "place",
+      "query": "Torres del Paine National Park",
+      "mediaUrl": "https://images.pexels.com/photos/30359266/pexels-photo-30359266.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic Andes Mountains in Torres del Paine",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-andes-mountains-in-torres-del-paine-30359266/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 35698 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-摩洛哥-撒哈拉沙漠",
+      "match": "place",
+      "query": "Sahara desert Morocco",
+      "mediaUrl": "https://images.pexels.com/photos/30710178/pexels-photo-30710178.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Desert Caravan Journey in the Moroccan Sahara",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/desert-caravan-journey-in-the-moroccan-sahara-30710178/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 33286 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-阿根廷-布宜诺斯艾利斯",
+      "match": "place",
+      "query": "Buenos Aires Argentina",
+      "mediaUrl": "https://images.pexels.com/photos/15942554/pexels-photo-15942554.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Obelisk in Buenos Aires",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/obelisk-in-buenos-aires-15942554/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 77125 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-突尼斯-迦太基",
+      "match": "place",
+      "query": "Carthage Tunisia ruins",
+      "mediaUrl": "https://images.pexels.com/photos/37257231/pexels-photo-37257231.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Carthage ruins overlooking Mediterranean coastline",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/carthage-ruins-overlooking-mediterranean-coastline-37257231/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 129924 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-阿尔及利亚-阿尔及尔卡斯巴",
+      "match": "place",
+      "query": "Kasbah of Algiers Algeria",
+      "mediaUrl": "https://images.pexels.com/photos/36640667/pexels-photo-36640667.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Casbah of Algiers with palm trees and murals",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/casbah-of-algiers-with-palm-trees-and-murals-36640667/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 48596 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-尼日利亚-祖马岩",
+      "match": "place",
+      "query": "Zuma Rock Nigeria",
+      "mediaUrl": "https://images.pexels.com/photos/31800347/pexels-photo-31800347.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Zuma Rock in Abuja Nigeria Majestic Landmark",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/zuma-rock-in-abuja-nigeria-majestic-landmark-31800347/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 44882 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-加纳-海岸角城堡",
+      "match": "place",
+      "query": "Cape Coast Castle Ghana",
+      "mediaUrl": "https://images.pexels.com/photos/33658298/pexels-photo-33658298.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic view from Cape Coast Castle in Ghana",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-view-from-cape-coast-castle-in-ghana-33658298/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 58872 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-卢旺达-火山国家公园",
+      "match": "place",
+      "query": "Volcanoes National Park Rwanda",
+      "mediaUrl": "https://images.pexels.com/photos/34784514/pexels-photo-34784514.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Beautiful landscape with tree and Mount Karisimbi in Rwanda",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/beautiful-landscape-with-tree-and-mount-karisimbi-in-rwanda-34784514/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 113158 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-赞比亚-南卢安瓜国家公园",
+      "match": "place",
+      "query": "South Luangwa National Park Zambia",
+      "mediaUrl": "https://images.pexels.com/photos/33643712/pexels-photo-33643712.png?auto=compress&cs=tinysrgb&w=640",
+      "title": "African elephants in the wild, Zambia",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/african-elephants-in-the-wild-zambia-33643712/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/png", "bytes": 795050 },
+      "verdict": "ok",
+      "note": "Pexels 无南卢安瓜专属照片，取赞比亚野外象群（该国旗舰公园即南卢安瓜）；该图源为 png"
+    },
+    {
+      "landmarkId": "world-乌拉圭-埃斯特角城",
+      "match": "place",
+      "query": "Punta del Este Uruguay",
+      "mediaUrl": "https://images.pexels.com/photos/18013781/pexels-photo-18013781.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The Fingers of Punta del Este in Uruguay",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/the-fingers-of-punta-del-este-in-uruguay-18013781/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 34794 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-巴拉圭-巴拉那耶稣会传教区",
+      "match": "place",
+      "query": "Trinidad Parana Paraguay ruins",
+      "mediaUrl": "https://images.pexels.com/photos/8473700/pexels-photo-8473700.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Ruins at La Santisima Trinidad de Parana",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/ruins-at-la-santisima-trinidad-de-parana-8473700/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 173533 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-牙买加-邓斯河瀑布",
+      "match": "place",
+      "query": "Dunn's River Falls Jamaica",
+      "mediaUrl": "https://images.pexels.com/photos/30681023/pexels-photo-30681023.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of majestic waterfall in Jamaica",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-view-of-majestic-waterfall-in-jamaica-30681023/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 85203 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-多米尼加-圣多明各殖民城",
+      "match": "place",
+      "query": "Santo Domingo colonial zone Dominican Republic",
+      "mediaUrl": "https://images.pexels.com/photos/21299440/pexels-photo-21299440.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Zona Colonial Santo Domingo",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/zona-colonial-santo-domingo-21299440/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 167673 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-洪都拉斯-科潘",
+      "match": "scene",
+      "query": "Maya ruins jungle",
+      "mediaUrl": "https://images.pexels.com/photos/15368562/pexels-photo-15368562.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Mayan ruins in Xunantunich",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/mayan-ruins-in-xunantunich-15368562/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 87123 },
+      "verdict": "ok",
+      "note": "试过 Copan Honduras Maya ruins / Copan archaeological site，Pexels 免费图里没有科潘本体（仅有 iStock 付费广告位），改用同类玛雅遗址丛林照（伯利兹 Xunantunich）"
+    },
+    {
+      "landmarkId": "world-斐济-玛玛努卡群岛",
+      "match": "place",
+      "query": "Mamanuca Islands Fiji",
+      "mediaUrl": "https://images.pexels.com/photos/28957479/pexels-photo-28957479.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic overwater bungalows in Fiji's western division",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-overwater-bungalows-in-fiji-s-western-division-28957479/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 44470 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-萨摩亚-拉洛马努海滩",
+      "match": "place",
+      "query": "Lalomanu Samoa beach",
+      "mediaUrl": "https://images.pexels.com/photos/36137382/pexels-photo-36137382.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Tropical beachfront with palm trees in Samoa",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/tropical-beachfront-with-palm-trees-in-samoa-36137382/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 94423 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-巴布亚新几内亚-科科达小径",
+      "match": "scene",
+      "query": "jungle trail tropical forest path",
+      "mediaUrl": "https://images.pexels.com/photos/29235525/pexels-photo-29235525.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Lush forest path with tall trees and green foliage",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/lush-forest-path-with-tall-trees-and-green-foliage-29235525/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 223333 },
+      "verdict": "ok",
+      "note": "试过 Kokoda Track Papua New Guinea / Papua New Guinea jungle mountains，Pexels 无科科达小径本体，改用热带雨林小径（Owen Stanley 山脉同类地貌）"
+    }
+  ]
+}

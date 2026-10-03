@@ -1,0 +1,93 @@
+{
+  "batch": "06",
+  "items": [
+    {
+      "key": "bird-window",
+      "pexelsId": 16861432,
+      "mediaUrl": "https://images.pexels.com/photos/16861432/pexels-photo-16861432.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Close-up of Blue Bunting Bird",
+      "credit": { "link": "https://www.pexels.com/photo/close-up-of-blue-bunting-bird-16861432/", "author": "Brian Forsyth" },
+      "verified": { "http": 200, "bytes": 29375 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "一只蓝色小鸟停在窗框/窗台上、背景是虚化的绿色（对上「窗台上停着一只蓝色的小鸟」），色调偏冷；无旁边的小盆栽、无窗边的孩子"
+    },
+    {
+      "key": "cook-start",
+      "pexelsId": 4920539,
+      "mediaUrl": "https://images.pexels.com/photos/4920539/pexels-photo-4920539.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Sliced Vegetables on a Wooden Chopping Board",
+      "credit": { "link": "https://www.pexels.com/photo/sliced-vegetables-on-a-wooden-chopping-board-4920539/", "author": "Gustavo Fring" },
+      "verified": { "http": 200, "bytes": 41169 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "系围裙的人站在料理台前、木案板上切着蔬菜、旁边有沙拉碗（对上「系着围裙站在台前+案板+蔬菜+碗」）；是大人不是孩子、无鸡蛋、墙上无食谱，画面偏暗"
+    },
+    {
+      "key": "help-hand",
+      "pexelsId": 5368943,
+      "mediaUrl": "https://images.pexels.com/photos/5368943/pexels-photo-5368943.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Asian Man Helping Friend to Get Up from Ground",
+      "credit": { "link": "https://www.pexels.com/photo/asian-man-helping-friend-to-get-up-from-ground-5368943/", "author": "Allan Mas" },
+      "verified": { "http": 200, "bytes": 40404 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "一个人坐在台阶上伸手、另一个弯腰握住他的手把他拉起来（对上「一个坐在地上、另一个弯腰伸手去拉他」）；是成年人不是孩子、无操场、无动作线，两人正脸可见"
+    },
+    {
+      "key": "mom-cooking",
+      "pexelsId": 3785725,
+      "mediaUrl": "https://images.pexels.com/photos/3785725/pexels-photo-3785725.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Woman Standing Near the Kitchen Counter",
+      "credit": { "link": "https://www.pexels.com/photo/woman-standing-near-the-kitchen-counter-3785725/", "author": "Olly" },
+      "verified": { "http": 200, "bytes": 37856 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "系围裙的女士背对镜头站在料理台后、手里端着冒热气的锅（对上「妈妈系着围裙站在料理台后面+锅冒着热气」），不露脸、偏暖木色；台面上看不到切好的菜和碗"
+    },
+    {
+      "key": "pencil-adventure",
+      "pexelsId": 9489944,
+      "mediaUrl": "https://images.pexels.com/photos/9489944/pexels-photo-9489944.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Pencil on Book in Close up Shot",
+      "credit": { "link": "https://www.pexels.com/photo/pencil-on-book-in-close-up-shot-9489944/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 30597 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "poor",
+      "note": "一支铅笔躺在一本摊开的书上、暖木色桌面（对上「铅笔+摊开的书」）；但只是平放的普通铅笔、不是站在书上的大铅笔，书页不像山谷、周围无云和太阳 —— 实拍照片无法还原该幻想画面，只能取最接近的「铅笔+摊开的书」"
+    },
+    {
+      "key": "rainbow",
+      "pexelsId": 12346066,
+      "mediaUrl": "https://images.pexels.com/photos/12346066/pexels-photo-12346066.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Green Mountains Under Rainbow",
+      "credit": { "link": "https://www.pexels.com/photo/green-mountains-under-rainbow-12346066/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 42037 },
+      "size": { "w": 640, "h": 480, "ar": 1.33 },
+      "verdict": "ok",
+      "note": "一道彩虹横跨在绿色山坡与远山之上、天空有云（对上「彩虹架在天地之间+远处山丘和云」）；草地上无两摊水洼、无举起双手的孩子"
+    },
+    {
+      "key": "snowman",
+      "pexelsId": 10526562,
+      "mediaUrl": "https://images.pexels.com/photos/10526562/pexels-photo-10526562.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Snowman with Black Hat and Red Scarf on a Snow Covered Ground",
+      "credit": { "link": "https://www.pexels.com/photo/snowman-with-black-hat-and-red-scarf-on-a-snow-covered-ground-10526562/", "author": "suju" },
+      "verified": { "http": 200, "bytes": 37827 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "雪地中站着一个戴红围巾的雪人、有树枝手臂（对上「雪地中间站着戴红围巾的雪人」）；两侧无孩子、天上雪花不明显、鼻子看不清是否胡萝卜"
+    },
+    {
+      "key": "teacher-class",
+      "pexelsId": 5212342,
+      "mediaUrl": "https://images.pexels.com/photos/5212342/pexels-photo-5212342.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Teacher Teaching His Students",
+      "credit": { "link": "https://www.pexels.com/photo/teacher-teaching-his-students-5212342/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 43650 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "老师站在教室前面的黑板旁、黑板上有粉笔字，下面是几排课桌和举手的学生（对上「黑板+老师+几排课桌+学生」）；老师未明确伸手指着，师生正脸可见"
+    }
+  ]
+}

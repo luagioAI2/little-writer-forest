@@ -1,0 +1,225 @@
+{
+  "batch": "01",
+  "items": [
+    {
+      "landmarkId": "zhuozhengyuan",
+      "match": "place",
+      "query": "Humble Administrator's Garden Suzhou",
+      "mediaUrl": "https://images.pexels.com/photos/15415001/pexels-photo-15415001.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Humble Administrator's Garden",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/humble-administrator-s-garden-15415001/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 94568 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "waitan",
+      "match": "place",
+      "query": "Shanghai Bund skyline",
+      "mediaUrl": "https://images.pexels.com/photos/30685872/pexels-photo-30685872.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Shanghai Bund Night Skyline Illuminated",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/shanghai-bund-night-skyline-illuminated-30685872/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 31143 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "hulunbuir",
+      "match": "place",
+      "query": "Hulunbuir grassland Inner Mongolia",
+      "mediaUrl": "https://images.pexels.com/photos/35498076/pexels-photo-35498076.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Rural settlement in Inner Mongolia's open plains",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/rural-settlement-in-inner-mongolia-s-open-plains-35498076/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 35400 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "hukou",
+      "match": "scene",
+      "query": "yellow river waterfall china",
+      "mediaUrl": "https://images.pexels.com/photos/37519011/pexels-photo-37519011.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic waterfall over rocky cliffs in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-waterfall-over-rocky-cliffs-in-china-37519011/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 69172 },
+      "verdict": "poor",
+      "note": "No Hukou photo on Pexels (only sponsored iStock); substitute is a narrow green-gorge waterfall, not Hukou's wide turbid yellow cascade."
+    },
+    {
+      "landmarkId": "riyuetan",
+      "match": "place",
+      "query": "Sun Moon Lake Taiwan",
+      "mediaUrl": "https://images.pexels.com/photos/36547144/pexels-photo-36547144.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic view of Sun Moon Lake with palm trees",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-view-of-sun-moon-lake-with-palm-trees-36547144/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 55422 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "dasanba",
+      "match": "place",
+      "query": "Ruins of St. Paul Macau",
+      "mediaUrl": "https://images.pexels.com/photos/34017310/pexels-photo-34017310.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Facade of St. Paul's ruins in Macao",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/facade-of-st-paul-s-ruins-in-macao-34017310/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 113055 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "mingshashan",
+      "match": "place",
+      "query": "Dunhuang Mingsha Crescent Lake",
+      "mediaUrl": "https://images.pexels.com/photos/33412586/pexels-photo-33412586.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic view of Crescent Lake and Mingsha dunes",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-view-of-crescent-lake-and-mingsha-dunes-33412586/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 42331 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "daxinganling",
+      "match": "place",
+      "query": "Greater Khingan forest China",
+      "mediaUrl": "https://images.pexels.com/photos/31410315/pexels-photo-31410315.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic winter landscape in Daxing Anling China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-winter-landscape-in-daxing-anling-china-31410315/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 46742 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "changbaishan",
+      "match": "place",
+      "query": "Changbai Mountain Tianchi lake",
+      "mediaUrl": "https://images.pexels.com/photos/34257242/pexels-photo-34257242.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic view of Heaven Lake on Changbai Mountain",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-view-of-heaven-lake-on-changbai-mountain-34257242/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 44870 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "xishuangbanna",
+      "match": "place",
+      "query": "Xishuangbanna Dai China",
+      "mediaUrl": "https://images.pexels.com/photos/39540411/pexels-photo-39540411.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Stunning white temple in Xishuangbanna China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/stunning-white-temple-in-xishuangbanna-china-39540411/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 49554 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "kanasi",
+      "match": "place",
+      "query": "Kanas Lake Xinjiang",
+      "mediaUrl": "https://images.pexels.com/photos/30123499/pexels-photo-30123499.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic autumn view of Kanas river in Xinjiang",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-autumn-view-of-kanas-river-in-xinjiang-30123499/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 72592 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "mohe",
+      "match": "scene",
+      "query": "snow covered village winter",
+      "mediaUrl": "https://images.pexels.com/photos/13457229/pexels-photo-13457229.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Wooden huts in a snow covered village",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/wooden-huts-in-a-snow-covered-village-13457229/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 75421 },
+      "verdict": "ok",
+      "note": "No Mohe-specific photo on Pexels; generic snow village scene used."
+    },
+    {
+      "landmarkId": "gd-w440314443",
+      "match": "scene",
+      "query": "flamingo bird park",
+      "mediaUrl": "https://images.pexels.com/photos/27169241/pexels-photo-27169241.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Flamingos at a zoo pond",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/flamingos-at-a-zoo-pond-27169241/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 67718 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "gd-w292110019",
+      "match": "scene",
+      "query": "amusement park roller coaster",
+      "mediaUrl": "https://images.pexels.com/photos/31466062/pexels-photo-31466062.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Exciting roller coaster ride in amusement park",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/exciting-roller-coaster-ride-in-amusement-park-31466062/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 63021 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "gd-w297262698",
+      "match": "scene",
+      "query": "water park slides",
+      "mediaUrl": "https://images.pexels.com/photos/31166929/pexels-photo-31166929.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Colorful water park slides on a sunny day",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/colorful-water-park-slides-on-a-sunny-day-31166929/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 80949 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "gd-w297264709",
+      "match": "scene",
+      "query": "safari park giraffe zebra",
+      "mediaUrl": "https://images.pexels.com/photos/20501201/pexels-photo-20501201.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "View of zebras and a giraffe in safari",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/view-of-zebras-and-a-giraffe-in-safari-20501201/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 88969 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "gd-w1304963159",
+      "match": "scene",
+      "query": "Kaiping Guangdong village",
+      "mediaUrl": "https://images.pexels.com/photos/36648143/pexels-photo-36648143.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Traditional village houses in Guangdong China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/traditional-village-houses-in-guangdong-china-36648143/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 190513 },
+      "verdict": "poor",
+      "note": "No Kaiping Diaolou photo on Pexels (only sponsored iStock); substitute is an ordinary Guangdong village, missing the defining watchtowers."
+    },
+    {
+      "landmarkId": "gd-w181234737",
+      "match": "scene",
+      "query": "amusement park roller coaster",
+      "mediaUrl": "https://images.pexels.com/photos/10807092/pexels-photo-10807092.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Roller coaster under clear blue sky",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/roller-coaster-under-clear-blue-sky-10807092/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 25923 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "gd-w236402467",
+      "match": "scene",
+      "query": "chinese traditional village architecture",
+      "mediaUrl": "https://images.pexels.com/photos/34673875/pexels-photo-34673875.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Architectural charm of traditional Chinese village",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/architectural-charm-of-traditional-chinese-village-34673875/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 82457 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "gd-w236402460",
+      "match": "scene",
+      "query": "eiffel tower landmark",
+      "mediaUrl": "https://images.pexels.com/photos/28679872/pexels-photo-28679872.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Miniature Eiffel Tower reflected on wet surface",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/miniature-eiffel-tower-reflected-on-wet-surface-28679872/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 37517 },
+      "verdict": "ok",
+      "note": ""
+    }
+  ]
+}

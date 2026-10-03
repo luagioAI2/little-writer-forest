@@ -1,0 +1,225 @@
+{
+  "batch": "10",
+  "items": [
+    {
+      "landmarkId": "cn-福建-武夷山风景名胜区",
+      "match": "scene",
+      "query": "Wuyishan Nine Bend River bamboo raft",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: 'Wuyishan mountains', 'Wuyi Mountains Fujian China', 'Wuyishan Nine Bend River bamboo raft'. Only generic danxia peaks/rivers and blocked iStock (real Wuyi shots) found; no confirmed Wuyishan photo."
+    },
+    {
+      "landmarkId": "cn-福建-鼓浪屿风景名胜区",
+      "match": "place",
+      "query": "Gulangyu island",
+      "mediaUrl": "https://images.pexels.com/photos/37714925/pexels-photo-37714925.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic aerial view of Gulangyu Island landscape",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-aerial-view-of-gulangyu-island-landscape-37714925/", "author": "Toter Yau" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 67077 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-江西-篁岭景区",
+      "match": "place",
+      "query": "Huangling Wuyuan",
+      "mediaUrl": "https://images.pexels.com/photos/29612000/pexels-photo-29612000.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of Wuyuan village in autumn",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-view-of-wuyuan-village-in-autumn-29612000/", "author": "hujason" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 82406 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-江西-三百山景区",
+      "match": "scene",
+      "query": "Sanbaishan Jiangxi",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: 'Sanbaishan', 'Sanbaishan Jiangxi'. Only generic Chinese mountains (Xinxiang/Luoyang/Hengshan) and blocked iStock; nothing identifiable as Sanbaishan."
+    },
+    {
+      "landmarkId": "cn-江西-庐山西海景区",
+      "match": "scene",
+      "query": "Lushan West Sea Jiangxi",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: 'Lushan West Sea Jiangxi'. Only Lushan-mountain and generic lake/coast shots; nothing of the Lushan West Sea reservoir."
+    },
+    {
+      "landmarkId": "cn-江西-萍乡武功山景区",
+      "match": "scene",
+      "query": "Wugongshan China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: 'Wugong Mountain Jiangxi', 'Wugongshan China'. Only generic mountains and blocked iStock (real Wugong shots); nothing confirmed."
+    },
+    {
+      "landmarkId": "cn-江西-滕王阁旅游区",
+      "match": "place",
+      "query": "Tengwang Pavilion Nanchang",
+      "mediaUrl": "https://images.pexels.com/photos/22679781/pexels-photo-22679781.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Pavilion of Prince Teng in Nanchang",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/pavilion-of-prince-teng-in-nanchang-22679781/", "author": "hujason" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 60191 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-江西-龟峰景区",
+      "match": "scene",
+      "query": "Guifeng Jiangxi China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: 'Guifeng Jiangxi China'. Only unrelated Jiangxi city/temple shots and blocked iStock; nothing identifiable as Guifeng."
+    },
+    {
+      "landmarkId": "cn-江西-大觉山景区",
+      "match": "scene",
+      "query": "Dajue Mountain Fuzhou Jiangxi",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: 'Dajue Mountain Fuzhou Jiangxi'. Only generic misty mountains and blocked iStock; nothing identifiable as Dajueshan."
+    },
+    {
+      "landmarkId": "cn-江西-明月山旅游区",
+      "match": "scene",
+      "query": "Mingyue Mountain Yichun Jiangxi",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: 'Mingyue Mountain Yichun Jiangxi'. Only generic Jiangxi hills/villages and blocked iStock; nothing identifiable as Mingyueshan."
+    },
+    {
+      "landmarkId": "cn-江西-共和国摇篮景区",
+      "match": "scene",
+      "query": "Ruijin Jiangxi China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: 'Ruijin Jiangxi China'. Only generic Jiangxi town/city and lake shots; nothing of the Ruijin revolutionary site."
+    },
+    {
+      "landmarkId": "cn-江西-古窑民俗博览区",
+      "match": "scene",
+      "query": "Jingdezhen porcelain China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: 'Jingdezhen porcelain China'. Only generic porcelain/ceramic still-lifes and blocked iStock (real Jingdezhen shots); no photo of the Ancient Kiln folk museum."
+    },
+    {
+      "landmarkId": "cn-江西-江湾景区",
+      "match": "scene",
+      "query": "Jiangwan Wuyuan village",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: 'Jiangwan Wuyuan village'. Only generic Wuyuan-village rooftops and blocked iStock; nothing specifically identifiable as Jiangwan."
+    },
+    {
+      "landmarkId": "cn-江西-龙虎山风景名胜区",
+      "match": "scene",
+      "query": "Longhu Mountain Jiangxi",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: 'Longhu Mountain Jiangxi'. Only Poyang-lake/Buddha-statue and blocked iStock danxia shots; nothing confirmed as Longhushan."
+    },
+    {
+      "landmarkId": "cn-江西-三清山风景区",
+      "match": "scene",
+      "query": "Sanqingshan mountain",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: 'Sanqingshan mountain'. Only Huangshan/Seoraksan and blocked iStock (real Sanqing shots); nothing confirmed."
+    },
+    {
+      "landmarkId": "cn-江西-井冈山风景旅游区",
+      "match": "scene",
+      "query": "Jinggangshan Jiangxi",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: 'Jinggangshan Jiangxi'. Only generic Jiangxi cityscapes/villages and blocked iStock; nothing confirmed as Jinggangshan."
+    },
+    {
+      "landmarkId": "cn-江西-庐山风景名胜区",
+      "match": "place",
+      "query": "Mount Lu Jiangxi China",
+      "mediaUrl": "https://images.pexels.com/photos/34376752/pexels-photo-34376752.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Misty aerial view of Lushan mountain China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/misty-aerial-view-of-lushan-mountain-china-34376752/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 25383 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-江西-望仙谷",
+      "match": "place",
+      "query": "Wangxian Valley Shangrao",
+      "mediaUrl": "https://images.pexels.com/photos/22043310/pexels-photo-22043310.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of houses in the Wangxian valley China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-view-of-houses-in-the-wangxian-valley-china-22043310/", "author": "hujason" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 63200 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-江西-婺源篁岭",
+      "match": "place",
+      "query": "Jiangwan Wuyuan village",
+      "mediaUrl": "https://images.pexels.com/photos/34925814/pexels-photo-34925814.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Traditional Chinese drying racks in mountain village",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/traditional-chinese-drying-racks-in-mountain-village-34925814/", "author": "Giang Pham" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 121111 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-山东-周村古商城景区",
+      "match": "scene",
+      "query": "Zhoucun ancient town Shandong",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "tried: 'Zhoucun ancient town Shandong'. Only generic Chinese streets/temples and blocked iStock (Jimo ancient city); nothing confirmed as Zhoucun."
+    }
+  ]
+}

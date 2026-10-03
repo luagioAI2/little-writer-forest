@@ -1,0 +1,89 @@
+{
+  "batch": "fix",
+  "items": [
+    {
+      "id": "builtin-classmate-7",
+      "title": "一起值日",
+      "query": "children washing shoes outdoors",
+      "pexelsId": "35556218",
+      "mediaUrl": "https://images.pexels.com/photos/35556218/pexels-photo-35556218.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/children-washing-shoes-outdoors-in-thu-n-an-35556218/", "author": "Vy Van Bui" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 86398 },
+      "ar": 1.499,
+      "verdict": "weak",
+      "note": "主体在：两个亚洲（越南）孩子蹲着一起清洗、刷鞋，彩色、亮堂、画面温暖，符合『一起…打扫』。差在场景是家门口的天井洗鞋，不是学校教室里的扫地/擦黑板值日；试过 children sweeping floor with broom / kids sweeping classroom floor / children cleaning classroom / students doing chores school / asian children sweeping 等 8 组词，Pexels 上没有『亚洲孩子+教室+扫地』的可用图（唯一『children sweeping in room』那张 34003192 是黑白，已淘汰）。"
+    },
+    {
+      "id": "builtin-teacher-6",
+      "title": "老师的手",
+      "query": "teacher writing on blackboard with chalk hand",
+      "pexelsId": "625219",
+      "mediaUrl": "https://images.pexels.com/photos/625219/pexels-photo-625219.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/person-holding-white-chalk-625219/", "author": "Neosiam" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 31013 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "手 + 白色粉笔 + 绿色黑板，正是『老师的手』。★★ 黑板是空的，完全没有英文/外文单词，避开了上次『黑板上写着德语』的坑。彩色，无面孔争议。"
+    },
+    {
+      "id": "builtin-treasure-12",
+      "title": "我的第一张奖状",
+      "query": "chinese school award certificate",
+      "pexelsId": "21766320",
+      "mediaUrl": "https://images.pexels.com/photos/21766320/pexels-photo-21766320.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/boy-and-girl-with-their-medals-and-dyplomas-21766320/", "author": "Hoàng Tiến Việt" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 21945 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "两个亚洲学生双手举着红底奖状（红色证书夹）+ 胸前挂着奖牌，正是中式『红底奖状』的样子，不是满屏英文的 CERTIFICATE。彩色、亮堂。"
+    },
+    {
+      "id": "builtin-life-goods-27",
+      "title": "电饭煲冒气了",
+      "query": "steam rising from cooking pot",
+      "pexelsId": "16899835",
+      "mediaUrl": "https://images.pexels.com/photos/16899835/pexels-photo-16899835.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/close-up-of-a-boiling-pot-16899835/", "author": "Sh Reyan" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 43761 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "★★ 热气一眼可见：锅盖缝里冒出大股白汽，题眼『冒气了』非常明确。彩色、暖调、无外文、无面孔。轻微折扣：是户外灶台上的锅（不是家里的电饭煲），试过 rice cooker steaming hot / steaming pot on stove kitchen 后没有更贴近电饭煲的可用图。"
+    },
+    {
+      "id": "builtin-life-goods-11",
+      "title": "门边的一串钥匙",
+      "query": "keys hanging on hook by door",
+      "pexelsId": "29871187",
+      "mediaUrl": "https://images.pexels.com/photos/29871187/pexels-photo-29871187.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/hand-holding-keys-in-modern-home-interior-29871187/", "author": "Jakub Zerdzicki" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 25377 },
+      "ar": 1.499,
+      "verdict": "weak",
+      "note": "★★ 完全满足：亮堂、暖调、现代居家客厅，一串家用钥匙挂在钥匙圈上、还带一个房子造型的钥匙扣，不是深色工业感的一排旧铁钥匙。差在钥匙是被手提着、对着门口，而不是『挂在门边挂钩/门锁上』——Pexels 上挂着钥匙的图要么是旧铁钥匙排（10473517，已淘汰）、要么是昏暗做旧的门（3769979 / 217316）。"
+    },
+    {
+      "id": "builtin-stationery-6",
+      "title": "越写越短的铅笔",
+      "query": "short used pencil stub",
+      "pexelsId": "38987537",
+      "mediaUrl": "https://images.pexels.com/photos/38987537/pexels-photo-38987537.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/close-up-of-pencil-with-shavings-on-wooden-table-38987537/", "author": "Jahra Tasfia Reza" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 32895 },
+      "ar": 1.499,
+      "verdict": "weak",
+      "note": "官方描述就是『a worn-down red pencil and sharpener shavings』：一支磨得很短、笔杆掉漆的红色旧铅笔躺在木桌上，旁边一大片刚削下来的铅笔屑——『越写越短』的意思在。差在它还不是『跟橡皮头差不多长的一小截铅笔头』，且铅笔屑占了画面不小一块。试过 short used pencil stub / tiny pencil stub / pencil nub / worn down pencil / used up pencil / pencil sharpened down short / small used pencil 共 7 组词，Pexels 没有真正只剩一小截的铅笔头。"
+    },
+    {
+      "id": "builtin-plant-10",
+      "title": "门口的桂花树",
+      "query": "yellow flowers on tree blooming",
+      "pexelsId": "34471423",
+      "mediaUrl": "https://images.pexels.com/photos/34471423/pexels-photo-34471423.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/golden-shower-tree-blossoms-in-kon-tum-vietnam-34471423/", "author": "Thái Trường Giang" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 104650 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "★★ 明确是黄色花：整棵树开满橙黄色小花、密到铺满画面，越南昆嵩拍摄（亚洲场景），彻底避开上次『纯白花』的问题。轻度折扣：品种是 Golden Shower Tree（金链花/黄花树），花比真桂花大一些，不是植物学意义上的桂花；osmanthus fragrans 词条下 Pexels 没有可用实拍。"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+[
+  {
+    "id": "tiananmen",
+    "name": "天安门广场",
+    "province": "北京",
+    "country": "中国",
+    "scene": "city",
+    "en": "Tiananmen Square",
+    "hasEnFromWiki": false
+  },
+  {
+    "id": "badaling",
+    "name": "八达岭长城",
+    "province": "北京",
+    "country": "中国",
+    "scene": "mountain",
+    "en": "Great Wall of China Badaling",
+    "hasEnFromWiki": false
+  },
+  {
+    "id": "xihu",
+    "name": "西湖",
+    "province": "浙江",
+    "country": "中国",
+    "scene": "water",
+    "en": "West Lake Hangzhou",
+    "hasEnFromWiki": false
+  },
+  {
+    "id": "guilin",
+    "name": "桂林山水",
+    "province": "广西",
+    "country": "中国",
+    "scene": "water",
+    "en": "Guilin Li River karst",
+    "hasEnFromWiki": false
+  },
+  {
+    "id": "bingmayong",
+    "name": "秦始皇兵马俑",
+    "province": "陕西",
+    "country": "中国",
+    "scene": "temple",
+    "en": "Terracotta Army Xian",
+    "hasEnFromWiki": false
+  },
+  {
+    "id": "zhangjiajie",
+    "name": "张家界",
+    "province": "湖南",
+    "country": "中国",
+    "scene": "mountain",
+    "en": "Zhangjiajie China mountains",
+    "hasEnFromWiki": false
+  },
+  {
+    "id": "weiduoliya",
+    "name": "维多利亚港",
+    "province": "中国香港",
+    "country": "中国",
+    "scene": "city",
+    "en": "Victoria Harbour Hong Kong skyline",
+    "hasEnFromWiki": false
+  },
+  {
+    "id": "mogao",
+    "name": "莫高窟",
+    "province": "甘肃",
+    "country": "中国",
+    "scene": "cave",
+    "en": "Mogao Caves Dunhuang",
+    "hasEnFromWiki": false
+  },
+  {
+    "id": "cn-北京-故宫博物院",
+    "name": "故宫博物院",
+    "province": "北京",
+    "country": "中国",
+    "scene": "temple",
+    "en": "Forbidden City Beijing",
+    "hasEnFromWiki": false
+  },
+  {
+    "id": "cn-安徽-黄山风景区",
+    "name": "黄山风景区",
+    "province": "安徽",
+    "country": "中国",
+    "scene": "mountain",
+    "en": "Huangshan Yellow Mountain China",
+    "hasEnFromWiki": false
+  },
+  {
+    "id": "cn-山东-泰山景区",
+    "name": "泰山景区",
+    "province": "山东",
+    "country": "中国",
+    "scene": "mountain",
+    "en": "Mount Tai Shandong",
+    "hasEnFromWiki": false
+  },
+  {
+    "id": "cn-四川-九寨沟景区",
+    "name": "九寨沟景区",
+    "province": "四川",
+    "country": "中国",
+    "scene": "city",
+    "en": "Jiuzhaigou valley China",
+    "hasEnFromWiki": false
+  },
+  {
+    "id": "cn-西藏-布达拉宫景区",
+    "name": "布达拉宫景区",
+    "province": "西藏",
+    "country": "中国",
+    "scene": "temple",
+    "en": "Potala Palace Lhasa",
+    "hasEnFromWiki": false
+  }
+]

@@ -1,0 +1,161 @@
+{
+  "batch": "1",
+  "items": [
+    {
+      "id": "builtin-family-13",
+      "title": "妈妈的手",
+      "query": "woman hands washing dishes sink",
+      "pexelsId": "5591788",
+      "mediaUrl": "https://images.pexels.com/photos/5591788/pexels-photo-5591788.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/photo-of-a-person-s-hands-washing-a-white-plate-5591788/", "author": "RDNE Stock project" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 44412 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一双成年女性的手在厨房水槽上方用刷子刷洗一只白盘子，手和手臂是画面主体，旁边有水龙头和粉色抹布；彩色，无人脸特写"
+    },
+    {
+      "id": "builtin-family-14",
+      "title": "爷爷的老花镜",
+      "query": "elderly man reading glasses newspaper",
+      "pexelsId": "5960680",
+      "mediaUrl": "https://images.pexels.com/photos/5960680/pexels-photo-5960680.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/elderly-man-in-white-crew-neck-dress-shirt-reading-newspaper-5960680/", "author": "cottonbro studio" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 39395 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一位白发老人戴着金属圆框老花镜、低头看摊在手里的报纸，人和眼镜都清晰可见；彩色，侧前方中景非正脸特写"
+    },
+    {
+      "id": "builtin-teacher-6",
+      "title": "老师的手",
+      "query": "hand holding chalk blackboard",
+      "pexelsId": "625219",
+      "mediaUrl": "https://images.pexels.com/photos/625219/pexels-photo-625219.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/person-holding-white-chalk-625219/", "author": "NEOSiAM 18+" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 31013 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一只手捏着一小截白色粉笔按在墨绿色黑板上，手、粉笔、黑板三样齐全；板面是空的，没有任何中英文单词；彩色"
+    },
+    {
+      "id": "builtin-teacher-7",
+      "title": "放学后的办公室",
+      "query": "teacher grading papers at desk",
+      "pexelsId": "8363162",
+      "mediaUrl": "https://images.pexels.com/photos/8363162/pexels-photo-8363162.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/a-woman-in-green-long-sleeve-shirt-sitting-at-the-table-holding-a-pencil-on-paper-8363162/", "author": "RDNE Stock project" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 38756 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "穿绿衣的女老师坐在桌前低头用铅笔在纸上写字，桌上摊着纸张文具，身后是教室的绿色黑板和彩色墙报，能看出在批改/备课；彩色"
+    },
+    {
+      "id": "builtin-classmate-6",
+      "title": "同桌的铅笔盒",
+      "query": "open pencil case with stationery",
+      "pexelsId": "8580767",
+      "mediaUrl": "https://images.pexels.com/photos/8580767/pexels-photo-8580767.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/assorted-pencils-in-a-case-laid-on-white-surface-8580767/", "author": "RDNE Stock project" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 49613 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一个完全摊开的黑色拉链笔袋，格子里插满蓝杆铅笔和钢笔，还塞着橡皮、削笔刀、尺子，塞得满满当当有点乱；主体就是铅笔盒本身，彩色"
+    },
+    {
+      "id": "builtin-classmate-7",
+      "title": "一起值日",
+      "query": "child sweeping classroom floor broom",
+      "pexelsId": null,
+      "mediaUrl": null,
+      "credit": null,
+      "verified": null,
+      "ar": null,
+      "verdict": "fail",
+      "note": "找不到符合的图。Pexels 上「孩子在教室里打扫/擦黑板/搬桌椅」的彩色横图几乎全被 iStock 赞助位占掉；免费位里只有室外扫地的孩子（4458033 幼儿扫人行道、36041981 村道扫地），以及黑白照 34003192（孩子扫地但为灰度），都不满足 must 的『在教室里劳动』和『彩色』，故弃用而不硬凑"
+    },
+    {
+      "id": "builtin-stranger-5",
+      "title": "修鞋的老人",
+      "query": "old cobbler repairing shoes street",
+      "pexelsId": "6317981",
+      "mediaUrl": "https://images.pexels.com/photos/6317981/pexels-photo-6317981.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/elderly-man-fixing-shoe-6317981/", "author": "Canan YAŞAR" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 52721 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一位戴帽子的白发老人坐在修鞋摊前，双手捧着一只旧皮鞋低头缝补，身后是缝鞋机和满墙工具，人、鞋、工具三样都在；彩色"
+    },
+    {
+      "id": "builtin-stranger-6",
+      "title": "收废品的叔叔",
+      "query": "man with cart full of cardboard boxes street",
+      "pexelsId": "5582757",
+      "mediaUrl": "https://images.pexels.com/photos/5582757/pexels-photo-5582757.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/elderly-man-pusing-a-cart-full-of-cartons-5582757/", "author": "Damian van der Zwan" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 72255 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一位老人推着一辆堆满废旧纸箱的手推车走在热闹的街上，人和车都完整看得见；彩色"
+    },
+    {
+      "id": "builtin-community-helper-9",
+      "title": "楼下的保安叔叔",
+      "query": "security guard smiling at entrance",
+      "pexelsId": "18530600",
+      "mediaUrl": "https://images.pexels.com/photos/18530600/pexels-photo-18530600.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/security-guard-in-uniform-18530600/", "author": "Click Jeth" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 44465 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一位穿白色制服、戴大檐帽和橙色反光背心的保安从楼前广场走过（戴着口罩），人和制服清晰可见，全身中景不是正脸特写；彩色"
+    },
+    {
+      "id": "builtin-community-helper-10",
+      "title": "早餐摊的阿姨",
+      "query": "woman selling food street stall steam",
+      "pexelsId": "31990517",
+      "mediaUrl": "https://images.pexels.com/photos/31990517/pexels-photo-31990517.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/authentic-asian-street-food-vendor-serving-customers-31990517/", "author": "晓春 胡" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 39114 },
+      "ar": 1.502,
+      "verdict": "ok",
+      "note": "早餐摊的阿姨戴红帽系围裙，站在冒着腾腾热气的蒸笼后面卖包子点心，摊主和摊子（蒸笼、托盘、早点）都看得见；彩色"
+    },
+    {
+      "id": "builtin-pet-13",
+      "title": "我的小兔子",
+      "query": "rabbit eating carrot",
+      "pexelsId": "12397296",
+      "mediaUrl": "https://images.pexels.com/photos/12397296/pexels-photo-12397296.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/close-up-shot-of-a-kid-feeding-a-rabbit-12397296/", "author": "Alexey Demidov" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 38401 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一只浅棕色长耳朵兔子正低头啃孩子手里递过来的胡萝卜，兔子的长耳朵、眼睛和胡萝卜都看得清；彩色"
+    },
+    {
+      "id": "builtin-pet-14",
+      "title": "学说话的鹦鹉",
+      "query": "colorful parrot close up",
+      "pexelsId": "2317899",
+      "mediaUrl": "https://images.pexels.com/photos/2317899/pexels-photo-2317899.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/close-up-photo-of-a-yellow-and-blue-macaw-2317899/", "author": "Ilo Frey" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 45854 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "蓝黄金刚鹦鹉的头部大特写，蓝黄羽毛鲜亮、黑色钩状喙清楚、喙微张像在叫；彩色，背景是虚化的绿叶"
+    },
+    {
+      "id": "builtin-plant-9",
+      "title": "窗台上的多肉",
+      "query": "succulent plant on windowsill sunlight",
+      "pexelsId": "4575359",
+      "mediaUrl": "https://images.pexels.com/photos/4575359/pexels-photo-4575359.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/pachyphytum-oviferum-succulent-plant-growing-in-pot-placed-on-windowsill-4575359/", "author": "Hanbo Wang" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 22812 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一株叶片肥厚饱满的多肉（星美人）种在小盆里摆在窗台上，背后是窗框和玻璃，暖阳从左侧照进来；彩色"
+    }
+  ]
+}

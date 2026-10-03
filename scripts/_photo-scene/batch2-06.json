@@ -1,0 +1,34 @@
+[
+  {
+    "key": "weird-dream",
+    "hint": "紫色的天空下，房子倒着长、鱼在云里游，一个孩子躺在云朵上睡觉，周围飘着气球和风筝。",
+    "en": "surreal dream sky balloons",
+    "usedBy": [
+      "builtin-dream-1"
+    ]
+  },
+  {
+    "key": "time-travel",
+    "hint": "一个大钟表旋出螺旋纹，前方是未来城市的天际线剪影，楼里亮着星星点点的灯。",
+    "en": "spiral clock future city",
+    "usedBy": [
+      "builtin-dream-4"
+    ]
+  },
+  {
+    "key": "adventure-trip",
+    "hint": "山洞入口有一支火把，背着包的小孩打着手电往里走，光束照到一个宝藏箱。",
+    "en": "cave entrance flashlight adventure",
+    "usedBy": [
+      "builtin-deform-3"
+    ]
+  },
+  {
+    "key": "pen-story",
+    "hint": "桌上摊着一本大笔记本，一支铅笔斜着在写字，笔尖冒出一个小人和星光，旁边有个思考气泡。",
+    "en": "notebook and pencil on desk",
+    "usedBy": [
+      "builtin-deform-4"
+    ]
+  }
+]

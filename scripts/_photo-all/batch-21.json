@@ -1,0 +1,162 @@
+[
+  {
+    "id": "world-日本-严岛神社",
+    "name": "严岛神社",
+    "province": "日本",
+    "country": "日本",
+    "scene": "temple",
+    "en": "Itsukushima Shrine"
+  },
+  {
+    "id": "world-日本-浅草寺",
+    "name": "浅草寺",
+    "province": "日本",
+    "country": "日本",
+    "scene": "temple",
+    "en": "Sensō-ji"
+  },
+  {
+    "id": "world-日本-东京塔",
+    "name": "东京塔",
+    "province": "日本",
+    "country": "日本",
+    "scene": "city",
+    "en": "Tokyo Tower"
+  },
+  {
+    "id": "world-日本-奈良公园",
+    "name": "奈良公园",
+    "province": "日本",
+    "country": "日本",
+    "scene": "forest",
+    "en": "Nara Park"
+  },
+  {
+    "id": "world-韩国-景福宫",
+    "name": "景福宫",
+    "province": "韩国",
+    "country": "韩国",
+    "scene": "city",
+    "en": "Gyeongbokgung"
+  },
+  {
+    "id": "world-韩国-南山首尔塔",
+    "name": "南山首尔塔",
+    "province": "韩国",
+    "country": "韩国",
+    "scene": "city",
+    "en": "N Seoul Tower"
+  },
+  {
+    "id": "world-韩国-济州岛",
+    "name": "济州岛",
+    "province": "韩国",
+    "country": "韩国",
+    "scene": "coast",
+    "en": "Jeju Island"
+  },
+  {
+    "id": "world-泰国-郑王庙",
+    "name": "郑王庙",
+    "province": "泰国",
+    "country": "泰国",
+    "scene": "temple",
+    "en": "Wat Arun"
+  },
+  {
+    "id": "world-泰国-皮皮岛",
+    "name": "皮皮岛",
+    "province": "泰国",
+    "country": "泰国",
+    "scene": "coast",
+    "en": "Phi Phi Islands"
+  },
+  {
+    "id": "world-印度-恒河",
+    "name": "恒河",
+    "province": "印度",
+    "country": "印度",
+    "scene": "water",
+    "en": "Ganges"
+  },
+  {
+    "id": "world-印度-琥珀堡",
+    "name": "琥珀堡",
+    "province": "印度",
+    "country": "印度",
+    "scene": "city",
+    "en": "Amber Fort"
+  },
+  {
+    "id": "world-印度-金庙",
+    "name": "金庙",
+    "province": "印度",
+    "country": "印度",
+    "scene": "temple",
+    "en": "Golden Temple"
+  },
+  {
+    "id": "world-印度尼西亚-婆罗浮屠",
+    "name": "婆罗浮屠",
+    "province": "印度尼西亚",
+    "country": "印度尼西亚",
+    "scene": "temple",
+    "en": "Borobudur"
+  },
+  {
+    "id": "world-马来西亚-双子塔",
+    "name": "双子塔",
+    "province": "马来西亚",
+    "country": "马来西亚",
+    "scene": "city",
+    "en": "Petronas Towers"
+  },
+  {
+    "id": "world-新加坡-滨海湾金沙",
+    "name": "滨海湾金沙",
+    "province": "新加坡",
+    "country": "新加坡",
+    "scene": "city",
+    "en": "Marina Bay Sands"
+  },
+  {
+    "id": "world-新加坡-鱼尾狮",
+    "name": "鱼尾狮",
+    "province": "新加坡",
+    "country": "新加坡",
+    "scene": "city",
+    "en": "Merlion"
+  },
+  {
+    "id": "world-斯里兰卡-狮子岩",
+    "name": "狮子岩",
+    "province": "斯里兰卡",
+    "country": "斯里兰卡",
+    "scene": "mountain",
+    "en": "Sigiriya"
+  },
+  {
+    "id": "world-缅甸-仰光大金塔",
+    "name": "仰光大金塔",
+    "province": "缅甸",
+    "country": "缅甸",
+    "scene": "temple",
+    "en": "Shwedagon Pagoda"
+  },
+  {
+    "id": "world-缅甸-蒲甘",
+    "name": "蒲甘",
+    "province": "缅甸",
+    "country": "缅甸",
+    "scene": "temple",
+    "en": "Bagan"
+  },
+  {
+    "id": "world-菲律宾-长滩岛",
+    "name": "长滩岛",
+    "province": "菲律宾",
+    "country": "菲律宾",
+    "scene": "coast",
+    "en": "Boracay"
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "id": "world-捷克-查理大桥",
+    "name": "查理大桥",
+    "province": "捷克",
+    "country": "捷克",
+    "scene": "city",
+    "en": "Charles Bridge",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-丹麦-小美人鱼",
+    "name": "小美人鱼",
+    "province": "丹麦",
+    "country": "丹麦",
+    "scene": "coast",
+    "en": "The Little Mermaid (statue)",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-冰岛-蓝湖",
+    "name": "蓝湖",
+    "province": "冰岛",
+    "country": "冰岛",
+    "scene": "water",
+    "en": "Blue Lagoon (geothermal spa)",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-美国-自由女神像",
+    "name": "自由女神像",
+    "province": "美国",
+    "country": "美国",
+    "scene": "city",
+    "en": "Statue of Liberty",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-美国-大峡谷",
+    "name": "大峡谷",
+    "province": "美国",
+    "country": "美国",
+    "scene": "desert",
+    "en": "Grand Canyon",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-美国-金门大桥",
+    "name": "金门大桥",
+    "province": "美国",
+    "country": "美国",
+    "scene": "coast",
+    "en": "Golden Gate Bridge",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-美国-白宫",
+    "name": "白宫",
+    "province": "美国",
+    "country": "美国",
+    "scene": "city",
+    "en": "White House",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-美国-黄石国家公园",
+    "name": "黄石国家公园",
+    "province": "美国",
+    "country": "美国",
+    "scene": "forest",
+    "en": "Yellowstone National Park",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-美国-尼亚加拉瀑布",
+    "name": "尼亚加拉瀑布",
+    "province": "美国",
+    "country": "美国",
+    "scene": "water",
+    "en": "Niagara Falls",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-美国-拉什莫尔山",
+    "name": "拉什莫尔山",
+    "province": "美国",
+    "country": "美国",
+    "scene": "mountain",
+    "en": "Mount Rushmore",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-加拿大-班夫国家公园",
+    "name": "班夫国家公园",
+    "province": "加拿大",
+    "country": "加拿大",
+    "scene": "mountain",
+    "en": "Banff National Park",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-墨西哥-奇琴伊察",
+    "name": "奇琴伊察",
+    "province": "墨西哥",
+    "country": "墨西哥",
+    "scene": "forest",
+    "en": "Chichen Itza",
+    "hasEnFromWiki": true
+  }
+]

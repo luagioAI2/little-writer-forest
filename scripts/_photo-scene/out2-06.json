@@ -1,0 +1,49 @@
+{
+  "batch": "06",
+  "items": [
+    {
+      "key": "weird-dream",
+      "pexelsId": 7450361,
+      "mediaUrl": "https://images.pexels.com/photos/7450361/pexels-photo-7450361.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Purple Sky and White Clouds",
+      "credit": { "link": "https://www.pexels.com/photo/purple-sky-and-white-clouds-7450361/", "author": "Diana ✨" },
+      "verified": { "http": 200, "bytes": 11578 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "超现实题材，现实照片拍不出「房子倒着长 / 鱼在云里游 / 孩子躺云上睡」——按说明改找「氛围对得上」的梦幻合成图。这张是柔和的紫罗兰色天空 + 丝丝白云，作者自述为 dreamy cloudy sky with purple hues，正好接住 hint 开头的「紫色的天空下」和整篇的梦境感；属氛围对得上、不是逐项对得上（没有气球/风筝/孩子）。试过 surreal dream sky balloons / surreal sky clouds / purple sky clouds 等词，气球题材多为蓝天/暖橙落日，紫调只有这张最正。"
+    },
+    {
+      "key": "time-travel",
+      "pexelsId": 36445976,
+      "mediaUrl": "https://images.pexels.com/photos/36445976/pexels-photo-36445976.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Abstract Motion Blur of Street Clock in La Plata",
+      "credit": { "link": "https://www.pexels.com/photo/abstract-motion-blur-of-street-clock-in-la-plata-36445976/", "author": "Patricia Bozan" },
+      "verified": { "http": 200, "bytes": 29570 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "画面正中是一个街边大钟，钟面清晰可辨（圆盘 + 刻度），四周是向心放射的运动模糊，正好是「一个大钟表旋出螺旋纹」；背景被拉成放射状楼体线条，勉强算城市剪影。作者把它归在 Time Travel / Time Machine 标签下。唯一缺憾：这张是黑白（冷调），hint 里「楼里亮着星星点点的灯」也没有霓虹灯点。"
+    },
+    {
+      "key": "adventure-trip",
+      "pexelsId": 4581255,
+      "mediaUrl": "https://images.pexels.com/photos/4581255/pexels-photo-4581255.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Person Exploring Cave",
+      "credit": { "link": "https://www.pexels.com/photo/person-exploring-cave-4581255/", "author": "ArtHouse Studio" },
+      "verified": { "http": 200, "bytes": 55680 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "一个背着装备的人的剪影（无正脸）站在山洞里，手里手电射出明显的一束光，身后正是暖橙色的洞口/洞内透光。作者自述「Silhouette of a person exploring a dimly lit cave with a flashlight, emphasizing adventure」，正对「打着手电往里走 + 光束」，洞口的暖光也接住「火把」的暖调氛围。缺：hint 里的「火把」和「宝藏箱」没有（实拍图库没有藏宝箱），也看不出明确背包。"
+    },
+    {
+      "key": "pen-story",
+      "pexelsId": 6991500,
+      "mediaUrl": "https://images.pexels.com/photos/6991500/pexels-photo-6991500.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Wooden Pencil on Edge of the Notepad",
+      "credit": { "link": "https://www.pexels.com/photo/wooden-pencil-on-edge-of-the-notepad-6991500/", "author": "DS stories" },
+      "verified": { "http": 200, "bytes": 10732 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "一本摊开的大螺旋笔记本（两页全展开）+ 一支木色铅笔斜斜地搭在右侧页面上，暖米色背景，正是「桌上摊着一本大笔记本，一支铅笔斜着」；作者自述「open spiral notebook with a pencil on a neutral beige background」。缺：hint 里「笔尖冒出小人/星光」和「思考气泡」是卡通元素，实拍不存在；铅笔是静置在纸上而非正在书写。试过 notebook and pencil on desk / open notebook and pencil / hand writing in notebook 等词，这张结构最贴、色调最暖。"
+    }
+  ]
+}

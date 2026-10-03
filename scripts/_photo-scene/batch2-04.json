@@ -1,0 +1,42 @@
+[
+  {
+    "key": "farewell-school",
+    "hint": "教学楼前站着四个穿不同颜色衣服的小孩在挥手，校门口有校旗和「难忘小学生活」横幅。",
+    "en": "children waving goodbye school",
+    "usedBy": [
+      "builtin-milestone-4"
+    ]
+  },
+  {
+    "key": "my-talent",
+    "hint": "聚光灯下一架钢琴，小孩坐在凳上弹琴，旁边飘着紫色的音符。",
+    "en": "child playing piano",
+    "usedBy": [
+      "builtin-milestone-5"
+    ]
+  },
+  {
+    "key": "turtle",
+    "hint": "浅水盆里趴着一只小乌龟，壳上有六边形花纹，头和四条腿伸在外面，旁边放着几粒龟粮。",
+    "en": "small turtle on stone",
+    "usedBy": [
+      "builtin-pet-5"
+    ]
+  },
+  {
+    "key": "dandelion",
+    "hint": "草地上长着几朵蒲公英，一朵白色的绒球正在散开，种子随风飘向天空。",
+    "en": "dandelion seeds blowing wind",
+    "usedBy": [
+      "builtin-plant-2"
+    ]
+  },
+  {
+    "key": "lotus",
+    "hint": "池塘水面上铺着圆圆的荷叶，一朵粉色荷花盛开着，旁边还有一个花苞，一只蜻蜓停在花尖上。",
+    "en": "lotus flower pond",
+    "usedBy": [
+      "builtin-plant-3"
+    ]
+  }
+]

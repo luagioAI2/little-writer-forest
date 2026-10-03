@@ -1,0 +1,93 @@
+{
+  "batch": "05",
+  "items": [
+    {
+      "key": "bike-ride",
+      "pexelsId": 6209919,
+      "mediaUrl": "https://images.pexels.com/photos/6209919/pexels-photo-6209919.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Happy Boy Riding Bicycle in Autumn Park",
+      "credit": { "link": "https://www.pexels.com/photo/happy-boy-riding-bicycle-in-autumn-park-6209919/", "author": "Yan Krukau" },
+      "verified": { "http": 200, "bytes": 83057 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "暖秋公园落叶小路上孩子骑车、背影不露脸（对上「小路上孩子飞快骑车」），暖调；无红色自行车、无身后追赶的爸爸、无速度线"
+    },
+    {
+      "key": "cook-mess",
+      "pexelsId": 4784049,
+      "mediaUrl": "https://images.pexels.com/photos/4784049/pexels-photo-4784049.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "A Girl Blowing Off Flour on Her Hands",
+      "credit": { "link": "https://www.pexels.com/photo/a-girl-blowing-off-flour-on-her-hands-4784049/", "author": "Ivan S" },
+      "verified": { "http": 200, "bytes": 32193 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "孩子吹掉手上的面粉、白面粉在空气里飘（对上「到处飘着白面粉+孩子」）；台面是明亮白厨房、无翻倒的碗和糊锅，孩子正脸可见（约定偏好不露脸），色调偏冷"
+    },
+    {
+      "key": "girl-visit",
+      "pexelsId": 14823081,
+      "mediaUrl": "https://images.pexels.com/photos/14823081/pexels-photo-14823081.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Warm Light of Lamps Through a Snow-covered Window",
+      "credit": { "link": "https://www.pexels.com/photo/warm-light-of-lamps-through-a-snow-covered-window-14823081/", "author": "Andriy Babchiy" },
+      "verified": { "http": 200, "bytes": 38834 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "雪夜窗内两盏灯透出暖黄光、玻璃外是雪（对上「透出暖黄灯光的窗+雪夜」），暖调、无人；无小女孩、无火柴、无街道"
+    },
+    {
+      "key": "mirror-self",
+      "pexelsId": 5788310,
+      "mediaUrl": "https://images.pexels.com/photos/5788310/pexels-photo-5788310.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "A Woman Sitting on the Bed",
+      "credit": { "link": "https://www.pexels.com/photo/a-woman-sitting-on-the-bed-5788310/", "author": "Pavel Danilyuk" },
+      "verified": { "http": 200, "bytes": 23504 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "墙上挂着一面圆镜、镜中映出坐在床边的人影（对上「墙上圆镜里映出人」）；镜中人非小孩、镜外无同一个孩子对照、旁边无绿植，冷灰石墙"
+    },
+    {
+      "key": "old-toy",
+      "pexelsId": 30141711,
+      "mediaUrl": "https://images.pexels.com/photos/30141711/pexels-photo-30141711.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Vintage Teddy Bear Resting in Ornate Iron Bed",
+      "credit": { "link": "https://www.pexels.com/photo/vintage-teddy-bear-resting-in-ornate-iron-bed-30141711/", "author": "Susanne Jutzeler, suju-foto" },
+      "verified": { "http": 200, "bytes": 60718 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "做旧的棕熊靠在一张复古铁架床里、四周是绿藤，背景暖木色（对上「旧小熊+暖光」）；不是坐在架子上，旁边无相框和小木盒，看不出掉耳朵/补丁"
+    },
+    {
+      "key": "rain-window",
+      "pexelsId": 28241045,
+      "mediaUrl": "https://images.pexels.com/photos/28241045/pexels-photo-28241045.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Raindrops on Window",
+      "credit": { "link": "https://www.pexels.com/photo/a-rainy-day-28241045/", "author": "Tony Zohari" },
+      "verified": { "http": 200, "bytes": 82629 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "隔着挂满雨珠的玻璃看窗外灰蒙的雨天、能认出小房子和屋顶（对上「窗外下雨+小房子+玻璃雨珠」）；无蹲在窗台的猫、无灰蓝的树"
+    },
+    {
+      "key": "snow-play",
+      "pexelsId": 6667086,
+      "mediaUrl": "https://images.pexels.com/photos/6667086/pexels-photo-6667086.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Back View of Two People Playing in the Snow",
+      "credit": { "link": "https://www.pexels.com/photo/back-view-of-two-people-playing-in-the-snow-6667086/", "author": "Pavel Danilyuk" },
+      "verified": { "http": 200, "bytes": 43172 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "两个孩子在雪地上打雪仗、背影不露脸（对上「雪地上两个孩子打雪仗」）；雪球在画面里不明显、远处看不到落光叶子的树"
+    },
+    {
+      "key": "talking-bag",
+      "pexelsId": 5905434,
+      "mediaUrl": "https://images.pexels.com/photos/5905434/pexels-photo-5905434.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "School bench with copybooks and stationery",
+      "credit": { "link": "https://www.pexels.com/photo/school-bench-with-copybooks-and-stationery-5905434/", "author": "Katerina Holmes" },
+      "verified": { "http": 200, "bytes": 34999 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "教室课桌上摊着打开的作业本、书包搭在椅背上（对上「椅背挂书包+桌上作业本」），画面无人；书包不是蓝色、没有笑脸、没有对话气泡"
+    }
+  ]
+}

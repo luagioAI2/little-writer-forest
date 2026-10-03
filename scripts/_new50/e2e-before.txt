@@ -1,0 +1,108 @@
+
+① 打开页面
+  ✅ 内置题都列出来了（370 道）
+  ✅ 统计里的总数跟列表一致（不是界面写死的）
+  ✅ 第一道就是底稿的第一条（春天的公园）
+  ✅ 卡片上的插画真的渲染出来了（不是空方块）
+  ✅ 还没选中的时候，右栏是"点一道题"的空态
+
+② 点一道题，右栏出编辑面板
+  ✅ 选中的是第一道（builtin-season-1）
+  ✅ 面板里带出了底稿的标题和引导语
+  ✅ 信息条显示的是这道题的 id
+  ✅ 这题一张图 → 一个配图槽位
+  ❌ 槽位里显示的是**内置插画**（当前没配外链） — slotArt=0
+  ✅ ★ 没有任何改动时，「保存」是禁用的
+
+③ 改标题
+  ✅ 卡片上的标题跟着变了（没重建整页也变了）
+  ✅ 卡片上出现「已改」标记
+  ✅ 统计里"已改过"还是开工前那个数（193）—— 数的是**已保存**的，不含还没存的
+  ✅ 统计里"未保存的改动"= 1
+  ✅ ★★ 有改动了，「保存」当场变成可点（不是还灰着）
+  ✅ 标题计数跟着走
+
+④ 粘一个 https 外链图
+  ✅ ★ 槽位里的图从「内置插画」换成了外链图（<img>）
+  ✅ 地址没被判红
+  ✅ 体检说"这道题没问题"
+
+⑤ http:// 地址当场判红（装进 APK 会被当混合内容拦掉）
+  ✅ （前提）输入框里确实是那个 http 地址
+  ✅ ★ 输入框当场变红
+  ✅ ★ 体检当场说清"混合内容"这件事（不是等失焦）
+  ✅ ★ 有非法值的时候，「保存」是禁用的（不让它写出去）
+
+⑥ 保存（会真的写盘）
+  ✅ （前提）保存按钮可点
+  ✅ ★ 盘上出现了这一笔
+  ❌ ★ 盘上只**多了**改过的那一道（别的题不出现）—— 193 → 194 — builtin-activity-1,builtin-activity-2,builtin-activity-3,builtin-activity-4,builtin-activity-5,builtin-campus-1,builtin-campus-2,builtin-campus-3,builtin-campus-4,builtin-campus-5,builtin-classmate-1,builtin-classmate-2,builtin-classmate-3,builtin-classmate-6,builtin-comic-1,builtin-comic-2,builtin-community-helper-1,builtin-community-helper-10,builtin-community-helper-2,builtin-community-helper-3,builtin-community-helper-4,builtin-community-helper-9,builtin-culture-1,builtin-culture-2,builtin-custom-1,builtin-custom-2,builtin-deform-1,builtin-deform-2,builtin-deform-3,builtin-deform-4,builtin-dream-1,builtin-dream-2,builtin-dream-3,builtin-dream-4,builtin-dream-job-1,builtin-dream-job-2,builtin-dream-job-3,builtin-fairy-1,builtin-fairy-2,builtin-family-1,builtin-family-13,builtin-family-14,builtin-family-2,builtin-family-3,builtin-family-4,builtin-family-5,builtin-family-6,builtin-first-time-1,builtin-first-time-2,builtin-first-time-3,builtin-first-time-4,builtin-food-1,builtin-food-2,builtin-food-3,builtin-food-6,builtin-food-7,builtin-future-1,builtin-future-2,builtin-future-3,builtin-future-4,builtin-home-scene-1,builtin-home-scene-2,builtin-home-scene-3,builtin-hometown-1,builtin-hometown-2,builtin-hometown-3,builtin-if-i-1,builtin-if-i-2,builtin-if-i-3,builtin-if-i-4,builtin-letter-1,builtin-letter-2,builtin-letter-3,builtin-life-goods-1,builtin-life-goods-10,builtin-life-goods-11,builtin-life-goods-12,builtin-life-goods-13,builtin-life-goods-14,builtin-life-goods-15,builtin-life-goods-16,builtin-life-goods-17,builtin-life-goods-18,builtin-life-goods-19,builtin-life-goods-2,builtin-life-goods-20,builtin-life-goods-21,builtin-life-goods-22,builtin-life-goods-23,builtin-life-goods-24,builtin-life-goods-25,builtin-life-goods-26,builtin-life-goods-27,builtin-life-goods-28,builtin-life-goods-29,builtin-life-goods-3,builtin-life-goods-30,builtin-life-goods-4,builtin-life-goods-5,builtin-life-goods-6,builtin-life-goods-7,builtin-life-goods-8,builtin-life-goods-9,builtin-look-picture-1,builtin-look-picture-2,builtin-lost-found-1,builtin-lost-found-2,builtin-lost-found-3,builtin-milestone-1,builtin-milestone-2,builtin-milestone-3,builtin-milestone-4,builtin-milestone-5,builtin-mistake-1,builtin-mistake-2,builtin-mistake-3,builtin-mistake-4,builtin-night-1,builtin-night-2,builtin-night-3,builtin-observe-1,builtin-observe-2,builtin-observe-3,builtin-people-around-1,builtin-people-around-2,builtin-pet-1,builtin-pet-13,builtin-pet-14,builtin-pet-2,builtin-pet-3,builtin-pet-4,builtin-pet-5,builtin-pet-6,builtin-plant-1,builtin-plant-10,builtin-plant-2,builtin-plant-3,builtin-plant-4,builtin-plant-9,builtin-sci-fi-1,builtin-sci-fi-2,builtin-sci-fi-3,builtin-season-1,builtin-season-2,builtin-season-3,builtin-season-4,builtin-season-5,builtin-season-6,builtin-season-7,builtin-self-1,builtin-self-2,builtin-stationery-1,builtin-stationery-2,builtin-stationery-3,builtin-stationery-6,builtin-stationery-7,builtin-stranger-1,builtin-stranger-2,builtin-stranger-5,builtin-stranger-6,builtin-talking-1,builtin-talking-2,builtin-teacher-1,builtin-teacher-2,builtin-teacher-3,builtin-teacher-6,builtin-teacher-7,builtin-travel-1,builtin-travel-2,builtin-treasure-1,builtin-treasure-11,builtin-treasure-12,builtin-treasure-2,builtin-treasure-3,builtin-treasure-4,builtin-treasure-5,builtin-treasure-6,builtin-treasure-7,builtin-unforgettable-1,builtin-unforgettable-2,builtin-unforgettable-3,builtin-warm-moment-1,builtin-warm-moment-2,builtin-warm-moment-3,builtin-water-1,builtin-water-2,builtin-water-3,builtin-water-4,builtin-weather-1,builtin-weather-2,builtin-weather-3,builtin-weather-4,builtin-weather-5
+  ✅ ★ 原来盘上那几条**原样留着**（没被这一次保存冲掉）
+  ✅ 带上了防串位的锚 baseTitle / baseLead
+  ✅ 标题写进去了
+  ✅ ★ 配图**只写了 imageUrl**，没有把内置插画顶掉
+  ✅ ★ 键的顺序是规范的 baseTitle → baseLead → title → imageUrls
+  ✅ 文件结尾有换行（跟别的数据文件一致）
+  ✅ 保存后界面变成"已保存"、未保存归零
+
+⑦ 幂等：把盘上那份原样再存一次，字节必须一样
+  ✅ 第二次保存也成功
+  ✅ ★★ 两次保存出来的文件**逐字节一样**
+
+⑧ 刷新页面，改过的还在
+  ✅ ★ 刷新后第一道题的标题是改过的那个
+  ❌ 统计里"已改过"= 194（开工前 193 + 刚存的这一道） — 193
+  ❌ 统计里"配了外链图"= 194（开工前 193 + 刚配的这张） — 193
+  ✅ 卡片上带「已改」标记
+
+⑨ 恢复这道题的原文
+  ❌ 未保存计数变成 1（撤回了刚保存的那笔） — 0
+  ❌ 面板里的标题回到原文 — 春天的小公园
+  ❌ 卡片上的「已改」标记也去掉了
+  ❌ ★★ 撤回后再保存，盘上**回到开工前那份**（没有留下孤儿条目） — {
+  "builtin-activity-1": {
+    "baseTitle": "热闹的运动会",
+    "baseLead": "哨声一响，跑道上的同学冲了出去。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/31772339/p
+
+⑩ 保存端点只收本机请求
+  ✅ ★★ 同网段的请求被 403 挡掉（这道闸不是摆设）
+
+⑪ 端点拒收坏值（不是悄悄截断）
+  ✅ http:// 图片 → 400 拒收
+  ✅ 标题超字数 → 400 拒收
+  ✅ 跟原文一样（白写）→ 400 拒收
+  ✅ 缺 baseTitle/baseLead（防串位的锚）→ 400 拒收
+  ✅ 不认识的字段 → 400 拒收
+  ✅ ★ 上面这一串被拒之后，盘上**一个字节都没动**（拒收 ≠ 写了一半）
+
+⑫ 幽灵记录（覆盖层挂着一个不存在的内置题 id）
+  ✅ （前提）列表里只有 370 道 —— 幽灵记录不会出现在这里
+  ✅ ★★ 但整份体检横幅把它报出来了（不然家长看不到原因）
+  ✅ ★★ 而且给了一个"删掉"的出口（否则就是死胡同）
+  ✅ ★ 有幽灵的时候，「保存」是禁用的
+  ✅ ★★ 删完变"未保存"、且「保存」可点（★ 只删草稿，不删 saved —— 两边都删就永远存不下去）
+  ✅ ★ 横幅改口说"盘上还有 1 条…按保存落盘"（不是直接消失）
+  ✅ ★★ 保存后盘上**回到开工前那份**（幽灵没了、真条目一条不少）
+  ✅ ★ 横幅也跟着消失了
+
+⑬ 全程没有 console 报错
+  ✅ 没有 console error / pageerror
+  ✅ ★ 收尾：数据文件已还原成开工前的字节
+
+❌ 53 passed, 8 failed
+失败项：
+  · 槽位里显示的是**内置插画**（当前没配外链） — slotArt=0
+  · ★ 盘上只**多了**改过的那一道（别的题不出现）—— 193 → 194 — builtin-activity-1,builtin-activity-2,builtin-activity-3,builtin-activity-4,builtin-activity-5,builtin-campus-1,builtin-campus-2,builtin-campus-3,builtin-campus-4,builtin-campus-5,builtin-classmate-1,builtin-classmate-2,builtin-classmate-3,builtin-classmate-6,builtin-comic-1,builtin-comic-2,builtin-community-helper-1,builtin-community-helper-10,builtin-community-helper-2,builtin-community-helper-3,builtin-community-helper-4,builtin-community-helper-9,builtin-culture-1,builtin-culture-2,builtin-custom-1,builtin-custom-2,builtin-deform-1,builtin-deform-2,builtin-deform-3,builtin-deform-4,builtin-dream-1,builtin-dream-2,builtin-dream-3,builtin-dream-4,builtin-dream-job-1,builtin-dream-job-2,builtin-dream-job-3,builtin-fairy-1,builtin-fairy-2,builtin-family-1,builtin-family-13,builtin-family-14,builtin-family-2,builtin-family-3,builtin-family-4,builtin-family-5,builtin-family-6,builtin-first-time-1,builtin-first-time-2,builtin-first-time-3,builtin-first-time-4,builtin-food-1,builtin-food-2,builtin-food-3,builtin-food-6,builtin-food-7,builtin-future-1,builtin-future-2,builtin-future-3,builtin-future-4,builtin-home-scene-1,builtin-home-scene-2,builtin-home-scene-3,builtin-hometown-1,builtin-hometown-2,builtin-hometown-3,builtin-if-i-1,builtin-if-i-2,builtin-if-i-3,builtin-if-i-4,builtin-letter-1,builtin-letter-2,builtin-letter-3,builtin-life-goods-1,builtin-life-goods-10,builtin-life-goods-11,builtin-life-goods-12,builtin-life-goods-13,builtin-life-goods-14,builtin-life-goods-15,builtin-life-goods-16,builtin-life-goods-17,builtin-life-goods-18,builtin-life-goods-19,builtin-life-goods-2,builtin-life-goods-20,builtin-life-goods-21,builtin-life-goods-22,builtin-life-goods-23,builtin-life-goods-24,builtin-life-goods-25,builtin-life-goods-26,builtin-life-goods-27,builtin-life-goods-28,builtin-life-goods-29,builtin-life-goods-3,builtin-life-goods-30,builtin-life-goods-4,builtin-life-goods-5,builtin-life-goods-6,builtin-life-goods-7,builtin-life-goods-8,builtin-life-goods-9,builtin-look-picture-1,builtin-look-picture-2,builtin-lost-found-1,builtin-lost-found-2,builtin-lost-found-3,builtin-milestone-1,builtin-milestone-2,builtin-milestone-3,builtin-milestone-4,builtin-milestone-5,builtin-mistake-1,builtin-mistake-2,builtin-mistake-3,builtin-mistake-4,builtin-night-1,builtin-night-2,builtin-night-3,builtin-observe-1,builtin-observe-2,builtin-observe-3,builtin-people-around-1,builtin-people-around-2,builtin-pet-1,builtin-pet-13,builtin-pet-14,builtin-pet-2,builtin-pet-3,builtin-pet-4,builtin-pet-5,builtin-pet-6,builtin-plant-1,builtin-plant-10,builtin-plant-2,builtin-plant-3,builtin-plant-4,builtin-plant-9,builtin-sci-fi-1,builtin-sci-fi-2,builtin-sci-fi-3,builtin-season-1,builtin-season-2,builtin-season-3,builtin-season-4,builtin-season-5,builtin-season-6,builtin-season-7,builtin-self-1,builtin-self-2,builtin-stationery-1,builtin-stationery-2,builtin-stationery-3,builtin-stationery-6,builtin-stationery-7,builtin-stranger-1,builtin-stranger-2,builtin-stranger-5,builtin-stranger-6,builtin-talking-1,builtin-talking-2,builtin-teacher-1,builtin-teacher-2,builtin-teacher-3,builtin-teacher-6,builtin-teacher-7,builtin-travel-1,builtin-travel-2,builtin-treasure-1,builtin-treasure-11,builtin-treasure-12,builtin-treasure-2,builtin-treasure-3,builtin-treasure-4,builtin-treasure-5,builtin-treasure-6,builtin-treasure-7,builtin-unforgettable-1,builtin-unforgettable-2,builtin-unforgettable-3,builtin-warm-moment-1,builtin-warm-moment-2,builtin-warm-moment-3,builtin-water-1,builtin-water-2,builtin-water-3,builtin-water-4,builtin-weather-1,builtin-weather-2,builtin-weather-3,builtin-weather-4,builtin-weather-5
+  · 统计里"已改过"= 194（开工前 193 + 刚存的这一道） — 193
+  · 统计里"配了外链图"= 194（开工前 193 + 刚配的这张） — 193
+  · 未保存计数变成 1（撤回了刚保存的那笔） — 0
+  · 面板里的标题回到原文 — 春天的小公园
+  · 卡片上的「已改」标记也去掉了
+  · ★★ 撤回后再保存，盘上**回到开工前那份**（没有留下孤儿条目） — {
+  "builtin-activity-1": {
+    "baseTitle": "热闹的运动会",
+    "baseLead": "哨声一响，跑道上的同学冲了出去。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/31772339/p

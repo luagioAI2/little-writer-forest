@@ -1,0 +1,110 @@
+[
+  {
+    "id": "world-肯尼亚-马赛马拉",
+    "name": "马赛马拉",
+    "province": "肯尼亚",
+    "country": "肯尼亚",
+    "scene": "grass",
+    "en": "Maasai Mara",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-坦桑尼亚-乞力马扎罗山",
+    "name": "乞力马扎罗山",
+    "province": "坦桑尼亚",
+    "country": "坦桑尼亚",
+    "scene": "snow",
+    "en": "Mount Kilimanjaro",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-津巴布韦-维多利亚瀑布",
+    "name": "维多利亚瀑布",
+    "province": "津巴布韦",
+    "country": "津巴布韦",
+    "scene": "water",
+    "en": "Victoria Falls",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-澳大利亚-悉尼歌剧院",
+    "name": "悉尼歌剧院",
+    "province": "澳大利亚",
+    "country": "澳大利亚",
+    "scene": "coast",
+    "en": "Sydney Opera House",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-澳大利亚-大堡礁",
+    "name": "大堡礁",
+    "province": "澳大利亚",
+    "country": "澳大利亚",
+    "scene": "water",
+    "en": "Great Barrier Reef",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-澳大利亚-乌鲁鲁",
+    "name": "乌鲁鲁",
+    "province": "澳大利亚",
+    "country": "澳大利亚",
+    "scene": "desert",
+    "en": "Uluru",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-澳大利亚-十二门徒石",
+    "name": "十二门徒石",
+    "province": "澳大利亚",
+    "country": "澳大利亚",
+    "scene": "coast",
+    "en": "Twelve Apostles Marine National Park",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-新西兰-米尔福德峡湾",
+    "name": "米尔福德峡湾",
+    "province": "新西兰",
+    "country": "新西兰",
+    "scene": "water",
+    "en": "Milford Sound",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-新西兰-皇后镇",
+    "name": "皇后镇",
+    "province": "新西兰",
+    "country": "新西兰",
+    "scene": "mountain",
+    "en": "Queenstown, New Zealand",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-法属波利尼西亚-大溪地",
+    "name": "大溪地",
+    "province": "法属波利尼西亚",
+    "country": "法属波利尼西亚",
+    "scene": "coast",
+    "en": "Tahiti",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-美国-时代广场",
+    "name": "时代广场",
+    "province": "美国",
+    "country": "美国",
+    "scene": "city",
+    "en": "Times Square",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-美国-帝国大厦",
+    "name": "帝国大厦",
+    "province": "美国",
+    "country": "美国",
+    "scene": "city",
+    "en": "Empire State Building",
+    "hasEnFromWiki": true
+  }
+]

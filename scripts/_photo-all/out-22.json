@@ -1,0 +1,225 @@
+{
+  "batch": "22",
+  "items": [
+    {
+      "landmarkId": "world-以色列-哭墙",
+      "match": "place",
+      "query": "Western Wall",
+      "mediaUrl": "https://images.pexels.com/photos/21628877/pexels-photo-21628877.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Ancient Wailing Wall in Jerusalem Israel",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/ancient-wailing-wall-in-jerusalem-israel-21628877/", "author": "davidrado" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 171170 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-土耳其-棉花堡",
+      "match": "place",
+      "query": "Pamukkale",
+      "mediaUrl": "https://images.pexels.com/photos/37847653/pexels-photo-37847653.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Stunning Travertine Terraces of Pamukkale, Turkiye",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/stunning-travertine-terraces-of-pamukkale-turkiye-37847653/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 126257 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-阿联酋-谢赫扎耶德大清真寺",
+      "match": "place",
+      "query": "Sheikh Zayed Grand Mosque",
+      "mediaUrl": "https://images.pexels.com/photos/32119558/pexels-photo-32119558.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic exterior of Sheikh Zayed Grand Mosque",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-exterior-of-sheikh-zayed-grand-mosque-32119558/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 41223 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-伊朗-波斯波利斯",
+      "match": "place",
+      "query": "Persepolis",
+      "mediaUrl": "https://images.pexels.com/photos/7760103/pexels-photo-7760103.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The Ruins of the Gates of All Nations in Persepolis, Iran",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/the-ruins-of-the-gates-of-all-nations-in-persepolis-iran-7760103/", "author": "massih" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 31778 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-乌兹别克斯坦-雷吉斯坦广场",
+      "match": "place",
+      "query": "Registan Samarkand",
+      "mediaUrl": "https://images.pexels.com/photos/35220187/pexels-photo-35220187.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Registan square in Samarkand, Uzbekistan",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/registan-square-in-samarkand-uzbekistan-35220187/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 50940 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-老挝-琅勃拉邦",
+      "match": "place",
+      "query": "Luang Prabang",
+      "mediaUrl": "https://images.pexels.com/photos/38140693/pexels-photo-38140693.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Luang Prabang aerial view with traditional architecture",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/luang-prabang-aerial-view-with-traditional-architecture-38140693/", "author": "jesschen" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 150931 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-马尔代夫-泰姬珊瑚礁",
+      "match": "place",
+      "query": "Maldives island",
+      "mediaUrl": "https://images.pexels.com/photos/33243110/pexels-photo-33243110.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of stunning Maldives atoll",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-view-of-stunning-maldives-atoll-33243110/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 60487 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-蒙古-戈壁沙漠",
+      "match": "place",
+      "query": "Mongolia Gobi",
+      "mediaUrl": "https://images.pexels.com/photos/4326472/pexels-photo-4326472.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of cliffs in Gobi desert in evening",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-view-of-cliffs-in-gobi-desert-in-evening-4326472/", "author": "arthousestudio" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 40150 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-巴基斯坦-巴德夏希清真寺",
+      "match": "place",
+      "query": "Badshahi Mosque",
+      "mediaUrl": "https://images.pexels.com/photos/15505033/pexels-photo-15505033.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Badshahi mosque in Lahore, Pakistani",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/badshahi-mosque-in-lahore-pakistani-15505033/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 135692 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-哈萨克斯坦-阿拉木图",
+      "match": "place",
+      "query": "Almaty Kazakhstan",
+      "mediaUrl": "https://images.pexels.com/photos/28958894/pexels-photo-28958894.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Almaty cityscape with Alatau mountains",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/almaty-cityscape-with-alatau-mountains-28958894/", "author": "white-noiise" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 128130 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-格鲁吉亚-第比利斯老城",
+      "match": "place",
+      "query": "Tbilisi",
+      "mediaUrl": "https://images.pexels.com/photos/34954524/pexels-photo-34954524.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Panoramic view of Tbilisi old town architecture",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/panoramic-view-of-tbilisi-old-town-architecture-34954524/", "author": "nesrin-art" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 47243 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-法国-普罗旺斯薰衣草田",
+      "match": "place",
+      "query": "Provence lavender field",
+      "mediaUrl": "https://images.pexels.com/photos/29837824/pexels-photo-29837824.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Lavender fields in Provence France",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/lavender-fields-in-provence-france-29837824/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 215336 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-英国-巨石阵",
+      "match": "place",
+      "query": "Stonehenge",
+      "mediaUrl": "https://images.pexels.com/photos/39183283/pexels-photo-39183283.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic view of Stonehenge under dramatic skies",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-view-of-stonehenge-under-dramatic-skies-39183283/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 77970 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-英国-爱丁堡城堡",
+      "match": "place",
+      "query": "Edinburgh Castle",
+      "mediaUrl": "https://images.pexels.com/photos/28776205/pexels-photo-28776205.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic view of Edinburgh Castle's cliffside",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-view-of-edinburgh-castle-s-cliffside-28776205/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 85919 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-德国-勃兰登堡门",
+      "match": "place",
+      "query": "Brandenburg Gate",
+      "mediaUrl": "https://images.pexels.com/photos/37468367/pexels-photo-37468367.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Brandenburg Gate in summer Berlin Germany",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/brandenburg-gate-in-summer-berlin-germany-37468367/", "author": "lajos-kristof-kantor" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 38751 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-德国-科隆大教堂",
+      "match": "place",
+      "query": "Cologne Cathedral",
+      "mediaUrl": "https://images.pexels.com/photos/29170193/pexels-photo-29170193.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic Gothic facade of Cologne Cathedral",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-gothic-facade-of-cologne-cathedral-29170193/", "author": "elreydidi" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 137195 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-西班牙-阿尔罕布拉宫",
+      "match": "place",
+      "query": "Alhambra Granada",
+      "mediaUrl": "https://images.pexels.com/photos/34135482/pexels-photo-34135482.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic view of the Alhambra in Granada",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-view-of-the-alhambra-in-granada-34135482/", "author": "david-vives" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 62857 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-葡萄牙-贝伦塔",
+      "match": "place",
+      "query": "Belem Tower Lisbon",
+      "mediaUrl": "https://images.pexels.com/photos/35177927/pexels-photo-35177927.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Historic Torre de Belem in Lisbon Portugal",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/historic-torre-de-belem-in-lisbon-portugal-35177927/", "author": "erdem-horat" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 53225 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-荷兰-小孩堤防风车",
+      "match": "place",
+      "query": "Kinderdijk windmill",
+      "mediaUrl": "https://images.pexels.com/photos/15484381/pexels-photo-15484381.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Kinderdijk windmills in wetlands",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/kinderdijk-windmills-in-wetlands-15484381/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 54374 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "world-比利时-布鲁塞尔大广场",
+      "match": "place",
+      "query": "Grand Place Brussels",
+      "mediaUrl": "https://images.pexels.com/photos/37640937/pexels-photo-37640937.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Golden hour at Grand Place in Brussels",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/golden-hour-at-grand-place-in-brussels-37640937/", "author": "roma-dik" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 62314 },
+      "verdict": "ok",
+      "note": ""
+    }
+  ]
+}

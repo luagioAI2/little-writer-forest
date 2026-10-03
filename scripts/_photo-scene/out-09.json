@@ -1,0 +1,71 @@
+{
+  "batch": "09",
+  "items": [
+    {
+      "key": "river-village",
+      "pexelsId": 32961389,
+      "mediaUrl": "https://images.pexels.com/photos/32961389/pexels-photo-32961389.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic View of Stone Bridge in Occitanie, France",
+      "credit": { "link": "https://www.pexels.com/photo/scenic-view-of-stone-bridge-in-occitanie-france-32961389/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 46894 },
+      "size": { "w": 640, "h": 360, "ar": 1.78 },
+      "verdict": "ok",
+      "note": "石拱桥横跨小河、两岸绿树，左岸一栋浅墙红顶的房子（对上「河上石拱桥+两岸小屋和绿树」）；宽幅无裁切、暖调；无小船、房子非成排白墙"
+    },
+    {
+      "key": "wheat-field",
+      "pexelsId": 10383335,
+      "mediaUrl": "https://images.pexels.com/photos/10383335/pexels-photo-10383335.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Crops on Field",
+      "credit": { "link": "https://www.pexels.com/photo/crops-on-field-10383335/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 33916 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "满眼金黄的麦穗铺满画面、远处有淡淡小山（对上「金黄麦穗+远处小山」），暖黄调；无房子、无田间土路"
+    },
+    {
+      "key": "sunset",
+      "pexelsId": 18358153,
+      "mediaUrl": "https://images.pexels.com/photos/18358153/pexels-photo-18358153.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Silhouetted Mountain on the Shore at Sunset",
+      "credit": { "link": "https://www.pexels.com/photo/silhouetted-mountain-on-the-shore-at-sunset-18358153/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 15998 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "橙红色天空、太阳正落到山后、远山成深色剪影（对上「太阳落到山后面+远山剪影」），暖调；无孩子、无树木（湖面倒影）"
+    },
+    {
+      "key": "doctor",
+      "pexelsId": 20100296,
+      "mediaUrl": "https://images.pexels.com/photos/20100296/pexels-photo-20100296.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Doctor Hands Holding Stethoscope",
+      "credit": { "link": "https://www.pexels.com/photo/doctor-hands-holding-stethoscope-20100296/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 32534 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "白大褂+双手持听诊器特写，只见衣襟与手、不露脸（符合项目「不画人脸」，只有白大褂/听诊器物件的约定）；无诊室台子、无小孩"
+    },
+    {
+      "key": "future-me",
+      "pexelsId": 6162307,
+      "mediaUrl": "https://images.pexels.com/photos/6162307/pexels-photo-6162307.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "USSR Cosmonaut Uniform on Black Background",
+      "credit": { "link": "https://www.pexels.com/photo/ussr-cosmonaut-uniform-on-black-background-6162307/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 30144 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "黑色背景上一套戴头盔的宇航服（对上「戴头盔的宇航员」），深色面罩无脸、纯物件；无思考气泡、无孩子抬头"
+    },
+    {
+      "key": "comic-inspiration",
+      "pexelsId": 4142267,
+      "mediaUrl": "https://images.pexels.com/photos/4142267/pexels-photo-4142267.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Crop Child Reading Comics at Home",
+      "credit": { "link": "https://www.pexels.com/photo/crop-child-reading-comics-at-home-4142267/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 38972 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "一双小手捧着一本摊开的彩色漫画（对上「一个小孩在看漫画」，只见手不露脸）；无墙上四格漫画框、非桌上视角"
+    }
+  ]
+}

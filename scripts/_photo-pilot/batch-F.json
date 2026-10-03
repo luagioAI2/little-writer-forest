@@ -1,0 +1,110 @@
+[
+  {
+    "id": "world-秘鲁-马丘比丘",
+    "name": "马丘比丘",
+    "province": "秘鲁",
+    "country": "秘鲁",
+    "scene": "mountain",
+    "en": "Machu Picchu",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-巴西-救世基督像",
+    "name": "救世基督像",
+    "province": "巴西",
+    "country": "巴西",
+    "scene": "city",
+    "en": "Christ the Redeemer (statue)",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-巴西-亚马逊雨林",
+    "name": "亚马逊雨林",
+    "province": "巴西",
+    "country": "巴西",
+    "scene": "forest",
+    "en": "Amazon rainforest",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-巴西-伊瓜苏瀑布",
+    "name": "伊瓜苏瀑布",
+    "province": "巴西",
+    "country": "巴西",
+    "scene": "water",
+    "en": "Iguazu Falls",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-智利-复活节岛",
+    "name": "复活节岛",
+    "province": "智利",
+    "country": "智利",
+    "scene": "coast",
+    "en": "Easter Island",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-玻利维亚-乌尤尼盐沼",
+    "name": "乌尤尼盐沼",
+    "province": "玻利维亚",
+    "country": "玻利维亚",
+    "scene": "desert",
+    "en": "Salar de Uyuni",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-厄瓜多尔-加拉帕戈斯群岛",
+    "name": "加拉帕戈斯群岛",
+    "province": "厄瓜多尔",
+    "country": "厄瓜多尔",
+    "scene": "coast",
+    "en": "Galápagos Islands",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-委内瑞拉-天使瀑布",
+    "name": "天使瀑布",
+    "province": "委内瑞拉",
+    "country": "委内瑞拉",
+    "scene": "water",
+    "en": "Angel Falls",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-埃及-吉萨金字塔",
+    "name": "吉萨金字塔",
+    "province": "埃及",
+    "country": "埃及",
+    "scene": "desert",
+    "en": "Giza pyramid complex",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-埃及-狮身人面像",
+    "name": "狮身人面像",
+    "province": "埃及",
+    "country": "埃及",
+    "scene": "desert",
+    "en": "Great Sphinx of Giza",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-南非-桌山",
+    "name": "桌山",
+    "province": "南非",
+    "country": "南非",
+    "scene": "mountain",
+    "en": "Table Mountain",
+    "hasEnFromWiki": true
+  },
+  {
+    "id": "world-南非-好望角",
+    "name": "好望角",
+    "province": "南非",
+    "country": "南非",
+    "scene": "coast",
+    "en": "Cape of Good Hope",
+    "hasEnFromWiki": true
+  }
+]

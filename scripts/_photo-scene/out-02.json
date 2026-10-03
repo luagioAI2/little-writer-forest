@@ -1,0 +1,104 @@
+{
+  "batch": "02",
+  "items": [
+    {
+      "key": "baby-arrive",
+      "pexelsId": 7491730,
+      "mediaUrl": "https://images.pexels.com/photos/7491730/pexels-photo-7491730.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "A baby in gray baby onesie standing in a crib",
+      "credit": { "link": "https://www.pexels.com/photo/a-baby-in-gray-baby-onesie-standing-in-a-crib-7491730/", "author": "Mart Production" },
+      "verified": { "http": 200, "bytes": 25849 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "婴儿床里站着小宝宝（背影不露脸），浅木色房间；缺围在床边的两个人、墙上气球"
+    },
+    {
+      "key": "colorful-activity",
+      "pexelsId": 2310482,
+      "mediaUrl": "https://images.pexels.com/photos/2310482/pexels-photo-2310482.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Four boys running in track",
+      "credit": { "link": "https://www.pexels.com/photo/four-boys-running-in-track-2310482/", "author": "Jimbear" },
+      "verified": { "http": 200, "bytes": 45595 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "红色跑道分道线清晰，四个男孩在跑道上奔跑（远景抓拍）；无跳绳/挥手观众/「运动会」横幅"
+    },
+    {
+      "key": "experiment",
+      "pexelsId": 8325948,
+      "mediaUrl": "https://images.pexels.com/photos/8325948/pexels-photo-8325948.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Close up view of laboratory glasswares and colorful chemicals",
+      "credit": { "link": "https://www.pexels.com/photo/close-up-view-of-laboratory-glasswares-and-colorful-chemicals-8325948/", "author": "Unknown" },
+      "verified": { "http": 200, "bytes": 43464 },
+      "size": { "w": 640, "h": 480, "ar": 1.33 },
+      "verdict": "ok",
+      "note": "一排烧杯/锥形瓶装着粉红、红、蓝、绿彩色液体，对得上「烧杯+彩色液体」；无滴管/记录本/观察的小孩"
+    },
+    {
+      "key": "look-picture-series",
+      "pexelsId": 13130043,
+      "mediaUrl": "https://images.pexels.com/photos/13130043/pexels-photo-13130043.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "White frames mounted on the white wall",
+      "credit": { "link": "https://www.pexels.com/photo/white-frames-mounted-on-the-white-wall-13130043/", "author": "santesson89" },
+      "verified": { "http": 200, "bytes": 12187 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "poor",
+      "note": "白墙上并排挂着4幅空白相框（凑合「几幅小图」）；非3幅、无箭头连接、无桌面铅笔纸，且白墙偏冷"
+    },
+    {
+      "key": "noodle-soup",
+      "pexelsId": 3903586,
+      "mediaUrl": "https://images.pexels.com/photos/3903586/pexels-photo-3903586.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Brown wooden chopsticks on top of white ceramic bowl",
+      "credit": { "link": "https://www.pexels.com/photo/brown-wooden-chopsticks-on-top-of-white-ceramic-bowl-3903586/", "author": "Markus Winkler" },
+      "verified": { "http": 200, "bytes": 72719 },
+      "size": { "w": 640, "h": 480, "ar": 1.33 },
+      "verdict": "ok",
+      "note": "木质桌面上白瓷碗里盛着面条和青菜，一双木筷搁在碗上，暖调；无鸡蛋、无窗外太阳"
+    },
+    {
+      "key": "play-with-baby",
+      "pexelsId": 4964356,
+      "mediaUrl": "https://images.pexels.com/photos/4964356/pexels-photo-4964356.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Baby sitting on carpet among toy blocks",
+      "credit": { "link": "https://www.pexels.com/photo/baby-sitting-on-carpet-among-toy-blocks-4964356/", "author": "Karola G" },
+      "verified": { "http": 200, "bytes": 64141 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "地垫上坐着小宝宝（俯拍背影不露脸），四周散落木质积木，暖木色；缺两个大孩子陪玩、缺玩具熊"
+    },
+    {
+      "key": "sewing-box",
+      "pexelsId": 38321413,
+      "mediaUrl": "https://images.pexels.com/photos/38321413/pexels-photo-38321413.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Colorful spools and sewing tools on wooden table",
+      "credit": { "link": "https://www.pexels.com/photo/colorful-spools-and-sewing-tools-on-wooden-table-38321413/", "author": "Jahra Tasfia Reza" },
+      "verified": { "http": 200, "bytes": 48558 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "暖木桌面上摆着紫黄红等彩色线轴、剪刀、别针和扣子，对得上针线盒；顶针不明显"
+    },
+    {
+      "key": "spring-outing-picnic",
+      "pexelsId": 7669111,
+      "mediaUrl": "https://images.pexels.com/photos/7669111/pexels-photo-7669111.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Food on a picnic blanket",
+      "credit": { "link": "https://www.pexels.com/photo/food-on-a-picnic-blanket-7669111/", "author": "Kampus Production" },
+      "verified": { "http": 200, "bytes": 82948 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "草地上铺着粉红格子布，上面摆着编织篮、果汁和食物，暖调；无围坐的三个孩子、无开花的树"
+    },
+    {
+      "key": "write-letter",
+      "pexelsId": 3838324,
+      "mediaUrl": "https://images.pexels.com/photos/3838324/pexels-photo-3838324.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Woman putting letters stamps on papers",
+      "credit": { "link": "https://www.pexels.com/photo/woman-putting-letters-stamps-on-papers-3838324/", "author": "cottonbro studio" },
+      "verified": { "http": 200, "bytes": 47178 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "暖木桌面上散着信封和邮票，一双手正在书写（不露脸）；无斜放铅笔、无头顶红色爱心"
+    }
+  ]
+}

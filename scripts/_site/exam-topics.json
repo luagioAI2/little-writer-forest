@@ -1,0 +1,64 @@
+{
+  "_comment": "从小学到初中（1-9年级）常考作文题，按新标签组织。每个条目 = title + lead + scenes + gradeRange",
+  "newTags": [
+    {"id": "growth", "category": "event", "label": "成长感悟", "emoji": "🌱", "minGrade": 3, "hint": "挫折、坚持、独立、蜕变"},
+    {"id": "reading", "category": "event", "label": "读书感悟", "emoji": "📖", "minGrade": 3, "hint": "读后感、书中人物、一句话的启发"},
+    {"id": "tradition", "category": "event", "label": "传统文化", "emoji": "🏮", "minGrade": 3, "hint": "节日、非遗、老字号、民俗"},
+    {"id": "society", "category": "event", "label": "社会观察", "emoji": "👀", "minGrade": 5, "hint": "身边的变化、环保、科技与生活"},
+    {"id": "gratitude", "category": "person", "label": "感恩与致敬", "emoji": "💐", "minGrade": 2, "hint": "想对谁说谢谢、致敬平凡英雄"}
+  ],
+  "templates": {
+    "growth": [
+      {"title": "那一刻，我长大了", "lead": "生活中总有一个瞬间，让你突然觉得自己不再是小孩。那是怎样的一个时刻？", "grades": [3,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "在挫折中成长", "lead": "你有没有经历过一次失败，当时很难过，但后来却让你变得更坚强？", "grades": [4,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "我战胜了自己", "lead": "有时候最大的对手不是别人，而是自己内心的害怕或懒惰。你有过这样的经历吗？", "grades": [3,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "独自面对", "lead": "第一次没有爸爸妈妈在身边，自己完成一件事。那是什么感觉？", "grades": [3,7], "scenes": ["PHOTO_SLOT"]},
+      {"title": "从错误中学会", "lead": "犯过一次错，被批评过，但那次教训让你记住了什么？", "grades": [3,8], "scenes": ["PHOTO_SLOT"]},
+      {"title": "坚持就是胜利", "lead": "有没有一件事，你差点放弃，但咬咬牙坚持了下来？最后的结果怎么样？", "grades": [4,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "我的蜕变", "lead": "从胆小到勇敢，从粗心到细心，从懒惰到勤奋……你身上发生过怎样的变化？", "grades": [5,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "学会承担", "lead": "什么时候开始，你觉得自己要为某件事负责了？那是什么事？", "grades": [4,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "风雨之后", "lead": "经历过一次困难或打击后，你看到了什么不一样的风景？", "grades": [5,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "给自己点赞", "lead": "你有没有做过一件让自己特别骄傲的事？当时发生了什么？", "grades": [3,8], "scenes": ["PHOTO_SLOT"]}
+    ],
+    "reading": [
+      {"title": "书中那句话", "lead": "有没有一本书里的一句话，让你记了很久？那句话是什么，为什么打动了你？", "grades": [4,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "我和书中的人物", "lead": "如果你能和某本书里的一个人物做朋友，你会选谁？你们会一起做什么？", "grades": [3,8], "scenes": ["PHOTO_SLOT"]},
+      {"title": "读完这本书", "lead": "最近读完的一本书，它讲了什么？你最喜欢哪个情节或人物？", "grades": [3,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "书里的世界", "lead": "有没有一本书，读完之后让你特别想去书里的那个地方看看？", "grades": [3,7], "scenes": ["PHOTO_SLOT"]},
+      {"title": "一句话的启发", "lead": "老师、父母或书里的一句话，曾经在你遇到困难时给过你力量。那句话是什么？", "grades": [4,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "如果我是主人公", "lead": "选一本你读过的书，如果你是里面的主人公，你会怎么做？", "grades": [4,8], "scenes": ["PHOTO_SLOT"]},
+      {"title": "我的读书故事", "lead": "你是怎么爱上读书的？有没有一本书改变了你对某件事的看法？", "grades": [3,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "推荐一本书", "lead": "如果要把你最喜欢的一本书推荐给同学，你会怎么介绍它？", "grades": [4,9], "scenes": ["PHOTO_SLOT"]}
+    ],
+    "tradition": [
+      {"title": "家乡的节日", "lead": "你家乡过节有什么特别的习俗？和别的地方有什么不同？", "grades": [3,8], "scenes": ["PHOTO_SLOT"]},
+      {"title": "老手艺人", "lead": "你身边有没有一位老手艺人？他做的是什么？你从他身上看到了什么？", "grades": [4,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "年味", "lead": "过年的时候，家里最让你期待的是什么？那是一种怎样的味道或感觉？", "grades": [2,8], "scenes": ["PHOTO_SLOT"]},
+      {"title": "非遗在身边", "lead": "你家乡有没有被列入非物质文化遗产的东西？你见过或体验过吗？", "grades": [5,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "老物件的故事", "lead": "家里有没有一件传下来的老物件？它背后有什么故事？", "grades": [4,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "舌尖上的家乡", "lead": "家乡有一种传统美食，它是怎么做的？吃着它，你想到了什么？", "grades": [3,8], "scenes": ["PHOTO_SLOT"]},
+      {"title": "庙会记忆", "lead": "你有没有逛过庙会或集市？印象最深的是什么？", "grades": [3,7], "scenes": ["PHOTO_SLOT"]},
+      {"title": "传统与现代", "lead": "你身边有没有一种传统的东西，现在用新的方式在传承？", "grades": [5,9], "scenes": ["PHOTO_SLOT"]}
+    ],
+    "society": [
+      {"title": "身边的变化", "lead": "这几年，你住的地方发生了什么变化？是变好了还是让你有些担心？", "grades": [5,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "环保小卫士", "lead": "你有没有为保护环境做过一件事？那件事让你有什么感受？", "grades": [4,8], "scenes": ["PHOTO_SLOT"]},
+      {"title": "科技改变生活", "lead": "手机、外卖、网购……科技给你的生活带来了什么改变？是好还是坏？", "grades": [5,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "陌生人的善意", "lead": "你有没有收到过陌生人的帮助？那是一个怎样的瞬间？", "grades": [4,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "我看网红现象", "lead": "你身边有没有同学想当网红或追网红？你怎么看这个现象？", "grades": [6,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "老小区的春天", "lead": "你住的小区或街道最近有没有改造？改造前后有什么不一样？", "grades": [5,8], "scenes": ["PHOTO_SLOT"]},
+      {"title": "一次志愿服务", "lead": "你有没有参加过志愿活动？那次经历让你看到了什么？", "grades": [5,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "网络与生活", "lead": "网络给你的学习和生活带来了什么？有没有让你困扰的时候？", "grades": [5,9], "scenes": ["PHOTO_SLOT"]}
+    ],
+    "gratitude": [
+      {"title": "想对您说声谢谢", "lead": "有没有一个人，你一直欠他一句「谢谢」？你想对他说什么？", "grades": [3,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "致敬平凡英雄", "lead": "清洁工、快递员、护士、警察……有没有一位「平凡英雄」让你感动过？", "grades": [4,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "那双手", "lead": "妈妈的手、老师的手、工人的手……有没有一双手让你印象深刻？", "grades": [3,8], "scenes": ["PHOTO_SLOT"]},
+      {"title": "背影", "lead": "你有没有注视过一个人的背影，那一刻心里涌起很多感触？", "grades": [4,9], "scenes": ["PHOTO_SLOT"]},
+      {"title": "温暖的目光", "lead": "有没有一道目光，在你难过或紧张的时候给了你力量？", "grades": [3,8], "scenes": ["PHOTO_SLOT"]},
+      {"title": "礼物", "lead": "收到过最珍贵的一份礼物是什么？它为什么对你那么重要？", "grades": [3,8], "scenes": ["PHOTO_SLOT"]},
+      {"title": "一碗面的温度", "lead": "有没有一种食物，吃着吃着就让你想起了某个人？", "grades": [3,7], "scenes": ["PHOTO_SLOT"]},
+      {"title": "师恩难忘", "lead": "有没有一位老师，说过的一句话或做过的一件事，让你记到现在？", "grades": [4,9], "scenes": ["PHOTO_SLOT"]}
+    ]
+  }
+}

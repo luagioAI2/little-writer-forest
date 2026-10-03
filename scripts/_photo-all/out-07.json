@@ -1,0 +1,257 @@
+{
+  "batch": "07",
+  "items": [
+    {
+      "landmarkId": "cn-江苏-金山•焦山•北固山风景区",
+      "match": "scene",
+      "query": "Jinshan Temple Zhenjiang China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "",
+      "note": "tried 'Jinshan Temple Zhenjiang China' and 'Jinshan Temple China'; only genuine Pexels hit was a temple-roof detail (17775222) not identifiable as the Zhenjiang site; the on-point results were all iStock ads"
+    },
+    {
+      "landmarkId": "cn-江苏-金鸡湖旅游区",
+      "match": "scene",
+      "query": "Jinji Lake Suzhou",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "",
+      "note": "tried 'Jinji Lake Suzhou' and 'Jinji Lake China'; only generic Suzhou lake/city-skyline shots, no photo confirmable as Jinji Lake (the explicit Jinji Lake images were iStock ads)"
+    },
+    {
+      "landmarkId": "cn-江苏-溱湖旅游景区",
+      "match": "scene",
+      "query": "Qinhu Lake Taizhou China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "",
+      "note": "tried 'Qinhu Lake Taizhou China' and 'Qinhu wetland Taizhou'; results were unrelated Chinese lakes (West Lake, Haizhu, Xuanwu), none is Qinhu Lake"
+    },
+    {
+      "landmarkId": "cn-江苏-濠河风景区",
+      "match": "scene",
+      "query": "Haohe River Nantong",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "",
+      "note": "tried 'Haohe River Nantong' and 'Nantong China river'; only generic rivers/canals, no genuine Haohe River photo (Nantong hits were iStock ads)"
+    },
+    {
+      "landmarkId": "cn-江苏-瘦西湖风景区",
+      "match": "place",
+      "query": "Slender West Lake Yangzhou",
+      "mediaUrl": "https://images.pexels.com/photos/7494607/pexels-photo-7494607.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The view of the Wuting Bridge from a hole in a wall",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/the-view-of-the-wuting-bridge-from-a-hole-in-a-wall-7494607/",
+        "author": "Dongjie Chen"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 39363 },
+      "verdict": "ok",
+      "note": "view through a moon gate of the multi-pavilion bridge over the lake; matches the iconic Wuting Bridge composition of Slender West Lake"
+    },
+    {
+      "landmarkId": "cn-江苏-环球恐龙城休闲旅游区",
+      "match": "scene",
+      "query": "Changzhou Dinosaur Park",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "",
+      "note": "tried 'Changzhou Dinosaur Park' and 'China Dinosaur Land Changzhou'; only generic dinosaur statues in other parks (Thailand, Kyiv, etc.); the Changzhou park photos were iStock ads"
+    },
+    {
+      "landmarkId": "cn-江苏-夫子庙－秦淮风光带",
+      "match": "place",
+      "query": "Confucius Temple Nanjing Qinhuai",
+      "mediaUrl": "https://images.pexels.com/photos/14544939/pexels-photo-14544939.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Chinese traditional boats on water near the Confucius Temple area in Nanjing, China",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/chinese-traditional-boats-on-water-near-the-confucius-temple-area-in-nanjing-china-14544939/",
+        "author": "Wycher van Vliet"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 69769 },
+      "verdict": "ok",
+      "note": "yellow-canopy tour boats on the Qinhuai River with the temple buildings; clearly the Fuzimiao/Qinhuai scene"
+    },
+    {
+      "landmarkId": "cn-江苏-同里古镇景区",
+      "match": "place",
+      "query": "Tongli Water Town Suzhou",
+      "mediaUrl": "https://images.pexels.com/photos/37050179/pexels-photo-37050179.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Charming canal in Tongli ancient town",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/charming-canal-in-tongli-ancient-town-37050179/",
+        "author": "Relaxing Journeys"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 100897 },
+      "verdict": "ok",
+      "note": "canal with red lanterns, stone steps and whitewashed houses; typical Tongli water-town scene, title explicitly Tongli"
+    },
+    {
+      "landmarkId": "cn-江苏-灵山大佛景区",
+      "match": "place",
+      "query": "Lingshan Grand Buddha Wuxi",
+      "mediaUrl": "https://images.pexels.com/photos/35342643/pexels-photo-35342643.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Famous Lingshan Grand Buddha in Wuxi, China",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/famous-lingshan-grand-buddha-in-wuxi-china-35342643/",
+        "author": "Unknown"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 53728 },
+      "verdict": "ok",
+      "note": "the bronze standing Grand Buddha of Lingshan with a visitor in the foreground; title confirms Wuxi"
+    },
+    {
+      "landmarkId": "cn-江苏-中央电视台无锡影视基地三国水浒城景区",
+      "match": "scene",
+      "query": "Wuxi Three Kingdoms City",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "",
+      "note": "tried 'Wuxi Three Kingdoms City'; only generic Wuxi city/temple/canal shots, nothing confirmable as the CCTV Three Kingdoms-Shuihu studio"
+    },
+    {
+      "landmarkId": "cn-江苏-钟山风景名胜区－中山陵园风景区",
+      "match": "place",
+      "query": "Sun Yat-sen Mausoleum Nanjing",
+      "mediaUrl": "https://images.pexels.com/photos/11765545/pexels-photo-11765545.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The Sun Yat-sen Mausoleum in Purple Mountain, Nanjing, China",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/the-sun-yat-sen-mausoleum-in-purple-mountain-nanjing-china-11765545/",
+        "author": "tkirkgoz"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 54004 },
+      "verdict": "ok",
+      "note": "the blue-tiled memorial hall seen down the long staircase and plaza on Purple Mountain; unmistakably the Sun Yat-sen Mausoleum"
+    },
+    {
+      "landmarkId": "cn-江苏-周庄古镇景区",
+      "match": "place",
+      "query": "Zhouzhuang Water Town",
+      "mediaUrl": "https://images.pexels.com/photos/35501453/pexels-photo-35501453.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Tranquil waterway in Zhouzhuang, China",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/tranquil-waterway-in-zhouzhuang-china-35501453/",
+        "author": "Anderson Wei"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 168214 },
+      "verdict": "ok",
+      "note": "narrow canal flanked by whitewashed houses with a stone bridge in the distance; classic Zhouzhuang water-town view, title confirms Zhouzhuang"
+    },
+    {
+      "landmarkId": "cn-江苏-苏州园林（拙政园－留园－虎丘）",
+      "match": "place",
+      "query": "Humble Administrator Garden Suzhou",
+      "mediaUrl": "https://images.pexels.com/photos/15415001/pexels-photo-15415001.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Humble Administrator's Garden",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/humble-administrator-s-garden-15415001/",
+        "author": "Unknown"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 94568 },
+      "verdict": "ok",
+      "note": "pond with rockery and a long white corridor of the Humble Administrator's Garden (Zhuozheng Yuan), one of the three listed Suzhou gardens; title explicit"
+    },
+    {
+      "landmarkId": "cn-江苏-牛首山文化旅游区",
+      "match": "scene",
+      "query": "Niushoushan Nanjing",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "",
+      "note": "tried 'Niushoushan Nanjing'; only generic Nanjing park/temple photos, no image confirmable as Niushoushan (the on-point results were iStock ads)"
+    },
+    {
+      "landmarkId": "cn-江苏-寒山寺",
+      "match": "place",
+      "query": "Hanshan Temple Suzhou",
+      "mediaUrl": "https://images.pexels.com/photos/18327119/pexels-photo-18327119.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Yellow wall of Hanshan Temple",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/yellow-wall-of-hanshan-temple-18327119/",
+        "author": "Sheldon Li"
+      },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 60335 },
+      "verdict": "poor",
+      "note": "only a yellow temple wall with calligraphy plaques (Hanshan Temple's characteristic wall); identity relies on the photographer's title and cannot be independently confirmed from the frame"
+    },
+    {
+      "landmarkId": "cn-浙江-双龙风景旅游区",
+      "match": "scene",
+      "query": "Shuanglong Cave Jinhua",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "",
+      "note": "tried 'Shuanglong Cave Jinhua' and 'Jinhua Shuanglong'; only generic cave shots from other countries and generic Jinhua city views, nothing confirmable as Shuanglong"
+    },
+    {
+      "landmarkId": "cn-浙江-云和梯田景区",
+      "match": "scene",
+      "query": "Yunhe Rice Terraces Lishui",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "",
+      "note": "tried 'Yunhe Rice Terraces Lishui' and 'Yunhe terraces Zhejiang'; only rice terraces from Longji/Yangshuo/Vietnam, none confirmable as Yunhe"
+    },
+    {
+      "landmarkId": "cn-浙江-台州府城文化旅游区",
+      "match": "scene",
+      "query": "Linhai Ancient City Wall",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "",
+      "note": "tried 'Linhai Ancient City Wall' and 'Linhai Taizhou China'; only city walls from Jingzhou/Xi'an/Shexian and unrelated scenes, nothing confirmable as the Linhai/Taizhou Prefecture City"
+    },
+    {
+      "landmarkId": "cn-浙江-刘伯温故里景区",
+      "match": "scene",
+      "query": "Wencheng Wenzhou China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "",
+      "note": "tried 'Wencheng Wenzhou China'; only generic Wenzhou city/coast photos, no image confirmable as Liu Bowen's hometown"
+    },
+    {
+      "landmarkId": "cn-浙江-缙云仙都景区",
+      "match": "scene",
+      "query": "Xiandu Jinyun Zhejiang",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "",
+      "note": "tried 'Xiandu Jinyun Zhejiang' and 'Jinyun Xiandu China'; only unrelated Zhejiang scenes (West Lake, Shaoxing, Lishui old town), nothing confirmable as Xiandu"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "key": "bike-ride",
+    "hint": "小路上一个孩子骑着红色自行车飞快前进，身后有几道速度线，爸爸在后面追着跑。",
+    "en": "bicycle on path riding",
+    "usedBy": [
+      "builtin-first-time-1"
+    ]
+  },
+  {
+    "key": "cook-mess",
+    "hint": "厨房里到处飘着白面粉，一个孩子张开手一脸惊讶，台面上碗翻了、锅里的东西糊了。",
+    "en": "messy kitchen flour baking",
+    "usedBy": [
+      "builtin-first-time-2"
+    ]
+  },
+  {
+    "key": "girl-visit",
+    "hint": "雪夜的街道上，一个小女孩站着，手里捏着一根发亮的火柴，旁边是一扇透出暖黄灯光的窗。",
+    "en": "snowy street night warm window light",
+    "usedBy": [
+      "builtin-fairy-2"
+    ]
+  },
+  {
+    "key": "mirror-self",
+    "hint": "墙上的圆镜子里映出一个孩子，镜子外面站着同一个孩子，旁边是一盆绿植。",
+    "en": "round mirror on wall reflection",
+    "usedBy": [
+      "builtin-self-1",
+      "builtin-self-2"
+    ]
+  },
+  {
+    "key": "old-toy",
+    "hint": "架子上坐着一只掉了耳朵、打着补丁的旧小熊，旁边有相框和小木盒，光线暖暖的。",
+    "en": "old worn teddy bear",
+    "usedBy": [
+      "builtin-treasure-2"
+    ]
+  },
+  {
+    "key": "rain-window",
+    "hint": "窗外下着雨，树和小房子都蒙着一层灰蓝，玻璃上挂着雨珠，一只猫蹲在窗台看雨。",
+    "en": "rain drops on window glass",
+    "usedBy": [
+      "builtin-weather-1",
+      "builtin-weather-2"
+    ]
+  },
+  {
+    "key": "snow-play",
+    "hint": "雪地上两个孩子打雪仗，半空中飞着几个雪球，远处是落光叶子的树。",
+    "en": "children playing snow winter",
+    "usedBy": [
+      "builtin-season-3"
+    ]
+  },
+  {
+    "key": "talking-bag",
+    "hint": "椅背上挂着一个长了笑脸的蓝色书包，旁边冒出一个对话气泡，桌上摊着作业本。",
+    "en": "blue backpack hanging chair",
+    "usedBy": [
+      "builtin-talking-1"
+    ]
+  }
+]

@@ -1,0 +1,93 @@
+{
+  "batch": "04",
+  "items": [
+    {
+      "key": "bike-fail",
+      "pexelsId": 14300718,
+      "mediaUrl": "https://images.pexels.com/photos/14300718/pexels-photo-14300718.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Bicycle Lying on the Ground",
+      "credit": { "link": "https://www.pexels.com/photo/bicycle-lying-on-the-ground-14300718/", "author": "Vitali Adutskevich" },
+      "verified": { "http": 200, "bytes": 54105 },
+      "size": { "w": 640, "h": 429, "ar": 1.49 },
+      "verdict": "ok",
+      "note": "公园小路上倒着一辆蓝自行车，四周是夏日绿树（对上「公园小路+自行车歪倒在地」）；画面无人，缺两个小孩"
+    },
+    {
+      "key": "cook-done",
+      "pexelsId": 30392962,
+      "mediaUrl": "https://images.pexels.com/photos/30392962/pexels-photo-30392962.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Assorted Healthy Meals on a Wooden Table",
+      "credit": { "link": "https://www.pexels.com/photo/assorted-healthy-meals-on-a-wooden-table-30392962/", "author": "Kritsana (Kid) Takhai" },
+      "verified": { "http": 200, "bytes": 42634 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "暖木餐桌上摆满一盘盘家常菜与小碟小碗（对上「餐桌上的菜+每人面前小碟子」），暖调、无人；缺一家人围坐"
+    },
+    {
+      "key": "found-mom",
+      "pexelsId": 4871811,
+      "mediaUrl": "https://images.pexels.com/photos/4871811/pexels-photo-4871811.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "A Girl Running towards her Mother",
+      "credit": { "link": "https://www.pexels.com/photo/a-girl-running-towards-her-mother-4871811/", "author": "Gustavo Fring" },
+      "verified": { "http": 200, "bytes": 39047 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "草地上妈妈蹲下张开手臂，小女孩背影朝她跑去（对上「妈妈蹲下张开手臂+孩子扑过去」），背影不露脸、暖调；未拍到拥抱瞬间与爱心"
+    },
+    {
+      "key": "lost-crowd",
+      "pexelsId": 8968338,
+      "mediaUrl": "https://images.pexels.com/photos/8968338/pexels-photo-8968338.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "People on the Crowded Street",
+      "credit": { "link": "https://www.pexels.com/photo/people-on-the-crowded-street-8968338/", "author": "Christopher Ugale" },
+      "verified": { "http": 200, "bytes": 54894 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "街头挤满走动的大人，多为背影/侧影不露脸（对上「街上全是走来走去的大人」）；无矮小孩仰头、无对话气泡"
+    },
+    {
+      "key": "old-photo",
+      "pexelsId": 6869484,
+      "mediaUrl": "https://images.pexels.com/photos/6869484/pexels-photo-6869484.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "White Wooden Picture Frames on Brown Wooden Table",
+      "credit": { "link": "https://www.pexels.com/photo/white-wooden-picture-frames-on-brown-wooden-table-6869484/", "author": "cottonbro studio" },
+      "verified": { "http": 200, "bytes": 42538 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "暖光木质桌面上立着几个旧相框、旁边有台灯（对上「相框立在书桌上」），暖调；框内是老照片非泛黄风景照，缺书和钢笔"
+    },
+    {
+      "key": "pothos",
+      "pexelsId": 15555864,
+      "mediaUrl": "https://images.pexels.com/photos/15555864/pexels-photo-15555864.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "A Book and a Bunny Figurine Standing near a Window with a Pothos Plant",
+      "credit": { "link": "https://www.pexels.com/photo/a-book-and-a-bunny-figurine-standing-near-a-window-with-a-pothos-plant-15555864/", "author": "Walls.io" },
+      "verified": { "http": 200, "bytes": 45364 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "窗台上摆着一盆绿萝，旁边有书和小兔摆件、窗外透光（对上「绿萝+透光窗户+书」）；不在书架上，叶子垂落不明显"
+    },
+    {
+      "key": "snow-clear",
+      "pexelsId": 30694312,
+      "mediaUrl": "https://images.pexels.com/photos/30694312/pexels-photo-30694312.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Snow-Capped Roofs with Majestic Mountain Background",
+      "credit": { "link": "https://www.pexels.com/photo/snow-capped-roofs-with-majestic-mountain-background-30694312/", "author": "Francesco Ungaro" },
+      "verified": { "http": 200, "bytes": 48986 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "近处是积雪的木屋顶，远处雪山连绵、天空湛蓝（对上「蓝天+屋顶+远处雪山」）；无冰棱、雪人、挥手的孩子"
+    },
+    {
+      "key": "sunrise-peak",
+      "pexelsId": 3232538,
+      "mediaUrl": "https://images.pexels.com/photos/3232538/pexels-photo-3232538.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Mountain Ridge Overlooking Sea of Clouds during Golden Hour",
+      "credit": { "link": "https://www.pexels.com/photo/mountain-ridge-overlooking-sea-of-clouds-during-golden-hour-3232538/", "author": "Quang Nguyen Vinh" },
+      "verified": { "http": 200, "bytes": 54431 },
+      "size": { "w": 640, "h": 427, "ar": 1.50 },
+      "verdict": "ok",
+      "note": "金色晨光下山脊步道通向观景点，山谷铺满白色云海（对上「日出+山谷云海+山顶」），暖调；无两山夹日、无欢呼的孩子"
+    }
+  ]
+}

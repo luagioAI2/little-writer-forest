@@ -1,0 +1,9154 @@
+[
+ {
+  "id": "builtin-season-1",
+  "category": "scene",
+  "tagId": "season",
+  "title": "春天的公园",
+  "lead": "春天来了，公园里全变了样。你看到了什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-season-2",
+  "category": "scene",
+  "tagId": "season",
+  "title": "秋天的落叶",
+  "lead": "一阵风吹过，树叶飘下来了。它们像什么呢？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-season-3",
+  "category": "scene",
+  "tagId": "season",
+  "title": "冬天的第一场雪",
+  "lead": "早上推开窗，外面全白了……",
+  "images": [
+   {
+    "caption": "第 1 幅"
+   },
+   {
+    "caption": "第 2 幅"
+   },
+   {
+    "caption": "第 3 幅"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-season-4",
+  "category": "scene",
+  "tagId": "season",
+  "title": "夏天的小院",
+  "lead": "太阳火辣辣的，知了在树上叫个不停。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-season-5",
+  "category": "scene",
+  "tagId": "season",
+  "title": "夏日的荷塘",
+  "lead": "荷叶圆圆的，荷花粉粉的，蜻蜓飞来飞去。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-season-6",
+  "category": "scene",
+  "tagId": "season",
+  "title": "金色的秋天",
+  "lead": "麦田一望无边，像铺了一地金子。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-season-7",
+  "category": "scene",
+  "tagId": "season",
+  "title": "校园的秋天",
+  "lead": "银杏叶黄了，一片一片落下来。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-season-8",
+  "category": "scene",
+  "tagId": "season",
+  "title": "公园里的春天",
+  "lead": "小草绿了，粉色的花开满枝头，远处是青山和白云。你在这个公园里看到了什么？",
+  "images": [
+   {
+    "sceneKey": "spring-park"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-season-9",
+  "category": "scene",
+  "tagId": "season",
+  "title": "一地黄叶",
+  "lead": "小路铺满了金黄的落叶，风一吹，叶子还在往下掉。它们像什么呢？",
+  "images": [
+   {
+    "sceneKey": "autumn-leaves"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-season-10",
+  "category": "scene",
+  "tagId": "season",
+  "title": "窗外下雪了",
+  "lead": "我趴在窗台上往外看，外面下着雪，窗台上还放着一杯热饮。你猜我在想什么？",
+  "images": [
+   {
+    "sceneKey": "winter-window"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-season-11",
+  "category": "scene",
+  "tagId": "season",
+  "title": "打雪仗",
+  "lead": "雪地上，两个小伙伴打起了雪仗，雪球在半空里飞。这一仗最后谁赢了？",
+  "images": [
+   {
+    "sceneKey": "snow-play"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-season-12",
+  "category": "scene",
+  "tagId": "season",
+  "title": "雪人站起来了",
+  "lead": "雪地里，我们堆了一个戴红围巾的雪人，鼻子是胡萝卜做的。它是怎么一点一点成形的？",
+  "images": [
+   {
+    "sceneKey": "snowman"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-season-13",
+  "category": "scene",
+  "tagId": "season",
+  "title": "冬天的暖阳",
+  "lead": "冬天的太阳晒在身上暖暖的。你最喜欢在哪儿晒？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-weather-1",
+  "category": "scene",
+  "tagId": "weather",
+  "title": "下雨了",
+  "lead": "雨点打在窗户上，发出什么声音？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-weather-2",
+  "category": "scene",
+  "tagId": "weather",
+  "title": "雨后的彩虹",
+  "lead": "雨停了，天边出现了一道彩虹……",
+  "images": [
+   {
+    "caption": "第 1 幅"
+   },
+   {
+    "caption": "第 2 幅"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-weather-3",
+  "category": "scene",
+  "tagId": "weather",
+  "title": "大雾的早晨",
+  "lead": "出门的时候，前面的路都看不清了。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-weather-4",
+  "category": "scene",
+  "tagId": "weather",
+  "title": "下雨天，妈妈来了",
+  "lead": "雨越下越大，校门口出现了一个熟悉的身影。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-weather-5",
+  "category": "scene",
+  "tagId": "weather",
+  "title": "日落时分",
+  "lead": "太阳慢慢沉下去，天边烧成了一片橙红色。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-weather-6",
+  "category": "scene",
+  "tagId": "weather",
+  "title": "下雨的窗边",
+  "lead": "雨点打在玻璃上，挂成一串串水珠，小猫蹲在窗台上看雨。下雨天里，你在做什么？",
+  "images": [
+   {
+    "sceneKey": "rain-window"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-weather-7",
+  "category": "scene",
+  "tagId": "weather",
+  "title": "彩虹出来了",
+  "lead": "雨停了，一道七色的彩虹架在天上，草地上还留着两摊水洼。看见彩虹的那一刻，你在想什么？",
+  "images": [
+   {
+    "sceneKey": "rainbow"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-weather-8",
+  "category": "scene",
+  "tagId": "weather",
+  "title": "雾里的小路",
+  "lead": "雾太浓了，只能看清近处的小路，远处的树影若有若无。走在雾里是什么感觉？",
+  "images": [
+   {
+    "sceneKey": "fog-morning"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-weather-9",
+  "category": "scene",
+  "tagId": "weather",
+  "title": "太阳落山了",
+  "lead": "太阳慢慢躲到山后面去，天被染成橙红色，远山变成了深色的影子。这个时候你在哪儿？",
+  "images": [
+   {
+    "sceneKey": "sunset"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-weather-10",
+  "category": "scene",
+  "tagId": "weather",
+  "title": "雪停了",
+  "lead": "雪停了，天放晴了，屋檐下挂着一排冰棱，雪人还站在院子里。雪后的空气是什么味道？",
+  "images": [
+   {
+    "sceneKey": "snow-clear"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-weather-11",
+  "category": "scene",
+  "tagId": "weather",
+  "title": "刮风了",
+  "lead": "风把树吹得哗哗响，晾着的衣服也飘起来了。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-water-1",
+  "category": "scene",
+  "tagId": "water",
+  "title": "家乡的小河",
+  "lead": "那条河从村子旁边流过，你还记得它什么样子吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-water-2",
+  "category": "scene",
+  "tagId": "water",
+  "title": "爬山看日出",
+  "lead": "天还没亮就出发了，等爬到山顶……",
+  "images": [
+   {
+    "caption": "第 1 幅"
+   },
+   {
+    "caption": "第 2 幅"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-water-3",
+  "category": "scene",
+  "tagId": "water",
+  "title": "雨后的山",
+  "lead": "山被雨洗过一遍，颜色都变深了。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-water-4",
+  "category": "scene",
+  "tagId": "water",
+  "title": "海边真好玩",
+  "lead": "沙子踩上去软软的，浪花追着你的脚跑。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-water-5",
+  "category": "scene",
+  "tagId": "water",
+  "title": "天没亮就出发",
+  "lead": "天还是深蓝的，月亮和星星都还在，我们打着手电走上山路。为什么要这么早出发？",
+  "images": [
+   {
+    "sceneKey": "mountain-climb"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-water-6",
+  "category": "scene",
+  "tagId": "water",
+  "title": "山顶看日出",
+  "lead": "太阳从两座山之间升起来，脚下是一片白色的云海。站在山顶上，你最想喊什么？",
+  "images": [
+   {
+    "sceneKey": "sunrise-peak"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-water-7",
+  "category": "scene",
+  "tagId": "water",
+  "title": "夏日荷塘",
+  "lead": "水面上铺着碧绿的荷叶，粉色的荷花开着，一只蜻蜓停在上头。荷塘里还藏着什么？",
+  "images": [
+   {
+    "sceneKey": "summer-pond"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-water-8",
+  "category": "scene",
+  "tagId": "water",
+  "title": "海边的沙滩",
+  "lead": "沙滩上散着贝壳，一把红伞撑在旁边，远处的浪一层层涌过来。你会在沙滩上做什么？",
+  "images": [
+   {
+    "sceneKey": "beach"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-water-9",
+  "category": "scene",
+  "tagId": "water",
+  "title": "山里的瀑布",
+  "lead": "水从高处冲下来，声音老远就听得见。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-campus-1",
+  "category": "scene",
+  "tagId": "campus",
+  "title": "学校的小花园",
+  "lead": "花园里现在正开着什么花？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-campus-2",
+  "category": "scene",
+  "tagId": "campus",
+  "title": "热闹的操场",
+  "lead": "下课铃一响，操场就活了。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-campus-3",
+  "category": "scene",
+  "tagId": "campus",
+  "title": "大扫除",
+  "lead": "大家分工合作，教室慢慢变干净了。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-campus-4",
+  "category": "scene",
+  "tagId": "campus",
+  "title": "雪后的校园",
+  "lead": "雪停了，太阳出来了，校园亮闪闪的。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-campus-5",
+  "category": "scene",
+  "tagId": "campus",
+  "title": "推荐一个好地方",
+  "lead": "你觉得哪里最好玩？推荐给同学吧。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-campus-6",
+  "category": "scene",
+  "tagId": "campus",
+  "title": "花园里的小路",
+  "lead": "教学楼前有一个小花园，花开得正好，一只小鸟从头顶飞过。你最喜欢它的哪个角落？",
+  "images": [
+   {
+    "sceneKey": "school-garden"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-campus-7",
+  "category": "scene",
+  "tagId": "campus",
+  "title": "课间的操场",
+  "lead": "红色的跑道上，同学们在跑、在跳，球场中间放着一个足球。课间的操场是什么样子的？",
+  "images": [
+   {
+    "sceneKey": "playground"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-campus-8",
+  "category": "scene",
+  "tagId": "campus",
+  "title": "校园里的秋天",
+  "lead": "教学楼前的两棵银杏黄了，叶子落了一地，我走在铺满叶子的小路上。你捡到过最好看的那一片吗？",
+  "images": [
+   {
+    "sceneKey": "school-autumn"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-campus-9",
+  "category": "scene",
+  "tagId": "campus",
+  "title": "街角的小书店",
+  "lead": "书架上的书排得满满的，柜台后面有人正看得入神，门口挂着书店的牌子。你最近想看哪一本？",
+  "images": [
+   {
+    "sceneKey": "book-store"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-campus-10",
+  "category": "scene",
+  "tagId": "campus",
+  "title": "教室的窗边",
+  "lead": "上课的时候，你偷偷往窗外看过什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-night-1",
+  "category": "scene",
+  "tagId": "night",
+  "title": "数星星的晚上",
+  "lead": "躺在草地上，天上的星星一颗一颗亮起来。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-night-2",
+  "category": "scene",
+  "tagId": "night",
+  "title": "萤火虫之夜",
+  "lead": "夏天的晚上，草丛里飞起了小灯笼。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-night-3",
+  "category": "scene",
+  "tagId": "night",
+  "title": "月亮跟着我走",
+  "lead": "我走一步，它也走一步。这是为什么呢？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-night-4",
+  "category": "scene",
+  "tagId": "night",
+  "title": "躺在草地上数星星",
+  "lead": "深蓝的夜空挂满了星星，还挂着一弯月亮。你数到第几颗就数不清了？",
+  "images": [
+   {
+    "sceneKey": "starry-night"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-night-5",
+  "category": "scene",
+  "tagId": "night",
+  "title": "萤火虫的夜晚",
+  "lead": "草地上飞满了发光的萤火虫，我举着玻璃罐追了过去。你想捉几只？",
+  "images": [
+   {
+    "sceneKey": "fireflies"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-night-6",
+  "category": "scene",
+  "tagId": "night",
+  "title": "路灯下的影子",
+  "lead": "路灯把我的影子拉得老长。你踩得到它吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-home-scene-1",
+  "category": "scene",
+  "tagId": "home-scene",
+  "title": "悄悄长大的绿萝",
+  "lead": "它一直在悄悄地长，你发现了吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-home-scene-2",
+  "category": "scene",
+  "tagId": "home-scene",
+  "title": "厨房里的香味",
+  "lead": "还没进门，就闻到了香味。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-home-scene-3",
+  "category": "scene",
+  "tagId": "home-scene",
+  "title": "清晨的窗台",
+  "lead": "每天早上，它都会停在窗台上唱歌。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-home-scene-4",
+  "category": "scene",
+  "tagId": "home-scene",
+  "title": "我的小房间",
+  "lead": "房间里有一张床、一张书桌和一个书架，桌上摆着台灯和书。你最喜欢待在哪个角落？",
+  "images": [
+   {
+    "sceneKey": "my-room"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-home-scene-5",
+  "category": "scene",
+  "tagId": "home-scene",
+  "title": "床头柜上的闹钟",
+  "lead": "双铃闹钟立在床头柜上，两根指针慢慢走，底下有两只小脚。它每天早上叫你起床吗？",
+  "images": [
+   {
+    "sceneKey": "clock"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-home-scene-6",
+  "category": "scene",
+  "tagId": "home-scene",
+  "title": "客厅的沙发",
+  "lead": "沙发上总有一个位置是你常坐的。为什么是那儿？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-travel-1",
+  "category": "scene",
+  "tagId": "travel",
+  "title": "游记",
+  "lead": "你去过哪个好玩的地方？按游览的顺序写下来。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-travel-2",
+  "category": "scene",
+  "tagId": "travel",
+  "title": "参观记",
+  "lead": "参观博物馆或古迹的时候，你看到了什么？",
+  "images": [
+   {
+    "caption": "第 1 幅"
+   },
+   {
+    "caption": "第 2 幅"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-travel-3",
+  "category": "scene",
+  "tagId": "travel",
+  "title": "亭子前的石阶",
+  "lead": "古亭子前有石阶和绿树，我举着相机正拍照。这次去的是哪儿？",
+  "images": [
+   {
+    "sceneKey": "travel-visit"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-travel-4",
+  "category": "scene",
+  "tagId": "travel",
+  "title": "古镇的早晨",
+  "lead": "石板路还湿着，两边的店铺刚开门。你最先闻到什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-travel-5",
+  "category": "scene",
+  "tagId": "travel",
+  "title": "博物馆里的一天",
+  "lead": "展柜里的东西都隔着玻璃。你最想凑近看哪一件？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-culture-1",
+  "category": "scene",
+  "tagId": "culture",
+  "title": "中国的世界文化遗产",
+  "lead": "选一处你感兴趣的世界文化遗产，介绍给别人。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-culture-2",
+  "category": "scene",
+  "tagId": "culture",
+  "title": "古城墙",
+  "lead": "站在城墙上，你能想象这里曾经发生过什么吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-culture-3",
+  "category": "scene",
+  "tagId": "culture",
+  "title": "城墙上的故事",
+  "lead": "城墙上有城楼和城垛，牌子写着世界文化遗产。关于它，你查到过什么？",
+  "images": [
+   {
+    "sceneKey": "cultural-heritage"
+   }
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-culture-4",
+  "category": "scene",
+  "tagId": "culture",
+  "title": "故宫的红墙",
+  "lead": "红墙很高，路很长，走过去要花不少时间。你在想什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-culture-5",
+  "category": "scene",
+  "tagId": "culture",
+  "title": "桥上的石狮子",
+  "lead": "老桥的栏杆上蹲着一排石狮子。你数得清吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-hometown-1",
+  "category": "scene",
+  "tagId": "hometown",
+  "title": "家乡的田野",
+  "lead": "风吹过的时候，家乡的田野像什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-hometown-2",
+  "category": "scene",
+  "tagId": "hometown",
+  "title": "家乡的傍晚",
+  "lead": "太阳落到山后面，村子慢慢安静下来了。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-hometown-3",
+  "category": "scene",
+  "tagId": "hometown",
+  "title": "村口的那条河",
+  "lead": "河水从村子旁边流过，你还记得它什么样子吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-hometown-4",
+  "category": "scene",
+  "tagId": "hometown",
+  "title": "村口的小河",
+  "lead": "小河从村子中间流过，河上有石拱桥，水面上还漂着一条小船。这条河你熟悉吗？",
+  "images": [
+   {
+    "sceneKey": "river-village"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-hometown-5",
+  "category": "scene",
+  "tagId": "hometown",
+  "title": "风里的麦田",
+  "lead": "满眼的麦子金黄一片，风一吹就摇成波浪，田边有一条小路。你想不想走进去？",
+  "images": [
+   {
+    "sceneKey": "wheat-field"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-hometown-6",
+  "category": "scene",
+  "tagId": "hometown",
+  "title": "藏着快乐的角落",
+  "lead": "大树上有一个树屋，旁边架着秋千，地上开满了花。你的乐园在哪儿？",
+  "images": [
+   {
+    "sceneKey": "my-paradise"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-hometown-7",
+  "category": "scene",
+  "tagId": "hometown",
+  "title": "回家的那条小路",
+  "lead": "从村口到家要走过一条小路。路上有什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-1",
+  "category": "person",
+  "tagId": "family",
+  "title": "我的妈妈",
+  "lead": "妈妈是什么样子的？她做的哪件事让你记得最清楚？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-2",
+  "category": "person",
+  "tagId": "family",
+  "title": "爷爷和他的花园",
+  "lead": "爷爷在院子里忙活的时候，你在旁边看着。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-3",
+  "category": "person",
+  "tagId": "family",
+  "title": "妹妹来了",
+  "lead": "家里多了一个小不点，日子变得不一样了。",
+  "images": [
+   {
+    "caption": "第 1 幅"
+   },
+   {
+    "caption": "第 2 幅"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-4",
+  "category": "person",
+  "tagId": "family",
+  "title": "爸爸修东西",
+  "lead": "爸爸蹲在地上，手里拿着扳手，满头是汗。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-5",
+  "category": "person",
+  "tagId": "family",
+  "title": "奶奶织毛衣",
+  "lead": "奶奶戴着老花镜，坐在摇椅上一针一针地织。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-6",
+  "category": "person",
+  "tagId": "family",
+  "title": "邻居阿姨",
+  "lead": "隔壁的阿姨总是笑眯眯的，手里拎着菜篮子。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-7",
+  "category": "person",
+  "tagId": "family",
+  "title": "妈妈在厨房里",
+  "lead": "妈妈系着围裙站在灶台前，锅上冒着热气，台面上摆着切好的菜。今天做的是什么？",
+  "images": [
+   {
+    "sceneKey": "mom-cooking"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-8",
+  "category": "person",
+  "tagId": "family",
+  "title": "爷爷的菜地",
+  "lead": "爷爷戴着草帽，提着喷壶，一畦畦菜苗排得整整齐齐。他是怎么照顾这些菜的？",
+  "images": [
+   {
+    "sceneKey": "grandpa-garden"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-9",
+  "category": "person",
+  "tagId": "family",
+  "title": "家里多了一个小宝宝",
+  "lead": "屋里多了一张小床，床上躺着一个小宝宝，墙上的气球还没撤。第一次见到他/她，你在想什么？",
+  "images": [
+   {
+    "sceneKey": "baby-arrive"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-10",
+  "category": "person",
+  "tagId": "family",
+  "title": "陪他玩一会儿",
+  "lead": "地垫上坐着小宝宝，我陪他一起玩，玩具熊和积木散了一地。他最喜欢哪一个？",
+  "images": [
+   {
+    "sceneKey": "play-with-baby"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-11",
+  "category": "person",
+  "tagId": "family",
+  "title": "爸爸在修东西",
+  "lead": "爸爸蹲在倒放的自行车旁边，手里拿着扳手，工具箱摊在地上。他修东西的时候是什么样子？",
+  "images": [
+   {
+    "sceneKey": "dad-repair"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-12",
+  "category": "person",
+  "tagId": "family",
+  "title": "毛线团和摇椅",
+  "lead": "奶奶坐在摇椅上织毛衣，腿上放着两个毛线团，鼻梁上架着老花镜。这件毛衣是给谁织的？",
+  "images": [
+   {
+    "sceneKey": "grandma-knit"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-13",
+  "category": "person",
+  "tagId": "family",
+  "title": "妈妈的手",
+  "lead": "妈妈的手有点粗糙，做过很多很多事情。你注意过她的手吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-14",
+  "category": "person",
+  "tagId": "family",
+  "title": "爷爷的老花镜",
+  "lead": "爷爷把老花镜架在鼻尖上，眯着眼睛看报纸。他平时还爱做什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-family-15",
+  "category": "person",
+  "tagId": "family",
+  "title": "爸爸的呼噜声",
+  "lead": "夜里，爸爸的呼噜一阵一阵的。你被吵醒过吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-teacher-1",
+  "category": "person",
+  "tagId": "teacher",
+  "title": "我的老师",
+  "lead": "老师站在讲台上的样子，你还记得吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-teacher-2",
+  "category": "person",
+  "tagId": "teacher",
+  "title": "老师的那句话",
+  "lead": "有一句话，老师说过之后你就一直记着。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-teacher-3",
+  "category": "person",
+  "tagId": "teacher",
+  "title": "漫画老师",
+  "lead": "用画漫画的方式画一画你的老师，他有什么特点？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-teacher-4",
+  "category": "person",
+  "tagId": "teacher",
+  "title": "站在黑板前的老师",
+  "lead": "黑板上的粉笔字还没擦，老师站在旁边一边讲一边比划。他/她哪句话你记得最清楚？",
+  "images": [
+   {
+    "sceneKey": "teacher-class"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-teacher-5",
+  "category": "person",
+  "tagId": "teacher",
+  "title": "给老师画漫画",
+  "lead": "黑板前，老师戴着眼镜、拿着教鞭讲得正起劲。如果给老师画一幅漫画，你会夸张他/她的哪一点？",
+  "images": [
+   {
+    "sceneKey": "comic-teacher"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-teacher-6",
+  "category": "person",
+  "tagId": "teacher",
+  "title": "老师的手",
+  "lead": "老师的手上沾着粉笔灰，在黑板上写了一行又一行。那双手还做过什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-teacher-7",
+  "category": "person",
+  "tagId": "teacher",
+  "title": "放学后的办公室",
+  "lead": "放学了，办公室的灯还亮着，老师在低头批改作业。你想对他说什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-teacher-8",
+  "category": "person",
+  "tagId": "teacher",
+  "title": "老师嗓子哑了",
+  "lead": "老师说话的声音变小了，还站在讲台上。那天你怎么做的？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-classmate-1",
+  "category": "person",
+  "tagId": "classmate",
+  "title": "我的同桌",
+  "lead": "同桌是个什么样的人？你们之间发生过什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-classmate-2",
+  "category": "person",
+  "tagId": "classmate",
+  "title": "一个爱笑的人",
+  "lead": "他一笑，周围的人也跟着笑。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-classmate-3",
+  "category": "person",
+  "tagId": "classmate",
+  "title": "我的好朋友",
+  "lead": "你们是怎么认识的？一起做过什么好玩的事？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-classmate-4",
+  "category": "person",
+  "tagId": "classmate",
+  "title": "一张课桌，两个人",
+  "lead": "一张课桌，两个人，桌上摊着书和笔。你同桌是个什么样的人？",
+  "images": [
+   {
+    "sceneKey": "deskmate"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-classmate-5",
+  "category": "person",
+  "tagId": "classmate",
+  "title": "肩并肩站着",
+  "lead": "草地上，我们俩肩并肩站着，一个穿蓝衣服，一个穿黄衣服。你们之间发生过什么？",
+  "images": [
+   {
+    "sceneKey": "best-friend"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-classmate-6",
+  "category": "person",
+  "tagId": "classmate",
+  "title": "同桌的铅笔盒",
+  "lead": "同桌的铅笔盒总是乱七八糟的，什么都有。你翻看过吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-classmate-7",
+  "category": "person",
+  "tagId": "classmate",
+  "title": "一起值日",
+  "lead": "放学后，我和同桌留下来扫地、擦黑板。那天发生了什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-classmate-8",
+  "category": "person",
+  "tagId": "classmate",
+  "title": "我们吵架了",
+  "lead": "因为一件小事，我们俩谁也不理谁。后来呢？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stranger-1",
+  "category": "person",
+  "tagId": "stranger",
+  "title": "清晨的环卫工",
+  "lead": "天刚亮的时候，路上已经有人在扫地了。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stranger-2",
+  "category": "person",
+  "tagId": "stranger",
+  "title": "雨天的快递员",
+  "lead": "雨很大，他穿着雨衣把包裹送到门口。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stranger-3",
+  "category": "person",
+  "tagId": "stranger",
+  "title": "天刚亮的街道",
+  "lead": "天刚蒙蒙亮，街上有一位穿橙色工作服的环卫工在扫落叶。你有没有跟他说过话？",
+  "images": [
+   {
+    "sceneKey": "street-cleaner"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stranger-4",
+  "category": "person",
+  "tagId": "stranger",
+  "title": "雨里的快递员",
+  "lead": "雨下得很大，快递员骑着车，后座绑着一个大纸箱，地上的水花溅了起来。看见他，你想说什么？",
+  "images": [
+   {
+    "sceneKey": "rain-delivery"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stranger-5",
+  "category": "person",
+  "tagId": "stranger",
+  "title": "修鞋的老人",
+  "lead": "巷口有个修鞋的老人，低着头一针一线地缝。他修过你的鞋吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stranger-6",
+  "category": "person",
+  "tagId": "stranger",
+  "title": "收废品的叔叔",
+  "lead": "他骑着三轮车走街串巷，喇叭里一遍遍地喊。你听过那声音吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stranger-7",
+  "category": "person",
+  "tagId": "stranger",
+  "title": "公园里练字的老爷爷",
+  "lead": "他提着一支大毛笔，在地上写字。你停下来看过吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-community-helper-1",
+  "category": "person",
+  "tagId": "community-helper",
+  "title": "看病的医生",
+  "lead": "白大褂、听诊器，医生叔叔（阿姨）是怎么给你看病的？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-community-helper-2",
+  "category": "person",
+  "tagId": "community-helper",
+  "title": "警察叔叔",
+  "lead": "十字路口，警察叔叔正指挥着交通。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-community-helper-3",
+  "category": "person",
+  "tagId": "community-helper",
+  "title": "图书管理员",
+  "lead": "图书馆里很安静，管理员阿姨帮你找到了书。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-community-helper-4",
+  "category": "person",
+  "tagId": "community-helper",
+  "title": "公交司机",
+  "lead": "每天上学坐的公交车，司机叔叔总是笑眯眯的。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-community-helper-5",
+  "category": "person",
+  "tagId": "community-helper",
+  "title": "诊室里的医生",
+  "lead": "医生穿着白大褂，胸前挂着听诊器，一个小孩坐在台子前面。他看病的时候是怎么说话的？",
+  "images": [
+   {
+    "sceneKey": "doctor"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-community-helper-6",
+  "category": "person",
+  "tagId": "community-helper",
+  "title": "路口的警察",
+  "lead": "十字路口，警察伸手指着方向，红绿灯在旁边一闪一闪。他一天要指挥多少辆车？",
+  "images": [
+   {
+    "sceneKey": "police"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-community-helper-7",
+  "category": "person",
+  "tagId": "community-helper",
+  "title": "借书台前的管理员",
+  "lead": "书架上的书排得整整齐齐，管理员戴着眼镜站在借书台后面。你想借哪一本？",
+  "images": [
+   {
+    "sceneKey": "librarian"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-community-helper-8",
+  "category": "person",
+  "tagId": "community-helper",
+  "title": "方向盘后面的司机",
+  "lead": "黄色的公交车停在站牌边，司机坐在方向盘后面。坐他开的车，你最喜欢哪个位置？",
+  "images": [
+   {
+    "sceneKey": "bus-driver"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-community-helper-9",
+  "category": "person",
+  "tagId": "community-helper",
+  "title": "楼下的保安叔叔",
+  "lead": "每天进出小区，他都笑着跟我们打招呼。你跟他熟吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-community-helper-10",
+  "category": "person",
+  "tagId": "community-helper",
+  "title": "早餐摊的阿姨",
+  "lead": "天还没亮，早餐摊的阿姨就忙起来了。你常买她做的什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-community-helper-11",
+  "category": "person",
+  "tagId": "community-helper",
+  "title": "小区里的园丁",
+  "lead": "花坛里的花开得正好，都是他种的。你注意过他的手吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-self-1",
+  "category": "person",
+  "tagId": "self",
+  "title": "这就是我",
+  "lead": "对着镜子看看自己，说说你是个什么样的人。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-self-2",
+  "category": "person",
+  "tagId": "self",
+  "title": "我的小毛病",
+  "lead": "每个人都有自己的小毛病，你的呢？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-self-3",
+  "category": "person",
+  "tagId": "self",
+  "title": "镜子里的我",
+  "lead": "镜子里的那个孩子，和镜子外站着的，是同一个人。你会怎么介绍他？",
+  "images": [
+   {
+    "sceneKey": "mirror-self"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-self-4",
+  "category": "person",
+  "tagId": "self",
+  "title": "我的名字",
+  "lead": "你的名字是谁取的？它有什么来历？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-self-5",
+  "category": "person",
+  "tagId": "self",
+  "title": "我长高了",
+  "lead": "门框上那道铅笔线，又往上挪了一格。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-people-around-1",
+  "category": "person",
+  "tagId": "people-around",
+  "title": "形形色色的人",
+  "lead": "身边有各种各样的人，选一个让你印象最深的写。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-people-around-2",
+  "category": "person",
+  "tagId": "people-around",
+  "title": "街头众生",
+  "lead": "走在街上，你会看到哪些不同的人？他们在做什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-people-around-3",
+  "category": "person",
+  "tagId": "people-around",
+  "title": "门口的邻居阿姨",
+  "lead": "阿姨提着菜篮子，站在门口笑着跟我打招呼。你们家跟她熟吗？",
+  "images": [
+   {
+    "sceneKey": "neighbor"
+   }
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-people-around-4",
+  "category": "person",
+  "tagId": "people-around",
+  "title": "身边都有谁",
+  "lead": "草地上站着一排人，有的在说，有的在笑，标签上写着同学、路人、邻居。你身边有哪几种人？",
+  "images": [
+   {
+    "sceneKey": "all-kinds-people"
+   }
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-people-around-5",
+  "category": "person",
+  "tagId": "people-around",
+  "title": "楼下下棋的爷爷们",
+  "lead": "棋盘一摆，围过来一圈人。他们在争什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-people-around-6",
+  "category": "person",
+  "tagId": "people-around",
+  "title": "广场上跳舞的奶奶",
+  "lead": "音乐一响，她们就排好了队。你留意过谁？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-dream-job-1",
+  "category": "person",
+  "tagId": "dream-job",
+  "title": "我的理想",
+  "lead": "长大后你想做什么？为什么想做这个？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-dream-job-2",
+  "category": "person",
+  "tagId": "dream-job",
+  "title": "我想成为的人",
+  "lead": "身边有谁是你想成为的样子？说说他哪里让你佩服。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-dream-job-3",
+  "category": "person",
+  "tagId": "dream-job",
+  "title": "如果我当医生",
+  "lead": "穿上白大褂，你会怎么给病人看病？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-dream-job-4",
+  "category": "person",
+  "tagId": "dream-job",
+  "title": "我想当一名老师",
+  "lead": "站在讲台上，你会怎么讲第一节课？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-dream-job-5",
+  "category": "person",
+  "tagId": "dream-job",
+  "title": "如果我是厨师",
+  "lead": "灶台前围裙一系，你打算先做哪一道菜？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-first-time-1",
+  "category": "event",
+  "tagId": "first-time",
+  "title": "第一次骑自行车",
+  "lead": "刚开始很难，后来你学会了。当时什么感觉？",
+  "images": [
+   {
+    "caption": "第 1 幅"
+   },
+   {
+    "caption": "第 2 幅"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-first-time-2",
+  "category": "event",
+  "tagId": "first-time",
+  "title": "第一次做饭",
+  "lead": "你系上围裙，站到了灶台前……",
+  "images": [
+   {
+    "caption": "第 1 幅"
+   },
+   {
+    "caption": "第 2 幅"
+   },
+   {
+    "caption": "第 3 幅"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-first-time-3",
+  "category": "event",
+  "tagId": "first-time",
+  "title": "第一次上台",
+  "lead": "台下的同学都看着你，你的手心里全是汗。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-first-time-4",
+  "category": "event",
+  "tagId": "first-time",
+  "title": "第一次独睡",
+  "lead": "关了灯，房间里黑黑的，你给自己壮了壮胆。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-first-time-5",
+  "category": "event",
+  "tagId": "first-time",
+  "title": "我会骑车了",
+  "lead": "我骑着车飞快地往前，爸爸在后面追着跑。学会的那一天，你还记得吗？",
+  "images": [
+   {
+    "sceneKey": "bike-ride"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-first-time-6",
+  "category": "event",
+  "tagId": "first-time",
+  "title": "我要露一手了",
+  "lead": "案板、蔬菜、鸡蛋都摆好了，围裙也系上了。我准备做一道什么菜？",
+  "images": [
+   {
+    "sceneKey": "cook-start"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-first-time-7",
+  "category": "event",
+  "tagId": "first-time",
+  "title": "厨房里的“事故”",
+  "lead": "面粉飘得到处都是，碗翻了，锅里的东西也糊了。哪一步出了问题？",
+  "images": [
+   {
+    "sceneKey": "cook-mess"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-first-time-8",
+  "category": "event",
+  "tagId": "first-time",
+  "title": "端上桌的那一刻",
+  "lead": "一大家子围坐在桌边，中间那盘菜还冒着热气。他们尝了以后说了什么？",
+  "images": [
+   {
+    "sceneKey": "cook-done"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-first-time-9",
+  "category": "event",
+  "tagId": "first-time",
+  "title": "幕布拉开的时候",
+  "lead": "幕布拉开，一束灯光只照着台上的我，台下一片黑压压的脑袋。你紧张的时候怎么办？",
+  "images": [
+   {
+    "sceneKey": "stage-nervous"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-first-time-10",
+  "category": "event",
+  "tagId": "first-time",
+  "title": "第一次坐火车",
+  "lead": "车窗外的树一棵接一棵往后跑。你数得过来吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-unforgettable-1",
+  "category": "event",
+  "tagId": "unforgettable",
+  "title": "那一次，我很难忘",
+  "lead": "有一件事，过了很久你还记得。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-unforgettable-2",
+  "category": "event",
+  "tagId": "unforgettable",
+  "title": "第一次春游",
+  "lead": "背上小书包，我们出发啦！",
+  "images": [
+   {
+    "caption": "第 1 幅"
+   },
+   {
+    "caption": "第 2 幅"
+   },
+   {
+    "caption": "第 3 幅"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-unforgettable-3",
+  "category": "event",
+  "tagId": "unforgettable",
+  "title": "得奖了",
+  "lead": "站在领奖台上，台下响起一片掌声。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-unforgettable-4",
+  "category": "event",
+  "tagId": "unforgettable",
+  "title": "翻相册",
+  "lead": "厚厚的相册摊在桌上，一页一页都是照片。哪一张让你停了下来？",
+  "images": [
+   {
+    "sceneKey": "memory-album"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-unforgettable-5",
+  "category": "event",
+  "tagId": "unforgettable",
+  "title": "挥手告别那天",
+  "lead": "教学楼前，我们几个挥着手，校门口的横幅还没收。这六年里，你最难忘的是什么？",
+  "images": [
+   {
+    "sceneKey": "farewell-school"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-unforgettable-6",
+  "category": "event",
+  "tagId": "unforgettable",
+  "title": "那一次我哭了",
+  "lead": "有一件事让我掉了眼泪。现在想起来，是什么感觉？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-warm-moment-1",
+  "category": "event",
+  "tagId": "warm-moment",
+  "title": "他扶了我一把",
+  "lead": "你摔倒了，有人伸出了手。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-warm-moment-2",
+  "category": "event",
+  "tagId": "warm-moment",
+  "title": "雨中送伞",
+  "lead": "雨越下越大，校门口出现了一个熟悉的身影。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-warm-moment-3",
+  "category": "event",
+  "tagId": "warm-moment",
+  "title": "奶奶的针线盒",
+  "lead": "那个旧旧的盒子，里面装满了故事。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-warm-moment-4",
+  "category": "event",
+  "tagId": "warm-moment",
+  "title": "摔了一跤",
+  "lead": "自行车歪倒在小路上，我坐在地上揉着膝盖，一只手伸了过来。那一刻你在想什么？",
+  "images": [
+   {
+    "sceneKey": "bike-fail"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-warm-moment-5",
+  "category": "event",
+  "tagId": "warm-moment",
+  "title": "伸过来的那只手",
+  "lead": "我坐在地上抱着膝盖，一只手伸到了我面前。那只手是谁的？",
+  "images": [
+   {
+    "sceneKey": "help-hand"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-warm-moment-6",
+  "category": "event",
+  "tagId": "warm-moment",
+  "title": "雨里的一把伞",
+  "lead": "雨下得正大，橙色的伞下挤着两个人，地上积起了水洼。这把伞是谁送来的？",
+  "images": [
+   {
+    "sceneKey": "umbrella-rain"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-warm-moment-7",
+  "category": "event",
+  "tagId": "warm-moment",
+  "title": "生病那天",
+  "lead": "我盖着被子躺在床上，床头放着温度计和药，妈妈坐在旁边陪着我。生病的时候最想吃什么？",
+  "images": [
+   {
+    "sceneKey": "sick"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-warm-moment-8",
+  "category": "event",
+  "tagId": "warm-moment",
+  "title": "借我半块橡皮",
+  "lead": "考试时我忘了带橡皮，同桌掰了一半递过来。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-activity-1",
+  "category": "event",
+  "tagId": "activity",
+  "title": "热闹的运动会",
+  "lead": "哨声一响，跑道上的同学冲了出去。",
+  "images": [
+   {
+    "caption": "第 1 幅"
+   },
+   {
+    "caption": "第 2 幅"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-activity-2",
+  "category": "event",
+  "tagId": "activity",
+  "title": "快乐的春游",
+  "lead": "背上小书包，我们出发啦！",
+  "images": [
+   {
+    "caption": "第 1 幅"
+   },
+   {
+    "caption": "第 2 幅"
+   },
+   {
+    "caption": "第 3 幅"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-activity-3",
+  "category": "event",
+  "tagId": "activity",
+  "title": "班级大扫除",
+  "lead": "大家分工合作，教室变干净了。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-activity-4",
+  "category": "event",
+  "tagId": "activity",
+  "title": "记一次游戏",
+  "lead": "你和同学玩了什么游戏？怎么玩的？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-activity-5",
+  "category": "event",
+  "tagId": "activity",
+  "title": "多彩的活动",
+  "lead": "你参加过什么活动？把场面和心情都写下来。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-activity-6",
+  "category": "event",
+  "tagId": "activity",
+  "title": "运动会那天",
+  "lead": "操场上挂满了彩旗，跑道上四个人正在冲刺，内圈的同学在挥手。你参加的是哪个项目？",
+  "images": [
+   {
+    "sceneKey": "sports-day"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-activity-7",
+  "category": "event",
+  "tagId": "activity",
+  "title": "坐上春游的大巴",
+  "lead": "黄色的大巴停在路边，同学们排着队上车，老师在旁边挥手。你在车上坐在谁旁边？",
+  "images": [
+   {
+    "sceneKey": "spring-outing-bus"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-activity-8",
+  "category": "event",
+  "tagId": "activity",
+  "title": "草地上的野餐",
+  "lead": "粉格子的布铺在草地上，篮子和食物摆了一地，大家围坐成一圈。谁带的东西最好吃？",
+  "images": [
+   {
+    "sceneKey": "spring-outing-picnic"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-activity-9",
+  "category": "event",
+  "tagId": "activity",
+  "title": "放风筝",
+  "lead": "我举着线，风筝飞到了半空，泡泡和花瓣一起飘着。你的风筝飞得高吗？",
+  "images": [
+   {
+    "sceneKey": "spring-outing-play"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-activity-10",
+  "category": "event",
+  "tagId": "activity",
+  "title": "擦窗还是扫地",
+  "lead": "一个擦窗，一个扫地，一个提着水桶，桌椅都搬到了一边。你抢到了哪个活儿？",
+  "images": [
+   {
+    "sceneKey": "cleaning-class"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-activity-11",
+  "category": "event",
+  "tagId": "activity",
+  "title": "拔河",
+  "lead": "两队人弯着腰用力拉，绳子中间系着红布条，旁边的人在喊。你们班赢了吗？",
+  "images": [
+   {
+    "sceneKey": "play-game"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-activity-12",
+  "category": "event",
+  "tagId": "activity",
+  "title": "操场上的活动",
+  "lead": "跑道上有人在跑步、有人在跳绳，横幅上写着运动会。你最喜欢哪一种活动？",
+  "images": [
+   {
+    "sceneKey": "colorful-activity"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-activity-13",
+  "category": "event",
+  "tagId": "activity",
+  "title": "聚光灯下的琴声",
+  "lead": "聚光灯下有一架钢琴，我坐在凳子上弹，音符飘在旁边。你最拿手的是什么？",
+  "images": [
+   {
+    "sceneKey": "my-talent"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-activity-14",
+  "category": "event",
+  "tagId": "activity",
+  "title": "学校的读书节",
+  "lead": "教室里摆满了书，大家挑得眼花缭乱。你挑了哪一本？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-mistake-1",
+  "category": "event",
+  "tagId": "mistake",
+  "title": "我撒了一个谎",
+  "lead": "说出来之后，心里反而更难受了。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-mistake-2",
+  "category": "event",
+  "tagId": "mistake",
+  "title": "打碎的花瓶",
+  "lead": "「哐当」一声，屋子里一下子安静了。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-mistake-3",
+  "category": "event",
+  "tagId": "mistake",
+  "title": "迟到了",
+  "lead": "铃响了才跑到教室门口，老师正看着我。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-mistake-4",
+  "category": "event",
+  "tagId": "mistake",
+  "title": "考试前夜",
+  "lead": "明天要考试，台灯下翻了一遍又一遍课本。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-mistake-5",
+  "category": "event",
+  "tagId": "mistake",
+  "title": "说出来了",
+  "lead": "我低着头站着，大人蹲下来，跟我平视着说话。承认的那一刻，你心里是什么感觉？",
+  "images": [
+   {
+    "sceneKey": "lie-truth"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-mistake-6",
+  "category": "event",
+  "tagId": "mistake",
+  "title": "花瓶碎了以后",
+  "lead": "地板上散着一堆碎片和几朵花，小猫蹲在角落里看着。接下来你做了什么？",
+  "images": [
+   {
+    "sceneKey": "broken-vase"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-mistake-7",
+  "category": "event",
+  "tagId": "mistake",
+  "title": "跑进校门的那天",
+  "lead": "我背着书包一路飞跑，校门口的钟已经指向八点十分。那天为什么会晚？",
+  "images": [
+   {
+    "sceneKey": "late"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-mistake-8",
+  "category": "event",
+  "tagId": "mistake",
+  "title": "弄丢的那本书",
+  "lead": "从图书馆借的书找不到了，我把书包翻了个底朝天。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-lost-found-1",
+  "category": "event",
+  "tagId": "lost-found",
+  "title": "走丢的那个下午",
+  "lead": "一回头，妈妈不见了。",
+  "images": [
+   {
+    "caption": "第 1 幅"
+   },
+   {
+    "caption": "第 2 幅"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-lost-found-2",
+  "category": "event",
+  "tagId": "lost-found",
+  "title": "摔了一跤之后",
+  "lead": "膝盖火辣辣的，可我记住了这一跤。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-lost-found-3",
+  "category": "event",
+  "tagId": "lost-found",
+  "title": "生病了",
+  "lead": "头很烫，妈妈让我躺在床上别动。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-lost-found-4",
+  "category": "event",
+  "tagId": "lost-found",
+  "title": "找不到妈妈了",
+  "lead": "街上全是走来走去的大人，我仰着头四处张望，却一个也不认识。那个时候你怕不怕？",
+  "images": [
+   {
+    "sceneKey": "lost-crowd"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-lost-found-5",
+  "category": "event",
+  "tagId": "lost-found",
+  "title": "终于找到妈妈了",
+  "lead": "妈妈蹲下来张开手臂，我一头扑进她怀里。找到的那一刻，你说了什么？",
+  "images": [
+   {
+    "sceneKey": "found-mom"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-lost-found-6",
+  "category": "event",
+  "tagId": "lost-found",
+  "title": "突然停电了",
+  "lead": "灯一下子全灭了，屋里黑得看不见手指。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-milestone-1",
+  "category": "event",
+  "tagId": "milestone",
+  "title": "过生日",
+  "lead": "蛋糕上插着蜡烛，大家围在一起唱生日歌。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-milestone-2",
+  "category": "event",
+  "tagId": "milestone",
+  "title": "毕业了",
+  "lead": "最后一次排队站在操场上，帽子一抛就散了。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-milestone-3",
+  "category": "event",
+  "tagId": "milestone",
+  "title": "搬新家",
+  "lead": "纸箱子堆了一屋，新房间还空空的。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-milestone-4",
+  "category": "event",
+  "tagId": "milestone",
+  "title": "难忘小学生活",
+  "lead": "六年的小学时光，你最难忘的是什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-milestone-5",
+  "category": "event",
+  "tagId": "milestone",
+  "title": "我的拿手好戏",
+  "lead": "你最擅长什么？把过程写具体。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-milestone-6",
+  "category": "event",
+  "tagId": "milestone",
+  "title": "上台领奖",
+  "lead": "我站在台上举着奖杯，台下的同学都在鼓掌。你最想把这个奖拿给谁看？",
+  "images": [
+   {
+    "sceneKey": "award"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-milestone-7",
+  "category": "event",
+  "tagId": "milestone",
+  "title": "新家的第一晚",
+  "lead": "新房间里堆着好几个大纸箱，我抱着自己那个小的。搬到新家的第一晚，你睡得着吗？",
+  "images": [
+   {
+    "sceneKey": "moving"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-milestone-8",
+  "category": "event",
+  "tagId": "milestone",
+  "title": "考试前一夜",
+  "lead": "台灯亮着，课本摊在桌上，墙上的钟走得很慢。考试前一夜，你都在想什么？",
+  "images": [
+   {
+    "sceneKey": "exam-nervous"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-milestone-9",
+  "category": "event",
+  "tagId": "milestone",
+  "title": "毕业那天",
+  "lead": "我们几个戴着毕业帽站成一排，有人手里捧着花。你最舍不得谁？",
+  "images": [
+   {
+    "sceneKey": "graduation"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-milestone-10",
+  "category": "event",
+  "tagId": "milestone",
+  "title": "第一次自己睡",
+  "lead": "房间里蓝幽幽的，窗外有月亮和星星，被子鼓起来，只露出一双眼睛。你后来睡着了吗？",
+  "images": [
+   {
+    "sceneKey": "sleep-alone"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-milestone-11",
+  "category": "event",
+  "tagId": "milestone",
+  "title": "蜡烛和生日歌",
+  "lead": "蛋糕上插着五根蜡烛，家人站在两边，屋里挂着彩旗和气球。你许了什么愿？",
+  "images": [
+   {
+    "sceneKey": "birthday"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-milestone-12",
+  "category": "event",
+  "tagId": "milestone",
+  "title": "我学会游泳了",
+  "lead": "第一次不用浮板游到对岸，那是什么感觉？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-observe-1",
+  "category": "event",
+  "tagId": "observe",
+  "title": "观察日记",
+  "lead": "连续观察一样东西的变化，记录下来。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-observe-2",
+  "category": "event",
+  "tagId": "observe",
+  "title": "我做了一项小实验",
+  "lead": "做实验的时候你看到了什么？按步骤写下来。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-observe-3",
+  "category": "event",
+  "tagId": "observe",
+  "title": "它今天变了样",
+  "lead": "你每天观察的那株植物，今天变成什么样了？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-observe-4",
+  "category": "event",
+  "tagId": "observe",
+  "title": "一次小实验",
+  "lead": "烧杯里冒着气泡，滴管往里面滴粉色的液体，我一边看一边记。你猜会变成什么颜色？",
+  "images": [
+   {
+    "sceneKey": "experiment"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-observe-5",
+  "category": "event",
+  "tagId": "observe",
+  "title": "蒜苗长到第七天",
+  "lead": "日记本摊在桌上，旁边那盆蒜头长出了三根绿苗，墙上的日历写着第七天。这几天它变了多少？",
+  "images": [
+   {
+    "sceneKey": "observe-diary"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-observe-6",
+  "category": "event",
+  "tagId": "observe",
+  "title": "展示台前介绍它",
+  "lead": "展示台上放着电脑，旁边标着外形、功能、用途。你想介绍哪一样东西？",
+  "images": [
+   {
+    "sceneKey": "introduce-thing"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-observe-7",
+  "category": "event",
+  "tagId": "observe",
+  "title": "豆子发芽了",
+  "lead": "泡在水里的豆子，第三天冒出了小白芽。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-letter-1",
+  "category": "event",
+  "tagId": "letter",
+  "title": "给亲人的一封信",
+  "lead": "给远方的亲人写封信，说说你的近况。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-letter-2",
+  "category": "event",
+  "tagId": "letter",
+  "title": "我想对您说",
+  "lead": "有什么话想对爸爸妈妈说？写下来吧。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-letter-3",
+  "category": "event",
+  "tagId": "letter",
+  "title": "读后感",
+  "lead": "读完一本书，你最大的感受是什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-letter-4",
+  "category": "event",
+  "tagId": "letter",
+  "title": "给亲人写一封信",
+  "lead": "桌上有信封、邮票和信纸，铅笔已经拿在手里了。你最想写给谁？",
+  "images": [
+   {
+    "sceneKey": "write-letter"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-letter-5",
+  "category": "event",
+  "tagId": "letter",
+  "title": "读一本好书",
+  "lead": "书架上排满了书，桌上摊开一本，笔记本上已经写了几行。这本书讲了什么？",
+  "images": [
+   {
+    "sceneKey": "reading-notes"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-letter-6",
+  "category": "event",
+  "tagId": "letter",
+  "title": "给老师的一封信",
+  "lead": "快毕业了，有些话想写在信里告诉老师。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-look-picture-1",
+  "category": "event",
+  "tagId": "look-picture",
+  "title": "看图写话",
+  "lead": "仔细看图，图上画了什么？把你看到的、想到的写下来。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-look-picture-2",
+  "category": "event",
+  "tagId": "look-picture",
+  "title": "连环图编故事",
+  "lead": "三幅图连起来就是一个故事，你来讲一讲。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-look-picture-3",
+  "category": "event",
+  "tagId": "look-picture",
+  "title": "仔细看这一幅图",
+  "lead": "墙上挂着一幅画，画的是春天的公园。把你看到的、想到的，按顺序写下来。",
+  "images": [
+   {
+    "sceneKey": "look-picture-single"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-look-picture-4",
+  "category": "event",
+  "tagId": "look-picture",
+  "title": "三幅图，一个故事",
+  "lead": "墙上并排挂着三幅画，中间用箭头连着。它们讲的是一件什么事？",
+  "images": [
+   {
+    "sceneKey": "look-picture-series"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-look-picture-5",
+  "category": "event",
+  "tagId": "look-picture",
+  "title": "图上的那个下午",
+  "lead": "图里的人都停在一瞬间。接下来会发生什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-look-picture-6",
+  "category": "event",
+  "tagId": "look-picture",
+  "title": "四幅图，一件事",
+  "lead": "四幅图按顺序排好，把它们连成一件完整的事。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-custom-1",
+  "category": "event",
+  "tagId": "custom",
+  "title": "传统节日",
+  "lead": "你家是怎么过传统节日的？写一写过程。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-custom-2",
+  "category": "event",
+  "tagId": "custom",
+  "title": "家乡的风俗",
+  "lead": "你的家乡有什么特别的风俗？介绍给大家。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-custom-3",
+  "category": "event",
+  "tagId": "custom",
+  "title": "过节了",
+  "lead": "天上挂着灯笼，烟花炸开了，桌上摆着月饼和饺子。你们家过节最热闹的是哪一刻？",
+  "images": [
+   {
+    "sceneKey": "festival"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-custom-4",
+  "category": "event",
+  "tagId": "custom",
+  "title": "过节时的老规矩",
+  "lead": "两座老房子之间挂着灯笼和鞭炮，桌上摆着碗和汤圆。你们家乡有什么特别的讲究？",
+  "images": [
+   {
+    "sceneKey": "hometown-custom"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-custom-5",
+  "category": "event",
+  "tagId": "custom",
+  "title": "端午的粽子",
+  "lead": "粽叶在手里一折，米就装进去了。你会包吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-custom-6",
+  "category": "event",
+  "tagId": "custom",
+  "title": "元宵看花灯",
+  "lead": "街上挂满了花灯，人挤着人往前挪。你猜中了哪个灯谜？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-comic-1",
+  "category": "event",
+  "tagId": "comic",
+  "title": "一幅漫画的启示",
+  "lead": "先仔细看这幅漫画，它让你想到了什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-comic-2",
+  "category": "event",
+  "tagId": "comic",
+  "title": "漫画里的道理",
+  "lead": "漫画常常用夸张的办法讲道理，你看懂了哪一幅？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-comic-3",
+  "category": "event",
+  "tagId": "comic",
+  "title": "四格漫画里的道理",
+  "lead": "墙上挂着四格漫画，每一格都是一个小人。看完你明白了什么道理？",
+  "images": [
+   {
+    "sceneKey": "comic-inspiration"
+   }
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-comic-4",
+  "category": "event",
+  "tagId": "comic",
+  "title": "等一等再摘",
+  "lead": "漫画里的果子还没熟，有人已经伸手了。你看懂了什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-comic-5",
+  "category": "event",
+  "tagId": "comic",
+  "title": "各扫门前雪",
+  "lead": "漫画里两个人各扫一段路，中间的雪谁也没动。这让你想到什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-1",
+  "category": "object",
+  "tagId": "pet",
+  "title": "我家的小猫",
+  "lead": "它长什么样？平时最喜欢干什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-2",
+  "category": "object",
+  "tagId": "pet",
+  "title": "小狗花花",
+  "lead": "每次我回家，它都会第一个冲出来。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-3",
+  "category": "object",
+  "tagId": "pet",
+  "title": "窗外的小鸟",
+  "lead": "每天早上，它都会停在窗台上唱歌。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-4",
+  "category": "object",
+  "tagId": "pet",
+  "title": "我的小金鱼",
+  "lead": "鱼缸里的小金鱼，尾巴一摆一摆地游。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-5",
+  "category": "object",
+  "tagId": "pet",
+  "title": "小乌龟",
+  "lead": "它的壳上画着花纹，头一伸一缩的。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-6",
+  "category": "object",
+  "tagId": "pet",
+  "title": "国宝大熊猫",
+  "lead": "黑白相间、圆滚滚的大熊猫，你了解多少？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-7",
+  "category": "object",
+  "tagId": "pet",
+  "title": "晒太阳的猫",
+  "lead": "阳光斜斜地照在地板上，橘猫闭着眼睛趴在光里，旁边滚着一个毛线球。它睡着的时候是什么样子？",
+  "images": [
+   {
+    "sceneKey": "cat-sun"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-8",
+  "category": "object",
+  "tagId": "pet",
+  "title": "小狗冲过来了",
+  "lead": "门一开，小狗摇着尾巴朝我冲过来，我张开手。它平时最黏谁？",
+  "images": [
+   {
+    "sceneKey": "dog-welcome"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-9",
+  "category": "object",
+  "tagId": "pet",
+  "title": "窗边的小鸟",
+  "lead": "一只蓝色的小鸟停在窗台上，旁边是一盆小植物，我安静地看着它。它待了多久？",
+  "images": [
+   {
+    "sceneKey": "bird-window"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-10",
+  "category": "object",
+  "tagId": "pet",
+  "title": "鱼缸里的金鱼",
+  "lead": "两条金鱼在水草间游来游去，缸底铺着彩色石子，水面冒出一串小气泡。它们一天要游多少圈？",
+  "images": [
+   {
+    "sceneKey": "goldfish"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-11",
+  "category": "object",
+  "tagId": "pet",
+  "title": "水盆里的小乌龟",
+  "lead": "浅水盆里趴着一只小乌龟，头和四条腿都伸在外面，旁边撒着几粒龟粮。它平时都躲在哪里？",
+  "images": [
+   {
+    "sceneKey": "turtle"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-12",
+  "category": "object",
+  "tagId": "pet",
+  "title": "竹林里的大熊猫",
+  "lead": "竹林里，一只胖熊猫坐着啃竹子，黑眼圈、圆耳朵。关于它，你都知道些什么？",
+  "images": [
+   {
+    "sceneKey": "panda"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-13",
+  "category": "object",
+  "tagId": "pet",
+  "title": "我的小兔子",
+  "lead": "它竖着两只长耳朵，啃胡萝卜的样子很好笑。它平时最爱吃什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-14",
+  "category": "object",
+  "tagId": "pet",
+  "title": "学说话的鹦鹉",
+  "lead": "它学着人说话，学得惟妙惟肖。它学会过哪一句？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-pet-15",
+  "category": "object",
+  "tagId": "pet",
+  "title": "蚂蚁搬家",
+  "lead": "一队蚂蚁排着长队往前爬。它们要去哪儿？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-plant-1",
+  "category": "object",
+  "tagId": "plant",
+  "title": "窗台上的绿萝",
+  "lead": "它一直在悄悄地长，你发现了吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-plant-2",
+  "category": "object",
+  "tagId": "plant",
+  "title": "蒲公英的旅行",
+  "lead": "轻轻一吹，小伞兵们就飞走了。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-plant-3",
+  "category": "object",
+  "tagId": "plant",
+  "title": "池塘里的荷花",
+  "lead": "夏天到了，池塘里的荷花开了。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-plant-4",
+  "category": "object",
+  "tagId": "plant",
+  "title": "我的仙人掌",
+  "lead": "它浑身长着小刺，却开出了小花。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-plant-5",
+  "category": "object",
+  "tagId": "plant",
+  "title": "一盆绿萝",
+  "lead": "书架上的绿萝长得很好，心形的叶子从盆边垂下来，旁边是透光的窗。你是怎么养它的？",
+  "images": [
+   {
+    "sceneKey": "pothos"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-plant-6",
+  "category": "object",
+  "tagId": "plant",
+  "title": "蒲公英飞了",
+  "lead": "一朵白色的蒲公英正在散开，种子顺着风飘向天空。你吹过蒲公英吗？",
+  "images": [
+   {
+    "sceneKey": "dandelion"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-plant-7",
+  "category": "object",
+  "tagId": "plant",
+  "title": "荷叶上的蜻蜓",
+  "lead": "池塘上铺着圆圆的荷叶，一朵荷花正开着，旁边还有一个花苞，蜻蜓停在花尖上。你见过荷花是怎么开的吗？",
+  "images": [
+   {
+    "sceneKey": "lotus"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-plant-8",
+  "category": "object",
+  "tagId": "plant",
+  "title": "开花的仙人掌",
+  "lead": "花盆里的仙人掌浑身是小刺，顶上却开了一朵小红花。它多久才开一次花？",
+  "images": [
+   {
+    "sceneKey": "cactus"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-plant-9",
+  "category": "object",
+  "tagId": "plant",
+  "title": "窗台上的多肉",
+  "lead": "胖乎乎的叶子挤在一起，晒着太阳。你多久给它浇一次水？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-plant-10",
+  "category": "object",
+  "tagId": "plant",
+  "title": "门口的桂花树",
+  "lead": "一到秋天，满树的小花，整条街都香了。你闻到过吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-plant-11",
+  "category": "object",
+  "tagId": "plant",
+  "title": "窗外的梧桐树",
+  "lead": "它一年四季都在变。你见过它哪几种样子？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stationery-1",
+  "category": "object",
+  "tagId": "stationery",
+  "title": "我的小书包",
+  "lead": "书包里装着什么？它陪了你多久了？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stationery-2",
+  "category": "object",
+  "tagId": "stationery",
+  "title": "一块橡皮的心里话",
+  "lead": "如果橡皮会说话，它想说什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stationery-3",
+  "category": "object",
+  "tagId": "stationery",
+  "title": "我的文具盒",
+  "lead": "打开文具盒，就像打开一个小房子。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stationery-4",
+  "category": "object",
+  "tagId": "stationery",
+  "title": "椅背上的书包",
+  "lead": "书包挂在椅背上，桌上摊着书和铅笔。你的书包里都装了什么？",
+  "images": [
+   {
+    "sceneKey": "backpack"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stationery-5",
+  "category": "object",
+  "tagId": "stationery",
+  "title": "打开文具盒",
+  "lead": "文具盒一打开，钢笔、铅笔、直尺、橡皮各就各位。哪一件用得最多？",
+  "images": [
+   {
+    "sceneKey": "pencil-case"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stationery-6",
+  "category": "object",
+  "tagId": "stationery",
+  "title": "越写越短的铅笔",
+  "lead": "它越写越短，最后只剩下一小截。你舍得扔吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stationery-7",
+  "category": "object",
+  "tagId": "stationery",
+  "title": "尺子上的刻度",
+  "lead": "一格一格的刻度，量过很多东西。它量过最长的是什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-stationery-8",
+  "category": "object",
+  "tagId": "stationery",
+  "title": "削笔刀",
+  "lead": "转几圈，铅笔就尖了，下面堆着一层木屑。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-treasure-1",
+  "category": "object",
+  "tagId": "treasure",
+  "title": "外婆的针线盒",
+  "lead": "那个旧旧的盒子，里面装满了故事。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-treasure-2",
+  "category": "object",
+  "tagId": "treasure",
+  "title": "我的旧玩具",
+  "lead": "它已经很旧了，可你还是舍不得扔。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-treasure-3",
+  "category": "object",
+  "tagId": "treasure",
+  "title": "一张旧照片",
+  "lead": "翻相册的时候，一张泛黄的照片掉了出来。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-treasure-4",
+  "category": "object",
+  "tagId": "treasure",
+  "title": "我的小闹钟",
+  "lead": "每天早上都是它叫我起床，叮铃铃的。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-treasure-5",
+  "category": "object",
+  "tagId": "treasure",
+  "title": "我的房间",
+  "lead": "推开房门，每一样东西都是你的好朋友。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-treasure-6",
+  "category": "object",
+  "tagId": "treasure",
+  "title": "介绍一种事物",
+  "lead": "选一种你了解的东西，把它的外形、功能、用途介绍清楚。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-treasure-7",
+  "category": "object",
+  "tagId": "treasure",
+  "title": "我的乐园",
+  "lead": "你最喜欢待的地方是哪里？为什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-treasure-8",
+  "category": "object",
+  "tagId": "treasure",
+  "title": "打开的针线盒",
+  "lead": "打开的针线盒里排着五轴彩线，剪刀、顶针、扣子都在。这些东西你见过谁用？",
+  "images": [
+   {
+    "sceneKey": "sewing-box"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-treasure-9",
+  "category": "object",
+  "tagId": "treasure",
+  "title": "掉了耳朵的小熊",
+  "lead": "架子上坐着一只掉了耳朵、打着补丁的小熊，阳光暖暖地照着它。它陪了你多久？",
+  "images": [
+   {
+    "sceneKey": "old-toy"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-treasure-10",
+  "category": "object",
+  "tagId": "treasure",
+  "title": "相框里的老照片",
+  "lead": "相框里那张照片已经泛黄了，旁边搁着一本书和一支钢笔。照片上是什么地方？",
+  "images": [
+   {
+    "sceneKey": "old-photo"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-treasure-11",
+  "category": "object",
+  "tagId": "treasure",
+  "title": "奶奶的顶针",
+  "lead": "小小的顶针上满是凹坑，奶奶戴了一辈子。你见她用过吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-treasure-12",
+  "category": "object",
+  "tagId": "treasure",
+  "title": "我的第一张奖状",
+  "lead": "它贴在墙上，边角已经卷起来了。那是哪一次得的奖？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-treasure-13",
+  "category": "object",
+  "tagId": "treasure",
+  "title": "爸爸送的手表",
+  "lead": "表带有点松了，可我一直戴着。它是什么时候送的？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-food-1",
+  "category": "object",
+  "tagId": "food",
+  "title": "外婆包的饺子",
+  "lead": "薄薄的皮，鼓鼓的馅，冒着热气。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-food-2",
+  "category": "object",
+  "tagId": "food",
+  "title": "一碗热汤面",
+  "lead": "冬天放学回家，桌上有一碗面。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-food-3",
+  "category": "object",
+  "tagId": "food",
+  "title": "推荐一本书",
+  "lead": "你读过的好书，像推荐好朋友一样推荐给同学吧。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-food-4",
+  "category": "object",
+  "tagId": "food",
+  "title": "包饺子",
+  "lead": "案板上一排饺子刚包好，擀面杖和面粉还在旁边，锅里的水开了。你包的那只像什么？",
+  "images": [
+   {
+    "sceneKey": "dumplings"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-food-5",
+  "category": "object",
+  "tagId": "food",
+  "title": "面碗里的热气",
+  "lead": "大碗里的面冒着热气，卧着一个鸡蛋，还漂着几根青菜。这碗面是谁做的？",
+  "images": [
+   {
+    "sceneKey": "noodle-soup"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-food-6",
+  "category": "object",
+  "tagId": "food",
+  "title": "妈妈煮的粥",
+  "lead": "早上起床，桌上有一碗热腾腾的粥。里面都放了什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-food-7",
+  "category": "object",
+  "tagId": "food",
+  "title": "一根冰棍",
+  "lead": "夏天的午后，冰棍化得比吃得还快。你最喜欢什么口味？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-food-8",
+  "category": "object",
+  "tagId": "food",
+  "title": "奶奶做的红烧肉",
+  "lead": "一掀锅盖，满屋子都是香味。你等得及吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-1",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "我的小台灯",
+  "lead": "每天晚上，它都亮着陪我写作业。它是什么样子的？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-2",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "我家的电风扇",
+  "lead": "天热的时候，它转起来呼呼地响。它给家里带来了什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-3",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "下雨天的雨伞",
+  "lead": "雨点打在伞面上，滴滴答答的。这把伞有什么故事？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-4",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "叫我起床的闹钟",
+  "lead": "每天早上，它准时把我叫醒。你喜欢它吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-5",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "我的水杯",
+  "lead": "它每天跟着我去上学，里面装满了水。它是什么颜色的？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-6",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "家里的冰箱",
+  "lead": "打开冰箱门，里面整整齐齐地摆着什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-7",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "洗衣机转起来了",
+  "lead": "洗衣机轰隆隆地转，衣服在里面翻跟头。你帮妈妈晾过衣服吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-8",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "墙角的扫帚",
+  "lead": "墙角立着一把扫帚，扫过很多年。它扫过哪些地方？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-9",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "墙上的挂钟",
+  "lead": "秒针一格一格地走，从来不休息。你盯着它看过吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-10",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "家里的遥控器",
+  "lead": "它总是找不到，一找就要找半天。它平时放在哪儿？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-11",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "门边的一串钥匙",
+  "lead": "钥匙挂在门边，走起路来叮叮当当。哪一把是你的？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-12",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "洗手间的镜子",
+  "lead": "每天早上，我都在它面前刷牙洗脸。它照出过什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-13",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "我的小拖鞋",
+  "lead": "一进门就换上它，脚底下软软的。它是什么样子的？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-14",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "水开了",
+  "lead": "壶嘴咕嘟咕嘟冒着白气，水开了。你听过这个声音吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-15",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "电吹风呼呼地吹",
+  "lead": "洗完头，头发湿漉漉的。妈妈是怎么帮你吹干的？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-16",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "手电筒的光",
+  "lead": "停电的晚上，一道光柱照在墙上。你用它做过什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-17",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "会唱歌的收音机",
+  "lead": "爷爷的收音机里，每天放着不一样的声音。你听过吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-18",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "门铃响了",
+  "lead": "叮咚一声，是谁来了？你猜过多少次？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-19",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "阳台上的晾衣架",
+  "lead": "一排衣服在风里轻轻晃。哪一件是你的？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-20",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "我的保温杯",
+  "lead": "冬天里，打开盖子还冒着热气。它陪了你多久？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-21",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "我的存钱罐",
+  "lead": "硬币扔进去，叮当一声。你攒了多久了？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-22",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "我的小牙刷",
+  "lead": "它站在杯子里，刷毛有点歪了。你多久换一次？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-23",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "雨天的雨靴",
+  "lead": "踩进水洼里，啪嗒啪嗒的。你喜欢穿它吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-24",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "家里的窗帘",
+  "lead": "早上一拉，阳光就涌进来。你喜欢开着还是拉着？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-25",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "鞋柜里的鞋",
+  "lead": "一打开鞋柜，大大小小的鞋排在一起。哪一双最旧？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-26",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "书包上的小挂件",
+  "lead": "书包上挂着一个小挂件，走起路来一晃一晃。它是谁送的？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-27",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "电饭煲冒气了",
+  "lead": "厨房里飘出米饭的香味，锅盖边冒着白气。今天吃什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-28",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "空调吹出来的风",
+  "lead": "夏天一进屋，凉风就扑过来。你最喜欢哪个温度？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-29",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "一把旧椅子",
+  "lead": "那把椅子有一条腿短了一截，坐上去会晃。它陪了家里多久？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-30",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "我的小书桌",
+  "lead": "桌面上有铅笔印和几道划痕。你在这张桌上写过什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-life-goods-31",
+  "category": "object",
+  "tagId": "life-goods",
+  "title": "门口的擦鞋垫",
+  "lead": "进门之前先在它上面踩两脚。你注意过它吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-if-i-1",
+  "category": "imagine",
+  "tagId": "if-i",
+  "title": "假如我有一双翅膀",
+  "lead": "你想飞到哪里去？会看到什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-if-i-2",
+  "category": "imagine",
+  "tagId": "if-i",
+  "title": "假如我是一阵风",
+  "lead": "风会去哪里？会做什么事？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-if-i-3",
+  "category": "imagine",
+  "tagId": "if-i",
+  "title": "假如我能听懂动物说话",
+  "lead": "那它们会告诉你什么秘密？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-if-i-4",
+  "category": "imagine",
+  "tagId": "if-i",
+  "title": "假如我只有蚂蚁大",
+  "lead": "忽然你变得只有蚂蚁那么小，世界变成了什么样？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-if-i-5",
+  "category": "imagine",
+  "tagId": "if-i",
+  "title": "假如我会飞",
+  "lead": "我背着白色的翅膀飞在半空，脚下是小房子和绿树。你想先飞到哪儿去？",
+  "images": [
+   {
+    "sceneKey": "fly-sky"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-if-i-6",
+  "category": "imagine",
+  "tagId": "if-i",
+  "title": "假如我是风",
+  "lead": "我吹过草地，把两棵树吹弯了腰，叶子在空中乱飞。你想吹到哪里去？",
+  "images": [
+   {
+    "sceneKey": "wind-travel"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-if-i-7",
+  "category": "imagine",
+  "tagId": "if-i",
+  "title": "假如我有一支神笔",
+  "lead": "画什么就有什么。你第一笔会画什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-future-1",
+  "category": "imagine",
+  "tagId": "future",
+  "title": "未来的学校",
+  "lead": "一百年后的学校，会是什么样子？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-future-2",
+  "category": "imagine",
+  "tagId": "future",
+  "title": "二十年后的我",
+  "lead": "二十年后，你在做什么工作？过着怎样的生活？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-future-3",
+  "category": "imagine",
+  "tagId": "future",
+  "title": "我的机器人朋友",
+  "lead": "它有方方的脑袋，天线一闪一闪的。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-future-4",
+  "category": "imagine",
+  "tagId": "future",
+  "title": "太空旅行",
+  "lead": "坐上火箭，嗖的一下就到了太空里。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-future-5",
+  "category": "imagine",
+  "tagId": "future",
+  "title": "飘在天上的学校",
+  "lead": "半圆形的建筑飘在天上，中间连着一条空中走廊。你希望未来的学校多一样什么？",
+  "images": [
+   {
+    "sceneKey": "future-school"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-future-6",
+  "category": "imagine",
+  "tagId": "future",
+  "title": "未来的我",
+  "lead": "我抬头想着，头顶的气泡里出现了一个戴头盔的宇航员。你长大以后想成为谁？",
+  "images": [
+   {
+    "sceneKey": "future-me"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-future-7",
+  "category": "imagine",
+  "tagId": "future",
+  "title": "跳到未来去看",
+  "lead": "大钟的指针转出一圈圈螺旋，前面是未来城市的影子。你想跳到哪一年去看看？",
+  "images": [
+   {
+    "sceneKey": "time-travel"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-future-8",
+  "category": "imagine",
+  "tagId": "future",
+  "title": "我的发明设计图",
+  "lead": "设计图上画着一双带翅膀的鞋，旁边亮着一个灯泡。你想发明什么？",
+  "images": [
+   {
+    "sceneKey": "invention"
+   }
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-future-9",
+  "category": "imagine",
+  "tagId": "future",
+  "title": "未来的家",
+  "lead": "一进门灯就自己亮了，饭也刚好做好。你还想要什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-fairy-1",
+  "category": "imagine",
+  "tagId": "fairy",
+  "title": "《龟兔赛跑》新编",
+  "lead": "如果它们再比一次，会发生什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-fairy-2",
+  "category": "imagine",
+  "tagId": "fairy",
+  "title": "卖火柴的小女孩来了我家",
+  "lead": "如果她推开门走了进来……",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-fairy-3",
+  "category": "imagine",
+  "tagId": "fairy",
+  "title": "龟兔赛跑",
+  "lead": "跑道上乌龟还在慢慢往前爬，兔子却靠在树下睡着了。这个故事后来怎么样了？",
+  "images": [
+   {
+    "sceneKey": "turtle-rabbit"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-fairy-4",
+  "category": "imagine",
+  "tagId": "fairy",
+  "title": "雪夜里的火柴",
+  "lead": "雪夜的街上只有一个小女孩，她手里那根火柴亮着，旁边的窗户里透着暖黄的灯光。她看到了什么？",
+  "images": [
+   {
+    "sceneKey": "girl-visit"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-fairy-5",
+  "category": "imagine",
+  "tagId": "fairy",
+  "title": "笔尖冒出的小人",
+  "lead": "笔记本摊在桌上，铅笔在写，笔尖冒出了一个小人和几点星光。如果笔自己会写，它会写什么？",
+  "images": [
+   {
+    "sceneKey": "pen-story"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-fairy-6",
+  "category": "imagine",
+  "tagId": "fairy",
+  "title": "《狐狸和乌鸦》新编",
+  "lead": "乌鸦这次没开口，狐狸又想出了什么办法？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-talking-1",
+  "category": "imagine",
+  "tagId": "talking",
+  "title": "如果书包会说话",
+  "lead": "它每天被你背着，肯定有很多话想说。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-talking-2",
+  "category": "imagine",
+  "tagId": "talking",
+  "title": "一只铅笔的冒险",
+  "lead": "它从文具盒里溜了出去……",
+  "images": [
+   {
+    "caption": "第 1 幅"
+   },
+   {
+    "caption": "第 2 幅"
+   },
+   {
+    "caption": "第 3 幅"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-talking-3",
+  "category": "imagine",
+  "tagId": "talking",
+  "title": "会说话的橡皮",
+  "lead": "桌上的粉色橡皮长着一张笑脸，它忽然开口了。它想跟你说什么？",
+  "images": [
+   {
+    "sceneKey": "eraser-talking"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-talking-4",
+  "category": "imagine",
+  "tagId": "talking",
+  "title": "它们都在说话",
+  "lead": "林间空地上坐着一只猫、一只狗和一只小鸟，每一个头顶都冒出一个对话气泡。它们在聊什么？",
+  "images": [
+   {
+    "sceneKey": "talk-animals"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-talking-5",
+  "category": "imagine",
+  "tagId": "talking",
+  "title": "会说话的书包",
+  "lead": "椅背上的蓝书包长着一张笑脸，它开口了，桌上的作业本还没写完。它想说什么？",
+  "images": [
+   {
+    "sceneKey": "talking-bag"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-talking-6",
+  "category": "imagine",
+  "tagId": "talking",
+  "title": "铅笔跑了",
+  "lead": "铅笔从桌上跳下来，一路朝门口跑，橡皮和本子都看呆了。它为什么要跑？",
+  "images": [
+   {
+    "sceneKey": "pencil-escape"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-talking-7",
+  "category": "imagine",
+  "tagId": "talking",
+  "title": "铅笔的历险",
+  "lead": "一支大铅笔站在摊开的巨书上，书页像山谷一样起伏。它在路上遇见了谁？",
+  "images": [
+   {
+    "sceneKey": "pencil-adventure"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-talking-8",
+  "category": "imagine",
+  "tagId": "talking",
+  "title": "铅笔回家了",
+  "lead": "红色笔袋一打开，彩笔和橡皮都挤在里面，那支跑掉的铅笔也回到了队伍里。它们会怎么欢迎它？",
+  "images": [
+   {
+    "sceneKey": "pencil-home"
+   }
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-talking-9",
+  "category": "imagine",
+  "tagId": "talking",
+  "title": "如果台灯会说话",
+  "lead": "它每天晚上都亮着陪你，肯定有话想说。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   30,
+   80
+  ],
+  "minGrade": 1,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-dream-1",
+  "category": "imagine",
+  "tagId": "dream",
+  "title": "一个奇怪的梦",
+  "lead": "梦里的事都不太讲道理，可又很真实。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-dream-2",
+  "category": "imagine",
+  "tagId": "dream",
+  "title": "我梦见了未来",
+  "lead": "醒来的时候，我还记得那个画面。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-dream-3",
+  "category": "imagine",
+  "tagId": "dream",
+  "title": "海底探险",
+  "lead": "梦里我变成了一条鱼，在珊瑚丛里穿来穿去。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-dream-4",
+  "category": "imagine",
+  "tagId": "dream",
+  "title": "时间快进",
+  "lead": "「嗖」的一声，我到了好多好多年以后。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-dream-5",
+  "category": "imagine",
+  "tagId": "dream",
+  "title": "奇怪的梦",
+  "lead": "紫色的天上，房子倒着长，鱼在云里游，我躺在云朵上睡着了。这个梦里还有什么？",
+  "images": [
+   {
+    "sceneKey": "weird-dream"
+   }
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-dream-6",
+  "category": "imagine",
+  "tagId": "dream",
+  "title": "我梦见自己会飞",
+  "lead": "梦里的风从耳边吹过去。你飞过了哪些地方？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-sci-fi-1",
+  "category": "imagine",
+  "tagId": "sci-fi",
+  "title": "插上科学的翅膀飞",
+  "lead": "展开想象，写一个科幻故事。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-sci-fi-2",
+  "category": "imagine",
+  "tagId": "sci-fi",
+  "title": "我的奇思妙想",
+  "lead": "你想发明什么东西？它有什么功能？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-sci-fi-3",
+  "category": "imagine",
+  "tagId": "sci-fi",
+  "title": "宇宙探险记",
+  "lead": "坐上火箭，去宇宙里探险。",
+  "images": [
+   {
+    "caption": "第 1 幅"
+   },
+   {
+    "caption": "第 2 幅"
+   }
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-sci-fi-4",
+  "category": "imagine",
+  "tagId": "sci-fi",
+  "title": "珊瑚丛里的小鱼",
+  "lead": "蓝色的海水里长着珊瑚和水草，一群小鱼从身边游过，远处还飘着一个潜水头盔。海底藏着什么宝贝？",
+  "images": [
+   {
+    "sceneKey": "underwater"
+   }
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-sci-fi-5",
+  "category": "imagine",
+  "tagId": "sci-fi",
+  "title": "飞向带光环的星球",
+  "lead": "黑色的星空里有一颗带光环的星球，火箭拖着火焰从旁边飞过。你在太空里最想看见什么？",
+  "images": [
+   {
+    "sceneKey": "space"
+   }
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-sci-fi-6",
+  "category": "imagine",
+  "tagId": "sci-fi",
+  "title": "方脑袋的机器人",
+  "lead": "方脑袋的机器人有天线和齿轮关节，它正朝我挥手。你希望它会做什么？",
+  "images": [
+   {
+    "sceneKey": "robot-friend"
+   }
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-sci-fi-7",
+  "category": "imagine",
+  "tagId": "sci-fi",
+  "title": "插上科学的翅膀",
+  "lead": "深蓝色的太空里，火箭拖着火焰飞，远处是一颗带光环的星球。你想飞到哪儿？",
+  "images": [
+   {
+    "sceneKey": "sci-fi-fly"
+   }
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-sci-fi-8",
+  "category": "imagine",
+  "tagId": "sci-fi",
+  "title": "会飞的汽车",
+  "lead": "堵车时按一下按钮，它就升到了半空。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-deform-1",
+  "category": "imagine",
+  "tagId": "deform",
+  "title": "变形记",
+  "lead": "假如你变成了另一种东西，你的世界会变成什么样？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-deform-2",
+  "category": "imagine",
+  "tagId": "deform",
+  "title": "假如我变小了",
+  "lead": "忽然你变得只有蚂蚁那么小，世界变成了什么样？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-deform-3",
+  "category": "imagine",
+  "tagId": "deform",
+  "title": "神奇的探险之旅",
+  "lead": "你和同伴深入一个未知的山洞，发生了什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-deform-4",
+  "category": "imagine",
+  "tagId": "deform",
+  "title": "笔尖流出的故事",
+  "lead": "笔尖一动，一个人物就从纸上走了出来……",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-deform-5",
+  "category": "imagine",
+  "tagId": "deform",
+  "title": "变小以后的世界",
+  "lead": "巨大的花朵和草丛中间站着一个很小的人，露珠像湖泊一样大。变小以后，你最想做什么？",
+  "images": [
+   {
+    "sceneKey": "if-tiny"
+   }
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-deform-6",
+  "category": "imagine",
+  "tagId": "deform",
+  "title": "山洞里的探险",
+  "lead": "我打着手电往山洞里走，光柱照到了一个箱子。里面会是什么？",
+  "images": [
+   {
+    "sceneKey": "adventure-trip"
+   }
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-deform-7",
+  "category": "imagine",
+  "tagId": "deform",
+  "title": "我变成了一只蚂蚁",
+  "lead": "草丛里站着一只巨大的蚂蚁，远处那个小小的人影，是变形以前的我。变成蚂蚁以后会怎么样？",
+  "images": [
+   {
+    "sceneKey": "deformation"
+   }
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-deform-8",
+  "category": "imagine",
+  "tagId": "deform",
+  "title": "我变成了一棵树",
+  "lead": "脚扎进土里，手臂变成了树枝。谁会在你身上做窝？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-growth-1",
+  "category": "event",
+  "tagId": "growth",
+  "title": "那一刻，我长大了",
+  "lead": "生活中总有一个瞬间，让你突然觉得自己不再是小孩。那是怎样的一个时刻？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-growth-2",
+  "category": "event",
+  "tagId": "growth",
+  "title": "在挫折中成长",
+  "lead": "你有没有经历过一次失败，当时很难过，但后来却让你变得更坚强？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-growth-3",
+  "category": "event",
+  "tagId": "growth",
+  "title": "我战胜了自己",
+  "lead": "有时候最大的对手不是别人，而是自己内心的害怕或懒惰。你有过这样的经历吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-growth-4",
+  "category": "event",
+  "tagId": "growth",
+  "title": "独自面对",
+  "lead": "第一次没有爸爸妈妈在身边，自己完成一件事。那是什么感觉？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-growth-5",
+  "category": "event",
+  "tagId": "growth",
+  "title": "从错误中学会",
+  "lead": "犯过一次错，被批评过，但那次教训让你记住了什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-growth-6",
+  "category": "event",
+  "tagId": "growth",
+  "title": "坚持就是胜利",
+  "lead": "有没有一件事，你差点放弃，但咬咬牙坚持了下来？最后的结果怎么样？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-growth-7",
+  "category": "event",
+  "tagId": "growth",
+  "title": "我的蜕变",
+  "lead": "从胆小到勇敢，从粗心到细心，从懒惰到勤奋……你身上发生过怎样的变化？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-growth-8",
+  "category": "event",
+  "tagId": "growth",
+  "title": "学会承担",
+  "lead": "什么时候开始，你觉得自己要为某件事负责了？那是什么事？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-growth-9",
+  "category": "event",
+  "tagId": "growth",
+  "title": "风雨之后",
+  "lead": "经历过一次困难或打击后，你看到了什么不一样的风景？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-growth-10",
+  "category": "event",
+  "tagId": "growth",
+  "title": "给自己点赞",
+  "lead": "你有没有做过一件让自己特别骄傲的事？当时发生了什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-reading-1",
+  "category": "event",
+  "tagId": "reading",
+  "title": "书中那句话",
+  "lead": "有没有一本书里的一句话，让你记了很久？那句话是什么，为什么打动了你？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-reading-2",
+  "category": "event",
+  "tagId": "reading",
+  "title": "我和书中的人物",
+  "lead": "如果你能和某本书里的一个人物做朋友，你会选谁？你们会一起做什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-reading-3",
+  "category": "event",
+  "tagId": "reading",
+  "title": "读完这本书",
+  "lead": "最近读完的一本书，它讲了什么？你最喜欢哪个情节或人物？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-reading-4",
+  "category": "event",
+  "tagId": "reading",
+  "title": "书里的世界",
+  "lead": "有没有一本书，读完之后让你特别想去书里的那个地方看看？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-reading-5",
+  "category": "event",
+  "tagId": "reading",
+  "title": "一句话的启发",
+  "lead": "老师、父母或书里的一句话，曾经在你遇到困难时给过你力量。那句话是什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-reading-6",
+  "category": "event",
+  "tagId": "reading",
+  "title": "如果我是主人公",
+  "lead": "选一本你读过的书，如果你是里面的主人公，你会怎么做？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-reading-7",
+  "category": "event",
+  "tagId": "reading",
+  "title": "我的读书故事",
+  "lead": "你是怎么爱上读书的？有没有一本书改变了你对某件事的看法？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-reading-8",
+  "category": "event",
+  "tagId": "reading",
+  "title": "一本好书推荐给你",
+  "lead": "如果要把你最喜欢的一本书推荐给同学，你会怎么介绍它？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-tradition-1",
+  "category": "event",
+  "tagId": "tradition",
+  "title": "家乡的节日",
+  "lead": "你家乡过节有什么特别的习俗？和别的地方有什么不同？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-tradition-2",
+  "category": "event",
+  "tagId": "tradition",
+  "title": "老手艺人",
+  "lead": "你身边有没有一位老手艺人？他做的是什么？你从他身上看到了什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-tradition-3",
+  "category": "event",
+  "tagId": "tradition",
+  "title": "年味",
+  "lead": "过年的时候，家里最让你期待的是什么？那是一种怎样的味道或感觉？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-tradition-4",
+  "category": "event",
+  "tagId": "tradition",
+  "title": "非遗在身边",
+  "lead": "你家乡有没有被列入非物质文化遗产的东西？你见过或体验过吗？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-tradition-5",
+  "category": "event",
+  "tagId": "tradition",
+  "title": "老物件的故事",
+  "lead": "家里有没有一件传下来的老物件？它背后有什么故事？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-tradition-6",
+  "category": "event",
+  "tagId": "tradition",
+  "title": "舌尖上的家乡",
+  "lead": "家乡有一种传统美食，它是怎么做的？吃着它，你想到了什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-tradition-7",
+  "category": "event",
+  "tagId": "tradition",
+  "title": "庙会记忆",
+  "lead": "你有没有逛过庙会或集市？印象最深的是什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-tradition-8",
+  "category": "event",
+  "tagId": "tradition",
+  "title": "传统与现代",
+  "lead": "你身边有没有一种传统的东西，现在用新的方式在传承？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   100,
+   220
+  ],
+  "minGrade": 3,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-society-1",
+  "category": "event",
+  "tagId": "society",
+  "title": "身边的变化",
+  "lead": "这几年，你住的地方发生了什么变化？是变好了还是让你有些担心？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   220,
+   400
+  ],
+  "minGrade": 5,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-society-2",
+  "category": "event",
+  "tagId": "society",
+  "title": "环保小卫士",
+  "lead": "你有没有为保护环境做过一件事？那件事让你有什么感受？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   220,
+   400
+  ],
+  "minGrade": 5,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-society-3",
+  "category": "event",
+  "tagId": "society",
+  "title": "科技改变生活",
+  "lead": "手机、外卖、网购……科技给你的生活带来了什么改变？是好还是坏？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   220,
+   400
+  ],
+  "minGrade": 5,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-society-4",
+  "category": "event",
+  "tagId": "society",
+  "title": "陌生人的善意",
+  "lead": "你有没有收到过陌生人的帮助？那是一个怎样的瞬间？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   220,
+   400
+  ],
+  "minGrade": 5,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-society-5",
+  "category": "event",
+  "tagId": "society",
+  "title": "我看网红现象",
+  "lead": "你身边有没有同学想当网红或追网红？你怎么看这个现象？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   220,
+   400
+  ],
+  "minGrade": 5,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-society-6",
+  "category": "event",
+  "tagId": "society",
+  "title": "老小区的春天",
+  "lead": "你住的小区或街道最近有没有改造？改造前后有什么不一样？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   220,
+   400
+  ],
+  "minGrade": 5,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-society-7",
+  "category": "event",
+  "tagId": "society",
+  "title": "一次志愿服务",
+  "lead": "你有没有参加过志愿活动？那次经历让你看到了什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   220,
+   400
+  ],
+  "minGrade": 5,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-society-8",
+  "category": "event",
+  "tagId": "society",
+  "title": "网络与生活",
+  "lead": "网络给你的学习和生活带来了什么？有没有让你困扰的时候？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   220,
+   400
+  ],
+  "minGrade": 5,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-gratitude-1",
+  "category": "person",
+  "tagId": "gratitude",
+  "title": "想对您说声谢谢",
+  "lead": "有没有一个人，你一直欠他一句「谢谢」？你想对他说什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-gratitude-2",
+  "category": "person",
+  "tagId": "gratitude",
+  "title": "致敬平凡英雄",
+  "lead": "清洁工、快递员、护士、警察……有没有一位「平凡英雄」让你感动过？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-gratitude-3",
+  "category": "person",
+  "tagId": "gratitude",
+  "title": "那双手",
+  "lead": "妈妈的手、老师的手、工人的手……有没有一双手让你印象深刻？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-gratitude-4",
+  "category": "person",
+  "tagId": "gratitude",
+  "title": "背影",
+  "lead": "你有没有注视过一个人的背影，那一刻心里涌起很多感触？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-gratitude-5",
+  "category": "person",
+  "tagId": "gratitude",
+  "title": "温暖的目光",
+  "lead": "有没有一道目光，在你难过或紧张的时候给了你力量？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-gratitude-6",
+  "category": "person",
+  "tagId": "gratitude",
+  "title": "礼物",
+  "lead": "收到过最珍贵的一份礼物是什么？它为什么对你那么重要？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-gratitude-7",
+  "category": "person",
+  "tagId": "gratitude",
+  "title": "一碗面的温度",
+  "lead": "有没有一种食物，吃着吃着就让你想起了某个人？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-gratitude-8",
+  "category": "person",
+  "tagId": "gratitude",
+  "title": "师恩难忘",
+  "lead": "有没有一位老师，说过的一句话或做过的一件事，让你记到现在？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   60,
+   150
+  ],
+  "minGrade": 2,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-applied-writing-1",
+  "category": "event",
+  "tagId": "applied-writing",
+  "title": "国旗下的讲话",
+  "lead": "周一的升旗仪式上，轮到你在国旗下讲话。你想对全校同学说些什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-applied-writing-2",
+  "category": "event",
+  "tagId": "applied-writing",
+  "title": "竞选班干部",
+  "lead": "班干部竞选开始了，你要上台说说自己的打算。你会怎么介绍自己？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-applied-writing-3",
+  "category": "event",
+  "tagId": "applied-writing",
+  "title": "读书节的发言",
+  "lead": "学校读书节上，老师请你上台说几句。你想跟大家分享哪本书、哪句话？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-applied-writing-4",
+  "category": "event",
+  "tagId": "applied-writing",
+  "title": "毕业典礼上的发言",
+  "lead": "毕业典礼上，你要代表全班同学发言。此刻你最想说的是什么？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-applied-writing-5",
+  "category": "event",
+  "tagId": "applied-writing",
+  "title": "节约用水倡议书",
+  "lead": "班里要发起一次节水行动，请你写一份倡议书，号召大家一起节约用水。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-applied-writing-6",
+  "category": "event",
+  "tagId": "applied-writing",
+  "title": "保护环境倡议书",
+  "lead": "学校要开展环保行动，请你写一份倡议书，告诉大家可以从哪些小事做起。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-applied-writing-7",
+  "category": "event",
+  "tagId": "applied-writing",
+  "title": "观后感",
+  "lead": "看完一场演出或一部纪录片，你心里有很多话。把它们写下来吧。",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ },
+ {
+  "id": "builtin-applied-writing-8",
+  "category": "event",
+  "tagId": "applied-writing",
+  "title": "给校长的建议书",
+  "lead": "学校里有一件事，你想向校长提个建议。你会怎么写？",
+  "images": [
+   {}
+  ],
+  "wordRange": [
+   150,
+   300
+  ],
+  "minGrade": 4,
+  "maxGrade": 9,
+  "focus": [],
+  "addedAt": 0,
+  "source": "builtin",
+  "timesUsed": 0,
+  "aiGenerated": false
+ }
+]

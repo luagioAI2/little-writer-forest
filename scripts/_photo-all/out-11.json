@@ -1,0 +1,209 @@
+{
+  "batch": "11",
+  "items": [
+    {
+      "landmarkId": "cn-山东-奥帆海洋文化旅游区",
+      "match": "place",
+      "query": "Qingdao Olympic Sailing Center",
+      "mediaUrl": "https://images.pexels.com/photos/39225390/pexels-photo-39225390.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Elegant Marina Scene at Qingdao Olympic Sailing Center",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/elegant-marina-scene-at-qingdao-olympic-sailing-center-39225390/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 64543 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-山东-微山湖旅游区",
+      "match": "scene",
+      "query": "Weishan Lake",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Weishan Lake, Nansi Lake Shandong (only generic lake shots + iStock ads)."
+    },
+    {
+      "landmarkId": "cn-山东-萤火虫水洞•地下大峡谷旅游区",
+      "match": "scene",
+      "query": "Underground Grand Canyon Shandong",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Underground Grand Canyon Shandong, Linyi Shandong (only unrelated caves)."
+    },
+    {
+      "landmarkId": "cn-山东-黄河口生态旅游区",
+      "match": "scene",
+      "query": "Yellow River Delta",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No confirmable on-site photo. Tried: Yellow River Delta, Yellow River estuary China (generic deltas + iStock ads)."
+    },
+    {
+      "landmarkId": "cn-山东-威海华夏城景区",
+      "match": "scene",
+      "query": "Weihai Huaxia City",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Weihai China coast, Weihai Huaxia City (only generic Weihai city/coast)."
+    },
+    {
+      "landmarkId": "cn-山东-青州古城景区",
+      "match": "scene",
+      "query": "Qingzhou ancient city",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Qingzhou ancient city, Qingzhou Shandong (real Qingzhou shots only in iStock ads)."
+    },
+    {
+      "landmarkId": "cn-山东-沂蒙山旅游区",
+      "match": "scene",
+      "query": "Yimeng Mountain",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Yimeng Mountain, Yimengshan (real Yimeng shots only in iStock ads)."
+    },
+    {
+      "landmarkId": "cn-山东-天下第一泉景区",
+      "match": "scene",
+      "query": "Baotu Spring Jinan",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Baotu Spring Jinan, Baotu Spring (real Baotu shots only in iStock ads)."
+    },
+    {
+      "landmarkId": "cn-山东-台儿庄古城景区",
+      "match": "scene",
+      "query": "Taierzhuang ancient town",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Taierzhuang ancient town, Zaozhuang China (real Taierzhuang shots only in iStock ads)."
+    },
+    {
+      "landmarkId": "cn-山东-南山景区",
+      "match": "scene",
+      "query": "Nanshan Temple Yantai",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Nanshan Temple Yantai, Longkou Nanshan Buddha (real Longkou shots only in iStock ads)."
+    },
+    {
+      "landmarkId": "cn-山东-刘公岛景区",
+      "match": "scene",
+      "query": "Liugong Island Weihai",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Liugong Island Weihai, Weihai island China (real Liugong shots only in iStock ads)."
+    },
+    {
+      "landmarkId": "cn-山东-崂山景区",
+      "match": "place",
+      "query": "Laoshan Qingdao",
+      "mediaUrl": "https://images.pexels.com/photos/39235366/pexels-photo-39235366.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic Mountain View in Laoshan Scenic Area",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-mountain-view-in-laoshan-scenic-area-39235366/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 136393 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-山东-明故城三孔旅游区",
+      "match": "place",
+      "query": "Temple of Confucius Qufu",
+      "mediaUrl": "https://images.pexels.com/photos/39194295/pexels-photo-39194295.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Traditional Chinese Architecture in Qufu",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/traditional-chinese-architecture-in-qufu-39194295/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 118907 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-山东-蓬莱阁-三仙山-八仙过海旅游区",
+      "match": "scene",
+      "query": "Penglai Pavilion",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Penglai Pavilion, Penglai China (real Penglai shots only in iStock ads)."
+    },
+    {
+      "landmarkId": "cn-山东-青岛啤酒博物馆",
+      "match": "place",
+      "query": "Tsingtao Beer Museum",
+      "mediaUrl": "https://images.pexels.com/photos/38336739/pexels-photo-38336739.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Tsingtao Brewery Landmark in Qingdao, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/tsingtao-brewery-landmark-in-qingdao-china-38336739/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 96727 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-河南-宝泉旅游区",
+      "match": "scene",
+      "query": "Baoquan Henan",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Baoquan Henan, Baoquan Waterfall Xinxiang (only generic Taihang/Xinxiang scenery)."
+    },
+    {
+      "landmarkId": "cn-河南-太昊伏羲陵文化旅游区",
+      "match": "scene",
+      "query": "Taihao Fuxi Mausoleum",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Fuxi Temple China, Taihao Fuxi Mausoleum (only other mausoleums/temples)."
+    },
+    {
+      "landmarkId": "cn-河南-鸡公山景区",
+      "match": "scene",
+      "query": "Jigong Mountain Xinyang",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Jigong Mountain Xinyang, Jigongshan (only generic mountains)."
+    },
+    {
+      "landmarkId": "cn-河南-八里沟景区",
+      "match": "scene",
+      "query": "Baligou",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Baligou Xinxiang, Baligou (no relevant results)."
+    },
+    {
+      "landmarkId": "cn-河南-芒砀山汉文化旅游景区",
+      "match": "scene",
+      "query": "Mangdang Mountain Shangqiu",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Mangdang Mountain Shangqiu, Mangdangshan (only unrelated street/temple shots)."
+    }
+  ]
+}

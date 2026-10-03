@@ -1,0 +1,1702 @@
+[
+  {
+    "landmarkId": "tiananmen",
+    "match": "place",
+    "query": "Tiananmen Square",
+    "mediaUrl": "https://images.pexels.com/photos/2975021/pexels-photo-2975021.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Landscape Photography of Tiananmen Square",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/landscape-photography-of-tiananmen-square-2975021/",
+      "author": "Markus Winkler"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 50615
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "A"
+  },
+  {
+    "landmarkId": "badaling",
+    "match": "place",
+    "query": "Great Wall of China Badaling",
+    "mediaUrl": "https://images.pexels.com/photos/19031655/pexels-photo-19031655.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Part of the Great Wall of China in Beijing",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/part-of-the-great-wall-of-china-in-beijing-19031655/",
+      "author": "Van Anh Nguyen"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 40431
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "A"
+  },
+  {
+    "landmarkId": "xihu",
+    "match": "place",
+    "query": "West Lake Hangzhou",
+    "mediaUrl": "https://images.pexels.com/photos/8588837/pexels-photo-8588837.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Pavilion on West Lake, Hangzhou, Zhejiang, China",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/pavilion-on-west-lake-hangzhou-zhejiang-china-8588837/",
+      "author": "Marstion"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 82167
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "A"
+  },
+  {
+    "landmarkId": "guilin",
+    "match": "place",
+    "query": "Guilin Li River karst",
+    "mediaUrl": "https://images.pexels.com/photos/36535023/pexels-photo-36535023.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Aerial View of Karst Mountains in Guilin, China",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/aerial-view-of-karst-mountains-in-guilin-china-36535023/",
+      "author": "Willian Justen de Vasconcellos"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 57337
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "A"
+  },
+  {
+    "landmarkId": "bingmayong",
+    "match": "place",
+    "query": "Terracotta Army Xian",
+    "mediaUrl": "https://images.pexels.com/photos/16472051/pexels-photo-16472051.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Terracotta Army in China",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/terracotta-army-in-china-16472051/",
+      "author": "兴 罗"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 47082
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "A"
+  },
+  {
+    "landmarkId": "zhangjiajie",
+    "match": "place",
+    "query": "Zhangjiajie China mountains",
+    "mediaUrl": "https://images.pexels.com/photos/33231933/pexels-photo-33231933.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Majestic Zhangjiajie National Forest Peaks",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/majestic-zhangjiajie-national-forest-peaks-33231933/",
+      "author": "Deimantas Viburys"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 43297
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "A"
+  },
+  {
+    "landmarkId": "weiduoliya",
+    "match": "place",
+    "query": "Victoria Harbour Hong Kong skyline",
+    "mediaUrl": "https://images.pexels.com/photos/11786636/pexels-photo-11786636.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Illuminated Victoria Harbour, Hong Kong, China",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/illuminated-victoria-harbour-hong-kong-china-11786636/",
+      "author": "Janam Parikh"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 30505
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "A"
+  },
+  {
+    "landmarkId": "mogao",
+    "match": "place",
+    "query": "Mogao Caves Dunhuang",
+    "mediaUrl": "https://images.pexels.com/photos/25974825/pexels-photo-25974825.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "View of the Mogao Caves, Dunhuang, China",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/view-of-the-mogao-caves-dunhuang-china-25974825/",
+      "author": "Manta paopao"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 52627
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "A"
+  },
+  {
+    "landmarkId": "cn-北京-故宫博物院",
+    "match": "place",
+    "query": "Forbidden City Beijing",
+    "mediaUrl": "https://images.pexels.com/photos/18549556/pexels-photo-18549556.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Hall of Supreme Harmony in Forbidden City",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/hall-of-supreme-harmony-in-forbidden-city-18549556/",
+      "author": "Yan Zhang"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 56762
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "A"
+  },
+  {
+    "landmarkId": "cn-安徽-黄山风景区",
+    "match": "place",
+    "query": "Huangshan Yellow Mountain China",
+    "mediaUrl": "https://images.pexels.com/photos/31582902/pexels-photo-31582902.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Majestic Huangshan Mountain Peaks in China",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/majestic-huangshan-mountain-peaks-in-china-31582902/",
+      "author": "香菜 顾"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 69003
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "A"
+  },
+  {
+    "landmarkId": "cn-山东-泰山景区",
+    "match": "place",
+    "query": "Mount Tai Shandong",
+    "mediaUrl": "https://images.pexels.com/photos/35896164/pexels-photo-35896164.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Traditional Chinese Temple with Winter Scenery",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/traditional-chinese-temple-with-winter-scenery-35896164/",
+      "author": "Andy Lee"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 81350
+    },
+    "verdict": "ok",
+    "note": "Pexels title is generic, but this is Mount Tai's South Gate to Heaven (Nantianmen) atop the Eighteen Bends stairway — same location/photo series as the explicitly-titled 'Crowded staircase at Mount Tai in winter' by the same photographer. Chosen over that shot because the framing is clearer; wintry/overcast.",
+    "batch": "A"
+  },
+  {
+    "landmarkId": "cn-四川-九寨沟景区",
+    "match": "place",
+    "query": "Jiuzhaigou valley China",
+    "mediaUrl": "https://images.pexels.com/photos/38399400/pexels-photo-38399400.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Stunning Lake View in Jiuzhaigou Valley, China",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/stunning-lake-view-in-jiuzhaigou-valley-china-38399400/",
+      "author": "yong zhu"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 56468
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "A"
+  },
+  {
+    "landmarkId": "cn-西藏-布达拉宫景区",
+    "match": "place",
+    "query": "Potala Palace Lhasa",
+    "mediaUrl": "https://images.pexels.com/photos/38462384/pexels-photo-38462384.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Majestic View of the Potala Palace in Lhasa",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/majestic-view-of-the-potala-palace-in-lhasa-38462384/",
+      "author": "INDU BIKASH SARKER"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 60769
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "A"
+  },
+  {
+    "landmarkId": "world-日本-富士山",
+    "match": "place",
+    "query": "Mount Fuji",
+    "mediaUrl": "https://images.pexels.com/photos/32416035/pexels-photo-32416035.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Snow-capped Mount Fuji in springtime, Japan",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/snow-capped-mount-fuji-in-springtime-japan-32416035/",
+      "author": "ekrulila"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 41827
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "B"
+  },
+  {
+    "landmarkId": "world-泰国-大皇宫",
+    "match": "place",
+    "query": "Grand Palace Bangkok",
+    "mediaUrl": "https://images.pexels.com/photos/11105014/pexels-photo-11105014.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Grand Palace in Bangkok",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/grand-palace-in-bangkok-11105014/",
+      "author": "Maksim Romashkin"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 67891
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "B"
+  },
+  {
+    "landmarkId": "world-印度-泰姬陵",
+    "match": "place",
+    "query": "Taj Mahal",
+    "mediaUrl": "https://images.pexels.com/photos/11521892/pexels-photo-11521892.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Taj Mahal, Agra, India",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/taj-mahal-agra-india-11521892/",
+      "author": "rsapmech"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 91380
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "B"
+  },
+  {
+    "landmarkId": "world-柬埔寨-吴哥窟",
+    "match": "place",
+    "query": "Angkor Wat",
+    "mediaUrl": "https://images.pexels.com/photos/15890625/pexels-photo-15890625.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Panoramic view of the Angkor Wat, Siem Reap, Cambodia seen from across the water",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/panoramic-view-of-the-angkor-wat-siem-reap-cambodia-seen-from-across-the-water-15890625/",
+      "author": "sergk1"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 29309
+    },
+    "verdict": "ok",
+    "note": "Distant reflection view; the towers are small in frame but the silhouette is unmistakably Angkor Wat.",
+    "batch": "B"
+  },
+  {
+    "landmarkId": "world-印度尼西亚-巴厘岛",
+    "match": "place",
+    "query": "Bali island Indonesia",
+    "mediaUrl": "https://images.pexels.com/photos/34356770/pexels-photo-34356770.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Aerial view of rocky coastline in Bali, Indonesia",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/aerial-view-of-rocky-coastline-in-bali-indonesia-34356770/",
+      "author": "Sergio Monsalve"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 60330
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "B"
+  },
+  {
+    "landmarkId": "world-越南-下龙湾",
+    "match": "place",
+    "query": "Ha Long Bay",
+    "mediaUrl": "https://images.pexels.com/photos/38116437/pexels-photo-38116437.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Majestic limestone cliffs at Halong Bay",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/majestic-limestone-cliffs-at-halong-bay-38116437/",
+      "author": "Valeria Drozdova"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 43883
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "B"
+  },
+  {
+    "landmarkId": "world-尼泊尔-珠穆朗玛峰",
+    "match": "place",
+    "query": "Mount Everest",
+    "mediaUrl": "https://images.pexels.com/photos/12798654/pexels-photo-12798654.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Mount Everest",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/mount-everest-12798654/",
+      "author": "Nanda Ram Gharti"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 71364
+    },
+    "verdict": "ok",
+    "note": "Everest massif with the Khumbu glacier and a glacial lake, shot from Khumjung, Nepal.",
+    "batch": "B"
+  },
+  {
+    "landmarkId": "world-以色列-死海",
+    "match": "place",
+    "query": "Dead Sea",
+    "mediaUrl": "https://images.pexels.com/photos/15997551/pexels-photo-15997551.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Beach of the Dead Sea",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/beach-of-the-dead-sea-15997551/",
+      "author": "Francesco Ungaro"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 68579
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "B"
+  },
+  {
+    "landmarkId": "world-土耳其-圣索菲亚大教堂",
+    "match": "place",
+    "query": "Hagia Sophia",
+    "mediaUrl": "https://images.pexels.com/photos/12240132/pexels-photo-12240132.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Majestic Hagia Sophia Mosque, Istanbul, Turkey",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/majestic-hagia-sophia-mosque-istambul-turkey-12240132/",
+      "author": "Musa Ortaç"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 94231
+    },
+    "verdict": "ok",
+    "note": "First pick showed restoration scaffolding on a minaret; replaced with this cleaner four-minaret view.",
+    "batch": "B"
+  },
+  {
+    "landmarkId": "world-土耳其-卡帕多西亚",
+    "match": "place",
+    "query": "Cappadocia",
+    "mediaUrl": "https://images.pexels.com/photos/9896355/pexels-photo-9896355.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Hot air balloons over Cappadocia",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/hot-air-balloons-9896355/",
+      "author": "Hazal Çelik"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 68517
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "B"
+  },
+  {
+    "landmarkId": "world-阿联酋-哈利法塔",
+    "match": "place",
+    "query": "Burj Khalifa",
+    "mediaUrl": "https://images.pexels.com/photos/19741511/pexels-photo-19741511.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "View of the Burj Khalifa",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/view-of-the-burj-khalifa-19741511/",
+      "author": "Unknown"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 76989
+    },
+    "verdict": "ok",
+    "note": "Photographer credit not shown on the page. First pick was a cramped low-angle shot; replaced with this full-tower view.",
+    "batch": "B"
+  },
+  {
+    "landmarkId": "world-约旦-佩特拉",
+    "match": "place",
+    "query": "Petra Jordan",
+    "mediaUrl": "https://images.pexels.com/photos/18682567/pexels-photo-18682567.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Canyon with Al-Khazneh of ancient Petra city",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/canyon-with-al-khazneh-of-ancient-petra-city-18682567/",
+      "author": "AXP Photography"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 145388
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "B"
+  },
+  {
+    "landmarkId": "world-法国-埃菲尔铁塔",
+    "match": "place",
+    "query": "Eiffel Tower",
+    "mediaUrl": "https://images.pexels.com/photos/11299566/pexels-photo-11299566.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Clouds around Eiffel Tower",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/clouds-around-eiffel-tower-11299566/",
+      "author": "Mathias Reding"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 83021
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "C"
+  },
+  {
+    "landmarkId": "world-法国-卢浮宫",
+    "match": "place",
+    "query": "Louvre",
+    "mediaUrl": "https://images.pexels.com/photos/25053918/pexels-photo-25053918.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "The Louvre Museum in Paris, France",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/the-louvre-museum-in-paris-france-25053918/",
+      "author": "detait"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 51684
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "C"
+  },
+  {
+    "landmarkId": "world-法国-凡尔赛宫",
+    "match": "place",
+    "query": "Palace of Versailles",
+    "mediaUrl": "https://images.pexels.com/photos/29877481/pexels-photo-29877481.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Grand Exterior of the Palace of Versailles",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/grand-exterior-of-the-palace-of-versailles-29877481/",
+      "author": "Didier VEILLON"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 52660
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "C"
+  },
+  {
+    "landmarkId": "world-法国-圣米歇尔山",
+    "match": "place",
+    "query": "Mont-Saint-Michel",
+    "mediaUrl": "https://images.pexels.com/photos/33690624/pexels-photo-33690624.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Majestic Mont Saint-Michel under Blue Skies",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/majestic-mont-saint-michel-under-blue-skies-33690624/",
+      "author": "Ludovic Delot"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 47647
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "C"
+  },
+  {
+    "landmarkId": "world-法国-巴黎圣母院",
+    "match": "place",
+    "query": "Notre-Dame de Paris",
+    "mediaUrl": "https://images.pexels.com/photos/24186954/pexels-photo-24186954.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "The Western Facade of the Notre-Dame de Paris",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/the-western-facade-of-the-notre-dame-de-paris-24186954/",
+      "author": "gina bichsel"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 133754
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "C"
+  },
+  {
+    "landmarkId": "world-英国-大本钟",
+    "match": "place",
+    "query": "Big Ben",
+    "mediaUrl": "https://images.pexels.com/photos/29253512/pexels-photo-29253512.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Big Ben and Westminster Palace under blue sky",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/big-ben-and-westminster-palace-under-blue-sky-29253512/",
+      "author": "Unknown"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 46256
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "C"
+  },
+  {
+    "landmarkId": "world-英国-伦敦塔桥",
+    "match": "place",
+    "query": "Tower Bridge",
+    "mediaUrl": "https://images.pexels.com/photos/575410/pexels-photo-575410.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "London Tower Bridge",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/london-tower-bridge-575410/",
+      "author": "SevenStorm JUHASZIMRUS"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 60799
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "C"
+  },
+  {
+    "landmarkId": "world-英国-白金汉宫",
+    "match": "place",
+    "query": "Buckingham Palace",
+    "mediaUrl": "https://images.pexels.com/photos/16333184/pexels-photo-16333184.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Buckingham Palace in London",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/buckingham-palace-in-london-16333184/",
+      "author": "Jatman 0007"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 48553
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "C"
+  },
+  {
+    "landmarkId": "world-意大利-罗马斗兽场",
+    "match": "place",
+    "query": "Colosseum",
+    "mediaUrl": "https://images.pexels.com/photos/27428517/pexels-photo-27428517.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Close-up of the Colosseum in Rome, Italy",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/the-colosseum-in-rome-italy-27428517/",
+      "author": "Huseyn Ibadzade"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 178092
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "C"
+  },
+  {
+    "landmarkId": "world-意大利-比萨斜塔",
+    "match": "place",
+    "query": "Leaning Tower of Pisa",
+    "mediaUrl": "https://images.pexels.com/photos/15960848/pexels-photo-15960848.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Scenic photo of the Leaning Tower of Pisa in Italy",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/scenic-photo-of-the-leaning-tower-of-pisa-in-italy-15960848/",
+      "author": "Unknown"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 79587
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "C"
+  },
+  {
+    "landmarkId": "world-意大利-威尼斯",
+    "match": "place",
+    "query": "Venice",
+    "mediaUrl": "https://images.pexels.com/photos/20068237/pexels-photo-20068237.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Gondolas in Canal in Venice",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/gondolas-in-canal-in-venice-20068237/",
+      "author": "Ozan Tabakoğlu"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 117543
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "C"
+  },
+  {
+    "landmarkId": "world-意大利-圣彼得大教堂",
+    "match": "place",
+    "query": "St. Peter's Basilica",
+    "mediaUrl": "https://images.pexels.com/photos/29154973/pexels-photo-29154973.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Facade of St. Peter's Basilica in Vatican City",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/facade-of-st-peter-s-basilica-in-vatican-city-29154973/",
+      "author": "C1 Superstar"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 59164
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "C"
+  },
+  {
+    "landmarkId": "world-意大利-庞贝古城",
+    "match": "place",
+    "query": "Pompeii",
+    "mediaUrl": "https://images.pexels.com/photos/35715180/pexels-photo-35715180.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Ancient Ruins of Pompeii with Vesuvius in Background",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/ancient-ruins-of-pompeii-with-vesuvius-in-background-35715180/",
+      "author": "Margo Evardson"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 65983
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "D"
+  },
+  {
+    "landmarkId": "world-德国-新天鹅堡",
+    "match": "place",
+    "query": "Neuschwanstein Castle",
+    "mediaUrl": "https://images.pexels.com/photos/25368304/pexels-photo-25368304.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "View of the Neuschwanstein Castle, Hohenschwangau, Germany",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/view-of-the-neuschwanstein-castle-hohenschwangau-germany-25368304/",
+      "author": "Jusuf Rujanac"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 81421
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "D"
+  },
+  {
+    "landmarkId": "world-西班牙-圣家堂",
+    "match": "place",
+    "query": "Sagrada Família",
+    "mediaUrl": "https://images.pexels.com/photos/35134146/pexels-photo-35134146.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Sagrada Familia Facade in Barcelona",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/sagrada-familia-facade-in-barcelona-35134146/",
+      "author": "Stephan"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 175024
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "D"
+  },
+  {
+    "landmarkId": "world-瑞士-马特洪峰",
+    "match": "place",
+    "query": "Matterhorn",
+    "mediaUrl": "https://images.pexels.com/photos/19642432/pexels-photo-19642432.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Snowed Matterhorn in Sunlit",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/snowed-matterhorn-in-sunlit-19642432/",
+      "author": "Bran Hao"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 56558
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "D"
+  },
+  {
+    "landmarkId": "world-瑞士-少女峰",
+    "match": "place",
+    "query": "Jungfrau",
+    "mediaUrl": "https://images.pexels.com/photos/38367964/pexels-photo-38367964.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Snow-capped Jungfrau Mountains in Swiss Alps",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/snow-capped-jungfrau-mountains-in-swiss-alps-38367964/",
+      "author": "Jean Paul Wettstein"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 63950
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "D"
+  },
+  {
+    "landmarkId": "world-奥地利-哈尔施塔特",
+    "match": "place",
+    "query": "Hallstatt",
+    "mediaUrl": "https://images.pexels.com/photos/33586871/pexels-photo-33586871.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Scenic View of Hallstatt with Iconic Church",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/scenic-view-of-hallstatt-with-iconic-church-33586871/",
+      "author": "Kibo"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 104698
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "D"
+  },
+  {
+    "landmarkId": "world-希腊-雅典卫城",
+    "match": "place",
+    "query": "Acropolis of Athens",
+    "mediaUrl": "https://images.pexels.com/photos/38439017/pexels-photo-38439017.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Ancient Parthenon on Athens Acropolis",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/ancient-parthenon-on-athens-acropolis-38439017/",
+      "author": "Jose Barbosa"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 58023
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "D"
+  },
+  {
+    "landmarkId": "world-希腊-圣托里尼",
+    "match": "place",
+    "query": "Santorini",
+    "mediaUrl": "https://images.pexels.com/photos/33506945/pexels-photo-33506945.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Scenic View of Oia's White Buildings and Aegean Sea",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/scenic-view-of-oia-s-white-buildings-and-aegean-sea-33506945/",
+      "author": "Sonja Miric"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 75869
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "D"
+  },
+  {
+    "landmarkId": "world-俄罗斯-红场",
+    "match": "place",
+    "query": "Red Square Moscow",
+    "mediaUrl": "https://images.pexels.com/photos/39482001/pexels-photo-39482001.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Iconic View of Red Square with St Basil's Cathedral",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/iconic-view-of-red-square-with-st-basil-s-cathedral-39482001/",
+      "author": "Irina Mihaylovna"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 58420
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "D"
+  },
+  {
+    "landmarkId": "world-俄罗斯-冬宫",
+    "match": "place",
+    "query": "Hermitage Museum",
+    "mediaUrl": "https://images.pexels.com/photos/35861830/pexels-photo-35861830.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Stunning View of the Winter Palace in St Petersburg",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/stunning-view-of-the-winter-palace-in-st-petersburg-35861830/",
+      "author": "Alexander Fadeev"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 119118
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "D"
+  },
+  {
+    "landmarkId": "world-俄罗斯-贝加尔湖",
+    "match": "place",
+    "query": "Lake Baikal",
+    "mediaUrl": "https://images.pexels.com/photos/34129983/pexels-photo-34129983.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Aerial View of Lake Baikal's Pristine Waters",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/aerial-view-of-lake-baikal-s-pristine-waters-34129983/",
+      "author": "Unknown"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 107784
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "D"
+  },
+  {
+    "landmarkId": "world-捷克-布拉格城堡",
+    "match": "place",
+    "query": "Prague Castle",
+    "mediaUrl": "https://images.pexels.com/photos/38416365/pexels-photo-38416365.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Stunning View of Prague Castle and Charles Bridge",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/stunning-view-of-prague-castle-and-charles-bridge-38416365/",
+      "author": "Ivan Drazic"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 63225
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "D"
+  },
+  {
+    "landmarkId": "world-捷克-查理大桥",
+    "match": "place",
+    "query": "Charles Bridge",
+    "mediaUrl": "https://images.pexels.com/photos/31878123/pexels-photo-31878123.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Charles Bridge over Vltava river in Prague",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/charles-bridge-over-vltava-river-in-prague-31878123/",
+      "author": "nomundodejr"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 48454
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "E"
+  },
+  {
+    "landmarkId": "world-丹麦-小美人鱼",
+    "match": "scene",
+    "query": "coastal cliffs ocean landscape",
+    "mediaUrl": "https://images.pexels.com/photos/4616317/pexels-photo-4616317.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Cliff, sea and clear sky landscape",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/cliff-sea-and-clear-sky-landscape-4616317/",
+      "author": "Denis Larose"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 97941
+    },
+    "verdict": "ok",
+    "note": "No verifiable photo of the Copenhagen Little Mermaid exists on Pexels. Tried 5 queries (\"Little Mermaid statue Copenhagen\", \"Den Lille Havfrue\", \"Copenhagen mermaid\", \"little mermaid statue\", \"Langelinie\"); the only explicitly-Copenhagen id (38796445) returns a broken grey placeholder. Every other mermaid statue on Pexels is a different statue (Warsaw, Mazatlan, Amsterdam, Adriatic) or a Rusalka pond sculpture, so labelling one as this place would be dishonest. Used the honest coast fallback instead.",
+    "batch": "E"
+  },
+  {
+    "landmarkId": "world-冰岛-蓝湖",
+    "match": "place",
+    "query": "Blue Lagoon Iceland",
+    "mediaUrl": "https://images.pexels.com/photos/20955080/pexels-photo-20955080.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "People bathing in the pool of the Blue Lagoon geothermal spa in Iceland",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/people-bathing-in-the-pool-of-the-blue-lagoon-geothermal-spa-in-iceland-20955080/",
+      "author": "It's MJ"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 21129
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "E"
+  },
+  {
+    "landmarkId": "world-美国-自由女神像",
+    "match": "place",
+    "query": "Statue of Liberty",
+    "mediaUrl": "https://images.pexels.com/photos/29580357/pexels-photo-29580357.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Statue of Liberty against clear blue sky",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/statue-of-liberty-against-clear-blue-sky-29580357/",
+      "author": "Matteo Roman"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 61198
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "E"
+  },
+  {
+    "landmarkId": "world-美国-大峡谷",
+    "match": "place",
+    "query": "Grand Canyon",
+    "mediaUrl": "https://images.pexels.com/photos/38207125/pexels-photo-38207125.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Stunning view of the Grand Canyon in Arizona",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/stunning-view-of-the-grand-canyon-in-arizona-38207125/",
+      "author": "Creative Lindsey Photos"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 50641
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "E"
+  },
+  {
+    "landmarkId": "world-美国-金门大桥",
+    "match": "place",
+    "query": "Golden Gate Bridge",
+    "mediaUrl": "https://images.pexels.com/photos/35076230/pexels-photo-35076230.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Golden Gate Bridge at dusk, San Francisco",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/golden-gate-bridge-at-dusk-san-francisco-35076230/",
+      "author": "Stephen Leonardi"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 78623
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "E"
+  },
+  {
+    "landmarkId": "world-美国-白宫",
+    "match": "place",
+    "query": "White House Washington",
+    "mediaUrl": "https://images.pexels.com/photos/32270812/pexels-photo-32270812.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "The White House on a sunny day in Washington, DC",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/the-white-house-on-a-sunny-day-in-washington-dc-32270812/",
+      "author": "Ramaz Photos"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 53272
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "E"
+  },
+  {
+    "landmarkId": "world-美国-黄石国家公园",
+    "match": "place",
+    "query": "Yellowstone National Park",
+    "mediaUrl": "https://images.pexels.com/photos/35613483/pexels-photo-35613483.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Vibrant Grand Prismatic Spring in Yellowstone National Park",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/vibrant-grand-prismatic-spring-in-yellowstone-national-park-35613483/",
+      "author": "James Lee"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 73442
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "E"
+  },
+  {
+    "landmarkId": "world-美国-尼亚加拉瀑布",
+    "match": "place",
+    "query": "Niagara Falls",
+    "mediaUrl": "https://images.pexels.com/photos/6075956/pexels-photo-6075956.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "A view of the Niagara Falls",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/a-view-of-the-niagara-falls-6075956/",
+      "author": "Eva Bronzini"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 86322
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "E"
+  },
+  {
+    "landmarkId": "world-美国-拉什莫尔山",
+    "match": "place",
+    "query": "Mount Rushmore",
+    "mediaUrl": "https://images.pexels.com/photos/36033638/pexels-photo-36033638.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Iconic Mount Rushmore National Memorial in South Dakota",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/iconic-mount-rushmore-national-memorial-in-south-dakota-36033638/",
+      "author": "mhaltiery"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 57126
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "E"
+  },
+  {
+    "landmarkId": "world-加拿大-班夫国家公园",
+    "match": "place",
+    "query": "Banff National Park",
+    "mediaUrl": "https://images.pexels.com/photos/36185626/pexels-photo-36185626.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Majestic sunrise over Peyto Lake in Banff",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/majestic-sunrise-over-peyto-lake-in-banff-36185626/",
+      "author": "nunzg"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 48398
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "E"
+  },
+  {
+    "landmarkId": "world-墨西哥-奇琴伊察",
+    "match": "place",
+    "query": "Chichen Itza",
+    "mediaUrl": "https://images.pexels.com/photos/6092060/pexels-photo-6092060.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Temple of Kukulcan on green grass field",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/temple-of-kukulcan-on-green-grass-field-6092060/",
+      "author": "jloren3bcnspain"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 98227
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "E"
+  },
+  {
+    "landmarkId": "world-秘鲁-马丘比丘",
+    "match": "place",
+    "query": "Machu Picchu",
+    "mediaUrl": "https://images.pexels.com/photos/5503219/pexels-photo-5503219.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Scenery of Machu Picchu during daytime",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/scenery-of-machu-picchu-during-daytime-5503219/",
+      "author": "Mike van Schoonderwalt"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 77892
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "F"
+  },
+  {
+    "landmarkId": "world-巴西-救世基督像",
+    "match": "place",
+    "query": "Christ the Redeemer (statue)",
+    "mediaUrl": "https://images.pexels.com/photos/32714103/pexels-photo-32714103.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Christ the Redeemer beneath a clear blue sky",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/christ-the-redeemer-beneath-a-clear-blue-sky-32714103/",
+      "author": "Deivid Carreiras"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 53913
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "F"
+  },
+  {
+    "landmarkId": "world-巴西-亚马逊雨林",
+    "match": "place",
+    "query": "Amazon rainforest",
+    "mediaUrl": "https://images.pexels.com/photos/30205697/pexels-photo-30205697.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Serene Amazon river view in Loreto, Peru",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/serene-amazon-river-view-in-loreto-peru-30205697/",
+      "author": "Miguel Angel Lozano Baron"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 39105
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "F"
+  },
+  {
+    "landmarkId": "world-巴西-伊瓜苏瀑布",
+    "match": "place",
+    "query": "Iguazu Falls",
+    "mediaUrl": "https://images.pexels.com/photos/8571319/pexels-photo-8571319.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Iguazu Falls in Brazil",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/iguazu-falls-in-brazil-8571319/",
+      "author": "Dre Thousand"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 52754
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "F"
+  },
+  {
+    "landmarkId": "world-智利-复活节岛",
+    "match": "place",
+    "query": "Easter Island moai",
+    "mediaUrl": "https://images.pexels.com/photos/14596489/pexels-photo-14596489.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Moai Statues on Easter Island, Chile",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/moai-statues-on-easter-island-chile-14596489/",
+      "author": "diesgomo"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 48445
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "F"
+  },
+  {
+    "landmarkId": "world-玻利维亚-乌尤尼盐沼",
+    "match": "place",
+    "query": "Salar de Uyuni",
+    "mediaUrl": "https://images.pexels.com/photos/30929499/pexels-photo-30929499.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Stunning Reflections at Salar de Uyuni, Bolivia",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/stunning-reflections-at-salar-de-uyuni-bolivia/",
+      "author": "Ana Lobo"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 64916
+    },
+    "verdict": "ok",
+    "note": "人眼复核后替换：原图不理想（world-玻利维亚-乌尤尼盐沼）。",
+    "batch": "F"
+  },
+  {
+    "landmarkId": "world-厄瓜多尔-加拉帕戈斯群岛",
+    "match": "place",
+    "query": "Galapagos Islands",
+    "mediaUrl": "https://images.pexels.com/photos/32206041/pexels-photo-32206041.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Majestic Kicker Rock in the Galapagos Islands",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/majestic-kicker-rock-in-the-galapagos-islands-32206041/",
+      "author": "Yefferson Soler"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 133994
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "F"
+  },
+  {
+    "landmarkId": "world-委内瑞拉-天使瀑布",
+    "match": "scene",
+    "query": "Angel Falls Venezuela",
+    "mediaUrl": "https://images.pexels.com/photos/7360544/pexels-photo-7360544.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Scenic panorama with river cascade and a distant tepui mountain, Canaima National Park, Venezuela",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/scenic-panorama-with-river-cascade-and-a-distant-tepui-mountain-canaima-national-park-venezuela-7360544/",
+      "author": "Ederik Palencia Ferreira"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 56234
+    },
+    "verdict": "poor",
+    "note": "Pexels has no genuine photo of Angel Falls itself (tried 'Angel Falls Venezuela', 'Salto Angel waterfall' and 'Angel Falls'; all results were generic or unrelated waterfalls). Substituted a Canaima National Park, Venezuela scene - the park that contains Angel Falls - showing a tepui massif and river cascade, but not the falls.",
+    "batch": "F"
+  },
+  {
+    "landmarkId": "world-埃及-吉萨金字塔",
+    "match": "place",
+    "query": "Giza pyramid complex",
+    "mediaUrl": "https://images.pexels.com/photos/30899056/pexels-photo-30899056.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "The Majestic Pyramids of Giza Under Blue Skies",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/the-majestic-pyramids-of-giza-under-blue-skies-30899056/",
+      "author": "Michelle Chadwick"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 29965
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "F"
+  },
+  {
+    "landmarkId": "world-埃及-狮身人面像",
+    "match": "place",
+    "query": "Great Sphinx of Giza",
+    "mediaUrl": "https://images.pexels.com/photos/35556543/pexels-photo-35556543.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Majestic Great Sphinx of Giza Under Blue Sky",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/majestic-great-sphinx-of-giza-under-blue-sky-35556543/",
+      "author": "andromeda99"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 37372
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "F"
+  },
+  {
+    "landmarkId": "world-南非-桌山",
+    "match": "place",
+    "query": "Table Mountain",
+    "mediaUrl": "https://images.pexels.com/photos/31083891/pexels-photo-31083891.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Majestic View of Table Mountain in Cape Town",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/majestic-view-of-table-mountain-in-cape-town-31083891/",
+      "author": "Marina Zvada"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 46190
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "F"
+  },
+  {
+    "landmarkId": "world-南非-好望角",
+    "match": "place",
+    "query": "Cape of Good Hope",
+    "mediaUrl": "https://images.pexels.com/photos/16597987/pexels-photo-16597987.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "The Cape of Good Hope seen from the cliffs above Cape Point",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/the-cape-of-good-hope-seen-from-the-cliffs-above-cape-point-cape-peninsula-in-south-africa/",
+      "author": "Magda Ehlers"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 74738
+    },
+    "verdict": "ok",
+    "note": "人眼复核后替换：原图不理想（world-南非-好望角）。",
+    "batch": "F"
+  },
+  {
+    "landmarkId": "world-肯尼亚-马赛马拉",
+    "match": "place",
+    "query": "Maasai Mara",
+    "mediaUrl": "https://images.pexels.com/photos/37419265/pexels-photo-37419265.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "African elephants at sunset in Maasai Mara",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/african-elephants-at-sunset-in-maasai-mara-37419265/",
+      "author": "iamllwyd"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 48049
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "G"
+  },
+  {
+    "landmarkId": "world-坦桑尼亚-乞力马扎罗山",
+    "match": "place",
+    "query": "Mount Kilimanjaro",
+    "mediaUrl": "https://images.pexels.com/photos/8427984/pexels-photo-8427984.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Mount Kilimanjaro in Tanzania",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/mount-kilimanjaro-in-tanzania-8427984/",
+      "author": "Sergey Pesterev"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 44627
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "G"
+  },
+  {
+    "landmarkId": "world-津巴布韦-维多利亚瀑布",
+    "match": "place",
+    "query": "Victoria Falls",
+    "mediaUrl": "https://images.pexels.com/photos/27878404/pexels-photo-27878404.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Aerial view of Victoria Falls in Zimbabwe",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/an-aerial-view-of-victoria-falls-in-zimbabwe-27878404/",
+      "author": "babijaphoto"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 216070
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "G"
+  },
+  {
+    "landmarkId": "world-澳大利亚-悉尼歌剧院",
+    "match": "place",
+    "query": "Sydney Opera House",
+    "mediaUrl": "https://images.pexels.com/photos/15453729/pexels-photo-15453729.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Opera House in Sydney, Australia",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/opera-house-in-sydney-australia-15453729/",
+      "author": "gorgeouspixels"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 95958
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "G"
+  },
+  {
+    "landmarkId": "world-澳大利亚-大堡礁",
+    "match": "place",
+    "query": "Great Barrier Reef",
+    "mediaUrl": "https://images.pexels.com/photos/35762005/pexels-photo-35762005.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Vibrant coral reef ecosystem in Queensland waters",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/vibrant-coral-reef-ecosystem-in-queensland-waters-35762005/",
+      "author": "Rob McSwain"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 57739
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "G"
+  },
+  {
+    "landmarkId": "world-澳大利亚-乌鲁鲁",
+    "match": "place",
+    "query": "Uluru",
+    "mediaUrl": "https://images.pexels.com/photos/35890005/pexels-photo-35890005.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Uluru at sunrise in the Australian outback",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/uluru-at-sunrise-in-the-australian-outback-35890005/",
+      "author": "gu-bra"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 52567
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "G"
+  },
+  {
+    "landmarkId": "world-澳大利亚-十二门徒石",
+    "match": "place",
+    "query": "Twelve Apostles",
+    "mediaUrl": "https://images.pexels.com/photos/20721132/pexels-photo-20721132.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Twelve Apostles on a sunny day",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/twelve-apostles-on-a-sunny-day-20721132/",
+      "author": "Eclipse Chasers"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 51528
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "G"
+  },
+  {
+    "landmarkId": "world-新西兰-米尔福德峡湾",
+    "match": "place",
+    "query": "Milford Sound",
+    "mediaUrl": "https://images.pexels.com/photos/32830524/pexels-photo-32830524.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Cruise boat in Milford Sound fjord, New Zealand",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/cruise-boat-in-milford-sound-fjord-new-zealand-32830524/",
+      "author": "Don Geyer"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 46402
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "G"
+  },
+  {
+    "landmarkId": "world-新西兰-皇后镇",
+    "match": "place",
+    "query": "Queenstown, New Zealand",
+    "mediaUrl": "https://images.pexels.com/photos/39434598/pexels-photo-39434598.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Scenic Lake Wakatipu with Queenstown dock and mountains",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/scenic-lake-wakatipu-with-queenstown-dock-and-mountains-39434598/",
+      "author": "Leyvaine Davids"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 65455
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "G"
+  },
+  {
+    "landmarkId": "world-法属波利尼西亚-大溪地",
+    "match": "place",
+    "query": "Tahiti",
+    "mediaUrl": "https://images.pexels.com/photos/33980501/pexels-photo-33980501.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Scenic tropical beach in French Polynesia",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/scenic-tropical-beach-in-french-polynesia-33980501/",
+      "author": "adriendrj"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 57770
+    },
+    "verdict": "ok",
+    "note": "Pexels' top result for the query 'Tahiti' (checked 'Tahiti' and 'Tahiti island'); genuine French Polynesia lagoon with overwater bungalows, i.e. the same archipelago/country as the landmark, but not shot on Tahiti island itself.",
+    "batch": "G"
+  },
+  {
+    "landmarkId": "world-美国-时代广场",
+    "match": "place",
+    "query": "Times Square",
+    "mediaUrl": "https://images.pexels.com/photos/34934277/pexels-photo-34934277.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Bustling Times Square New York City view",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/bustling-times-square-new-york-city-view-34934277/",
+      "author": "Namrata Garad"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 93704
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "G"
+  },
+  {
+    "landmarkId": "world-美国-帝国大厦",
+    "match": "place",
+    "query": "Empire State Building",
+    "mediaUrl": "https://images.pexels.com/photos/17568719/pexels-photo-17568719.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "title": "Empire State Building towering over New York City",
+    "credit": {
+      "source": "Pexels",
+      "link": "https://www.pexels.com/photo/empire-state-building-towering-over-new-york-city-17568719/",
+      "author": "shtefutsa"
+    },
+    "verified": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 90880
+    },
+    "verdict": "ok",
+    "note": "",
+    "batch": "G"
+  }
+]

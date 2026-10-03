@@ -1,0 +1,93 @@
+{
+  "batch": "03",
+  "items": [
+    {
+      "key": "best-friend",
+      "pexelsId": 13758652,
+      "mediaUrl": "https://images.pexels.com/photos/13758652/pexels-photo-13758652.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Back View of Kids Holding Hands While Walking",
+      "credit": { "link": "https://www.pexels.com/photo/back-view-of-kids-holding-hands-while-walking-13758652/", "author": "Quang Nguyen Vinh" },
+      "verified": { "http": 200, "bytes": 71427 },
+      "size": { "w": 640, "h": 348, "ar": 1.84 },
+      "verdict": "ok",
+      "note": "两个小孩牵手的背影走在草地上，旁边是开满花的树（对上「两个孩子+草地+树和花」，不露脸）；缺蓝黄衣服、对话气泡"
+    },
+    {
+      "key": "comic-teacher",
+      "pexelsId": 36159720,
+      "mediaUrl": "https://images.pexels.com/photos/36159720/pexels-photo-36159720.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Empty Classroom with Blackboard and Desks",
+      "credit": { "link": "https://www.pexels.com/photo/empty-classroom-with-blackboard-and-desks-36159720/", "author": "晓鸟 蓝" },
+      "verified": { "http": 200, "bytes": 45735 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "成排木课桌正对一面大黑板，暖木色，对上「黑板+讲台+课桌」；画面里无人（缺老师与两个学生）"
+    },
+    {
+      "key": "festival",
+      "pexelsId": 5982949,
+      "mediaUrl": "https://images.pexels.com/photos/5982949/pexels-photo-5982949.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Red Chinese Lanterns Hanging in front of a Building",
+      "credit": { "link": "https://www.pexels.com/photo/red-chinese-lanterns-hanging-in-front-of-a-building-5982949/", "author": "Hong Zhu" },
+      "verified": { "http": 200, "bytes": 45917 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "一串带金色福字的红灯笼挂在屋前，暖红调，对上「灯笼+红顶房子」；缺烟花、月饼饺子、红衣小孩"
+    },
+    {
+      "key": "look-picture-single",
+      "pexelsId": 2320622,
+      "mediaUrl": "https://images.pexels.com/photos/2320622/pexels-photo-2320622.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "White Wooden Framed Picture of Assorted Color Umbrellas",
+      "credit": { "link": "https://www.pexels.com/photo/white-wooden-framed-picture-of-assorted-color-umbrellas-2320622/", "author": "Gül Işık" },
+      "verified": { "http": 200, "bytes": 26194 },
+      "size": { "w": 640, "h": 424, "ar": 1.51 },
+      "verdict": "ok",
+      "note": "白木框里装着一幅彩色街景画，正挂在墙上，对上「墙上挂着一张大图」；画的是雨伞街景非春天公园，缺桌边小孩与提示文字"
+    },
+    {
+      "key": "observe-diary",
+      "pexelsId": 6034381,
+      "mediaUrl": "https://images.pexels.com/photos/6034381/pexels-photo-6034381.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Person Holding of a Magnifying Glass on a Green Leaf",
+      "credit": { "link": "https://www.pexels.com/photo/person-holding-of-a-magnifying-glass-on-a-green-leaf-6034381/", "author": "cottonbro studio" },
+      "verified": { "http": 200, "bytes": 70840 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "一只手拿放大镜对着桌上的绿叶/本子观察（同框有笔记本+放大镜+植物），暖调、不露脸；缺铅笔、蒜头瓶绿苗、日历"
+    },
+    {
+      "key": "playground",
+      "pexelsId": 19461117,
+      "mediaUrl": "https://images.pexels.com/photos/19461117/pexels-photo-19461117.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Empty Running Track in Summer",
+      "credit": { "link": "https://www.pexels.com/photo/empty-running-track-in-summer-19461117/", "author": "Yide Sun" },
+      "verified": { "http": 200, "bytes": 55295 },
+      "size": { "w": 640, "h": 473, "ar": 1.35 },
+      "verdict": "ok",
+      "note": "红色跑道环绕绿茵场，旁边是教学楼，蓝天白云，对上「红跑道+绿茵场+远处教学楼」；无白色球门、足球、奔跑的孩子"
+    },
+    {
+      "key": "sick",
+      "pexelsId": 3873200,
+      "mediaUrl": "https://images.pexels.com/photos/3873200/pexels-photo-3873200.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Thermometer on Blanket",
+      "credit": { "link": "https://www.pexels.com/photo/thermometer-on-blanket-3873200/", "author": "Polina Tankilevitch" },
+      "verified": { "http": 200, "bytes": 75729 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "蓝布上放着体温计和揉皱的纸巾，对上「温度计+药杯+蓝被子」这组物件、不露脸；画面里没有孩子和妈妈，色调偏冷"
+    },
+    {
+      "key": "spring-outing-play",
+      "pexelsId": 32004906,
+      "mediaUrl": "https://images.pexels.com/photos/32004906/pexels-photo-32004906.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Children Flying Kites in Lush Green Rice Field",
+      "credit": { "link": "https://www.pexels.com/photo/children-flying-kites-in-lush-green-rice-field-32004906/", "author": "Fau Pau" },
+      "verified": { "http": 200, "bytes": 68825 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "几个孩子在翠绿田野里放风筝，风筝飞在半空（背影/远景不露脸），暖绿调，对上「草地放风筝+其他孩子在跑」；缺泡泡和花瓣"
+    }
+  ]
+}

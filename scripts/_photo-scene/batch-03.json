@@ -1,0 +1,68 @@
+[
+  {
+    "key": "best-friend",
+    "hint": "草地上两个孩子肩并肩站着，一个穿蓝衣服、一个穿黄衣服，旁边有树和花，头顶有个对话气泡。",
+    "en": "two children playing outdoors grass",
+    "usedBy": [
+      "builtin-classmate-3"
+    ]
+  },
+  {
+    "key": "comic-teacher",
+    "hint": "黑板前站着戴眼镜的老师，手里拿着教鞭，讲台下面坐着两个学生。",
+    "en": "classroom desks chalkboard interior",
+    "usedBy": [
+      "builtin-teacher-3"
+    ]
+  },
+  {
+    "key": "festival",
+    "hint": "天上挂着灯笼和烟花，两座红顶房子中间摆着月饼和饺子，一个穿红衣的小孩在挥手。",
+    "en": "chinese lanterns red festival",
+    "usedBy": [
+      "builtin-custom-1"
+    ]
+  },
+  {
+    "key": "look-picture-single",
+    "hint": "墙上挂着一张画着春天公园的大图，桌上趴着一个小孩，旁边写着「仔细看图，把看到的、想到的写下来」。",
+    "en": "framed picture on wall",
+    "usedBy": [
+      "builtin-look-picture-1"
+    ]
+  },
+  {
+    "key": "observe-diary",
+    "hint": "桌上放着日记本和铅笔，旁边一盆蒜头瓶里长出三根绿苗，上方有放大镜，墙上日历写着「观察第7天」。",
+    "en": "plant sprout in jar magnifying glass",
+    "usedBy": [
+      "builtin-observe-1",
+      "builtin-observe-3"
+    ]
+  },
+  {
+    "key": "playground",
+    "hint": "红色跑道围着绿茵场，左边有一个白色球门，中间是一个足球，几个孩子在跑、在跳，远处是教学楼。",
+    "en": "school playground running track",
+    "usedBy": [
+      "builtin-campus-2"
+    ]
+  },
+  {
+    "key": "sick",
+    "hint": "床上一个孩子躺着盖着蓝被子，旁边放着温度计和药杯，妈妈坐在床边陪着他。",
+    "en": "thermometer medicine on table",
+    "usedBy": [
+      "builtin-lost-found-3"
+    ]
+  },
+  {
+    "key": "spring-outing-play",
+    "hint": "草地上一个孩子举着线放风筝，风筝飞在半空，另外两个孩子在跑，天上飘着泡泡和花瓣。",
+    "en": "kite flying in sky",
+    "usedBy": [
+      "builtin-unforgettable-2",
+      "builtin-activity-2"
+    ]
+  }
+]

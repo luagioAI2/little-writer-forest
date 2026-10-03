@@ -1,0 +1,22 @@
+{
+  "batch": "1",
+  "items": [
+    { "id": "builtin-life-goods-1", "title": "我的小台灯", "must": "一盏台灯，暖光，最好放在书桌上；画面里要有台灯本身", "query": "desk lamp warm light on desk" },
+    { "id": "builtin-life-goods-2", "title": "我家的电风扇", "must": "一台立式或台式电风扇，看得清风扇本身（不是空调）", "query": "electric fan standing in room" },
+    { "id": "builtin-life-goods-3", "title": "下雨天的雨伞", "must": "一把伞，最好在下雨的场景里", "query": "umbrella in the rain street" },
+    { "id": "builtin-life-goods-4", "title": "叫我起床的闹钟", "must": "一个闹钟，最好放在床头柜或桌上", "query": "alarm clock on bedside table" },
+    { "id": "builtin-life-goods-5", "title": "我的水杯", "must": "一个水杯/水壶，放在桌上或手里", "query": "water bottle on desk" },
+    { "id": "builtin-life-goods-6", "title": "家里的冰箱", "must": "冰箱，最好开着门、里面有食物", "query": "open refrigerator with food inside" },
+    { "id": "builtin-life-goods-7", "title": "洗衣机转起来了", "must": "一台洗衣机（滚筒或波轮），看得清洗衣机本身", "query": "washing machine in laundry room" },
+    { "id": "builtin-life-goods-8", "title": "墙角的扫帚", "must": "一把扫帚，斜靠在墙边或角落", "query": "broom leaning against wall" },
+    { "id": "builtin-life-goods-9", "title": "墙上的挂钟", "must": "一个挂在墙上的钟", "query": "wall clock hanging on wall" },
+    { "id": "builtin-life-goods-10", "title": "家里的遥控器", "must": "一个遥控器，放在桌上或沙发上", "query": "remote control on table" },
+    { "id": "builtin-life-goods-11", "title": "门边的一串钥匙", "must": "一串钥匙，挂在门边或挂钩上", "query": "keys hanging on hook by door" },
+    { "id": "builtin-life-goods-12", "title": "洗手间的镜子", "must": "一面洗手间/浴室的镜子（水槽上方那种）", "query": "bathroom mirror above sink" },
+    { "id": "builtin-life-goods-13", "title": "我的小拖鞋", "must": "一双拖鞋，放在门口或地上", "query": "slippers on the floor by the door" },
+    { "id": "builtin-life-goods-14", "title": "水开了", "must": "一个烧水壶，壶嘴冒着热气（要看得见蒸汽）", "query": "kettle boiling with steam" },
+    { "id": "builtin-life-goods-15", "title": "电吹风呼呼地吹", "must": "吹风机，最好有人在吹头发（亚洲面孔优先）", "query": "hairdryer drying hair" },
+    { "id": "builtin-life-goods-16", "title": "手电筒的光", "must": "手电筒，最好有一道光柱照在暗处", "query": "flashlight beam in the dark" },
+    { "id": "builtin-life-goods-17", "title": "会唱歌的收音机", "must": "一台收音机（老式收音机更好）", "query": "vintage radio on shelf" }
+  ]
+}

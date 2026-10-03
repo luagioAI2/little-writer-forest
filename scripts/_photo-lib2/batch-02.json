@@ -1,0 +1,148 @@
+{
+ "batch": "2",
+ "items": [
+  {
+   "id": "builtin-plant-10",
+   "title": "门口的桂花树",
+   "query": "tree full of small yellow flowers",
+   "alts": [
+    "blooming tree with tiny yellow flowers",
+    "osmanthus blossom tree",
+    "tree covered with small flowers autumn"
+   ],
+   "must": "一棵**开满小花的树**（小黄花，秋天感），要看得见满树的花；★ 彩色，不要黑白；★ 不要只有一朵花的特写"
+  },
+  {
+   "id": "builtin-stationery-6",
+   "title": "越写越短的铅笔",
+   "query": "short pencil stub on paper",
+   "alts": [
+    "worn down pencil nub close up",
+    "used short pencil on notebook",
+    "tiny pencil leftover on desk"
+   ],
+   "must": "一支**很短的铅笔头**（短到快握不住那种），放在桌上或纸旁；★ 主体就是这支短铅笔；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-stationery-7",
+   "title": "尺子上的刻度",
+   "query": "ruler with markings on paper",
+   "alts": [
+    "measuring ruler close up markings",
+    "ruler and pencil on notebook",
+    "steel ruler measuring paper"
+   ],
+   "must": "一把**尺子**，刻度清晰可见，最好正压在纸或本子上量东西；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-treasure-11",
+   "title": "奶奶的顶针",
+   "query": "thimble on finger sewing",
+   "alts": [
+    "metal thimble with needle and thread",
+    "thimble close up sewing",
+    "hand with thimble sewing fabric"
+   ],
+   "must": "一个**顶针**（缝纫用的金属指套）戴在手指上、或放在针线旁；★ 顶针本身必须看得见；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-treasure-12",
+   "title": "我的第一张奖状",
+   "query": "certificate hanging on wall",
+   "alts": [
+    "diploma certificate pinned on wall",
+    "paper certificate on wall",
+    "award certificate framed on wall"
+   ],
+   "must": "一张**贴在墙上的奖状/证书**（纸质、可以有点旧或卷边）；★ 彩色，不要黑白；⚠️ 纸上的字可以是外文，但**不要让别国国旗/国徽占满画面**"
+  },
+  {
+   "id": "builtin-food-6",
+   "title": "妈妈煮的粥",
+   "query": "bowl of porridge steam",
+   "alts": [
+    "congee bowl with spoon hot",
+    "rice porridge breakfast table",
+    "bowl of porridge steaming"
+   ],
+   "must": "一碗**冒着热气的粥/稀饭**（白粥或加料都行），最好放在餐桌上；★ 彩色，不要黑白；★ 暖调"
+  },
+  {
+   "id": "builtin-food-7",
+   "title": "一根冰棍",
+   "query": "popsicle held in hand summer",
+   "alts": [
+    "ice cream popsicle summer",
+    "ice lolly colorful summer",
+    "melting popsicle summer"
+   ],
+   "must": "一根**冰棍/雪糕**（拿在手里或插在棍上），夏天的感觉；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-1",
+   "title": "我的小台灯",
+   "query": "desk lamp lit on desk warm light",
+   "alts": [
+    "table lamp on desk warm glow",
+    "small desk lamp study room",
+    "lamp on desk at night"
+   ],
+   "must": "一盏**亮着的台灯**放在书桌上（暖光更好）；★ 主体是台灯本身；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-2",
+   "title": "我家的电风扇",
+   "query": "electric fan standing in room",
+   "alts": [
+    "floor fan in living room",
+    "standing fan summer room",
+    "desk fan close up"
+   ],
+   "must": "一台**电风扇**（立式或台式），看得清风扇本身（不是空调、不是吊扇）；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-3",
+   "title": "下雨天的雨伞",
+   "query": "umbrella in rain street",
+   "alts": [
+    "open umbrella rainy day",
+    "person holding umbrella in rain",
+    "umbrella with raindrops close up"
+   ],
+   "must": "一把**撑开的伞**，最好在下雨的场景里（看得见雨或水洼）；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-4",
+   "title": "叫我起床的闹钟",
+   "query": "alarm clock on bedside table",
+   "alts": [
+    "twin bell alarm clock on table",
+    "retro alarm clock bedside",
+    "alarm clock close up"
+   ],
+   "must": "一个**闹钟**（双铃老式闹钟更好），放在床头柜或桌上；★ 主体是闹钟；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-5",
+   "title": "我的水杯",
+   "query": "water bottle on desk",
+   "alts": [
+    "drinking bottle on table",
+    "glass of water on desk",
+    "kids water bottle"
+   ],
+   "must": "一个**水杯/水壶**（看得清杯身），放在桌上或拿在手里；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-life-goods-6",
+   "title": "家里的冰箱",
+   "query": "open refrigerator full of food",
+   "alts": [
+    "fridge open with food inside",
+    "refrigerator shelves stocked",
+    "open fridge door kitchen"
+   ],
+   "must": "一个**打开的冰箱**，里面看得见食物（摆得整齐更好）；★ 彩色，不要黑白"
+  }
+ ]
+}

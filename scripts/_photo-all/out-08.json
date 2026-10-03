@@ -1,0 +1,213 @@
+{
+  "batch": "08",
+  "items": [
+    {
+      "landmarkId": "cn-浙江-天一阁•月湖景区",
+      "match": "scene",
+      "query": "Tianyi Pavilion Ningbo; Tianyi Pavilion",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Tianyi Pavilion Ningbo' and 'Tianyi Pavilion'. Only generic Chinese pavilions and iStock ads (real Tianyi Pavilion shots are all iStock). No genuine Pexels photo."
+    },
+    {
+      "landmarkId": "cn-浙江-江郎山•廿八都旅游区",
+      "match": "scene",
+      "query": "Jianglang Mountain; Jianglangshan",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Jianglang Mountain' and 'Jianglangshan'. Only generic mountains/villages and iStock ads. No genuine Pexels photo of Jianglangshan."
+    },
+    {
+      "landmarkId": "cn-浙江-西塘古镇旅游景区",
+      "match": "place",
+      "query": "Xitang Ancient Town",
+      "mediaUrl": "https://images.pexels.com/photos/16569546/pexels-photo-16569546.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Arched Stone Bridge in Xitang Water Town, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/arched-stone-bridge-in-xitang-water-town-china-16569546/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 72187 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-浙江-神仙居景区",
+      "match": "scene",
+      "query": "Shenxianju; Shenxianju Taizhou China",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Shenxianju' and 'Shenxianju Taizhou China'. Results were Zhangjiajie/Tianmen generic peaks and iStock ads, nothing from Shenxianju."
+    },
+    {
+      "landmarkId": "cn-浙江-天台山景区",
+      "match": "scene",
+      "query": "Tiantai Mountain China; Tiantai Mountain Zhejiang",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Tiantai Mountain China' and 'Tiantai Mountain Zhejiang'. Only generic Chinese mountains and iStock ads; no Tiantai Mountain photo."
+    },
+    {
+      "landmarkId": "cn-浙江-南浔古镇景区",
+      "match": "scene",
+      "query": "Nanxun Ancient Town; Nanxun Water Town",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Nanxun Ancient Town' and 'Nanxun Water Town'. Only one Nanxun-titled photo (a plant-covered shop entrance, not a townscape); rest are other water towns and iStock ads."
+    },
+    {
+      "landmarkId": "cn-浙江-根宫佛国文化旅游区",
+      "match": "scene",
+      "query": "Genju Buddha Country; Genju Buddha Country Quzhou",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Genju Buddha Country' and 'Genju Buddha Country Quzhou'. Only generic Korean/Japanese temple Buddha statues, nothing from the root-carving art park."
+    },
+    {
+      "landmarkId": "cn-浙江-鲁迅故里•沈园景区",
+      "match": "scene",
+      "query": "Lu Xun Hometown Shaoxing; Lu Xun Native Place",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Lu Xun Hometown Shaoxing' and 'Lu Xun Native Place'. Only generic Shaoxing canals and iStock ads; nothing identifiable as Lu Xun's Hometown or Shen Garden."
+    },
+    {
+      "landmarkId": "cn-浙江-西溪湿地旅游区",
+      "match": "place",
+      "query": "Xixi Wetland Hangzhou",
+      "mediaUrl": "https://images.pexels.com/photos/35974952/pexels-photo-35974952.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Serene autumn reflection in Hangzhou wetlands",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/serene-autumn-reflection-in-hangzhou-wetlands-35974952/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 66286 },
+      "verdict": "poor",
+      "note": "Hangzhou wetland pond with trees and reflections; plausibly Xixi but a fairly generic wetland view, not a distinctive Xixi scene."
+    },
+    {
+      "landmarkId": "cn-浙江-南湖旅游区",
+      "match": "place",
+      "query": "South Lake Jiaxing",
+      "mediaUrl": "https://images.pexels.com/photos/37015373/pexels-photo-37015373.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Traditional Chinese Architecture by Water in South Lake",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/traditional-chinese-architecture-by-water-in-south-lake-37015373/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 55728 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-浙江-横店影视城景区",
+      "match": "place",
+      "query": "Hengdian World Studios",
+      "mediaUrl": "https://images.pexels.com/photos/14828720/pexels-photo-14828720.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Chinese palace in Hengdian World",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/chinese-palace-in-hengdian-world-14828720/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 46867 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-浙江-溪口－滕头旅游景区",
+      "match": "scene",
+      "query": "Xikou Fenghua; Xuedou Mountain",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Xikou Fenghua' and 'Xuedou Mountain'. Only unrelated Chinese towns/parades and iStock ads; nothing from Xikou or Tengtou."
+    },
+    {
+      "landmarkId": "cn-浙江-乌镇古镇旅游区",
+      "match": "place",
+      "query": "Wuzhen water town",
+      "mediaUrl": "https://images.pexels.com/photos/37015406/pexels-photo-37015406.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Traditional water town in Wuzhen, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/traditional-water-town-in-wuzhen-china-37015406/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 47954 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-浙江-千岛湖风景区",
+      "match": "place",
+      "query": "Qiandao Lake",
+      "mediaUrl": "https://images.pexels.com/photos/17754422/pexels-photo-17754422.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of islands on the Qiandao Lake, Hangzhou, Zhejiang Province, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-view-of-islands-on-the-qiandao-lake-hangzhou-zhejiang-province-china-17754422/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 41327 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-浙江-普陀山风景区",
+      "match": "place",
+      "query": "Putuo Mountain",
+      "mediaUrl": "https://images.pexels.com/photos/8903207/pexels-photo-8903207.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The Puji Temple in Mount Putuo in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/the-puji-temple-in-mount-putuo-in-china-8903207/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 110113 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-浙江-雁荡山风景区",
+      "match": "scene",
+      "query": "Yandang Mountain; Yandangshan",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Yandang Mountain' and 'Yandangshan'. Only generic mountain/cliff photos and iStock ads; no Yandang Mountain photo."
+    },
+    {
+      "landmarkId": "cn-浙江-杭州西湖风景区",
+      "match": "place",
+      "query": "West Lake China",
+      "mediaUrl": "https://images.pexels.com/photos/34432366/pexels-photo-34432366.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Serene view of West Lake in Hangzhou, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/serene-view-of-west-lake-in-hangzhou-china-34432366/", "author": "Unknown" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 43115 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-浙江-杭州宋城",
+      "match": "scene",
+      "query": "Hangzhou Songcheng; Songcheng Hangzhou",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Hangzhou Songcheng' and 'Songcheng Hangzhou'. Only generic Hangzhou/West Lake scenes and iStock ads; nothing from the Songcheng theme park."
+    },
+    {
+      "landmarkId": "cn-安徽-琅琊山景区",
+      "match": "scene",
+      "query": "Langya Mountain Chuzhou; Langyashan",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Langya Mountain Chuzhou' and 'Langyashan'. Only generic mountains and iStock ads; no Langya Mountain photo."
+    },
+    {
+      "landmarkId": "cn-安徽-长江采石矶文化生态旅游区",
+      "match": "scene",
+      "query": "Caishiji Maanshan; Caishiji",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Caishiji Maanshan' and 'Caishiji'. Only unrelated Chinese buildings/food results and iStock ads; nothing from Caishiji."
+    }
+  ]
+}

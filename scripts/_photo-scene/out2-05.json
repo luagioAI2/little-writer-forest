@@ -1,0 +1,60 @@
+{
+  "batch": "05",
+  "items": [
+    {
+      "key": "eraser-talking",
+      "pexelsId": 9743034,
+      "mediaUrl": "https://images.pexels.com/photos/9743034/pexels-photo-9743034.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "A Colored Pencil and an Eraser",
+      "credit": { "link": "https://www.pexels.com/photo/pencil-and-eraser-on-a-pink-surface-9743034/", "author": "SHVETS production" },
+      "verified": { "http": 200, "bytes": 6816 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "poor",
+      "note": "粉色橡皮 + 一支铅笔都在，且是粉色桌面，符合「粉色橡皮旁躺一支铅笔」；但橡皮上没有笑脸、上方也没有对话气泡 —— 那是卡通元素，实拍图库里不存在（试过 smiley face eraser / cute animal eraser / pink eraser 均无带脸橡皮）。字节仅 6816 是因为纯粉平面图极简、压缩后本就小，尺寸 640x427 有效。"
+    },
+    {
+      "key": "pencil-case",
+      "pexelsId": 8580767,
+      "mediaUrl": "https://images.pexels.com/photos/8580767/pexels-photo-8580767.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Assorted Pencils in a Case Laid on White Surface",
+      "credit": { "link": "https://www.pexels.com/photo/assorted-pencils-in-a-case-laid-on-white-surface-8580767/", "author": "RDNE Stock project" },
+      "verified": { "http": 200, "bytes": 49613 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "一只打开的黑色文具盒，蓝色铅笔整齐插在上层格层、下层笔袋里另有钢笔/铅笔和一块白色橡皮，正是「打开的文具盒 + 文具整齐排在格子里」；唯独没有直尺（hint 四样里少一样）。"
+    },
+    {
+      "key": "wind-travel",
+      "pexelsId": 15952610,
+      "mediaUrl": "https://images.pexels.com/photos/15952610/pexels-photo-15952610.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Girl Standing on Field",
+      "credit": { "link": "https://www.pexels.com/photo/girl-standing-on-field-15952610/", "author": "mohamed abdelghaffar" },
+      "verified": { "http": 200, "bytes": 59637 },
+      "size": { "w": 640, "h": 426, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "一个孩子站在高高的麦草/草地中，侧脸低头，头发被风吹起，风吹过草地的感觉明确；缺了 hint 里的「两棵树被吹弯」和「叶子在空中乱飞」，但那属点缀，题眼（风 + 草地 + 孩子站在风里）齐了。"
+    },
+    {
+      "key": "talk-animals",
+      "pexelsId": 37891869,
+      "mediaUrl": "https://images.pexels.com/photos/37891869/pexels-photo-37891869.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Adorable Cat and Dog Relaxing in Daisy Field",
+      "credit": { "link": "https://www.pexels.com/photo/adorable-cat-and-dog-relaxing-in-daisy-field-37891869/", "author": "JacLou- DL" },
+      "verified": { "http": 200, "bytes": 87232 },
+      "size": { "w": 640, "h": 480, "ar": 1.33 },
+      "verdict": "poor",
+      "note": "有一只猫和一只狗一起坐在长满雏菊的草地上，正好是「空地」场景，画面偏暖；但缺了第三只动物小鸟，头顶也没有对话气泡（实拍图库凑不齐猫狗鸟三只，试过 cat and dog together 等）。"
+    },
+    {
+      "key": "if-tiny",
+      "pexelsId": 36639191,
+      "mediaUrl": "https://images.pexels.com/photos/36639191/pexels-photo-36639191.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Miniature Figure on Vibrant Yellow Chrysanthemum",
+      "credit": { "link": "https://www.pexels.com/photo/miniature-figure-on-vibrant-yellow-chrysanthemum-36639191/", "author": "Jeffry Surianto" },
+      "verified": { "http": 200, "bytes": 27752 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "微距镜头下一朵巨大的黄色菊花，中央站着一个极小的玩具小人（蓝衣、撑橙色小伞），正是「巨大花朵中间站着一个很小的人」；小人属微缩模型而非真人，且没有蚂蚁、没有露珠（次要点缀）。"
+    }
+  ]
+}

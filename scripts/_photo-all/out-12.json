@@ -1,0 +1,209 @@
+{
+  "batch": "12",
+  "items": [
+    {
+      "landmarkId": "cn-河南-红旗渠－太行大峡谷旅游景区",
+      "match": "place",
+      "query": "Taihang Grand Canyon",
+      "mediaUrl": "https://images.pexels.com/photos/37519012/pexels-photo-37519012.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Breathtaking View of Taihang Mountains, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/breathtaking-view-of-taihang-mountains-china-37519012/", "author": "Zhang Zhi" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 50759 },
+      "verdict": "poor",
+      "note": "Generic Taihang Mountains red-cliff gorge scenery (same range the scenic area is named for); not confirmed to the exact Taihang Grand Canyon gorge. Tried: Taihang Grand Canyon, Red Flag Canal Linzhou."
+    },
+    {
+      "landmarkId": "cn-河南-嵖岈山旅游景区",
+      "match": "scene",
+      "query": "Chaya Mountain China",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Chaya Mountain China, Chaya Shan Henan (real Chaya Mountain shots only in iStock ads)."
+    },
+    {
+      "landmarkId": "cn-河南-西峡恐龙遗迹园-伏牛山-老界岭旅游区",
+      "match": "scene",
+      "query": "Laojieling Funiu Mountain",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Laojieling Funiu Mountain, Xixia Dinosaur Henan (only generic mountains / toy dinosaurs)."
+    },
+    {
+      "landmarkId": "cn-河南-龙潭大峡谷景区",
+      "match": "scene",
+      "query": "Longtan Grand Canyon Luoyang",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Longtan Grand Canyon Luoyang, Longtan Valley Luoyang (only unrelated canyons + Longmen/Enshi shots)."
+    },
+    {
+      "landmarkId": "cn-河南-老君山－鸡冠洞旅游区",
+      "match": "place",
+      "query": "Laojun Mountain China",
+      "mediaUrl": "https://images.pexels.com/photos/29264332/pexels-photo-29264332.png?auto=compress&cs=tinysrgb&w=640",
+      "title": "Stunning View of Golden Temple on Mountaintop",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/stunning-view-of-golden-temple-on-mountaintop-29264332/", "author": "Alisha Bai" },
+      "verified": { "http": 200, "type": "image/png", "bytes": 420418 },
+      "verdict": "ok",
+      "note": "Iconic golden Taoist temple on the summit (Laojunshan Golden Top). Source asset is PNG, so CDN URL uses .png."
+    },
+    {
+      "landmarkId": "cn-河南-尧山－中原大佛景区",
+      "match": "scene",
+      "query": "Central Plains Buddha China",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Central Plains Buddha China, Zhongyuan Buddha Lushan (only other buddhas: Seoul/Leshan/HK)."
+    },
+    {
+      "landmarkId": "cn-河南-清明上河园景区",
+      "match": "scene",
+      "query": "Qingming Riverside Landscape Garden",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No confirmable on-site photo. Tried: Qingming Riverside Landscape Garden, Qingming Shanghe Garden Kaifeng (only generic gardens / other Kaifeng landmarks)."
+    },
+    {
+      "landmarkId": "cn-河南-白云山景区",
+      "match": "scene",
+      "query": "Baiyun Mountain Luoyang",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No confirmable on-site photo. Tried: Baiyun Mountain Luoyang, Baiyun Mountain Henan (only ambiguous Luoyang mountains / Guangzhou Baiyun)."
+    },
+    {
+      "landmarkId": "cn-河南-殷墟景区",
+      "match": "scene",
+      "query": "Yinxu Yin Ruins Anyang",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Yinxu Yin Ruins Anyang, Yinxu Anyang (real Yinxu shots only in iStock ads)."
+    },
+    {
+      "landmarkId": "cn-河南-云台山－神农山－青天河风景区",
+      "match": "scene",
+      "query": "Yuntai Mountain Henan",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Yuntai Mountain Henan, Yuntai Mountain Jiaozuo (real Yuntai only in iStock ads; nearby shots are Guoliang/Xinxiang)."
+    },
+    {
+      "landmarkId": "cn-河南-龙门石窟景区",
+      "match": "place",
+      "query": "Longmen Grottoes China",
+      "mediaUrl": "https://images.pexels.com/photos/34932054/pexels-photo-34932054.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic Longmen Grottoes in Luoyang, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-longmen-grottoes-in-luoyang-china-34932054/", "author": "Fei Wang" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 96746 },
+      "verdict": "ok",
+      "note": "Confirmed: the great Vairocana Buddha niche and steps at Longmen."
+    },
+    {
+      "landmarkId": "cn-河南-嵩山少林景区",
+      "match": "scene",
+      "query": "Shaolin Temple China",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Shaolin Temple China, Shaolin Temple Songshan (real Shaolin pagoda forest only in iStock ads)."
+    },
+    {
+      "landmarkId": "cn-湖北-麻城龟峰山景区",
+      "match": "scene",
+      "query": "Guifeng Mountain Hubei",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Guifeng Mountain Hubei, Turtle Peak Mountain Macheng (only generic/Himalayan mountains)."
+    },
+    {
+      "landmarkId": "cn-湖北-明显陵文化旅游景区",
+      "match": "scene",
+      "query": "Xianling Mausoleum",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Xianling Mausoleum, Ming Xianling Zhongxiang (only other mausoleums: Sun Yat-sen, Ming Xiaoling)."
+    },
+    {
+      "landmarkId": "cn-湖北-三峡大瀑布景区",
+      "match": "scene",
+      "query": "Three Gorges Waterfall Yichang",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Three Gorges Waterfall Yichang, Three Gorges Waterfall Hubei (real waterfall only in iStock ads; Pexels has the Dam)."
+    },
+    {
+      "landmarkId": "cn-湖北-腾龙洞景区",
+      "match": "scene",
+      "query": "Tenglong Cave Enshi",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Tenglong Cave Enshi, Tenglong Cave Hubei (only generic caves worldwide: Slovenia/South Africa/Guizhou)."
+    },
+    {
+      "landmarkId": "cn-湖北-古隆中景区",
+      "match": "scene",
+      "query": "Gulongzhong Xiangyang",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Gulongzhong Xiangyang, Longzhong Xiangyang (only generic Chinese streets/architecture)."
+    },
+    {
+      "landmarkId": "cn-湖北-三国赤壁古战场景区",
+      "match": "scene",
+      "query": "Chibi Red Cliff China",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No confirmable on-site photo. Tried: Chibi Red Cliff China, Chibi ancient battlefield Hubei (only unrelated cliff carvings / Jingzhou walls / hanging temples)."
+    },
+    {
+      "landmarkId": "cn-湖北-恩施大峡谷景区",
+      "match": "place",
+      "query": "Enshi Grand Canyon",
+      "mediaUrl": "https://images.pexels.com/photos/38942607/pexels-photo-38942607.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic Cliff Face in Enshi Grand Canyon, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-cliff-face-in-enshi-grand-canyon-china-38942607/", "author": "Guillaume Kremer" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 116436 },
+      "verdict": "ok",
+      "note": "Confirmed: the sheer cliff with summit walkway, characteristic of Enshi Grand Canyon."
+    },
+    {
+      "landmarkId": "cn-湖北-木兰文化生态旅游区",
+      "match": "scene",
+      "query": "Mulan Tianchi Wuhan",
+      "mediaUrl": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "No on-site photo. Tried: Mulan Tianchi Wuhan, Mulan Mountain Hubei (real Mulan grassland only in iStock ads; rest generic)."
+    }
+  ]
+}

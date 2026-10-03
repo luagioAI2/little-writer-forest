@@ -1,0 +1,225 @@
+{
+  "batch": "05",
+  "items": [
+    {
+      "landmarkId": "cn-内蒙古-中俄边境旅游区",
+      "match": "scene",
+      "query": "Manzhouli China; Manzhouli Russian doll",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Manzhouli China' and 'Manzhouli Russian doll' — only generic China/Russian-doll stock; the real Manzhouli shots are all iStock ads."
+    },
+    {
+      "landmarkId": "cn-内蒙古-成吉思汗陵旅游区",
+      "match": "place",
+      "query": "Genghis Khan Mausoleum Ordos",
+      "mediaUrl": "https://images.pexels.com/photos/33231045/pexels-photo-33231045.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Historic mausoleum with traditional architecture",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/historic-mausoleum-with-traditional-architecture-33231045/", "author": "yu xin" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 35588 },
+      "verdict": "ok",
+      "note": "White halls with blue domes, golden stupa tops and prayer banners — matches the Ordos Genghis Khan Mausoleum (成吉思汗陵)."
+    },
+    {
+      "landmarkId": "cn-内蒙古-响沙湾旅游景区",
+      "match": "scene",
+      "query": "Kubuqi desert China; Xiangshawan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Kubuqi desert China' and 'Xiangshawan' — the real Xiangshawan camel/dune photos are all iStock ads; free results are unidentifiable dunes/villages."
+    },
+    {
+      "landmarkId": "cn-辽宁-五女山景区",
+      "match": "scene",
+      "query": "Wunu mountain China; Wunvshan Huanren",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Wunu mountain China' and 'Wunvshan Huanren' — only generic Chinese mountains (Huangshan/Emei/Zhangjiajie) and unrelated results; no Wunu Shan photos."
+    },
+    {
+      "landmarkId": "cn-辽宁-红海滩风景廊道景区",
+      "match": "scene",
+      "query": "Panjin red beach China; red beach Liaoning",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Panjin red beach China' and 'red beach Liaoning' — all true Panjin seepweed photos are iStock ads; free results are generic beaches/pink lakes."
+    },
+    {
+      "landmarkId": "cn-辽宁-千山景区",
+      "match": "scene",
+      "query": "Qianshan Anshan; Qianshan mountain Liaoning",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Qianshan Anshan' and 'Qianshan Liaoning mountain' — only generic mountains/coastal Qingdao shots plus iStock ads (Tianqiaogou, Jinlongsi); no verifiable Qianshan."
+    },
+    {
+      "landmarkId": "cn-辽宁-本溪水洞景区",
+      "match": "scene",
+      "query": "Benxi water cave China; Benxi Liaoning",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Benxi water cave China' and 'Benxi Liaoning' — the water-cave hits are iStock ads from Yunnan/Guizhou; a Benxi forest-bridge shot is not the cave."
+    },
+    {
+      "landmarkId": "cn-辽宁-金石滩景区",
+      "match": "scene",
+      "query": "Jinshitan Dalian; Jinshitan beach Dalian",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Jinshitan Dalian' and 'Jinshitan beach Dalian' — only Dalian/Qingdao city skylines and generic beaches; the real Jinshitan shots are iStock ads."
+    },
+    {
+      "landmarkId": "cn-辽宁-老虎滩海洋公园—老虎滩极地馆",
+      "match": "scene",
+      "query": "Dalian ocean park; Laohutan Dalian",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Dalian ocean park' and 'Laohutan Dalian' — the real Laohutan wharf/park photos are iStock ads; free results are generic Dalian harbour/city scenes."
+    },
+    {
+      "landmarkId": "cn-辽宁-沈阳植物园",
+      "match": "scene",
+      "query": "Shenyang botanical garden; Shenyang Expo Garden",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Shenyang botanical garden' and 'Shenyang Expo Garden' — the real Shenyang Expo Garden photos are iStock ads; free results are generic parks in Dalian/Qingdao."
+    },
+    {
+      "landmarkId": "cn-辽宁-沈阳故宫",
+      "match": "place",
+      "query": "Shenyang Imperial Palace",
+      "mediaUrl": "https://images.pexels.com/photos/16730527/pexels-photo-16730527.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Entrance of Shenyang Imperial Palace",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/entrance-of-shenyang-imperial-palace-16730527/", "author": "Lan Yao" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 83335 },
+      "verdict": "ok",
+      "note": "Gate plaque reads 沈阳故宫 (Shenyang Imperial Palace)."
+    },
+    {
+      "landmarkId": "cn-吉林-大安嫩江湾旅游区",
+      "match": "scene",
+      "query": "Nenjiang river China; Nenjiang bay",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Nenjiang river China' and 'Nenjiang bay' — the real Nenjiang wetland photos are iStock ads; free results are generic rivers/cityscapes."
+    },
+    {
+      "landmarkId": "cn-吉林-前郭查干湖景区",
+      "match": "scene",
+      "query": "Chagan Lake; Chagan Lake winter fishing",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Chagan Lake' and 'Chagan Lake winter fishing' — only generic lakes; the real Chagan Lake shots are iStock ads."
+    },
+    {
+      "landmarkId": "cn-吉林-高句丽文物古迹旅游景区",
+      "match": "scene",
+      "query": "Goguryeo tombs; Ji'an China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Goguryeo tombs' and 'Ji'an China' — all Goguryeo tomb photos are iStock ads (Korea/North Korea); free results are tombs in India/Pakistan/Uzbekistan."
+    },
+    {
+      "landmarkId": "cn-吉林-世界雕塑公园景区",
+      "match": "scene",
+      "query": "Changchun sculpture park; Changchun World Sculpture Park",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Changchun sculpture park' and 'Changchun World Sculpture Park' — only generic sculpture parks (Jinan, etc.); none verifiable as Changchun."
+    },
+    {
+      "landmarkId": "cn-吉林-六鼎山文化旅游区",
+      "match": "scene",
+      "query": "Liudingshan; Dunhua Jilin China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Liudingshan' and 'Dunhua Jilin China' — the real Liudingshan Cultural Tourism Area photos are iStock ads; free results are generic mountains/winter scenes."
+    },
+    {
+      "landmarkId": "cn-吉林-长影世纪城景区",
+      "match": "scene",
+      "query": "Changchun film park; Changying Century City",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Changchun film park' and 'Changying Century City' — only generic Changchun city/architecture and unrelated parks; the real shots are iStock ads."
+    },
+    {
+      "landmarkId": "cn-吉林-净月潭景区",
+      "match": "scene",
+      "query": "Jingyue Lake Changchun; Jingyuetan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Jingyue Lake Changchun' and 'Jingyuetan' — only generic lakes/forests; no verifiable Jingyuetan."
+    },
+    {
+      "landmarkId": "cn-吉林-伪满皇宫博物馆",
+      "match": "scene",
+      "query": "Palace of Manchukuo; Changchun palace",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried 'Palace of Manchukuo' and 'Changchun palace' — only Forbidden City Beijing / Summer Palace shots; the real Manchukuo Palace appears only as an iStock ad."
+    },
+    {
+      "landmarkId": "cn-吉林-长白山景区",
+      "match": "place",
+      "query": "Changbai Mountain",
+      "mediaUrl": "https://images.pexels.com/photos/34257242/pexels-photo-34257242.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic view of Heaven Lake on Changbai Mountain",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-view-of-heaven-lake-on-changbai-mountain-34257242/", "author": "李聪明ing" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 44870 },
+      "verdict": "ok",
+      "note": "Heaven Lake (Tianchi) crater rim on Changbai Mountain; photo description confirms Changbai."
+    }
+  ]
+}

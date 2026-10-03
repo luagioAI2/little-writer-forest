@@ -1,0 +1,77 @@
+[
+  {
+    "key": "all-kinds-people",
+    "hint": "草地上站着一排不同姿态不同颜色的小孩，头顶有对话气泡标着「同学」「路人」「邻居」。",
+    "en": "crowd of people walking street",
+    "usedBy": [
+      "builtin-people-around-1",
+      "builtin-people-around-2"
+    ]
+  },
+  {
+    "key": "clock",
+    "hint": "床头柜上放着一个双铃闹钟，钟面上有十二个刻度和两根指针，顶上两个小铃铛，底下有两只脚。",
+    "en": "twin bell alarm clock vintage",
+    "usedBy": [
+      "builtin-treasure-4"
+    ]
+  },
+  {
+    "key": "dumplings",
+    "hint": "案板上排着一排刚包好的饺子，旁边有擀面杖、面粉和一口冒热气的锅，两个人在包。",
+    "en": "dumplings making flour board",
+    "usedBy": [
+      "builtin-food-1"
+    ]
+  },
+  {
+    "key": "invention",
+    "hint": "设计图上画着一双带翅膀的鞋和齿轮，旁边有个灯泡亮着，一个小孩趴在桌前画。",
+    "en": "blueprint sketch lightbulb idea",
+    "usedBy": [
+      "builtin-sci-fi-2"
+    ]
+  },
+  {
+    "key": "my-room",
+    "hint": "小房间里有床、书桌和书架，窗户挂着窗帘，桌上摆着一盏台灯和几本书，墙上贴着画。",
+    "en": "cozy bedroom desk bookshelf",
+    "usedBy": [
+      "builtin-treasure-5"
+    ]
+  },
+  {
+    "key": "play-game",
+    "hint": "草地上两队小孩在拔河，绳中间系着红布条，两边小孩弯腰用力，旁边有人在欢呼。",
+    "en": "tug of war rope",
+    "usedBy": [
+      "builtin-activity-4"
+    ]
+  },
+  {
+    "key": "sci-fi-fly",
+    "hint": "深蓝色太空中有一架火箭拖着火焰在飞，远处有带光环的星球，旁边飘着一个小宇航员。",
+    "en": "rocket launching space stars",
+    "usedBy": [
+      "builtin-sci-fi-1",
+      "builtin-sci-fi-3"
+    ]
+  },
+  {
+    "key": "spring-outing-bus",
+    "hint": "一辆黄色大巴停在路边，几个孩子排队上车，老师在旁边挥手，旁边开着粉色的花树。",
+    "en": "yellow school bus",
+    "usedBy": [
+      "builtin-unforgettable-2",
+      "builtin-activity-2"
+    ]
+  },
+  {
+    "key": "winter-window",
+    "hint": "从屋里往外看，窗外下着雪、有落光叶子的树和小房子，窗台上放着一盆绿植和一杯热饮。",
+    "en": "window view snow winter",
+    "usedBy": [
+      "builtin-season-3"
+    ]
+  }
+]

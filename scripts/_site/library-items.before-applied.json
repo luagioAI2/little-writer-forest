@@ -1,0 +1,2022 @@
+{
+  "builtin-activity-1": {
+    "baseTitle": "热闹的运动会",
+    "baseLead": "哨声一响，跑道上的同学冲了出去。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/31772339/pexels-photo-31772339.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/2310482/pexels-photo-2310482.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-activity-14": {
+    "baseTitle": "学校的读书节",
+    "baseLead": "教室里摆满了书，大家挑得眼花缭乱。你挑了哪一本？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/14025659/pexels-photo-14025659.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-activity-2": {
+    "baseTitle": "快乐的春游",
+    "baseLead": "背上小书包，我们出发啦！",
+    "imageUrls": [
+      "https://images.pexels.com/photos/19760978/pexels-photo-19760978.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/7669111/pexels-photo-7669111.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/32004906/pexels-photo-32004906.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-activity-3": {
+    "baseTitle": "班级大扫除",
+    "baseLead": "大家分工合作，教室变干净了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/28761314/pexels-photo-28761314.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-activity-4": {
+    "baseTitle": "记一次游戏",
+    "baseLead": "你和同学玩了什么游戏？怎么玩的？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8034586/pexels-photo-8034586.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-activity-5": {
+    "baseTitle": "多彩的活动",
+    "baseLead": "你参加过什么活动？把场面和心情都写下来。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/9714143/pexels-photo-9714143.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-campus-1": {
+    "baseTitle": "学校的小花园",
+    "baseLead": "花园里现在正开着什么花？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/31182410/pexels-photo-31182410.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-campus-10": {
+    "baseTitle": "教室的窗边",
+    "baseLead": "上课的时候，你偷偷往窗外看过什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37812747/pexels-photo-37812747.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-campus-2": {
+    "baseTitle": "热闹的操场",
+    "baseLead": "下课铃一响，操场就活了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/19461117/pexels-photo-19461117.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-campus-3": {
+    "baseTitle": "大扫除",
+    "baseLead": "大家分工合作，教室慢慢变干净了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4867978/pexels-photo-4867978.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-campus-4": {
+    "baseTitle": "雪后的校园",
+    "baseLead": "雪停了，太阳出来了，校园亮闪闪的。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/30694312/pexels-photo-30694312.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-campus-5": {
+    "baseTitle": "推荐一个好地方",
+    "baseLead": "你觉得哪里最好玩？推荐给同学吧。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37111200/pexels-photo-37111200.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-classmate-1": {
+    "baseTitle": "我的同桌",
+    "baseLead": "同桌是个什么样的人？你们之间发生过什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37812837/pexels-photo-37812837.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-classmate-2": {
+    "baseTitle": "一个爱笑的人",
+    "baseLead": "他一笑，周围的人也跟着笑。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/9582978/pexels-photo-9582978.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-classmate-3": {
+    "baseTitle": "我的好朋友",
+    "baseLead": "你们是怎么认识的？一起做过什么好玩的事？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/13758652/pexels-photo-13758652.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-classmate-6": {
+    "baseTitle": "同桌的铅笔盒",
+    "baseLead": "同桌的铅笔盒总是乱七八糟的，什么都有。你翻看过吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8423074/pexels-photo-8423074.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-classmate-7": {
+    "baseTitle": "一起值日",
+    "baseLead": "放学后，我和同桌留下来扫地、擦黑板。那天发生了什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/36041981/pexels-photo-36041981.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-classmate-8": {
+    "baseTitle": "我们吵架了",
+    "baseLead": "因为一件小事，我们俩谁也不理谁。后来呢？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4145365/pexels-photo-4145365.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-comic-1": {
+    "baseTitle": "一幅漫画的启示",
+    "baseLead": "先仔细看这幅漫画，它让你想到了什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4142267/pexels-photo-4142267.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-comic-2": {
+    "baseTitle": "漫画里的道理",
+    "baseLead": "漫画常常用夸张的办法讲道理，你看懂了哪一幅？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4142511/pexels-photo-4142511.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-comic-4": {
+    "baseTitle": "等一等再摘",
+    "baseLead": "漫画里的果子还没熟，有人已经伸手了。你看懂了什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/33239667/pexels-photo-33239667.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-comic-5": {
+    "baseTitle": "各扫门前雪",
+    "baseLead": "漫画里两个人各扫一段路，中间的雪谁也没动。这让你想到什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6952441/pexels-photo-6952441.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-community-helper-1": {
+    "baseTitle": "看病的医生",
+    "baseLead": "白大褂、听诊器，医生叔叔（阿姨）是怎么给你看病的？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/20100296/pexels-photo-20100296.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-community-helper-10": {
+    "baseTitle": "早餐摊的阿姨",
+    "baseLead": "天还没亮，早餐摊的阿姨就忙起来了。你常买她做的什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/31990517/pexels-photo-31990517.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-community-helper-11": {
+    "baseTitle": "小区里的园丁",
+    "baseLead": "花坛里的花开得正好，都是他种的。你注意过他的手吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/18463235/pexels-photo-18463235.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-community-helper-2": {
+    "baseTitle": "警察叔叔",
+    "baseLead": "十字路口，警察叔叔正指挥着交通。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/16862086/pexels-photo-16862086.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-community-helper-3": {
+    "baseTitle": "图书管理员",
+    "baseLead": "图书馆里很安静，管理员阿姨帮你找到了书。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6344226/pexels-photo-6344226.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-community-helper-4": {
+    "baseTitle": "公交司机",
+    "baseLead": "每天上学坐的公交车，司机叔叔总是笑眯眯的。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/39639904/pexels-photo-39639904.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-community-helper-9": {
+    "baseTitle": "楼下的保安叔叔",
+    "baseLead": "每天进出小区，他都笑着跟我们打招呼。你跟他熟吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/18530600/pexels-photo-18530600.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-culture-1": {
+    "baseTitle": "中国的世界文化遗产",
+    "baseLead": "选一处你感兴趣的世界文化遗产，介绍给别人。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/35521703/pexels-photo-35521703.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-culture-2": {
+    "baseTitle": "古城墙",
+    "baseLead": "站在城墙上，你能想象这里曾经发生过什么吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/38895950/pexels-photo-38895950.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-culture-4": {
+    "baseTitle": "故宫的红墙",
+    "baseLead": "红墙很高，路很长，走过去要花不少时间。你在想什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/9429300/pexels-photo-9429300.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-culture-5": {
+    "baseTitle": "桥上的石狮子",
+    "baseLead": "老桥的栏杆上蹲着一排石狮子。你数得清吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/30470656/pexels-photo-30470656.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-custom-1": {
+    "baseTitle": "传统节日",
+    "baseLead": "你家是怎么过传统节日的？写一写过程。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5982949/pexels-photo-5982949.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-custom-2": {
+    "baseTitle": "家乡的风俗",
+    "baseLead": "你的家乡有什么特别的风俗？介绍给大家。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/39016366/pexels-photo-39016366.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-custom-5": {
+    "baseTitle": "端午的粽子",
+    "baseLead": "粽叶在手里一折，米就装进去了。你会包吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/20214475/pexels-photo-20214475.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-custom-6": {
+    "baseTitle": "元宵看花灯",
+    "baseLead": "街上挂满了花灯，人挤着人往前挪。你猜中了哪个灯谜？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/31108476/pexels-photo-31108476.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-deform-1": {
+    "baseTitle": "变形记",
+    "baseLead": "假如你变成了另一种东西，你的世界会变成什么样？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/15549170/pexels-photo-15549170.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-deform-2": {
+    "baseTitle": "假如我变小了",
+    "baseLead": "忽然你变得只有蚂蚁那么小，世界变成了什么样？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/36639191/pexels-photo-36639191.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-deform-3": {
+    "baseTitle": "神奇的探险之旅",
+    "baseLead": "你和同伴深入一个未知的山洞，发生了什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4581255/pexels-photo-4581255.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-deform-4": {
+    "baseTitle": "笔尖流出的故事",
+    "baseLead": "笔尖一动，一个人物就从纸上走了出来……",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6991500/pexels-photo-6991500.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-deform-8": {
+    "baseTitle": "我变成了一棵树",
+    "baseLead": "脚扎进土里，手臂变成了树枝。谁会在你身上做窝？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/31283401/pexels-photo-31283401.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-dream-1": {
+    "baseTitle": "一个奇怪的梦",
+    "baseLead": "梦里的事都不太讲道理，可又很真实。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7450361/pexels-photo-7450361.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-dream-2": {
+    "baseTitle": "我梦见了未来",
+    "baseLead": "醒来的时候，我还记得那个画面。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6162307/pexels-photo-6162307.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-dream-3": {
+    "baseTitle": "海底探险",
+    "baseLead": "梦里我变成了一条鱼，在珊瑚丛里穿来穿去。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4610204/pexels-photo-4610204.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-dream-4": {
+    "baseTitle": "时间快进",
+    "baseLead": "「嗖」的一声，我到了好多好多年以后。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/33002031/pexels-photo-33002031.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-dream-6": {
+    "baseTitle": "我梦见自己会飞",
+    "baseLead": "梦里的风从耳边吹过去。你飞过了哪些地方？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/38351370/pexels-photo-38351370.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-dream-job-1": {
+    "baseTitle": "我的理想",
+    "baseLead": "长大后你想做什么？为什么想做这个？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/15493606/pexels-photo-15493606.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-dream-job-2": {
+    "baseTitle": "我想成为的人",
+    "baseLead": "身边有谁是你想成为的样子？说说他哪里让你佩服。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8954779/pexels-photo-8954779.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-dream-job-3": {
+    "baseTitle": "如果我当医生",
+    "baseLead": "穿上白大褂，你会怎么给病人看病？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4173248/pexels-photo-4173248.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-dream-job-4": {
+    "baseTitle": "我想当一名老师",
+    "baseLead": "站在讲台上，你会怎么讲第一节课？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8423008/pexels-photo-8423008.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-dream-job-5": {
+    "baseTitle": "如果我是厨师",
+    "baseLead": "灶台前围裙一系，你打算先做哪一道菜？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/2544829/pexels-photo-2544829.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-fairy-1": {
+    "baseTitle": "《龟兔赛跑》新编",
+    "baseLead": "如果它们再比一次，会发生什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/31219146/pexels-photo-31219146.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-fairy-2": {
+    "baseTitle": "卖火柴的小女孩来了我家",
+    "baseLead": "如果她推开门走了进来……",
+    "imageUrls": [
+      "https://images.pexels.com/photos/14823081/pexels-photo-14823081.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-fairy-6": {
+    "baseTitle": "《狐狸和乌鸦》新编",
+    "baseLead": "乌鸦这次没开口，狐狸又想出了什么办法？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/38335455/pexels-photo-38335455.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-family-1": {
+    "baseTitle": "我的妈妈",
+    "baseLead": "妈妈是什么样子的？她做的哪件事让你记得最清楚？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/3785725/pexels-photo-3785725.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-family-13": {
+    "baseTitle": "妈妈的手",
+    "baseLead": "妈妈的手有点粗糙，做过很多很多事情。你注意过她的手吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5591788/pexels-photo-5591788.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-family-14": {
+    "baseTitle": "爷爷的老花镜",
+    "baseLead": "爷爷把老花镜架在鼻尖上，眯着眼睛看报纸。他平时还爱做什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5960680/pexels-photo-5960680.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-family-15": {
+    "baseTitle": "爸爸的呼噜声",
+    "baseLead": "夜里，爸爸的呼噜一阵一阵的。你被吵醒过吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7983206/pexels-photo-7983206.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-family-2": {
+    "baseTitle": "爷爷和他的花园",
+    "baseLead": "爷爷在院子里忙活的时候，你在旁边看着。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4894630/pexels-photo-4894630.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-family-3": {
+    "baseTitle": "妹妹来了",
+    "baseLead": "家里多了一个小不点，日子变得不一样了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7491730/pexels-photo-7491730.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/4964356/pexels-photo-4964356.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-family-4": {
+    "baseTitle": "爸爸修东西",
+    "baseLead": "爸爸蹲在地上，手里拿着扳手，满头是汗。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5808015/pexels-photo-5808015.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-family-5": {
+    "baseTitle": "奶奶织毛衣",
+    "baseLead": "奶奶戴着老花镜，坐在摇椅上一针一针地织。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5585242/pexels-photo-5585242.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-family-6": {
+    "baseTitle": "邻居阿姨",
+    "baseLead": "隔壁的阿姨总是笑眯眯的，手里拎着菜篮子。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7658788/pexels-photo-7658788.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-first-time-1": {
+    "baseTitle": "第一次骑自行车",
+    "baseLead": "刚开始很难，后来你学会了。当时什么感觉？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/14300718/pexels-photo-14300718.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/6209919/pexels-photo-6209919.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-first-time-10": {
+    "baseTitle": "第一次坐火车",
+    "baseLead": "车窗外的树一棵接一棵往后跑。你数得过来吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6261755/pexels-photo-6261755.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-first-time-2": {
+    "baseTitle": "第一次做饭",
+    "baseLead": "你系上围裙，站到了灶台前……",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4920539/pexels-photo-4920539.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/6287260/pexels-photo-6287260.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/30392962/pexels-photo-30392962.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-first-time-3": {
+    "baseTitle": "第一次上台",
+    "baseLead": "台下的同学都看着你，你的手心里全是汗。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5801564/pexels-photo-5801564.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-first-time-4": {
+    "baseTitle": "第一次独睡",
+    "baseLead": "关了灯，房间里黑黑的，你给自己壮了壮胆。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6985726/pexels-photo-6985726.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-food-1": {
+    "baseTitle": "外婆包的饺子",
+    "baseLead": "薄薄的皮，鼓鼓的馅，冒着热气。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6680787/pexels-photo-6680787.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-food-2": {
+    "baseTitle": "一碗热汤面",
+    "baseLead": "冬天放学回家，桌上有一碗面。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/3903586/pexels-photo-3903586.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-food-3": {
+    "baseTitle": "推荐一本书",
+    "baseLead": "你读过的好书，像推荐好朋友一样推荐给同学吧。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37447584/pexels-photo-37447584.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-food-6": {
+    "baseTitle": "妈妈煮的粥",
+    "baseLead": "早上起床，桌上有一碗热腾腾的粥。里面都放了什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5652188/pexels-photo-5652188.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-food-7": {
+    "baseTitle": "一根冰棍",
+    "baseLead": "夏天的午后，冰棍化得比吃得还快。你最喜欢什么口味？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/9646426/pexels-photo-9646426.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-food-8": {
+    "baseTitle": "奶奶做的红烧肉",
+    "baseLead": "一掀锅盖，满屋子都是香味。你等得及吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/34474143/pexels-photo-34474143.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-future-1": {
+    "baseTitle": "未来的学校",
+    "baseLead": "一百年后的学校，会是什么样子？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37457088/pexels-photo-37457088.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-future-2": {
+    "baseTitle": "二十年后的我",
+    "baseLead": "二十年后，你在做什么工作？过着怎样的生活？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/12044833/pexels-photo-12044833.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-future-3": {
+    "baseTitle": "我的机器人朋友",
+    "baseLead": "它有方方的脑袋，天线一闪一闪的。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8294792/pexels-photo-8294792.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-future-4": {
+    "baseTitle": "太空旅行",
+    "baseLead": "坐上火箭，嗖的一下就到了太空里。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/11086515/pexels-photo-11086515.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-future-9": {
+    "baseTitle": "未来的家",
+    "baseLead": "一进门灯就自己亮了，饭也刚好做好。你还想要什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/39829574/pexels-photo-39829574.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-gratitude-1": {
+    "baseTitle": "想对您说声谢谢",
+    "baseLead": "有没有一个人，你一直欠他一句「谢谢」？你想对他说什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8617627/pexels-photo-8617627.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-gratitude-2": {
+    "baseTitle": "致敬平凡英雄",
+    "baseLead": "清洁工、快递员、护士、警察……有没有一位「平凡英雄」让你感动过？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/16930314/pexels-photo-16930314.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-gratitude-3": {
+    "baseTitle": "那双手",
+    "baseLead": "妈妈的手、老师的手、工人的手……有没有一双手让你印象深刻？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37826252/pexels-photo-37826252.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-gratitude-4": {
+    "baseTitle": "背影",
+    "baseLead": "你有没有注视过一个人的背影，那一刻心里涌起很多感触？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/34526414/pexels-photo-34526414.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-gratitude-5": {
+    "baseTitle": "温暖的目光",
+    "baseLead": "有没有一道目光，在你难过或紧张的时候给了你力量？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7156144/pexels-photo-7156144.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-gratitude-6": {
+    "baseTitle": "礼物",
+    "baseLead": "收到过最珍贵的一份礼物是什么？它为什么对你那么重要？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/27086379/pexels-photo-27086379.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-gratitude-7": {
+    "baseTitle": "一碗面的温度",
+    "baseLead": "有没有一种食物，吃着吃着就让你想起了某个人？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/20824937/pexels-photo-20824937.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-gratitude-8": {
+    "baseTitle": "师恩难忘",
+    "baseLead": "有没有一位老师，说过的一句话或做过的一件事，让你记到现在？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8617773/pexels-photo-8617773.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-growth-1": {
+    "baseTitle": "那一刻，我长大了",
+    "baseLead": "生活中总有一个瞬间，让你突然觉得自己不再是小孩。那是怎样的一个时刻？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6297626/pexels-photo-6297626.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-growth-10": {
+    "baseTitle": "给自己点赞",
+    "baseLead": "你有没有做过一件让自己特别骄傲的事？当时发生了什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8363785/pexels-photo-8363785.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-growth-2": {
+    "baseTitle": "在挫折中成长",
+    "baseLead": "你有没有经历过一次失败，当时很难过，但后来却让你变得更坚强？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7929443/pexels-photo-7929443.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-growth-3": {
+    "baseTitle": "我战胜了自己",
+    "baseLead": "有时候最大的对手不是别人，而是自己内心的害怕或懒惰。你有过这样的经历吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/3058762/pexels-photo-3058762.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-growth-4": {
+    "baseTitle": "独自面对",
+    "baseLead": "第一次没有爸爸妈妈在身边，自己完成一件事。那是什么感觉？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/1120106/pexels-photo-1120106.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-growth-5": {
+    "baseTitle": "从错误中学会",
+    "baseLead": "犯过一次错，被批评过，但那次教训让你记住了什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8500300/pexels-photo-8500300.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-growth-6": {
+    "baseTitle": "坚持就是胜利",
+    "baseLead": "有没有一件事，你差点放弃，但咬咬牙坚持了下来？最后的结果怎么样？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5896791/pexels-photo-5896791.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-growth-7": {
+    "baseTitle": "我的蜕变",
+    "baseLead": "从胆小到勇敢，从粗心到细心，从懒惰到勤奋……你身上发生过怎样的变化？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/33855096/pexels-photo-33855096.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-growth-8": {
+    "baseTitle": "学会承担",
+    "baseLead": "什么时候开始，你觉得自己要为某件事负责了？那是什么事？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5893075/pexels-photo-5893075.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-growth-9": {
+    "baseTitle": "风雨之后",
+    "baseLead": "经历过一次困难或打击后，你看到了什么不一样的风景？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5234357/pexels-photo-5234357.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-home-scene-1": {
+    "baseTitle": "悄悄长大的绿萝",
+    "baseLead": "它一直在悄悄地长，你发现了吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/15555864/pexels-photo-15555864.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-home-scene-2": {
+    "baseTitle": "厨房里的香味",
+    "baseLead": "还没进门，就闻到了香味。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8092345/pexels-photo-8092345.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-home-scene-3": {
+    "baseTitle": "清晨的窗台",
+    "baseLead": "每天早上，它都会停在窗台上唱歌。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/16861432/pexels-photo-16861432.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-home-scene-6": {
+    "baseTitle": "客厅的沙发",
+    "baseLead": "沙发上总有一个位置是你常坐的。为什么是那儿？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/36363110/pexels-photo-36363110.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-hometown-1": {
+    "baseTitle": "家乡的田野",
+    "baseLead": "风吹过的时候，家乡的田野像什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/10383335/pexels-photo-10383335.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-hometown-2": {
+    "baseTitle": "家乡的傍晚",
+    "baseLead": "太阳落到山后面，村子慢慢安静下来了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/18358153/pexels-photo-18358153.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-hometown-3": {
+    "baseTitle": "村口的那条河",
+    "baseLead": "河水从村子旁边流过，你还记得它什么样子吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/32961389/pexels-photo-32961389.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-hometown-7": {
+    "baseTitle": "回家的那条小路",
+    "baseLead": "从村口到家要走过一条小路。路上有什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5531177/pexels-photo-5531177.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-if-i-1": {
+    "baseTitle": "假如我有一双翅膀",
+    "baseLead": "你想飞到哪里去？会看到什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/35745144/pexels-photo-35745144.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-if-i-2": {
+    "baseTitle": "假如我是一阵风",
+    "baseLead": "风会去哪里？会做什么事？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/15952610/pexels-photo-15952610.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-if-i-3": {
+    "baseTitle": "假如我能听懂动物说话",
+    "baseLead": "那它们会告诉你什么秘密？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37891869/pexels-photo-37891869.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-if-i-4": {
+    "baseTitle": "假如我只有蚂蚁大",
+    "baseLead": "忽然你变得只有蚂蚁那么小，世界变成了什么样？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/29375709/pexels-photo-29375709.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-if-i-7": {
+    "baseTitle": "假如我有一支神笔",
+    "baseLead": "画什么就有什么。你第一笔会画什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6695116/pexels-photo-6695116.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-letter-1": {
+    "baseTitle": "给亲人的一封信",
+    "baseLead": "给远方的亲人写封信，说说你的近况。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/3838324/pexels-photo-3838324.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-letter-2": {
+    "baseTitle": "我想对您说",
+    "baseLead": "有什么话想对爸爸妈妈说？写下来吧。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/3826685/pexels-photo-3826685.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-letter-3": {
+    "baseTitle": "读后感",
+    "baseLead": "读完一本书，你最大的感受是什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/963628/pexels-photo-963628.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-letter-6": {
+    "baseTitle": "给老师的一封信",
+    "baseLead": "快毕业了，有些话想写在信里告诉老师。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6830868/pexels-photo-6830868.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-1": {
+    "baseTitle": "我的小台灯",
+    "baseLead": "每天晚上，它都亮着陪我写作业。它是什么样子的？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/2168382/pexels-photo-2168382.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-10": {
+    "baseTitle": "家里的遥控器",
+    "baseLead": "它总是找不到，一找就要找半天。它平时放在哪儿？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5202948/pexels-photo-5202948.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-11": {
+    "baseTitle": "门边的一串钥匙",
+    "baseLead": "钥匙挂在门边，走起路来叮叮当当。哪一把是你的？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/31989061/pexels-photo-31989061.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-12": {
+    "baseTitle": "洗手间的镜子",
+    "baseLead": "每天早上，我都在它面前刷牙洗脸。它照出过什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7045717/pexels-photo-7045717.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-13": {
+    "baseTitle": "我的小拖鞋",
+    "baseLead": "一进门就换上它，脚底下软软的。它是什么样子的？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6651966/pexels-photo-6651966.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-14": {
+    "baseTitle": "水开了",
+    "baseLead": "壶嘴咕嘟咕嘟冒着白气，水开了。你听过这个声音吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/17086060/pexels-photo-17086060.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-15": {
+    "baseTitle": "电吹风呼呼地吹",
+    "baseLead": "洗完头，头发湿漉漉的。妈妈是怎么帮你吹干的？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4839182/pexels-photo-4839182.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-16": {
+    "baseTitle": "手电筒的光",
+    "baseLead": "停电的晚上，一道光柱照在墙上。你用它做过什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5543899/pexels-photo-5543899.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-17": {
+    "baseTitle": "会唱歌的收音机",
+    "baseLead": "爷爷的收音机里，每天放着不一样的声音。你听过吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/35525951/pexels-photo-35525951.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-18": {
+    "baseTitle": "门铃响了",
+    "baseLead": "叮咚一声，是谁来了？你猜过多少次？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/35430939/pexels-photo-35430939.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-19": {
+    "baseTitle": "阳台上的晾衣架",
+    "baseLead": "一排衣服在风里轻轻晃。哪一件是你的？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/29396472/pexels-photo-29396472.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-2": {
+    "baseTitle": "我家的电风扇",
+    "baseLead": "天热的时候，它转起来呼呼地响。它给家里带来了什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/3675622/pexels-photo-3675622.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-20": {
+    "baseTitle": "我的保温杯",
+    "baseLead": "冬天里，打开盖子还冒着热气。它陪了你多久？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5358793/pexels-photo-5358793.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-21": {
+    "baseTitle": "我的存钱罐",
+    "baseLead": "硬币扔进去，叮当一声。你攒了多久了？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6052793/pexels-photo-6052793.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-22": {
+    "baseTitle": "我的小牙刷",
+    "baseLead": "它站在杯子里，刷毛有点歪了。你多久换一次？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/13466251/pexels-photo-13466251.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-23": {
+    "baseTitle": "雨天的雨靴",
+    "baseLead": "踩进水洼里，啪嗒啪嗒的。你喜欢穿它吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/668355/pexels-photo-668355.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-24": {
+    "baseTitle": "家里的窗帘",
+    "baseLead": "早上一拉，阳光就涌进来。你喜欢开着还是拉着？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6995148/pexels-photo-6995148.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-25": {
+    "baseTitle": "鞋柜里的鞋",
+    "baseLead": "一打开鞋柜，大大小小的鞋排在一起。哪一双最旧？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/36738046/pexels-photo-36738046.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-26": {
+    "baseTitle": "书包上的小挂件",
+    "baseLead": "书包上挂着一个小挂件，走起路来一晃一晃。它是谁送的？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4887256/pexels-photo-4887256.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-27": {
+    "baseTitle": "电饭煲冒气了",
+    "baseLead": "厨房里飘出米饭的香味，锅盖边冒着白气。今天吃什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/11770362/pexels-photo-11770362.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-28": {
+    "baseTitle": "空调吹出来的风",
+    "baseLead": "夏天一进屋，凉风就扑过来。你最喜欢哪个温度？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/38788452/pexels-photo-38788452.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-29": {
+    "baseTitle": "一把旧椅子",
+    "baseLead": "那把椅子有一条腿短了一截，坐上去会晃。它陪了家里多久？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/35414825/pexels-photo-35414825.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-3": {
+    "baseTitle": "下雨天的雨伞",
+    "baseLead": "雨点打在伞面上，滴滴答答的。这把伞有什么故事？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/15171377/pexels-photo-15171377.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-30": {
+    "baseTitle": "我的小书桌",
+    "baseLead": "桌面上有铅笔印和几道划痕。你在这张桌上写过什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5905443/pexels-photo-5905443.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-31": {
+    "baseTitle": "门口的擦鞋垫",
+    "baseLead": "进门之前先在它上面踩两脚。你注意过它吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/36550591/pexels-photo-36550591.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-4": {
+    "baseTitle": "叫我起床的闹钟",
+    "baseLead": "每天早上，它准时把我叫醒。你喜欢它吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/15068318/pexels-photo-15068318.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-5": {
+    "baseTitle": "我的水杯",
+    "baseLead": "它每天跟着我去上学，里面装满了水。它是什么颜色的？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7402619/pexels-photo-7402619.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-6": {
+    "baseTitle": "家里的冰箱",
+    "baseLead": "打开冰箱门，里面整整齐齐地摆着什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6508357/pexels-photo-6508357.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-7": {
+    "baseTitle": "洗衣机转起来了",
+    "baseLead": "洗衣机轰隆隆地转，衣服在里面翻跟头。你帮妈妈晾过衣服吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/19846385/pexels-photo-19846385.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-8": {
+    "baseTitle": "墙角的扫帚",
+    "baseLead": "墙角立着一把扫帚，扫过很多年。它扫过哪些地方？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5910384/pexels-photo-5910384.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-life-goods-9": {
+    "baseTitle": "墙上的挂钟",
+    "baseLead": "秒针一格一格地走，从来不休息。你盯着它看过吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8542504/pexels-photo-8542504.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-look-picture-1": {
+    "baseTitle": "看图写话",
+    "baseLead": "仔细看图，图上画了什么？把你看到的、想到的写下来。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/2320622/pexels-photo-2320622.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-look-picture-2": {
+    "baseTitle": "连环图编故事",
+    "baseLead": "三幅图连起来就是一个故事，你来讲一讲。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/139764/pexels-photo-139764.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-look-picture-5": {
+    "baseTitle": "图上的那个下午",
+    "baseLead": "图里的人都停在一瞬间。接下来会发生什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37707801/pexels-photo-37707801.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-look-picture-6": {
+    "baseTitle": "四幅图，一件事",
+    "baseLead": "四幅图按顺序排好，把它们连成一件完整的事。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6699980/pexels-photo-6699980.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-lost-found-1": {
+    "baseTitle": "走丢的那个下午",
+    "baseLead": "一回头，妈妈不见了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8968338/pexels-photo-8968338.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/4871811/pexels-photo-4871811.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-lost-found-2": {
+    "baseTitle": "摔了一跤之后",
+    "baseLead": "膝盖火辣辣的，可我记住了这一跤。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5368943/pexels-photo-5368943.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-lost-found-3": {
+    "baseTitle": "生病了",
+    "baseLead": "头很烫，妈妈让我躺在床上别动。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/3873200/pexels-photo-3873200.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-lost-found-6": {
+    "baseTitle": "突然停电了",
+    "baseLead": "灯一下子全灭了，屋里黑得看不见手指。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37771422/pexels-photo-37771422.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-milestone-1": {
+    "baseTitle": "过生日",
+    "baseLead": "蛋糕上插着蜡烛，大家围在一起唱生日歌。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7600425/pexels-photo-7600425.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-milestone-12": {
+    "baseTitle": "我学会游泳了",
+    "baseLead": "第一次不用浮板游到对岸，那是什么感觉？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/34193272/pexels-photo-34193272.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-milestone-2": {
+    "baseTitle": "毕业了",
+    "baseLead": "最后一次排队站在操场上，帽子一抛就散了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/28896831/pexels-photo-28896831.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-milestone-3": {
+    "baseTitle": "搬新家",
+    "baseLead": "纸箱子堆了一屋，新房间还空空的。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8730053/pexels-photo-8730053.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-milestone-4": {
+    "baseTitle": "难忘小学生活",
+    "baseLead": "六年的小学时光，你最难忘的是什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37451367/pexels-photo-37451367.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-milestone-5": {
+    "baseTitle": "我的拿手好戏",
+    "baseLead": "你最擅长什么？把过程写具体。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/38624446/pexels-photo-38624446.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-mistake-1": {
+    "baseTitle": "我撒了一个谎",
+    "baseLead": "说出来之后，心里反而更难受了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7078729/pexels-photo-7078729.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-mistake-2": {
+    "baseTitle": "打碎的花瓶",
+    "baseLead": "「哐当」一声，屋子里一下子安静了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/13343399/pexels-photo-13343399.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-mistake-3": {
+    "baseTitle": "迟到了",
+    "baseLead": "铃响了才跑到教室门口，老师正看着我。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8500353/pexels-photo-8500353.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-mistake-4": {
+    "baseTitle": "考试前夜",
+    "baseLead": "明天要考试，台灯下翻了一遍又一遍课本。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5303541/pexels-photo-5303541.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-mistake-8": {
+    "baseTitle": "弄丢的那本书",
+    "baseLead": "从图书馆借的书找不到了，我把书包翻了个底朝天。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4172977/pexels-photo-4172977.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-night-1": {
+    "baseTitle": "数星星的晚上",
+    "baseLead": "躺在草地上，天上的星星一颗一颗亮起来。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/16386966/pexels-photo-16386966.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-night-2": {
+    "baseTitle": "萤火虫之夜",
+    "baseLead": "夏天的晚上，草丛里飞起了小灯笼。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/38188604/pexels-photo-38188604.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-night-3": {
+    "baseTitle": "月亮跟着我走",
+    "baseLead": "我走一步，它也走一步。这是为什么呢？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/32480442/pexels-photo-32480442.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-night-6": {
+    "baseTitle": "路灯下的影子",
+    "baseLead": "路灯把我的影子拉得老长。你踩得到它吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/9741542/pexels-photo-9741542.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-observe-1": {
+    "baseTitle": "观察日记",
+    "baseLead": "连续观察一样东西的变化，记录下来。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6034381/pexels-photo-6034381.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-observe-2": {
+    "baseTitle": "我做了一项小实验",
+    "baseLead": "做实验的时候你看到了什么？按步骤写下来。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8325948/pexels-photo-8325948.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-observe-3": {
+    "baseTitle": "它今天变了样",
+    "baseLead": "你每天观察的那株植物，今天变成什么样了？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5957595/pexels-photo-5957595.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-observe-7": {
+    "baseTitle": "豆子发芽了",
+    "baseLead": "泡在水里的豆子，第三天冒出了小白芽。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/36346265/pexels-photo-36346265.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-people-around-1": {
+    "baseTitle": "形形色色的人",
+    "baseLead": "身边有各种各样的人，选一个让你印象最深的写。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/33999099/pexels-photo-33999099.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-people-around-2": {
+    "baseTitle": "街头众生",
+    "baseLead": "走在街上，你会看到哪些不同的人？他们在做什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/39483192/pexels-photo-39483192.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-people-around-5": {
+    "baseTitle": "楼下下棋的爷爷们",
+    "baseLead": "棋盘一摆，围过来一圈人。他们在争什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/39696959/pexels-photo-39696959.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-people-around-6": {
+    "baseTitle": "广场上跳舞的奶奶",
+    "baseLead": "音乐一响，她们就排好了队。你留意过谁？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/12086690/pexels-photo-12086690.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-pet-1": {
+    "baseTitle": "我家的小猫",
+    "baseLead": "它长什么样？平时最喜欢干什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4083277/pexels-photo-4083277.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-pet-13": {
+    "baseTitle": "我的小兔子",
+    "baseLead": "它竖着两只长耳朵，啃胡萝卜的样子很好笑。它平时最爱吃什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/12397296/pexels-photo-12397296.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-pet-14": {
+    "baseTitle": "学说话的鹦鹉",
+    "baseLead": "它学着人说话，学得惟妙惟肖。它学会过哪一句？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/2317899/pexels-photo-2317899.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-pet-15": {
+    "baseTitle": "蚂蚁搬家",
+    "baseLead": "一队蚂蚁排着长队往前爬。它们要去哪儿？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/2563028/pexels-photo-2563028.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-pet-2": {
+    "baseTitle": "小狗花花",
+    "baseLead": "每次我回家，它都会第一个冲出来。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/11106504/pexels-photo-11106504.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-pet-3": {
+    "baseTitle": "窗外的小鸟",
+    "baseLead": "每天早上，它都会停在窗台上唱歌。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/13283496/pexels-photo-13283496.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-pet-4": {
+    "baseTitle": "我的小金鱼",
+    "baseLead": "鱼缸里的小金鱼，尾巴一摆一摆地游。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4365565/pexels-photo-4365565.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-pet-5": {
+    "baseTitle": "小乌龟",
+    "baseLead": "它的壳上画着花纹，头一伸一缩的。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/32486966/pexels-photo-32486966.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-pet-6": {
+    "baseTitle": "国宝大熊猫",
+    "baseLead": "黑白相间、圆滚滚的大熊猫，你了解多少？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/31639676/pexels-photo-31639676.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-plant-1": {
+    "baseTitle": "窗台上的绿萝",
+    "baseLead": "它一直在悄悄地长，你发现了吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/20075996/pexels-photo-20075996.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-plant-10": {
+    "baseTitle": "门口的桂花树",
+    "baseLead": "一到秋天，满树的小花，整条街都香了。你闻到过吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/36661189/pexels-photo-36661189.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-plant-11": {
+    "baseTitle": "窗外的梧桐树",
+    "baseLead": "它一年四季都在变。你见过它哪几种样子？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/1048251/pexels-photo-1048251.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-plant-2": {
+    "baseTitle": "蒲公英的旅行",
+    "baseLead": "轻轻一吹，小伞兵们就飞走了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/1153269/pexels-photo-1153269.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-plant-3": {
+    "baseTitle": "池塘里的荷花",
+    "baseLead": "夏天到了，池塘里的荷花开了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/21794245/pexels-photo-21794245.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-plant-4": {
+    "baseTitle": "我的仙人掌",
+    "baseLead": "它浑身长着小刺，却开出了小花。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/2132753/pexels-photo-2132753.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-plant-9": {
+    "baseTitle": "窗台上的多肉",
+    "baseLead": "胖乎乎的叶子挤在一起，晒着太阳。你多久给它浇一次水？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/4575359/pexels-photo-4575359.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-reading-1": {
+    "baseTitle": "书中那句话",
+    "baseLead": "有没有一本书里的一句话，让你记了很久？那句话是什么，为什么打动了你？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/3457273/pexels-photo-3457273.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-reading-2": {
+    "baseTitle": "我和书中的人物",
+    "baseLead": "如果你能和某本书里的一个人物做朋友，你会选谁？你们会一起做什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6437813/pexels-photo-6437813.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-reading-3": {
+    "baseTitle": "读完这本书",
+    "baseLead": "最近读完的一本书，它讲了什么？你最喜欢哪个情节或人物？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8342284/pexels-photo-8342284.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-reading-4": {
+    "baseTitle": "书里的世界",
+    "baseLead": "有没有一本书，读完之后让你特别想去书里的那个地方看看？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/1741230/pexels-photo-1741230.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-reading-5": {
+    "baseTitle": "一句话的启发",
+    "baseLead": "老师、父母或书里的一句话，曾经在你遇到困难时给过你力量。那句话是什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7494552/pexels-photo-7494552.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-reading-6": {
+    "baseTitle": "如果我是主人公",
+    "baseLead": "选一本你读过的书，如果你是里面的主人公，你会怎么做？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5430500/pexels-photo-5430500.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-reading-7": {
+    "baseTitle": "我的读书故事",
+    "baseLead": "你是怎么爱上读书的？有没有一本书改变了你对某件事的看法？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7929352/pexels-photo-7929352.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-reading-8": {
+    "baseTitle": "一本好书推荐给你",
+    "baseLead": "如果要把你最喜欢的一本书推荐给同学，你会怎么介绍它？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/17428587/pexels-photo-17428587.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-sci-fi-1": {
+    "baseTitle": "插上科学的翅膀飞",
+    "baseLead": "展开想象，写一个科幻故事。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/12491650/pexels-photo-12491650.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-sci-fi-2": {
+    "baseTitle": "我的奇思妙想",
+    "baseLead": "你想发明什么东西？它有什么功能？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/220096/pexels-photo-220096.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-sci-fi-3": {
+    "baseTitle": "宇宙探险记",
+    "baseLead": "坐上火箭，去宇宙里探险。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/796206/pexels-photo-796206.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/586087/pexels-photo-586087.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-sci-fi-8": {
+    "baseTitle": "会飞的汽车",
+    "baseLead": "堵车时按一下按钮，它就升到了半空。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/20262953/pexels-photo-20262953.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-season-1": {
+    "baseTitle": "春天的公园",
+    "baseLead": "春天来了，公园里全变了样。你看到了什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/11692426/pexels-photo-11692426.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-season-13": {
+    "baseTitle": "冬天的暖阳",
+    "baseLead": "冬天的太阳晒在身上暖暖的。你最喜欢在哪儿晒？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/29707939/pexels-photo-29707939.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-season-2": {
+    "baseTitle": "秋天的落叶",
+    "baseLead": "一阵风吹过，树叶飘下来了。它们像什么呢？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/34582970/pexels-photo-34582970.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-season-3": {
+    "baseTitle": "冬天的第一场雪",
+    "baseLead": "早上推开窗，外面全白了……",
+    "imageUrls": [
+      "https://images.pexels.com/photos/19212896/pexels-photo-19212896.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/6667086/pexels-photo-6667086.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/10526562/pexels-photo-10526562.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-season-4": {
+    "baseTitle": "夏天的小院",
+    "baseLead": "太阳火辣辣的，知了在树上叫个不停。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37239030/pexels-photo-37239030.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-season-5": {
+    "baseTitle": "夏日的荷塘",
+    "baseLead": "荷叶圆圆的，荷花粉粉的，蜻蜓飞来飞去。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37851704/pexels-photo-37851704.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-season-6": {
+    "baseTitle": "金色的秋天",
+    "baseLead": "麦田一望无边，像铺了一地金子。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/32606808/pexels-photo-32606808.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-season-7": {
+    "baseTitle": "校园的秋天",
+    "baseLead": "银杏叶黄了，一片一片落下来。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5533896/pexels-photo-5533896.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-self-1": {
+    "baseTitle": "这就是我",
+    "baseLead": "对着镜子看看自己，说说你是个什么样的人。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5788310/pexels-photo-5788310.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-self-2": {
+    "baseTitle": "我的小毛病",
+    "baseLead": "每个人都有自己的小毛病，你的呢？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5063069/pexels-photo-5063069.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-self-4": {
+    "baseTitle": "我的名字",
+    "baseLead": "你的名字是谁取的？它有什么来历？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5905476/pexels-photo-5905476.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-self-5": {
+    "baseTitle": "我长高了",
+    "baseLead": "门框上那道铅笔线，又往上挪了一格。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8188741/pexels-photo-8188741.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-society-1": {
+    "baseTitle": "身边的变化",
+    "baseLead": "这几年，你住的地方发生了什么变化？是变好了还是让你有些担心？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/18341154/pexels-photo-18341154.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-society-2": {
+    "baseTitle": "环保小卫士",
+    "baseLead": "你有没有为保护环境做过一件事？那件事让你有什么感受？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/9035240/pexels-photo-9035240.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-society-3": {
+    "baseTitle": "科技改变生活",
+    "baseLead": "手机、外卖、网购……科技给你的生活带来了什么改变？是好还是坏？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/20459167/pexels-photo-20459167.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-society-4": {
+    "baseTitle": "陌生人的善意",
+    "baseLead": "你有没有收到过陌生人的帮助？那是一个怎样的瞬间？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7345463/pexels-photo-7345463.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-society-5": {
+    "baseTitle": "我看网红现象",
+    "baseLead": "你身边有没有同学想当网红或追网红？你怎么看这个现象？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6255937/pexels-photo-6255937.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-society-6": {
+    "baseTitle": "老小区的春天",
+    "baseLead": "你住的小区或街道最近有没有改造？改造前后有什么不一样？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/28039553/pexels-photo-28039553.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-society-7": {
+    "baseTitle": "一次志愿服务",
+    "baseLead": "你有没有参加过志愿活动？那次经历让你看到了什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6590931/pexels-photo-6590931.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-society-8": {
+    "baseTitle": "网络与生活",
+    "baseLead": "网络给你的学习和生活带来了什么？有没有让你困扰的时候？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6994168/pexels-photo-6994168.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-stationery-1": {
+    "baseTitle": "我的小书包",
+    "baseLead": "书包里装着什么？它陪了你多久了？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37580640/pexels-photo-37580640.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-stationery-2": {
+    "baseTitle": "一块橡皮的心里话",
+    "baseLead": "如果橡皮会说话，它想说什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/9743034/pexels-photo-9743034.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-stationery-3": {
+    "baseTitle": "我的文具盒",
+    "baseLead": "打开文具盒，就像打开一个小房子。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8580767/pexels-photo-8580767.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-stationery-6": {
+    "baseTitle": "越写越短的铅笔",
+    "baseLead": "它越写越短，最后只剩下一小截。你舍得扔吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6555379/pexels-photo-6555379.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-stationery-7": {
+    "baseTitle": "尺子上的刻度",
+    "baseLead": "一格一格的刻度，量过很多东西。它量过最长的是什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/35970041/pexels-photo-35970041.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-stationery-8": {
+    "baseTitle": "削笔刀",
+    "baseLead": "转几圈，铅笔就尖了，下面堆着一层木屑。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37167865/pexels-photo-37167865.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-stranger-1": {
+    "baseTitle": "清晨的环卫工",
+    "baseLead": "天刚亮的时候，路上已经有人在扫地了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37297890/pexels-photo-37297890.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-stranger-2": {
+    "baseTitle": "雨天的快递员",
+    "baseLead": "雨很大，他穿着雨衣把包裹送到门口。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/25048304/pexels-photo-25048304.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-stranger-5": {
+    "baseTitle": "修鞋的老人",
+    "baseLead": "巷口有个修鞋的老人，低着头一针一线地缝。他修过你的鞋吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6317981/pexels-photo-6317981.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-stranger-6": {
+    "baseTitle": "收废品的叔叔",
+    "baseLead": "他骑着三轮车走街串巷，喇叭里一遍遍地喊。你听过那声音吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5582757/pexels-photo-5582757.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-stranger-7": {
+    "baseTitle": "公园里练字的老爷爷",
+    "baseLead": "他提着一支大毛笔，在地上写字。你停下来看过吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/32754244/pexels-photo-32754244.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-talking-1": {
+    "baseTitle": "如果书包会说话",
+    "baseLead": "它每天被你背着，肯定有很多话想说。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5905434/pexels-photo-5905434.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-talking-2": {
+    "baseTitle": "一只铅笔的冒险",
+    "baseLead": "它从文具盒里溜了出去……",
+    "imageUrls": [
+      "https://images.pexels.com/photos/36081044/pexels-photo-36081044.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/9489944/pexels-photo-9489944.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/37187501/pexels-photo-37187501.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-talking-9": {
+    "baseTitle": "如果台灯会说话",
+    "baseLead": "它每天晚上都亮着陪你，肯定有话想说。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/284951/pexels-photo-284951.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-teacher-1": {
+    "baseTitle": "我的老师",
+    "baseLead": "老师站在讲台上的样子，你还记得吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5212342/pexels-photo-5212342.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-teacher-2": {
+    "baseTitle": "老师的那句话",
+    "baseLead": "有一句话，老师说过之后你就一直记着。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8087931/pexels-photo-8087931.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-teacher-3": {
+    "baseTitle": "漫画老师",
+    "baseLead": "用画漫画的方式画一画你的老师，他有什么特点？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/36159720/pexels-photo-36159720.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-teacher-6": {
+    "baseTitle": "老师的手",
+    "baseLead": "老师的手上沾着粉笔灰，在黑板上写了一行又一行。那双手还做过什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/625219/pexels-photo-625219.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-teacher-7": {
+    "baseTitle": "放学后的办公室",
+    "baseLead": "放学了，办公室的灯还亮着，老师在低头批改作业。你想对他说什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8363162/pexels-photo-8363162.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-teacher-8": {
+    "baseTitle": "老师嗓子哑了",
+    "baseLead": "老师说话的声音变小了，还站在讲台上。那天你怎么做的？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8617906/pexels-photo-8617906.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-tradition-1": {
+    "baseTitle": "家乡的节日",
+    "baseLead": "你家乡过节有什么特别的习俗？和别的地方有什么不同？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/19121466/pexels-photo-19121466.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-tradition-2": {
+    "baseTitle": "老手艺人",
+    "baseLead": "你身边有没有一位老手艺人？他做的是什么？你从他身上看到了什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/14747175/pexels-photo-14747175.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-tradition-3": {
+    "baseTitle": "年味",
+    "baseLead": "过年的时候，家里最让你期待的是什么？那是一种怎样的味道或感觉？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/20006359/pexels-photo-20006359.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-tradition-4": {
+    "baseTitle": "非遗在身边",
+    "baseLead": "你家乡有没有被列入非物质文化遗产的东西？你见过或体验过吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/34443046/pexels-photo-34443046.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-tradition-5": {
+    "baseTitle": "老物件的故事",
+    "baseLead": "家里有没有一件传下来的老物件？它背后有什么故事？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/34990973/pexels-photo-34990973.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-tradition-6": {
+    "baseTitle": "舌尖上的家乡",
+    "baseLead": "家乡有一种传统美食，它是怎么做的？吃着它，你想到了什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7363694/pexels-photo-7363694.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-tradition-7": {
+    "baseTitle": "庙会记忆",
+    "baseLead": "你有没有逛过庙会或集市？印象最深的是什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/14512855/pexels-photo-14512855.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-tradition-8": {
+    "baseTitle": "传统与现代",
+    "baseLead": "你身边有没有一种传统的东西，现在用新的方式在传承？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/35177420/pexels-photo-35177420.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-travel-1": {
+    "baseTitle": "游记",
+    "baseLead": "你去过哪个好玩的地方？按游览的顺序写下来。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/35038978/pexels-photo-35038978.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-travel-2": {
+    "baseTitle": "参观记",
+    "baseLead": "参观博物馆或古迹的时候，你看到了什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/30219927/pexels-photo-30219927.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/18506159/pexels-photo-18506159.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-travel-4": {
+    "baseTitle": "古镇的早晨",
+    "baseLead": "石板路还湿着，两边的店铺刚开门。你最先闻到什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6021111/pexels-photo-6021111.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-travel-5": {
+    "baseTitle": "博物馆里的一天",
+    "baseLead": "展柜里的东西都隔着玻璃。你最想凑近看哪一件？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/30150825/pexels-photo-30150825.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-treasure-1": {
+    "baseTitle": "外婆的针线盒",
+    "baseLead": "那个旧旧的盒子，里面装满了故事。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/38321413/pexels-photo-38321413.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-treasure-11": {
+    "baseTitle": "奶奶的顶针",
+    "baseLead": "小小的顶针上满是凹坑，奶奶戴了一辈子。你见她用过吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/1266139/pexels-photo-1266139.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-treasure-12": {
+    "baseTitle": "我的第一张奖状",
+    "baseLead": "它贴在墙上，边角已经卷起来了。那是哪一次得的奖？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8177925/pexels-photo-8177925.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-treasure-13": {
+    "baseTitle": "爸爸送的手表",
+    "baseLead": "表带有点松了，可我一直戴着。它是什么时候送的？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6328859/pexels-photo-6328859.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-treasure-2": {
+    "baseTitle": "我的旧玩具",
+    "baseLead": "它已经很旧了，可你还是舍不得扔。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/30141711/pexels-photo-30141711.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-treasure-3": {
+    "baseTitle": "一张旧照片",
+    "baseLead": "翻相册的时候，一张泛黄的照片掉了出来。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6869484/pexels-photo-6869484.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-treasure-4": {
+    "baseTitle": "我的小闹钟",
+    "baseLead": "每天早上都是它叫我起床，叮铃铃的。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/12421977/pexels-photo-12421977.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-treasure-5": {
+    "baseTitle": "我的房间",
+    "baseLead": "推开房门，每一样东西都是你的好朋友。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/28942619/pexels-photo-28942619.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-treasure-6": {
+    "baseTitle": "介绍一种事物",
+    "baseLead": "选一种你了解的东西，把它的外形、功能、用途介绍清楚。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6372911/pexels-photo-6372911.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-treasure-7": {
+    "baseTitle": "我的乐园",
+    "baseLead": "你最喜欢待的地方是哪里？为什么？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/24786312/pexels-photo-24786312.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-unforgettable-1": {
+    "baseTitle": "那一次，我很难忘",
+    "baseLead": "有一件事，过了很久你还记得。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6667330/pexels-photo-6667330.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-unforgettable-2": {
+    "baseTitle": "第一次春游",
+    "baseLead": "背上小书包，我们出发啦！",
+    "imageUrls": [
+      "https://images.pexels.com/photos/10584546/pexels-photo-10584546.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/11720567/pexels-photo-11720567.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/2759799/pexels-photo-2759799.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-unforgettable-3": {
+    "baseTitle": "得奖了",
+    "baseLead": "站在领奖台上，台下响起一片掌声。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/34412340/pexels-photo-34412340.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-unforgettable-6": {
+    "baseTitle": "那一次我哭了",
+    "baseLead": "有一件事让我掉了眼泪。现在想起来，是什么感觉？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/9197364/pexels-photo-9197364.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-warm-moment-1": {
+    "baseTitle": "他扶了我一把",
+    "baseLead": "你摔倒了，有人伸出了手。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/38923916/pexels-photo-38923916.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-warm-moment-2": {
+    "baseTitle": "雨中送伞",
+    "baseLead": "雨越下越大，校门口出现了一个熟悉的身影。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/11719158/pexels-photo-11719158.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-warm-moment-3": {
+    "baseTitle": "奶奶的针线盒",
+    "baseLead": "那个旧旧的盒子，里面装满了故事。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6461146/pexels-photo-6461146.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-warm-moment-8": {
+    "baseTitle": "借我半块橡皮",
+    "baseLead": "考试时我忘了带橡皮，同桌掰了一半递过来。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/8250892/pexels-photo-8250892.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-water-1": {
+    "baseTitle": "家乡的小河",
+    "baseLead": "那条河从村子旁边流过，你还记得它什么样子吗？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/33360580/pexels-photo-33360580.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-water-2": {
+    "baseTitle": "爬山看日出",
+    "baseLead": "天还没亮就出发了，等爬到山顶……",
+    "imageUrls": [
+      "https://images.pexels.com/photos/37197428/pexels-photo-37197428.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/3232538/pexels-photo-3232538.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-water-3": {
+    "baseTitle": "雨后的山",
+    "baseLead": "山被雨洗过一遍，颜色都变深了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/35992998/pexels-photo-35992998.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-water-4": {
+    "baseTitle": "海边真好玩",
+    "baseLead": "沙子踩上去软软的，浪花追着你的脚跑。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/17860268/pexels-photo-17860268.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-water-9": {
+    "baseTitle": "山里的瀑布",
+    "baseLead": "水从高处冲下来，声音老远就听得见。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/11798773/pexels-photo-11798773.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-weather-1": {
+    "baseTitle": "下雨了",
+    "baseLead": "雨点打在窗户上，发出什么声音？",
+    "imageUrls": [
+      "https://images.pexels.com/photos/16227620/pexels-photo-16227620.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-weather-11": {
+    "baseTitle": "刮风了",
+    "baseLead": "风把树吹得哗哗响，晾着的衣服也飘起来了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/30413650/pexels-photo-30413650.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-weather-2": {
+    "baseTitle": "雨后的彩虹",
+    "baseLead": "雨停了，天边出现了一道彩虹……",
+    "imageUrls": [
+      "https://images.pexels.com/photos/12346066/pexels-photo-12346066.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "https://images.pexels.com/photos/28241045/pexels-photo-28241045.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-weather-3": {
+    "baseTitle": "大雾的早晨",
+    "baseLead": "出门的时候，前面的路都看不清了。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/10119203/pexels-photo-10119203.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-weather-4": {
+    "baseTitle": "下雨天，妈妈来了",
+    "baseLead": "雨越下越大，校门口出现了一个熟悉的身影。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/30504807/pexels-photo-30504807.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  },
+  "builtin-weather-5": {
+    "baseTitle": "日落时分",
+    "baseLead": "太阳慢慢沉下去，天边烧成了一片橙红色。",
+    "imageUrls": [
+      "https://images.pexels.com/photos/11209184/pexels-photo-11209184.jpeg?auto=compress&cs=tinysrgb&w=640"
+    ]
+  }
+}

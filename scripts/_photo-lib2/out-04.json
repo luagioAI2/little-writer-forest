@@ -1,0 +1,137 @@
+{
+  "batch": "4",
+  "items": [
+    {
+      "id": "builtin-life-goods-20",
+      "title": "我的保温杯",
+      "query": "thermos flask on desk",
+      "pexelsId": "5358793",
+      "mediaUrl": "https://images.pexels.com/photos/5358793/pexels-photo-5358793.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/close-up-photograph-of-a-vacuum-flask-beside-a-cup-of-coffee-5358793/", "author": "Jill Wellington" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 49711 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一只格纹保温杯立在花布桌上，不锈钢杯盖清晰，杯身完整可见；旁边有咖啡杯、小南瓜和点心，秋日暖光，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-21",
+      "title": "我的存钱罐",
+      "query": "piggy bank with coins",
+      "pexelsId": "6052793",
+      "mediaUrl": "https://images.pexels.com/photos/6052793/pexels-photo-6052793.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/close-up-shot-of-a-piggy-bank-beside-coins-6052793/", "author": "Andre Taissin" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 18124 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "粉色带白点的小猪存钱罐放在木桌上，头顶投币口清楚，正前方散着几枚硬币；主体清晰、暖色调，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-22",
+      "title": "我的小牙刷",
+      "query": "toothbrush in cup bathroom",
+      "pexelsId": "13466251",
+      "mediaUrl": "https://images.pexels.com/photos/13466251/pexels-photo-13466251.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/toothbrushes-in-clear-glass-13466251/", "author": "Towfiqu barbhuiya" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 21266 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "几把彩色牙刷（红、粉、蓝、黄刷头）插在透明玻璃杯里，立在洗手台上，背景是蓝色浴帘；颜色鲜艳、主体清晰，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-23",
+      "title": "雨天的雨靴",
+      "query": "rain boots in puddle",
+      "pexelsId": "668355",
+      "mediaUrl": "https://images.pexels.com/photos/668355/pexels-photo-668355.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/person-wearing-pink-knee-high-rain-boots-standing-on-brown-floor-668355/", "author": "nicollazzi xiong" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 57046 },
+      "ar": 1.502,
+      "verdict": "ok",
+      "note": "第一人称俯视：一双红色白点雨靴踩在浅水洼里，靴子占画面中央很大一块、纹样清楚，水面有倒影；红色鲜亮，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-24",
+      "title": "家里的窗帘",
+      "query": "curtains with sunlight window",
+      "pexelsId": "6995148",
+      "mediaUrl": "https://images.pexels.com/photos/6995148/pexels-photo-6995148.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/a-close-up-shot-of-a-tied-curtain-by-the-window-6995148/", "author": "Sunny Twinster" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 37977 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "窗边一挂米白色纱帘被绳子束在中间，阳光从窗外照进来，窗格后面是绿树；窗帘是画面主体、暖调，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-25",
+      "title": "鞋柜里的鞋",
+      "query": "shoes on shoe rack shelf",
+      "pexelsId": "36738046",
+      "mediaUrl": "https://images.pexels.com/photos/36738046/pexels-photo-36738046.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/colorful-shoe-storage-shelf-with-various-shoes-36738046/", "author": "Kimberly Alves" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 42905 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一整面木格鞋柜，格子里衬着黄、蓝、红三色，多个格子里摆着一双双运动鞋/皮鞋，一眼能看好几双鞋；颜色鲜艳，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-26",
+      "title": "书包上的小挂件",
+      "query": "backpack plush keychain",
+      "pexelsId": "4887256",
+      "mediaUrl": "https://images.pexels.com/photos/4887256/pexels-photo-4887256.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/a-pink-teddy-inside-a-bag-4887256/", "author": "Karola G" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 25524 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一个紫色儿童书包（带小心心、小花图案和前袋），前袋上挂着一只独角兽小毛绒挂件（带粉色穗子）；书包上还坐着一只粉色泰迪熊；粉紫配色、明亮，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-27",
+      "title": "电饭煲冒气了",
+      "query": "rice cooker",
+      "pexelsId": "31479830",
+      "mediaUrl": "https://images.pexels.com/photos/31479830/pexels-photo-31479830.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/cozy-rustic-kitchen-with-rice-cooker-and-flowers-31479830/", "author": "Nguyendesigner" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 38573 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "乡村风厨房的木台面上放着一台白色电饭煲（旁边是面包机），背景是木质案板和挂具，前景有粉色小花虚化；暖调、彩色。"
+    },
+    {
+      "id": "builtin-life-goods-28",
+      "title": "空调吹出来的风",
+      "query": "wall mounted air conditioner",
+      "pexelsId": "38788452",
+      "mediaUrl": "https://images.pexels.com/photos/38788452/pexels-photo-38788452.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/wall-mounted-air-conditioner-in-modern-interior-38788452/", "author": "neosiam" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 18162 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一台白色壁挂空调室内机装在墙上方，导风叶片和出风口正对镜头，机身完整、主体明确；墙面是浅灰蓝色，属低饱和但仍为彩色照片（偏素，无暖色）。"
+    },
+    {
+      "id": "builtin-life-goods-29",
+      "title": "一把旧椅子",
+      "query": "old wooden chair",
+      "pexelsId": "35414825",
+      "mediaUrl": "https://images.pexels.com/photos/35414825/pexels-photo-35414825.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/rustic-wooden-chair-against-textured-wall-35414825/", "author": "Jan van der Wolf" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 54274 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一把木色旧靠背椅单独摆在斑驳水泥墙前，木面有磨损和年代感，椅子居中、是画面唯一主体；棕色木+灰墙，彩色。"
+    },
+    {
+      "id": "builtin-life-goods-30",
+      "title": "我的小书桌",
+      "query": "wooden desk with notebooks",
+      "pexelsId": "5905443",
+      "mediaUrl": "https://images.pexels.com/photos/5905443/pexels-photo-5905443.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/student-desk-with-copybooks-and-pencil-case-5905443/", "author": "Katerina Holmes" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 29488 },
+      "ar": 1.499,
+      "verdict": "ok",
+      "note": "一张浅木色学生书桌占画面下半部，桌面上摆着几本练习本、散页纸、一支笔和一个蓝色笔袋，看得出使用痕迹；明亮、彩色。"
+    }
+  ]
+}

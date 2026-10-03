@@ -1,0 +1,60 @@
+{
+  "batch": "01",
+  "items": [
+    {
+      "key": "spring-park",
+      "pexelsId": 11692426,
+      "mediaUrl": "https://images.pexels.com/photos/11692426/pexels-photo-11692426.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Back View of a Couple Walking with Their Dog on Paved Pathway",
+      "credit": { "link": "https://www.pexels.com/photo/back-view-of-a-couple-walking-with-their-dog-on-paved-pathway-11692426/", "author": "Slava Li" },
+      "verified": { "http": 200, "bytes": 86185 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "粉花树夹道的小路上，两人牵着小狗背影散步；暖调、无正脸。近景小花/远山白云为背景点缀，未入镜"
+    },
+    {
+      "key": "grandpa-garden",
+      "pexelsId": 4894630,
+      "mediaUrl": "https://images.pexels.com/photos/4894630/pexels-photo-4894630.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Photo of an Elderly Man Holding a Watering Can Near Green Plants",
+      "credit": { "link": "https://www.pexels.com/photo/photo-of-an-elderly-man-holding-a-watering-can-near-green-plants-4894630/", "author": "Gustavo Fring" },
+      "verified": { "http": 200, "bytes": 76223 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "白发爷爷戴草帽、手提喷壶站在菜地边，身后是木栅栏；喷壶为银色（hint 写蓝色，属点缀）"
+    },
+    {
+      "key": "school-autumn",
+      "pexelsId": 5533896,
+      "mediaUrl": "https://images.pexels.com/photos/5533896/pexels-photo-5533896.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "A Kid Walking in the Woods",
+      "credit": { "link": "https://www.pexels.com/photo/a-kid-walking-in-the-woods-5533896/", "author": "Bulat Khamitov" },
+      "verified": { "http": 200, "bytes": 75388 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "金黄秋林间土路上背粉书包的小女孩背影，路面铺满落叶；为一般秋树非特指银杏、背景无教学楼"
+    },
+    {
+      "key": "fog-morning",
+      "pexelsId": 10119203,
+      "mediaUrl": "https://images.pexels.com/photos/10119203/pexels-photo-10119203.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Eerie Park in Fog at Dawn",
+      "credit": { "link": "https://www.pexels.com/photo/eerie-park-in-fog-at-dawn-10119203/", "author": "Tasha_WhiteGold" },
+      "verified": { "http": 200, "bytes": 62228 },
+      "size": { "w": 640, "h": 487, "ar": 1.31 },
+      "verdict": "ok",
+      "note": "雾中公园小路，两个行人剪影、远处树影朦胧，亮着的暖色路灯；暖调，ar=1.31 偏窄（居中裁仍保留主体）"
+    },
+    {
+      "key": "umbrella-rain",
+      "pexelsId": 30504807,
+      "mediaUrl": "https://images.pexels.com/photos/30504807/pexels-photo-30504807.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Street Scene with Orange Umbrella on a Rainy Day",
+      "credit": { "link": "https://www.pexels.com/photo/street-scene-with-orange-umbrella-on-a-rainy-day-30504807/", "author": "Newman Photographs" },
+      "verified": { "http": 200, "bytes": 36533 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "雨天老街湿滑路面、地面反光积水，一把亮橙色伞下两人并行；背景楼房偏灰石色（hint 说灰蓝）"
+    }
+  ]
+}

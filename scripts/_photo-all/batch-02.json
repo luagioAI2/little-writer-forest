@@ -1,0 +1,185 @@
+[
+  {
+    "id": "gd-w240110748",
+    "name": "大角湾",
+    "province": "广东",
+    "country": "中国",
+    "city": "阳江",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "gd-r14320191",
+    "name": "七星岩景区",
+    "province": "广东",
+    "country": "中国",
+    "city": "肇庆",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "gd-w989308255",
+    "name": "孙中山故居",
+    "province": "广东",
+    "country": "中国",
+    "city": "中山",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-北京-北京（通州）大运河文化旅游景区",
+    "name": "北京（通州）大运河文化旅游景区",
+    "province": "北京",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-北京-圆明园遗址公园景区",
+    "name": "圆明园遗址公园景区",
+    "province": "北京",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "grass",
+    "en": ""
+  },
+  {
+    "id": "cn-北京-北京奥林匹克公园",
+    "name": "北京奥林匹克公园",
+    "province": "北京",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "grass",
+    "en": ""
+  },
+  {
+    "id": "cn-北京-恭王府景区",
+    "name": "恭王府景区",
+    "province": "北京",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-北京-明十三陵景区",
+    "name": "明十三陵景区",
+    "province": "北京",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-北京-八达岭—慕田峪长城旅游区",
+    "name": "八达岭—慕田峪长城旅游区",
+    "province": "北京",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-北京-颐和园",
+    "name": "颐和园",
+    "province": "北京",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-北京-天坛公园",
+    "name": "天坛公园",
+    "province": "北京",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "grass",
+    "en": ""
+  },
+  {
+    "id": "cn-天津-盘山风景名胜区",
+    "name": "盘山风景名胜区",
+    "province": "天津",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-天津-天津古文化街旅游区（津门故里）",
+    "name": "天津古文化街旅游区（津门故里）",
+    "province": "天津",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-上海-西沙明珠湖景区",
+    "name": "西沙明珠湖景区",
+    "province": "上海",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-上海-中国共产党一大•二大•四大纪念馆景区",
+    "name": "中国共产党一大•二大•四大纪念馆景区",
+    "province": "上海",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-上海-上海科技馆",
+    "name": "上海科技馆",
+    "province": "上海",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-上海-上海野生动物园",
+    "name": "上海野生动物园",
+    "province": "上海",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-上海-东方明珠广播电视塔",
+    "name": "东方明珠广播电视塔",
+    "province": "上海",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-重庆-武陵山大裂谷景区",
+    "name": "武陵山大裂谷景区",
+    "province": "重庆",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-重庆-白帝城•瞿塘峡景区",
+    "name": "白帝城•瞿塘峡景区",
+    "province": "重庆",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  }
+]

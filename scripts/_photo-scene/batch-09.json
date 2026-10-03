@@ -1,0 +1,38 @@
+[
+  {
+    "key": "river-village",
+    "hint": "一条小河从村子中间流过，河上架着石拱桥，两岸是白墙红顶的小屋和绿树，水面上还有一条小船。",
+    "en": "river village stone bridge countryside",
+    "usedBy": ["builtin-hometown-3"]
+  },
+  {
+    "key": "wheat-field",
+    "hint": "满眼金黄的麦穗在风里摇晃，远处是小山和一座房子，田间有一条土路。",
+    "en": "golden wheat field countryside",
+    "usedBy": ["builtin-hometown-1"]
+  },
+  {
+    "key": "sunset",
+    "hint": "橙红色的天空下，太阳慢慢落到山后面，远山和树木变成深色剪影，一个孩子站着看。",
+    "en": "sunset over mountains silhouette",
+    "usedBy": ["builtin-hometown-2"]
+  },
+  {
+    "key": "doctor",
+    "hint": "诊室里医生穿着白大褂站在桌旁，胸前挂着听诊器，一个小孩坐在台子前面。",
+    "en": "doctor white coat stethoscope",
+    "usedBy": ["builtin-dream-job-3"]
+  },
+  {
+    "key": "future-me",
+    "hint": "一个孩子站着抬头看，头顶一个大大的思考气泡，气泡里是一个戴头盔的宇航员。",
+    "en": "astronaut helmet space suit",
+    "usedBy": ["builtin-dream-job-1"]
+  },
+  {
+    "key": "comic-inspiration",
+    "hint": "墙上挂着四格漫画框，每格里有一个不同姿态的小人，桌上一个小孩在看漫画。",
+    "en": "comic strip panels comic book",
+    "usedBy": ["builtin-comic-1", "builtin-comic-2"]
+  }
+]

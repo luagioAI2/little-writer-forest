@@ -1,0 +1,162 @@
+[
+  {
+    "id": "world-比利时-撒尿小童",
+    "name": "撒尿小童",
+    "province": "比利时",
+    "country": "比利时",
+    "scene": "city",
+    "en": "Manneken Pis"
+  },
+  {
+    "id": "world-奥地利-美泉宫",
+    "name": "美泉宫",
+    "province": "奥地利",
+    "country": "奥地利",
+    "scene": "city",
+    "en": "Schönbrunn Palace"
+  },
+  {
+    "id": "world-匈牙利-匈牙利国会大厦",
+    "name": "匈牙利国会大厦",
+    "province": "匈牙利",
+    "country": "匈牙利",
+    "scene": "city",
+    "en": "Hungarian Parliament Building"
+  },
+  {
+    "id": "world-波兰-维利奇卡盐矿",
+    "name": "维利奇卡盐矿",
+    "province": "波兰",
+    "country": "波兰",
+    "scene": "cave",
+    "en": "Wieliczka Salt Mine"
+  },
+  {
+    "id": "world-挪威-松恩峡湾",
+    "name": "松恩峡湾",
+    "province": "挪威",
+    "country": "挪威",
+    "scene": "water",
+    "en": "Sognefjord"
+  },
+  {
+    "id": "world-瑞典-瓦萨博物馆",
+    "name": "瓦萨博物馆",
+    "province": "瑞典",
+    "country": "瑞典",
+    "scene": "city",
+    "en": "Vasa Museum"
+  },
+  {
+    "id": "world-芬兰-圣诞老人村",
+    "name": "圣诞老人村",
+    "province": "芬兰",
+    "country": "芬兰",
+    "scene": "snow",
+    "en": "Santa Claus Village"
+  },
+  {
+    "id": "world-爱尔兰-莫赫悬崖",
+    "name": "莫赫悬崖",
+    "province": "爱尔兰",
+    "country": "爱尔兰",
+    "scene": "coast",
+    "en": "Cliffs of Moher"
+  },
+  {
+    "id": "world-克罗地亚-杜布罗夫尼克古城",
+    "name": "杜布罗夫尼克古城",
+    "province": "克罗地亚",
+    "country": "克罗地亚",
+    "scene": "coast",
+    "en": "Dubrovnik"
+  },
+  {
+    "id": "world-罗马尼亚-布朗城堡",
+    "name": "布朗城堡",
+    "province": "罗马尼亚",
+    "country": "罗马尼亚",
+    "scene": "mountain",
+    "en": "Bran Castle"
+  },
+  {
+    "id": "world-斯洛文尼亚-布莱德湖",
+    "name": "布莱德湖",
+    "province": "斯洛文尼亚",
+    "country": "斯洛文尼亚",
+    "scene": "water",
+    "en": "Lake Bled"
+  },
+  {
+    "id": "world-马耳他-马耳他蓝洞",
+    "name": "马耳他蓝洞",
+    "province": "马耳他",
+    "country": "马耳他",
+    "scene": "coast",
+    "en": "Blue Grotto (Malta)"
+  },
+  {
+    "id": "world-加拿大-加拿大国家电视塔",
+    "name": "加拿大国家电视塔",
+    "province": "加拿大",
+    "country": "加拿大",
+    "scene": "city",
+    "en": "CN Tower"
+  },
+  {
+    "id": "world-墨西哥-特奥蒂瓦坎",
+    "name": "特奥蒂瓦坎",
+    "province": "墨西哥",
+    "country": "墨西哥",
+    "scene": "desert",
+    "en": "Teotihuacan"
+  },
+  {
+    "id": "world-秘鲁-纳斯卡线条",
+    "name": "纳斯卡线条",
+    "province": "秘鲁",
+    "country": "秘鲁",
+    "scene": "desert",
+    "en": "Nazca Lines"
+  },
+  {
+    "id": "world-阿根廷-佩里托莫雷诺冰川",
+    "name": "佩里托莫雷诺冰川",
+    "province": "阿根廷",
+    "country": "阿根廷",
+    "scene": "snow",
+    "en": "Perito Moreno Glacier"
+  },
+  {
+    "id": "world-智利-阿塔卡马沙漠",
+    "name": "阿塔卡马沙漠",
+    "province": "智利",
+    "country": "智利",
+    "scene": "desert",
+    "en": "Atacama Desert"
+  },
+  {
+    "id": "world-古巴-哈瓦那",
+    "name": "哈瓦那",
+    "province": "古巴",
+    "country": "古巴",
+    "scene": "city",
+    "en": "Havana"
+  },
+  {
+    "id": "world-危地马拉-蒂卡尔",
+    "name": "蒂卡尔",
+    "province": "危地马拉",
+    "country": "危地马拉",
+    "scene": "forest",
+    "en": "Tikal"
+  },
+  {
+    "id": "world-巴拿马-巴拿马运河",
+    "name": "巴拿马运河",
+    "province": "巴拿马",
+    "country": "巴拿马",
+    "scene": "water",
+    "en": "Panama Canal"
+  }
+]

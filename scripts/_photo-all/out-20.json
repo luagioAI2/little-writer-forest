@@ -1,0 +1,225 @@
+{
+  "batch": "20",
+  "items": [
+    {
+      "landmarkId": "cn-宁夏-沙湖旅游景区",
+      "match": "scene",
+      "query": "Shahu Lake Ningxia / Shahu Lake China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": null,
+      "note": "tried 'Shahu Lake Ningxia' and 'Shahu Lake China'; the real Sand Lake (沙湖) shots are all iStock ads (skipped), Pexels returns unrelated Chinese lakes"
+    },
+    {
+      "landmarkId": "cn-新疆-天山托木尔景区",
+      "match": "place",
+      "query": "Tianshan Tomur Peak",
+      "mediaUrl": "https://images.pexels.com/photos/35027149/pexels-photo-35027149.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Stunning Tianshan mountains in Xinjiang, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/stunning-tianshan-mountains-in-xinjiang-china-35027149/", "author": "Quill J" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 65894 },
+      "verdict": "poor",
+      "note": "snow-covered Tianshan range with pine forest, geotagged 新疆维吾尔自治区; matches the 天山 range but not confirmed to be Tomur Peak specifically"
+    },
+    {
+      "landmarkId": "cn-新疆-江布拉克景区",
+      "match": "scene",
+      "query": "Jiangbulak grassland / Jiangbulake Qitai",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": null,
+      "note": "tried 'Jiangbulak grassland' and 'Jiangbulake Qitai'; only iStock for Jiangbulak, Pexels returns Inner Mongolia / generic grasslands"
+    },
+    {
+      "landmarkId": "cn-新疆-赛里木湖景区",
+      "match": "place",
+      "query": "Sayram Lake Xinjiang",
+      "mediaUrl": "https://images.pexels.com/photos/37469103/pexels-photo-37469103.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic view of Sayram Lake in Xinjiang, China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-view-of-sayram-lake-in-xinjiang-china-37469103/", "author": "Pescha Taylor" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 33427 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-新疆-世界魔鬼城景区",
+      "match": "place",
+      "query": "Yardang Xinjiang",
+      "mediaUrl": "https://images.pexels.com/photos/38693029/pexels-photo-38693029.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view of Xinjiang's stunning desert formations",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-view-of-xinjiang-s-stunning-desert-formations-38693029/", "author": "Martin Wang" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 40588 },
+      "verdict": "poor",
+      "note": "aerial yardang 'devil city' landform with scenic road, geotagged 新疆维吾尔自治区; matches the landform but not confirmed to be Wuerhe World Devil City"
+    },
+    {
+      "landmarkId": "cn-新疆-帕米尔旅游区",
+      "match": "place",
+      "query": "Pamir mountains",
+      "mediaUrl": "https://images.pexels.com/photos/32222929/pexels-photo-32222929.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic aerial view of Karakul Lake in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-aerial-view-of-karakul-lake-in-china-32222929/", "author": "Max W" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 44630 },
+      "verdict": "ok",
+      "note": "Karakul Lake (喀拉库勒湖) is a core component of the Pamir Tourist Area, Kashgar"
+    },
+    {
+      "landmarkId": "cn-新疆-巴音布鲁克景区",
+      "match": "scene",
+      "query": "Bayinbuluke grassland / Bayinbulak Xinjiang",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": null,
+      "note": "tried 'Bayinbuluke grassland' and 'Bayinbulak Xinjiang'; only iStock for Bayinbuluke, Pexels gives generic Xinjiang grassland (no 九曲十八弯 river / swans)"
+    },
+    {
+      "landmarkId": "cn-新疆-喀拉峻景区",
+      "match": "scene",
+      "query": "Kalajun grassland / Kalajun Xinjiang",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": null,
+      "note": "tried 'Kalajun grassland' and 'Kalajun Xinjiang'; only iStock for Kala-jun, Pexels gives generic Xinjiang grassland"
+    },
+    {
+      "landmarkId": "cn-新疆-喀什古城景区",
+      "match": "place",
+      "query": "Kashgar old town",
+      "mediaUrl": "https://images.pexels.com/photos/9068358/pexels-photo-9068358.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "View of the Kashgar TV tower from an alley",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/view-of-the-kashgar-tv-tower-from-an-alley-9068358/", "author": "Frank He" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 151893 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-新疆-博斯腾湖景区",
+      "match": "scene",
+      "query": "Bosten Lake / Bosten Lake Xinjiang",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": null,
+      "note": "tried 'Bosten Lake' and 'Bosten Lake Xinjiang'; no Pexels photo of Bosten Lake (Bagrax), only unrelated lakes"
+    },
+    {
+      "landmarkId": "cn-新疆-天山大峡谷",
+      "match": "place",
+      "query": "Tianshan canyon Xinjiang",
+      "mediaUrl": "https://images.pexels.com/photos/37882001/pexels-photo-37882001.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Majestic canyon in Xinjiang's Tianshan mountains",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/majestic-canyon-in-xinjiang-s-tianshan-mountains-37882001/", "author": "Ivy Ivy" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 95483 },
+      "verdict": "poor",
+      "note": "a canyon in Xinjiang's Tianshan (matches 天山…大峡谷); not confirmed to be the Urumqi 天山大峡谷 scenic area specifically"
+    },
+    {
+      "landmarkId": "cn-新疆-金湖杨景区",
+      "match": "scene",
+      "query": "poplar forest Xinjiang",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": null,
+      "note": "tried 'poplar forest Xinjiang'; Pexels only has generic poplar forests (Kazakhstan/Uzbekistan/Iran), nothing at Zepu 金湖杨"
+    },
+    {
+      "landmarkId": "cn-新疆-可可托海景区",
+      "match": "scene",
+      "query": "Koktokay Keketuohai / Keketuohai",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": null,
+      "note": "tried 'Koktokay Keketuohai' and 'Keketuohai'; the real Keketuohai scenic area shots are all iStock ads (skipped), Pexels returns food/Taiwan coast"
+    },
+    {
+      "landmarkId": "cn-新疆-那拉提旅游风景区",
+      "match": "scene",
+      "query": "Nalati grassland / Narat grassland Xinjiang",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": null,
+      "note": "tried 'Nalati grassland' and 'Narat grassland Xinjiang'; only iStock for Nalati, Pexels gives unlabelled Xinjiang grassland"
+    },
+    {
+      "landmarkId": "cn-新疆-喀纳斯景区",
+      "match": "place",
+      "query": "Kanas Lake",
+      "mediaUrl": "https://images.pexels.com/photos/30123499/pexels-photo-30123499.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic Autumn View of Kanas River in Xinjiang",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-autumn-view-of-kanas-river-in-xinjiang-30123499/", "author": "WANG Jared" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 72592 },
+      "verdict": "ok",
+      "note": "turquoise Kanas River in autumn forest, geotagged 阿勒泰地区 (Kanas' prefecture)"
+    },
+    {
+      "landmarkId": "cn-新疆-葡萄沟风景区",
+      "match": "scene",
+      "query": "Grape Valley Turpan / Turpan Xinjiang",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": null,
+      "note": "tried 'Grape Valley Turpan' and 'Turpan Xinjiang'; only iStock for Turpan Grape Valley, Pexels gives generic vineyards"
+    },
+    {
+      "landmarkId": "cn-新疆-天山天池风景名胜区",
+      "match": "place",
+      "query": "Tianchi Heavenly Lake",
+      "mediaUrl": "https://images.pexels.com/photos/33600960/pexels-photo-33600960.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Scenic view of Tian Shan mountains and lake",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/scenic-view-of-tian-shan-mountains-and-lake-33600960/", "author": "Yongbing Li" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 43069 },
+      "verdict": "ok",
+      "note": "alpine lake ringed by Tianshan spruce forest and snow peaks, the classic Tianchi (Heavenly Lake) view"
+    },
+    {
+      "landmarkId": "cn-新疆-塔克拉玛干•三五九旅文化旅游区",
+      "match": "place",
+      "query": "Taklamakan desert",
+      "mediaUrl": "https://images.pexels.com/photos/18250965/pexels-photo-18250965.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Dune on Taklamakan desert in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/dune-on-taklamakan-desert-in-china-18250965/", "author": "Kokyo K" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 32189 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-新疆-兵团十师185团白沙湖景区（阿勒泰地区）",
+      "match": "scene",
+      "query": "Baisha Lake Xinjiang / White Sand Lake Xinjiang",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": null,
+      "note": "tried 'Baisha Lake Xinjiang' and 'White Sand Lake Xinjiang'; results are Sayram/Sailimu Lake, no match for 白沙湖"
+    },
+    {
+      "landmarkId": "world-日本-金阁寺",
+      "match": "place",
+      "query": "Kinkaku-ji",
+      "mediaUrl": "https://images.pexels.com/photos/356629/pexels-photo-356629.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Kinkaku-ji Japan",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/kinkaku-ji-japan-356629/", "author": "Pixabay" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 67395 },
+      "verdict": "ok",
+      "note": ""
+    }
+  ]
+}

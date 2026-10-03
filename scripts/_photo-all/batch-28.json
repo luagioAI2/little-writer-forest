@@ -1,0 +1,146 @@
+[
+  {
+    "id": "world-文莱-奥马尔阿里赛义夫丁清真寺",
+    "name": "奥马尔阿里赛义夫丁清真寺",
+    "province": "文莱",
+    "country": "文莱",
+    "scene": "temple",
+    "en": "Omar Ali Saifuddien Mosque"
+  },
+  {
+    "id": "world-孟加拉-孙德尔本斯",
+    "name": "孙德尔本斯",
+    "province": "孟加拉",
+    "country": "孟加拉",
+    "scene": "forest",
+    "en": "Sundarbans"
+  },
+  {
+    "id": "world-黎巴嫩-巴勒贝克",
+    "name": "巴勒贝克",
+    "province": "黎巴嫩",
+    "country": "黎巴嫩",
+    "scene": "temple",
+    "en": "Baalbek"
+  },
+  {
+    "id": "world-卡塔尔-伊斯兰艺术博物馆",
+    "name": "伊斯兰艺术博物馆",
+    "province": "卡塔尔",
+    "country": "卡塔尔",
+    "scene": "city",
+    "en": "Museum of Islamic Art, Doha"
+  },
+  {
+    "id": "world-阿曼-苏丹卡布斯大清真寺",
+    "name": "苏丹卡布斯大清真寺",
+    "province": "阿曼",
+    "country": "阿曼",
+    "scene": "temple",
+    "en": "Sultan Qaboos Grand Mosque"
+  },
+  {
+    "id": "world-塞浦路斯-帕福斯",
+    "name": "帕福斯",
+    "province": "塞浦路斯",
+    "country": "塞浦路斯",
+    "scene": "coast",
+    "en": "Paphos"
+  },
+  {
+    "id": "world-卢森堡-卢森堡市",
+    "name": "卢森堡市",
+    "province": "卢森堡",
+    "country": "卢森堡",
+    "scene": "city",
+    "en": "Luxembourg City"
+  },
+  {
+    "id": "world-爱沙尼亚-塔林老城",
+    "name": "塔林老城",
+    "province": "爱沙尼亚",
+    "country": "爱沙尼亚",
+    "scene": "city",
+    "en": "Tallinn"
+  },
+  {
+    "id": "world-拉脱维亚-里加老城",
+    "name": "里加老城",
+    "province": "拉脱维亚",
+    "country": "拉脱维亚",
+    "scene": "city",
+    "en": "Riga"
+  },
+  {
+    "id": "world-立陶宛-特拉凯城堡",
+    "name": "特拉凯城堡",
+    "province": "立陶宛",
+    "country": "立陶宛",
+    "scene": "water",
+    "en": "Trakai Island Castle"
+  },
+  {
+    "id": "world-斯洛伐克-斯皮什城堡",
+    "name": "斯皮什城堡",
+    "province": "斯洛伐克",
+    "country": "斯洛伐克",
+    "scene": "city",
+    "en": "Spiš Castle"
+  },
+  {
+    "id": "world-保加利亚-里拉修道院",
+    "name": "里拉修道院",
+    "province": "保加利亚",
+    "country": "保加利亚",
+    "scene": "temple",
+    "en": "Rila Monastery"
+  },
+  {
+    "id": "world-塞尔维亚-贝尔格莱德要塞",
+    "name": "贝尔格莱德要塞",
+    "province": "塞尔维亚",
+    "country": "塞尔维亚",
+    "scene": "city",
+    "en": "Belgrade Fortress"
+  },
+  {
+    "id": "world-阿尔巴尼亚-培拉特",
+    "name": "培拉特",
+    "province": "阿尔巴尼亚",
+    "country": "阿尔巴尼亚",
+    "scene": "city",
+    "en": "Berat"
+  },
+  {
+    "id": "world-波黑-莫斯塔尔老桥",
+    "name": "莫斯塔尔老桥",
+    "province": "波黑",
+    "country": "波黑",
+    "scene": "city",
+    "en": "Stari Most"
+  },
+  {
+    "id": "world-乌克兰-圣索菲亚大教堂（基辅）",
+    "name": "圣索菲亚大教堂（基辅）",
+    "province": "乌克兰",
+    "country": "乌克兰",
+    "scene": "temple",
+    "en": "Saint Sophia Cathedral, Kyiv"
+  },
+  {
+    "id": "world-亚美尼亚-格加尔德修道院",
+    "name": "格加尔德修道院",
+    "province": "亚美尼亚",
+    "country": "亚美尼亚",
+    "scene": "cave",
+    "en": "Geghard"
+  },
+  {
+    "id": "world-阿塞拜疆-少女塔",
+    "name": "少女塔",
+    "province": "阿塞拜疆",
+    "country": "阿塞拜疆",
+    "scene": "city",
+    "en": "Maiden Tower (Baku)"
+  }
+]

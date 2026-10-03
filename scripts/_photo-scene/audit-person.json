@@ -1,0 +1,272 @@
+[
+  {
+    "id": "builtin-home-scene-2",
+    "title": "厨房里的香味",
+    "key": "mom-cooking",
+    "url": "https://images.pexels.com/photos/3785725/pexels-photo-3785725.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "妈妈做饭",
+    "hint": "厨房里妈妈系着围裙站在料理台后面，灶上一口锅冒着热气，台面上摆着切好的菜和一只碗。",
+    "why": "题目就是人：我的妈妈"
+  },
+  {
+    "id": "builtin-family-1",
+    "title": "我的妈妈",
+    "key": "mom-cooking",
+    "url": "https://images.pexels.com/photos/3785725/pexels-photo-3785725.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "妈妈做饭",
+    "hint": "厨房里妈妈系着围裙站在料理台后面，灶上一口锅冒着热气，台面上摆着切好的菜和一只碗。",
+    "why": "题目就是人：我的妈妈"
+  },
+  {
+    "id": "builtin-family-3",
+    "title": "妹妹来了",
+    "key": "baby-arrive",
+    "url": "https://images.pexels.com/photos/7491730/pexels-photo-7491730.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "妹妹来了",
+    "hint": "屋里放着一张婴儿床，里面躺着一个小宝宝，两个人围在床边看，墙上飘着三只气球。",
+    "why": "题目就是人：妹妹来了"
+  },
+  {
+    "id": "builtin-family-3",
+    "title": "妹妹来了",
+    "key": "play-with-baby",
+    "url": "https://images.pexels.com/photos/4964356/pexels-photo-4964356.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 1,
+    "label": "一起玩",
+    "hint": "地垫上坐着小宝宝，旁边两个大孩子陪着他玩，地上散着玩具熊和积木。",
+    "why": "题目就是人：妹妹来了"
+  },
+  {
+    "id": "builtin-family-4",
+    "title": "爸爸修东西",
+    "key": "dad-repair",
+    "url": "https://images.pexels.com/photos/5808015/pexels-photo-5808015.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "爸爸修东西",
+    "hint": "院子里爸爸蹲在倒放的自行车旁，手里拿着扳手，旁边放着一个木工具箱。",
+    "why": "题目就是人：爸爸修东西"
+  },
+  {
+    "id": "builtin-family-5",
+    "title": "奶奶织毛衣",
+    "key": "grandma-knit",
+    "url": "https://images.pexels.com/photos/39326745/pexels-photo-39326745.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "奶奶织毛衣",
+    "hint": "屋里奶奶坐在摇椅上织毛衣，腿上放着两个毛线团，鼻梁上架着老花镜。",
+    "why": "题目就是人：奶奶织毛衣"
+  },
+  {
+    "id": "builtin-teacher-1",
+    "title": "我的老师",
+    "key": "teacher-class",
+    "url": "https://images.pexels.com/photos/5212342/pexels-photo-5212342.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "我的老师",
+    "hint": "教室前面黑板上写着粉笔字，老师站在黑板旁伸手指着，下面是几排课桌和坐着的学生。",
+    "why": "题目就是人：我的老师、老师的那句话"
+  },
+  {
+    "id": "builtin-teacher-2",
+    "title": "老师的那句话",
+    "key": "teacher-class",
+    "url": "https://images.pexels.com/photos/5212342/pexels-photo-5212342.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "我的老师",
+    "hint": "教室前面黑板上写着粉笔字，老师站在黑板旁伸手指着，下面是几排课桌和坐着的学生。",
+    "why": "题目就是人：我的老师、老师的那句话"
+  },
+  {
+    "id": "builtin-classmate-1",
+    "title": "我的同桌",
+    "key": "deskmate",
+    "url": "https://images.pexels.com/photos/37812837/pexels-photo-37812837.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "我的同桌",
+    "hint": "一张课桌前坐着两个同学，桌上摊着书和笔，旁边冒出一个对话气泡，背景是黑板。",
+    "why": "题目就是人：一个爱笑的人、我的同桌"
+  },
+  {
+    "id": "builtin-classmate-2",
+    "title": "一个爱笑的人",
+    "key": "deskmate",
+    "url": "https://images.pexels.com/photos/37812837/pexels-photo-37812837.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "我的同桌",
+    "hint": "一张课桌前坐着两个同学，桌上摊着书和笔，旁边冒出一个对话气泡，背景是黑板。",
+    "why": "题目就是人：一个爱笑的人、我的同桌"
+  },
+  {
+    "id": "builtin-classmate-3",
+    "title": "我的好朋友",
+    "key": "best-friend",
+    "url": "https://images.pexels.com/photos/13758652/pexels-photo-13758652.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "我的好朋友",
+    "hint": "草地上两个孩子肩并肩站着，一个穿蓝衣服、一个穿黄衣服，旁边有树和花，头顶有个对话气泡。",
+    "why": "题目就是人：我的好朋友"
+  },
+  {
+    "id": "builtin-community-helper-1",
+    "title": "看病的医生",
+    "key": "doctor",
+    "url": "https://images.pexels.com/photos/20100296/pexels-photo-20100296.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "看病的医生",
+    "hint": "诊室里医生穿着白大褂站在桌旁，胸前挂着听诊器，一个小孩坐在台子前面。",
+    "why": "题目就是人：如果我当医生、看病的医生"
+  },
+  {
+    "id": "builtin-dream-job-3",
+    "title": "如果我当医生",
+    "key": "doctor",
+    "url": "https://images.pexels.com/photos/20100296/pexels-photo-20100296.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "看病的医生",
+    "hint": "诊室里医生穿着白大褂站在桌旁，胸前挂着听诊器，一个小孩坐在台子前面。",
+    "why": "题目就是人：如果我当医生、看病的医生"
+  },
+  {
+    "id": "builtin-community-helper-3",
+    "title": "图书管理员",
+    "key": "librarian",
+    "url": "https://images.pexels.com/photos/9572664/pexels-photo-9572664.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "图书管理员",
+    "hint": "书架排满了彩色书脊，管理员戴着眼镜站在借书台后面，一个孩子伸手来借书。",
+    "why": "题目就是人：图书管理员"
+  },
+  {
+    "id": "builtin-community-helper-4",
+    "title": "公交司机",
+    "key": "bus-driver",
+    "url": "https://images.pexels.com/photos/15433376/pexels-photo-15433376.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "公交司机",
+    "hint": "一辆黄色公交车停在路边，司机坐在方向盘后面，车头有投币箱和站牌。",
+    "why": "题目就是人：公交司机"
+  },
+  {
+    "id": "builtin-stranger-1",
+    "title": "清晨的环卫工",
+    "key": "street-cleaner",
+    "url": "https://images.pexels.com/photos/37297890/pexels-photo-37297890.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "清晨的环卫工",
+    "hint": "天刚亮，街道上一名穿橙色工作服的环卫工在扫落叶，旁边停着绿色的垃圾车，远处是楼房。",
+    "why": "题目就是人：清晨的环卫工"
+  },
+  {
+    "id": "builtin-self-1",
+    "title": "这就是我",
+    "key": "mirror-self",
+    "url": "https://images.pexels.com/photos/5788310/pexels-photo-5788310.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "这就是我",
+    "hint": "墙上的圆镜子里映出一个孩子，镜子外面站着同一个孩子，旁边是一盆绿植。",
+    "why": "题目就是人：这就是我"
+  },
+  {
+    "id": "builtin-self-2",
+    "title": "我的小毛病",
+    "key": "mirror-self",
+    "url": "https://images.pexels.com/photos/5788310/pexels-photo-5788310.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "这就是我",
+    "hint": "墙上的圆镜子里映出一个孩子，镜子外面站着同一个孩子，旁边是一盆绿植。",
+    "why": "题目就是人：这就是我"
+  },
+  {
+    "id": "builtin-people-around-1",
+    "title": "形形色色的人",
+    "key": "all-kinds-people",
+    "url": "https://images.pexels.com/photos/8954779/pexels-photo-8954779.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "形形色色的人",
+    "hint": "草地上站着一排不同姿态不同颜色的小孩，头顶有对话气泡标着「同学」「路人」「邻居」。",
+    "why": "题目就是人：形形色色的人、我想成为的人、街头众生"
+  },
+  {
+    "id": "builtin-people-around-2",
+    "title": "街头众生",
+    "key": "all-kinds-people",
+    "url": "https://images.pexels.com/photos/8954779/pexels-photo-8954779.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "形形色色的人",
+    "hint": "草地上站着一排不同姿态不同颜色的小孩，头顶有对话气泡标着「同学」「路人」「邻居」。",
+    "why": "题目就是人：形形色色的人、我想成为的人、街头众生"
+  },
+  {
+    "id": "builtin-dream-job-2",
+    "title": "我想成为的人",
+    "key": "all-kinds-people",
+    "url": "https://images.pexels.com/photos/8954779/pexels-photo-8954779.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "形形色色的人",
+    "hint": "草地上站着一排不同姿态不同颜色的小孩，头顶有对话气泡标着「同学」「路人」「邻居」。",
+    "why": "题目就是人：形形色色的人、我想成为的人、街头众生"
+  },
+  {
+    "id": "builtin-dream-job-1",
+    "title": "我的理想",
+    "key": "future-me",
+    "url": "https://images.pexels.com/photos/6162307/pexels-photo-6162307.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "未来的我",
+    "hint": "一个孩子站着抬头看，头顶一个大大的思考气泡，气泡里是一个戴头盔的宇航员。",
+    "why": "题目就是人：我的理想"
+  },
+  {
+    "id": "builtin-future-2",
+    "title": "二十年后的我",
+    "key": "future-me",
+    "url": "https://images.pexels.com/photos/6162307/pexels-photo-6162307.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "未来的我",
+    "hint": "一个孩子站着抬头看，头顶一个大大的思考气泡，气泡里是一个戴头盔的宇航员。",
+    "why": "题目就是人：我的理想"
+  },
+  {
+    "id": "builtin-dream-2",
+    "title": "我梦见了未来",
+    "key": "future-me",
+    "url": "https://images.pexels.com/photos/6162307/pexels-photo-6162307.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "未来的我",
+    "hint": "一个孩子站着抬头看，头顶一个大大的思考气泡，气泡里是一个戴头盔的宇航员。",
+    "why": "题目就是人：我的理想"
+  },
+  {
+    "id": "builtin-warm-moment-3",
+    "title": "奶奶的针线盒",
+    "key": "sewing-box",
+    "url": "https://images.pexels.com/photos/38321413/pexels-photo-38321413.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "针线盒",
+    "hint": "打开的针线盒里排着五轴彩色线，旁边放着剪刀、顶针、针和几颗扣子。",
+    "why": "题目就是人：奶奶的针线盒"
+  },
+  {
+    "id": "builtin-treasure-1",
+    "title": "外婆的针线盒",
+    "key": "sewing-box",
+    "url": "https://images.pexels.com/photos/38321413/pexels-photo-38321413.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "针线盒",
+    "hint": "打开的针线盒里排着五轴彩色线，旁边放着剪刀、顶针、针和几颗扣子。",
+    "why": "题目就是人：奶奶的针线盒"
+  },
+  {
+    "id": "builtin-future-3",
+    "title": "我的机器人朋友",
+    "key": "robot-friend",
+    "url": "https://images.pexels.com/photos/8294792/pexels-photo-8294792.jpeg?auto=compress&cs=tinysrgb&w=640",
+    "slot": 0,
+    "label": "机器人朋友",
+    "hint": "方头机器人有天线和齿轮关节，正在和一个孩子挥手，地上散落着螺丝和电池。",
+    "why": "题目就是人：我的机器人朋友"
+  }
+]

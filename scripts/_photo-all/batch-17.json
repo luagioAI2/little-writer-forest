@@ -1,0 +1,201 @@
+[
+  {
+    "id": "cn-贵州-织金洞景区",
+    "name": "织金洞景区",
+    "province": "贵州",
+    "country": "中国",
+    "city": "毕节",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-贵州-赤水丹霞旅游区",
+    "name": "赤水丹霞旅游区",
+    "province": "贵州",
+    "country": "中国",
+    "city": "遵义",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-贵州-镇远古城旅游景区",
+    "name": "镇远古城旅游景区",
+    "province": "贵州",
+    "country": "中国",
+    "city": "黔东南州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-贵州-梵净山旅游区",
+    "name": "梵净山旅游区",
+    "province": "贵州",
+    "country": "中国",
+    "city": "铜仁",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-贵州-青岩古镇景区",
+    "name": "青岩古镇景区",
+    "province": "贵州",
+    "country": "中国",
+    "city": "贵阳",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-贵州-樟江景区",
+    "name": "樟江景区",
+    "province": "贵州",
+    "country": "中国",
+    "city": "黔南布依族苗族自治州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-贵州-百里杜鹃景区",
+    "name": "百里杜鹃景区",
+    "province": "贵州",
+    "country": "中国",
+    "city": "毕节",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-贵州-龙宫景区",
+    "name": "龙宫景区",
+    "province": "贵州",
+    "country": "中国",
+    "city": "安顺",
+    "rating": "5A",
+    "scene": "temple",
+    "en": ""
+  },
+  {
+    "id": "cn-贵州-黄果树瀑布景区",
+    "name": "黄果树瀑布景区",
+    "province": "贵州",
+    "country": "中国",
+    "city": "安顺",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-贵州-西江千户苗寨",
+    "name": "西江千户苗寨",
+    "province": "贵州",
+    "country": "中国",
+    "rating": "4A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-云南-和顺古镇景区",
+    "name": "和顺古镇景区",
+    "province": "云南",
+    "country": "中国",
+    "city": "腾冲",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-云南-普者黑旅游景区",
+    "name": "普者黑旅游景区",
+    "province": "云南",
+    "country": "中国",
+    "city": "文山州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-云南-火山热海旅游区",
+    "name": "火山热海旅游区",
+    "province": "云南",
+    "country": "中国",
+    "city": "保山",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-云南-昆明世博园景区",
+    "name": "昆明世博园景区",
+    "province": "云南",
+    "country": "中国",
+    "city": "昆明",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-云南-普达措国家公园",
+    "name": "普达措国家公园",
+    "province": "云南",
+    "country": "中国",
+    "city": "迪庆州",
+    "rating": "5A",
+    "scene": "grass",
+    "en": ""
+  },
+  {
+    "id": "cn-云南-中科院西双版纳热带植物园",
+    "name": "中科院西双版纳热带植物园",
+    "province": "云南",
+    "country": "中国",
+    "city": "西双版纳州",
+    "rating": "5A",
+    "scene": "forest",
+    "en": ""
+  },
+  {
+    "id": "cn-云南-崇圣寺三塔文化旅游区",
+    "name": "崇圣寺三塔文化旅游区",
+    "province": "云南",
+    "country": "中国",
+    "city": "大理州",
+    "rating": "5A",
+    "scene": "temple",
+    "en": ""
+  },
+  {
+    "id": "cn-云南-丽江古城景区",
+    "name": "丽江古城景区",
+    "province": "云南",
+    "country": "中国",
+    "city": "丽江",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-云南-玉龙雪山景区",
+    "name": "玉龙雪山景区",
+    "province": "云南",
+    "country": "中国",
+    "city": "丽江",
+    "rating": "5A",
+    "scene": "snow",
+    "en": ""
+  },
+  {
+    "id": "cn-云南-石林风景区",
+    "name": "石林风景区",
+    "province": "云南",
+    "country": "中国",
+    "city": "昆明",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  }
+]

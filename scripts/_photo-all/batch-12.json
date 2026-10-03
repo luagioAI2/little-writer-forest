@@ -1,0 +1,202 @@
+[
+  {
+    "id": "cn-河南-红旗渠－太行大峡谷旅游景区",
+    "name": "红旗渠－太行大峡谷旅游景区",
+    "province": "河南",
+    "country": "中国",
+    "city": "安阳",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-嵖岈山旅游景区",
+    "name": "嵖岈山旅游景区",
+    "province": "河南",
+    "country": "中国",
+    "city": "驻马店",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-西峡恐龙遗迹园-伏牛山-老界岭旅游区",
+    "name": "西峡恐龙遗迹园-伏牛山-老界岭旅游区",
+    "province": "河南",
+    "country": "中国",
+    "city": "南阳",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-龙潭大峡谷景区",
+    "name": "龙潭大峡谷景区",
+    "province": "河南",
+    "country": "中国",
+    "city": "洛阳",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-老君山－鸡冠洞旅游区",
+    "name": "老君山－鸡冠洞旅游区",
+    "province": "河南",
+    "country": "中国",
+    "city": "洛阳",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-尧山－中原大佛景区",
+    "name": "尧山－中原大佛景区",
+    "province": "河南",
+    "country": "中国",
+    "city": "平顶山",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-清明上河园景区",
+    "name": "清明上河园景区",
+    "province": "河南",
+    "country": "中国",
+    "city": "开封",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-白云山景区",
+    "name": "白云山景区",
+    "province": "河南",
+    "country": "中国",
+    "city": "洛阳",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-殷墟景区",
+    "name": "殷墟景区",
+    "province": "河南",
+    "country": "中国",
+    "city": "安阳",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-云台山－神农山－青天河风景区",
+    "name": "云台山－神农山－青天河风景区",
+    "province": "河南",
+    "country": "中国",
+    "city": "焦作",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-龙门石窟景区",
+    "name": "龙门石窟景区",
+    "province": "河南",
+    "country": "中国",
+    "city": "洛阳",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-河南-嵩山少林景区",
+    "name": "嵩山少林景区",
+    "province": "河南",
+    "country": "中国",
+    "city": "郑州",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-麻城龟峰山景区",
+    "name": "麻城龟峰山景区",
+    "province": "湖北",
+    "country": "中国",
+    "city": "黄冈",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-明显陵文化旅游景区",
+    "name": "明显陵文化旅游景区",
+    "province": "湖北",
+    "country": "中国",
+    "city": "荆门",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-三峡大瀑布景区",
+    "name": "三峡大瀑布景区",
+    "province": "湖北",
+    "country": "中国",
+    "city": "宜昌",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-腾龙洞景区",
+    "name": "腾龙洞景区",
+    "province": "湖北",
+    "country": "中国",
+    "city": "恩施州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-古隆中景区",
+    "name": "古隆中景区",
+    "province": "湖北",
+    "country": "中国",
+    "city": "襄阳",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-三国赤壁古战场景区",
+    "name": "三国赤壁古战场景区",
+    "province": "湖北",
+    "country": "中国",
+    "city": "咸宁",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-恩施大峡谷景区",
+    "name": "恩施大峡谷景区",
+    "province": "湖北",
+    "country": "中国",
+    "city": "恩施州",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-木兰文化生态旅游区",
+    "name": "木兰文化生态旅游区",
+    "province": "湖北",
+    "country": "中国",
+    "city": "武汉",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  }
+]

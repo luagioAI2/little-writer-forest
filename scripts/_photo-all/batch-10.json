@@ -1,0 +1,202 @@
+[
+  {
+    "id": "cn-福建-武夷山风景名胜区",
+    "name": "武夷山风景名胜区",
+    "province": "福建",
+    "country": "中国",
+    "city": "南平",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-福建-鼓浪屿风景名胜区",
+    "name": "鼓浪屿风景名胜区",
+    "province": "福建",
+    "country": "中国",
+    "city": "厦门",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-篁岭景区",
+    "name": "篁岭景区",
+    "province": "江西",
+    "country": "中国",
+    "city": "上饶",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-三百山景区",
+    "name": "三百山景区",
+    "province": "江西",
+    "country": "中国",
+    "city": "赣州",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-庐山西海景区",
+    "name": "庐山西海景区",
+    "province": "江西",
+    "country": "中国",
+    "city": "九江",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-萍乡武功山景区",
+    "name": "萍乡武功山景区",
+    "province": "江西",
+    "country": "中国",
+    "city": "萍乡",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-滕王阁旅游区",
+    "name": "滕王阁旅游区",
+    "province": "江西",
+    "country": "中国",
+    "city": "南昌",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-龟峰景区",
+    "name": "龟峰景区",
+    "province": "江西",
+    "country": "中国",
+    "city": "上饶",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-大觉山景区",
+    "name": "大觉山景区",
+    "province": "江西",
+    "country": "中国",
+    "city": "抚州",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-明月山旅游区",
+    "name": "明月山旅游区",
+    "province": "江西",
+    "country": "中国",
+    "city": "宜春",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-共和国摇篮景区",
+    "name": "共和国摇篮景区",
+    "province": "江西",
+    "country": "中国",
+    "city": "赣州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-古窑民俗博览区",
+    "name": "古窑民俗博览区",
+    "province": "江西",
+    "country": "中国",
+    "city": "景德镇",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-江湾景区",
+    "name": "江湾景区",
+    "province": "江西",
+    "country": "中国",
+    "city": "上饶",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-龙虎山风景名胜区",
+    "name": "龙虎山风景名胜区",
+    "province": "江西",
+    "country": "中国",
+    "city": "鹰潭",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-三清山风景区",
+    "name": "三清山风景区",
+    "province": "江西",
+    "country": "中国",
+    "city": "上饶",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-井冈山风景旅游区",
+    "name": "井冈山风景旅游区",
+    "province": "江西",
+    "country": "中国",
+    "city": "吉安",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-庐山风景名胜区",
+    "name": "庐山风景名胜区",
+    "province": "江西",
+    "country": "中国",
+    "city": "九江",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-望仙谷",
+    "name": "望仙谷",
+    "province": "江西",
+    "country": "中国",
+    "city": "上饶",
+    "rating": "4A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-江西-婺源篁岭",
+    "name": "婺源篁岭",
+    "province": "江西",
+    "country": "中国",
+    "city": "上饶",
+    "rating": "4A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-山东-周村古商城景区",
+    "name": "周村古商城景区",
+    "province": "山东",
+    "country": "中国",
+    "city": "淄博",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  }
+]

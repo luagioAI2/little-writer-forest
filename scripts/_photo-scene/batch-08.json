@@ -1,0 +1,68 @@
+[
+  {
+    "key": "cleaning-class",
+    "hint": "教室里一个孩子在擦窗、一个在扫地、一个提着水桶，桌椅搬到了一边，黑板上还留着粉笔字。",
+    "en": "cleaning classroom broom floor",
+    "usedBy": [
+      "builtin-campus-3",
+      "builtin-activity-3"
+    ]
+  },
+  {
+    "key": "deskmate",
+    "hint": "一张课桌前坐着两个同学，桌上摊着书和笔，旁边冒出一个对话气泡，背景是黑板。",
+    "en": "school desk books pencils",
+    "usedBy": [
+      "builtin-classmate-1",
+      "builtin-classmate-2"
+    ]
+  },
+  {
+    "key": "introduce-thing",
+    "hint": "展示台上放着笔记本电脑，旁边有标注线指向「外形」「功能」「用途」，一个小孩在讲。",
+    "en": "laptop on desk notebook",
+    "usedBy": [
+      "builtin-treasure-6"
+    ]
+  },
+  {
+    "key": "my-paradise",
+    "hint": "大树上有个树屋，旁边架着秋千，地上开满五颜六色的花，一个小孩在挥手。",
+    "en": "treehouse garden swing",
+    "usedBy": [
+      "builtin-treasure-7"
+    ]
+  },
+  {
+    "key": "pencil-home",
+    "hint": "打开的红色笔袋里挤着好几支彩笔和一块橡皮，那支铅笔也回到了队伍里。",
+    "en": "pencil case colored pencils",
+    "usedBy": [
+      "builtin-talking-2"
+    ]
+  },
+  {
+    "key": "school-garden",
+    "hint": "一座教学楼前有小路和木栅栏，花圃里开满各色小花，两个学生在花园里散步，一只小鸟飞过。",
+    "en": "school garden flowers path",
+    "usedBy": [
+      "builtin-campus-1"
+    ]
+  },
+  {
+    "key": "sports-day",
+    "hint": "操场上方挂着一排彩旗，跑道上四个孩子正在赛跑，内圈站着一排挥手的同学，远处是教学楼。",
+    "en": "school sports day race children",
+    "usedBy": [
+      "builtin-activity-1"
+    ]
+  },
+  {
+    "key": "turtle-rabbit",
+    "hint": "跑道上乌龟在慢慢往前爬，兔子靠在树下睡着了，终点插着一面红旗。",
+    "en": "tortoise on grass",
+    "usedBy": [
+      "builtin-fairy-1"
+    ]
+  }
+]

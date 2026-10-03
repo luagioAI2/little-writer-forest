@@ -1,0 +1,148 @@
+{
+ "batch": "1",
+ "items": [
+  {
+   "id": "builtin-family-13",
+   "title": "妈妈的手",
+   "query": "woman hands washing dishes sink",
+   "alts": [
+    "mother hands chopping vegetables kitchen",
+    "hands kneading dough close up",
+    "woman hands sewing fabric close up"
+   ],
+   "must": "一双成年女性的手在**做家务**（洗碗/择菜/揉面/缝补都行），手是画面主体、看得清手本身；★ 只要彩色，不要黑白；★ 不要正脸特写（只拍手和手臂最好）"
+  },
+  {
+   "id": "builtin-family-14",
+   "title": "爷爷的老花镜",
+   "query": "elderly man reading glasses newspaper",
+   "alts": [
+    "old man spectacles reading book",
+    "senior man glasses reading newspaper",
+    "grandpa reading glasses low on nose"
+   ],
+   "must": "一位老年男性戴着老花镜在看报纸或书；★ 人和眼镜都要看得见（不能只有一副眼镜放在桌上）；★ 彩色，不要黑白；★ 避免正脸大特写（侧脸/低头/背影都可以）"
+  },
+  {
+   "id": "builtin-teacher-6",
+   "title": "老师的手",
+   "query": "hand writing on blackboard with chalk close up",
+   "alts": [
+    "teacher hand chalk blackboard writing",
+    "chalk writing on blackboard hand",
+    "asian teacher writing on blackboard"
+   ],
+   "must": "一只手拿着粉笔在**黑板上写字**，画面里要同时有手、粉笔、黑板；★★ 黑板上**不要出现英文/外文单词**（家长为「黑板上写着德语」退过一张），优先中文或空黑板；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-teacher-7",
+   "title": "放学后的办公室",
+   "query": "teacher grading papers at desk",
+   "alts": [
+    "teacher desk marking homework",
+    "teacher correcting papers classroom desk",
+    "teacher working at desk with papers"
+   ],
+   "must": "老师坐在办公桌前**低头批改作业/备课**（桌上要有作业本或试卷）；★ 必须看得见老师本人，不能只有一堆本子；★ 彩色，不要黑白；★ 避免正脸大特写"
+  },
+  {
+   "id": "builtin-classmate-6",
+   "title": "同桌的铅笔盒",
+   "query": "open pencil case with stationery",
+   "alts": [
+    "pencil box full of pens",
+    "open pencil pouch stationery",
+    "pencil case with school supplies"
+   ],
+   "must": "一个**打开的铅笔盒/笔袋**，里面装着文具（笔、橡皮、尺子），有点满、有点乱；★ 主体是铅笔盒本身；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-classmate-7",
+   "title": "一起值日",
+   "query": "child sweeping classroom floor broom",
+   "alts": [
+    "students cleaning classroom blackboard",
+    "kid sweeping floor with broom",
+    "children doing chores in classroom"
+   ],
+   "must": "**看得见孩子在教室里劳动**（扫地/擦黑板/搬桌椅都行），必须有人；★ 彩色，不要黑白；★ 避免正脸大特写（背影/侧脸可以）"
+  },
+  {
+   "id": "builtin-stranger-5",
+   "title": "修鞋的老人",
+   "query": "old cobbler repairing shoes street",
+   "alts": [
+    "shoemaker mending shoes by hand",
+    "cobbler sewing shoe workshop",
+    "old man repairing shoes"
+   ],
+   "must": "一位**修鞋的老人**在低头缝鞋 —— 人 + 鞋 + 工具都要看得见（不能只有一双鞋、也不能只有工具）；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-stranger-6",
+   "title": "收废品的叔叔",
+   "query": "man with cart full of cardboard boxes street",
+   "alts": [
+    "recycling collector tricycle cardboard",
+    "scrap collector pushing cart",
+    "waste picker cart cardboard boxes"
+   ],
+   "must": "一位收废品的人和他的**三轮车/手推车**，车上堆着纸箱或废品；★ 必须同时看得见人和车；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-community-helper-9",
+   "title": "楼下的保安叔叔",
+   "query": "security guard uniform standing at gate",
+   "alts": [
+    "guard in uniform near gate booth",
+    "security guard smiling at entrance",
+    "doorman uniform at building gate"
+   ],
+   "must": "一位**穿制服的保安/门卫**站在小区门口或岗亭旁；★ 必须看得见人；★ 彩色，不要黑白；★ 避免正脸大特写（侧身/半身/远景可以）"
+  },
+  {
+   "id": "builtin-community-helper-10",
+   "title": "早餐摊的阿姨",
+   "query": "asian breakfast street stall vendor morning",
+   "alts": [
+    "breakfast stall vendor cooking steam",
+    "street food stall woman selling",
+    "morning food stall with steam"
+   ],
+   "must": "一个**早餐摊**：摊主在摊位后面做或卖早点（包子/煎饼/豆浆之类），摊主和摊子都要看得见；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-pet-13",
+   "title": "我的小兔子",
+   "query": "rabbit eating carrot",
+   "alts": [
+    "bunny eating carrot close up",
+    "pet rabbit eating vegetable",
+    "white rabbit long ears eating"
+   ],
+   "must": "一只**兔子**（长耳朵看得清），最好正在啃胡萝卜或吃草；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-pet-14",
+   "title": "学说话的鹦鹉",
+   "query": "colorful parrot close up",
+   "alts": [
+    "parrot perched on branch",
+    "pet parrot colorful bird",
+    "macaw close up head"
+   ],
+   "must": "一只**鹦鹉**（看得清羽毛和喙），最好张嘴/像在叫；★ 彩色，不要黑白"
+  },
+  {
+   "id": "builtin-plant-9",
+   "title": "窗台上的多肉",
+   "query": "succulent plant on windowsill sunlight",
+   "alts": [
+    "potted succulent by window",
+    "succulents in pot window sill",
+    "small potted succulent sunlight"
+   ],
+   "must": "一盆**多肉植物**放在窗台上，叶子肥厚看得清；★ 彩色，不要黑白；★ 暖光更好"
+  }
+ ]
+}

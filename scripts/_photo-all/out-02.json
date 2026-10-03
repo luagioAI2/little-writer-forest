@@ -1,0 +1,273 @@
+{
+  "batch": "02",
+  "items": [
+    {
+      "landmarkId": "gd-w240110748",
+      "match": "scene",
+      "query": "Yangjiang Guangdong beach; Dajiaowan Yangjiang",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Yangjiang Guangdong beach' and 'Dajiaowan Yangjiang' - only generic Guangdong beaches; the specific bay appears only as iStock ads."
+    },
+    {
+      "landmarkId": "gd-r14320191",
+      "match": "scene",
+      "query": "Seven Star Crags Zhaoqing; Qixingyan Zhaoqing China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Seven Star Crags Zhaoqing' and 'Qixingyan Zhaoqing China' - every real match was an iStock ad; native results were unrelated Chinese gardens."
+    },
+    {
+      "landmarkId": "gd-w989308255",
+      "match": "scene",
+      "query": "Sun Yat-sen former residence Zhongshan; Sun Yat-sen residence Cuiheng Zhongshan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried two variants - results were the Nanjing mausoleum / Guangzhou memorial hall, not the Cuiheng residence in Zhongshan."
+    },
+    {
+      "landmarkId": "cn-北京-北京（通州）大运河文化旅游景区",
+      "match": "scene",
+      "query": "Grand Canal Beijing Tongzhou; Tongzhou Beijing canal",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Grand Canal Beijing Tongzhou' and 'Tongzhou Beijing canal' - all Tongzhou shots are iStock ads; native results are other Beijing canals."
+    },
+    {
+      "landmarkId": "cn-北京-圆明园遗址公园景区",
+      "match": "place",
+      "query": "Yuanmingyuan Old Summer Palace",
+      "mediaUrl": "https://images.pexels.com/photos/16158517/pexels-photo-16158517.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Ruins of the Old Summer Palace in Beijing",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/ruins-old-summer-palace-in-beijing-16158517/",
+        "author": "Bin Zhu"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 57135
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-北京-北京奥林匹克公园",
+      "match": "place",
+      "query": "Beijing National Stadium Birds Nest",
+      "mediaUrl": "https://images.pexels.com/photos/7462950/pexels-photo-7462950.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "The Beijing National Stadium",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/the-beijing-national-stadium-7462950/",
+        "author": "frfoto"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 56035
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-北京-恭王府景区",
+      "match": "scene",
+      "query": "Prince Gong Mansion Beijing; Prince Gong Residence Beijing",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried two variants - real matches only as iStock ads; native results were generic courtyards."
+    },
+    {
+      "landmarkId": "cn-北京-明十三陵景区",
+      "match": "scene",
+      "query": "Ming Tombs Beijing; Ming Dynasty Tombs Sacred Way Beijing",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried two variants - no Beijing Ming Tombs; results were Nanjing Ming Xiaoling and the Forbidden City."
+    },
+    {
+      "landmarkId": "cn-北京-八达岭—慕田峪长城旅游区",
+      "match": "place",
+      "query": "Mutianyu Great Wall",
+      "mediaUrl": "https://images.pexels.com/photos/19031655/pexels-photo-19031655.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Part of the Great Wall of China in Beijing",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/part-of-the-great-wall-of-china-in-beijing-19031655/",
+        "author": "Van Anh Nguyen"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 40431
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-北京-颐和园",
+      "match": "place",
+      "query": "Summer Palace Beijing",
+      "mediaUrl": "https://images.pexels.com/photos/12112852/pexels-photo-12112852.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Photo of Summer Palace in Beijing, China",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/photo-of-summer-palace-in-beijing-china-12112852/",
+        "author": "Unknown"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 54456
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-北京-天坛公园",
+      "match": "place",
+      "query": "Temple of Heaven Beijing",
+      "mediaUrl": "https://images.pexels.com/photos/28910647/pexels-photo-28910647.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Temple of Heaven in Beijing China under clear sky",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/temple-of-heaven-in-beijing-china-under-clear-sky-28910647/",
+        "author": "Unknown"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 40471
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-天津-盘山风景名胜区",
+      "match": "scene",
+      "query": "Panshan Tianjin; Panshan mountain China",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Panshan Tianjin' and 'Panshan mountain China' - the scenic spot appears only as iStock ads; native results were generic mountains."
+    },
+    {
+      "landmarkId": "cn-天津-天津古文化街旅游区（津门故里）",
+      "match": "scene",
+      "query": "Tianjin Ancient Culture Street",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Tianjin Ancient Culture Street' - no confirmable shot; the closest candidate was a rebuilt street in Tangshan (signed 'I love Tangshan')."
+    },
+    {
+      "landmarkId": "cn-上海-西沙明珠湖景区",
+      "match": "scene",
+      "query": "Chongming Island Shanghai",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Chongming Island Shanghai' - no Mingzhu Lake; Chongming results were iStock ads or generic Shanghai scenes."
+    },
+    {
+      "landmarkId": "cn-上海-中国共产党一大•二大•四大纪念馆景区",
+      "match": "scene",
+      "query": "",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Not searched (special subject); marked scene with no photo."
+    },
+    {
+      "landmarkId": "cn-上海-上海科技馆",
+      "match": "scene",
+      "query": "Shanghai Science and Technology Museum; Shanghai Science Museum building",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried two variants - no confirmable shot of the Shanghai Science and Technology Museum (only other museums)."
+    },
+    {
+      "landmarkId": "cn-上海-上海野生动物园",
+      "match": "scene",
+      "query": "Shanghai Wild Animal Park",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Shanghai Wild Animal Park' - results were Shanghai Zoo (a different site) and iStock ads."
+    },
+    {
+      "landmarkId": "cn-上海-东方明珠广播电视塔",
+      "match": "place",
+      "query": "Oriental Pearl Tower Shanghai",
+      "mediaUrl": "https://images.pexels.com/photos/6449814/pexels-photo-6449814.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Oriental Pearl TV Tower in Shanghai China",
+      "credit": {
+        "source": "Pexels",
+        "link": "https://www.pexels.com/photo/oriental-pearl-tv-tower-in-shanghai-china-6449814/",
+        "author": "Unknown"
+      },
+      "verified": {
+        "http": 200,
+        "type": "image/jpeg",
+        "bytes": 55692
+      },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-重庆-武陵山大裂谷景区",
+      "match": "scene",
+      "query": "Wuling Mountain Chongqing",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Wuling Mountain Chongqing' - results were Wulong Karst (武隆), a different place."
+    },
+    {
+      "landmarkId": "cn-重庆-白帝城•瞿塘峡景区",
+      "match": "scene",
+      "query": "Qutang Gorge Three Gorges",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "poor",
+      "note": "Tried 'Qutang Gorge Three Gorges' - results were the Three Gorges Dam and a Wushan bridge, not confirmable as Qutang Gorge/Baidicheng."
+    }
+  ]
+}

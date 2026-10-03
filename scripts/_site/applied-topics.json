@@ -1,0 +1,18 @@
+{
+  "_comment": "应用文（演讲稿 / 倡议书 / 观后感 / 建议书）—— 中考「任务驱动型作文」常考，原题库只有书信与读后感。追加在 TOPIC_TAGS / PROMPT_TEMPLATES 末尾。",
+  "newTags": [
+    {"id": "applied-writing", "category": "event", "label": "应用文", "emoji": "📢", "minGrade": 4, "hint": "演讲稿、倡议书、观后感、建议书"}
+  ],
+  "templates": {
+    "applied-writing": [
+      {"title": "国旗下的讲话", "lead": "周一的升旗仪式上，轮到你在国旗下讲话。你想对全校同学说些什么？", "scenes": ["PHOTO_SLOT"]},
+      {"title": "竞选班干部", "lead": "班干部竞选开始了，你要上台说说自己的打算。你会怎么介绍自己？", "scenes": ["PHOTO_SLOT"]},
+      {"title": "读书节的发言", "lead": "学校读书节上，老师请你上台说几句。你想跟大家分享哪本书、哪句话？", "scenes": ["PHOTO_SLOT"]},
+      {"title": "毕业典礼上的发言", "lead": "毕业典礼上，你要代表全班同学发言。此刻你最想说的是什么？", "scenes": ["PHOTO_SLOT"]},
+      {"title": "节约用水倡议书", "lead": "班里要发起一次节水行动，请你写一份倡议书，号召大家一起节约用水。", "scenes": ["PHOTO_SLOT"]},
+      {"title": "保护环境倡议书", "lead": "学校要开展环保行动，请你写一份倡议书，告诉大家可以从哪些小事做起。", "scenes": ["PHOTO_SLOT"]},
+      {"title": "观后感", "lead": "看完一场演出或一部纪录片，你心里有很多话。把它们写下来吧。", "scenes": ["PHOTO_SLOT"]},
+      {"title": "给校长的建议书", "lead": "学校里有一件事，你想向校长提个建议。你会怎么写？", "scenes": ["PHOTO_SLOT"]}
+    ]
+  }
+}

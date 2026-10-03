@@ -1,0 +1,1586 @@
+[
+ {
+  "id": "builtin-season-8",
+  "tag": "season",
+  "title": "公园里的春天",
+  "lead": "小草绿了，粉色的花开满枝头，远处是青山和白云。你在这个公园里看到了什么？",
+  "sceneKey": "spring-park",
+  "sceneLabel": "春天的公园",
+  "hint": "近处草地上开着各色小花、小路弯弯，中景两棵开满粉花的树，远处是淡绿的青山和白云，一个女孩牵着狗在散步。"
+ },
+ {
+  "id": "builtin-season-9",
+  "tag": "season",
+  "title": "一地黄叶",
+  "lead": "小路铺满了金黄的落叶，风一吹，叶子还在往下掉。它们像什么呢？",
+  "sceneKey": "autumn-leaves",
+  "sceneLabel": "秋天的落叶",
+  "hint": "满地金黄的落叶铺在小路上，两棵金黄的树被风吹得摇晃，两个孩子追着飘落的叶子跑。"
+ },
+ {
+  "id": "builtin-season-10",
+  "tag": "season",
+  "title": "窗外下雪了",
+  "lead": "我趴在窗台上往外看，外面下着雪，窗台上还放着一杯热饮。你猜我在想什么？",
+  "sceneKey": "winter-window",
+  "sceneLabel": "冬天的窗户",
+  "hint": "从屋里往外看，窗外下着雪、有落光叶子的树和小房子，窗台上放着一盆绿植和一杯热饮。"
+ },
+ {
+  "id": "builtin-season-11",
+  "tag": "season",
+  "title": "打雪仗",
+  "lead": "雪地上，两个小伙伴打起了雪仗，雪球在半空里飞。这一仗最后谁赢了？",
+  "sceneKey": "snow-play",
+  "sceneLabel": "玩雪",
+  "hint": "雪地上两个孩子打雪仗，半空中飞着几个雪球，远处是落光叶子的树。"
+ },
+ {
+  "id": "builtin-season-12",
+  "tag": "season",
+  "title": "雪人站起来了",
+  "lead": "雪地里，我们堆了一个戴红围巾的雪人，鼻子是胡萝卜做的。它是怎么一点一点成形的？",
+  "sceneKey": "snowman",
+  "sceneLabel": "堆雪人",
+  "hint": "雪地中间站着一个戴红围巾、胡萝卜鼻子的雪人，两边各有一个孩子，天上飘着雪。"
+ },
+ {
+  "id": "builtin-weather-6",
+  "tag": "weather",
+  "title": "下雨的窗边",
+  "lead": "雨点打在玻璃上，挂成一串串水珠，小猫蹲在窗台上看雨。下雨天里，你在做什么？",
+  "sceneKey": "rain-window",
+  "sceneLabel": "下雨的窗户",
+  "hint": "窗外下着雨，树和小房子都蒙着一层灰蓝，玻璃上挂着雨珠，一只猫蹲在窗台看雨。"
+ },
+ {
+  "id": "builtin-weather-7",
+  "tag": "weather",
+  "title": "彩虹出来了",
+  "lead": "雨停了，一道七色的彩虹架在天上，草地上还留着两摊水洼。看见彩虹的那一刻，你在想什么？",
+  "sceneKey": "rainbow",
+  "sceneLabel": "雨后的彩虹",
+  "hint": "一道六色彩虹架在天地之间，草地上有两摊水洼，远处是山丘和云，一个孩子举起双手。"
+ },
+ {
+  "id": "builtin-weather-8",
+  "tag": "weather",
+  "title": "大雾的早晨",
+  "lead": "雾太浓了，只能看清近处的小路，远处的树影若有若无。走在雾里是什么感觉？",
+  "sceneKey": "fog-morning",
+  "sceneLabel": "大雾的早晨",
+  "hint": "雾里只能看清近处的小路和两个人影，远处的树影若隐若现，路边立着一盏还亮着的路灯。"
+ },
+ {
+  "id": "builtin-weather-9",
+  "tag": "weather",
+  "title": "太阳落山了",
+  "lead": "太阳慢慢躲到山后面去，天被染成橙红色，远山变成了深色的影子。这个时候你在哪儿？",
+  "sceneKey": "sunset",
+  "sceneLabel": "日落",
+  "hint": "橙红色的天空下，太阳慢慢落到山后面，远山和树木变成深色剪影，一个孩子站着看。"
+ },
+ {
+  "id": "builtin-weather-10",
+  "tag": "weather",
+  "title": "雪停了",
+  "lead": "雪停了，天放晴了，屋檐下挂着一排冰棱，雪人还站在院子里。雪后的空气是什么味道？",
+  "sceneKey": "snow-clear",
+  "sceneLabel": "雪后晴空",
+  "hint": "雪停了天晴了，蓝天下的屋顶挂着冰棱，远处雪山白白的，一个雪人戴着围巾，一个孩子在挥手。"
+ },
+ {
+  "id": "builtin-water-5",
+  "tag": "water",
+  "title": "天没亮就出发",
+  "lead": "天还是深蓝的，月亮和星星都还在，我们打着手电走上山路。为什么要这么早出发？",
+  "sceneKey": "mountain-climb",
+  "sceneLabel": "摸黑上山",
+  "hint": "天还没亮，深蓝的天上有月亮和星星，两座大山黑黑地立着，两个人打着手电走在上山的小路上。"
+ },
+ {
+  "id": "builtin-water-6",
+  "tag": "water",
+  "title": "山顶看日出",
+  "lead": "太阳从两座山之间升起来，脚下是一片白色的云海。站在山顶上，你最想喊什么？",
+  "sceneKey": "sunrise-peak",
+  "sceneLabel": "日出山顶",
+  "hint": "太阳从两座山之间升起来，山谷里铺着白色的云海，山顶上两个孩子举起手欢呼。"
+ },
+ {
+  "id": "builtin-water-7",
+  "tag": "water",
+  "title": "夏日荷塘",
+  "lead": "水面上铺着碧绿的荷叶，粉色的荷花开着，一只蜻蜓停在上头。荷塘里还藏着什么？",
+  "sceneKey": "summer-pond",
+  "sceneLabel": "夏日荷塘",
+  "hint": "水面上铺着碧绿的荷叶，两朵粉色的荷花开着，一只蓝色蜻蜓停在上方，水里有鱼影。"
+ },
+ {
+  "id": "builtin-water-8",
+  "tag": "water",
+  "title": "海边的沙滩",
+  "lead": "沙滩上散着贝壳，一把红伞撑在旁边，远处的浪一层层涌过来。你会在沙滩上做什么？",
+  "sceneKey": "beach",
+  "sceneLabel": "海边沙滩",
+  "hint": "金黄色的沙滩上散着贝壳，有一把红色遮阳伞，远处是蓝色大海和白色浪花，一个孩子坐在沙地上。"
+ },
+ {
+  "id": "builtin-campus-6",
+  "tag": "campus",
+  "title": "花园里的小路",
+  "lead": "教学楼前有一个小花园，花开得正好，一只小鸟从头顶飞过。你最喜欢它的哪个角落？",
+  "sceneKey": "school-garden",
+  "sceneLabel": "学校的小花园",
+  "hint": "一座教学楼前有小路和木栅栏，花圃里开满各色小花，两个学生在花园里散步，一只小鸟飞过。"
+ },
+ {
+  "id": "builtin-campus-7",
+  "tag": "campus",
+  "title": "课间的操场",
+  "lead": "红色的跑道上，同学们在跑、在跳，球场中间放着一个足球。课间的操场是什么样子的？",
+  "sceneKey": "playground",
+  "sceneLabel": "热闹的操场",
+  "hint": "红色跑道围着绿茵场，左边有一个白色球门，中间是一个足球，几个孩子在跑、在跳，远处是教学楼。"
+ },
+ {
+  "id": "builtin-campus-8",
+  "tag": "campus",
+  "title": "校园里的秋天",
+  "lead": "教学楼前的两棵银杏黄了，叶子落了一地，我走在铺满叶子的小路上。你捡到过最好看的那一片吗？",
+  "sceneKey": "school-autumn",
+  "sceneLabel": "校园的秋天",
+  "hint": "教学楼前两棵银杏树金黄一片，地上落满了叶子，一个女孩走在铺满落叶的小路上。"
+ },
+ {
+  "id": "builtin-campus-9",
+  "tag": "campus",
+  "title": "街角的小书店",
+  "lead": "书架上的书排得满满的，柜台后面有人正看得入神，门口挂着书店的牌子。你最近想看哪一本？",
+  "sceneKey": "book-store",
+  "sceneLabel": "书店",
+  "hint": "暖色书架上排满了彩色书脊，柜台后面站着看书的小孩，门口挂着「书店」的牌子。"
+ },
+ {
+  "id": "builtin-night-4",
+  "tag": "night",
+  "title": "躺在草地上数星星",
+  "lead": "深蓝的夜空挂满了星星，还挂着一弯月亮。你数到第几颗就数不清了？",
+  "sceneKey": "starry-night",
+  "sceneLabel": "数星星的晚上",
+  "hint": "深蓝的夜空挂满星星和一弯月亮，草地上一个孩子躺着看天，旁边是两棵松树和草丛。"
+ },
+ {
+  "id": "builtin-night-5",
+  "tag": "night",
+  "title": "萤火虫的夜晚",
+  "lead": "草地上飞满了发光的萤火虫，我举着玻璃罐追了过去。你想捉几只？",
+  "sceneKey": "fireflies",
+  "sceneLabel": "萤火虫之夜",
+  "hint": "夜里草地上飞满发光的萤火虫，一个孩子举着玻璃罐去追，远处有月亮和树影。"
+ },
+ {
+  "id": "builtin-home-scene-4",
+  "tag": "home-scene",
+  "title": "我的小房间",
+  "lead": "房间里有一张床、一张书桌和一个书架，桌上摆着台灯和书。你最喜欢待在哪个角落？",
+  "sceneKey": "my-room",
+  "sceneLabel": "我的房间",
+  "hint": "小房间里有床、书桌和书架，窗户挂着窗帘，桌上摆着一盏台灯和几本书，墙上贴着画。"
+ },
+ {
+  "id": "builtin-home-scene-5",
+  "tag": "home-scene",
+  "title": "床头柜上的闹钟",
+  "lead": "双铃闹钟立在床头柜上，两根指针慢慢走，底下有两只小脚。它每天早上叫你起床吗？",
+  "sceneKey": "clock",
+  "sceneLabel": "闹钟",
+  "hint": "床头柜上放着一个双铃闹钟，钟面上有十二个刻度和两根指针，顶上两个小铃铛，底下有两只脚。"
+ },
+ {
+  "id": "builtin-travel-3",
+  "tag": "travel",
+  "title": "亭子前的石阶",
+  "lead": "古亭子前有石阶和绿树，我举着相机正拍照。这次去的是哪儿？",
+  "sceneKey": "travel-visit",
+  "sceneLabel": "游记参观",
+  "hint": "古亭子前有石阶和绿树，一个小孩举着相机在拍照。"
+ },
+ {
+  "id": "builtin-culture-3",
+  "tag": "culture",
+  "title": "城墙上的故事",
+  "lead": "城墙上有城楼和城垛，牌子写着世界文化遗产。关于它，你查到过什么？",
+  "sceneKey": "cultural-heritage",
+  "sceneLabel": "文化遗产",
+  "hint": "城墙上有城楼和城垛，两个小孩在城墙前参观，旁边牌子写着「世界文化遗产」。"
+ },
+ {
+  "id": "builtin-hometown-4",
+  "tag": "hometown",
+  "title": "村口的小河",
+  "lead": "小河从村子中间流过，河上有石拱桥，水面上还漂着一条小船。这条河你熟悉吗？",
+  "sceneKey": "river-village",
+  "sceneLabel": "家乡的小河",
+  "hint": "一条小河从村子中间流过，河上架着石拱桥，两岸是白墙红顶的小屋和绿树，水面上还有一条小船。"
+ },
+ {
+  "id": "builtin-hometown-5",
+  "tag": "hometown",
+  "title": "风里的麦田",
+  "lead": "满眼的麦子金黄一片，风一吹就摇成波浪，田边有一条小路。你想不想走进去？",
+  "sceneKey": "wheat-field",
+  "sceneLabel": "金色麦田",
+  "hint": "满眼金黄的麦穗在风里摇晃，远处是小山和一座房子，田间有一条土路。"
+ },
+ {
+  "id": "builtin-hometown-6",
+  "tag": "hometown",
+  "title": "我的乐园",
+  "lead": "大树上有一个树屋，旁边架着秋千，地上开满了花。你的乐园在哪儿？",
+  "sceneKey": "my-paradise",
+  "sceneLabel": "我的乐园",
+  "hint": "大树上有个树屋，旁边架着秋千，地上开满五颜六色的花，一个小孩在挥手。"
+ },
+ {
+  "id": "builtin-family-7",
+  "tag": "family",
+  "title": "妈妈在厨房里",
+  "lead": "妈妈系着围裙站在灶台前，锅上冒着热气，台面上摆着切好的菜。今天做的是什么？",
+  "sceneKey": "mom-cooking",
+  "sceneLabel": "妈妈做饭",
+  "hint": "厨房里妈妈系着围裙站在料理台后面，灶上一口锅冒着热气，台面上摆着切好的菜和一只碗。"
+ },
+ {
+  "id": "builtin-family-8",
+  "tag": "family",
+  "title": "爷爷的菜地",
+  "lead": "爷爷戴着草帽，提着喷壶，一畦畦菜苗排得整整齐齐。他是怎么照顾这些菜的？",
+  "sceneKey": "grandpa-garden",
+  "sceneLabel": "爷爷的花园",
+  "hint": "菜地里一畦畦菜苗排得整整齐齐，戴草帽的爷爷提着蓝色喷壶浇水，身后是木栅栏和小房子。"
+ },
+ {
+  "id": "builtin-family-9",
+  "tag": "family",
+  "title": "家里多了一个小宝宝",
+  "lead": "屋里多了一张小床，床上躺着一个小宝宝，墙上的气球还没撤。第一次见到他/她，你在想什么？",
+  "sceneKey": "baby-arrive",
+  "sceneLabel": "妹妹来了",
+  "hint": "屋里放着一张婴儿床，里面躺着一个小宝宝，两个人围在床边看，墙上飘着三只气球。"
+ },
+ {
+  "id": "builtin-family-10",
+  "tag": "family",
+  "title": "陪他玩一会儿",
+  "lead": "地垫上坐着小宝宝，我陪他一起玩，玩具熊和积木散了一地。他最喜欢哪一个？",
+  "sceneKey": "play-with-baby",
+  "sceneLabel": "一起玩",
+  "hint": "地垫上坐着小宝宝，旁边两个大孩子陪着他玩，地上散着玩具熊和积木。"
+ },
+ {
+  "id": "builtin-family-11",
+  "tag": "family",
+  "title": "爸爸在修东西",
+  "lead": "爸爸蹲在倒放的自行车旁边，手里拿着扳手，工具箱摊在地上。他修东西的时候是什么样子？",
+  "sceneKey": "dad-repair",
+  "sceneLabel": "爸爸修东西",
+  "hint": "院子里爸爸蹲在倒放的自行车旁，手里拿着扳手，旁边放着一个木工具箱。"
+ },
+ {
+  "id": "builtin-family-12",
+  "tag": "family",
+  "title": "奶奶织毛衣",
+  "lead": "奶奶坐在摇椅上织毛衣，腿上放着两个毛线团，鼻梁上架着老花镜。这件毛衣是给谁织的？",
+  "sceneKey": "grandma-knit",
+  "sceneLabel": "奶奶织毛衣",
+  "hint": "屋里奶奶坐在摇椅上织毛衣，腿上放着两个毛线团，鼻梁上架着老花镜。"
+ },
+ {
+  "id": "builtin-family-13",
+  "tag": "family",
+  "title": "妈妈的手",
+  "lead": "妈妈的手有点粗糙，做过很多很多事情。你注意过她的手吗？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-family-14",
+  "tag": "family",
+  "title": "爷爷的老花镜",
+  "lead": "爷爷把老花镜架在鼻尖上，眯着眼睛看报纸。他平时还爱做什么？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-teacher-4",
+  "tag": "teacher",
+  "title": "站在黑板前的老师",
+  "lead": "黑板上的粉笔字还没擦，老师站在旁边一边讲一边比划。他/她哪句话你记得最清楚？",
+  "sceneKey": "teacher-class",
+  "sceneLabel": "我的老师",
+  "hint": "教室前面黑板上写着粉笔字，老师站在黑板旁伸手指着，下面是几排课桌和坐着的学生。"
+ },
+ {
+  "id": "builtin-teacher-5",
+  "tag": "teacher",
+  "title": "漫画老师",
+  "lead": "黑板前，老师戴着眼镜、拿着教鞭讲得正起劲。如果给老师画一幅漫画，你会夸张他/她的哪一点？",
+  "sceneKey": "comic-teacher",
+  "sceneLabel": "漫画老师",
+  "hint": "黑板前站着戴眼镜的老师，手里拿着教鞭，讲台下面坐着两个学生。"
+ },
+ {
+  "id": "builtin-teacher-6",
+  "tag": "teacher",
+  "title": "老师的手",
+  "lead": "老师的手上沾着粉笔灰，在黑板上写了一行又一行。那双手还做过什么？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-teacher-7",
+  "tag": "teacher",
+  "title": "放学后的办公室",
+  "lead": "放学了，办公室的灯还亮着，老师在低头批改作业。你想对他说什么？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-classmate-4",
+  "tag": "classmate",
+  "title": "一张课桌，两个人",
+  "lead": "一张课桌，两个人，桌上摊着书和笔。你同桌是个什么样的人？",
+  "sceneKey": "deskmate",
+  "sceneLabel": "我的同桌",
+  "hint": "一张课桌前坐着两个同学，桌上摊着书和笔，旁边冒出一个对话气泡，背景是黑板。"
+ },
+ {
+  "id": "builtin-classmate-5",
+  "tag": "classmate",
+  "title": "肩并肩站着",
+  "lead": "草地上，我们俩肩并肩站着，一个穿蓝衣服，一个穿黄衣服。你们之间发生过什么？",
+  "sceneKey": "best-friend",
+  "sceneLabel": "我的好朋友",
+  "hint": "草地上两个孩子肩并肩站着，一个穿蓝衣服、一个穿黄衣服，旁边有树和花，头顶有个对话气泡。"
+ },
+ {
+  "id": "builtin-classmate-6",
+  "tag": "classmate",
+  "title": "同桌的铅笔盒",
+  "lead": "同桌的铅笔盒总是乱七八糟的，什么都有。你翻看过吗？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-classmate-7",
+  "tag": "classmate",
+  "title": "一起值日",
+  "lead": "放学后，我和同桌留下来扫地、擦黑板。那天发生了什么？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-stranger-3",
+  "tag": "stranger",
+  "title": "天刚亮的街道",
+  "lead": "天刚蒙蒙亮，街上有一位穿橙色工作服的环卫工在扫落叶。你有没有跟他说过话？",
+  "sceneKey": "street-cleaner",
+  "sceneLabel": "清晨的环卫工",
+  "hint": "天刚亮，街道上一名穿橙色工作服的环卫工在扫落叶，旁边停着绿色的垃圾车，远处是楼房。"
+ },
+ {
+  "id": "builtin-stranger-4",
+  "tag": "stranger",
+  "title": "雨里的快递员",
+  "lead": "雨下得很大，快递员骑着车，后座绑着一个大纸箱，地上的水花溅了起来。看见他，你想说什么？",
+  "sceneKey": "rain-delivery",
+  "sceneLabel": "雨天的快递员",
+  "hint": "雨天街道上，一名快递员骑着电动车、后座绑着大纸箱，路边有一把红伞，地上溅起水花。"
+ },
+ {
+  "id": "builtin-stranger-5",
+  "tag": "stranger",
+  "title": "修鞋的老人",
+  "lead": "巷口有个修鞋的老人，低着头一针一线地缝。他修过你的鞋吗？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-stranger-6",
+  "tag": "stranger",
+  "title": "收废品的叔叔",
+  "lead": "他骑着三轮车走街串巷，喇叭里一遍遍地喊。你听过那声音吗？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-community-helper-5",
+  "tag": "community-helper",
+  "title": "诊室里的医生",
+  "lead": "医生穿着白大褂，胸前挂着听诊器，一个小孩坐在台子前面。他看病的时候是怎么说话的？",
+  "sceneKey": "doctor",
+  "sceneLabel": "看病的医生",
+  "hint": "诊室里医生穿着白大褂站在桌旁，胸前挂着听诊器，一个小孩坐在台子前面。"
+ },
+ {
+  "id": "builtin-community-helper-6",
+  "tag": "community-helper",
+  "title": "路口的警察",
+  "lead": "十字路口，警察伸手指着方向，红绿灯在旁边一闪一闪。他一天要指挥多少辆车？",
+  "sceneKey": "police",
+  "sceneLabel": "警察叔叔",
+  "hint": "十字路口一名警察穿着蓝色制服、戴着警帽，伸手指引方向，旁边有红绿灯和斑马线。"
+ },
+ {
+  "id": "builtin-community-helper-7",
+  "tag": "community-helper",
+  "title": "借书台前的管理员",
+  "lead": "书架上的书排得整整齐齐，管理员戴着眼镜站在借书台后面。你想借哪一本？",
+  "sceneKey": "librarian",
+  "sceneLabel": "图书管理员",
+  "hint": "书架排满了彩色书脊，管理员戴着眼镜站在借书台后面，一个孩子伸手来借书。"
+ },
+ {
+  "id": "builtin-community-helper-8",
+  "tag": "community-helper",
+  "title": "方向盘后面的司机",
+  "lead": "黄色的公交车停在站牌边，司机坐在方向盘后面。坐他开的车，你最喜欢哪个位置？",
+  "sceneKey": "bus-driver",
+  "sceneLabel": "公交司机",
+  "hint": "一辆黄色公交车停在路边，司机坐在方向盘后面，车头有投币箱和站牌。"
+ },
+ {
+  "id": "builtin-community-helper-9",
+  "tag": "community-helper",
+  "title": "楼下的保安叔叔",
+  "lead": "每天进出小区，他都笑着跟我们打招呼。你跟他熟吗？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-community-helper-10",
+  "tag": "community-helper",
+  "title": "早餐摊的阿姨",
+  "lead": "天还没亮，早餐摊的阿姨就忙起来了。你常买她做的什么？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-self-3",
+  "tag": "self",
+  "title": "镜子里的我",
+  "lead": "镜子里的那个孩子，和镜子外站着的，是同一个人。你会怎么介绍他？",
+  "sceneKey": "mirror-self",
+  "sceneLabel": "这就是我",
+  "hint": "墙上的圆镜子里映出一个孩子，镜子外面站着同一个孩子，旁边是一盆绿植。"
+ },
+ {
+  "id": "builtin-people-around-3",
+  "tag": "people-around",
+  "title": "门口的邻居阿姨",
+  "lead": "阿姨提着菜篮子，站在门口笑着跟我打招呼。你们家跟她熟吗？",
+  "sceneKey": "neighbor",
+  "sceneLabel": "邻居阿姨",
+  "hint": "门廊前一个阿姨提着菜篮子笑着挥手，旁边有栅栏和花。"
+ },
+ {
+  "id": "builtin-people-around-4",
+  "tag": "people-around",
+  "title": "形形色色的人",
+  "lead": "草地上站着一排人，有的在说，有的在笑，标签上写着同学、路人、邻居。你身边有哪几种人？",
+  "sceneKey": "all-kinds-people",
+  "sceneLabel": "形形色色的人",
+  "hint": "草地上站着一排不同姿态不同颜色的小孩，头顶有对话气泡标着「同学」「路人」「邻居」。"
+ },
+ {
+  "id": "builtin-first-time-5",
+  "tag": "first-time",
+  "title": "我会骑车了",
+  "lead": "我骑着车飞快地往前，爸爸在后面追着跑。学会的那一天，你还记得吗？",
+  "sceneKey": "bike-ride",
+  "sceneLabel": "学会了骑车",
+  "hint": "小路上一个孩子骑着红色自行车飞快前进，身后有几道速度线，爸爸在后面追着跑。"
+ },
+ {
+  "id": "builtin-first-time-6",
+  "tag": "first-time",
+  "title": "我要露一手了",
+  "lead": "案板、蔬菜、鸡蛋都摆好了，围裙也系上了。我准备做一道什么菜？",
+  "sceneKey": "cook-start",
+  "sceneLabel": "准备开始",
+  "hint": "厨房台面上摆好了案板、蔬菜、鸡蛋和碗，一个系着围裙的孩子站在台前准备动手，墙上贴着食谱。"
+ },
+ {
+  "id": "builtin-first-time-7",
+  "tag": "first-time",
+  "title": "厨房里的“事故”",
+  "lead": "面粉飘得到处都是，碗翻了，锅里的东西也糊了。哪一步出了问题？",
+  "sceneKey": "cook-mess",
+  "sceneLabel": "手忙脚乱",
+  "hint": "厨房里到处飘着白面粉，一个孩子张开手一脸惊讶，台面上碗翻了、锅里的东西糊了。"
+ },
+ {
+  "id": "builtin-first-time-8",
+  "tag": "first-time",
+  "title": "端上桌的那一刻",
+  "lead": "一大家子围坐在桌边，中间那盘菜还冒着热气。他们尝了以后说了什么？",
+  "sceneKey": "cook-done",
+  "sceneLabel": "端上桌了",
+  "hint": "一家人围坐在餐桌旁，桌子中间是一盘冒着热气的菜，每个人面前都有小碟子。"
+ },
+ {
+  "id": "builtin-first-time-9",
+  "tag": "first-time",
+  "title": "第一次上台",
+  "lead": "幕布拉开，一束灯光只照着台上的我，台下一片黑压压的脑袋。你紧张的时候怎么办？",
+  "sceneKey": "stage-nervous",
+  "sceneLabel": "第一次上台",
+  "hint": "红色幕布拉开，一束聚光灯照在舞台中间一个站着的孩子身上，台下是一片黑压压的脑袋。"
+ },
+ {
+  "id": "builtin-unforgettable-4",
+  "tag": "unforgettable",
+  "title": "翻相册",
+  "lead": "厚厚的相册摊在桌上，一页一页都是照片。哪一张让你停了下来？",
+  "sceneKey": "memory-album",
+  "sceneLabel": "那一次，我很难忘",
+  "hint": "桌上摊开一本厚厚的相册，两页里各贴着一张照片，一个孩子坐在旁边翻看。"
+ },
+ {
+  "id": "builtin-unforgettable-5",
+  "tag": "unforgettable",
+  "title": "难忘小学生活",
+  "lead": "教学楼前，我们几个挥着手，校门口的横幅还没收。这六年里，你最难忘的是什么？",
+  "sceneKey": "farewell-school",
+  "sceneLabel": "难忘小学生活",
+  "hint": "教学楼前站着四个穿不同颜色衣服的小孩在挥手，校门口有校旗和「难忘小学生活」横幅。"
+ },
+ {
+  "id": "builtin-warm-moment-4",
+  "tag": "warm-moment",
+  "title": "摔了一跤",
+  "lead": "自行车歪倒在小路上，我坐在地上揉着膝盖，一只手伸了过来。那一刻你在想什么？",
+  "sceneKey": "bike-fail",
+  "sceneLabel": "摔倒了",
+  "hint": "公园小路上，一辆自行车歪倒在地，一个孩子坐在地上摸着膝盖，另一个孩子伸手来扶。"
+ },
+ {
+  "id": "builtin-warm-moment-5",
+  "tag": "warm-moment",
+  "title": "他扶了我一把",
+  "lead": "我坐在地上抱着膝盖，一只手伸到了我面前。那只手是谁的？",
+  "sceneKey": "help-hand",
+  "sceneLabel": "他扶了我一把",
+  "hint": "操场上一个孩子坐在地上抱着膝盖，另一个孩子弯腰伸出手去拉他，旁边有几道表示动作的线。"
+ },
+ {
+  "id": "builtin-warm-moment-6",
+  "tag": "warm-moment",
+  "title": "雨里的一把伞",
+  "lead": "雨下得正大，橙色的伞下挤着两个人，地上积起了水洼。这把伞是谁送来的？",
+  "sceneKey": "umbrella-rain",
+  "sceneLabel": "雨中送伞",
+  "hint": "雨天街道上，一把橙色的伞下站着两个人，地面积着水洼，远处是灰蓝色的楼房。"
+ },
+ {
+  "id": "builtin-warm-moment-7",
+  "tag": "warm-moment",
+  "title": "生病那天",
+  "lead": "我盖着被子躺在床上，床头放着温度计和药，妈妈坐在旁边陪着我。生病的时候最想吃什么？",
+  "sceneKey": "sick",
+  "sceneLabel": "生病了",
+  "hint": "床上一个孩子躺着盖着蓝被子，旁边放着温度计和药杯，妈妈坐在床边陪着他。"
+ },
+ {
+  "id": "builtin-activity-6",
+  "tag": "activity",
+  "title": "运动会那天",
+  "lead": "操场上挂满了彩旗，跑道上四个人正在冲刺，内圈的同学在挥手。你参加的是哪个项目？",
+  "sceneKey": "sports-day",
+  "sceneLabel": "热闹的运动会",
+  "hint": "操场上方挂着一排彩旗，跑道上四个孩子正在赛跑，内圈站着一排挥手的同学，远处是教学楼。"
+ },
+ {
+  "id": "builtin-activity-7",
+  "tag": "activity",
+  "title": "坐上春游的大巴",
+  "lead": "黄色的大巴停在路边，同学们排着队上车，老师在旁边挥手。你在车上坐在谁旁边？",
+  "sceneKey": "spring-outing-bus",
+  "sceneLabel": "春游·大巴",
+  "hint": "一辆黄色大巴停在路边，几个孩子排队上车，老师在旁边挥手，旁边开着粉色的花树。"
+ },
+ {
+  "id": "builtin-activity-8",
+  "tag": "activity",
+  "title": "草地上的野餐",
+  "lead": "粉格子的布铺在草地上，篮子和食物摆了一地，大家围坐成一圈。谁带的东西最好吃？",
+  "sceneKey": "spring-outing-picnic",
+  "sceneLabel": "春游·野餐",
+  "hint": "草地上铺着粉格子布，上面摆着篮子和食物，三个孩子围坐成一圈，旁边有开花的树。"
+ },
+ {
+  "id": "builtin-activity-9",
+  "tag": "activity",
+  "title": "放风筝",
+  "lead": "我举着线，风筝飞到了半空，泡泡和花瓣一起飘着。你的风筝飞得高吗？",
+  "sceneKey": "spring-outing-play",
+  "sceneLabel": "春游·游戏",
+  "hint": "草地上一个孩子举着线放风筝，风筝飞在半空，另外两个孩子在跑，天上飘着泡泡和花瓣。"
+ },
+ {
+  "id": "builtin-activity-10",
+  "tag": "activity",
+  "title": "班级大扫除",
+  "lead": "一个擦窗，一个扫地，一个提着水桶，桌椅都搬到了一边。你抢到了哪个活儿？",
+  "sceneKey": "cleaning-class",
+  "sceneLabel": "大扫除",
+  "hint": "教室里一个孩子在擦窗、一个在扫地、一个提着水桶，桌椅搬到了一边，黑板上还留着粉笔字。"
+ },
+ {
+  "id": "builtin-activity-11",
+  "tag": "activity",
+  "title": "拔河",
+  "lead": "两队人弯着腰用力拉，绳子中间系着红布条，旁边的人在喊。你们班赢了吗？",
+  "sceneKey": "play-game",
+  "sceneLabel": "游戏",
+  "hint": "草地上两队小孩在拔河，绳中间系着红布条，两边小孩弯腰用力，旁边有人在欢呼。"
+ },
+ {
+  "id": "builtin-activity-12",
+  "tag": "activity",
+  "title": "多彩的活动",
+  "lead": "跑道上有人在跑步、有人在跳绳，横幅上写着运动会。你最喜欢哪一种活动？",
+  "sceneKey": "colorful-activity",
+  "sceneLabel": "多彩的活动",
+  "hint": "椭圆形跑道上有人在跑步和跳绳，两边有观众在挥手，横幅上写着「运动会」。"
+ },
+ {
+  "id": "builtin-activity-13",
+  "tag": "activity",
+  "title": "我的拿手好戏",
+  "lead": "聚光灯下有一架钢琴，我坐在凳子上弹，音符飘在旁边。你最拿手的是什么？",
+  "sceneKey": "my-talent",
+  "sceneLabel": "我的拿手好戏",
+  "hint": "聚光灯下一架钢琴，小孩坐在凳上弹琴，旁边飘着紫色的音符。"
+ },
+ {
+  "id": "builtin-mistake-5",
+  "tag": "mistake",
+  "title": "说出来了",
+  "lead": "我低着头站着，大人蹲下来，跟我平视着说话。承认的那一刻，你心里是什么感觉？",
+  "sceneKey": "lie-truth",
+  "sceneLabel": "说谎与承认",
+  "hint": "屋里一个孩子低着头站着，一个大人蹲下来平视他听他说话，桌上摆着一瓶花。"
+ },
+ {
+  "id": "builtin-mistake-6",
+  "tag": "mistake",
+  "title": "打碎的花瓶",
+  "lead": "地板上散着一堆碎片和几朵花，小猫蹲在角落里看着。接下来你做了什么？",
+  "sceneKey": "broken-vase",
+  "sceneLabel": "打碎花瓶",
+  "hint": "地板上散着一堆青色的花瓶碎片和几朵花，一个孩子站在旁边张大嘴，一只猫蹲在角落。"
+ },
+ {
+  "id": "builtin-mistake-7",
+  "tag": "mistake",
+  "title": "迟到了",
+  "lead": "我背着书包一路飞跑，校门口的钟已经指向八点十分。那天为什么会晚？",
+  "sceneKey": "late",
+  "sceneLabel": "迟到了",
+  "hint": "清晨校门口，一个孩子背着书包飞跑过来，头顶有个钟显示八点十分，远处是学校大门。"
+ },
+ {
+  "id": "builtin-lost-found-4",
+  "tag": "lost-found",
+  "title": "找不到妈妈了",
+  "lead": "街上全是走来走去的大人，我仰着头四处张望，却一个也不认识。那个时候你怕不怕？",
+  "sceneKey": "lost-crowd",
+  "sceneLabel": "找不到妈妈了",
+  "hint": "街上全是走来走去的大人，中间一个矮矮的孩子仰着头四处张望，头上冒出一个对话气泡。"
+ },
+ {
+  "id": "builtin-lost-found-5",
+  "tag": "lost-found",
+  "title": "终于找到妈妈了",
+  "lead": "妈妈蹲下来张开手臂，我一头扑进她怀里。找到的那一刻，你说了什么？",
+  "sceneKey": "found-mom",
+  "sceneLabel": "终于找到了",
+  "hint": "妈妈蹲下来张开手臂，孩子扑进她怀里，两人中间冒出一颗小爱心，周围的人群是模糊的。"
+ },
+ {
+  "id": "builtin-milestone-6",
+  "tag": "milestone",
+  "title": "上台领奖",
+  "lead": "我站在台上举着奖杯，台下的同学都在鼓掌。你最想把这个奖拿给谁看？",
+  "sceneKey": "award",
+  "sceneLabel": "得奖了",
+  "hint": "领奖台上一个孩子举着手，手里捧着一个金色奖杯，台下同学在鼓掌，上方挂着彩旗。"
+ },
+ {
+  "id": "builtin-milestone-7",
+  "tag": "milestone",
+  "title": "搬新家",
+  "lead": "新房间里堆着好几个大纸箱，我抱着自己那个小的。搬到新家的第一晚，你睡得着吗？",
+  "sceneKey": "moving",
+  "sceneLabel": "搬新家",
+  "hint": "空荡荡的新房间里堆着几个大纸箱，一个孩子抱着一个小纸箱，窗帘是粉色的。"
+ },
+ {
+  "id": "builtin-milestone-8",
+  "tag": "milestone",
+  "title": "考试前一夜",
+  "lead": "台灯亮着，课本摊在桌上，墙上的钟走得很慢。考试前一夜，你都在想什么？",
+  "sceneKey": "exam-nervous",
+  "sceneLabel": "考试前夜",
+  "hint": "书桌前一个孩子坐着，桌上堆着课本和台灯，墙上有钟，孩子表情紧张。"
+ },
+ {
+  "id": "builtin-milestone-9",
+  "tag": "milestone",
+  "title": "毕业那天",
+  "lead": "我们几个戴着毕业帽站成一排，有人手里捧着花。你最舍不得谁？",
+  "sceneKey": "graduation",
+  "sceneLabel": "毕业告别",
+  "hint": "三个穿校服戴毕业帽的孩子站成一排，有人拿着花束，上方挂着彩旗。"
+ },
+ {
+  "id": "builtin-milestone-10",
+  "tag": "milestone",
+  "title": "第一次自己睡",
+  "lead": "房间里蓝幽幽的，窗外有月亮和星星，被子鼓起来，只露出一双眼睛。你后来睡着了吗？",
+  "sceneKey": "sleep-alone",
+  "sceneLabel": "第一次独睡",
+  "hint": "夜里蓝幽幽的房间，窗外有月亮和星星，床上的被子鼓起来，只露出一双眼睛。"
+ },
+ {
+  "id": "builtin-milestone-11",
+  "tag": "milestone",
+  "title": "过生日",
+  "lead": "蛋糕上插着五根蜡烛，家人站在两边，屋里挂着彩旗和气球。你许了什么愿？",
+  "sceneKey": "birthday",
+  "sceneLabel": "过生日",
+  "hint": "桌上放着一个插着五根蜡烛的蛋糕，两边站着家人，房间挂着彩旗和气球。"
+ },
+ {
+  "id": "builtin-observe-4",
+  "tag": "observe",
+  "title": "一次小实验",
+  "lead": "烧杯里冒着气泡，滴管往里面滴粉色的液体，我一边看一边记。你猜会变成什么颜色？",
+  "sceneKey": "experiment",
+  "sceneLabel": "小实验",
+  "hint": "桌上有烧杯冒气泡，上方滴管滴着粉色液体，旁边放着记录本，一个小孩在认真观察，头顶有个大问号。"
+ },
+ {
+  "id": "builtin-observe-5",
+  "tag": "observe",
+  "title": "观察日记",
+  "lead": "日记本摊在桌上，旁边那盆蒜头长出了三根绿苗，墙上的日历写着第七天。这几天它变了多少？",
+  "sceneKey": "observe-diary",
+  "sceneLabel": "观察日记",
+  "hint": "桌上放着日记本和铅笔，旁边一盆蒜头瓶里长出三根绿苗，上方有放大镜，墙上日历写着「观察第7天」。"
+ },
+ {
+  "id": "builtin-observe-6",
+  "tag": "observe",
+  "title": "介绍一种事物",
+  "lead": "展示台上放着电脑，旁边标着外形、功能、用途。你想介绍哪一样东西？",
+  "sceneKey": "introduce-thing",
+  "sceneLabel": "介绍一种事物",
+  "hint": "展示台上放着笔记本电脑，旁边有标注线指向「外形」「功能」「用途」，一个小孩在讲。"
+ },
+ {
+  "id": "builtin-letter-4",
+  "tag": "letter",
+  "title": "给亲人写一封信",
+  "lead": "桌上有信封、邮票和信纸，铅笔已经拿在手里了。你最想写给谁？",
+  "sceneKey": "write-letter",
+  "sceneLabel": "写信",
+  "hint": "桌上有信封、邮票和信纸，一支铅笔斜放着，一个小孩在写，头顶飘着一个红色爱心。"
+ },
+ {
+  "id": "builtin-letter-5",
+  "tag": "letter",
+  "title": "读一本好书",
+  "lead": "书架上排满了书，桌上摊开一本，笔记本上已经写了几行。这本书讲了什么？",
+  "sceneKey": "reading-notes",
+  "sceneLabel": "读后感",
+  "hint": "书架上排满了书，桌上翻开一本粉皮书，旁边放着写着「读后感」的笔记本，有个思考气泡。"
+ },
+ {
+  "id": "builtin-look-picture-3",
+  "tag": "look-picture",
+  "title": "仔细看这一幅图",
+  "lead": "墙上挂着一幅画，画的是春天的公园。把你看到的、想到的，按顺序写下来。",
+  "sceneKey": "look-picture-single",
+  "sceneLabel": "看图作文（单图）",
+  "hint": "墙上挂着一张画着春天公园的大图，桌上趴着一个小孩，旁边写着「仔细看图，把看到的、想到的写下来」。"
+ },
+ {
+  "id": "builtin-look-picture-4",
+  "tag": "look-picture",
+  "title": "三幅图，一个故事",
+  "lead": "墙上并排挂着三幅画，中间用箭头连着。它们讲的是一件什么事？",
+  "sceneKey": "look-picture-series",
+  "sceneLabel": "看图作文（连环图）",
+  "hint": "墙上并排挂着三幅小图，中间有箭头连接，画着一个故事的三个场景，桌上有铅笔和纸。"
+ },
+ {
+  "id": "builtin-custom-3",
+  "tag": "custom",
+  "title": "过节了",
+  "lead": "天上挂着灯笼，烟花炸开了，桌上摆着月饼和饺子。你们家过节最热闹的是哪一刻？",
+  "sceneKey": "festival",
+  "sceneLabel": "传统节日",
+  "hint": "天上挂着灯笼和烟花，两座红顶房子中间摆着月饼和饺子，一个穿红衣的小孩在挥手。"
+ },
+ {
+  "id": "builtin-custom-4",
+  "tag": "custom",
+  "title": "家乡的风俗",
+  "lead": "两座老房子之间挂着灯笼和鞭炮，桌上摆着碗和汤圆。你们家乡有什么特别的讲究？",
+  "sceneKey": "hometown-custom",
+  "sceneLabel": "家乡的风俗",
+  "hint": "两座老房子之间挂着灯笼和鞭炮，桌上摆着碗和汤圆，一个穿红衣的小孩在挥手。"
+ },
+ {
+  "id": "builtin-comic-3",
+  "tag": "comic",
+  "title": "一幅漫画的启示",
+  "lead": "墙上挂着四格漫画，每一格都是一个小人。看完你明白了什么道理？",
+  "sceneKey": "comic-inspiration",
+  "sceneLabel": "漫画的启示",
+  "hint": "墙上挂着四格漫画框，每格里有一个不同姿态的小人，桌上一个小孩在看漫画。"
+ },
+ {
+  "id": "builtin-pet-7",
+  "tag": "pet",
+  "title": "晒太阳的猫",
+  "lead": "阳光斜斜地照在地板上，橘猫闭着眼睛趴在光里，旁边滚着一个毛线球。它睡着的时候是什么样子？",
+  "sceneKey": "cat-sun",
+  "sceneLabel": "晒太阳的猫",
+  "hint": "地板上有一道斜斜的阳光，一只橘猫闭着眼睛趴在光里打盹，旁边有毛线球和一盆绿萝。"
+ },
+ {
+  "id": "builtin-pet-8",
+  "tag": "pet",
+  "title": "小狗冲过来了",
+  "lead": "门一开，小狗摇着尾巴朝我冲过来，我张开手。它平时最黏谁？",
+  "sceneKey": "dog-welcome",
+  "sceneLabel": "小狗迎接",
+  "hint": "门开着，一只小狗摇着尾巴朝门口冲过来，一个孩子站在门边张开手，地上有几道速度线。"
+ },
+ {
+  "id": "builtin-pet-9",
+  "tag": "pet",
+  "title": "窗边的小鸟",
+  "lead": "一只蓝色的小鸟停在窗台上，旁边是一盆小植物，我安静地看着它。它待了多久？",
+  "sceneKey": "bird-window",
+  "sceneLabel": "窗边的小鸟",
+  "hint": "窗台上停着一只蓝色的小鸟，旁边放着一盆小植物，一个孩子在窗边安静地看着。"
+ },
+ {
+  "id": "builtin-pet-10",
+  "tag": "pet",
+  "title": "鱼缸里的金鱼",
+  "lead": "两条金鱼在水草间游来游去，缸底铺着彩色石子，水面冒出一串小气泡。它们一天要游多少圈？",
+  "sceneKey": "goldfish",
+  "sceneLabel": "金鱼缸",
+  "hint": "透明玻璃鱼缸里有两条金鱼在游，缸底铺着彩色石子，种着水草，水面上冒着一串小气泡。"
+ },
+ {
+  "id": "builtin-pet-11",
+  "tag": "pet",
+  "title": "小乌龟",
+  "lead": "浅水盆里趴着一只小乌龟，头和四条腿都伸在外面，旁边撒着几粒龟粮。它平时都躲在哪里？",
+  "sceneKey": "turtle",
+  "sceneLabel": "小乌龟",
+  "hint": "浅水盆里趴着一只小乌龟，壳上有六边形花纹，头和四条腿伸在外面，旁边放着几粒龟粮。"
+ },
+ {
+  "id": "builtin-pet-12",
+  "tag": "pet",
+  "title": "国宝大熊猫",
+  "lead": "竹林里，一只胖熊猫坐着啃竹子，黑眼圈、圆耳朵。关于它，你都知道些什么？",
+  "sceneKey": "panda",
+  "sceneLabel": "国宝大熊猫",
+  "hint": "绿竹林里一只胖熊猫坐着吃竹子，黑白毛色，黑眼圈，圆耳朵，旁边牌子写着「国宝大熊猫」。"
+ },
+ {
+  "id": "builtin-pet-13",
+  "tag": "pet",
+  "title": "我的小兔子",
+  "lead": "它竖着两只长耳朵，啃胡萝卜的样子很好笑。它平时最爱吃什么？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-pet-14",
+  "tag": "pet",
+  "title": "学说话的鹦鹉",
+  "lead": "它学着人说话，学得惟妙惟肖。它学会过哪一句？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-plant-5",
+  "tag": "plant",
+  "title": "一盆绿萝",
+  "lead": "书架上的绿萝长得很好，心形的叶子从盆边垂下来，旁边是透光的窗。你是怎么养它的？",
+  "sceneKey": "pothos",
+  "sceneLabel": "绿萝",
+  "hint": "书架上摆着一盆绿萝，心形的叶子从花盆边垂下来，旁边是透光的窗户。"
+ },
+ {
+  "id": "builtin-plant-6",
+  "tag": "plant",
+  "title": "蒲公英飞了",
+  "lead": "一朵白色的蒲公英正在散开，种子顺着风飘向天空。你吹过蒲公英吗？",
+  "sceneKey": "dandelion",
+  "sceneLabel": "蒲公英",
+  "hint": "草地上长着几朵蒲公英，一朵白色的绒球正在散开，种子随风飘向天空。"
+ },
+ {
+  "id": "builtin-plant-7",
+  "tag": "plant",
+  "title": "池塘里的荷花",
+  "lead": "池塘上铺着圆圆的荷叶，一朵荷花正开着，旁边还有一个花苞，蜻蜓停在花尖上。你见过荷花是怎么开的吗？",
+  "sceneKey": "lotus",
+  "sceneLabel": "荷花",
+  "hint": "池塘水面上铺着圆圆的荷叶，一朵粉色荷花盛开着，旁边还有一个花苞，一只蜻蜓停在花尖上。"
+ },
+ {
+  "id": "builtin-plant-8",
+  "tag": "plant",
+  "title": "我的仙人掌",
+  "lead": "花盆里的仙人掌浑身是小刺，顶上却开了一朵小红花。它多久才开一次花？",
+  "sceneKey": "cactus",
+  "sceneLabel": "仙人掌",
+  "hint": "花盆里种着一棵绿色的仙人掌，有圆圆的茎和分枝，身上布满小刺，顶上开着一朵小红花。"
+ },
+ {
+  "id": "builtin-plant-9",
+  "tag": "plant",
+  "title": "窗台上的多肉",
+  "lead": "胖乎乎的叶子挤在一起，晒着太阳。你多久给它浇一次水？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-plant-10",
+  "tag": "plant",
+  "title": "门口的桂花树",
+  "lead": "一到秋天，满树的小花，整条街都香了。你闻到过吗？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-stationery-4",
+  "tag": "stationery",
+  "title": "椅背上的书包",
+  "lead": "书包挂在椅背上，桌上摊着书和铅笔。你的书包里都装了什么？",
+  "sceneKey": "backpack",
+  "sceneLabel": "我的书包",
+  "hint": "教室椅背上挂着一个蓝色书包，桌上摊着书和铅笔，后面是黑板。"
+ },
+ {
+  "id": "builtin-stationery-5",
+  "tag": "stationery",
+  "title": "打开文具盒",
+  "lead": "文具盒一打开，钢笔、铅笔、直尺、橡皮各就各位。哪一件用得最多？",
+  "sceneKey": "pencil-case",
+  "sceneLabel": "文具盒",
+  "hint": "打开的文具盒里躺着钢笔、铅笔、直尺和橡皮，每样文具都整整齐齐地排在格子里。"
+ },
+ {
+  "id": "builtin-stationery-6",
+  "tag": "stationery",
+  "title": "越写越短的铅笔",
+  "lead": "它越写越短，最后只剩下一小截。你舍得扔吗？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-stationery-7",
+  "tag": "stationery",
+  "title": "尺子上的刻度",
+  "lead": "一格一格的刻度，量过很多东西。它量过最长的是什么？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-treasure-8",
+  "tag": "treasure",
+  "title": "外婆的针线盒",
+  "lead": "打开的针线盒里排着五轴彩线，剪刀、顶针、扣子都在。这些东西你见过谁用？",
+  "sceneKey": "sewing-box",
+  "sceneLabel": "针线盒",
+  "hint": "打开的针线盒里排着五轴彩色线，旁边放着剪刀、顶针、针和几颗扣子。"
+ },
+ {
+  "id": "builtin-treasure-9",
+  "tag": "treasure",
+  "title": "掉了耳朵的小熊",
+  "lead": "架子上坐着一只掉了耳朵、打着补丁的小熊，阳光暖暖地照着它。它陪了你多久？",
+  "sceneKey": "old-toy",
+  "sceneLabel": "旧玩具",
+  "hint": "架子上坐着一只掉了耳朵、打着补丁的旧小熊，旁边有相框和小木盒，光线暖暖的。"
+ },
+ {
+  "id": "builtin-treasure-10",
+  "tag": "treasure",
+  "title": "一张旧照片",
+  "lead": "相框里那张照片已经泛黄了，旁边搁着一本书和一支钢笔。照片上是什么地方？",
+  "sceneKey": "old-photo",
+  "sceneLabel": "旧照片",
+  "hint": "相框里是一张泛黄的风景照，相架立在书桌上，旁边搁着一本书和一支钢笔。"
+ },
+ {
+  "id": "builtin-treasure-11",
+  "tag": "treasure",
+  "title": "奶奶的顶针",
+  "lead": "小小的顶针上满是凹坑，奶奶戴了一辈子。你见她用过吗？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-treasure-12",
+  "tag": "treasure",
+  "title": "我的第一张奖状",
+  "lead": "它贴在墙上，边角已经卷起来了。那是哪一次得的奖？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-food-4",
+  "tag": "food",
+  "title": "包饺子",
+  "lead": "案板上一排饺子刚包好，擀面杖和面粉还在旁边，锅里的水开了。你包的那只像什么？",
+  "sceneKey": "dumplings",
+  "sceneLabel": "包饺子",
+  "hint": "案板上排着一排刚包好的饺子，旁边有擀面杖、面粉和一口冒热气的锅，两个人在包。"
+ },
+ {
+  "id": "builtin-food-5",
+  "tag": "food",
+  "title": "一碗热汤面",
+  "lead": "大碗里的面冒着热气，卧着一个鸡蛋，还漂着几根青菜。这碗面是谁做的？",
+  "sceneKey": "noodle-soup",
+  "sceneLabel": "一碗面",
+  "hint": "桌上一只白色大碗，里面是热腾腾的面条、鸡蛋和青菜，旁边搁着一双筷子，窗外有太阳。"
+ },
+ {
+  "id": "builtin-food-6",
+  "tag": "food",
+  "title": "妈妈煮的粥",
+  "lead": "早上起床，桌上有一碗热腾腾的粥。里面都放了什么？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-food-7",
+  "tag": "food",
+  "title": "一根冰棍",
+  "lead": "夏天的午后，冰棍化得比吃得还快。你最喜欢什么口味？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-1",
+  "tag": "life-goods",
+  "title": "我的小台灯",
+  "lead": "每天晚上，它都亮着陪我写作业。它是什么样子的？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-2",
+  "tag": "life-goods",
+  "title": "我家的电风扇",
+  "lead": "天热的时候，它转起来呼呼地响。它给家里带来了什么？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-3",
+  "tag": "life-goods",
+  "title": "下雨天的雨伞",
+  "lead": "雨点打在伞面上，滴滴答答的。这把伞有什么故事？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-4",
+  "tag": "life-goods",
+  "title": "叫我起床的闹钟",
+  "lead": "每天早上，它准时把我叫醒。你喜欢它吗？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-5",
+  "tag": "life-goods",
+  "title": "我的水杯",
+  "lead": "它每天跟着我去上学，里面装满了水。它是什么颜色的？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-6",
+  "tag": "life-goods",
+  "title": "家里的冰箱",
+  "lead": "打开冰箱门，里面整整齐齐地摆着什么？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-7",
+  "tag": "life-goods",
+  "title": "洗衣机转起来了",
+  "lead": "洗衣机轰隆隆地转，衣服在里面翻跟头。你帮妈妈晾过衣服吗？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-8",
+  "tag": "life-goods",
+  "title": "墙角的扫帚",
+  "lead": "墙角立着一把扫帚，扫过很多年。它扫过哪些地方？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-9",
+  "tag": "life-goods",
+  "title": "墙上的挂钟",
+  "lead": "秒针一格一格地走，从来不休息。你盯着它看过吗？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-10",
+  "tag": "life-goods",
+  "title": "家里的遥控器",
+  "lead": "它总是找不到，一找就要找半天。它平时放在哪儿？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-11",
+  "tag": "life-goods",
+  "title": "门边的一串钥匙",
+  "lead": "钥匙挂在门边，走起路来叮叮当当。哪一把是你的？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-12",
+  "tag": "life-goods",
+  "title": "洗手间的镜子",
+  "lead": "每天早上，我都在它面前刷牙洗脸。它照出过什么？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-13",
+  "tag": "life-goods",
+  "title": "我的小拖鞋",
+  "lead": "一进门就换上它，脚底下软软的。它是什么样子的？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-14",
+  "tag": "life-goods",
+  "title": "水开了",
+  "lead": "壶嘴咕嘟咕嘟冒着白气，水开了。你听过这个声音吗？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-15",
+  "tag": "life-goods",
+  "title": "电吹风呼呼地吹",
+  "lead": "洗完头，头发湿漉漉的。妈妈是怎么帮你吹干的？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-16",
+  "tag": "life-goods",
+  "title": "手电筒的光",
+  "lead": "停电的晚上，一道光柱照在墙上。你用它做过什么？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-17",
+  "tag": "life-goods",
+  "title": "会唱歌的收音机",
+  "lead": "爷爷的收音机里，每天放着不一样的声音。你听过吗？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-18",
+  "tag": "life-goods",
+  "title": "门铃响了",
+  "lead": "叮咚一声，是谁来了？你猜过多少次？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-19",
+  "tag": "life-goods",
+  "title": "阳台上的晾衣架",
+  "lead": "一排衣服在风里轻轻晃。哪一件是你的？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-20",
+  "tag": "life-goods",
+  "title": "我的保温杯",
+  "lead": "冬天里，打开盖子还冒着热气。它陪了你多久？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-21",
+  "tag": "life-goods",
+  "title": "我的存钱罐",
+  "lead": "硬币扔进去，叮当一声。你攒了多久了？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-22",
+  "tag": "life-goods",
+  "title": "我的小牙刷",
+  "lead": "它站在杯子里，刷毛有点歪了。你多久换一次？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-23",
+  "tag": "life-goods",
+  "title": "雨天的雨靴",
+  "lead": "踩进水洼里，啪嗒啪嗒的。你喜欢穿它吗？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-24",
+  "tag": "life-goods",
+  "title": "家里的窗帘",
+  "lead": "早上一拉，阳光就涌进来。你喜欢开着还是拉着？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-25",
+  "tag": "life-goods",
+  "title": "鞋柜里的鞋",
+  "lead": "一打开鞋柜，大大小小的鞋排在一起。哪一双最旧？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-26",
+  "tag": "life-goods",
+  "title": "书包上的小挂件",
+  "lead": "书包上挂着一个小挂件，走起路来一晃一晃。它是谁送的？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-27",
+  "tag": "life-goods",
+  "title": "电饭煲冒气了",
+  "lead": "厨房里飘出米饭的香味，锅盖边冒着白气。今天吃什么？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-28",
+  "tag": "life-goods",
+  "title": "空调吹出来的风",
+  "lead": "夏天一进屋，凉风就扑过来。你最喜欢哪个温度？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-29",
+  "tag": "life-goods",
+  "title": "一把旧椅子",
+  "lead": "那把椅子有一条腿短了一截，坐上去会晃。它陪了家里多久？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-life-goods-30",
+  "tag": "life-goods",
+  "title": "我的小书桌",
+  "lead": "桌面上有铅笔印和几道划痕。你在这张桌上写过什么？",
+  "sceneKey": null,
+  "sceneLabel": null,
+  "hint": null
+ },
+ {
+  "id": "builtin-if-i-5",
+  "tag": "if-i",
+  "title": "假如我会飞",
+  "lead": "我背着白色的翅膀飞在半空，脚下是小房子和绿树。你想先飞到哪儿去？",
+  "sceneKey": "fly-sky",
+  "sceneLabel": "假如我会飞",
+  "hint": "一个孩子背着白色的翅膀飞在半空，脚下是小房子和绿树，周围飘着云朵和小鸟。"
+ },
+ {
+  "id": "builtin-if-i-6",
+  "tag": "if-i",
+  "title": "假如我是风",
+  "lead": "我吹过草地，把两棵树吹弯了腰，叶子在空中乱飞。你想吹到哪里去？",
+  "sceneKey": "wind-travel",
+  "sceneLabel": "假如我是风",
+  "hint": "白色的风一道道吹过草地，两棵树被吹得弯了腰，叶子在空中乱飞，一个孩子站在风里。"
+ },
+ {
+  "id": "builtin-future-5",
+  "tag": "future",
+  "title": "未来的学校",
+  "lead": "半圆形的建筑飘在天上，中间连着一条空中走廊。你希望未来的学校多一样什么？",
+  "sceneKey": "future-school",
+  "sceneLabel": "未来的学校",
+  "hint": "天空下飘着几座半圆形的建筑、光环和一条虚线连成的空中走廊，全是抽象的几何形状。"
+ },
+ {
+  "id": "builtin-future-6",
+  "tag": "future",
+  "title": "未来的我",
+  "lead": "我抬头想着，头顶的气泡里出现了一个戴头盔的宇航员。你长大以后想成为谁？",
+  "sceneKey": "future-me",
+  "sceneLabel": "未来的我",
+  "hint": "一个孩子站着抬头看，头顶一个大大的思考气泡，气泡里是一个戴头盔的宇航员。"
+ },
+ {
+  "id": "builtin-future-7",
+  "tag": "future",
+  "title": "时间快进",
+  "lead": "大钟的指针转出一圈圈螺旋，前面是未来城市的影子。你想跳到哪一年去看看？",
+  "sceneKey": "time-travel",
+  "sceneLabel": "时间快进",
+  "hint": "一个大钟表旋出螺旋纹，前方是未来城市的天际线剪影，楼里亮着星星点点的灯。"
+ },
+ {
+  "id": "builtin-future-8",
+  "tag": "future",
+  "title": "我的奇思妙想",
+  "lead": "设计图上画着一双带翅膀的鞋，旁边亮着一个灯泡。你想发明什么？",
+  "sceneKey": "invention",
+  "sceneLabel": "奇思妙想",
+  "hint": "设计图上画着一双带翅膀的鞋和齿轮，旁边有个灯泡亮着，一个小孩趴在桌前画。"
+ },
+ {
+  "id": "builtin-fairy-3",
+  "tag": "fairy",
+  "title": "龟兔赛跑",
+  "lead": "跑道上乌龟还在慢慢往前爬，兔子却靠在树下睡着了。这个故事后来怎么样了？",
+  "sceneKey": "turtle-rabbit",
+  "sceneLabel": "龟兔赛跑",
+  "hint": "跑道上乌龟在慢慢往前爬，兔子靠在树下睡着了，终点插着一面红旗。"
+ },
+ {
+  "id": "builtin-fairy-4",
+  "tag": "fairy",
+  "title": "雪夜里的火柴",
+  "lead": "雪夜的街上只有一个小女孩，她手里那根火柴亮着，旁边的窗户里透着暖黄的灯光。她看到了什么？",
+  "sceneKey": "girl-visit",
+  "sceneLabel": "雪夜的小女孩",
+  "hint": "雪夜的街道上，一个小女孩站着，手里捏着一根发亮的火柴，旁边是一扇透出暖黄灯光的窗。"
+ },
+ {
+  "id": "builtin-fairy-5",
+  "tag": "fairy",
+  "title": "笔尖流出的故事",
+  "lead": "笔记本摊在桌上，铅笔在写，笔尖冒出了一个小人和几点星光。如果笔自己会写，它会写什么？",
+  "sceneKey": "pen-story",
+  "sceneLabel": "笔尖流出的故事",
+  "hint": "桌上摊着一本大笔记本，一支铅笔斜着在写字，笔尖冒出一个小人和星光，旁边有个思考气泡。"
+ },
+ {
+  "id": "builtin-talking-3",
+  "tag": "talking",
+  "title": "会说话的橡皮",
+  "lead": "桌上的粉色橡皮长着一张笑脸，它忽然开口了。它想跟你说什么？",
+  "sceneKey": "eraser-talking",
+  "sceneLabel": "会说话的橡皮",
+  "hint": "桌上放着一块长了笑脸的粉色橡皮，旁边躺着一支铅笔，橡皮上方冒出一个对话气泡。"
+ },
+ {
+  "id": "builtin-talking-4",
+  "tag": "talking",
+  "title": "它们都在说话",
+  "lead": "林间空地上坐着一只猫、一只狗和一只小鸟，每一个头顶都冒出一个对话气泡。它们在聊什么？",
+  "sceneKey": "talk-animals",
+  "sceneLabel": "会说话的动物",
+  "hint": "林间空地上坐着一只猫、一只狗和一只小鸟，每个头顶都有一个对话气泡。"
+ },
+ {
+  "id": "builtin-talking-5",
+  "tag": "talking",
+  "title": "会说话的书包",
+  "lead": "椅背上的蓝书包长着一张笑脸，它开口了，桌上的作业本还没写完。它想说什么？",
+  "sceneKey": "talking-bag",
+  "sceneLabel": "会说话的书包",
+  "hint": "椅背上挂着一个长了笑脸的蓝色书包，旁边冒出一个对话气泡，桌上摊着作业本。"
+ },
+ {
+  "id": "builtin-talking-6",
+  "tag": "talking",
+  "title": "铅笔跑了",
+  "lead": "铅笔从桌上跳下来，一路朝门口跑，橡皮和本子都看呆了。它为什么要跑？",
+  "sceneKey": "pencil-escape",
+  "sceneLabel": "铅笔逃跑",
+  "hint": "一支铅笔从桌上跳下来朝门口跑，身后有几道速度线，桌上有橡皮和本子。"
+ },
+ {
+  "id": "builtin-talking-7",
+  "tag": "talking",
+  "title": "铅笔的历险",
+  "lead": "一支大铅笔站在摊开的巨书上，书页像山谷一样起伏。它在路上遇见了谁？",
+  "sceneKey": "pencil-adventure",
+  "sceneLabel": "铅笔历险",
+  "hint": "一支大铅笔站在一本摊开的巨书上，书页像山谷一样起伏，周围有云和太阳。"
+ },
+ {
+  "id": "builtin-talking-8",
+  "tag": "talking",
+  "title": "铅笔回家了",
+  "lead": "红色笔袋一打开，彩笔和橡皮都挤在里面，那支跑掉的铅笔也回到了队伍里。它们会怎么欢迎它？",
+  "sceneKey": "pencil-home",
+  "sceneLabel": "铅笔回家",
+  "hint": "打开的红色笔袋里挤着好几支彩笔和一块橡皮，那支铅笔也回到了队伍里。"
+ },
+ {
+  "id": "builtin-dream-5",
+  "tag": "dream",
+  "title": "奇怪的梦",
+  "lead": "紫色的天上，房子倒着长，鱼在云里游，我躺在云朵上睡着了。这个梦里还有什么？",
+  "sceneKey": "weird-dream",
+  "sceneLabel": "奇怪的梦",
+  "hint": "紫色的天空下，房子倒着长、鱼在云里游，一个孩子躺在云朵上睡觉，周围飘着气球和风筝。"
+ },
+ {
+  "id": "builtin-sci-fi-4",
+  "tag": "sci-fi",
+  "title": "海底探险",
+  "lead": "蓝色的海水里长着珊瑚和水草，一群小鱼从身边游过，远处还飘着一个潜水头盔。海底藏着什么宝贝？",
+  "sceneKey": "underwater",
+  "sceneLabel": "海底探险",
+  "hint": "蓝色的海水里长着珊瑚和水草，一群小鱼游来游去，水底冒着一串串气泡，远处有个潜水头盔。"
+ },
+ {
+  "id": "builtin-sci-fi-5",
+  "tag": "sci-fi",
+  "title": "飞向带光环的星球",
+  "lead": "黑色的星空里有一颗带光环的星球，火箭拖着火焰从旁边飞过。你在太空里最想看见什么？",
+  "sceneKey": "space",
+  "sceneLabel": "太空旅行",
+  "hint": "黑色星空里有一个带光环的星球，一架火箭拖着火焰在飞，旁边飘着一个穿宇航服的小人。"
+ },
+ {
+  "id": "builtin-sci-fi-6",
+  "tag": "sci-fi",
+  "title": "我的机器人朋友",
+  "lead": "方脑袋的机器人有天线和齿轮关节，它正朝我挥手。你希望它会做什么？",
+  "sceneKey": "robot-friend",
+  "sceneLabel": "机器人朋友",
+  "hint": "方头机器人有天线和齿轮关节，正在和一个孩子挥手，地上散落着螺丝和电池。"
+ },
+ {
+  "id": "builtin-sci-fi-7",
+  "tag": "sci-fi",
+  "title": "插上科学的翅膀",
+  "lead": "深蓝色的太空里，火箭拖着火焰飞，远处是一颗带光环的星球。你想飞到哪儿？",
+  "sceneKey": "sci-fi-fly",
+  "sceneLabel": "插上科学的翅膀飞",
+  "hint": "深蓝色太空中有一架火箭拖着火焰在飞，远处有带光环的星球，旁边飘着一个小宇航员。"
+ },
+ {
+  "id": "builtin-deform-5",
+  "tag": "deform",
+  "title": "假如我变小了",
+  "lead": "巨大的花朵和草丛中间站着一个很小的人，露珠像湖泊一样大。变小以后，你最想做什么？",
+  "sceneKey": "if-tiny",
+  "sceneLabel": "假如我变小了",
+  "hint": "巨大的花朵和草丛中间站着一个很小的人，旁边有一只蚂蚁爬过，露珠像湖泊一样大。"
+ },
+ {
+  "id": "builtin-deform-6",
+  "tag": "deform",
+  "title": "山洞里的探险",
+  "lead": "我打着手电往山洞里走，光柱照到了一个箱子。里面会是什么？",
+  "sceneKey": "adventure-trip",
+  "sceneLabel": "探险之旅",
+  "hint": "山洞入口有一支火把，背着包的小孩打着手电往里走，光束照到一个宝藏箱。"
+ },
+ {
+  "id": "builtin-deform-7",
+  "tag": "deform",
+  "title": "我变成了一只蚂蚁",
+  "lead": "草丛里站着一只巨大的蚂蚁，远处那个小小的人影，是变形以前的我。变成蚂蚁以后会怎么样？",
+  "sceneKey": "deformation",
+  "sceneLabel": "变形记",
+  "hint": "一只巨大的蚂蚁站在草丛中，有触角和六条腿，远处一个很小的人影是变形前的自己。"
+ }
+]

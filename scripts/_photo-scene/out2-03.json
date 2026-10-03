@@ -1,0 +1,60 @@
+{
+  "batch": "03",
+  "items": [
+    {
+      "key": "memory-album",
+      "pexelsId": 6667330,
+      "mediaUrl": "https://images.pexels.com/photos/6667330/pexels-photo-6667330.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Photograph of a Child Looking at a Photo Album with Her Family",
+      "credit": { "link": "https://www.pexels.com/photo/photograph-of-a-child-looking-at-a-photo-album-with-her-family-6667330/", "author": "cottonbro studio" },
+      "verified": { "http": 200, "bytes": 35118 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "孩子坐在沙发上捧着一本摊开的厚相册翻看，页面上能看到贴的照片，身边有家人，室内暖调；相册是摊在膝上而非桌上"
+    },
+    {
+      "key": "lie-truth",
+      "pexelsId": 7078729,
+      "mediaUrl": "https://images.pexels.com/photos/7078729/pexels-photo-7078729.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "A Mother Talking to Her Child",
+      "credit": { "link": "https://www.pexels.com/photo/a-mother-talking-to-her-child-7078729/", "author": "Kampus Production" },
+      "verified": { "http": 200, "bytes": 37618 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "室内，妈妈弯下身凑到孩子平视的高度、握着孩子的手跟站着的孩子说话，孩子低头/侧对镜头；桌上没有那瓶花，成人是俯身而非明显蹲下"
+    },
+    {
+      "key": "late",
+      "pexelsId": 8500353,
+      "mediaUrl": "https://images.pexels.com/photos/8500353/pexels-photo-8500353.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Back View Shot of Students Running to their Classroom",
+      "credit": { "link": "https://www.pexels.com/photo/back-view-shot-of-students-running-to-their-classroom-8500353/", "author": "RDNE Stock project" },
+      "verified": { "http": 200, "bytes": 61740 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "清晨校门口，一群背着书包的孩子背影朝教学楼飞跑，远处是学校大门/台阶，全是背影无正脸；是一群孩子而非单个，头顶没有钟"
+    },
+    {
+      "key": "exam-nervous",
+      "pexelsId": 5303541,
+      "mediaUrl": "https://images.pexels.com/photos/5303541/pexels-photo-5303541.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "A Boy Reading a Book",
+      "credit": { "link": "https://www.pexels.com/photo/a-boy-reading-a-book-5303541/", "author": "Tima Miroshnichenko" },
+      "verified": { "http": 200, "bytes": 36012 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "男孩坐在书桌前，桌上摞着课本、旁边一盏黑色台灯，撑头低头的姿势读着书，室内偏暖光；墙上没有钟，表情是专注而非明显紧张"
+    },
+    {
+      "key": "moving",
+      "pexelsId": 8730053,
+      "mediaUrl": "https://images.pexels.com/photos/8730053/pexels-photo-8730053.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Family with a Stack of Cardboard Boxes in an Empty House",
+      "credit": { "link": "https://www.pexels.com/photo/family-with-a-stack-of-cardboard-boxes-in-an-empty-house-8730053/", "author": "Kampus Production" },
+      "verified": { "http": 200, "bytes": 32535 },
+      "size": { "w": 640, "h": 427, "ar": 1.5 },
+      "verdict": "ok",
+      "note": "空荡荡的新房间里堆着一摞大纸箱，穿红衣的孩子（背影）正把纸箱往上摞、旁边大人递箱，地面是空房；没有粉色窗帘，孩子是搬/摞箱而非抱着小箱"
+    }
+  ]
+}

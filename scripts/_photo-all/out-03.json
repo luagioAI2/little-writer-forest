@@ -1,0 +1,225 @@
+{
+  "batch": "03",
+  "items": [
+    {
+      "landmarkId": "cn-重庆-濯水景区",
+      "match": "scene",
+      "query": "Zhuoshui ancient town Chongqing",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Zhuoshui ancient town Chongqing\", \"Chongqing ancient town river\" — only generic Chongqing city/architecture shots, nothing of Zhuoshui."
+    },
+    {
+      "landmarkId": "cn-重庆-阿依河景区",
+      "match": "scene",
+      "query": "Ayi River Chongqing",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Ayi River Chongqing\" — only Chongqing urban riverside/bridge scenes, no Ayi River."
+    },
+    {
+      "landmarkId": "cn-重庆-龙缸景区",
+      "match": "scene",
+      "query": "Yunyang Chongqing Tiankeng",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Longgang Tiankeng Yunyang\", \"Yunyang Chongqing Tiankeng\" — nothing; Longgang tiankeng only appears as sponsored iStock."
+    },
+    {
+      "landmarkId": "cn-重庆-四面山景区",
+      "match": "scene",
+      "query": "Simian Mountain Chongqing",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Simian Mountain Chongqing\" — only unrelated Chongqing city and Wulong shots."
+    },
+    {
+      "landmarkId": "cn-重庆-金佛山景区",
+      "match": "scene",
+      "query": "Jinfo Mountain",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Jinfo Mountain\", \"Jinfo Mountain Chongqing\" — generic peaks only; Jinfo-specific hits are sponsored iStock."
+    },
+    {
+      "landmarkId": "cn-重庆-万盛黑山谷-龙鳞石海风景区",
+      "match": "scene",
+      "query": "Heishan Valley Chongqing",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Heishan Valley Chongqing\", \"Heishangu Chongqing valley\" — no Heishan Valley / Longlin Stone Sea photos."
+    },
+    {
+      "landmarkId": "cn-重庆-桃花源旅游景区",
+      "match": "scene",
+      "query": "Taohuayuan Chongqing",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Taohuayuan Chongqing\" — the Youyang Taohuayuan shot on Pexels is a sponsored iStock ad, unusable."
+    },
+    {
+      "landmarkId": "cn-重庆-喀斯特旅游区",
+      "match": "place",
+      "query": "Wulong Karst Chongqing",
+      "mediaUrl": "https://images.pexels.com/photos/5790237/pexels-photo-5790237.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Aerial view on Wulong Karst in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/aerial-view-on-wulong-karst-in-china-5790237/", "author": "Teddy" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 197303 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-重庆-小三峡－小小三峡旅游区",
+      "match": "scene",
+      "query": "Lesser Three Gorges Wushan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Lesser Three Gorges Wushan\", \"Wushan Chongqing Yangtze\" — only Three Gorges Dam (Yichang) and Chongqing city, not Wushan Lesser Three Gorges."
+    },
+    {
+      "landmarkId": "cn-重庆-大足石刻景区",
+      "match": "scene",
+      "query": "Dazu Rock Carvings",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Dazu Rock Carvings\", \"Dazu Chongqing\", \"Dazu rock carvings Buddha Chongqing\" — Dazu-specific results are all sponsored iStock; free carvings are Longmen/Yungang/Leshan (other places)."
+    },
+    {
+      "landmarkId": "cn-重庆-长江索道",
+      "match": "place",
+      "query": "Yangtze River cableway Chongqing",
+      "mediaUrl": "https://images.pexels.com/photos/14062542/pexels-photo-14062542.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Yangtze River Cableway Aerial Tramway in Downtown Chongqing",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/yangtze-river-cableway-aerial-tramway-in-downtown-chongqing-14062542/", "author": "Anita Fan" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 24130 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-河北-衡水湖旅游景区",
+      "match": "scene",
+      "query": "Hengshui Lake Hebei",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Hengshui Lake Hebei\", \"Hengshui Hebei\" — generic lakes only; no Hengshui Lake wetland photos."
+    },
+    {
+      "landmarkId": "cn-河北-南湖·开滦旅游景区",
+      "match": "scene",
+      "query": "Tangshan Nanhu park",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Tangshan Nanhu park\" — only generic lakeside parks; Tangshan Nanhu appears only as sponsored iStock."
+    },
+    {
+      "landmarkId": "cn-河北-金山岭长城景区",
+      "match": "scene",
+      "query": "Jinshanling Great Wall",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Jinshanling Great Wall\", \"Jinshanling\", \"Jinshanling Great Wall Hebei\" — free results are unnamed Great Wall sections (can't verify as Jinshanling); the Jinshanling-labelled shots are all sponsored iStock."
+    },
+    {
+      "landmarkId": "cn-河北-清西陵景区",
+      "match": "scene",
+      "query": "Western Qing Tombs",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Western Qing Tombs\", \"Qing Xi Ling Hebei\" — only Beijing/Forbidden City architecture, nothing of the Western Qing Tombs."
+    },
+    {
+      "landmarkId": "cn-河北-山海关景区",
+      "match": "place",
+      "query": "Shanhaiguan",
+      "mediaUrl": "https://images.pexels.com/photos/39026491/pexels-photo-39026491.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Historic beacon tower on Laolongtou Great Wall",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/historic-beacon-tower-on-laolongtou-great-wall-39026491/", "author": "Mingche Lee" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 53695 },
+      "verdict": "ok",
+      "note": ""
+    },
+    {
+      "landmarkId": "cn-河北-白石山景区",
+      "match": "scene",
+      "query": "Baishi Mountain Hebei",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Baishi Mountain Hebei\", \"Baishishan China\" — best candidate is an unnamed rocky peak; nothing confirmably Baishi Mountain."
+    },
+    {
+      "landmarkId": "cn-河北-广府古城景区",
+      "match": "scene",
+      "query": "Guangfu ancient city",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Guangfu ancient city Handan\", \"Guangfu ancient city\" — only generic Chinese ancient towns (Hongcun, etc.), no Guangfu."
+    },
+    {
+      "landmarkId": "cn-河北-娲皇宫景区",
+      "match": "scene",
+      "query": "Nuwa Palace Handan",
+      "mediaUrl": "",
+      "title": "",
+      "credit": null,
+      "verified": null,
+      "verdict": "ok",
+      "note": "Tried \"Nuwa Palace Handan\" — only unrelated temples; no Nuwa Palace (Shexian) photos."
+    },
+    {
+      "landmarkId": "cn-河北-清东陵景区",
+      "match": "place",
+      "query": "Qing Xi Ling Hebei",
+      "mediaUrl": "https://images.pexels.com/photos/7009619/pexels-photo-7009619.jpeg?auto=compress&cs=tinysrgb&w=640",
+      "title": "Square in Qing Dong Ling in China",
+      "credit": { "source": "Pexels", "link": "https://www.pexels.com/photo/square-in-qing-dong-ling-in-china-7009619/", "author": "Peter Lopez" },
+      "verified": { "http": 200, "type": "image/jpeg", "bytes": 40740 },
+      "verdict": "ok",
+      "note": ""
+    }
+  ]
+}

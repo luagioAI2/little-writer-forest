@@ -1,0 +1,162 @@
+[
+  {
+    "id": "world-德国-柏林墙",
+    "name": "柏林墙",
+    "province": "德国",
+    "country": "德国",
+    "scene": "city",
+    "en": "Berlin Wall"
+  },
+  {
+    "id": "world-德国-黑森林",
+    "name": "黑森林",
+    "province": "德国",
+    "country": "德国",
+    "scene": "forest",
+    "en": "Black Forest"
+  },
+  {
+    "id": "world-德国-海德堡城堡",
+    "name": "海德堡城堡",
+    "province": "德国",
+    "country": "德国",
+    "scene": "city",
+    "en": "Heidelberg Castle"
+  },
+  {
+    "id": "world-俄罗斯-圣瓦西里大教堂",
+    "name": "圣瓦西里大教堂",
+    "province": "俄罗斯",
+    "country": "俄罗斯",
+    "scene": "temple",
+    "en": "Saint Basil's Cathedral"
+  },
+  {
+    "id": "world-巴西-科帕卡巴纳海滩",
+    "name": "科帕卡巴纳海滩",
+    "province": "巴西",
+    "country": "巴西",
+    "scene": "coast",
+    "en": "Copacabana, Rio de Janeiro"
+  },
+  {
+    "id": "world-巴西-潘塔纳尔湿地",
+    "name": "潘塔纳尔湿地",
+    "province": "巴西",
+    "country": "巴西",
+    "scene": "water",
+    "en": "Pantanal"
+  },
+  {
+    "id": "world-南非-克尼斯纳",
+    "name": "克尼斯纳",
+    "province": "南非",
+    "country": "南非",
+    "scene": "coast",
+    "en": "Knysna"
+  },
+  {
+    "id": "world-新西兰-罗托鲁瓦",
+    "name": "罗托鲁瓦",
+    "province": "新西兰",
+    "country": "新西兰",
+    "scene": "water",
+    "en": "Rotorua"
+  },
+  {
+    "id": "world-新西兰-库克山",
+    "name": "库克山",
+    "province": "新西兰",
+    "country": "新西兰",
+    "scene": "snow",
+    "en": "Aoraki / Mount Cook"
+  },
+  {
+    "id": "world-印度尼西亚-科莫多岛",
+    "name": "科莫多岛",
+    "province": "印度尼西亚",
+    "country": "印度尼西亚",
+    "scene": "coast",
+    "en": "Komodo (island)"
+  },
+  {
+    "id": "world-以色列-耶路撒冷老城",
+    "name": "耶路撒冷老城",
+    "province": "以色列",
+    "country": "以色列",
+    "scene": "temple",
+    "en": "Old City of Jerusalem"
+  },
+  {
+    "id": "world-阿联酋-棕榈岛",
+    "name": "棕榈岛",
+    "province": "阿联酋",
+    "country": "阿联酋",
+    "scene": "coast",
+    "en": "Palm Jumeirah"
+  },
+  {
+    "id": "world-西班牙-塞维利亚大教堂",
+    "name": "塞维利亚大教堂",
+    "province": "西班牙",
+    "country": "西班牙",
+    "scene": "temple",
+    "en": "Seville Cathedral"
+  },
+  {
+    "id": "world-西班牙-古埃尔公园",
+    "name": "古埃尔公园",
+    "province": "西班牙",
+    "country": "西班牙",
+    "scene": "city",
+    "en": "Park Güell"
+  },
+  {
+    "id": "world-西班牙-圣地亚哥朝圣教堂",
+    "name": "圣地亚哥朝圣教堂",
+    "province": "西班牙",
+    "country": "西班牙",
+    "scene": "temple",
+    "en": "Santiago de Compostela Cathedral"
+  },
+  {
+    "id": "world-瑞士-卢塞恩湖",
+    "name": "卢塞恩湖",
+    "province": "瑞士",
+    "country": "瑞士",
+    "scene": "water",
+    "en": "Lake Lucerne"
+  },
+  {
+    "id": "world-奥地利-维也纳国家歌剧院",
+    "name": "维也纳国家歌剧院",
+    "province": "奥地利",
+    "country": "奥地利",
+    "scene": "city",
+    "en": "Vienna State Opera"
+  },
+  {
+    "id": "world-希腊-德尔斐",
+    "name": "德尔斐",
+    "province": "希腊",
+    "country": "希腊",
+    "scene": "temple",
+    "en": "Delphi"
+  },
+  {
+    "id": "world-捷克-克鲁姆洛夫",
+    "name": "克鲁姆洛夫",
+    "province": "捷克",
+    "country": "捷克",
+    "scene": "city",
+    "en": "Český Krumlov"
+  },
+  {
+    "id": "world-加拿大-魁北克老城",
+    "name": "魁北克老城",
+    "province": "加拿大",
+    "country": "加拿大",
+    "scene": "city",
+    "en": "Old Quebec"
+  }
+]

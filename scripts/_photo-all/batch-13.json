@@ -1,0 +1,201 @@
+[
+  {
+    "id": "cn-湖北-东湖景区",
+    "name": "东湖景区",
+    "province": "湖北",
+    "country": "中国",
+    "city": "武汉",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-清江画廊景区",
+    "name": "清江画廊景区",
+    "province": "湖北",
+    "country": "中国",
+    "city": "宜昌",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-神农架生态旅游区",
+    "name": "神农架生态旅游区",
+    "province": "湖北",
+    "country": "中国",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-神农溪纤夫文化旅游区",
+    "name": "神农溪纤夫文化旅游区",
+    "province": "湖北",
+    "country": "中国",
+    "city": "恩施州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-武当山风景区",
+    "name": "武当山风景区",
+    "province": "湖北",
+    "country": "中国",
+    "city": "十堰",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-三峡人家风景区",
+    "name": "三峡人家风景区",
+    "province": "湖北",
+    "country": "中国",
+    "city": "宜昌",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-三峡大坝－屈原故里文化旅游区",
+    "name": "三峡大坝－屈原故里文化旅游区",
+    "province": "湖北",
+    "country": "中国",
+    "city": "宜昌",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-湖北-黄鹤楼公园",
+    "name": "黄鹤楼公园",
+    "province": "湖北",
+    "country": "中国",
+    "city": "武汉",
+    "rating": "5A",
+    "scene": "grass",
+    "en": ""
+  },
+  {
+    "id": "cn-湖南-凤凰古城旅游区",
+    "name": "凤凰古城旅游区",
+    "province": "湖南",
+    "country": "中国",
+    "city": "湘西州",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-湖南-矮寨·十八洞•德夯大峡谷景区",
+    "name": "矮寨·十八洞•德夯大峡谷景区",
+    "province": "湖南",
+    "country": "中国",
+    "city": "湘西州",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-湖南-桃花源旅游区",
+    "name": "桃花源旅游区",
+    "province": "湖南",
+    "country": "中国",
+    "city": "常德",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-湖南-炎帝陵景区",
+    "name": "炎帝陵景区",
+    "province": "湖南",
+    "country": "中国",
+    "city": "株洲",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-湖南-崀山景区",
+    "name": "崀山景区",
+    "province": "湖南",
+    "country": "中国",
+    "city": "邵阳",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-湖南-东江湖旅游区",
+    "name": "东江湖旅游区",
+    "province": "湖南",
+    "country": "中国",
+    "city": "郴州",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-湖南-花明楼景区",
+    "name": "花明楼景区",
+    "province": "湖南",
+    "country": "中国",
+    "city": "长沙",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-湖南-岳麓山-橘子洲旅游区",
+    "name": "岳麓山-橘子洲旅游区",
+    "province": "湖南",
+    "country": "中国",
+    "city": "长沙",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-湖南-岳阳楼－君山岛景区",
+    "name": "岳阳楼－君山岛景区",
+    "province": "湖南",
+    "country": "中国",
+    "city": "岳阳",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-湖南-韶山旅游区",
+    "name": "韶山旅游区",
+    "province": "湖南",
+    "country": "中国",
+    "city": "湘潭",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-湖南-衡山旅游区",
+    "name": "衡山旅游区",
+    "province": "湖南",
+    "country": "中国",
+    "city": "衡阳",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-湖南-武陵源－天门山旅游区",
+    "name": "武陵源－天门山旅游区",
+    "province": "湖南",
+    "country": "中国",
+    "city": "张家界",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  }
+]

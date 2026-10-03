@@ -1,0 +1,202 @@
+[
+  {
+    "id": "cn-内蒙古-中俄边境旅游区",
+    "name": "中俄边境旅游区",
+    "province": "内蒙古",
+    "country": "中国",
+    "city": "呼伦贝尔",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-内蒙古-成吉思汗陵旅游区",
+    "name": "成吉思汗陵旅游区",
+    "province": "内蒙古",
+    "country": "中国",
+    "city": "鄂尔多斯",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-内蒙古-响沙湾旅游景区",
+    "name": "响沙湾旅游景区",
+    "province": "内蒙古",
+    "country": "中国",
+    "city": "鄂尔多斯",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-辽宁-五女山景区",
+    "name": "五女山景区",
+    "province": "辽宁",
+    "country": "中国",
+    "city": "本溪",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-辽宁-红海滩风景廊道景区",
+    "name": "红海滩风景廊道景区",
+    "province": "辽宁",
+    "country": "中国",
+    "city": "盘锦",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-辽宁-千山景区",
+    "name": "千山景区",
+    "province": "辽宁",
+    "country": "中国",
+    "city": "鞍山",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-辽宁-本溪水洞景区",
+    "name": "本溪水洞景区",
+    "province": "辽宁",
+    "country": "中国",
+    "city": "本溪",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-辽宁-金石滩景区",
+    "name": "金石滩景区",
+    "province": "辽宁",
+    "country": "中国",
+    "city": "大连",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-辽宁-老虎滩海洋公园—老虎滩极地馆",
+    "name": "老虎滩海洋公园—老虎滩极地馆",
+    "province": "辽宁",
+    "country": "中国",
+    "city": "大连",
+    "rating": "5A",
+    "scene": "coast",
+    "en": ""
+  },
+  {
+    "id": "cn-辽宁-沈阳植物园",
+    "name": "沈阳植物园",
+    "province": "辽宁",
+    "country": "中国",
+    "city": "沈阳",
+    "rating": "5A",
+    "scene": "forest",
+    "en": ""
+  },
+  {
+    "id": "cn-辽宁-沈阳故宫",
+    "name": "沈阳故宫",
+    "province": "辽宁",
+    "country": "中国",
+    "city": "沈阳",
+    "rating": "4A",
+    "scene": "temple",
+    "en": ""
+  },
+  {
+    "id": "cn-吉林-大安嫩江湾旅游区",
+    "name": "大安嫩江湾旅游区",
+    "province": "吉林",
+    "country": "中国",
+    "city": "白城",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-吉林-前郭查干湖景区",
+    "name": "前郭查干湖景区",
+    "province": "吉林",
+    "country": "中国",
+    "city": "松原",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-吉林-高句丽文物古迹旅游景区",
+    "name": "高句丽文物古迹旅游景区",
+    "province": "吉林",
+    "country": "中国",
+    "city": "通化",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-吉林-世界雕塑公园景区",
+    "name": "世界雕塑公园景区",
+    "province": "吉林",
+    "country": "中国",
+    "city": "长春",
+    "rating": "5A",
+    "scene": "grass",
+    "en": ""
+  },
+  {
+    "id": "cn-吉林-六鼎山文化旅游区",
+    "name": "六鼎山文化旅游区",
+    "province": "吉林",
+    "country": "中国",
+    "city": "延边州",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  },
+  {
+    "id": "cn-吉林-长影世纪城景区",
+    "name": "长影世纪城景区",
+    "province": "吉林",
+    "country": "中国",
+    "city": "长春",
+    "rating": "5A",
+    "scene": "city",
+    "en": ""
+  },
+  {
+    "id": "cn-吉林-净月潭景区",
+    "name": "净月潭景区",
+    "province": "吉林",
+    "country": "中国",
+    "city": "长春",
+    "rating": "5A",
+    "scene": "water",
+    "en": ""
+  },
+  {
+    "id": "cn-吉林-伪满皇宫博物馆",
+    "name": "伪满皇宫博物馆",
+    "province": "吉林",
+    "country": "中国",
+    "city": "长春",
+    "rating": "5A",
+    "scene": "temple",
+    "en": ""
+  },
+  {
+    "id": "cn-吉林-长白山景区",
+    "name": "长白山景区",
+    "province": "吉林",
+    "country": "中国",
+    "city": "延边朝鲜族自治州",
+    "rating": "5A",
+    "scene": "mountain",
+    "en": ""
+  }
+]
