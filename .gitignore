@@ -58,6 +58,10 @@ shots-empty/
 dist-apk/
 # 打包脚本把成品直接写在**项目根目录**（见 scripts/build-apk.sh 第 4 步）
 /*.apk
+# ⚠️ `/*.apk` 只管**根目录**，盖不住子目录 —— 落地页那份副本在 website/download/ 下，
+#    2026-10-03 因此被提交进了库（9.1MB，还跟着一次「换新包」= 两份 blob，占仓库 85%）。
+#    现在 APK 一律走 GitHub Release 存，仓库里不再放包。
+/website/download/*.apk
 
 # ---- 根目录的探针 / 调试产物（用完即弃，不入库）----
 # ⚠️ 这些只清"产物"。scripts/ 下的 _probe-*.mjs / _verify-*.mjs 是**要入库的**：
