@@ -25,7 +25,10 @@
 ★★ **不做没被要求的事** —— 额外发现的 bug **先报告、等确认**。★★ **不许 build / 打 APK / 部署 / 提交**。
 
 ## 八、验证基线 → **完整数字与坑见 `MEMORY-ENV.md`**
-`npm run lint` **0 error / 12 warning**（= 类型检查）；`npx vitest run` **45 files / 928 passed + 0 failed + 0 skipped**（10-02 深夜；45 = 47 − 删掉 `transcribe-e2e` / `transcribe-bench` 两个只测「整包上传」的夹具；**10 skipped 一起没了**，因为那 10 条就住在被删的两个文件里）。★ 改 `boot()`/编辑器要跑**全部**吃它的守卫。★★ **改「存进 IndexedDB 的字段名」必须同时加读侧迁移，且每条读路径各写一条守卫**（10-01 栽过，见 `MEMORY-TOOLS.md` §十五点五）。
+`npm run lint` **0 error / 12 warning**（= 类型检查）；`npx vitest run` **45 files / 934 passed + 0 failed + 0 skipped**（10-04；10-02 深夜是 928，之后「网页不给云端转写」那条加了 6 条守卫 → 934；45 = 47 − 删掉 `transcribe-e2e` / `transcribe-bench` 两个只测「整包上传」的夹具；**10 skipped 一起没了**，因为那 10 条就住在被删的两个文件里）。★ 改 `boot()`/编辑器要跑**全部**吃它的守卫。★★ **改「存进 IndexedDB 的字段名」必须同时加读侧迁移，且每条读路径各写一条守卫**（10-01 栽过，见 `MEMORY-TOOLS.md` §十五点五）。
+★ **平板 / 大屏体检：`node scripts/_probe-tablet.mjs`**（先起 dev server；`E2E_ONLY=1366` 只量一档做 A/B）。
+  量内容列占比 / 横向溢出 / 底栏占比 / 点击区，并**打印越界元素**。手机档的「零变化」要用
+  `git stash push -- src/` 做 A/B **证明**，别靠推理。布局宽度统一走 `.page-col`（`src/styles/theme.css`）。
 
 ## 九、本地「编辑指令识别」已冻结 → L§十一
 一行不删，但**不再修枚举缺口**（`voiceEdit.ts` 的 `parseEditIntent` + 正则表）。**`applyEdit` 必须留**。
