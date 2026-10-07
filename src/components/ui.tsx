@@ -586,16 +586,16 @@ export function Sheet({
 
   return (
     <Portal>
-      <div className="fixed inset-0 z-50 flex items-end justify-center">
+      <div className="fixed inset-0 z-50 flex items-end justify-center md:items-center md:p-6">
         <button
           type="button"
           aria-label="关闭"
           onClick={onClose}
-          className="absolute inset-0 bg-ink-950/40 backdrop-blur-[3px]"
+          className="fixed inset-0 bg-ink-950/40 backdrop-blur-[3px]"
         />
-        <div className="relative z-10 flex max-h-[88vh] w-full max-w-2xl flex-col rounded-t-[1.375rem] bg-paper shadow-[var(--shadow-tier-4)] anim-rise-in">
-          <div className="mx-auto mt-2.5 h-1 w-9 shrink-0 rounded-pill bg-ink-200" />
-          <div className="flex items-center gap-2 px-5 pb-3 pt-2.5">
+        <div className="relative z-10 flex max-h-[88vh] w-full max-w-2xl flex-col rounded-t-[1.375rem] bg-paper shadow-[var(--shadow-tier-4)] anim-rise-in md:max-h-[80vh] md:rounded-2xl">
+          <div className="mx-auto mt-2.5 h-1 w-9 shrink-0 rounded-pill bg-ink-200 md:hidden" />
+          <div className="flex items-center gap-2 px-5 pb-3 pt-2.5 md:pt-5">
             <h2 className="min-w-0 flex-1 truncate font-display text-lg font-bold tracking-tight text-ink-900">
               {title}
             </h2>

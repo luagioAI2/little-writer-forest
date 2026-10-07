@@ -324,7 +324,7 @@ export default function App() {
       className={
         immersive
           ? 'scene-ink relative flex min-h-screen flex-col'
-          : 'relative mx-auto flex min-h-screen max-w-2xl flex-col'
+          : 'relative flex min-h-screen flex-col'
       }
     >
       {showSettings ? (
@@ -332,7 +332,7 @@ export default function App() {
       ) : showWorkbook ? (
         <div className="flex min-h-screen flex-col">
           <SubHeader title="我的作文本" onBack={() => setShowWorkbook(false)} />
-          <main className="flex-1">
+          <main className="page-col flex-1">
             <WorkbookPage />
           </main>
         </div>
@@ -341,7 +341,7 @@ export default function App() {
           {/* ---------------- 顶部状态条（沉浸时让位） ---------------- */}
           {!immersive && (
             <header className="sticky top-0 z-30 border-b border-ink-900/[0.06] bg-paper/92 backdrop-blur-md pt-safe">
-            <div className="flex items-center gap-3 px-4 py-2.5">
+            <div className="page-col flex items-center gap-3 px-4 py-2.5">
               {/* 段位徽记 */}
               <div className="relative grid h-10 w-10 shrink-0 place-items-center">
                 <span
@@ -394,14 +394,14 @@ export default function App() {
               注意这里**没有** key={tab}。早先的写法是 <main key={tab}>，
               那会让每次切 Tab 都重建整棵子树 —— 现在改由页面自己管理，
               Tab 之间的切换不再吞掉沉浸态里的写作进度。 */}
-          <main className="flex flex-1 flex-col anim-fade-in">
+          <main className="page-col flex flex-1 flex-col anim-fade-in">
             <ErrorBoundary resetKey={tab}>{page}</ErrorBoundary>
           </main>
 
           {/* ---------------- 底部导航（沉浸时让位） ---------------- */}
           {!immersive && (
             <nav className="sticky bottom-0 z-30 border-t border-ink-900/[0.06] bg-paper/92 backdrop-blur-md pb-safe">
-              <div className="mx-auto flex max-w-2xl items-stretch px-2 py-1.5">
+              <div className="page-col flex items-stretch justify-center px-2 py-1.5">
                 {TABS.map((t) => {
                   const active = tab === t.key
                   return (
@@ -414,7 +414,7 @@ export default function App() {
                         setTab(t.key)
                       }}
                       aria-current={active ? 'page' : undefined}
-                      className={`btn-base active:btn-press flex min-h-[54px] flex-1 flex-col items-center justify-center gap-1 rounded-lg py-1.5 ${
+                      className={`btn-base active:btn-press flex min-h-[54px] max-w-[7.5rem] flex-1 flex-col items-center justify-center gap-1 rounded-lg py-1.5 ${
                         active ? 'text-inkleaf-700' : 'text-ink-400'
                       }`}
                     >
@@ -440,13 +440,17 @@ export default function App() {
 
 export function SubHeader({ title, onBack }: { title: string; onBack: () => void }) {
   return (
-    <header className="sticky top-0 z-30 flex items-center gap-3 border-b border-ink-900/[0.06] bg-paper/92 px-4 py-2.5 backdrop-blur-md pt-safe">
-      <IconButton ariaLabel="返回" onClick={onBack} size={38}>
-        <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-          <path d="M15 5l-7 7 7 7" />
-        </svg>
-      </IconButton>
-      <span className="font-display text-lg font-bold tracking-tight text-ink-900">{title}</span>
+    <header className="sticky top-0 z-30 border-b border-ink-900/[0.06] bg-paper/92 px-4 py-2.5 backdrop-blur-md pt-safe">
+      {/* ★ 顶栏通栏、内容收进内容列：平板上原来是「中间悬着一条 672px 的横条」，
+          两边各空一大块。padding 仍留在 header 上，所以垂直尺寸一个像素都不变。 */}
+      <div className="page-col flex items-center gap-3">
+        <IconButton ariaLabel="返回" onClick={onBack} size={38}>
+          <svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <path d="M15 5l-7 7 7 7" />
+          </svg>
+        </IconButton>
+        <span className="font-display text-lg font-bold tracking-tight text-ink-900">{title}</span>
+      </div>
     </header>
   )
 }

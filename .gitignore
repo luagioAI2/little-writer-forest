@@ -53,6 +53,8 @@ screenshots/
 # 走查/取景用的截图目录（同上，体积大，不入库）
 shots/
 shots-empty/
+# 平板体检的截图（scripts/_probe-tablet.mjs 的产物；SHOT_DIR 可改名，A/B 时用）
+shots-*/
 
 # 打包出来的 APK 副本（供直接分发，体积大不入库）
 dist-apk/

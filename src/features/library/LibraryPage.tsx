@@ -202,7 +202,7 @@ export default function LibraryPage(): ReactElement {
   /* ---------------- 渲染 ---------------- */
 
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-4 px-4 pt-safe pb-safe">
+    <div className="page-col space-y-4 px-4 pt-safe pb-safe">
       {/* ---------- 标题 ---------- */}
       <SectionTitle
         icon={<IconBook size={17} />}

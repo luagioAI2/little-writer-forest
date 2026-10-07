@@ -421,7 +421,7 @@ export default function SettingsPage({ onBack }: { onBack: () => void }): ReactE
     return (
       <div className="flex min-h-screen flex-col">
         <SubHeader title="系统作文题库" onBack={() => setShowLibrary(false)} />
-        <main className="flex-1">
+        <main className="page-col flex-1">
           <LibraryPage />
         </main>
       </div>
@@ -444,7 +444,7 @@ export default function SettingsPage({ onBack }: { onBack: () => void }): ReactE
   }
 
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-4 px-4 pt-safe pb-safe">
+    <div className="page-col space-y-4 px-4 pt-safe pb-safe">
       {/* ---------- 返回 ---------- */}
       <div className="flex items-center gap-2">
         <Button tone="ghost" onClick={onBack} ariaLabel="返回">
