@@ -71,3 +71,11 @@
 - ★★★ **iframe 里的 `beforeunload` 弹不出对话框**（浏览器只给顶层弹）→ 子页那两份守卫**嵌进来就废了**。➜ 子页 postMessage `{type:'lw-tool-dirty', tool, dirty}` 给父页，**父页汇总起来守**；子页嵌进去时主动 `if (EMBEDDED) return`。⚠️ 判据 `window.parent !== window`，**不加 URL 参数**。★★ 三层链路也要守：抽屉里的编辑器改一个字，**最外层**标签得亮，**且中间那一层也得亮**。★★ **这个 e2e 全程不写盘**：用「改一个字 → 看圆点亮 → 按**恢复原文**」造脏，末尾断言数据文件字节没变。
 - ★★ **协议是跨三个文件的字符串，没有类型检查** → 改名一处就静默断线（只是圆点不亮）。守卫：`src/domain/contentConfig.test.ts`（**6** 条，读**钩子**不读文案）+ `_verify-content-config.mjs`（**43** 条）。★ 「标签按钮的 `data-tool` 必须和 `TOOLS` 一一对应」—— 多一个 = **点它什么都不发生**。
 - ★★ **"脏"状态只许有一个出口**：`landmarks-browse` 抽 `setDrawerDirty()`；`library-browse` 的 `reportDirty()` **只在 `renderStats()` 末尾调**。⚠️ **`.dot[hidden]` 要自己补**（作者 `display:inline-block` 会盖掉 UA 的 `[hidden]{display:none}` → 圆点永远亮、不报错）。⚠️ 初次进页面用 `history.replaceState` 补 hash，**别写 `location.hash =`**。
+
+## 十八、打包与发布（APK → GitHub Release）
+- ★★ **版本号有 4 个落点，漏一个不报错**：`package.json` 的 `version`、`package-lock.json` 的根 `version` **和** `packages[""].version`（两处）、`android/app/build.gradle` 的 `versionCode`/`versionName`、以及 **`src/features/settings/SettingsPage.tsx` 的 `APP_VERSION`（设置页上显示的就是它）**。⚠️ `npm version X --no-git-tag-version` 在 version 已等于 X 时报 `Version not changed` 且**不更新 lockfile**。★ 改完用 `aapt2 dump badging 小笔苗-debug.apk` 确认**包内**版本 —— 只改源码、没进包，同样不报错。
+- ★★ **发的是 debug 包，不是 release 包**：`npm run apk:release` 产出 `app-release-unsigned.apk`，**没签名装不上**。v1.0.0 / v1.0.1 发的都是 `npm run apk` 的产物。
+- ★★ **资产名必须叫 `xiaobimiao-android.apk`**：落地页 `website/index.html` 写死了 `/releases/latest/download/xiaobimiao-android.apk`（4 处引用）。发一个**非 draft、非 prerelease** 的 release，落地页**自动切到新包**、不用改网页；⚠️ 存成 draft 则 `/releases/latest` 不切，落地页会**继续发旧包**。
+- ★★ **本机没有 `gh` CLI**（也没有 `GH_TOKEN`）：令牌在 `~/.git-credentials`，两条 github.com 里**只有 `gho_…`（login=`luagioAI2`）有 push+admin**，`ghp_…`（`luagio523`）没有。判据是 `GET /user` 看 login + 读该 repo 的 `permissions.push`。★ 创建 release / 上传资产走 **7897 代理**可用（`api.github.com` 与 `uploads.github.com` 都通）；`git push` 反而要**直连**（unset proxy）。⚠️ 旧记忆里「7897 的 api.github.com 是 000」**已过时**。
+- ★ **发完必须下载回来对 sha256**（本次 6558221 字节、与本地 `小笔苗-debug.apk` 逐字节相同）—— 「上传成功」和「传上去的是这份」是两件事。
+- ★ 本次全流程实测见 `2026-10-12.md`；打包脚本自身的坑（安全删除垫片、gradle 那句假报错）见 `README.md`「打包安卓 APK」。
