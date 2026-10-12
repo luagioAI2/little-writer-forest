@@ -59,11 +59,55 @@ import { haversineKm, type GeoPoint } from './geo'
  * 为什么最小是 25 而不是 50：
  *   要留住「就在家门口」那一档。深圳世界之窗离市民中心约 10 公里，
  *   孩子第一趟旅行应该能落到这种地方，而不是一上来就飞 50 公里。
+ *
+ * ★★ 2026-10-03 在顶上补了 6000 / 12000 两格。
+ *
+ *   起因（家长：「直接把最低级的小鸟距离拉大就行了」）：实测发现
+ *   **库比设计时以为的稀疏得多** —— 麻雀原来的 50 公里极限下，
+ *   **海口可达 0 个点**、哈尔滨 1 个、拉萨 / 兰州 / 乌鲁木齐各 2 个。
+ *   这些城市的孩子拿到第一只鸟就**一次都飞不出去**，主循环当场死掉。
+ *   所以麻雀的极限从 50 提到 200 公里（`MAX_RUNG` 里 1 → 3）。
+ *
+ *   ⚠️ 顶上补格是**被迫的**：`MAX_RUNG` 存的是下标，麻雀一上移，
+ *      上面那七只就必须整体上移一格，而阶梯末尾又必须是 `Infinity`
+ *      —— 只能再加两格。「每只鸟恰好是上一只的两倍」这条性质因此保住了。
+ *   ⚠️ 代价：青鸟 / 仙鹤的极限也跟着变大（1500→6000、3000→12000）。
+ *      这是同一个下标表的连带效果，不是单独给它们加的距离。
+ *
+ * ★★ 2026-10-10：第 3 格 200 → 250（家长：「有海南就行了」）。
+ *
+ *   实测（家 = 海口）：200 公里时海南 9 个点只够得着 3 个
+ *   （分界洲岛 163 / 呀诺达 186 / 槟榔谷 191），另外 6 个是 203–223 公里
+ *   —— **只差 3～23 公里**。提到 250 之后海南全岛可达。
+ *
+ *   ⚠️ 只动第 3 格，所以**只影响 `MAX_RUNG === 3` 的麻雀**。
+ *
+ *   ★ 一个反直觉的实测结论（别凭"先近后远"去猜）：
+ *     海口 25 / 50 / 100 三档**全是空的** —— 最近的点（涠洲岛）在 157 公里外。
+ *     所以 `pickByRange` 第一趟就直接落到 250 这一档，
+ *     从**全部 12 个**里均匀随机，而不是"先飞近的、再飞远的"。
+ *     "先近后远"只在近档有点的城市成立（深圳第一趟落在 25 档的观澜湖）。
+ *     ➜ 250 公里内实测 12 个：海南 9 个（163–223，全岛）、
+ *       广西涠洲岛 157、广东海陵岛 241 ×2。
  */
-export const RADIUS_LADDER_KM: readonly number[] = [25, 50, 100, 200, 400, 800, 1500, 3000, Infinity]
+export const RADIUS_LADDER_KM: readonly number[] = [25, 50, 100, 250, 400, 800, 1500, 3000, 6000, 12000, Infinity]
 
 /** 阶梯最远一格（Infinity）的孩子话说法 */
 export const BEYOND_ALL_KM = '无远弗届'
+
+/**
+ * 一次「旅行」至少要飞这么远（公里）。
+ *
+ * ★★ 为什么需要这个下界（2026-10-03 写测试时抓出来的）：
+ *   孩子家**可能就挨着一个景点** —— 深圳世界之窗离市民中心才 10 公里，
+ *   比这更近的也有。`chooseDestination` 一开始只写了「距离 ≤ 极限」，
+ *   于是会挑中离家 0.2 公里的那个点：界面说「飞了 0 公里」，
+ *   孩子看不出这是一趟旅行。
+ *
+ * ⚠️ `geo.ts` 里那条「不许出现 0 公里」的守卫挡的是**基准点本身**
+ *     （(0,0) 那种定位失败），管不到"家和景点几乎重合"这一种。
+ */
+export const MIN_TRIP_KM = 1
 
 /* ============================================================
    二、每只鸟能爬到第几格
@@ -81,14 +125,14 @@ export const BEYOND_ALL_KM = '无远弗届'
  *   但由 `travelRange.test.ts` 盯着「顺序与 BIRD_SPECIES 一致」。
  */
 const MAX_RUNG: Record<BirdSpeciesId, number> = {
-  sparrow: 1, // 25 / 50
-  swallow: 2, // …100
-  oriole: 3, // …200
-  dove: 4, // …400
-  magpie: 5, // …800
-  bluebird: 6, // …1500
-  crane: 7, // …3000
-  phoenix: 8, // 全世界
+  sparrow: 3, // 25 / 50 / 100 / 250   ← 10-03 从 1（50km）提上来；10-10 这一格 200→250
+  swallow: 4, // …400
+  oriole: 5, // …800
+  dove: 6, // …1500
+  magpie: 7, // …3000
+  bluebird: 8, // …6000
+  crane: 9, // …12000
+  phoenix: 10, // 全世界
 }
 
 /**
@@ -99,6 +143,22 @@ const MAX_RUNG: Record<BirdSpeciesId, number> = {
 export function flightMaxKm(species: BirdSpeciesId): number {
   return RADIUS_LADDER_KM[MAX_RUNG[species] ?? 0]
 }
+
+/**
+ * 这个距离，这只鸟够不够得着。
+ *
+ * ★★ 为什么要有个单独的名字，而不是到处写 `km <= flightMaxKm(species)`：
+ *    「孩子在地图上点了一个地标」和「store 里真的派鸟」是两条路，
+ *    两边必须用**同一个判据**。写成同一个函数，才不容易只改一处。
+ *
+ * ⚠️ 这里**不含** `MIN_TRIP_KM` 那条下界：下界管的是"这算不算一趟旅行"
+ *    （家和景点几乎重合时别自动挑中 0.2 公里的点）。
+ *    孩子**自己点的**那个点，再近也让他去 —— 那是他的选择。
+ */
+export function canReach(species: BirdSpeciesId, km: number): boolean {
+  return km <= flightMaxKm(species)
+}
+
 
 /**
  * 这只鸟的半径阶梯（从近到远，已按它的极限截断）。
@@ -115,7 +175,7 @@ export function radiusLabel(km: number): string {
   if (km <= 25) return '就在家门口'
   if (km <= 50) return '附近'
   if (km <= 100) return '本市和邻市'
-  if (km <= 200) return '省内'
+  if (km <= 250) return '省内' // ★ 与阶梯第 3 格同步（10-10 从 200 提上来）
   if (km <= 400) return '邻省'
   if (km <= 800) return '半个中国'
   if (km <= 1500) return '大半个中国'
@@ -255,7 +315,10 @@ export function isBirdExhausted(
   const maxKm = flightMaxKm(species)
   for (const p of points) {
     if (seen.has(p.id)) continue
-    if (haversineKm(home, { lng: p.lng, lat: p.lat }) <= maxKm) return false
+    // ★ 下界要和 `chooseDestination` 用同一个 `MIN_TRIP_KM` ——
+    //   否则会出现「这里说还有新地方，派鸟时却空手而归」的自相矛盾。
+    const km = haversineKm(home, { lng: p.lng, lat: p.lat })
+    if (km >= MIN_TRIP_KM && km <= maxKm) return false
   }
   return true
 }

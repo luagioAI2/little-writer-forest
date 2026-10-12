@@ -193,6 +193,26 @@ export function awayBirds(birds: Bird[]): Bird[] {
   return birds.filter((b) => b.status === 'away')
 }
 
+/**
+ * 该派哪一只出门 —— 在家的鸟里挑**出过门最少**的那只。
+ *
+ * ★★ 为什么单独抽出来（2026-10-10）：
+ *    「派谁」以前只写在 `MapPage.sendTo` 里，而抽屉上那句
+ *    「这只鸟最多飞多远」也要用**同一只**鸟 —— 两处各写一遍
+ *    `sort((a, b) => a.trips - b.trips)[0]`，就会出现
+ *    「提示说麻雀飞不了，点下去却派了只鸽子」。➜ 一处算，两处读。
+ *
+ * ★ 优先派出门最少的：让它先认认路，亲密度涨得快。
+ * ⚠️ 返回 `undefined` 表示一只在家的都没有（全出门了）。
+ */
+export function birdToSend(birds: Bird[]): Bird | undefined {
+  const home = homeBirds(birds)
+  if (home.length === 0) return undefined
+  // ⚠️ 先 copy 再 sort —— 直接 sort 会改到调用方那个数组的顺序
+  return [...home].sort((a, b) => a.trips - b.trips)[0]
+}
+
+
 /* ============================================================
    三、出行
    ============================================================ */

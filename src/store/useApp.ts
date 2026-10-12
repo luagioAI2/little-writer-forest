@@ -101,7 +101,8 @@ import {
   unlockedSpecies,
   type ReturnResult,
 } from '../domain/pets'
-import { distanceToLandmark, landmarkById, pickDestination, plantSeeds, sproutCount } from '../domain/travel'
+import { chooseDestination, distanceToLandmark, landmarkById, plantSeeds, sproutCount } from '../domain/travel'
+import { canReach, flightMaxKm } from '../domain/travelRange'
 import { dropDiary, isHollowUnlocked, rollHollowEvent } from '../domain/hollow'
 import { setHapticsEnabled } from '../platform/haptics'
 import { setSoundEnabled } from '../platform/sound'
@@ -188,6 +189,27 @@ export interface DiarySubmitResult {
   streakDays: number
 }
 
+/**
+ * 派鸟的结果。
+ *
+ * ★★ 为什么不返回 `Bird | null`（2026-10-10 改的）：
+ *    `null` 只有一个「不行」，而界面要说的三句话完全不同：
+ *      · 树上没有这只鸟    → 不该发生，但真发生了要能一眼看出来
+ *      · 它已经在外面飞了  → 「等它回来」
+ *      · 它飞不了这么远    → 「换一只飞得更远的鸟」+ 要报出极限公里数
+ *    挤成一个 `null`，界面就只能说「没能出发，再试一次看看」——
+ *    孩子会一直点，家长会以为程序坏了。
+ *
+ * ⚠️ `too-far` 里**必须带上 `maxKm`**：界面那句「最多飞 250 公里」的 250
+ *    只能来自 `flightMaxKm()`，不许在组件里另写一个数 —— 同一个数字
+ *    写两处，改了一处就会变成「提示说 250、实际按 200 拦」。
+ */
+export type DispatchOutcome =
+  | { ok: true; bird: Bird }
+  | { ok: false; reason: 'no-bird' }
+  | { ok: false; reason: 'away' }
+  | { ok: false; reason: 'too-far'; maxKm: number; distanceKm: number }
+
 interface AppState {
   ready: boolean
 
@@ -239,7 +261,15 @@ interface AppState {
   /** 段位到了就自动把新鸟接到树上，返回新来的鸟 */
   syncBirds: (levelIndex: number, now?: number) => Promise<Bird[]>
   /** 派一只鸟出门旅行 */
-  dispatchBird: (species: Bird['species'], landmarkId?: string) => Promise<Bird | null>
+  /**
+   * 派一只鸟出门旅行。
+   *
+   * ★★ 2026-10-10：返回 `DispatchOutcome`（不再是 `Bird | null`）——
+   *    「为什么没派出去」要能说清，见那个类型上的注释。
+   * ⚠️ 传了 `landmarkId` 而它**超出这只鸟的极限**时，会返回
+   *    `reason: 'too-far'` 并且**什么都不改**。
+   */
+  dispatchBird: (species: Bird['species'], landmarkId?: string) => Promise<DispatchOutcome>
   /** 把已经飞回来的鸟结算掉（照片 / 种子 / 卡 / 金币） */
   settleBird: (species: Bird['species']) => Promise<ReturnResult | null>
   /** 一只鸟是否已经飞回来了 */
@@ -593,9 +623,9 @@ export const useApp = create<AppState>()((set, get) => ({
   dispatchBird: async (species, landmarkId) => {
     const { birds, visited, settings } = get()
     const idx = birds.findIndex((b) => b.species === species)
-    if (idx < 0) return null
+    if (idx < 0) return { ok: false, reason: 'no-bird' }
     const bird = birds[idx]
-    if (bird.status === 'away') return null
+    if (bird.status === 'away') return { ok: false, reason: 'away' }
 
     /*
      * ★★ 2026-09-25：目的地从**地标表**里挑，不再从内容包里挑。
@@ -605,20 +635,44 @@ export const useApp = create<AppState>()((set, get) => ({
      * ★ `landmarkId` 是地图上「让它自己去一个没去过的地方」传进来的
      *   （`MapPage` 的 `onAct`）—— 以前这个参数被忽略（形参叫 `_landmarkId`），
      *   点了半天还是随机飞。现在认它了。
-     * ⚠️ 传了个查不到的 id 就**退回随机挑**，不返回 null ——
+     * ⚠️ 传了个**查不到**的 id 就退回随机挑，不返回失败 ——
      *    "点了没反应"比"去了别处"难查得多。
+     *
+     * ★★ 2026-10-03：退回的那条路换成 `chooseDestination` —— 以前是
+     *    `pickDestination`（全库一起抽、跟鸟种和距离都没关系）。
+     *    现在按**这只鸟能飞多远**挑：极限之内还有新地方就走半径阶梯，
+     *    都去过了就按去过次数降权重复，一个点都够不到才退回老玩法。
+     *
+     * ★★ 2026-10-10：`landmarkId` **不再无条件认** —— 超出这只鸟的极限
+     *    就明确拒绝（`reason: 'too-far'`），不再"点哪儿飞哪儿"。
+     *
+     *    为什么必须拦：地图上点得到的地标是**亮着的**那些，而亮着的可能
+     *    在任何一个省。实测（家 = 深圳，麻雀极限 250 公里）：中国 412 个
+     *    地标里只有 **25 个够得着，另外 387 个在极限之外**。不拦的话，
+     *    第一只鸟就能飞到天安门（1944 公里），
+     *    「想飞远就得用好鸟」那根胡萝卜当场作废。
      */
     const dest =
       (landmarkId ? landmarkById(landmarkId) : undefined) ??
-      pickDestination({ exclude: visited.map((v) => v.landmarkId), rng: Math.random })
+      chooseDestination({ species, home: settings.homePoint, visited, rng: Math.random }).dest
 
     const distanceKm = distanceToLandmark(dest, settings.homePoint)
+
+    /*
+     * ★ 闸门放在**算出 dest 之后、真的改状态之前**。
+     *   上面那条 `??` 兜底挑出来的点一定在极限内（`chooseDestination`
+     *   自己保证），所以这里实际拦住的只有"孩子在地图上点的那个点"。
+     *   ⚠️ 但它不是冗余：`chooseDestination` 哪天被改坏了，这里还能兜住。
+     */
+    if (!canReach(species, distanceKm)) {
+      return { ok: false, reason: 'too-far', maxKm: flightMaxKm(species), distanceKm }
+    }
 
     const next = birds.slice()
     next[idx] = sendBird(bird, dest, distanceKm, Date.now(), Math.random)
     set({ birds: next })
     await writeBirds(next)
-    return next[idx]
+    return { ok: true, bird: next[idx] }
   },
 
   settleBird: async (species) => {

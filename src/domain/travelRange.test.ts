@@ -68,9 +68,9 @@ describe('半径阶梯', () => {
     }
   })
 
-  it('麻雀只能到 50 公里，凤凰没有上限', () => {
-    expect(flightMaxKm('sparrow')).toBe(50)
-    expect(rangeLadder('sparrow')).toEqual([25, 50])
+  it('麻雀能到 250 公里（10-03 从 50 提到 200，10-10 再提到 250），凤凰没有上限', () => {
+    expect(flightMaxKm('sparrow')).toBe(250)
+    expect(rangeLadder('sparrow')).toEqual([25, 50, 100, 250])
     expect(flightMaxKm('phoenix')).toBe(Infinity)
     expect(rangeLadder('phoenix')).toEqual([...RADIUS_LADDER_KM])
   })
@@ -102,7 +102,7 @@ describe('按距离挑目标点', () => {
   })
 
   it('★ 这一档空着就往外扩一格', () => {
-    // 麻雀的阶梯是 [25, 50]；只在 40 公里处有点
+    // 麻雀的阶梯是 [25, 50, 100, 250]；只在 40 公里处有点
     const r = pickByRange({
       points: [atKm('mid', 40)],
       home: HOME,
@@ -144,12 +144,12 @@ describe('按距离挑目标点', () => {
 
     expect(r.kind).toBe('exhausted')
     if (r.kind !== 'exhausted') return
-    expect(r.maxKm).toBe(50)
+    expect(r.maxKm).toBe(250)
   })
 
-  it('★★ 超过极限距离的点，再近也不给（麻雀够不到 60 公里）', () => {
+  it('★★ 超过极限距离的点，再近也不给（麻雀够不到 260 公里，极限 250）', () => {
     const r = pickByRange({
-      points: [atKm('out', 60)],
+      points: [atKm('out', 260)],
       home: HOME,
       species: 'sparrow',
       visited: [],
@@ -160,7 +160,7 @@ describe('按距离挑目标点', () => {
   })
 
   it('换一只飞得远的鸟，同一个点就够得到了', () => {
-    const points = [atKm('out', 60)]
+    const points = [atKm('out', 260)]
     expect(pickByRange({ points, home: HOME, species: 'sparrow', visited: [], rng: seededRng(1) }).kind).toBe(
       'exhausted',
     )
@@ -235,12 +235,12 @@ describe('★★ 「X 距离已去完」是算出来的，不是存的', () => {
   })
 
   it('isBirdExhausted：极限之内有没有新点', () => {
-    const points = [atKm('a', 10), atKm('far', 300)]
-    // 麻雀够不到 300，a 去过 → 没得去了
+    const points = [atKm('a', 10), atKm('far', 500)]
+    // 麻雀（250 公里）够不到 500，a 去过 → 没得去了
     expect(isBirdExhausted(points, HOME, 'sparrow', ['a'])).toBe(true)
-    // 换成燕子（100 公里）也一样够不到
+    // 换成燕子（400 公里）也一样够不到
     expect(isBirdExhausted(points, HOME, 'swallow', ['a'])).toBe(true)
-    // 鸽子（400 公里）够得到
+    // 鸽子（1500 公里）够得到
     expect(isBirdExhausted(points, HOME, 'dove', ['a'])).toBe(false)
   })
 

@@ -14,7 +14,7 @@
    ============================================================ */
 
 import 'fake-indexeddb/auto'
-import { beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 
 import {
   defaultStats,
@@ -29,7 +29,9 @@ import { PACK_PRICE, PACK_SIZE, DAILY_COMPOSITION_LIMIT, recruitCost, treeCoinBo
 import { CARD_SETS, cardsInSet } from '../domain/cards'
 import { BIRD_SPECIES } from '../domain/pets'
 import { initialTreeState } from '../domain/tree'
-import { sproutCount } from '../domain/travel'
+import { LANDMARKS, sproutCount } from '../domain/travel'
+import { DEFAULT_HOME_POINT, haversineKm } from '../domain/geo'
+import { flightMaxKm, MIN_TRIP_KM } from '../domain/travelRange'
 import type { OwnedCard, Sprout, TreeYield, Work } from '../domain/types'
 import type { LibraryItem } from '../domain/library'
 import { focusOf, useApp } from './useApp'
@@ -222,6 +224,115 @@ describe('金币出口', () => {
     // 同一只鸟不能招第二次，也不能重复扣钱
     expect(await useApp.getState().recruitBird(sp)).toBeNull()
     expect(useApp.getState().wallet.coins).toBe(100)
+  })
+})
+
+describe('派鸟：目的地按「这只鸟能飞多远」挑（2026-10-03 接线）', () => {
+  /*
+   * ★★ 为什么这条守卫必须放在 store 层：
+   *    `chooseDestination` 本身在 domain 里测得很全，但**测不出
+   *    「store 有没有真的调它」** —— 接线之前 `travelRange.ts` 就是
+   *    这种情况：261 行、测试全绿、零运行时调用者。
+   *    这条守的是那根线本身。
+   */
+  it('★★ 麻雀被派出去时，目的地落在它最近的那一档（以前是全库随机）', async () => {
+    const sp = BIRD_SPECIES.find((s) => s.id === 'sparrow')
+    if (!sp) throw new Error('找不到麻雀')
+    useApp.setState({ wallet: { coins: 9999, totalEarned: 9999 } })
+    expect(await useApp.getState().recruitBird(sp)).not.toBeNull()
+
+    /*
+     * ★★ 为什么要固定随机数，而不是跑一次看结果：
+     *    「全库随机」那条老路径有 25/643 ≈ 4% 的概率**恰好**也落在
+     *    200 公里内 —— 单次抽样守卫只有 96% 的把握抓住回归，等于没钉住。
+     *
+     *    `Math.random() = 0.999` 时两条路的落点是**确定**的：
+     *      · 新路径（半径阶梯）：25 公里档的最后一个候选（深圳这一档有 5 个）
+     *      · 老路径（全库加权）：全库的最后一个地标 —— 世界景点，几千公里外
+     */
+    const spy = vi.spyOn(Math, 'random').mockReturnValue(0.999)
+    try {
+      const res = await useApp.getState().dispatchBird('sparrow')
+      expect(res.ok, '麻雀被派出去时不该失败').toBe(true)
+      if (!res.ok) return
+      expect(res.bird.destinationId).toBeTruthy()
+
+      const dest = LANDMARKS.find((l) => l.id === res.bird.destinationId)
+      expect(dest, '目的地必须能解析回地标').toBeTruthy()
+      if (!dest) return
+
+      const km = haversineKm(DEFAULT_HOME_POINT, dest)
+      expect(km).toBeGreaterThanOrEqual(MIN_TRIP_KM)
+      expect(km).toBeLessThanOrEqual(flightMaxKm('sparrow'))
+      // ★ 深圳 25 公里档不是空的 → 必须落在这里，而不是"哪都行"
+      expect(km).toBeLessThanOrEqual(25)
+    } finally {
+      spy.mockRestore()
+    }
+  })
+
+  it('★ 传了 landmarkId 就认它 —— 孩子在地图上点的那一个不许被改掉', async () => {
+    const sp = BIRD_SPECIES.find((s) => s.id === 'sparrow')
+    if (!sp) throw new Error('找不到麻雀')
+    useApp.setState({ wallet: { coins: 9999, totalEarned: 9999 } })
+    await useApp.getState().recruitBird(sp)
+
+    /*
+     * ⚠️ 必须挑一个**在麻雀极限之内**的点。以前这里写的是 `LANDMARKS[0]`
+     *    （天安门广场，深圳出发 1944 公里）—— 2026-10-10 加了距离闸门之后
+     *    那一条会被**正确地**拒掉，于是它测的就不再是"认不认这个 id"了。
+     *    这是**测试的前提坏了**，不是功能坏了。
+     */
+    const picked = LANDMARKS.find(
+      (l) => l.country === '中国' && haversineKm(DEFAULT_HOME_POINT, l) <= flightMaxKm('sparrow'),
+    )
+    expect(picked, '深圳 250 公里内一个中国地标都没有 —— 判据写错了').toBeDefined()
+    if (!picked) return
+
+    const res = await useApp.getState().dispatchBird('sparrow', picked.id)
+    expect(res.ok, '在极限之内的点不该被拒').toBe(true)
+    if (!res.ok) return
+    expect(res.bird.destinationId).toBe(picked.id)
+  })
+
+  it('★★ 点了极限之外的地标 → 明确拒绝，而且**什么都不改**（2026-10-10 新加）', async () => {
+    /*
+     * ★ 这条守的是「想飞远就得用好鸟」那根胡萝卜。
+     *
+     *   实测（家 = 深圳）：中国 412 个地标里，麻雀 250 公里内只有 25 个，
+     *   另外 **387 个在极限之外** —— 加闸门之前，第一只鸟就能飞到天安门
+     *   （1944 公里），鸟种分级当场作废。
+     *
+     * ⚠️ 断言里必须**同时**看三件事，少一件这条就守不住：
+     *     ① 结果是 `too-far`
+     *     ② `maxKm` 报的是这只鸟的真实极限（界面那句"最多飞 X 公里"靠它）
+     *     ③ 鸟的状态**没动** —— 还在家、没有 destinationId、盘上也是原样
+     *   只断言 ① 的话，"拒了但已经把鸟标成 away 并落盘"这种半截状态照样绿。
+     */
+    const sp = BIRD_SPECIES.find((s) => s.id === 'sparrow')
+    if (!sp) throw new Error('找不到麻雀')
+    useApp.setState({ wallet: { coins: 9999, totalEarned: 9999 } })
+    await useApp.getState().recruitBird(sp)
+
+    const far = LANDMARKS.find(
+      (l) => l.country === '中国' && haversineKm(DEFAULT_HOME_POINT, l) > flightMaxKm('sparrow'),
+    )
+    expect(far, '深圳 250 公里外一个中国地标都没有 —— 判据写错了').toBeDefined()
+    if (!far) return
+
+    const res = await useApp.getState().dispatchBird('sparrow', far.id)
+    expect(res.ok).toBe(false)
+    if (res.ok) return
+    expect(res.reason).toBe('too-far')
+    if (res.reason !== 'too-far') return
+    expect(res.maxKm).toBe(flightMaxKm('sparrow'))
+    expect(Math.round(res.distanceKm)).toBe(Math.round(haversineKm(DEFAULT_HOME_POINT, far)))
+
+    const bird = useApp.getState().birds.find((b) => b.species === 'sparrow')
+    expect(bird?.status, '被拒之后鸟必须还在家').not.toBe('away')
+    expect(bird?.destinationId, '被拒之后不许留下目的地').toBeUndefined()
+    const stored = (await readBirds()).find((b) => b.species === 'sparrow')
+    expect(stored?.status, '被拒之后不许落盘成"出门了"').not.toBe('away')
   })
 })
 

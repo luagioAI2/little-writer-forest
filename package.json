@@ -1,7 +1,7 @@
 {
   "name": "little-writer-forest",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "小笔苗 · 作文森林 —— 小学生看图作文 + 语音录入 + AI 点评 + 段位成长 App（Web / 手机浏览器 / 安卓 APK）",
   "scripts": {

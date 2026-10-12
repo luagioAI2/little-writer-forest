@@ -763,6 +763,23 @@
   }
 }
 
+/**
+ * 小鸟的飞行路线 —— 「蚂蚁线」，小段朝落点那一侧走。
+ *
+ * ★★ 负的 `stroke-dashoffset` 让虚线**沿着 path 的走向往前挪**，
+ *    而路线的 path 是 `M 家 … Q … 落点`，所以看起来就是从家飞向落点。
+ *
+ * ⚠️ 走的偏移量必须**正好等于** `stroke-dasharray` 的一个周期
+ *    （下面 utility 里的 6 + 5 = 11），否则每循环一圈会往前跳一下，
+ *    看起来像掉帧。两处写在一起就是为了改的时候不会只改一处。
+ *    （`prefers-reduced-motion` 由文件上方那条全局规则统一关掉。）
+ */
+@keyframes kf-dash-route {
+  to {
+    stroke-dashoffset: -11;
+  }
+}
+
 /** 墨夜场景的「四周压暗」——进入写作时轻轻收拢视野 */
 @keyframes kf-vignette-in {
   from {
@@ -823,6 +840,12 @@
 @utility anim-dangle {
   animation: kf-dangle 3.4s ease-in-out infinite;
   transform-origin: top center;
+}
+/* 飞行路线的虚线：图案（6 实 + 5 空）与 keyframe 的位移量是**一对**，
+   见上面 `kf-dash-route` 的 ⚠️。 */
+@utility anim-dash-route {
+  stroke-dasharray: 6 5;
+  animation: kf-dash-route 1.1s linear infinite;
 }
 @utility anim-vignette {
   animation: kf-vignette-in 0.5s ease-out both;

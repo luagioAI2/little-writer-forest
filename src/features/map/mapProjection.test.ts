@@ -2,7 +2,8 @@ import { describe, expect, it } from 'vitest'
 import { LANDMARKS } from '../../domain/travel'
 import { CHINA_REGIONS } from '../../assets/china-map'
 import { WORLD_LAND } from '../../assets/world-map'
-import { VIEWS, landPath, landmarkInScope, makeProj, regionPath } from './mapProjection'
+import { DEFAULT_HOME_POINT } from '../../domain/geo'
+import { VIEWS, flightPath, inView, landPath, landmarkInScope, makeProj, regionPath } from './mapProjection'
 
 /* ============================================================
    地图投影的守卫
@@ -18,15 +19,18 @@ import { VIEWS, landPath, landmarkInScope, makeProj, regionPath } from './mapPro
    ============================================================ */
 
 describe('投影 · 画布参数', () => {
-  it('★ 中国档的画布与拉伸必须还是原来那组数（改了就不是"逐像素一致"了）', () => {
-    // 世界图这一版特意不动中国档。哪天有人"顺手统一一下参数"，
-    // 中国那张图会整体缩放/拉伸，而**没有任何测试会因此变红** —— 这条就是拦它的。
+  it('★ 中国档的画布参数必须还是那组数（改了中国那张图会整体缩放）', () => {
+    // 哪天有人"顺手统一一下参数"，中国那张图会整体缩放/拉伸，
+    // 而**没有任何测试会因此变红** —— 这条就是拦它的。
+    // ★ 2026-10-10：`latStretch` 从 1.16 改成 1.0，那一次是**故意**的
+    //   （1.16 会把海南整片推出画布，见下面那条「纵向一个都不许越界」）。
+    //   这里跟着改，是为了让"下一次"再有人动它时**能红**。
     const v = VIEWS['中国']
     expect(v.w).toBe(720)
     expect(v.h).toBe(560)
     expect(v.padX).toBe(18)
     expect(v.padY).toBe(22)
-    expect(v.latStretch).toBe(1.16)
+    expect(v.latStretch).toBe(1)
   })
 
   it('★ 世界档按 bbox 的宽高比算，且不拉伸', () => {
@@ -70,36 +74,40 @@ describe('投影 · 每一个地标都必须在画布内', () => {
     expect(outside.map(({ l, x }) => `${l.name} → x=${x.toFixed(0)}`)).toEqual([])
   })
 
-  it('★★ 中国档的纵向越界必须**只**发生在南缘（既有 bug，已报告）', () => {
+  it('★★ 中国档：纵向一个都不许越界（2026-10-10 修掉的那条既有 bug）', () => {
     /* ------------------------------------------------------------
-       ⚠️⚠️ 这是一条「已知问题」守卫，不是「正确行为」守卫。
+       ★★ 这条守卫的来历（读之前先看 `mapProjection.ts` 的 `CN_VIEW`）：
 
-       事实：中国档 `latStretch = 1.16` 是**以顶边为锚**往下撑的，
-             于是 `y` 在 `lat = 21.67` 处就已经到 560（画布底边），
-             再往南全部落在画布外 —— 而 `<svg>` 默认 `overflow: hidden`，
-             **直接被裁掉，不报错、控制台一声不吭**。
+       原来中国档 `latStretch = 1.16` 是**以顶边为锚**往下撑的，于是
+       `y` 在 lat ≈ 21.70 就到底边，再往南全在画布外 —— 而 `<svg>`
+       默认 `overflow: hidden`，**直接被裁掉、不报错、控制台一声不吭**。
 
-       影响（2026-09-24 实测）：**60 个地标**看不见
-             —— 海南 32、广东 19（湛江/徐闻一带）、广西 9（北海/涠洲岛）。
-             注意海南岛**整座岛**都在 21.67 以南 → 中国图上**连岛都没有**。
-             ⚠️ 原注释写的是「让新疆/黑龙江的北缘与海南的南缘都留出余量」，
-                意思对，算法把方向搞反了（顶边固定、底部溢出）。
+       2026-09-24 实测：**60 个地标**看不见 —— 海南 32、广东 19、广西 9。
+       海南岛**整座岛**都在 21.70 以南 → 中国图上**连岛都没有**。
+       当时这里写的是 `expect(provinces).toEqual(['广东','广西','海南'])`
+       —— 一条「已知问题守卫」，钉住"越界的只有这几个省，没扩散"。
 
-       ➜ 已报告家长，**等确认再改**（改法 = 把拉伸改成以中线为锚，
-          或者按 `h / latStretch` 反推画布高度）。改完这条**会红**，
-          那时把这里换成 `expect(outside).toEqual([])` 即可。
+       2026-10-10 修掉（`latStretch` → 1.0）之后，这条升级成
+       **正确行为守卫**：纵向一个都不许越界。
+
+       ⚠️ 别把它退回成"只断言越界的省份"。那样写的话，只要越界的还是
+          广东/广西/海南，**哪怕越界的地标从 60 个涨到 600 个**，
+          这条照样绿 —— 它守不住任何东西。
        ------------------------------------------------------------ */
     const proj = makeProj(VIEWS['中国'])
     const { h } = proj.view
     const outside = LANDMARKS.filter((l) => landmarkInScope(l.country, '中国')).filter(
       (l) => proj.y(l.lat) > h,
     )
-    // 越界的全是南边那几个省 —— 一旦有别的省份冒出来，说明问题扩散了
-    // （顺序按 JS 默认的码位排序，不是拼音）
-    const provinces = [...new Set(outside.map((l) => l.province))].sort()
-    expect(provinces).toEqual(['广东', '广西', '海南'])
-    // 且全部在裁剪纬度以南（21.67°N）
-    for (const l of outside) expect(l.lat, `${l.name} 不该越界`).toBeLessThan(21.7)
+    expect(
+      outside.map((l) => `${l.name}(${l.province}) y=${proj.y(l.lat).toFixed(0)} > ${h}`),
+      `这些中国地标会被画到画布下缘之外（画布高 ${h}），界面上静默消失`,
+    ).toEqual([])
+    // 反向确认这条断言不是空跑：库里的确有海南的地标（就是这次修它的原因）
+    expect(
+      LANDMARKS.filter((l) => l.province === '海南').length,
+      '库里一条海南地标都没有 —— 上面那条断言"因为集合是空的"而永远为真',
+    ).toBeGreaterThan(0)
   })
 
   it('★ 中国档不许画任何世界景点，世界档不许画任何中国景点', () => {
@@ -170,5 +178,136 @@ describe('投影 · 底图几何', () => {
     expect(landPath(world).length).toBeGreaterThan(1000)
     // 环少于 3 个点画不出面 —— 得被跳过，而不是生成一个 "M..Z" 的假面
     expect(regionPath({ n: 'x', c: [0, 0], r: [[[0, 0], [1, 1]]] }, cn)).toBe('')
+  })
+})
+
+/* ============================================================
+   飞行路线 —— 家 → 落点的那条虚线
+   ------------------------------------------------------------
+   ★★ 为什么值得单独守：
+
+   这一层曾经是**只有注释、没有代码**的。`MapPage.tsx` 的层次注释写着
+     「正在飞的小鸟（一个会摆动的小三角 + 虚线轨迹）」
+   而 `flyingBirds.map(...)` 里只画了落点上一个圆环 + 一个三角，
+   **一条线都没有**；紧跟着那句「从地标点向外画一条虚线」也一样是空的。
+
+   「注释说已经做了」和「真的做了」长得一模一样 ——
+   `tsc` 查不出、肉眼看不出、测试全绿。同一天在这个项目里栽过第二次了
+   （上一次是 `travelRange.ts` 整套距离分档写好了却零调用者，
+     而两处注释都写着"改成按距离分档之后"）。
+
+   ➜ 这个文件守**几何**（端点对不对、有没有 NaN、会不会画到画布外）；
+      「那一层到底有没有被渲染出来」由 `TravelMap.route.test.tsx` 守。
+      两条都要有 —— 单测 `flightPath` 全绿**不能**证明有人在调它。
+   ============================================================ */
+
+describe('飞行路线 · 几何', () => {
+  const cn = makeProj(VIEWS['中国'])
+  const world = makeProj(VIEWS['世界'])
+  const SZ = DEFAULT_HOME_POINT
+  /** path 里的数字，按出现顺序（`M x1 y1 Q mx my x2 y2`） */
+  const nums = (d: string) => (d.match(/-?\d+(?:\.\d+)?/g) ?? []).map(Number)
+  const PATH_RE =
+    /^M[0-9.-]+ [0-9.-]+ (?:L[0-9.-]+ [0-9.-]+|Q[0-9.-]+ [0-9.-]+ [0-9.-]+ [0-9.-]+)$/
+  /** 控制点到弦的垂距 = 拱起量（用 path 里那几个数反算，不依赖实现细节） */
+  const bowOf = (d: string) => {
+    const [x1, y1, mx, my, x2, y2] = nums(d)
+    const dx = x2 - x1
+    const dy = y2 - y1
+    const len = Math.hypot(dx, dy)
+    return len === 0 ? 0 : Math.abs((mx - x1) * dy - (my - y1) * dx) / len
+  }
+
+  it('★★ 起点必须是「家」、终点必须是落点（画反了看不出来，只是路线倒着走）', () => {
+    const dest = { lng: 116.4074, lat: 39.9042 } // 北京
+    const d = flightPath(SZ, dest, cn)
+    expect(d).toMatch(PATH_RE)
+    const n = nums(d)
+    expect(n.length, '深圳→北京在画布上是几百像素，不该退化成直线').toBe(6)
+    // 端点 = 投影后的家 / 落点，四舍五入到 0.1px（和 path 里的 toFixed(1) 对齐）
+    expect(n[0]).toBe(Number(cn.x(SZ.lng).toFixed(1)))
+    expect(n[1]).toBe(Number(cn.y(SZ.lat).toFixed(1)))
+    expect(n[4]).toBe(Number(cn.x(dest.lng).toFixed(1)))
+    expect(n[5]).toBe(Number(cn.y(dest.lat).toFixed(1)))
+  })
+
+  it('★ 要真的拱起来 —— 控制点不许落在弦上（否则就是条直线，白叫"路线"）', () => {
+    // 深圳 → 北京：弦长约 290px，拱起量撞到 14px 的封顶
+    const bow = bowOf(flightPath(SZ, { lng: 116.4074, lat: 39.9042 }, cn))
+    expect(bow).toBeGreaterThan(1)
+    // 封顶 14px —— 不封的话长途会鼓成一个夸张的大圈，盖住半个中国
+    expect(bow).toBeLessThanOrEqual(14.05)
+  })
+
+  it('★ 近程按比例拱（不是固定 14px）—— 别让广州那种短途也鼓出一个大圈', () => {
+    // 深圳 → 广州：画布上约 13px，拱起量应约 13 × 0.12 ≈ 1.6px
+    const d = flightPath(SZ, { lng: 113.2644, lat: 23.1291 }, cn)
+    const n = nums(d)
+    expect(n.length, '深圳→广州退化成了直线，这条断言的前提不成立').toBe(6)
+    const len = Math.hypot(n[4] - n[0], n[5] - n[1])
+    expect(len).toBeGreaterThan(5)
+    // 容差放到 0.5px：path 里每个坐标都 toFixed(1) 过，反算会有取整误差
+    expect(bowOf(d)).toBeCloseTo(len * 0.12, 0)
+  })
+
+  it('★ 起终点重合 → 退回直线，且不许出现 NaN', () => {
+    // len = 0 时 `dy / len` 是 0/0 = NaN → 整条 path 直接不画，**且不报错**
+    const d = flightPath(SZ, { lng: SZ.lng, lat: SZ.lat }, cn)
+    expect(d).toMatch(/^M[0-9.-]+ [0-9.-]+ L[0-9.-]+ [0-9.-]+$/)
+    expect(d).not.toContain('NaN')
+  })
+
+  it('★ 纯函数：同一次飞行画两遍必须一模一样（否则每次重渲染虚线都在跳）', () => {
+    const dest = { lng: 121.4737, lat: 31.2304 } // 上海
+    expect(flightPath(SZ, dest, cn)).toBe(flightPath(SZ, dest, cn))
+  })
+
+  it('★★ 全库每个地标当落点、两档各算一遍：不许 NaN、不许生成不合法的 d', () => {
+    for (const proj of [cn, world]) {
+      for (const l of LANDMARKS) {
+        const d = flightPath(SZ, l, proj)
+        expect(d, `${l.name}(${l.id}) 的路线算出了 NaN`).not.toContain('NaN')
+        expect(d, `${l.name}(${l.id}) 的路线不是合法的 path：${d}`).toMatch(PATH_RE)
+      }
+    }
+  })
+})
+
+describe('飞行路线 · 端点在不在画布内', () => {
+  const cn = makeProj(VIEWS['中国'])
+  const world = makeProj(VIEWS['世界'])
+
+  it('★ 中国档：默认的「家」（深圳）在里面', () => {
+    expect(inView(cn, DEFAULT_HOME_POINT.lng, DEFAULT_HOME_POINT.lat)).toBe(true)
+  })
+
+  it('★★ 中国档：巴黎在外面 —— 「家」设到国外时，不该画一条从画布外插进来的线', () => {
+    // `<svg>` 默认 overflow: hidden，画到外面的部分**被裁掉、不报错**，
+    // 界面上就是"一条线从地图边上冒出来"，看不出是算错了。
+    expect(inView(cn, 2.3522, 48.8566)).toBe(false)
+  })
+
+  it('★ 世界档：同一个巴黎在里面（两档共用一套投影，只是窗口不同）', () => {
+    expect(inView(world, 2.3522, 48.8566)).toBe(true)
+  })
+
+  it('★★ 中国档：海南那批现在**必须在画布内**（2026-10-10 修掉裁剪之后）', () => {
+    /*
+      ★ 这条以前是它的反面：原来 `latStretch = 1.16` 以顶边为锚，
+        `y` 在 lat ≈ 21.70 就到画布底，海南整座岛都在以南 →
+        当时断言的是"至少有若干个海南地标 inView 为 false"。
+
+      ➜ 裁剪修掉之后翻过来：**一个都不许在外面**。
+        这也顺带钉住"海南的飞行路线画得出来"这件事 ——
+        `MapPage` 的路线层是拿 `inView` 当闸门的，这里为 false 就一条线都不画。
+    */
+    const hainan = LANDMARKS.filter((l) => l.province === '海南')
+    // 先确认这批真的存在，否则下面那条断言会"因为集合是空的"而永远为真
+    expect(hainan.length, '库里一条海南的地标都没有 —— 判据写错了').toBeGreaterThan(0)
+    const hidden = hainan.filter((l) => !inView(cn, l.lng, l.lat))
+    expect(
+      hidden.map((l) => `${l.name} → y=${cn.y(l.lat).toFixed(0)}`),
+      '海南的地标又掉到画布外了 —— 纵向拉伸是不是被改回 1.16 了？',
+    ).toEqual([])
   })
 })

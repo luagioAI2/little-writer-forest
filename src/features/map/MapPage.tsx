@@ -26,13 +26,15 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useApp } from '../../store/useApp'
+import { resolveHomePoint } from '../../domain/geo'
 import { levelAt } from '../../domain/levels'
-import { distanceToLandmark, LANDMARKS, landmarkById, mapProgress, pickDestination, sproutedIds } from '../../domain/travel'
+import { distanceToLandmark, LANDMARKS, landmarkById, mapProgress } from '../../domain/travel'
 import { contentsByLandmark } from '../../domain/travelContents'
 import {
   BIRD_SPECIES,
   awayBirds,
   birdReady,
+  birdToSend,
   bondLabel,
   homeBirds,
   nextSpeciesToUnlock,
@@ -41,13 +43,16 @@ import {
 import { CHINA_REGIONS } from '../../assets/china-map'
 import {
   VIEWS,
+  flightPath,
+  inView,
   landPath,
   landmarkInScope,
   makeProj,
   regionPath,
   type MapScope,
 } from './mapProjection'
-import type { Bird, Landmark, Sprout, TravelContent, TravelPhoto, TravelSouvenir, VisitedLandmark } from '../../domain/types'
+import { canReach, flightMaxKm, isBirdExhausted, radiusLabel } from '../../domain/travelRange'
+import type { Bird, HomePoint, Landmark, Sprout, TravelContent, TravelPhoto, TravelSouvenir, VisitedLandmark } from '../../domain/types'
 import { RARITIES, gradeMeta } from '../../domain/types'
 import {
   Badge,
@@ -102,12 +107,13 @@ function rarityMeta(r: string) {
 /**
  * 旅行地图 —— **中国 / 世界两个档共用这一个组件**。
  *
- * 层次（从下到上）：
- *   1. 底图填充（中国档 = 省界；世界档 = 陆地轮廓）
- *   2. 底图描边（发丝线，绝不加粗）
- *   3. 已发芽地标的"光点"
- *   4. 地标圆点
- *   5. 正在飞的小鸟（一个会摆动的小三角 + 虚线轨迹）
+ * 层次（从下到上，**按 JSX 里的先后顺序**）：
+ *   1. 底图填充 + 底图描边（发丝线，绝不加粗）
+ *   2. 小鸟的飞行路线（家 → 落点的虚线）
+ *   3. 南海诸岛附图（**只有中国档**；压在路线之上，免得被虚线穿过去）
+ *   4. 正在飞的小鸟（落点上一圈虚线环 + 一个会摆动的小三角）
+ *   5. 地标圆点（"已发芽的光点"、"到过的金环"都长在这一层里，
+ *      不是单独一层 —— 旧注释把它们拆成两层，和代码对不上）
  *
  * ★★ 为什么两个档要共用组件、而不是各写一张图：
  *    投影、地标点、小鸟轨迹、命中区域、发光滤镜这些**完全一样**，
@@ -117,11 +123,18 @@ function rarityMeta(r: string) {
  *
  * ⚠️ 只有点亮过的地标才画（例外：正在被选中的那颗）。
  *    原因见下面「没点亮的一颗都不画」那段。
+ *
+ * ★ 导出**只是**为了能在 `TravelMap.route.test.tsx` 里单独渲染它做断言
+ *   （和下面 `SouvenirCard` 一个理由）。为什么值得：
+ *   飞行路线那一层曾经"注释里写着有、代码里没有"，而 `flightPath` 的
+ *   单元测试**全绿也照不出来** —— 函数写好了没人调，测试照样过。
+ *   ➜ 别把它改回不导出。
  */
-function TravelMap({
+export function TravelMap({
   scope,
   sprouts,
   flyingBirds,
+  homePoint,
   activeLandmarkId,
   onPickLandmark,
   revealed,
@@ -131,6 +144,13 @@ function TravelMap({
   scope: MapScope
   sprouts: Sprout[]
   flyingBirds: Bird[]
+  /**
+   * 「家」在哪儿 —— 飞行路线的起点。
+   * ⚠️ `undefined` 是正常值（还没定位过、家长也没手选），
+   *    兜底走 `resolveHomePoint`，**不在这里 `?? 深圳`** ——
+   *    改默认城市时才会只改一处、不漏这条路。
+   */
+  homePoint: HomePoint | undefined
   activeLandmarkId: string | null
   onPickLandmark: (l: Landmark) => void
   /** 已点亮（用于给底图上色） */
@@ -147,6 +167,9 @@ function TravelMap({
 
   const proj = useMemo(() => makeProj(VIEWS[scope]), [scope])
   const isWorld = scope === '世界'
+
+  /** 飞行路线的起点。兜底规则只在 `resolveHomePoint` 一处（见 props 注释） */
+  const home = useMemo(() => resolveHomePoint(homePoint), [homePoint])
 
   /**
    * ★★ 按 scope 过滤地标。判据是 `country`，不是 id 前缀、也不是坐标 ——
@@ -230,6 +253,51 @@ function TravelMap({
       </g>
 
       {/*
+        飞行路线 —— 从「家」到落点的一条虚线。
+
+        ★★ 为什么要画：小鸟只是落点上一个会摆动的小三角，孩子看不出
+          "它从哪儿来、要飞到哪儿去"。补一条线，这一趟才有方向感。
+          （旧注释早就写着"虚线轨迹"，但代码里**从来没画过** ——
+            所以这一层是**补上**的，不是改的。）
+
+        ★ 起点是「家」，不是上一个落点：鸟是从家里出发、再回家的，
+          `dispatchBird` 就是这么定目的地的（见 domain/travel.ts）。
+
+        ⚠️ 两端都要 `inView` 才画：`<svg>` 默认 `overflow: hidden`，
+          端点跑到画布外就是一条**被裁掉、不报错**的线。
+          （中国档的纵向裁剪 2026-10-10 已修 —— `latStretch` 1.16 → 1.0，
+            见 `mapProjection.ts` 的 `CN_VIEW`。现在这条只在
+            家 / 落点在**国外**时才会命中。）
+
+        ⚠️ 落点不在当前这一档的鸟整只都不画（见上面 `shownIds`），
+          路线就跟着不画 —— 否则世界图上会多出一条"飞向某个中国地标"的线，
+          而那只鸟本身是看不见的。
+
+        ⚠️ 虚线的图案 + 走动动画都在 `anim-dash-route` 里
+          （`src/styles/theme.css`）—— 图案和 keyframe 的位移量是一对，
+            别把图案挪到这儿来写。
+      */}
+      {flyingBirds.map((b) => {
+        const dest = b.destinationId ? landmarkById(b.destinationId) : undefined
+        if (!dest) return null
+        if (!shownIds.has(dest.id)) return null
+        if (!inView(proj, home.lng, home.lat)) return null
+        if (!inView(proj, dest.lng, dest.lat)) return null
+        return (
+          <path
+            key={`route-${b.species}`}
+            d={flightPath(home, dest, proj)}
+            fill="none"
+            stroke="rgb(254 187 50 / 0.7)"
+            strokeWidth="1.3"
+            strokeLinecap="round"
+            pointerEvents="none"
+            className="anim-dash-route"
+          />
+        )
+      })}
+
+      {/*
         南海诸岛附图 —— 按制图规范单独框出，不与主图混排。
 
         ★★ **只有中国档画，世界档绝不画**。
@@ -264,7 +332,15 @@ function TravelMap({
         </g>
       )}
 
-      {/* 正在飞的鸟：从地标点向外画一条虚线，鸟挂在半途摆动 */}
+      {/*
+        正在飞的鸟 —— 落点上套一圈虚线环，上面挂一个会摆动的小三角。
+
+        ⚠️ 旧注释写的是「从地标点向外画一条虚线，鸟挂在半途摆动」——
+           **两句都不对**：这里不画任何线（线在上面那一层，
+           见 `flyingBirds.map` 的路线），鸟也不是"挂在半途"，
+           它就落在目的地点上（`x, y` 就是 `proj.x/y(dest)`）。
+           这是本项目第三次"注释说画了、代码里没画"，所以留着这段提醒。
+      */}
       {flyingBirds.map((b) => {
         const dest = b.destinationId ? landmarkById(b.destinationId) : undefined
         if (!dest) return null
@@ -575,59 +651,85 @@ function BirdRow({
   bird,
   onClick,
   onAct,
+  exhausted,
 }: {
   bird: Bird
   onClick: () => void
   onAct?: () => void
+  /**
+   * 这只鸟的极限之内**已经没有没去过的地方了**（`isBirdExhausted`）。
+   *
+   * ★★ 2026-10-10 接线：`isBirdExhausted()` 从写出来那天起就是
+   *    **零运行时调用者** —— 只有 `travelRange.test.ts` 引用它。
+   *    和 `travelRange.ts` 整套距离分档第一次那回是**同一个形态**。
+   *    它算的东西**不读任何存档字段**，纯推导（理由见 `travelRange.ts` 抬头）。
+   */
+  exhausted?: boolean
 }) {
   const sp = speciesById(bird.species)
   const away = bird.status === 'away'
   const canAct = !away || birdReady(bird, Date.now())
   return (
-    <div className="flex items-center gap-2 rounded-card surface p-2.5 shadow-[var(--hair)]">
-      <button
-        type="button"
-        onClick={() => {
-          playSound('tap-soft')
-          tapFeedback()
-          onClick()
-        }}
-        className="btn-base active:btn-press flex min-w-0 flex-1 items-center gap-3 rounded-md text-left"
-      >
-        <BirdGlyph species={bird.species} flying={away} />
-        <span className="min-w-0 flex-1">
-          <span className="flex items-center gap-1.5">
-            <span className="truncate font-display text-sm font-bold text-ink-900">
-              {bird.nickname}
-            </span>
-            {bird.hasLetter && (
-              <span className="text-amber-leaf-500">
-                <IconEnvelopeOpen size={13} />
-              </span>
-            )}
-          </span>
-          <span className="mt-0.5 block truncate text-2xs text-ink-500">
-            {away
-              ? birdReady(bird, Date.now())
-                ? `从${bird.destinationId ? landmarkById(bird.destinationId)?.name ?? '远方' : '远方'}飞回来了`
-                : `正在飞往 ${bird.destinationId ? landmarkById(bird.destinationId)?.name ?? '远方' : '远方'}…`
-              : bird.trips > 0
-                ? `${bondLabel(bird.bond)} · 出行 ${bird.trips} 次 · 拍了 ${bird.photos} 张`
-                : sp.persona}
-          </span>
-        </span>
-      </button>
-      {onAct && canAct && (
-        <Button
-          size="sm"
-          tone={away ? 'reward' : 'primary'}
-          icon={away ? <IconGift size={13} /> : <IconRoute size={13} />}
-          onClick={onAct}
+    <div className="flex flex-col gap-1.5">
+      <div className="flex items-center gap-2 rounded-card surface p-2.5 shadow-[var(--hair)]">
+        <button
+          type="button"
+          onClick={() => {
+            playSound('tap-soft')
+            tapFeedback()
+            onClick()
+          }}
+          className="btn-base active:btn-press flex min-w-0 flex-1 items-center gap-3 rounded-md text-left"
         >
-          {away ? '收鸟' : '出发'}
-        </Button>
+          <BirdGlyph species={bird.species} flying={away} />
+          <span className="min-w-0 flex-1">
+            <span className="flex items-center gap-1.5">
+              <span className="truncate font-display text-sm font-bold text-ink-900">
+                {bird.nickname}
+              </span>
+              {bird.hasLetter && (
+                <span className="text-amber-leaf-500">
+                  <IconEnvelopeOpen size={13} />
+                </span>
+              )}
+            </span>
+            <span className="mt-0.5 block truncate text-2xs text-ink-500">
+              {away
+                ? birdReady(bird, Date.now())
+                  ? `从${bird.destinationId ? landmarkById(bird.destinationId)?.name ?? '远方' : '远方'}飞回来了`
+                  : `正在飞往 ${bird.destinationId ? landmarkById(bird.destinationId)?.name ?? '远方' : '远方'}…`
+                : bird.trips > 0
+                  ? `${bondLabel(bird.bond)} · 出行 ${bird.trips} 次 · 拍了 ${bird.photos} 张`
+                  : sp.persona}
+            </span>
+          </span>
+        </button>
+        {onAct && canAct && (
+          <Button
+            size="sm"
+            tone={away ? 'reward' : 'primary'}
+            icon={away ? <IconGift size={13} /> : <IconRoute size={13} />}
+            onClick={onAct}
+          >
+            {away ? '收鸟' : '出发'}
+          </Button>
+        )}
+        {onAct && !canAct && <Badge tone="amber">在外</Badge>}
+      </div>
+      {/*
+        ★ 这句就是家长要的那根胡萝卜：这只鸟没新地方可去了，
+          正是推孩子去解锁下一只鸟的时候。以前 `isBirdExhausted()`
+          算了，但**没有任何界面读它**。
+
+        ⚠️ 只在**在家的**鸟上显示 —— 外面飞的那只还没回来，说了没用。
+        ⚠️ 只说「都去过了」，不说"去不了" —— 它其实还能重复去老地方
+          （`chooseDestination` 的 `repeat` 分支），只是没有新发现。
+      */}
+      {exhausted && !away && (
+        <p className="px-1 text-2xs leading-relaxed text-amber-leaf-700">
+          「{bird.nickname}」能飞到的地方都去过了 —— 换一只飞得更远的鸟，才能去新的地方。
+        </p>
       )}
-      {onAct && !canAct && <Badge tone="amber">在外</Badge>}
     </div>
   )
 }
@@ -642,6 +744,7 @@ function LandmarkSheet({
   contents,
   collected,
   distanceKm,
+  birdInfo,
   onClose,
   canSend,
   sending,
@@ -658,6 +761,11 @@ function LandmarkSheet({
   /** 小鸟是不是**真的**带回过内容 */
   collected: boolean
   distanceKm?: number
+  /**
+   * 准备派出去的那只鸟能飞多远、够不够得着这个地标。
+   * `null` = 树上没有在家的鸟（那时走下面的 `canSend` 分支）。
+   */
+  birdInfo: { maxKm: number; label: string; reachable: boolean } | null
   onClose: () => void
   /** 有在家的鸟才能派出去 */
   canSend: boolean
@@ -806,6 +914,30 @@ function LandmarkSheet({
         </div>
 
         {/*
+          ★★ 「这只鸟能飞多远」—— 2026-10-10 新加。
+
+          在这之前孩子在地图上点哪儿就飞哪儿，麻雀能一路飞到天安门
+          （实测：深圳出发 1944 公里），「想飞远就得用好鸟」那根胡萝卜
+          当场作废。现在超出极限会被 store 拦下，所以**必须在点之前
+          就把边界说清楚**，否则孩子只会觉得"点了没反应"。
+
+          ⚠️ 公里数与档位说法都来自 `flightMaxKm()` / `radiusLabel()`，
+             组件里不许另写一个数。
+        */}
+        {birdInfo && distanceKm !== undefined && (
+          birdInfo.reachable ? (
+            <p className="rounded-md bg-ink-50 px-3.5 py-2.5 text-2xs leading-relaxed text-ink-500">
+              现在能派的鸟最多飞 {birdInfo.maxKm} 公里（{birdInfo.label}），这里够得着。
+            </p>
+          ) : (
+            <p className="rounded-md bg-amber-leaf-50 px-3.5 py-2.5 text-2xs leading-relaxed text-amber-leaf-700 shadow-[var(--hair-amber)]">
+              这里要 {distanceKm} 公里，而现在能派的鸟最多飞 {birdInfo.maxKm} 公里（
+              {birdInfo.label}）—— 它飞不到。换一只飞得更远的鸟，或者先挑个近一点的地方。
+            </p>
+          )
+        )}
+
+        {/*
           ★★ 公共简介优先，没有就退回那句 `blurb`（09-26）。
              `blurb` 是**数据源给的一句话**（8~29 字），`intro` 是**人写的公共简介**
              （≤`LANDMARK_INTRO_MAX`，见 `types.ts`）。两者是"有更好的就用更好的"，
@@ -862,7 +994,8 @@ function LandmarkSheet({
             tone="primary"
             size="lg"
             icon={<IconMapPin size={16} />}
-            disabled={sending}
+            /* ⚠️ 够不着就按不动 —— 上面的琥珀色提示已经说清为什么 */
+            disabled={sending || birdInfo?.reachable === false}
             onClick={() => onSend(landmark.id)}
           >
             {stage > 0 ? '再派一只去这里' : '派一只小鸟去这里'}
@@ -1179,23 +1312,52 @@ export default function MapPage() {
    * 优先派从没出过门的 —— 让它先认认路，亲密度涨得快。
    */
   const sendTo = useCallback(
-    async (landmarkId: string) => {
+    /*
+     * ★ 2026-10-03：`landmarkId` 改成**可选**。
+     *
+     *   不传 = 「让它自己去一个没去过的地方」—— 目的地由 store 按
+     *   「这只鸟能飞多远」挑（`chooseDestination`）。**这里不该自己先选**：
+     *   选点要看是**哪只鸟**，而挑哪只鸟是下面 `trips` 最少那一行才定的。
+     *   先选点，就只能拿"某一只鸟"的距离去替"另一只鸟"决定目的地。
+     *
+     * ★★ 2026-10-10：「派谁」抽成 `birdToSend()`（`domain/pets.ts`）——
+     *   抽屉上那句"这只鸟最多飞多远"用的是**同一只**鸟。
+     */
+    async (landmarkId?: string) => {
       if (busy) return
-      const candidates = homeBirds(useApp.getState().birds)
-      if (candidates.length === 0) {
+      const chosen = birdToSend(useApp.getState().birds)
+      if (!chosen) {
         toast({ kind: 'info', title: '没有在家的鸟', detail: '等出门的那几只飞回来吧。' })
         return
       }
-      const chosen = [...candidates].sort((a, b) => a.trips - b.trips)[0]
       setBusy(true)
       playSound('tap')
-      const sent = await dispatchBird(chosen.species, landmarkId)
+      const res = await dispatchBird(chosen.species, landmarkId)
       setBusy(false)
-      if (!sent) {
-        toast({ kind: 'warn', title: '没能出发', detail: '再试一次看看。' })
+      /*
+       * ⚠️ 三种「不行」要说三句不同的话（见 `DispatchOutcome`）。
+       *   挤成一句「没能出发，再试一次看看」的话，孩子会一直点，
+       *   家长会以为程序坏了。
+       * ★ `maxKm` / `distanceKm` 都从 store 的返回值里读 ——
+       *   这里不自己算极限距离（`radiusLabel` 只负责把公里数说成孩子话）。
+       */
+      if (!res.ok) {
+        if (res.reason === 'too-far') {
+          toast({
+            kind: 'warn',
+            title: `${chosen.nickname} 飞不了这么远`,
+            detail: `它最多飞 ${res.maxKm} 公里（${radiusLabel(res.maxKm)}），这里要 ${Math.round(res.distanceKm)} 公里。换一只飞得更远的鸟吧。`,
+          })
+        } else if (res.reason === 'away') {
+          toast({ kind: 'info', title: '它已经在外面了', detail: '等它飞回来再派。' })
+        } else {
+          toast({ kind: 'warn', title: '没找到这只鸟', detail: '回鸟窝看一眼吧。' })
+        }
         return
       }
-      const lm = landmarkById(landmarkId)
+      const sent = res.bird
+      // ★ 目的地可能是 store 自己挑的（没传 id）—— 从飞出去的鸟身上读回来
+      const lm = sent.destinationId ? landmarkById(sent.destinationId) : undefined
       toast({
         kind: 'info',
         title: `${sent.nickname} 出发了`,
@@ -1260,6 +1422,32 @@ export default function MapPage() {
   }, [visited])
   const home = useMemo(() => homeBirds(birds), [birds])
   const away = useMemo(() => awayBirds(birds), [birds])
+
+  /**
+   * 每只鸟「极限之内还有没有没去过的地方」。
+   *
+   * ★★ 2026-10-10 接线：`isBirdExhausted()` 从写出来那天起就是
+   *    **零运行时调用者** —— 只有 `travelRange.test.ts` 引用它。
+   *    和 `travelRange.ts` 整套距离分档第一次那回是**同一个形态**
+   *    （见 MEMORY §十八：「注释说已经改了」≠ 真的改了）。
+   *    它算的东西**不读任何存档字段**，纯推导（理由见 `travelRange.ts` 抬头）。
+   *
+   * ★ 这个布尔值就是"推孩子去解锁下一只鸟"的那句话：极限之内没有新地方了，
+   *   再派只会重复去老地方，该换一只飞得更远的鸟。
+   *
+   * ⚠️ 按**鸟种**缓存，不按鸟 —— 同种的鸟极限一样，没必要各算一遍
+   *    （`isBirdExhausted` 每次都要遍历 643 个地标）。
+   */
+  const exhaustedBySpecies = useMemo(() => {
+    const m = new Map<Bird['species'], boolean>()
+    const visitedList = [...visitedIds]
+    const h = resolveHomePoint(homePoint)
+    for (const b of birds) {
+      if (m.has(b.species)) continue
+      m.set(b.species, isBirdExhausted(LANDMARKS, h, b.species, visitedList))
+    }
+    return m
+  }, [birds, homePoint, visitedIds])
   const nextBird = useMemo(() => nextSpeciesToUnlock(levelIndex), [levelIndex])
 
   const pickedStage = useMemo(() => {
@@ -1295,6 +1483,34 @@ export default function MapPage() {
     () => (picked ? distanceToLandmark(picked, homePoint) : undefined),
     [picked, homePoint],
   )
+
+  /**
+   * 准备派出去的那只鸟 —— 抽屉上那句「最多飞多远」用的就是它。
+   *
+   * ★★ 「派谁」只有 `birdToSend()` 一处（`domain/pets.ts`）：
+   *    这里和 `sendTo` 读的是同一个函数，所以不会出现
+   *    「提示说麻雀飞不了，点下去却派了只鸽子」。
+   */
+  const sendBirdInfo = useMemo(() => {
+    const b = birdToSend(birds)
+    if (!b) return null
+    return { species: b.species, nickname: b.nickname, maxKm: flightMaxKm(b.species) }
+  }, [birds])
+
+  /**
+   * 选中这个地标时，能派的那只鸟够不够得着。
+   *
+   * ⚠️ 公里数取 `flightMaxKm()`、档位说法取 `radiusLabel()` ——
+   *    组件里**不另写**极限距离，否则会出现"提示说 250、实际按 200 拦"。
+   */
+  const pickedReach = useMemo(() => {
+    if (!sendBirdInfo || pickedDistance === undefined) return null
+    return {
+      maxKm: sendBirdInfo.maxKm,
+      label: radiusLabel(sendBirdInfo.maxKm),
+      reachable: canReach(sendBirdInfo.species, pickedDistance),
+    }
+  }, [sendBirdInfo, pickedDistance])
 
   /** v6：按 place 聚合纪念品，方便背包里按地方分组 */
   const souvenirsByPlace = useMemo(() => {
@@ -1469,6 +1685,7 @@ export default function MapPage() {
               scope={scope}
               sprouts={sprouts}
               flyingBirds={away}
+              homePoint={homePoint}
               activeLandmarkId={picked?.id ?? null}
               onPickLandmark={setPicked}
               revealed={revealed}
@@ -1542,6 +1759,7 @@ export default function MapPage() {
                   <BirdRow
                     key={b.species}
                     bird={b}
+                    exhausted={exhaustedBySpecies.get(b.species)}
                     onClick={() => {
                       toast({
                         kind: 'info',
@@ -1551,9 +1769,10 @@ export default function MapPage() {
                     }}
                     onAct={() => {
                       // 让它自己去一个没去过的地方 —— 地图才会铺开
-                      const visited = sproutedIds(sprouts)
-                      const dest = pickDestination({ exclude: visited, rng: Math.random })
-                      void sendTo(dest.id)
+                      // ★ 不传 id：目的地交给 store 按「这只鸟能飞多远」挑。
+                      //   以前这里拿 `sproutedIds(sprouts)` 当"去过"，而 store 用
+                      //   `visited` —— 两套判据会分叉，现在统一走 store 那一套。
+                      void sendTo()
                     }}
                   />
                 ))}
@@ -1719,6 +1938,8 @@ export default function MapPage() {
         collected={picked ? visitedIds.has(picked.id) : false}
         distanceKm={pickedDistance}
         canSend={home.length > 0}
+        /* 这只鸟能飞多远 / 够不够得着 —— 见 `pickedReach` */
+        birdInfo={pickedReach}
         sending={busy}
         onSend={(id) => {
           setPicked(null)

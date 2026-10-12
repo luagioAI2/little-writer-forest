@@ -25,9 +25,11 @@ import type {
   PhotoScene,
   Sprout,
   TravelPhoto,
+  VisitedLandmark,
 } from './types'
 import { LANDMARK_SEEDS, toLandmark } from '../data/landmarks'
 import { haversineKm, resolveHomePoint } from './geo'
+import { flightMaxKm, MIN_TRIP_KM, pickByRange } from './travelRange'
 
 /* ============================================================
    一、地标表
@@ -146,15 +148,165 @@ export function pickDestination(opts: PickDestinationOpts): Landmark {
 }
 
 /* ============================================================
+   二之二、派鸟选点：把「距离分档」接进玩法（2026-10-03）
+   ============================================================
+
+   家长 09-17 定了「按小鸟能飞多远选点」（规则本体在 `travelRange.ts`），
+   但那套东西写完**一直没接线** —— 派鸟走的是上面的 `pickDestination()`：
+   全库一起抽、只看 tier 权重，跟鸟种和距离都没关系。这一节就是那根线。
+
+   ★ 三种结果，对应三种完全不同的处境：
+
+     ① `near`     极限之内还有没去过的点 → 走半径阶梯（家长 09-17 的规则）
+     ② `repeat`   极限之内的点**都去过了** → ★ 家长 10-03 的新要求：
+                  不再直接判死，改成**按去过次数降权**再挑一个
+                  （权重 `1 / (1 + 次数)`：去过 1 次减半、2 次剩三分之一）
+     ③ `fallback` 极限之内**一个点都没有** → 退回老的 `pickDestination()`
+
+   ★★ 为什么 ③ 是必需的，不是"保险"
+
+     实测（2026-10-03）：麻雀极限提到 200 公里之后，**643 个地标里
+     仍有 119 个「200 公里内没有邻居」**（可可托海、五大连池、阿尔山、
+     扎什伦布寺、日月潭…）。住在那里的孩子，麻雀一个点都够不到。
+     少了 ③ 就**一次都飞不出去**，主循环当场死掉。
+
+     ③ 走的是**今天正在跑的那条路**，所以对"附近没有收录景点"的孩子
+     来说这次改动是**零变化**，而不是变差。
+
+     ⚠️ 顺带记一笔数据侧的问题：海口自己在库里的 5 个景区
+        （假日海滩、雷琼海口火山群、海南省博物馆…）全被
+        `fameOf(seed) === '地方知名'` 筛进了 parked（`landmarks-4a.json`
+        的 `rule`，共 1165 条），所以海口附近能去的其实是万宁 / 陵水一带、
+        150–200 公里外。那是**入库口径**问题，不该由选点逻辑兜着。
+   ============================================================ */
+
+export type DestinationReason = 'near' | 'repeat' | 'fallback'
+
+export interface ChooseDestinationOpts {
+  /** 派出去的是哪只鸟 —— 决定极限距离 */
+  species: BirdSpeciesId
+  /** 家（出发地）。不传 / 不合法时退回 `DEFAULT_HOME_POINT`（深圳） */
+  home?: HomePoint | null
+  /** 已经到访过的地标（带次数）—— 次数用来给"重复去"降权 */
+  visited: readonly VisitedLandmark[]
+  rng: () => number
+}
+
+export interface DestinationChoice {
+  dest: Landmark
+  reason: DestinationReason
+  /** 离家多远（公里） */
+  distanceKm: number
+  /** 这只鸟的极限距离（凤凰是 Infinity） */
+  maxKm: number
+  /** 只在 `near` 时有值：选中那一档的半径 */
+  radiusKm?: number
+  /** 只在 `near` 时有值：这一档本来有几个候选 */
+  candidateCount?: number
+  /** 只在 `repeat` 时有值：这个点以前去过几次 */
+  visitCount?: number
+}
+
+/**
+ * 按「去过次数」降权挑一个：去过越多，权重越低（`1 / (1 + 次数)`）。
+ *
+ * ★ 为什么是「降权」而不是「排除」：家长 10-03 的要求 ——
+ *   去过的地方不该永远消失，只是**越去越难再去**。
+ *
+ * ⚠️ 它**只该用在"没得探索了"之后**（见 `chooseDestination` 的 ②）。
+ *    提前到探索阶段会废掉「越飞越远」：阶梯的规则是「第一个有候选的档
+ *    就抽」，去过的点只要还留在池子里，**最近那一档就永远有候选** ——
+ *    小鸟会一直在家门口打转，再也不会往外扩。
+ */
+export function pickByVisitCount<T extends { id: string }>(
+  items: readonly T[],
+  visitCountOf: (id: string) => number,
+  rng: () => number,
+): T | undefined {
+  if (items.length === 0) return undefined
+  // 没去过时次数是 0 → 权重 1（最大），正好就是"优先没去过的"
+  const weights = items.map((it) => 1 / (1 + Math.max(0, visitCountOf(it.id))))
+  const total = weights.reduce((a, b) => a + b, 0)
+  let roll = rng() * total
+  for (let i = 0; i < items.length; i += 1) {
+    roll -= weights[i]
+    if (roll <= 0) return items[i]
+  }
+  // rng() 恰好返回 1 时的边界（正常取不到）—— 兜最后一个，别返回 undefined
+  return items[items.length - 1]
+}
+
+/**
+ * 派鸟时挑一个目的地 —— **接线版**（三种结果的取舍见本节头部）。
+ */
+export function chooseDestination(opts: ChooseDestinationOpts): DestinationChoice {
+  const { species, home, visited, rng } = opts
+  const h = resolveHomePoint(home)
+  const maxKm = flightMaxKm(species)
+  const visitedIds = visited.map((v) => v.landmarkId)
+  const counts = new Map(visited.map((v) => [v.landmarkId, v.visitCount]))
+
+  // ⚠️ 下界 `MIN_TRIP_KM` 不能省：家和某个景点几乎重合时，
+  //    只写「≤ 极限」会挑中离家 0.2 公里的点 —— 界面说「飞了 0 公里」。
+  const inRange = LANDMARKS.filter((l) => {
+    const km = haversineKm(h, l)
+    return km >= MIN_TRIP_KM && km <= maxKm
+  })
+
+  /* ③ 这只鸟一个点都够不到 —— 退回老玩法（理由见本节头部） */
+  if (inRange.length === 0) {
+    const dest = pickDestination({ exclude: visitedIds, rng })
+    return { dest, reason: 'fallback', distanceKm: distanceToLandmark(dest, h), maxKm }
+  }
+
+  /* ① 还有没去过的 → 走半径阶梯（`travelRange.ts` 的规则一个字没改） */
+  const r = pickByRange({ points: inRange, home: h, species, visited: visitedIds, rng })
+  if (r.kind === 'ok') {
+    // 入参就是 `inRange`，选中的必然是它的元素 —— 这个断言是安全的
+    const dest = landmarkById(r.point.id) as Landmark
+    return {
+      dest,
+      reason: 'near',
+      distanceKm: r.distanceKm,
+      maxKm,
+      radiusKm: r.radiusKm,
+      candidateCount: r.candidateCount,
+    }
+  }
+
+  /* ② 极限之内都去过了 → 按去过次数降权重复（家长 10-03 的新规则） */
+  // `inRange` 上面已经保证非空，所以这里一定有返回值
+  const dest = pickByVisitCount(inRange, (id) => counts.get(id) ?? 0, rng) as Landmark
+  return {
+    dest,
+    reason: 'repeat',
+    distanceKm: distanceToLandmark(dest, h),
+    maxKm,
+    visitCount: counts.get(dest.id) ?? 0,
+  }
+}
+
+/* ============================================================
    三、飞行时间与照片
    ============================================================ */
 
-/** 飞行时长：档位决定基础时间，小鸟速度越快越早回来 */
-export function travelDurationMs(landmark: Landmark, birdSpeed: number): number {
-  const baseMin = landmark.tier === 1 ? 25 : landmark.tier === 2 ? 55 : 110
-  const speed = birdSpeed > 0 ? birdSpeed : 1
-  return Math.round((baseMin * 60_000) / speed)
-}
+/*
+ * ★★ 这里原来有一个 `travelDurationMs(landmark, birdSpeed)` ——
+ *    按 tier 算 25 / 55 / 110 分钟。2026-10-10 删掉了：
+ *    全仓 grep 只有它自己的定义，**零运行时调用者、零测试引用**。
+ *
+ *    真正生效的飞行时长在 `pets.ts` 的 `sendBird()`，按**距离**算：
+ *
+ *        max(30_000, (公里 / 500) × 300_000 / 鸟速) × 0.9~1.1
+ *
+ *    也就是"每 500 公里约 5 分钟"，22 公里那种近程被 30 秒的下限托住。
+ *
+ *    ⚠️ 为什么必须**删掉**而不是留着：它和 `sendBird` 那套**结论不同**
+ *      （一个看 tier、一个看距离）。留着的话，下一个读代码的人很容易
+ *      以为飞行时长由 tier 决定，改 tier 时会以为改到了飞行时长 ——
+ *      而界面上的数字**一点没变**，也不报错。
+ *      （同族的坑见 MEMORY §十八：「注释说已经改了」≠ 真的改了。）
+ */
 
 /** 每种画面配几句给孩子看的描述 */
 const SCENE_LINES: Record<PhotoScene, string[]> = {
